@@ -1,0 +1,284 @@
+dialogueChapter11xOpening2 ; 98/917A
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD OlwenPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD NPCBoy1Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おまえ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "帝国兵"
+	DIALOGUE_FONT_0
+	.text "だな！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "悪魔"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ぼくたちを"
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_0
+	.text "しにきたのか！！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･･ちがうわ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はとらえられて･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あなたたちはどうしてここに？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD NPCGirl7Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "兵"
+	DIALOGUE_FONT_2
+	.text "隊"
+	DIALOGUE_FONT_0
+	.text "におそわれて･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "むりやり"
+	DIALOGUE_FONT_2
+	.text "連"
+	DIALOGUE_FONT_0
+	.text "れてこられたの･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あたしたち､"
+	DIALOGUE_PAUSE $08
+	.text "一"
+	DIALOGUE_FONT_2
+	.text "体"
+	DIALOGUE_FONT_0
+	.text "どうなるの･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCBoy1Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "どうなるって､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "決"
+	DIALOGUE_FONT_0
+	.text "まってるさ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "暗黒神"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "生"
+	DIALOGUE_FONT_0
+	.text "けにえにされるんだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "バーハラのみやこに"
+	DIALOGUE_FONT_3
+	.text "送"
+	DIALOGUE_FONT_0
+	.text "られて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "みんな"
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_0
+	.text "される･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ぼくのねえちゃんも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "連"
+	DIALOGUE_FONT_0
+	.text "れていかれたまま"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "帰"
+	DIALOGUE_FONT_0
+	.text "ってこないもん･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD NPCGirl1Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "そんなのいやよ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あたし､"
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "帰"
+	DIALOGUE_FONT_0
+	.text "りたい･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "母"
+	DIALOGUE_FONT_0
+	.text "さんや"
+	DIALOGUE_FONT_1
+	.text "父"
+	DIALOGUE_FONT_0
+	.text "さんに"
+	DIALOGUE_FONT_1
+	.text "会"
+	DIALOGUE_FONT_0
+	.text "いたい･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_UNLOAD
+	DIALOGUE_CLOSE
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD OlwenPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･･これが"
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_3
+	.text "供"
+	DIALOGUE_FONT_4
+	.text "狩"
+	DIALOGUE_FONT_0
+	.text "りなの？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "うわさには"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "いたことがあったけど"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "まさか"
+	DIALOGUE_FONT_2
+	.text "本当"
+	DIALOGUE_FONT_0
+	.text "にあるなんて･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ひどい､"
+	DIALOGUE_PAUSE $08
+	.text "ひどすぎる･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "これが"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "信"
+	DIALOGUE_FONT_0
+	.text "じていた"
+	DIALOGUE_FONT_1
+	.text "国"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_0
+	.text "フリージのしわざだというの！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD NPCGirl1Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おねえちゃん､"
+	DIALOGUE_PAUSE $08
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "願"
+	DIALOGUE_FONT_0
+	.text "い！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あたしたちを"
+	DIALOGUE_FONT_1
+	.text "助"
+	DIALOGUE_FONT_0
+	.text "けて！！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_4
+	.text "返"
+	DIALOGUE_FONT_0
+	.text "して！！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ええ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_4
+	.text "丈"
+	DIALOGUE_FONT_2
+	.text "夫"
+	DIALOGUE_FONT_0
+	.text "よ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "心配"
+	DIALOGUE_FONT_0
+	.text "しないで"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "あなたたちに"
+	DIALOGUE_FONT_1
+	.text "手出"
+	DIALOGUE_FONT_0
+	.text "しはさせない"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "絶"
+	DIALOGUE_FONT_1
+	.text "対"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "ってみせるわ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "たとえこの"
+	DIALOGUE_FONT_2
+	.text "命"
+	DIALOGUE_FONT_0
+	.text "にかえても･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

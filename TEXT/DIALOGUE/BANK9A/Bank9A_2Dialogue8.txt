@@ -1,0 +1,9 @@
+; 9A/DFC2
+DIALOGUE_FONT_0
+.text "こうして､フィアナ"
+DIALOGUE_FONT_1
+.text "村"
+DIALOGUE_FONT_0
+.text "から"
+DIALOGUE_NL
+DIALOGUE_EOF

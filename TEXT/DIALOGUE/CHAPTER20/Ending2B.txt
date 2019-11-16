@@ -1,0 +1,119 @@
+dialogueChapter20Ending2B ; 92/F4EC
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_0
+	.text "これはセリス"
+	DIALOGUE_FONT_1
+	.text "公子"
+	DIALOGUE_FONT_0
+	.text "からの"
+	DIALOGUE_FONT_1
+	.text "書状"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "どうぞ､"
+	DIALOGUE_PAUSE $08
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "目"
+	DIALOGUE_FONT_3
+	.text "通"
+	DIALOGUE_FONT_0
+	.text "しを･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "そうか･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "書状"
+	DIALOGUE_FONT_0
+	.text "によると"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "アルスターの"
+	DIALOGUE_FONT_1
+	.text "攻"
+	DIALOGUE_FONT_2
+	.text "略"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_NL
+	.text "そう"
+	DIALOGUE_FONT_2
+	.text "長"
+	DIALOGUE_FONT_0
+	.text "くはかからないようだが･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ええ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ここ"
+	DIALOGUE_FONT_1
+	.text "数日"
+	DIALOGUE_FONT_0
+	.text "のうちには･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "では"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ぼくたちもアルスターへ"
+	DIALOGUE_FONT_1
+	.text "向"
+	DIALOGUE_FONT_0
+	.text "かおう"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "一"
+	DIALOGUE_FONT_1
+	.text "日"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_FONT_4
+	.text "早"
+	DIALOGUE_FONT_0
+	.text "くセリス"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "にお"
+	DIALOGUE_FONT_1
+	.text "会"
+	DIALOGUE_FONT_0
+	.text "いしたい！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "わかりました"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "では"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "がご"
+	DIALOGUE_FONT_4
+	.text "案"
+	DIALOGUE_FONT_1
+	.text "内"
+	DIALOGUE_FONT_0
+	.text "いたしましょう"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

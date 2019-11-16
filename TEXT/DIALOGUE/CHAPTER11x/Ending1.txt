@@ -1,0 +1,417 @@
+dialogueChapter11xEnding1 ; 98/9900
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ここでも"
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_0
+	.text "どもたちが･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ターラ"
+	DIALOGUE_FONT_1
+	.text "市"
+	DIALOGUE_FONT_2
+	.text "民"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "ち"
+	DIALOGUE_FONT_1
+	.text "上"
+	DIALOGUE_FONT_0
+	.text "がった"
+	DIALOGUE_FONT_1
+	.text "気持"
+	DIALOGUE_FONT_0
+	.text "ちがよくわかる"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD DoriasPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "さよう"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "だからこそ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_FONT_1
+	.text "必"
+	DIALOGUE_FONT_2
+	.text "死"
+	DIALOGUE_FONT_0
+	.text "なのです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "もし､"
+	DIALOGUE_PAUSE $08
+	.text "ターラを"
+	DIALOGUE_FONT_3
+	.text "許"
+	DIALOGUE_FONT_0
+	.text "せば"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "各"
+	DIALOGUE_FONT_1
+	.text "地"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_1
+	.text "同"
+	DIALOGUE_FONT_0
+	.text "じような"
+	DIALOGUE_FONT_2
+	.text "反乱"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_4
+	.text "起"
+	DIALOGUE_FONT_0
+	.text "きるでしょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "街"
+	DIALOGUE_FONT_0
+	.text "一つを"
+	DIALOGUE_FONT_2
+	.text "完全"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_4
+	.text "叩"
+	DIALOGUE_FONT_0
+	.text "きつぶすために"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "各"
+	DIALOGUE_FONT_1
+	.text "地"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_FONT_1
+	.text "軍団"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "集"
+	DIALOGUE_FONT_0
+	.text "められています"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ゲルプリッターまで"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "帝都"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_FONT_4
+	.text "呼"
+	DIALOGUE_FONT_0
+	.text "び"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "したという"
+	DIALOGUE_NL
+	DIALOGUE_FONT_3
+	.text "情報"
+	DIALOGUE_FONT_0
+	.text "もあるくらいなのですから"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ゲルプリッター"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "フリージ"
+	DIALOGUE_FONT_1
+	.text "家"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "近"
+	DIALOGUE_FONT_3
+	.text "衛"
+	DIALOGUE_FONT_1
+	.text "軍団"
+	DIALOGUE_FONT_0
+	.text "か"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "はい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "フリージ"
+	DIALOGUE_FONT_1
+	.text "家"
+	DIALOGUE_FONT_0
+	.text "一"
+	DIALOGUE_FONT_2
+	.text "族"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "中"
+	DIALOGUE_FONT_2
+	.text "心"
+	DIALOGUE_FONT_0
+	.text "とする"
+	DIALOGUE_FONT_1
+	.text "魔法騎士団"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "大陸"
+	DIALOGUE_FONT_0
+	.text "でも１､２を"
+	DIALOGUE_FONT_1
+	.text "争"
+	DIALOGUE_FONT_0
+	.text "う"
+	DIALOGUE_FONT_2
+	.text "精鋭部隊"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "指揮"
+	DIALOGUE_FONT_2
+	.text "官"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_FONT_4
+	.text "雷"
+	DIALOGUE_FONT_1
+	.text "神"
+	DIALOGUE_FONT_0
+	.text "と"
+	DIALOGUE_FONT_1
+	.text "恐"
+	DIALOGUE_FONT_0
+	.text "れられるイシュタル"
+	DIALOGUE_FONT_1
+	.text "王女"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_0
+	.text "そして､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_5
+	.text "副"
+	DIALOGUE_FONT_2
+	.text "官"
+	DIALOGUE_FONT_0
+	.text "のラインハルト"
+	DIALOGUE_FONT_2
+	.text "卿"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "聖戦士"
+	DIALOGUE_FONT_0
+	.text "トードの"
+	DIALOGUE_FONT_2
+	.text "再"
+	DIALOGUE_FONT_1
+	.text "来"
+	DIALOGUE_FONT_0
+	.text "と"
+	DIALOGUE_FONT_3
+	.text "称"
+	DIALOGUE_FONT_0
+	.text "されるほどの"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_3
+	.text "派"
+	DIALOGUE_FONT_0
+	.text "な"
+	DIALOGUE_FONT_1
+	.text "武人"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_3
+	.text "供"
+	DIALOGUE_FONT_4
+	.text "狩"
+	DIALOGUE_FONT_0
+	.text "りに"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "貸"
+	DIALOGUE_FONT_0
+	.text "すような"
+	DIALOGUE_FONT_1
+	.text "男"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_3
+	.text "派"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "と？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "まったく､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "騎士"
+	DIALOGUE_FONT_0
+	.text "とは"
+	DIALOGUE_FONT_4
+	.text "困"
+	DIALOGUE_FONT_0
+	.text "ったものよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "現"
+	DIALOGUE_FONT_3
+	.text "実"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "一つ"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "らぬ･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "アウグスト"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "その"
+	DIALOGUE_FONT_1
+	.text "物言"
+	DIALOGUE_FONT_0
+	.text "いは"
+	DIALOGUE_FONT_2
+	.text "失礼"
+	DIALOGUE_FONT_0
+	.text "ではないか！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "わしが"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "らぬと"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "うのだ？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ラインハルトはイシュタル"
+	DIALOGUE_FONT_1
+	.text "王女"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "イシュタルはユリウス"
+	DIALOGUE_FONT_1
+	.text "皇子"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "愛人"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_FONT_0
+	.text "そして､"
+	DIALOGUE_PAUSE $08
+	.text "ユリウスは"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "暗黒神"
+	DIALOGUE_FONT_0
+	.text "ロプトの"
+	DIALOGUE_FONT_3
+	.text "化"
+	DIALOGUE_FONT_1
+	.text "身"
+	DIALOGUE_FONT_0
+	.text "ともいわれている"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "つまり"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "やつらはみんなロプトのしもべ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "世"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "破"
+	DIALOGUE_FONT_2
+	.text "壊"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_3
+	.text "導"
+	DIALOGUE_FONT_0
+	.text "くものではないか･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

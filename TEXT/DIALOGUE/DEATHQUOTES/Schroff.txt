@@ -1,0 +1,34 @@
+dialogueSchroffDeathQuote ; 82/BE5C
+	DIALOGUE_FONT_0
+	.text "くっ､"
+	DIALOGUE_PAUSE $08
+	.text "クロード"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "お"
+	DIALOGUE_FONT_2
+	.text "志"
+	DIALOGUE_FONT_0
+	.text "を･･･"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "果"
+	DIALOGUE_FONT_0
+	.text "たせず･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "申"
+	DIALOGUE_FONT_0
+	.text "し"
+	DIALOGUE_FONT_4
+	.text "訳"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "ありません･･･"
+DIALOGUE_END_SCENE

@@ -1,0 +1,17 @@
+; 9A/D9CA
+DIALOGUE_FONT_1
+.text "旅"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_4
+.text "吟"
+DIALOGUE_FONT_3
+.text "遊"
+DIALOGUE_FONT_4
+.text "詩"
+DIALOGUE_FONT_1
+.text "人"
+DIALOGUE_FONT_0
+.text "　ホメロス"
+DIALOGUE_NL
+DIALOGUE_EOF

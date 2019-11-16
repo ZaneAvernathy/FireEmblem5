@@ -1,0 +1,11 @@
+; 9A/D0F6
+DIALOGUE_FONT_3
+.text "風"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "聖戦士"
+DIALOGUE_FONT_0
+.text "　セティ"
+DIALOGUE_NL
+DIALOGUE_EOF

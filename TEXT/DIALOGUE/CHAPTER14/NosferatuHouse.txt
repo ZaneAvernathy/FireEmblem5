@@ -1,0 +1,59 @@
+dialogueChapter14NosferatuHouse ; 92/D562
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan8Portrait
+	DIALOGUE_FONT_0
+	.text "おお､"
+	DIALOGUE_PAUSE $08
+	.text "おまえさんがた"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "解放軍"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "方々"
+	DIALOGUE_FONT_0
+	.text "じゃな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "すまんが､"
+	DIALOGUE_PAUSE $08
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "書"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "リノアン"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "にわたしてくれんかの"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_2
+	.text "亡"
+	DIALOGUE_FONT_0
+	.text "き"
+	DIALOGUE_FONT_1
+	.text "公"
+	DIALOGUE_FONT_2
+	.text "爵"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "からたくされたものじゃ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いざというときのためにと"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "おっしゃってな･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

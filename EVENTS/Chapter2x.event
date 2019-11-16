@@ -1,0 +1,332 @@
+
+eventChapter2xEvents ; 97/805A
+
+	_OpeningEventDefinitions ; 97/805A
+		EVENT $00, _OpeningEvent
+			CMP_WORD wCurrentTurn, 0
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TurnEventDefinitions ; 97/8067
+		EVENT $02, eventMapDeathQuoteDummyEvent
+			CHECK_DEAD Lithis
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+		EVENT $00, _ShivaAIChange
+			CMP_WORD wCurrentTurn, 25
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+		EVENT $01, eventMapDeathQuoteDummyEvent
+			CMP_WORD wCurrentTurn, 22
+			CHECK_NUM_UNITS_GTE Shiva, 1
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+		EVENT $00, _MyrmidonWarriorReinforcements
+			CMP_WORD wCurrentTurn, 2
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+		EVENT $00, _TopIslandReinforcements
+			CMP_WORD_RANGE wCurrentTurn, 5, 9
+			CMP_WORD wCurrentPhase, Enemy
+			ROLL_RNG 30
+			TEST_FLAG_UNSET $02
+		END_DEFINITION
+		EVENT $00, _LowerRightIslandReinforcements
+			CMP_WORD_RANGE wCurrentTurn, 10, 14
+			ROLL_RNG 80
+			CMP_WORD wCurrentPhase, Enemy
+			TEST_FLAG_UNSET $02
+		END_DEFINITION
+		EVENT $00, _LowerLeftIslandReinforcements
+			CMP_WORD_RANGE wCurrentTurn, 15, 20
+			ROLL_RNG 20
+			CMP_WORD wCurrentPhase, Enemy
+			TEST_FLAG_UNSET $02
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_LocationEventDefinitions ; 97/80F3
+		EVENT $00, _EndingEvent
+			macroEventConditionCheckCoords [23, 2]
+			CMP_WORD wCurrentPhase, Player
+			CMP_WORD aSelectedCharacterBuffer.Character, Leif
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TalkEventDefinitions ; 97/8110
+		EVENT $09, _LeifEyvelTalk
+			CHECK_CHARS2 Leif, Eyvel
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_BeforeActionEventDefinitions ; 97/811C
+	END_DEFINITION_ARRAY
+
+	_AfterActionEventDefinitions ; 97/811E
+		EVENT $07, _TorchPickup
+			macroEventConditionCheckCoords [5, 25]
+			CMP_WORD wCurrentPhase, Player
+		END_DEFINITION
+		EVENT $08, _TorchPickup
+			macroEventConditionCheckCoords [12, 19]
+			CMP_WORD wCurrentPhase, Player
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_BattleEventDefinitions ; 97/814A
+		macroBossQuoteDefinition $06, Lithis
+		macroBossQuoteDefinition $05, Shiva
+	END_DEFINITION_ARRAY
+
+	_ShopEventDefinitions ; 97/815C
+	END_DEFINITION_ARRAY
+
+	_LeifEyvelTalk ; 97/815E
+		macroDialogueHouse dialogueChapter2xLeifEyvelTalk
+	END2
+
+	_MyrmidonWarriorReinforcements ; 98/8167
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $3A
+		YIELD
+
+		SCROLL_CAMERA_SPEED [25, 4], 3
+		YIELD
+
+		macroDialogueWithBackground dialogueChapter2xReinforcementsDialogue, 1
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+		YIELD
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+
+		LOAD1 eventChapter2xData._EnemyGroup2
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_ShivaAIChange ; 97/81A5
+		macroSetCharacterByte Shiva, structCharacterDataRAM.AI1, $00
+		macroSetCharacterByte Shiva, structCharacterDataRAM.AI4, $00
+		macroSetCharacterByte Shiva, structCharacterDataRAM.AI2, $00
+		macroSetCharacterByte Shiva, structCharacterDataRAM.Unknown3E, $00
+	END2
+
+	_PrepGroups ; 97/8206
+	.word $0000
+
+	_OpeningEvent ; 97/8208
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $3A
+		YIELD
+
+		macroChapterTitlePopup dialogueChapter2xTitle
+
+		macroAddCharacterByte Leif, structCharacterDataRAM.LeadershipStars, 1
+
+		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusActing
+		CALL_ASM_LOOP rlASMCAllUnitsSetTurnStatus, $0000
+
+		STORE_WORD wEventEngineParameter1, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved
+		CALL_ASM_LOOP rlASMCAllUnitsUnsetTurnStatus, $0000
+
+		STORE_WORD lEventEngineUnitGroupPointer, $000002
+		CALL_ASM_LOOP rlASMCGetStartingPositionsArrayPointerAndLength, $0000
+
+		CALL_ASM_LOOP rlASMCLoadPlayerUnitsByStartingPositions, $0000
+
+		macroDialogueWithBackground dialogueChapter2xOpening1, 1
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+		YIELD
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+
+		LOAD1 eventChapter2xData._LithisShivaGroup
+		WAIT_MOVE
+		YIELD
+
+		STORE_LONG lEventEngineUnitGroupPointer, eventChapter2xData._EnemyGroup1
+		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+		YIELD_UNK
+
+		STORE_LONG lEventEngineUnitGroupPointer, eventChapter2xData._EnemyGroup3
+		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+		YIELD_UNK
+
+		STORE_LONG lEventEngineUnitGroupPointer, eventChapter2xData._EnemyGroup4
+		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+		YIELD_UNK
+
+		STORE_LONG lEventEngineUnitGroupPointer, eventChapter2xData._EnemyGroup5
+		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+		YIELD_UNK
+
+		STORE_LONG lEventEngineUnitGroupPointer, eventChapter2xData._EnemyGroup6
+		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+		YIELD_UNK
+
+		PLAY_SOUND_WORD $00E7
+
+		SCROLL_CAMERA_SPEED [9, 11], 3
+		YIELD
+
+		DIALOGUE dialogueChapter2xOpening2
+		YIELD
+	END2
+
+	_TopIslandReinforcements ; 97/82F6
+		LOAD2 eventChapter2xData._TopIslandReinforcementsGroup1
+		WAIT_MOVE
+		YIELD
+
+		LOAD2 eventChapter2xData._TopIslandReinforcementsGroup2
+		WAIT_MOVE
+		YIELD
+
+		LOAD2 eventChapter2xData._TopIslandReinforcementsGroup3
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_UnusedReinforcements1 ; 97/8309
+		LOAD2 eventChapter2xData._TopIslandReinforcementsGroup2
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_UnusedReinforcements2 ; 97/8310
+		LOAD2 eventChapter2xData._TopIslandReinforcementsGroup3
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_LowerRightIslandReinforcements ; 97/8317
+		LOAD2 eventChapter2xData._LowerRightIslandReinforcementsGroup1
+		WAIT_MOVE
+		YIELD
+
+		LOAD2 eventChapter2xData._LowerRightIslandReinforcementsGroup2
+		WAIT_MOVE
+		YIELD
+
+		LOAD2 eventChapter2xData._LowerRightIslandReinforcementsGroup3
+		WAIT_MOVE
+		YIELD
+
+		LOAD2 eventChapter2xData._LowerRightIslandReinforcementsGroup4
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_UnusedReinforcements3 ; 97/8330
+		LOAD2 eventChapter2xData._LowerRightIslandReinforcementsGroup2
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_UnusedReinforcements4 ; 97/8337
+		LOAD2 eventChapter2xData._LowerRightIslandReinforcementsGroup3
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_UnusedReinforcements5 ; 97/833E
+		LOAD2 eventChapter2xData._LowerRightIslandReinforcementsGroup4
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_LowerLeftIslandReinforcements ; 97/8345
+		LOAD2 eventChapter2xData._LowerLeftIslandReinforcementsGroup1
+		WAIT_MOVE
+		YIELD
+
+		LOAD2 eventChapter2xData._LowerLeftIslandReinforcementsGroup2
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_UnusedReinforcements6 ; 97/8352
+		LOAD2 eventChapter2xData._LowerLeftIslandReinforcementsGroup2
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_TorchPickup ; 97/8359
+		STORE_WORD wEventEngineParameter1, TurnStatusDead
+		CALL_ASM_LOOP rlASMCActiveUnitTestTurnStatus, $0000
+		JUMP_TRUE +
+
+		macroGiveItemToActiveUnit Torch
+		CALL_ASM_LOOP rlASMCSaveActiveUnitData, $0000
+
+		+
+	END2
+
+	_EndingEvent ; 97/8398
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 16
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $43
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+
+		macroSubtractCharacterByte Leif, structCharacterDataRAM.LeadershipStars, 1
+
+		FADE_OUT $01
+		YIELD
+
+		STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
+
+		STORE_WORD wEventEngineCharacterTarget, Lithis
+		CALL_ASM_LOOP rlASMCChangeAllegianceToPlayerIfCaptured, $0000
+
+		macroDialogueWithBackground dialogueChapter2xEnding1, 1
+
+		JUMP_FALSE +
+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter2xEnding2
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+		+
+		YIELD
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
+
+		FADE_OUT $01
+		YIELD
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
+
+		STORE_BYTE bBuf_INIDISP, $00
+
+		STORE_LONG lEventEngineUnitGroupPointer, eventChapter2xData._SapphieGroup
+		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+		YIELD_UNK
+
+		STORE_LONG lEventEngineLongParameter, $000000
+		STORE_WORD lEventEngineUnitGroupPointer, $0002
+		CALL_ASM_LOOP rlASMCPrepareCapturedUnitsForRescue, $0000
+
+		FADE_OUT $01
+		YIELD
+
+		CALL_ASM_LOOP rlASMCChapterEnd, $0000
+	END1

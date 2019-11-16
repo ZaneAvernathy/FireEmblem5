@@ -1,0 +1,12 @@
+; 90/85E9
+DIALOGUE_FONT_0
+.text "７６１　"
+DIALOGUE_FONT_1
+.text "⅛⅛"
+DIALOGUE_FONT_0
+.text "イードの"
+DIALOGUE_FONT_4
+.text "虐"
+DIALOGUE_FONT_1
+.text "殺"
+DIALOGUE_EOF

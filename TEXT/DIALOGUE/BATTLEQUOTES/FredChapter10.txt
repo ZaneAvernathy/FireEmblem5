@@ -1,0 +1,21 @@
+dialogueFredChapter10BattleQuote ; E7/9676
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "フリージの"
+	DIALOGUE_FONT_1
+	.text "領土"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "侵"
+	DIALOGUE_FONT_0
+	.text "すとは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "きさまら､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "何者"
+	DIALOGUE_FONT_0
+	.text "だ！"
+DIALOGUE_END_SCENE

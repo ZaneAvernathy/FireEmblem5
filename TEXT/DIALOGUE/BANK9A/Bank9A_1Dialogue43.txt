@@ -1,0 +1,10 @@
+; 9A/BBC1
+DIALOGUE_FONT_0
+.text "にて"
+DIALOGUE_FONT_4
+.text "毒"
+DIALOGUE_FONT_0
+.text "で"
+DIALOGUE_FONT_2
+.text "死亡"
+DIALOGUE_EOF

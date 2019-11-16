@@ -1,0 +1,219 @@
+dialogueChapter16AOpening2 ; 98/A12C
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "先発"
+	DIALOGUE_FONT_0
+	.text "した"
+	DIALOGUE_FONT_1
+	.text "兵"
+	DIALOGUE_FONT_0
+	.text "からの"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "らせです"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "敵"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_3
+	.text "陣形"
+	DIALOGUE_FONT_0
+	.text "はこのようになっております"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ノルデン"
+	DIALOGUE_FONT_1
+	.text "砦"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_4
+	.text "周"
+	DIALOGUE_FONT_1
+	.text "辺"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "石"
+	DIALOGUE_FONT_2
+	.text "弓"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_2
+	.text "部隊"
+	DIALOGUE_FONT_0
+	.text "か･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "これを"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "とかしないと"
+	DIALOGUE_FONT_1
+	.text "砦"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_2
+	.text "落"
+	DIALOGUE_FONT_0
+	.text "とせないな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_4
+	.text "川"
+	DIALOGUE_FONT_1
+	.text "向"
+	DIALOGUE_FONT_0
+	.text "こうにわたるには"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "この"
+	DIALOGUE_FONT_2
+	.text "橋"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "奪"
+	DIALOGUE_FONT_0
+	.text "うしかありません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "しかし､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "装"
+	DIALOGUE_FONT_3
+	.text "甲"
+	DIALOGUE_FONT_1
+	.text "軍団"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "守備"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "固"
+	DIALOGUE_FONT_0
+	.text "めており"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "シューターの"
+	DIALOGUE_FONT_3
+	.text "射"
+	DIALOGUE_FONT_5
+	.text "程"
+	DIALOGUE_FONT_1
+	.text "内"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "うのは"
+	DIALOGUE_NL
+	.text "われらが"
+	DIALOGUE_FONT_2
+	.text "不利"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ということは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "この"
+	DIALOGUE_FONT_2
+	.text "装"
+	DIALOGUE_FONT_3
+	.text "甲"
+	DIALOGUE_FONT_1
+	.text "軍団"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_3
+	.text "射"
+	DIALOGUE_FONT_5
+	.text "程"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_3
+	.text "外"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "誘"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "せばいいんだな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "しかし"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "そうやすやすと"
+	DIALOGUE_FONT_1
+	.text "敵"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_2
+	.text "動"
+	DIALOGUE_FONT_0
+	.text "くとも"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "えません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "だが､一"
+	DIALOGUE_FONT_5
+	.text "考"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_4
+	.text "価値"
+	DIALOGUE_FONT_0
+	.text "はあると"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "う"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "なにかしら"
+	DIALOGUE_FONT_1
+	.text "方法"
+	DIALOGUE_FONT_0
+	.text "があるはずだ･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+DIALOGUE_END_SCENE

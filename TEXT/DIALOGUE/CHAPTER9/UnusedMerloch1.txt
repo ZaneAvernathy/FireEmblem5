@@ -1,0 +1,52 @@
+dialogueChapter9UnusedMerloch1 ; 93/EA16
+		DIALOGUE_RIGHT
+		DIALOGUE_LOAD MerlochPortrait
+		DIALOGUE_FONT_0
+		.text "うーむ"
+		DIALOGUE_NL
+		DIALOGUE_PAUSE $08
+		.text "まだ"
+		DIALOGUE_FONT_1
+		.text "山賊"
+		DIALOGUE_FONT_0
+		.text "どもを"
+		DIALOGUE_FONT_3
+		.text "掃"
+		DIALOGUE_FONT_1
+		.text "討"
+		DIALOGUE_FONT_0
+		.text "できぬか"
+		DIALOGUE_WAIT_PRESS
+		DIALOGUE_SCROLL
+		DIALOGUE_FONT_3
+		.text "仕"
+		DIALOGUE_FONT_1
+		.text "方"
+		DIALOGUE_FONT_0
+		.text "ない"
+		DIALOGUE_NL
+		DIALOGUE_PAUSE $08
+		.text "ランスアーマー"
+		DIALOGUE_FONT_2
+		.text "部隊"
+		DIALOGUE_FONT_0
+		.text "に"
+		DIALOGUE_NL
+		DIALOGUE_FONT_2
+		.text "突"
+		DIALOGUE_FONT_1
+		.text "撃"
+		DIALOGUE_FONT_0
+		.text "の"
+		DIALOGUE_FONT_1
+		.text "合"
+		DIALOGUE_FONT_4
+		.text "図"
+		DIALOGUE_FONT_0
+		.text "を"
+		DIALOGUE_FONT_3
+		.text "送"
+		DIALOGUE_FONT_0
+		.text "れ"
+		DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

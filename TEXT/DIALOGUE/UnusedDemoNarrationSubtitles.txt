@@ -1,0 +1,85 @@
+dialogueUnusedDemoNarrationSubtitles ; 9A/B770
+	DIALOGUE_FONT_0
+	.text "十二"
+	DIALOGUE_FONT_1
+	.text "聖戦士"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_2
+	.text "伝説"
+	DIALOGUE_FONT_0
+	.text "となったころ"
+	DIALOGUE_NL
+	.text "ユグドラル"
+	DIALOGUE_FONT_1
+	.text "大陸"
+	DIALOGUE_FONT_2
+	.text "全"
+	DIALOGUE_FONT_1
+	.text "土"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_5
+	.text "及"
+	DIALOGUE_FONT_0
+	.text "ぶ"
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_2
+	.text "乱"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_4
+	.text "起"
+	DIALOGUE_FONT_0
+	.text "こった"
+	DIALOGUE_NL
+	.text "イザークに"
+	DIALOGUE_FONT_4
+	.text "端"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "発"
+	DIALOGUE_FONT_0
+	.text "した"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "は､"
+	DIALOGUE_NL
+	.text "ヴェルダンやアグストリアに"
+	DIALOGUE_FONT_1
+	.text "飛"
+	DIALOGUE_FONT_0
+	.text "び"
+	DIALOGUE_FONT_1
+	.text "火"
+	DIALOGUE_FONT_0
+	.text "し､"
+	DIALOGUE_NL
+	.text "やがて"
+	DIALOGUE_FONT_1
+	.text "世代"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_3
+	.text "超"
+	DIALOGUE_FONT_0
+	.text "えた"
+	DIALOGUE_FONT_2
+	.text "壮絶"
+	DIALOGUE_FONT_0
+	.text "な"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "いへと"
+	DIALOGUE_FONT_2
+	.text "発"
+	DIALOGUE_FONT_4
+	.text "展"
+	DIALOGUE_FONT_0
+	.text "した"
+	DIALOGUE_NL
+DIALOGUE_EOF

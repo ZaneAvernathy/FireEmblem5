@@ -1,0 +1,43 @@
+dialogueChapter6PureWaterHouseVeraAlive ; 92/8F23
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCGirl2Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_2
+	.text "妹"
+	DIALOGUE_FONT_0
+	.text "のベラを"
+	DIALOGUE_FONT_1
+	.text "助"
+	DIALOGUE_FONT_0
+	.text "けてくださったそうですね"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ありがとうございます"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "あたしたち"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_5
+	.text "貧"
+	DIALOGUE_FONT_0
+	.text "しいから"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "たいしたお"
+	DIALOGUE_FONT_2
+	.text "礼"
+	DIALOGUE_FONT_0
+	.text "もできませんが"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "よろしければ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "このせいすいをお"
+	DIALOGUE_FONT_1
+	.text "持"
+	DIALOGUE_FONT_0
+	.text "ちください"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

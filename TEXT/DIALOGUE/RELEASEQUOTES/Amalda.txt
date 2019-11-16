@@ -1,0 +1,17 @@
+dialogueAmaldaReleaseQuote ; B0/C3BD
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "は､"
+	DIALOGUE_PAUSE $08
+	.text "一"
+	DIALOGUE_FONT_2
+	.text "体"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "をしているのだ･･･"
+DIALOGUE_END_SCENE

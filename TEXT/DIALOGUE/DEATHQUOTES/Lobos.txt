@@ -1,0 +1,19 @@
+dialogueLobosDeathQuote ; 93/88C2
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "うぐぐ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "これで"
+	DIALOGUE_FONT_2
+	.text "終"
+	DIALOGUE_FONT_0
+	.text "ったと"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "うなよ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ぐふっ"
+DIALOGUE_END_SCENE

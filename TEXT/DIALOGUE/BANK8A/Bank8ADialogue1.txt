@@ -1,0 +1,4 @@
+; 8A/B3E2
+DIALOGUE_FONT_0
+.text "はい　　　いいえ"
+DIALOGUE_EOF

@@ -1,0 +1,55 @@
+dialogueChapter6CedLeave ; 92/9937
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD CedPortrait
+	DIALOGUE_FONT_0
+	.text "そろそろ"
+	DIALOGUE_FONT_3
+	.text "限"
+	DIALOGUE_FONT_2
+	.text "界"
+	DIALOGUE_FONT_0
+	.text "か･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "これより"
+	DIALOGUE_FONT_1
+	.text "退"
+	DIALOGUE_FONT_3
+	.text "却"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "移"
+	DIALOGUE_FONT_0
+	.text "る"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "敵"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "本隊"
+	DIALOGUE_FONT_0
+	.text "がくる"
+	DIALOGUE_FONT_1
+	.text "前"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "全"
+	DIALOGUE_FONT_3
+	.text "員離"
+	DIALOGUE_FONT_2
+	.text "脱"
+	DIALOGUE_FONT_0
+	.text "するんだ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "急"
+	DIALOGUE_FONT_0
+	.text "げ！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

@@ -1,0 +1,268 @@
+dialogueChapter23CoulterSpawn ; 98/D443
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD AltenaPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD CoulterPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "コルータ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "マンスターの"
+	DIALOGUE_FONT_1
+	.text "様子"
+	DIALOGUE_FONT_0
+	.text "はどうか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "のところ"
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_0
+	.text "きな"
+	DIALOGUE_FONT_2
+	.text "動"
+	DIALOGUE_FONT_0
+	.text "きはありませんな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "しかし､"
+	DIALOGUE_PAUSE $08
+	.text "われらの"
+	DIALOGUE_FONT_3
+	.text "情報"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_2
+	.text "正"
+	DIALOGUE_FONT_0
+	.text "しければ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "近日中"
+	DIALOGUE_FONT_0
+	.text "にも"
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_0
+	.text "きな"
+	DIALOGUE_FONT_2
+	.text "動"
+	DIALOGUE_FONT_0
+	.text "きがあるはず"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "そのチャンスをみはからって"
+	DIALOGUE_NL
+	.text "一"
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "に･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "しかし､"
+	DIALOGUE_PAUSE $08
+	.text "そのために"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "市"
+	DIALOGUE_FONT_2
+	.text "民"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "巻"
+	DIALOGUE_FONT_0
+	.text "き"
+	DIALOGUE_FONT_2
+	.text "込"
+	DIALOGUE_FONT_0
+	.text "むというのは･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_NL
+	.text "マンスターが"
+	DIALOGUE_FONT_1
+	.text "解放"
+	DIALOGUE_FONT_0
+	.text "されれば"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "それはそれでわが"
+	DIALOGUE_FONT_1
+	.text "国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "利"
+	DIALOGUE_FONT_0
+	.text "になること"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "それならそれで"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "よいのではないか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "はあ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "しかし"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "これは"
+	DIALOGUE_FONT_3
+	.text "陛"
+	DIALOGUE_FONT_1
+	.text "下"
+	DIALOGUE_FONT_0
+	.text "のご"
+	DIALOGUE_FONT_2
+	.text "命令"
+	DIALOGUE_FONT_0
+	.text "ですので･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_FONT_1
+	.text "父上"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "がなんとか"
+	DIALOGUE_FONT_2
+	.text "説"
+	DIALOGUE_FONT_3
+	.text "得"
+	DIALOGUE_FONT_0
+	.text "してみよう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_UNLOAD
+	DIALOGUE_CLOSE
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "アルテナ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "はお"
+	DIALOGUE_FONT_5
+	.text "甘"
+	DIALOGUE_FONT_0
+	.text "い･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "マンスターを"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "入"
+	DIALOGUE_FONT_0
+	.text "れるには"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "最"
+	DIALOGUE_FONT_2
+	.text "高"
+	DIALOGUE_FONT_0
+	.text "のチャンスなのだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_3
+	.text "陛"
+	DIALOGUE_FONT_1
+	.text "下"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_FONT_1
+	.text "王女"
+	DIALOGUE_FONT_2
+	.text "殿"
+	DIALOGUE_FONT_1
+	.text "下"
+	DIALOGUE_FONT_0
+	.text "にはお"
+	DIALOGUE_FONT_5
+	.text "甘"
+	DIALOGUE_FONT_0
+	.text "いが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_2
+	.text "回"
+	DIALOGUE_FONT_0
+	.text "のことではさすがに"
+	DIALOGUE_NL
+	DIALOGUE_FONT_3
+	.text "耳"
+	DIALOGUE_FONT_0
+	.text "をお"
+	DIALOGUE_FONT_4
+	.text "貸"
+	DIALOGUE_FONT_0
+	.text "しにならぬと"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "く"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ここは､"
+	DIALOGUE_PAUSE $08
+	.text "そのまま"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_3
+	.text "陛"
+	DIALOGUE_FONT_1
+	.text "下"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "命令"
+	DIALOGUE_FONT_0
+	.text "にしたがって"
+	DIALOGUE_FONT_2
+	.text "動"
+	DIALOGUE_FONT_0
+	.text "くのが"
+	DIALOGUE_NL
+	.text "一"
+	DIALOGUE_FONT_4
+	.text "番"
+	DIALOGUE_FONT_0
+	.text "だな･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

@@ -1,0 +1,399 @@
+dialogueChapter2xOpening1 ; 95/C2CB
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LithisPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD ShivaPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "リフィス"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	.text "わかっていると"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "うが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そのシスターには"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "すなよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "あ､"
+	DIALOGUE_PAUSE $08
+	.text "ああ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "わかったよ･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_RIGHT
+	DIALOGUE_UNLOAD
+	DIALOGUE_CLOSE
+	DIALOGUE_LEFT
+	DIALOGUE_CLOSE
+	DIALOGUE_UNLOAD
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD SapphiePortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD LithisPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "なぁ､"
+	DIALOGUE_PAUSE $08
+	.text "サフィ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "たのむよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "おまえの"
+	DIALOGUE_FONT_2
+	.text "望"
+	DIALOGUE_FONT_0
+	.text "みはなんだって"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "いてやる"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "だから"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "オレの"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "うことを"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "いてくれよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ごめんなさい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "にはリノアン"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "からあたえられた"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "大事"
+	DIALOGUE_FONT_0
+	.text "な"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_2
+	.text "命"
+	DIALOGUE_FONT_0
+	.text "があるのです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "それともリフィス"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あなたは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ターラのために"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "ってくれますか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "オレに"
+	DIALOGUE_FONT_1
+	.text "帝国軍"
+	DIALOGUE_FONT_0
+	.text "と"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "えっていうのか？"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	.text "そりゃムチャだ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	DIALOGUE_FONT_2
+	.text "勝"
+	DIALOGUE_FONT_0
+	.text "てるはずがないよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "無"
+	DIALOGUE_FONT_2
+	.text "理"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "っているのは"
+	DIALOGUE_NL
+	.text "わかっています"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "でも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "けがれなき"
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_0
+	.text "どもたちを"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "生"
+	DIALOGUE_FONT_0
+	.text "けにえとして"
+	DIALOGUE_FONT_4
+	.text "差"
+	DIALOGUE_FONT_0
+	.text "し"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "すなど"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_2
+	.text "間"
+	DIALOGUE_FONT_0
+	.text "として"
+	DIALOGUE_NL
+	DIALOGUE_FONT_3
+	.text "許"
+	DIALOGUE_FONT_0
+	.text "されることではありません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_2
+	.text "全滅"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_4
+	.text "覚悟"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "上"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "それでも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちは"
+	DIALOGUE_FONT_3
+	.text "抵抗"
+	DIALOGUE_FONT_0
+	.text "すると"
+	DIALOGUE_FONT_1
+	.text "決"
+	DIALOGUE_FONT_0
+	.text "めたのです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "･･･ターラ"
+	DIALOGUE_FONT_1
+	.text "市"
+	DIALOGUE_FONT_2
+	.text "民"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "自分"
+	DIALOGUE_FONT_0
+	.text "のためだけに"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "うのではありません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "やがて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "世"
+	DIALOGUE_FONT_2
+	.text "界"
+	DIALOGUE_FONT_0
+	.text "すべてが"
+	DIALOGUE_FONT_1
+	.text "暗黒"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_3
+	.text "闇"
+	DIALOGUE_FONT_0
+	.text "におおわれる"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "今立"
+	DIALOGUE_FONT_0
+	.text "ち"
+	DIALOGUE_FONT_1
+	.text "上"
+	DIALOGUE_FONT_0
+	.text "がらなければ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "世"
+	DIALOGUE_FONT_2
+	.text "界"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "暗黒神"
+	DIALOGUE_FONT_0
+	.text "ロプトに"
+	DIALOGUE_FONT_2
+	.text "支配"
+	DIALOGUE_FONT_0
+	.text "されてしまうの"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "願"
+	DIALOGUE_FONT_0
+	.text "いリフィス"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あなたの"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "をかして！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ターラのために"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いえ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちの"
+	DIALOGUE_FONT_2
+	.text "未"
+	DIALOGUE_FONT_1
+	.text "来"
+	DIALOGUE_FONT_0
+	.text "のために"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	.text "一"
+	DIALOGUE_FONT_2
+	.text "緒"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "ってほしいのです！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ふーん･･･"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	.text "もしＯＫだと"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "ったら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "オレの"
+	DIALOGUE_FONT_2
+	.text "望"
+	DIALOGUE_FONT_0
+	.text "みをかなえてくれるか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ええ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "にできることなら･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "わかった"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	DIALOGUE_FONT_2
+	.text "部"
+	DIALOGUE_FONT_1
+	.text "下"
+	DIALOGUE_FONT_0
+	.text "たちを"
+	DIALOGUE_FONT_2
+	.text "説"
+	DIALOGUE_FONT_3
+	.text "得"
+	DIALOGUE_FONT_0
+	.text "してターラに"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "ってやる"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そのかわり"
+	DIALOGUE_FONT_3
+	.text "約束"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "れよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "はい！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+DIALOGUE_END_SCENE

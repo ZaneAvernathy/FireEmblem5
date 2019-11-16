@@ -1,0 +1,18 @@
+; 90/865F
+DIALOGUE_FONT_0
+.text "７６２　"
+DIALOGUE_FONT_1
+.text "⅛⅛"
+DIALOGUE_FONT_0
+.text "ノヴァ"
+DIALOGUE_FONT_4
+.text "河"
+DIALOGUE_FONT_1
+.text "会戦"
+DIALOGUE_FONT_0
+.text "､レンスター"
+DIALOGUE_FONT_2
+.text "落"
+DIALOGUE_FONT_1
+.text "城"
+DIALOGUE_EOF

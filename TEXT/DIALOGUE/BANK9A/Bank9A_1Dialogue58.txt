@@ -1,0 +1,15 @@
+; 9A/C1D3
+DIALOGUE_FONT_3
+.text "流"
+DIALOGUE_FONT_0
+.text "れ"
+DIALOGUE_FONT_1
+.text "者"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "傭兵"
+DIALOGUE_FONT_0
+.text "　ラルフ"
+DIALOGUE_NL
+DIALOGUE_EOF

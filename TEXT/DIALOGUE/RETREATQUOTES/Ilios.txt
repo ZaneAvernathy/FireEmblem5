@@ -1,0 +1,26 @@
+dialogueIliosRetreatQuote ; 82/C7A1
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD Ilios2Portrait
+	DIALOGUE_FONT_0
+	.text "ちっ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "平民"
+	DIALOGUE_FONT_0
+	.text "だと"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "ってこき"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "いやがって･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "もう､"
+	DIALOGUE_PAUSE $08
+	.text "やってられねぇぜ"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

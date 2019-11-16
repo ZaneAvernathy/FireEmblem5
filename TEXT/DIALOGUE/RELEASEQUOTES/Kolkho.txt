@@ -1,0 +1,8 @@
+dialogueKolkhoReleaseQuote ; 92/A3EB
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "くそぉぉぉぉ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "おぼえていやがれ！！"
+DIALOGUE_END_SCENE

@@ -1,0 +1,17 @@
+dialogueHalvanDeathQuote ; 82/B90C
+	DIALOGUE_FONT_1
+	.text "父"
+	DIALOGUE_FONT_0
+	.text "さん･･･"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "母"
+	DIALOGUE_FONT_0
+	.text "さん･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "すまない･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "おれまで･･･"
+DIALOGUE_END_SCENE

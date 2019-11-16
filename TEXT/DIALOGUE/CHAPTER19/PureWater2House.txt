@@ -1,0 +1,76 @@
+dialogueChapter19PureWater2House ; B0/B9F5
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan8Portrait
+	DIALOGUE_FONT_0
+	.text "なに､"
+	DIALOGUE_PAUSE $08
+	.text "このトラキアを"
+	DIALOGUE_FONT_1
+	.text "解放"
+	DIALOGUE_FONT_0
+	.text "するために"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "っているとな？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_2
+	.text "天"
+	DIALOGUE_FONT_4
+	.text "晴"
+	DIALOGUE_FONT_0
+	.text "れな"
+	DIALOGUE_FONT_2
+	.text "心"
+	DIALOGUE_FONT_1
+	.text "意気"
+	DIALOGUE_FONT_0
+	.text "じゃ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "うん､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "入"
+	DIALOGUE_FONT_0
+	.text "った､"
+	DIALOGUE_PAUSE $08
+	.text "このせいすいをやろう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "帝国軍"
+	DIALOGUE_FONT_0
+	.text "には"
+	DIALOGUE_FONT_1
+	.text "魔法"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "うものも"
+	DIALOGUE_FONT_1
+	.text "多"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "きっと"
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "つじゃろうて"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

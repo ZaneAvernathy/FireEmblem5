@@ -1,0 +1,117 @@
+dialogueChapter11KempfDialogue ; 95/F1AB
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD KempfPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "なんだと！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "敵"
+	DIALOGUE_FONT_0
+	.text "はレンスターの"
+	DIALOGUE_FONT_3
+	.text "旗"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	.text "かかげているだと！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "おまけに"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "指揮"
+	DIALOGUE_FONT_2
+	.text "官"
+	DIALOGUE_FONT_0
+	.text "は１４､５の"
+	DIALOGUE_FONT_2
+	.text "少"
+	DIALOGUE_FONT_1
+	.text "年"
+	DIALOGUE_FONT_0
+	.text "だというのか！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "うーむ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "おそらくそれはリーフ"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "だ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ふっ､"
+	DIALOGUE_PAUSE $08
+	.text "おもしろい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "これは"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "がらをたてるチャンスかも"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "れんな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "よし､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "俺"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_5
+	.text "笨"
+	DIALOGUE_FONT_0
+	.text "がある"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "やつらを"
+	DIALOGUE_FONT_1
+	.text "東"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "回"
+	DIALOGUE_FONT_0
+	.text "ろうに"
+	DIALOGUE_FONT_2
+	.text "誘"
+	DIALOGUE_FONT_0
+	.text "いこめ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "作"
+	DIALOGUE_FONT_1
+	.text "戦名"
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_0
+	.text "ポートクリス"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "だ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "まちがっても"
+	DIALOGUE_FONT_1
+	.text "敵"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "見破"
+	DIALOGUE_FONT_0
+	.text "られるなよ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

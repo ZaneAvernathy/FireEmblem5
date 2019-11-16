@@ -1,0 +1,207 @@
+dialogueChapter6Opening2 ; 92/89F4
+	DIALOGUE_ASMC_0 rlDialogueSilenceMusic
+	DIALOGUE_PAUSE $10
+	DIALOGUE_UNK $13
+	.text "め"
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD KarinPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "街"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "入"
+	DIALOGUE_FONT_0
+	.text "らなければいいのでしょ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "だったら"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "にまかせてください"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "一"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "ずつなら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "のエルメスに"
+	DIALOGUE_FONT_3
+	.text "乗"
+	DIALOGUE_FONT_0
+	.text "せて"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "運"
+	DIALOGUE_FONT_0
+	.text "んであげます"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_2
+	.text "空"
+	DIALOGUE_FONT_0
+	.text "からなら"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_5
+	.text "壁"
+	DIALOGUE_FONT_0
+	.text "をこえていけるし"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "敵"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "つかる"
+	DIALOGUE_FONT_2
+	.text "心配"
+	DIALOGUE_FONT_0
+	.text "もないわ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "そうか"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "それなら"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "わなくても"
+	DIALOGUE_FONT_2
+	.text "脱"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "できる"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "でも､"
+	DIALOGUE_PAUSE $08
+	.text "カリンたちは"
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_4
+	.text "丈"
+	DIALOGUE_FONT_2
+	.text "夫"
+	DIALOGUE_FONT_0
+	.text "なのか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "エルメスは"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "のために"
+	DIALOGUE_NL
+	.text "がんばるって"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "ってくれてるわ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ホントはね"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ペガサスは"
+	DIALOGUE_FONT_1
+	.text "女"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_0
+	.text "にしか"
+	DIALOGUE_FONT_2
+	.text "心"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_3
+	.text "許"
+	DIALOGUE_FONT_0
+	.text "さないの"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "男"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "にはふれられるのもイヤみたい"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "でも､"
+	DIALOGUE_PAUSE $08
+	.text "エルメスは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ガマンしてくれるって･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "男"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_0
+	.text "だからガマン"
+	DIALOGUE_FONT_2
+	.text "強"
+	DIALOGUE_FONT_0
+	.text "いのよね"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_FONT_2
+	.text "脱"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "については"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "それでよろしいでしょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "あとは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "城下"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "訪"
+	DIALOGUE_FONT_0
+	.text "れるかどうか･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "それが"
+	DIALOGUE_FONT_4
+	.text "問題"
+	DIALOGUE_FONT_0
+	.text "ですな"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

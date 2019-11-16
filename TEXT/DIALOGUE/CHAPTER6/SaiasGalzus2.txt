@@ -1,0 +1,12 @@
+dialogueChapter6SaiasGalzus2 ; 93/AF8A
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD GalzusPortrait
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "づかなかった･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "まさかおまえだとは･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

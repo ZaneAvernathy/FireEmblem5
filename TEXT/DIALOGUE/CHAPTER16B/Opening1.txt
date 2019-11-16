@@ -1,0 +1,147 @@
+dialogueChapter16BOpening1 ; DA/D000
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD DoriasPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "この"
+	DIALOGUE_FONT_3
+	.text "森"
+	DIALOGUE_FONT_0
+	.text "はメルフィーユの"
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_3
+	.text "森林"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "通称"
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_3
+	.text "迷"
+	DIALOGUE_FONT_0
+	.text "いの"
+	DIALOGUE_FONT_3
+	.text "森"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_3
+	.text "迷"
+	DIALOGUE_FONT_0
+	.text "いの"
+	DIALOGUE_FONT_3
+	.text "森"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "それで､"
+	DIALOGUE_PAUSE $08
+	.text "どう"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "けばいいんだ？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_3
+	.text "森"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "北東"
+	DIALOGUE_FONT_0
+	.text "へ"
+	DIALOGUE_FONT_4
+	.text "抜"
+	DIALOGUE_FONT_0
+	.text "けることができれば"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "レンスター"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "目"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "前"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ただし､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "脱落"
+	DIALOGUE_FONT_1
+	.text "者"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "さぬよう"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "最後"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "く"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "がよろしいでしょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "わかった"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "皆"
+	DIALOGUE_FONT_0
+	.text "にも"
+	DIALOGUE_FONT_3
+	.text "注"
+	DIALOGUE_FONT_1
+	.text "意"
+	DIALOGUE_FONT_0
+	.text "をおこたらぬように"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "ってくれ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "では､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_2
+	.text "発"
+	DIALOGUE_FONT_0
+	.text "だ！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

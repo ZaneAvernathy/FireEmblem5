@@ -1,0 +1,252 @@
+dialogueChapter23Opening2 ; 98/D163
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD EichmannPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD RaydrikPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "なにっ､"
+	DIALOGUE_PAUSE $08
+	.text "このマンスターから"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "げ"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "しているものたちがおるだと！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "はっ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "どうやらマギ"
+	DIALOGUE_FONT_1
+	.text "団"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "のものが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ひそかに"
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_3
+	.text "供"
+	DIALOGUE_FONT_0
+	.text "たちを"
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "がしているようです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おのれ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_3
+	.text "供"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "にささげねばならぬ"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_2
+	.text "切"
+	DIALOGUE_FONT_0
+	.text "なシロモノだというに･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ファーデン"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD FardenPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "このさいだ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "げる"
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_3
+	.text "供"
+	DIALOGUE_FONT_0
+	.text "たちを"
+	DIALOGUE_FONT_1
+	.text "始末"
+	DIALOGUE_FONT_0
+	.text "してしまえ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "残"
+	DIALOGUE_FONT_0
+	.text "っている"
+	DIALOGUE_FONT_1
+	.text "市"
+	DIALOGUE_FONT_2
+	.text "民"
+	DIALOGUE_FONT_0
+	.text "どもに"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "げ"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "せばどういうことになるのか"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "せつけてやるのだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "おまかせください"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_UNLOAD
+	DIALOGUE_CLOSE
+	DIALOGUE_PAUSE $10
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AlphanPortrait
+	DIALOGUE_FONT_0
+	.text "レイドリック"
+	DIALOGUE_FONT_2
+	.text "卿"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_0
+	.text "お"
+	DIALOGUE_FONT_4
+	.text "呼"
+	DIALOGUE_FONT_0
+	.text "びとうかがいましたが･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "アルファンか"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "前"
+	DIALOGUE_FONT_0
+	.text "はマンスター"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "城門"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "れ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "レンスターのこせがれが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "マンスターめがけて"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "進軍"
+	DIALOGUE_FONT_0
+	.text "していると"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "く"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "それに"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "城内"
+	DIALOGUE_FONT_0
+	.text "におるマギ"
+	DIALOGUE_FONT_1
+	.text "団"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "連"
+	DIALOGUE_FONT_1
+	.text "中"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_FONT_3
+	.text "侮"
+	DIALOGUE_FONT_0
+	.text "れん"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "いずれにせよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "やつらに"
+	DIALOGUE_FONT_1
+	.text "城門"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_5
+	.text "渡"
+	DIALOGUE_FONT_0
+	.text "してはならん"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "よいな！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "はい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "では"
+	DIALOGUE_FONT_4
+	.text "早"
+	DIALOGUE_FONT_1
+	.text "速城門"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "りにつきます"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

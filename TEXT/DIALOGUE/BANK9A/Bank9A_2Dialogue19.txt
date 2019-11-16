@@ -1,0 +1,11 @@
+; 9A/E09B
+DIALOGUE_FONT_0
+.text "グラン"
+DIALOGUE_FONT_4
+.text "暦"
+DIALOGUE_FONT_0
+.text "７７７"
+DIALOGUE_FONT_1
+.text "年"
+DIALOGUE_NL
+DIALOGUE_EOF

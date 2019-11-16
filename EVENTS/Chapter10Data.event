@@ -1,0 +1,100 @@
+
+eventChapter10Data ; B1/D1EF
+
+	_LargoCameraCoordinates ; B1/D1EF
+		.byte 8, 12
+
+	_LargoGroup ; B1/D1F1
+		UNIT Largo, Enemy, [4, 12], [4, 12], Largo, [Greatlance, Greatbow, Horseslayer, KnightCrest], 8, True, [$01, $03, $00, $80]
+	UNIT
+
+	_PrepGroup1 ; B1/D207
+		.byte 9, 12
+
+		UNIT FriegeBallista1, Enemy, [13, 6], [13, 6], Largo, [Ballista], 3, False, [$01, $03, $00, $00]
+		UNIT FriegeBallista1, Enemy, [9, 15], [9, 15], Largo, [Ballista], 3, False, [$01, $03, $00, $00]
+		UNIT FriegeBallista1, Enemy, [12, 18], [12, 18], Largo, [Ballista], 3, False, [$01, $03, $00, $00]
+		UNIT Dvorak, Enemy, [3, 3], [3, 3], Dvorak, [SilverLance], 8, False, [$00, $0C, $00, $30]
+		UNIT FriegeBallista1, Enemy, [27, 3], [27, 3], Largo, [Ballista], 3, False, [$01, $03, $00, $00]
+		UNIT FriegeBallista1, Enemy, [11, 11], [11, 11], Largo, [Ballista], 3, False, [$01, $03, $00, $00]
+		UNIT FriegeBallista1, Enemy, [17, 10], [17, 10], Largo, [Ballista], 3, False, [$01, $03, $00, $00]
+	UNIT
+
+	_PrepGroup2 ; B1/D297
+		.byte 8, 15
+
+		UNIT FriegeCavalier1, Enemy, [7, 12], [7, 12], Largo, [LongLance], 12, False, [$02, $15, $02, $00]
+		UNIT FriegeCavalier1, Enemy, [6, 12], [6, 12], Largo, [Horseslayer], 15, False, [$02, $15, $02, $00]
+		UNIT FriegeCavalier1, Enemy, [6, 11], [6, 11], Largo, [Armorslayer], 14, False, [$02, $15, $02, $00]
+		UNIT FriegeSoldier2, Enemy, [9, 18], [9, 18], Largo, [Javelin], 12, False, [$02, $15, $00, $00]
+		UNIT FriegeMage1, Enemy, [8, 19], [8, 19], Largo, [Thunder], 10, False, [$02, $15, $00, $00]
+		UNIT FriegeSoldier2, Enemy, [9, 19], [9, 19], Largo, [Javelin], 12, False, [$02, $15, $00, $00]
+		UNIT FriegeCavalier1, Enemy, [7, 11], [7, 11], Largo, [LongLance], 10, False, [$02, $15, $02, $00]
+		UNIT FriegeSoldier2, Enemy, [9, 20], [9, 20], Largo, [Javelin], 12, False, [$02, $15, $00, $00]
+		UNIT FriegeArmoredSword2, Enemy, [15, 12], [15, 12], Largo, [Longsword], 8, False, [$01, $03, $02, $00]
+		UNIT FriegeArmoredSword2, Enemy, [14, 12], [14, 12], Largo, [Longsword], 8, False, [$01, $03, $02, $00]
+		UNIT FriegeArmoredSword2, Enemy, [14, 11], [14, 11], Largo, [Longsword], 8, False, [$01, $03, $02, $00]
+		UNIT FriegeArmoredSword2, Enemy, [15, 11], [15, 11], Largo, [Longsword], 8, False, [$01, $03, $02, $00]
+		UNIT FriegeArmoredSword2, Enemy, [9, 10], [9, 10], Largo, [Longsword], 8, False, [$01, $03, $02, $00]
+		UNIT FriegeArmoredBow1, Enemy, [13, 11], [13, 11], Largo, [Longbow], 6, False, [$01, $03, $02, $00]
+		UNIT FriegeArmoredBow1, Enemy, [13, 12], [13, 12], Largo, [Longbow], 8, False, [$01, $03, $02, $00]
+		UNIT FriegeSoldier2, Enemy, [28, 5], [28, 5], Largo, [Javelin], 10, False, [$01, $03, $00, $00]
+		UNIT ThiefEnemy1, Enemy, [2, 16], [2, 16], Raydrik, [Lockpick, IronSword, StaminaDrink], 10, False, [$02, $05, $00, $02]
+		UNIT FriegeArmoredSword2, Enemy, [24, 11], [24, 11], Largo, [FireBrand, BridgeKey, Vulnerary], 14, False, [$01, $03, $03, $00]
+		UNIT FriegeSoldier2, Enemy, [15, 19], [15, 19], Largo, [ShortLance], 6, False, [$00, $03, $00, $00]
+		UNIT ThiefEnemy1, Enemy, [18, 11], [18, 11], Raydrik, [Rapier, StaminaDrink], 9, False, [$02, $05, $00, $02]
+		UNIT FriegeSoldier2, Enemy, [27, 6], [27, 6], Largo, [Javelin], 10, False, [$01, $03, $00, $00]
+		UNIT FriegeBishop2, Enemy, [10, 4], [10, 4], Largo, [Bolting, Physic, Heal], 5, False, [$01, $03, $00, $00]
+	UNIT
+
+	_UnusedCoordinates1 ; B1/D453
+		.byte 9, 12
+
+	_UnusedUnitGroup1 ; B1/D455
+		UNIT FriegeSoldier2, Enemy, [1, 11], [1, 11], Largo, [ShortLance], 5, False, [$00, $00, $00, $00]
+	UNIT
+
+	_UnusedCoordinates2 ; B1/D46B
+		.byte 9, 12
+
+	_UnusedUnitGroup2 ; B1/D46D
+		UNIT FriegeCavalier1, Enemy, [1, 12], [1, 12], Largo, [ShortLance], 5, False, [$00, $00, $00, $00]
+	UNIT
+
+	_UnusedCoordinates3 ; B1/D483
+		.byte 9, 12
+
+	_UnusedUnitGroup3 ; B1/D485
+		UNIT FriegeSoldier2, Enemy, [1, 13], [1, 13], Largo, [ShortLance], 5, False, [$00, $00, $00, $00]
+	UNIT
+
+	_UnusedCoordinates4 ; B1/D49B
+		.byte 8, 7
+
+	_FredOlwenGroup ; B1/D49D
+		UNIT Fred, Enemy, [4, 13], [4, 13], Largo, [VoltEdge, Vulnerary], 1, False, [$00, $01, $02, $00]
+		UNIT Olwen, Enemy, [3, 13], [3, 13], Largo, [Dimevolt, Vulnerary], 2, False, [$00, $01, $02, $00]
+	UNIT
+
+	_StartingPositions ; B1/D4C7
+		.byte 29, 13
+		.byte 28, 14
+		.byte 27, 15
+		.byte 27, 16
+		.byte 28, 17
+		.byte 29, 18
+		.byte 30, 15
+		.byte 30, 16
+		.byte 29, 14
+		.byte 29, 17
+		.byte 28, 15
+		.byte 28, 16
+		.byte 29, 15
+		.byte 29, 16
+	.byte $FF
+
+	_Armory ; B1/D4E4
+		SHOP [27, 5], [IronSword, SteelSword, SlimSword, IronBlade]
+
+	_Vendor ; B1/D4F6
+		SHOP [28, 4], [Vulnerary, Heal, Torch, Thunder]

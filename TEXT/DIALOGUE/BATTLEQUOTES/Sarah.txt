@@ -1,0 +1,9 @@
+dialogueSarahBattleQuote ; 98/CAE5
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･･あたしのこと"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･きらいなの？"
+	DIALOGUE_NL
+DIALOGUE_END_SCENE

@@ -1,0 +1,129 @@
+dialogueChapter2xLeifEyvelTalk ; 95/C7EE
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD EyvelPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "エーヴェル"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "海賊"
+	DIALOGUE_FONT_0
+	.text "はかなりの"
+	DIALOGUE_FONT_1
+	.text "数"
+	DIALOGUE_FONT_0
+	.text "だが"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "勝"
+	DIALOGUE_FONT_0
+	.text "てるだろうか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_4
+	.text "丈"
+	DIALOGUE_FONT_2
+	.text "夫"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "無"
+	DIALOGUE_FONT_2
+	.text "理"
+	DIALOGUE_FONT_0
+	.text "をしなければ"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "恐"
+	DIALOGUE_FONT_0
+	.text "れることはありません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "エーヴェルは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "リフィスという"
+	DIALOGUE_FONT_1
+	.text "男"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "っているのか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ええ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "リフィスはただの"
+	DIALOGUE_FONT_1
+	.text "小悪"
+	DIALOGUE_FONT_2
+	.text "党"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_0
+	.text "すにも"
+	DIALOGUE_FONT_4
+	.text "値"
+	DIALOGUE_FONT_0
+	.text "しません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_0
+	.text "リフィスを"
+	DIALOGUE_FONT_1
+	.text "捕"
+	DIALOGUE_FONT_0
+	.text "えたら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "がさないでください"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "イスの"
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "連"
+	DIALOGUE_FONT_0
+	.text "れ"
+	DIALOGUE_FONT_2
+	.text "帰"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "村人"
+	DIALOGUE_FONT_0
+	.text "たちに"
+	DIALOGUE_NL
+	.text "つぐないをさせましょう"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

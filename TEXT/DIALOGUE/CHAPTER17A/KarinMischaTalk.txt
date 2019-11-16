@@ -1,0 +1,102 @@
+dialogueChapter17AKarinMischaTalk ; 98/C28D
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD MischaPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD KarinPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ミーシャ"
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちシレジア"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "にとっても"
+	DIALOGUE_NL
+	DIALOGUE_FONT_4
+	.text "憎"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_1
+	.text "敵"
+	DIALOGUE_FONT_0
+	.text "でしょう？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "それなのにどうして"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "彼"
+	DIALOGUE_FONT_0
+	.text "らの"
+	DIALOGUE_FONT_2
+	.text "味"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "をするの！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "には"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "らなければならないものがある"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ただ､"
+	DIALOGUE_PAUSE $08
+	.text "それだけです･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "らなければならないもの？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "あなたには"
+	DIALOGUE_FONT_2
+	.text "関"
+	DIALOGUE_FONT_4
+	.text "係"
+	DIALOGUE_FONT_0
+	.text "のないことです"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "もう"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "きなさい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "いが"
+	DIALOGUE_FONT_1
+	.text "始"
+	DIALOGUE_FONT_0
+	.text "まります"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

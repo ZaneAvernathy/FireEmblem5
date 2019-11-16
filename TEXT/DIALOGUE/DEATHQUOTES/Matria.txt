@@ -1,0 +1,23 @@
+dialogueMatriaDeathQuote ; 82/BAD2
+	DIALOGUE_FONT_0
+	.text "･･･もう一"
+	DIALOGUE_FONT_2
+	.text "度"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_FONT_1
+	.text "豊"
+	DIALOGUE_FONT_0
+	.text "かなマンスター"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "たかった･･･"
+	DIALOGUE_PAUSE $10
+	.text "な･･･"
+DIALOGUE_END_SCENE

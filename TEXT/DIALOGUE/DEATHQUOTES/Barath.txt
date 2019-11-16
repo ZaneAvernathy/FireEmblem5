@@ -1,0 +1,11 @@
+dialogueBarathDeathQuote ; 92/FC71
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ぐ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "これまで･･･"
+	DIALOGUE_PAUSE $10
+	.text "か･･･"
+	DIALOGUE_NL
+DIALOGUE_END_SCENE

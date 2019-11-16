@@ -1,0 +1,44 @@
+dialogueChapter3HubertHouseOther ; 93/8757
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCGirl3Portrait
+	DIALOGUE_FONT_1
+	.text "弟"
+	DIALOGUE_FONT_0
+	.text "のユベルが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "帝国兵"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "連"
+	DIALOGUE_FONT_0
+	.text "れて"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "かれたの"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "願"
+	DIALOGUE_FONT_0
+	.text "いです"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "弟"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "取"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "してください！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

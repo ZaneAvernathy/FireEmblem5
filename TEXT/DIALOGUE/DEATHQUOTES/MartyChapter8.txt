@@ -1,0 +1,7 @@
+dialogueMartyChapter8DeathQuote ; 93/C439
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "なんで"
+	DIALOGUE_NL
+	.text "こうなるんだよぉ･･･"
+DIALOGUE_END_SCENE

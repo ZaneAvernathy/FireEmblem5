@@ -1,0 +1,18 @@
+; 90/86AD
+DIALOGUE_FONT_0
+.text "　　　　　"
+DIALOGUE_FONT_1
+.text "休戦"
+DIALOGUE_FONT_2
+.text "恊"
+DIALOGUE_FONT_3
+.text "定"
+DIALOGUE_FONT_0
+.text "｡"
+DIALOGUE_FONT_1
+.text "帝国領北"
+DIALOGUE_FONT_0
+.text "トラキア"
+DIALOGUE_FONT_1
+.text "王"
+DIALOGUE_EOF

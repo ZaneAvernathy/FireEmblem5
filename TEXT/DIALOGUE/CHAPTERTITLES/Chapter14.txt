@@ -1,0 +1,16 @@
+dialogueChapter14Title ; 9A/B9E3
+	DIALOGUE_FONT_2
+	.text "第"
+	DIALOGUE_FONT_0
+	.text "１４"
+	DIALOGUE_FONT_2
+	.text "章"
+	DIALOGUE_FONT_1
+	.text "⅛"
+	DIALOGUE_FONT_0
+	.text "　　　　　"
+	DIALOGUE_FONT_4
+	.text "総"
+	DIALOGUE_FONT_1
+	.text "攻撃"
+DIALOGUE_EOF

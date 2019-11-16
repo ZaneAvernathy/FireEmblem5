@@ -1,0 +1,210 @@
+dialogueChapter8xOpening1 ; 93/CB6B
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD TanyaPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD DagdarPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "タニア"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "おまえは一"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "げろ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "やつらはわしが"
+	DIALOGUE_FONT_2
+	.text "足止"
+	DIALOGUE_FONT_0
+	.text "めする"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "やだ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "げるんならオヤジも一"
+	DIALOGUE_FONT_2
+	.text "緒"
+	DIALOGUE_FONT_0
+	.text "だ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おまえが一"
+	DIALOGUE_FONT_2
+	.text "緒"
+	DIALOGUE_FONT_0
+	.text "だと"
+	DIALOGUE_FONT_2
+	.text "足"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "まといなんだ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "だまって"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "うことを"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "け！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "もう･･･"
+	DIALOGUE_PAUSE $10
+	.text "わかったよ･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD GomerPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おっと"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "げようったって"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "そうはいかねえ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD DagdarPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おまえら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "二"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "ともここで"
+	DIALOGUE_NL
+	.text "くたばってもらうぜ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ゴメス！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_5
+	.text "考"
+	DIALOGUE_FONT_0
+	.text "えなおせ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "おまえたちとは"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "いたくない"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "もうたくさんなんだよ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "こんな"
+	DIALOGUE_FONT_2
+	.text "荒"
+	DIALOGUE_FONT_0
+	.text "れた"
+	DIALOGUE_FONT_1
+	.text "土地"
+	DIALOGUE_FONT_0
+	.text "たがやして"
+	DIALOGUE_NL
+	.text "どうなるってんだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "どんなにがんばったって"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "満"
+	DIALOGUE_FONT_2
+	.text "足"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_5
+	.text "食"
+	DIALOGUE_FONT_0
+	.text "えやしねぇ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "あんたは"
+	DIALOGUE_NL
+	.text "エーヴェルという"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "女"
+	DIALOGUE_FONT_0
+	.text "ギツネにだまされてんだよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "いいとししてみっともないぜ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "この"
+	DIALOGUE_FONT_5
+	.text "色"
+	DIALOGUE_FONT_0
+	.text "ぼけジジイが！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "なんだと！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "この､"
+	DIALOGUE_PAUSE $08
+	.text "わしの"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_3
+	.text "走"
+	DIALOGUE_FONT_0
+	.text "りだったこぞうが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_3
+	.text "口"
+	DIALOGUE_FONT_0
+	.text "たたくんじゃねぇ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "ようし"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "やってやろうじゃねぇか！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "みんなまとめてかかってきやがれ！！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

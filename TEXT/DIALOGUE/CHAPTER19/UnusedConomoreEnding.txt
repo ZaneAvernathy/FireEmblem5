@@ -1,0 +1,21 @@
+dialogueChapter19UnusedConomoreEnding; B0/C1E2
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AnnaPortrait
+	DIALOGUE_FONT_0
+	.text "Ｍ𝑨Ｐ１９　Ｅ𝑫～コノモールが"
+	DIALOGUE_FONT_3
+	.text "仲"
+	DIALOGUE_FONT_2
+	.text "間"
+	DIALOGUE_NL
+	.text "現"
+	DIALOGUE_FONT_3
+	.text "在"
+	DIALOGUE_FONT_5
+	.text "工"
+	DIALOGUE_FONT_1
+	.text "事中"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

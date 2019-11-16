@@ -1,0 +1,14 @@
+; 9A/E0E5
+DIALOGUE_FONT_2
+.text "生"
+DIALOGUE_FONT_3
+.text "存"
+DIALOGUE_FONT_1
+.text "人数"
+DIALOGUE_FONT_0
+.text "　　　　　　　　"
+DIALOGUE_UNK $26
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "人"
+DIALOGUE_EOF

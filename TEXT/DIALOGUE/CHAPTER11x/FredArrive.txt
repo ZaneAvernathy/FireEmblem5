@@ -1,0 +1,65 @@
+dialogueChapter11xFredArrive ; 98/93DD
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD FredPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "オルエン"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "どこにおられるのです！！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "返"
+	DIALOGUE_FONT_1
+	.text "事"
+	DIALOGUE_FONT_0
+	.text "をしてください！！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD OlwenPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "フレッド？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "来"
+	DIALOGUE_FONT_0
+	.text "てくれたのね･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "こっちよ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_0
+	.text "どもたちも一"
+	DIALOGUE_FONT_2
+	.text "緒"
+	DIALOGUE_FONT_0
+	.text "なの！！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "でも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ケンプフの"
+	DIALOGUE_FONT_1
+	.text "兵"
+	DIALOGUE_FONT_0
+	.text "もいるから"
+	DIALOGUE_NL
+	DIALOGUE_FONT_4
+	.text "油"
+	DIALOGUE_FONT_2
+	.text "斯"
+	DIALOGUE_FONT_0
+	.text "しないで！！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

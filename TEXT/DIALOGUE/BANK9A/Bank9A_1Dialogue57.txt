@@ -1,0 +1,74 @@
+; 9A/C163
+DIALOGUE_FONT_5
+.text "紫"
+DIALOGUE_FONT_1
+.text "竜山"
+DIALOGUE_FONT_0
+.text "にもどり"
+DIALOGUE_NL
+.text "かつての"
+DIALOGUE_FONT_2
+.text "部"
+DIALOGUE_FONT_1
+.text "下"
+DIALOGUE_FONT_0
+.text "たちを"
+DIALOGUE_NL
+.text "とりまとめ"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "再"
+DIALOGUE_FONT_0
+.text "び"
+DIALOGUE_FONT_2
+.text "荒"
+DIALOGUE_FONT_0
+.text "れ"
+DIALOGUE_FONT_2
+.text "野"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "開発"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+.text "いどみはじめる"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "数年"
+DIALOGUE_FONT_0
+.text "のときを"
+DIALOGUE_FONT_3
+.text "経"
+DIALOGUE_FONT_0
+.text "て"
+DIALOGUE_NL
+DIALOGUE_FONT_5
+.text "紫"
+DIALOGUE_FONT_1
+.text "竜山近辺"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "豊"
+DIALOGUE_FONT_0
+.text "かな"
+DIALOGUE_FONT_1
+.text "土地"
+DIALOGUE_FONT_0
+.text "へと"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "生"
+DIALOGUE_FONT_0
+.text "まれ"
+DIALOGUE_FONT_3
+.text "変"
+DIALOGUE_FONT_0
+.text "わったという"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

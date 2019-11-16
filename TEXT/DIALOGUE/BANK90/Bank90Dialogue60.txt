@@ -1,0 +1,12 @@
+; 90/84DB
+DIALOGUE_FONT_0
+.text "　　　　　"
+DIALOGUE_FONT_2
+.text "隣"
+DIALOGUE_FONT_1
+.text "国"
+DIALOGUE_FONT_0
+.text "ヴェルダンを"
+DIALOGUE_FONT_2
+.text "制圧"
+DIALOGUE_EOF

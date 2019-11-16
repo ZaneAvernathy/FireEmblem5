@@ -1,0 +1,15 @@
+; 9A/E055
+DIALOGUE_FONT_0
+.text "グランベル"
+DIALOGUE_FONT_1
+.text "帝国"
+DIALOGUE_FONT_0
+.text "には､ロプト"
+DIALOGUE_FONT_3
+.text "教"
+DIALOGUE_FONT_1
+.text "団"
+DIALOGUE_FONT_0
+.text "と"
+DIALOGUE_NL
+DIALOGUE_EOF

@@ -1,0 +1,4 @@
+; 90/8078
+DIALOGUE_FONT_0
+.text "エリートモード"
+DIALOGUE_EOF

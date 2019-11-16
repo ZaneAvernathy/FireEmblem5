@@ -1,0 +1,10 @@
+dialogueRalphRetreatQuote ; 82/C166
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD RalphPortrait
+	DIALOGUE_FONT_0
+	.text "ちっ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "まだまだこれからってのに･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

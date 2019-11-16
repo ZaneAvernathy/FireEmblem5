@@ -1,0 +1,13 @@
+; 9A/BF72
+DIALOGUE_FONT_3
+.text "怒"
+DIALOGUE_FONT_0
+.text "れる"
+DIALOGUE_FONT_2
+.text "斧"
+DIALOGUE_FONT_1
+.text "戦士"
+DIALOGUE_FONT_0
+.text "　オーシン"
+DIALOGUE_NL
+DIALOGUE_EOF

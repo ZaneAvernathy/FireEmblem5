@@ -1,0 +1,9 @@
+; 9A/C89A
+DIALOGUE_FONT_0
+.text "ノディオンの"
+DIALOGUE_FONT_1
+.text "王女"
+DIALOGUE_FONT_0
+.text "　ナンナ"
+DIALOGUE_NL
+DIALOGUE_EOF

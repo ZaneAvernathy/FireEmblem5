@@ -1,0 +1,24 @@
+dialogueChapter22xTitle ; 9A/BB0F
+	DIALOGUE_FONT_2
+	.text "第"
+	DIALOGUE_FONT_0
+	.text "２２"
+	DIALOGUE_FONT_2
+	.text "章"
+	DIALOGUE_FONT_3
+	.text "外"
+	DIALOGUE_FONT_2
+	.text "伝"
+	DIALOGUE_FONT_0
+	.text "　　"
+	DIALOGUE_FONT_1
+	.text "山"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_5
+	.text "咲"
+	DIALOGUE_FONT_0
+	.text "く"
+	DIALOGUE_FONT_5
+	.text "花"
+DIALOGUE_EOF

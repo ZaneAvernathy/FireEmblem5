@@ -1,0 +1,28 @@
+dialogueChapter14House4 ; 92/D4C3
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman3Portrait
+	DIALOGUE_FONT_0
+	.text "これから一"
+	DIALOGUE_FONT_2
+	.text "体"
+	DIALOGUE_FONT_0
+	.text "どうなるのでしょう？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "他"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "町"
+	DIALOGUE_FONT_0
+	.text "なら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "もっとふつうに"
+	DIALOGUE_FONT_3
+	.text "暮"
+	DIALOGUE_FONT_0
+	.text "らせるのでしょうか･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

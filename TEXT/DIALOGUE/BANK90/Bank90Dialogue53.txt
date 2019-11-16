@@ -1,0 +1,26 @@
+; 90/8434
+DIALOGUE_FONT_2
+.text "第"
+DIALOGUE_FONT_0
+.text "２４"
+DIALOGUE_FONT_2
+.text "章"
+DIALOGUE_FONT_1
+.text "⅛⅛"
+DIALOGUE_FONT_0
+.text "　　"
+DIALOGUE_FONT_1
+.text "黒"
+DIALOGUE_FONT_5
+.text "衣"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "男"
+DIALOGUE_FONT_2
+.text "爵"
+DIALOGUE_FONT_0
+.text "（"
+DIALOGUE_NUMBER
+.text "）"
+DIALOGUE_EOF

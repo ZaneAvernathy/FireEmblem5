@@ -1,0 +1,21 @@
+dialogueDahlsonBattleQuote ; 95/DA2E
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "おまえたち"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "悪"
+	DIALOGUE_FONT_0
+	.text "いことは"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "わん"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_3
+	.text "牢"
+	DIALOGUE_FONT_0
+	.text "にもどれ！"
+DIALOGUE_END_SCENE

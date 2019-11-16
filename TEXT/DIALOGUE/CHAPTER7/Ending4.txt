@@ -1,0 +1,23 @@
+dialogueChapter7Ending4 ; 93/A64C
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD OrsinPortrait
+	DIALOGUE_FONT_0
+	.text "くそっ､"
+	DIALOGUE_PAUSE $08
+	.text "トラキアのやつら！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_2
+	.text "度"
+	DIALOGUE_FONT_1
+	.text "会"
+	DIALOGUE_FONT_0
+	.text "ったら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ただじゃすませねぇぜ！！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

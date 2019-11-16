@@ -1,0 +1,83 @@
+dialogueChapter6CedArrive ; 92/9893
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD CedPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "よかった"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "はまだ"
+	DIALOGUE_FONT_1
+	.text "無事"
+	DIALOGUE_FONT_0
+	.text "のようだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD NPCMan11Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ええ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "なんとか"
+	DIALOGUE_FONT_2
+	.text "間"
+	DIALOGUE_FONT_0
+	.text "にあったようです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ではこれより"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "われらがおとりとなって"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "脱"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "をたすける"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "みんなにはすまないが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "彼"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "死"
+	DIALOGUE_FONT_0
+	.text "なせるわけにはいかない"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "恊"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "してくれ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "はい､"
+	DIALOGUE_PAUSE $08
+	.text "セティ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

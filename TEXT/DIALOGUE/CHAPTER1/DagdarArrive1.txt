@@ -1,0 +1,31 @@
+dialogueChapter1DagdarArrive1 ; 95/AE43
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD TanyaPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD DagdarPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おやじ､"
+	DIALOGUE_PAUSE $10
+	.text "もうはじまってるよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	.text "こいつはいかん"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	.text "いくらエーヴェルでも"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "帝国兵"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_2
+	.text "相"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "では･･･"
+	DIALOGUE_PAUSE $08
+	.text "いそぐぞ"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

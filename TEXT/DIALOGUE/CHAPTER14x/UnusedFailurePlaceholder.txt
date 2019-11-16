@@ -1,0 +1,17 @@
+dialogueChapter14xUnusedFailurePlaceholder ; E7/9EB6
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AnnaPortrait
+	DIALOGUE_FONT_1
+	.text "元"
+	DIALOGUE_FONT_0
+	.text "メッセージ｢"
+	DIALOGUE_FONT_2
+	.text "失"
+	DIALOGUE_FONT_1
+	.text "敗"
+	DIALOGUE_FONT_0
+	.text "｣です"
+	DIALOGUE_NL
+	.text "このメッセージはさくじょされました"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

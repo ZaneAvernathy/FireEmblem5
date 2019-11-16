@@ -1,0 +1,425 @@
+
+rlGetDemoEvents ; 9A/E134
+
+	.al
+	.xl
+	.autsiz
+	.databank ?
+
+	ldx #$0000
+
+	lda #(`aDemoEventTable)<<8
+	sta lR18+1
+	lda aDemoEventTable,x
+	sta lR18
+	jsl rlUnknown8C839F
+
+	lda wEventEngineStatus,b
+	ora #$8000
+	sta wEventEngineStatus,b
+
+	rtl
+
+aDemoEventTable ; 9A/E150
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+	.addr eventDemo1Events
+
+eventDemo1Events ; 9A/E188
+	STORE_WORD $7E4E5C, $0001
+	STORE_WORD wUnknown001838, $0000
+	CALL_ASM_SKIPPABLE $9A9D79, $0000
+
+	CALL_ASM_LOOP rlDemoSkipCheck, $0000
+	JUMP_TRUE _End
+
+	FADE_OUT $02
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlUnknown8C9E22, $0000
+	CALL_ASM_SKIPPABLE $83FBDC, $0000
+	CALL_ASM_SKIPPABLE $9A9D79, $0000
+
+	STORE_WORD wCurrentChapter, Chapter16A
+
+	CALL_ASM_SKIPPABLE $849485, $0000
+	CALL_ASM_SKIPPABLE $9A98CF, $0000
+
+	HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $01
+
+	STORE_WORD bBuf_INIDISP, $0000
+	STORE_WORD INIDISP, $0000
+
+	CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
+
+	STORE_LONG lEventEngineUnitGroupPointer, eventDemo1Data._Chapter16AGroup
+	CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+	YIELD_UNK
+	YIELD
+
+	SCROLL_CAMERA_SPEED [42, 7], 4
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog, $0000
+
+	PAUSE_SKIPPABLE 5
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlUnknown8C9E22, $0000
+
+	CALL_ASM_SKIPPABLE rlDemoRain, $0000
+
+	FADE_IN $04
+
+	SCROLL_CAMERA_SPEED [26, 11], 2
+
+	MOVE_UNIT Finn, [0, 0], [26, 10], 2, None
+	YIELD_UNK
+
+	WAIT_MOVE
+	YIELD
+
+	MOVE_UNIT Nanna, [0, 0], [0, 0], 1, _NannaMovestring
+	YIELD_UNK
+
+	WAIT_MOVE
+	YIELD
+
+	STORE_WORD wEventEngineCharacterTarget, Nanna
+	CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+
+	MOVE_UNIT Finn, [0, 0], [18, 9], 2, None
+	YIELD_UNK
+
+	WAIT_MOVE
+	YIELD
+
+	STORE_WORD wEventEngineCharacterTarget, Finn
+	CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+
+	SCROLL_CAMERA_SPEED [36, 11], 4
+	YIELD
+
+	MOVE_UNIT None, [57, 9], [1, 9], 2, None
+	YIELD_UNK
+
+	MOVE_UNIT None, [55, 11], [1, 11], 2, None
+	YIELD_UNK
+
+	MOVE_UNIT None, [56, 12], [1, 12], 2, None
+	YIELD_UNK
+
+	MOVE_UNIT None, [58, 10], [1, 10], 2, None
+	YIELD_UNK
+
+	PAUSE_SKIPPABLE 80
+	YIELD
+
+	SCROLL_CAMERA_SPEED [16, 11], 2
+	YIELD
+
+	FADE_OUT $04
+	YIELD
+
+	CALL_ASM_LOOP rlDemoSkipCheck, $0000
+	JUMP_TRUE _End
+
+	STORE_WORD wEventEngineParameter2, $0000
+	CALL_ASM_SKIPPABLE $9A98E6, $0000
+
+	HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
+	YIELD
+
+	CALL_ASM_LOOP rlDemoSkipCheck, $0000
+	JUMP_TRUE _End
+
+	FADE_OUT $02
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlUnknown8C9E22, $0000
+	CALL_ASM_SKIPPABLE $83FBDC, $0000
+	CALL_ASM_SKIPPABLE $9A9D79, $0000
+
+	STORE_WORD wCurrentChapter, Chapter12
+
+	CALL_ASM_SKIPPABLE $849485, $0000
+	CALL_ASM_SKIPPABLE $9A98B8, $0000
+
+	HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $01
+
+	STORE_WORD bBuf_INIDISP, $0000
+	STORE_WORD INIDISP, $0000
+
+	CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
+
+	STORE_LONG lEventEngineUnitGroupPointer, eventDemo1Data._Chapter12Group
+	CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+	YIELD_UNK
+	YIELD
+
+	SCROLL_CAMERA_SPEED [23, 11], 4
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog, $0000
+
+	PAUSE_SKIPPABLE 5
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlUnknown8C9E22, $0000
+
+	FADE_IN $04
+
+	HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+	PAUSE_SKIPPABLE 60
+	YIELD
+
+	STORE_WORD wR0, Orsin
+	STORE_WORD wR1, aSelectedCharacterBuffer
+	CALL_ASM_SKIPPABLE $83976E, $0000
+
+	CALL_ASM_SKIPPABLE $87BF14, $0000
+
+	HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlUpdateUnitMaps, $0000
+	CALL_ASM_SKIPPABLE rlUpdateVisibilityMap, $0000
+	CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog, $0000
+
+	PAUSE_SKIPPABLE 60
+	YIELD
+
+	FADE_OUT $04
+	YIELD
+
+	CALL_ASM_LOOP rlDemoSkipCheck, $0000
+	JUMP_TRUE _End
+
+	STORE_WORD wEventEngineParameter1, 3
+	CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+	HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+	CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueDemoTanyaDagdarMarty
+	YIELD_UNK
+	YIELD_UNK
+	YIELD_UNK
+	YIELD
+
+	HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
+
+	FADE_OUT $01
+	YIELD
+
+	CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
+
+	STORE_BYTE bBuf_INIDISP, $00
+
+	CALL_ASM_LOOP rlDemoSkipCheck, $0000
+	JUMP_TRUE _End
+
+	FADE_OUT $02
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlUnknown8C9E22, $0000
+	CALL_ASM_SKIPPABLE $83FBDC, $0000
+	CALL_ASM_SKIPPABLE $9A9D79, $0000
+
+	STORE_WORD wCurrentChapter, Chapter13
+
+	CALL_ASM_SKIPPABLE $849485, $0000
+	CALL_ASM_SKIPPABLE $9A98CF, $0000
+
+	HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $01
+
+	STORE_WORD bBuf_INIDISP, $0000
+	STORE_WORD INIDISP, $0000
+
+	CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
+
+	STORE_LONG lEventEngineUnitGroupPointer, eventDemo1Data._Chapter13Group
+	CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+
+	YIELD_UNK
+	YIELD
+
+	SCROLL_CAMERA_SPEED [19, 10], 4
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog, $0000
+
+	PAUSE_SKIPPABLE 5
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlUnknown8C9E22, $0000
+
+	FADE_IN $04
+
+	HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+	PAUSE_SKIPPABLE 60
+	YIELD
+
+	MOVE_UNIT None, [15, 11], [19, 11], 1, None
+	YIELD_UNK
+
+	WAIT_MOVE
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlClearHDMAArray, $0000
+
+	STORE_LONG lEventEngineLongParameter, _OlwenScriptedBattleRounds
+	CALL_ASM_SKIPPABLE $9A8D0F, $0000
+
+	STORE_WORD wEventEngineParameter1, Javelin
+	STORE_WORD wEventEngineParameter2, Dimevolt
+	STORE_WORD wEventEngineXCoordinate, 19
+	STORE_WORD wEventEngineYCoordinate, 11
+	STORE_WORD wEventEngineXCoordinateAlt, 20
+	STORE_WORD wEventEngineYCoordinateAlt, 10
+	CALL_ASM_SKIPPABLE $9A8E50, $0000
+
+	CALL_ASM_SKIPPABLE $84B719, $0000
+
+	HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
+
+	CALL_ASM_SKIPPABLE rlUpdateUnitMaps, $0000
+	CALL_ASM_SKIPPABLE rlUpdateVisibilityMap, $0000
+
+	PAUSE_SKIPPABLE 2
+	YIELD
+
+	FADE_OUT $04
+	YIELD
+
+	CALL_ASM_LOOP rlDemoSkipCheck, $0000
+	JUMP_TRUE _End
+
+	STORE_WORD wEventEngineParameter2, 2
+	CALL_ASM_SKIPPABLE $9A98E6, $0000
+
+	HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
+	YIELD
+
+	CALL_ASM_LOOP rlDemoSkipCheck, $0000
+	JUMP_TRUE _End
+
+	STORE_WORD wEventEngineParameter1, 3
+	CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+	HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+	CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueDemoLeifEyvel
+	YIELD_UNK
+	YIELD_UNK
+	YIELD_UNK
+	YIELD
+
+	HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
+
+	FADE_OUT $01
+	YIELD
+
+	CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
+
+	STORE_BYTE bBuf_INIDISP, $00
+
+	CALL_ASM_LOOP rlDemoSkipCheck, $0000
+	JUMP_TRUE _End
+
+	JUMP eventDemo2Events
+
+	_End
+
+	STORE_WORD wUnknown000302, $0000
+	STORE_WORD wUnknown001791, $0000
+
+	CALL_ASM_LOOP $9A9D68, $0000
+	YIELD
+
+	STORE_BYTE bBuf_INIDISP, $00
+
+	PAUSE_SKIPPABLE 60
+	YIELD
+
+	STORE_BYTE bBuf_INIDISP, $80
+
+	CALL_ASM_LOOP rlUnknown80C3D6, $0000
+	END1
+
+	_UnknownScriptedBattleRounds ; 9A/E502
+		.byte $80, $00, $00, $00
+	.word $FFFF, $FFFF
+
+	_OlwenScriptedBattleRounds ; 9A/E50A
+		.byte $80, $02, $00, $00
+
+		.byte $02, $00, $02, $28
+
+		.byte $02, $00, $02, $28
+	.word $FFFF, $FFFF
+
+	_NannaMovestring ; 9A/E51A
+		MS_MOVE_UP
+	MS_END
+
+rlDemoSkipCheck ; 9A/E51C
+
+	.al
+	.xl
+	.autsiz
+	.databank ?
+
+	lda wEventEngineStatus,b
+
+	bit #$4000
+	bne +
+
+	lda #$0000
+	bra ++
+
+	+
+	lda #$0001
+
+	+
+	sta wEventEngineTruthFlag,b
+	rtl
+
+rlDemoUnknownClear ; 9A/E530
+
+	.al
+	.xl
+	.autsiz
+	.databank ?
+
+	stz aUnknown0017BF,b
+	stz aUnknown0017BF+2,b
+	stz aUnknown0017BF+4,b
+	stz aUnknown0017BF+6,b
+	rtl

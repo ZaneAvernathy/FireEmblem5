@@ -1,0 +1,17 @@
+dialogueChapter12SilenceHousePeterDead ; 92/A288
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman1Portrait
+	DIALOGUE_FONT_0
+	.text "あなたたちに"
+	DIALOGUE_FONT_1
+	.text "用"
+	DIALOGUE_FONT_0
+	.text "はないわ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "帰"
+	DIALOGUE_FONT_0
+	.text "って！！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

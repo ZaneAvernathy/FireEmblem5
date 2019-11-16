@@ -1,0 +1,77 @@
+dialogueChapter22RescueHouse ; B0/DE4A
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan12Portrait
+	DIALOGUE_FONT_0
+	.text "トラキア"
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_4
+	.text "河"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_4
+	.text "広"
+	DIALOGUE_FONT_0
+	.text "い･･･"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	.text "だから"
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "をつけて"
+	DIALOGUE_FONT_1
+	.text "進"
+	DIALOGUE_FONT_0
+	.text "まねえと"
+	DIALOGUE_NL
+	.text "すぐ"
+	DIALOGUE_FONT_3
+	.text "離"
+	DIALOGUE_FONT_0
+	.text "れ"
+	DIALOGUE_FONT_3
+	.text "離"
+	DIALOGUE_FONT_0
+	.text "れになっちまうぜ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "このレスキューの"
+	DIALOGUE_FONT_1
+	.text "杖"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "えば"
+	DIALOGUE_NL
+	.text "すぐに"
+	DIALOGUE_FONT_1
+	.text "近"
+	DIALOGUE_FONT_0
+	.text "くに"
+	DIALOGUE_FONT_2
+	.text "連"
+	DIALOGUE_FONT_0
+	.text "れ"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "すことができる･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "便"
+	DIALOGUE_FONT_2
+	.text "利"
+	DIALOGUE_FONT_0
+	.text "な"
+	DIALOGUE_FONT_1
+	.text "杖"
+	DIALOGUE_FONT_0
+	.text "だぜ､"
+	DIALOGUE_PAUSE $08
+	.text "こいつは"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

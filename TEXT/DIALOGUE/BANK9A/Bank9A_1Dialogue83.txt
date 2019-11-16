@@ -1,0 +1,13 @@
+; 9A/C97C
+DIALOGUE_FONT_1
+.text "美"
+DIALOGUE_FONT_0
+.text "しき"
+DIALOGUE_FONT_2
+.text "弓"
+DIALOGUE_FONT_1
+.text "騎士"
+DIALOGUE_FONT_0
+.text "　セルフィナ"
+DIALOGUE_NL
+DIALOGUE_EOF

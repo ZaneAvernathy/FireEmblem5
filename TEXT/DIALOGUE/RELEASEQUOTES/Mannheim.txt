@@ -1,0 +1,8 @@
+dialogueMannheimReleaseQuote ; 92/FBDF
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "これから"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "どうすればよいのだ･･･"
+DIALOGUE_END_SCENE

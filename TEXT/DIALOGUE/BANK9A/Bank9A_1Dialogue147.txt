@@ -1,0 +1,11 @@
+; 9A/DD2B
+DIALOGUE_FONT_2
+.text "忠義"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "老将軍"
+DIALOGUE_FONT_0
+.text "　ゼーベイア"
+DIALOGUE_NL
+DIALOGUE_EOF

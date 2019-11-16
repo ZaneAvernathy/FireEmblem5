@@ -1,0 +1,135 @@
+dialogueChapter23Ending3 ; 98/E640
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ところで"
+	DIALOGUE_FONT_2
+	.text "司祭"
+	DIALOGUE_FONT_0
+	.text "はこれから"
+	DIALOGUE_NL
+	.text "どうされるのですか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "にはもう"
+	DIALOGUE_FONT_2
+	.text "帰"
+	DIALOGUE_FONT_0
+	.text "る"
+	DIALOGUE_FONT_1
+	.text "場"
+	DIALOGUE_FONT_2
+	.text "所"
+	DIALOGUE_FONT_0
+	.text "はありません"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ただ･･･"
+	DIALOGUE_PAUSE $10
+	.text "ひとつだけ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "やりのこしたことがあります"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "その"
+	DIALOGUE_FONT_1
+	.text "神"
+	DIALOGUE_FONT_3
+	.text "託"
+	DIALOGUE_FONT_0
+	.text "をえるために"
+	DIALOGUE_NL
+	.text "ブラギの"
+	DIALOGUE_FONT_2
+	.text "塔"
+	DIALOGUE_FONT_0
+	.text "へ"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "くつもりです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "事"
+	DIALOGUE_FONT_3
+	.text "情"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "いても"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "話"
+	DIALOGUE_FONT_0
+	.text "してはくれないのですね"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "はい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "はまだなにも･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_2
+	.text "司祭"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	.text "もし"
+	DIALOGUE_FONT_2
+	.text "急"
+	DIALOGUE_FONT_0
+	.text "ぐ"
+	DIALOGUE_FONT_1
+	.text "旅"
+	DIALOGUE_FONT_0
+	.text "でないなら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "もう"
+	DIALOGUE_FONT_2
+	.text "少"
+	DIALOGUE_FONT_0
+	.text "しだけ"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちにお"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_FONT_4
+	.text "貸"
+	DIALOGUE_FONT_0
+	.text "していただけませんか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちにはあなたが"
+	DIALOGUE_FONT_1
+	.text "必要"
+	DIALOGUE_FONT_0
+	.text "なのです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

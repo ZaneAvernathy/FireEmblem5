@@ -1,0 +1,27 @@
+dialogueBrooksBattleQuote ; 98/B403
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_2
+	.text "反乱"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "ども！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "わが"
+	DIALOGUE_FONT_4
+	.text "刃"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "受"
+	DIALOGUE_FONT_0
+	.text "けれるものなら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "受"
+	DIALOGUE_FONT_0
+	.text "けてみよ！"
+DIALOGUE_END_SCENE

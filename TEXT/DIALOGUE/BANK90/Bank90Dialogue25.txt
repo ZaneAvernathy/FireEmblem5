@@ -1,0 +1,22 @@
+; 90/815A
+DIALOGUE_FONT_1
+.text "½⅛½⅛"
+DIALOGUE_FONT_2
+.text "第"
+DIALOGUE_FONT_0
+.text "４"
+DIALOGUE_FONT_2
+.text "章"
+DIALOGUE_FONT_0
+.text "Ｘ　"
+DIALOGUE_FONT_3
+.text "風"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "勇者"
+DIALOGUE_FONT_0
+.text "（"
+DIALOGUE_NUMBER
+.text "）"
+DIALOGUE_EOF

@@ -1,0 +1,12 @@
+; 90/857F
+DIALOGUE_FONT_0
+.text "　　　　　シグルド"
+DIALOGUE_FONT_1
+.text "公子"
+DIALOGUE_FONT_0
+.text "シレジアに"
+DIALOGUE_FONT_2
+.text "逃"
+DIALOGUE_FONT_0
+.text "れる"
+DIALOGUE_EOF

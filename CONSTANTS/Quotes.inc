@@ -1,0 +1,3 @@
+
+AnyChapter = $FF
+AnyCharacter = $FFFF

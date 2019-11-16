@@ -1,0 +1,18 @@
+dialogueReinkochBattleQuote ; DA/E677
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ロプトの"
+	DIALOGUE_FONT_1
+	.text "地"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "足"
+	DIALOGUE_FONT_0
+	.text "をふみいれるとは･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "おろかな･･･"
+DIALOGUE_END_SCENE

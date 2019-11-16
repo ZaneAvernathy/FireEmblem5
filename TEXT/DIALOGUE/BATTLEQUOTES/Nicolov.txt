@@ -1,0 +1,18 @@
+dialogueNicolovBattleQuote ; 98/B53A
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "貴様"
+	DIALOGUE_FONT_0
+	.text "らごときに"
+	DIALOGUE_NL
+	.text "わしが"
+	DIALOGUE_FONT_2
+	.text "倒"
+	DIALOGUE_FONT_0
+	.text "せるものか！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "さあ､"
+	DIALOGUE_PAUSE $08
+	.text "かかってこい！"
+DIALOGUE_END_SCENE

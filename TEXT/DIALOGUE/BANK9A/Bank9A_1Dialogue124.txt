@@ -1,0 +1,94 @@
+; 9A/D636
+DIALOGUE_FONT_1
+.text "戦"
+DIALOGUE_FONT_2
+.text "乱終"
+DIALOGUE_FONT_3
+.text "結"
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_NL
+DIALOGUE_FONT_4
+.text "片"
+DIALOGUE_FONT_0
+.text "いなかにひきこもり"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "自"
+DIALOGUE_FONT_0
+.text "らの"
+DIALOGUE_FONT_2
+.text "体"
+DIALOGUE_FONT_3
+.text "験"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "手"
+DIALOGUE_FONT_2
+.text "記"
+DIALOGUE_FONT_0
+.text "にまとめる"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "一"
+DIALOGUE_FONT_2
+.text "度"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_NL
+.text "ロプト"
+DIALOGUE_FONT_3
+.text "教"
+DIALOGUE_FONT_1
+.text "団"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "身"
+DIALOGUE_FONT_0
+.text "をおいていた"
+DIALOGUE_NL
+.text "セイラムの"
+DIALOGUE_FONT_1
+.text "手"
+DIALOGUE_FONT_2
+.text "記"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "ロプトとは､いかなる"
+DIALOGUE_NL
+.text "ものだったかを"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "内"
+DIALOGUE_FONT_2
+.text "部"
+DIALOGUE_FONT_0
+.text "からかんさつした"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "貴"
+DIALOGUE_FONT_2
+.text "重"
+DIALOGUE_FONT_0
+.text "な"
+DIALOGUE_FONT_3
+.text "史料"
+DIALOGUE_FONT_0
+.text "として"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "重"
+DIALOGUE_FONT_1
+.text "宝"
+DIALOGUE_FONT_0
+.text "されることとなる"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

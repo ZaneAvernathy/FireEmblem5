@@ -1,0 +1,10 @@
+; 90/8485
+DIALOGUE_FONT_0
+.text "７５７　"
+DIALOGUE_FONT_1
+.text "⅛⅛"
+DIALOGUE_FONT_0
+.text "グランベル"
+DIALOGUE_FONT_1
+.text "国軍"
+DIALOGUE_EOF

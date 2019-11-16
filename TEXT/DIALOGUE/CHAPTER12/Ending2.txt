@@ -1,0 +1,231 @@
+dialogueChapter12Ending2 ; 92/A910
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD MareetaPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "？･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･･マリータ！？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "マリータなのか！！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "どうしてこんなところに･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "もおどろいています"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "まさか､"
+	DIALOGUE_PAUSE $08
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "やフィアナのみんなと"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "こんなに"
+	DIALOGUE_FONT_4
+	.text "早"
+	DIALOGUE_FONT_0
+	.text "く"
+	DIALOGUE_FONT_1
+	.text "会"
+	DIALOGUE_FONT_0
+	.text "えるなんて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "まるで"
+	DIALOGUE_FONT_5
+	.text "夢"
+	DIALOGUE_FONT_0
+	.text "をみているようです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "マリータ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ぼくを"
+	DIALOGUE_FONT_3
+	.text "許"
+	DIALOGUE_FONT_0
+	.text "してほしい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "エーヴェルはぼくのために･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "いいえ､"
+	DIALOGUE_PAUSE $08
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_4
+	.text "責"
+	DIALOGUE_FONT_3
+	.text "任"
+	DIALOGUE_FONT_0
+	.text "ではありません"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_4
+	.text "幼"
+	DIALOGUE_FONT_0
+	.text "かったから･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "魔剣"
+	DIALOGUE_FONT_0
+	.text "なんかに"
+	DIALOGUE_FONT_2
+	.text "負"
+	DIALOGUE_FONT_0
+	.text "けてしまったから･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "マリータ､"
+	DIALOGUE_PAUSE $08
+	.text "ぼくは"
+	DIALOGUE_FONT_3
+	.text "約束"
+	DIALOGUE_FONT_0
+	.text "する"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "エーヴェルは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "必"
+	DIALOGUE_FONT_0
+	.text "ずぼくがこの"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_2
+	.text "取"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_FONT_4
+	.text "返"
+	DIALOGUE_FONT_0
+	.text "す！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "それなら"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "も一"
+	DIALOGUE_FONT_2
+	.text "緒"
+	DIALOGUE_FONT_0
+	.text "に！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はもっと"
+	DIALOGUE_FONT_2
+	.text "強"
+	DIALOGUE_FONT_0
+	.text "くなります！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "だから､"
+	DIALOGUE_PAUSE $08
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "願"
+	DIALOGUE_FONT_0
+	.text "いです"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "も一"
+	DIALOGUE_FONT_2
+	.text "緒"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "連"
+	DIALOGUE_FONT_0
+	.text "れていってください！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "もちろんだ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "すぐは"
+	DIALOGUE_FONT_1
+	.text "無"
+	DIALOGUE_FONT_2
+	.text "理"
+	DIALOGUE_FONT_0
+	.text "だけど"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "いつかきっとマンスターへ"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "る"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "そのときはマリータも一"
+	DIALOGUE_FONT_2
+	.text "緒"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "こう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "はい！"
+	DIALOGUE_PAUSE $10
+	.text "　リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "！！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

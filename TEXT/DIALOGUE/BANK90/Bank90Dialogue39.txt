@@ -1,0 +1,22 @@
+; 90/82CC
+DIALOGUE_FONT_2
+.text "第"
+DIALOGUE_FONT_0
+.text "１４"
+DIALOGUE_FONT_2
+.text "章"
+DIALOGUE_FONT_0
+.text "Ｘ　"
+DIALOGUE_FONT_1
+.text "自"
+DIALOGUE_FONT_2
+.text "由"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_3
+.text "求"
+DIALOGUE_FONT_0
+.text "めて（"
+DIALOGUE_NUMBER
+.text "）"
+DIALOGUE_EOF

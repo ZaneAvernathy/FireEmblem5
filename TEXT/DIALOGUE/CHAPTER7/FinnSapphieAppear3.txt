@@ -1,0 +1,60 @@
+dialogueChapter7FinnSapphieAppear3 ; 93/A29D
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "うむ､"
+	DIALOGUE_PAUSE $08
+	.text "わかった"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あとでわしが"
+	DIALOGUE_FONT_1
+	.text "話"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "こう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "それより"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "マンスター"
+	DIALOGUE_FONT_4
+	.text "周"
+	DIALOGUE_FONT_1
+	.text "辺"
+	DIALOGUE_FONT_0
+	.text "がさわがしいようだな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "レイドリックめが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "かたくらんでおるのかもしれん"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "注"
+	DIALOGUE_FONT_1
+	.text "意"
+	DIALOGUE_FONT_0
+	.text "をおこたるな！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "はっ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_3
+	.text "承"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "いたしました！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

@@ -1,0 +1,13 @@
+; 9A/C806
+DIALOGUE_FONT_1
+.text "子持"
+DIALOGUE_FONT_0
+.text "ちの"
+DIALOGUE_FONT_2
+.text "斧"
+DIALOGUE_FONT_1
+.text "騎士"
+DIALOGUE_FONT_0
+.text "　ヒックス"
+DIALOGUE_NL
+DIALOGUE_EOF

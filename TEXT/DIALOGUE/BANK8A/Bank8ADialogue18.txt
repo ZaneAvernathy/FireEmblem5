@@ -1,0 +1,4 @@
+; 8A/B511
+DIALOGUE_FONT_0
+.text "がんばりな"
+DIALOGUE_EOF

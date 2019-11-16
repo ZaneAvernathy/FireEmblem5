@@ -1,0 +1,26 @@
+dialogueIliosReleaseQuote ; 98/B4C1
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ちっ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "平民"
+	DIALOGUE_FONT_0
+	.text "だと"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "って"
+	DIALOGUE_NL
+	.text "こき"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "いやがって･･･"
+	DIALOGUE_PAUSE $40
+	DIALOGUE_SCROLL
+	.text "もう､"
+	DIALOGUE_PAUSE $08
+	.text "やってられねぇぜ"
+DIALOGUE_END_SCENE

@@ -1,0 +1,104 @@
+; 9A/D105
+DIALOGUE_FONT_0
+.text "シレジアに"
+DIALOGUE_FONT_3
+.text "戻"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "人々"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "熱望"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+DIALOGUE_FONT_4
+.text "押"
+DIALOGUE_FONT_0
+.text "し"
+DIALOGUE_FONT_2
+.text "切"
+DIALOGUE_FONT_0
+.text "られる"
+DIALOGUE_FONT_3
+.text "形"
+DIALOGUE_FONT_0
+.text "で"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "王"
+DIALOGUE_FONT_2
+.text "位"
+DIALOGUE_FONT_0
+.text "につく"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "彼"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "不"
+DIALOGUE_FONT_3
+.text "屈"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "精"
+DIALOGUE_FONT_1
+.text "神"
+DIALOGUE_FONT_0
+.text "と"
+DIALOGUE_NL
+.text "たゆまぬ"
+DIALOGUE_FONT_3
+.text "努"
+DIALOGUE_FONT_1
+.text "力"
+DIALOGUE_FONT_0
+.text "により"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "戦"
+DIALOGUE_FONT_2
+.text "乱"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_2
+.text "荒"
+DIALOGUE_FONT_0
+.text "れ"
+DIALOGUE_FONT_3
+.text "果"
+DIALOGUE_FONT_0
+.text "てた"
+DIALOGUE_NL
+.text "シレジアは"
+DIALOGUE_NL
+.text "かつての"
+DIALOGUE_FONT_1
+.text "美"
+DIALOGUE_FONT_0
+.text "しい"
+DIALOGUE_FONT_1
+.text "大地"
+DIALOGUE_FONT_0
+.text "へと"
+DIALOGUE_NL
+.text "ゆっくりとではあるが"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "着"
+DIALOGUE_FONT_3
+.text "実"
+DIALOGUE_FONT_0
+.text "によみがえっていく"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

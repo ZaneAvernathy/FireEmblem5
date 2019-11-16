@@ -1,0 +1,19 @@
+; 9A/D22D
+DIALOGUE_FONT_2
+.text "天"
+DIALOGUE_FONT_3
+.text "馬"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_2
+.text "駆"
+DIALOGUE_FONT_0
+.text "る"
+DIALOGUE_FONT_2
+.text "少"
+DIALOGUE_FONT_1
+.text "女"
+DIALOGUE_FONT_0
+.text "　カリン"
+DIALOGUE_NL
+DIALOGUE_EOF

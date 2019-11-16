@@ -1,0 +1,106 @@
+dialogueChapter1IronSwordHouse ; 95/B65E
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan9Portrait
+	DIALOGUE_FONT_1
+	.text "武器"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_2
+	.text "高"
+	DIALOGUE_FONT_4
+	.text "価"
+	DIALOGUE_FONT_0
+	.text "なものじゃから"
+	DIALOGUE_NL
+	.text "わしらまずしいモンにはかえん"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_FONT_3
+	.text "情"
+	DIALOGUE_FONT_0
+	.text "けない"
+	DIALOGUE_FONT_1
+	.text "話"
+	DIALOGUE_FONT_0
+	.text "だが"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "敵"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "捕"
+	DIALOGUE_FONT_0
+	.text "まえてぶんどるしかないじゃろうな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ホレ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "わしもこのとおり"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "帝国兵"
+	DIALOGUE_FONT_0
+	.text "からうばいとってやったわ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "と､"
+	DIALOGUE_PAUSE $08
+	.text "いっても"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "相"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "がいびきをかいてる"
+	DIALOGUE_FONT_2
+	.text "間"
+	DIALOGUE_FONT_0
+	.text "にじゃけどな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ホッ"
+	DIALOGUE_PAUSE $10
+	.text "ホッ"
+	DIALOGUE_PAUSE $10
+	.text "ホッ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "こんな"
+	DIALOGUE_NL
+	.text "ガラクタでよければ"
+	DIALOGUE_NL
+	.text "おまえさんにやろう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "いらなかったら"
+	DIALOGUE_NL
+	.text "そこの"
+	DIALOGUE_FONT_1
+	.text "道"
+	DIALOGUE_FONT_2
+	.text "具屋"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_3
+	.text "売"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_FONT_1
+	.text "飛"
+	DIALOGUE_FONT_0
+	.text "ばせばいい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "すこしは"
+	DIALOGUE_FONT_1
+	.text "金"
+	DIALOGUE_FONT_0
+	.text "になるじゃろうて"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

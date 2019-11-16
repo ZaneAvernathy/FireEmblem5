@@ -1,0 +1,18 @@
+dialogueReinkochDeathQuote ; DA/E69D
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_FONT_1
+	.text "神"
+	DIALOGUE_FONT_0
+	.text "よ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "助"
+	DIALOGUE_FONT_0
+	.text "けを･･･"
+	DIALOGUE_PAUSE $10
+	.text "グワッ"
+DIALOGUE_END_SCENE

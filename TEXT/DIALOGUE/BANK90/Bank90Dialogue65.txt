@@ -1,0 +1,8 @@
+; 90/8545
+DIALOGUE_FONT_0
+.text "　　　　　アグスティに"
+DIALOGUE_FONT_2
+.text "生"
+DIALOGUE_FONT_0
+.text "まれる"
+DIALOGUE_EOF

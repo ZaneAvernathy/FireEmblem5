@@ -1,0 +1,85 @@
+dialogueChapter16AEnding1 ; 98/AEE8
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD DoriasPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	.text "おみごとです"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "この"
+	DIALOGUE_FONT_4
+	.text "困"
+	DIALOGUE_FONT_2
+	.text "難"
+	DIALOGUE_FONT_0
+	.text "な"
+	DIALOGUE_FONT_1
+	.text "状"
+	DIALOGUE_FONT_4
+	.text "況"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_NL
+	.text "よく"
+	DIALOGUE_FONT_2
+	.text "打"
+	DIALOGUE_FONT_0
+	.text "ち"
+	DIALOGUE_FONT_2
+	.text "勝"
+	DIALOGUE_FONT_0
+	.text "たれました"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "祖国"
+	DIALOGUE_FONT_0
+	.text "レンスターは"
+	DIALOGUE_FONT_1
+	.text "目"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "前"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "国"
+	DIALOGUE_FONT_2
+	.text "民"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "帰還"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "待"
+	DIALOGUE_FONT_0
+	.text "ちわびておりますぞ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "レンスター･･･"
+	DIALOGUE_PAUSE $10
+	.text "わが"
+	DIALOGUE_FONT_1
+	.text "祖国"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+DIALOGUE_END_SCENE

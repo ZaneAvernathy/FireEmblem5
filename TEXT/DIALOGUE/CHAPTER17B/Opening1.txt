@@ -1,0 +1,208 @@
+dialogueChapter17BOpening1 ; E7/9F35
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	.text "レンスター"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "えました"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ここは"
+	DIALOGUE_FONT_4
+	.text "裹"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "になりますから"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "敵"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_FONT_4
+	.text "油"
+	DIALOGUE_FONT_2
+	.text "斯"
+	DIALOGUE_FONT_0
+	.text "していることでしょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "だがアウグスト"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "東"
+	DIALOGUE_FONT_3
+	.text "側"
+	DIALOGUE_FONT_0
+	.text "はガケばかりで"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "にたどり"
+	DIALOGUE_FONT_2
+	.text "着"
+	DIALOGUE_FONT_0
+	.text "けない"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_FONT_1
+	.text "西"
+	DIALOGUE_FONT_0
+	.text "からまわりこめば"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "シューターにねらいうちにされる"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いったいどうするつもりだ？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "さよう･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "石"
+	DIALOGUE_FONT_2
+	.text "弓部隊"
+	DIALOGUE_FONT_0
+	.text "があれほどいようとは"
+	DIALOGUE_NL
+	DIALOGUE_FONT_3
+	.text "予想外"
+	DIALOGUE_FONT_0
+	.text "ですな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "とはいえ､"
+	DIALOGUE_PAUSE $08
+	.text "グズグズしていれば"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "敵"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_3
+	.text "増"
+	DIALOGUE_FONT_1
+	.text "援"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_2
+	.text "現"
+	DIALOGUE_FONT_0
+	.text "れる"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "こまりましたな･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ドリアスの"
+	DIALOGUE_FONT_1
+	.text "意見"
+	DIALOGUE_FONT_0
+	.text "は？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD DoriasPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "シューターを"
+	DIALOGUE_FONT_2
+	.text "倒"
+	DIALOGUE_FONT_0
+	.text "さねば"
+	DIALOGUE_FONT_1
+	.text "前進"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "無"
+	DIALOGUE_FONT_2
+	.text "理"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "魔法"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_3
+	.text "送"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_FONT_2
+	.text "込"
+	DIALOGUE_FONT_0
+	.text "むか､"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "空"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_FONT_1
+	.text "攻撃"
+	DIALOGUE_FONT_0
+	.text "するか･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "いずれにしても"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "多"
+	DIALOGUE_FONT_2
+	.text "少"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_4
+	.text "犠牲"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_4
+	.text "覚悟"
+	DIALOGUE_FONT_0
+	.text "せねばなりません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "わかった"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "かよい"
+	DIALOGUE_FONT_1
+	.text "方法"
+	DIALOGUE_FONT_0
+	.text "がないか"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_5
+	.text "考"
+	DIALOGUE_FONT_0
+	.text "えてみよう"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

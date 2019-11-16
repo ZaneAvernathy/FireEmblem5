@@ -1,0 +1,43 @@
+dialogueChapter13PlayerLoss ; B9/D3D6
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ターラが"
+	DIALOGUE_FONT_2
+	.text "落"
+	DIALOGUE_FONT_0
+	.text "ちましたぞ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ターラを"
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "にうばわれてしまった"
+	DIALOGUE_FONT_1
+	.text "以上"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "民心"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "われらに"
+	DIALOGUE_FONT_2
+	.text "味"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "することはないでしょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "われらの"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "いもここまでですな･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

@@ -1,0 +1,11 @@
+dialogueLithis2DeathQuote ; 95/C94B
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ううっ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いてえよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "サフィ･･･"
+DIALOGUE_END_SCENE

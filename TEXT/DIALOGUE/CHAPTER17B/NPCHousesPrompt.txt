@@ -1,0 +1,40 @@
+dialogueChapter17BNPCHousesPrompt ; E7/A945
+	DIALOGUE_ASMC_0 rlBeginDialoguePrompt
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD DoriasPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "いかがいたしましょうか？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "　　　"
+	DIALOGUE_FONT_4
+	.text "住"
+	DIALOGUE_FONT_2
+	.text "民"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "恊"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "してもらう"
+	DIALOGUE_NL
+	.text "　　　"
+	DIALOGUE_FONT_1
+	.text "自分"
+	DIALOGUE_FONT_0
+	.text "たちの"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_1
+	.text "攻"
+	DIALOGUE_FONT_0
+	.text "める"
+	DIALOGUE_ASMC_0 rlDialoguePromptSelector
+DIALOGUE_END_SCENE

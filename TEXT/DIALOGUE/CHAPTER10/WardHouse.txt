@@ -1,0 +1,46 @@
+dialogueChapter10WardHouse ; E7/97BF
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan4Portrait
+	DIALOGUE_FONT_0
+	.text "あんたら"
+	DIALOGUE_FONT_1
+	.text "解放軍"
+	DIALOGUE_FONT_0
+	.text "のメンバーだろ？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "がんばれよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "応"
+	DIALOGUE_FONT_1
+	.text "援"
+	DIALOGUE_FONT_0
+	.text "してるからさ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "そうだ､"
+	DIALOGUE_PAUSE $08
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "杖"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "持"
+	DIALOGUE_FONT_0
+	.text "っていきな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "きっと"
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "つぜ"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

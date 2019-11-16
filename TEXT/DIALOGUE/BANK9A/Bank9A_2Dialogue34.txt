@@ -1,0 +1,4 @@
+; 9A/E125
+DIALOGUE_FONT_0
+.text "𝑨"
+DIALOGUE_EOF

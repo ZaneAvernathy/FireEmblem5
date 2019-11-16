@@ -1,0 +1,17 @@
+dialogueReinhardtBattleQuote ; B0/DF53
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "これも"
+	DIALOGUE_FONT_1
+	.text "運"
+	DIALOGUE_FONT_2
+	.text "命"
+	DIALOGUE_FONT_0
+	.text "か･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "許"
+	DIALOGUE_FONT_0
+	.text "せ･･･"
+DIALOGUE_END_SCENE

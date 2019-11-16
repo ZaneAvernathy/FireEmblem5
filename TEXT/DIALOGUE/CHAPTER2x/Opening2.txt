@@ -1,0 +1,118 @@
+dialogueChapter2xOpening2 ; 95/C5CB
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "日"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_3
+	.text "暮"
+	DIALOGUE_FONT_0
+	.text "れてしまった"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	.text "なにも"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "えない･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "たいまつがあれば"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "少"
+	DIALOGUE_FONT_0
+	.text "しの"
+	DIALOGUE_FONT_2
+	.text "間"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_FONT_4
+	.text "周"
+	DIALOGUE_FONT_0
+	.text "りが"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "えるのですが･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ないまま"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "うのは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "やはり"
+	DIALOGUE_FONT_1
+	.text "苦"
+	DIALOGUE_FONT_0
+	.text "しいだろうか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_3
+	.text "視"
+	DIALOGUE_FONT_2
+	.text "界"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_4
+	.text "広"
+	DIALOGUE_FONT_0
+	.text "さがちがいますからな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "しかし､"
+	DIALOGUE_PAUSE $08
+	.text "おそらく"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "たいまつは､"
+	DIALOGUE_PAUSE $08
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "島"
+	DIALOGUE_FONT_0
+	.text "にもあるでしょう"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	DIALOGUE_FONT_2
+	.text "心配"
+	DIALOGUE_FONT_0
+	.text "することはありません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "では"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "こう"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	.text "こんなところで"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ムダな"
+	DIALOGUE_FONT_2
+	.text "時間"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_4
+	.text "過"
+	DIALOGUE_FONT_0
+	.text "ごせない！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

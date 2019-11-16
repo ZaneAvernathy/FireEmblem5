@@ -1,0 +1,7 @@
+dialogueFE4Demo12 ; 9C/FEB4
+	DIALOGUE_RIGHT
+	DIALOGUE_OPEN
+	DIALOGUE_LOAD OlwenPortrait
+	DIALOGUE_FONT_0
+	.text "･････････"
+DIALOGUE_EOF

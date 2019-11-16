@@ -1,0 +1,15 @@
+; 9A/C47F
+DIALOGUE_FONT_3
+.text "可"
+DIALOGUE_FONT_4
+.text "憐"
+DIALOGUE_FONT_0
+.text "なる"
+DIALOGUE_FONT_2
+.text "盗"
+DIALOGUE_FONT_1
+.text "賊"
+DIALOGUE_FONT_0
+.text "　ラーラ"
+DIALOGUE_NL
+DIALOGUE_EOF

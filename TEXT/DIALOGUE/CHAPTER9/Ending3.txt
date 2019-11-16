@@ -1,0 +1,123 @@
+dialogueChapter9Ending3 ; 93/E7D3
+	DIALOGUE_UNK $13
+	.text "ん"
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AltenaPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "トラキア"
+	DIALOGUE_FONT_2
+	.text "全"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "につぐ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "王女"
+	DIALOGUE_FONT_0
+	.text "アルテナだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ハンニバル"
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_FONT_0
+	.text "より"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "火"
+	DIALOGUE_FONT_2
+	.text "急"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "らせが"
+	DIALOGUE_FONT_1
+	.text "入"
+	DIALOGUE_FONT_0
+	.text "った"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "山"
+	DIALOGUE_FONT_5
+	.text "荘"
+	DIALOGUE_FONT_0
+	.text "にいるものは"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "山賊"
+	DIALOGUE_FONT_0
+	.text "ではない"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_2
+	.text "民"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "山賊"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "らんとして"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_FONT_0
+	.text "がそしきされた"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "傭兵"
+	DIALOGUE_FONT_2
+	.text "部隊"
+	DIALOGUE_FONT_0
+	.text "であるとのことだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "よって"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "これ"
+	DIALOGUE_FONT_1
+	.text "以上"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "戦閾"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "無用"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "全"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	.text "ただちに"
+	DIALOGUE_FONT_5
+	.text "撤"
+	DIALOGUE_FONT_1
+	.text "退"
+	DIALOGUE_FONT_0
+	.text "せよ！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

@@ -1,0 +1,13 @@
+; 9A/DE7D
+DIALOGUE_FONT_0
+.text "プロローグ３"
+DIALOGUE_NL
+.text "プロローグ３"
+DIALOGUE_NL
+.text "プロローグ３"
+DIALOGUE_NL
+.text "プロローグ３"
+DIALOGUE_NL
+.text "プロローグ３"
+DIALOGUE_NL
+DIALOGUE_EOF

@@ -1,0 +1,20 @@
+dialogueBakstReleaseQuote ; 95/C1F8
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "すまねえ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "もう"
+	DIALOGUE_FONT_1
+	.text "悪"
+	DIALOGUE_FONT_0
+	.text "いことはやめて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "漁師"
+	DIALOGUE_FONT_0
+	.text "になるぜ､"
+	DIALOGUE_PAUSE $08
+	.text "あばよ"
+DIALOGUE_END_SCENE

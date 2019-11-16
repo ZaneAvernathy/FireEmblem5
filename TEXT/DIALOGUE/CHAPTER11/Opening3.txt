@@ -1,0 +1,370 @@
+dialogueChapter11Opening3 ; 95/EEF0
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD KempfPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD FredPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ケンプフ"
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "これはいったいどういう"
+	DIALOGUE_FONT_1
+	.text "事"
+	DIALOGUE_FONT_0
+	.text "ですか！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ん？　"
+	DIALOGUE_PAUSE $10
+	.text "どうした､"
+	DIALOGUE_PAUSE $08
+	.text "フレッド"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そんなに"
+	DIALOGUE_FONT_1
+	.text "血"
+	DIALOGUE_FONT_2
+	.text "相"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_3
+	.text "変"
+	DIALOGUE_FONT_0
+	.text "えて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "なにかあったのか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "とぼけないでください"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "オルエン"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "いったい"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "をされたと"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "うのです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_1
+	.text "事"
+	DIALOGUE_FONT_0
+	.text "のうらみで"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "部"
+	DIALOGUE_FONT_1
+	.text "下"
+	DIALOGUE_FONT_0
+	.text "をはずかしめるのは"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "軍法"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "反"
+	DIALOGUE_FONT_0
+	.text "しています"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ただちに"
+	DIALOGUE_FONT_3
+	.text "牢獄"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "してください"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "さもなければ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "イシュタル"
+	DIALOGUE_FONT_1
+	.text "王女"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_3
+	.text "報告"
+	DIALOGUE_FONT_0
+	.text "します！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_1
+	.text "事"
+	DIALOGUE_FONT_0
+	.text "とは"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "きずてならんな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "オルエン"
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_FONT_0
+	.text "はこの"
+	DIALOGUE_FONT_1
+	.text "場"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_1
+	.text "剣"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "抜"
+	DIALOGUE_FONT_0
+	.text "いたのだ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "上"
+	DIALOGUE_FONT_2
+	.text "官"
+	DIALOGUE_FONT_0
+	.text "であるこの"
+	DIALOGUE_FONT_1
+	.text "俺"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_0
+	.text "そうとしてな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "え！？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "まさか･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そんなことが･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "軍法"
+	DIALOGUE_FONT_0
+	.text "では"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "上"
+	DIALOGUE_FONT_2
+	.text "官"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "剣"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "向"
+	DIALOGUE_FONT_0
+	.text "けるということは"
+	DIALOGUE_NL
+	.text "どういう"
+	DIALOGUE_FONT_1
+	.text "事"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "意"
+	DIALOGUE_FONT_2
+	.text "味"
+	DIALOGUE_FONT_0
+	.text "したのかな？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "たしか"
+	DIALOGUE_FONT_2
+	.text "死"
+	DIALOGUE_FONT_3
+	.text "刑"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_4
+	.text "値"
+	DIALOGUE_FONT_0
+	.text "する"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "重罪"
+	DIALOGUE_FONT_0
+	.text "だったような"
+	DIALOGUE_NL
+	.text "おぼえがあるのだが･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "それがあなたのねらいか"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･なんとひきょうな･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "まあ､"
+	DIALOGUE_PAUSE $08
+	.text "それはともかく"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "おまえには"
+	DIALOGUE_FONT_2
+	.text "反"
+	DIALOGUE_FONT_3
+	.text "逆"
+	DIALOGUE_FONT_1
+	.text "者"
+	DIALOGUE_FONT_0
+	.text "オルエンの"
+	DIALOGUE_FONT_5
+	.text "副"
+	DIALOGUE_FONT_2
+	.text "官"
+	DIALOGUE_FONT_0
+	.text "としての"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "責"
+	DIALOGUE_FONT_3
+	.text "任"
+	DIALOGUE_FONT_0
+	.text "をとってもらおうか"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_FONT_1
+	.text "出撃"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "命"
+	DIALOGUE_FONT_0
+	.text "じる"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ただし"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "これは"
+	DIALOGUE_FONT_4
+	.text "罰"
+	DIALOGUE_FONT_0
+	.text "としての"
+	DIALOGUE_FONT_1
+	.text "出撃"
+	DIALOGUE_FONT_0
+	.text "だ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "退"
+	DIALOGUE_FONT_3
+	.text "却"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_3
+	.text "許"
+	DIALOGUE_FONT_0
+	.text "さん､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "死"
+	DIALOGUE_FONT_0
+	.text "ぬまで"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "え"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "抜"
+	DIALOGUE_FONT_0
+	.text "けばすぐにオルエンを"
+	DIALOGUE_FONT_3
+	.text "処刑"
+	DIALOGUE_FONT_0
+	.text "する"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "よいな！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ケンプフ！"
+	DIALOGUE_PAUSE $10
+	.text "･･･この"
+	DIALOGUE_FONT_4
+	.text "恥"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "らずめ！！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ん？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "なにか"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "ったか？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "こえんなあ､"
+	DIALOGUE_PAUSE $08
+	.text "わぁっ"
+	DIALOGUE_PAUSE $08
+	.text "はっ"
+	DIALOGUE_PAUSE $08
+	.text "はっ"
+	DIALOGUE_PAUSE $08
+	.text "はっ･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

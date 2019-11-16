@@ -1,0 +1,16 @@
+; 8A/B596
+DIALOGUE_FONT_0
+.text "まあ　"
+DIALOGUE_FONT_2
+.text "死"
+DIALOGUE_FONT_0
+.text "なない"
+DIALOGUE_FONT_5
+.text "程"
+DIALOGUE_FONT_2
+.text "度"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+.text "がんばりなよ"
+DIALOGUE_EOF

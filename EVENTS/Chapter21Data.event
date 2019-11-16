@@ -1,0 +1,113 @@
+
+eventChapter21Data ; B1/8D4F
+
+	_PrepGroup1 ; B1/8D4F
+		.byte 23, 23
+
+		UNIT Flavus, Enemy, [23, 24], [23, 24], Flavus, [Blizzard, Tornado, Fortify], 19, True, [$01, $03, $00, $80]
+		UNIT ThracianWyvernKnight2, Enemy, [14, 26], [14, 26], Seimtore, [Horseslayer, Javelin, Vulnerary], 7, False, [$00, $0C, $02, $40]
+		UNIT ThracianWyvernKnight2, Enemy, [13, 27], [13, 27], Seimtore, [Horseslayer, Javelin, Vulnerary], 7, False, [$00, $0C, $02, $40]
+		UNIT ThracianWyvernKnight2, Enemy, [12, 28], [12, 28], Seimtore, [Horseslayer, Javelin, Vulnerary], 7, False, [$00, $0C, $02, $40]
+		UNIT ThracianWyvernKnight2, Enemy, [11, 29], [11, 29], Seimtore, [Horseslayer, Javelin, Vulnerary], 7, False, [$00, $0C, $02, $40]
+		UNIT ThracianWyvernKnight2, Enemy, [15, 27], [15, 27], Seimtore, [Horseslayer, Javelin, Vulnerary], 7, False, [$00, $0C, $02, $40]
+		UNIT ThracianWyvernKnight2, Enemy, [16, 28], [16, 28], Seimtore, [Horseslayer, Javelin, Vulnerary], 7, False, [$00, $0C, $02, $40]
+		UNIT ThracianWyvernKnight2, Enemy, [17, 29], [17, 29], Seimtore, [Horseslayer, Javelin, Vulnerary], 7, False, [$00, $0C, $02, $40]
+		UNIT FriegeArmoredAxe1, Enemy, [22, 19], [22, 19], Flavus, [BattleAxe, Hammer, Vulnerary], 17, False, [$00, $03, $02, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [24, 19], [24, 19], Flavus, [BattleAxe, Hammer, Vulnerary], 17, False, [$00, $03, $02, $00]
+		UNIT FriegeArmoredSword2, Enemy, [23, 20], [23, 20], Flavus, [Greatsword], 20, False, [$00, $03, $00, $00]
+		UNIT FriegeArmoredSword2, Enemy, [22, 21], [22, 21], Flavus, [Greatsword], 20, False, [$00, $03, $00, $00]
+		UNIT FriegeArmoredSword2, Enemy, [24, 21], [24, 21], Flavus, [Greatsword], 20, False, [$00, $03, $00, $00]
+		UNIT FriegeArmoredSword2, Enemy, [22, 25], [22, 25], Flavus, [Greatsword], 20, False, [$00, $03, $00, $00]
+		UNIT FriegeArmoredSword2, Enemy, [24, 25], [24, 25], Flavus, [Greatsword], 20, False, [$00, $03, $00, $00]
+		UNIT FriegeBishop2, Enemy, [23, 26], [23, 26], Flavus, [Bolting, Thunder, Physic], 8, False, [$01, $03, $00, $00]
+		UNIT FriegeBallista1, Enemy, [11, 12], [11, 12], Flavus, [Ballista], 12, False, [$00, $03, $00, $00]
+		UNIT FriegeBallista1, Enemy, [15, 10], [15, 10], Flavus, [Ballista], 12, False, [$00, $03, $00, $00]
+		UNIT FriegeBallista1, Enemy, [23, 21], [23, 21], Flavus, [Ballista], 12, False, [$00, $03, $00, $00]
+		UNIT FriegeBallista1, Enemy, [23, 9], [23, 9], Flavus, [Ballista], 12, False, [$00, $03, $00, $00]
+		UNIT FriegePoisonBallista, Enemy, [20, 2], [20, 2], Flavus, [PoisonBallista], 6, False, [$00, $03, $00, $00]
+		UNIT FriegePoisonBallista, Enemy, [18, 5], [18, 5], Flavus, [PoisonBallista], 6, False, [$00, $03, $00, $00]
+		UNIT FriegePoisonBallista, Enemy, [20, 20], [20, 20], Flavus, [PoisonBallista], 6, False, [$00, $03, $00, $00]
+		UNIT FriegePoisonBallista, Enemy, [20, 23], [20, 23], Flavus, [PoisonBallista], 6, False, [$00, $03, $00, $00]
+		UNIT FriegeBallista5, Enemy, [7, 24], [7, 24], Flavus, [IronBallista], 10, False, [$00, $03, $00, $00]
+		UNIT FriegeBallista5, Enemy, [30, 7], [30, 7], Flavus, [IronBallista], 10, False, [$00, $03, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [16, 2], [16, 2], Flavus, [BattleAxe, Hammer, Vulnerary], 13, False, [$00, $03, $02, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [29, 6], [29, 6], Flavus, [BattleAxe, Hammer, Vulnerary], 13, False, [$00, $03, $02, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [22, 8], [22, 8], Flavus, [BattleAxe, Hammer, Vulnerary], 15, False, [$00, $03, $02, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [24, 8], [24, 8], Flavus, [BattleAxe, Hammer, Vulnerary], 15, False, [$00, $03, $02, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [22, 10], [22, 10], Flavus, [BattleAxe, Hammer, Vulnerary], 15, False, [$00, $03, $02, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [24, 10], [24, 10], Flavus, [BattleAxe, Hammer, Vulnerary], 15, False, [$00, $03, $02, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [6, 23], [6, 23], Flavus, [BattleAxe, Hammer, Vulnerary], 14, False, [$00, $03, $02, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [7, 23], [7, 23], Flavus, [BattleAxe, Hammer, Vulnerary], 16, False, [$00, $03, $02, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [9, 18], [9, 18], Flavus, [BattleAxe, Hammer, Vulnerary], 18, False, [$00, $03, $02, $00]
+		UNIT FriegeBallista5, Enemy, [24, 27], [24, 27], Flavus, [IronBallista], 10, False, [$00, $03, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [30, 3], [30, 3], Flavus, [BattleAxe, Hammer, Vulnerary], 18, False, [$00, $03, $02, $00]
+	UNIT
+
+	_RightReinforcementsCameraCoordinates ; B1/9037
+		.byte 22, 13
+
+	_RightReinforcementsGroup ; B1/9039
+		UNIT FriegeMageKnight, Enemy, [31, 10], [30, 10], Flavus, [Elfire], 8, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredAxe4, Enemy, [31, 11], [30, 11], Flavus, [Halberd], 14, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredAxe4, Enemy, [31, 12], [30, 12], Flavus, [Halberd], 14, False, [$00, $00, $00, $00]
+		UNIT FriegeArchKnight1, Enemy, [31, 13], [30, 13], Flavus, [Greatbow], 13, False, [$00, $00, $00, $00]
+		UNIT FriegeLanceKnight2, Enemy, [31, 14], [30, 14], Flavus, [PoisonSpear], 18, False, [$00, $00, $00, $00]
+		UNIT FriegePaladin1, Enemy, [31, 15], [30, 15], Flavus, [Greatsword], 7, False, [$00, $00, $00, $00]
+	UNIT
+
+	_PrepGroup2 ; B1/90B3
+		.byte 23, 24
+
+		UNIT Seimtore, Enemy, [14, 28], [14, 28], Seimtore, [KillerLance, Javelin, Vulnerary], 13, False, [$00, $0C, $02, $40]
+		UNIT FriegePriest1, Enemy, [23, 25], [23, 25], Flavus, [Sleep, Fortify], 16, False, [$0D, $03, $00, $00]
+	UNIT
+
+	_SoldierReinforcementsCameraCoordinates ; B1/90DF
+		.byte 11, 13
+
+	_SoldierReinforcementsGroup ; B1/90E1
+		UNIT FriegeSoldier2, Enemy, [10, 13], [10, 13], Flavus, [Javelin, PoisonSpear, Antidote], 10, False, [$00, $00, $02, $00]
+		UNIT FriegeSoldier2, Enemy, [11, 13], [11, 13], Flavus, [Javelin, PoisonSpear, Antidote], 10, False, [$00, $00, $02, $00]
+	UNIT
+
+	_DarkMageReinforcementsCameraCoordinates ; B1/910B
+		.byte 15, 10
+
+	_DarkMageReinforcementsGroup ; B1/910D
+		UNIT LoptyrianDarkMage1, Enemy, [14, 10], [14, 10], Codha, [Jormungand, Rewarp], 8, False, [$00, $03, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [15, 9], [15, 9], Codha, [Jormungand, Rewarp], 8, False, [$00, $03, $00, $00]
+	UNIT
+
+	_DermottCameraCoordinates ; B1/9137
+		.byte 9, 8
+
+	_DermottGroup ; B1/9139
+		UNIT Dermott, Player, [1, 4], [1, 4], Leif, [BeoBlade], 3, False, [$00, $00, $00, $00]
+	UNIT
+
+	_StartingPositions ; B1/914F
+		.byte 1, 3
+		.byte 2, 2
+		.byte 3, 2
+		.byte 4, 2
+		.byte 5, 2
+		.byte 6, 2
+		.byte 2, 3
+		.byte 3, 3
+		.byte 4, 3
+		.byte 5, 3
+		.byte 6, 3
+		.byte 2, 4
+		.byte 3, 4
+		.byte 4, 4
+		.byte 5, 4
+		.byte 6, 4
+	.byte $FF
+
+	_Armory ; B1/9170
+		SHOP [8, 26], [SilverSword, SilverLance, SilverAxe, SilverBow]
+
+	_Vendor ; B1/9182
+		SHOP [9, 25], [Vulnerary, Antidote, Thunder, Wind]
+
+

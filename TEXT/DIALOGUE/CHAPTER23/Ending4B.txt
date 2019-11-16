@@ -1,0 +1,52 @@
+dialogueChapter23Ending4B ; 98/E743
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_3
+	.text "申"
+	DIALOGUE_FONT_0
+	.text "し"
+	DIALOGUE_FONT_4
+	.text "訳"
+	DIALOGUE_FONT_0
+	.text "ありませんが"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "はその"
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "にはなれません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "リーフどの"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あなたのご"
+	DIALOGUE_FONT_1
+	.text "武運"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "遠"
+	DIALOGUE_FONT_0
+	.text "くブラギの"
+	DIALOGUE_FONT_2
+	.text "塔"
+	DIALOGUE_FONT_0
+	.text "よりお"
+	DIALOGUE_FONT_5
+	.text "祈"
+	DIALOGUE_FONT_0
+	.text "りしております"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "それでは､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はこれで･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

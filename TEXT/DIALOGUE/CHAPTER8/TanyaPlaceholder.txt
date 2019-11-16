@@ -1,0 +1,16 @@
+dialogueChapter8TanyaPlaceholder ; 93/BDCE
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AnnaPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "元"
+	DIALOGUE_FONT_0
+	.text "メッセージ｢タニアが"
+	DIALOGUE_FONT_2
+	.text "心配"
+	DIALOGUE_FONT_0
+	.text "｣です"
+	DIALOGUE_NL
+	.text "このめっせーじはさくじょされました"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

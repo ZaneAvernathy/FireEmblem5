@@ -1,0 +1,52 @@
+dialogueChapter14House2 ; 92/D43D
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman1Portrait
+	DIALOGUE_FONT_0
+	.text "わたしは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "やトラキアの"
+	DIALOGUE_FONT_2
+	.text "支配"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "れるために"
+	DIALOGUE_NL
+	.text "この"
+	DIALOGUE_FONT_2
+	.text "町"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "来"
+	DIALOGUE_FONT_0
+	.text "たのです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "やトラキアに"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "支配"
+	DIALOGUE_FONT_0
+	.text "されてしまうのなら"
+	DIALOGUE_NL
+	.text "この"
+	DIALOGUE_FONT_2
+	.text "町"
+	DIALOGUE_FONT_0
+	.text "には"
+	DIALOGUE_FONT_1
+	.text "用"
+	DIALOGUE_FONT_0
+	.text "はないわ"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

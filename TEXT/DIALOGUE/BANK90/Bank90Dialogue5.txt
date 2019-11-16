@@ -1,0 +1,10 @@
+; 90/8033
+DIALOGUE_FONT_2
+.text "記録"
+DIALOGUE_FONT_0
+.text "から"
+DIALOGUE_FONT_1
+.text "始"
+DIALOGUE_FONT_0
+.text "める"
+DIALOGUE_EOF

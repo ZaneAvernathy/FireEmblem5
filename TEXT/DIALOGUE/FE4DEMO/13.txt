@@ -1,0 +1,14 @@
+dialogueFE4Demo13 ; 9C/FEC6
+	DIALOGUE_RIGHT
+	DIALOGUE_OPEN
+	DIALOGUE_LOAD Dorias2Portrait
+	DIALOGUE_FONT_0
+	.text "くっ､"
+	DIALOGUE_NL
+	DIALOGUE_FONT_3
+	.text "呪"
+	DIALOGUE_FONT_2
+	.text "文"
+	DIALOGUE_FONT_0
+	.text "がとなえられん･･･"
+DIALOGUE_EOF

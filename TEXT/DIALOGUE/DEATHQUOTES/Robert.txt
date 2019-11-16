@@ -1,0 +1,23 @@
+dialogueRobertDeathQuote ; 82/BC87
+	DIALOGUE_FONT_0
+	.text "セルフィナ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "もっと･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "お"
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_FONT_0
+	.text "に･･･"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "ちたかった･･･"
+DIALOGUE_END_SCENE

@@ -1,0 +1,16 @@
+; 8A/B863
+DIALOGUE_FONT_0
+.text "（"
+DIALOGUE_FONT_1
+.text "子"
+DIALOGUE_FONT_3
+.text "供"
+DIALOGUE_FONT_1
+.text "達"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_2
+.text "逃"
+DIALOGUE_FONT_0
+.text "がす）"
+DIALOGUE_EOF

@@ -1,0 +1,188 @@
+
+eventChapter20Data ; B1/9194
+
+	_PrepGroup1 ; B1/9194
+		.byte 14, 25
+
+		UNIT Barath, Enemy, [13, 30], [13, 30], Barath, [MasterAxe, Fortify, Vulnerary, TordosScroll], 15, True, [$01, $03, $00, $80]
+		UNIT FriegeGeneral1, Enemy, [13, 29], [13, 29], Barath, [MasterLance, Vulnerary], 18, False, [$01, $03, $00, $00]
+		UNIT FriegeGeneral1, Enemy, [12, 30], [12, 30], Barath, [MasterLance, Vulnerary], 18, False, [$01, $03, $00, $00]
+		UNIT FriegeGeneral1, Enemy, [14, 30], [14, 30], Barath, [MasterLance, Vulnerary], 18, False, [$01, $03, $00, $00]
+		UNIT FriegeArmoredSword2, Enemy, [28, 1], [28, 1], Barath, [KillingEdge, Vulnerary], 10, False, [$00, $10, $00, $00]
+		UNIT FriegeArmoredSword2, Enemy, [29, 2], [29, 2], Barath, [KillingEdge, Vulnerary], 10, False, [$00, $10, $00, $00]
+		UNIT FriegeArmoredSword2, Enemy, [30, 4], [30, 4], Barath, [KillingEdge, Vulnerary], 10, False, [$00, $10, $00, $00]
+		UNIT FriegeArmoredSword2, Enemy, [28, 4], [28, 4], Barath, [KillingEdge, Vulnerary], 10, False, [$00, $10, $00, $00]
+		UNIT FriegeArmoredSword2, Enemy, [29, 3], [29, 3], Barath, [KillingEdge, Vulnerary], 10, False, [$00, $10, $00, $00]
+	UNIT
+
+	_PrepGroup2 ; B1/924C
+		.byte 14, 24
+
+		UNIT FriegeArmoredLance1, Enemy, [9, 30], [9, 30], Barath, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [7, 30], [7, 30], Barath, [LongLance, DoorKey], 14, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [5, 30], [5, 30], Barath, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [3, 30], [3, 30], Barath, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [11, 30], [11, 30], Barath, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [1, 30], [1, 30], Barath, [LongLance, DoorKey], 14, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [16, 30], [16, 30], Barath, [LongLance, DoorKey], 14, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [18, 30], [18, 30], Barath, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [20, 30], [20, 30], Barath, [LongLance, DoorKey], 14, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [22, 30], [22, 30], Barath, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [24, 30], [24, 30], Barath, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [26, 30], [26, 30], Barath, [LongLance, DoorKey], 14, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [28, 30], [28, 30], Barath, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+	UNIT
+
+	_Turn3ReinforcementsCameraCoordinates ; B1/9354
+		.byte 14, 24
+
+	_Turn3ReinforcementsGroup ; B1/9356
+		UNIT FriegeBishop3, Enemy, [21, 30], [21, 30], Barath, [Fortify, Unlock, Thunder], 10, False, [$01, $03, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [1, 30], [1, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [3, 30], [3, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [5, 30], [5, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [7, 30], [7, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [9, 30], [9, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [11, 30], [11, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [16, 30], [16, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [18, 30], [18, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [20, 30], [20, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [22, 30], [22, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [24, 30], [24, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [26, 30], [26, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [28, 30], [28, 30], Barath, [Greatlance], 15, False, [$00, $24, $00, $00]
+		UNIT FriegeBishop3, Enemy, [6, 30], [6, 30], Barath, [Fortify, Unlock, Thunder], 10, False, [$01, $03, $00, $00]
+		UNIT FriegePriest2, Enemy, [23, 30], [23, 30], Barath, [Heal, Restore], 6, False, [$03, $07, $00, $00]
+		UNIT FriegePriest1, Enemy, [25, 30], [25, 30], Barath, [Heal], 6, False, [$03, $07, $00, $00]
+		UNIT FriegePriest1, Enemy, [2, 30], [2, 30], Barath, [Heal], 6, False, [$03, $07, $00, $00]
+		UNIT FriegePriest2, Enemy, [4, 30], [4, 30], Barath, [Heal, Restore], 6, False, [$03, $07, $00, $00]
+	UNIT
+
+	_Turn5ReinforcementsCameraCoordinates ; B1/94D4
+		.byte 14, 24
+
+	_Turn5ReinforcementsGroup ; B1/94D6
+		UNIT FriegeMage1, Enemy, [5, 30], [5, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [1, 30], [1, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [3, 30], [3, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [7, 30], [7, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [9, 30], [9, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [11, 30], [11, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [16, 30], [16, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [18, 30], [18, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [20, 30], [20, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [22, 30], [22, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [24, 30], [24, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [26, 30], [26, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [28, 30], [28, 30], Barath, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+	UNIT
+
+	_Turn7ReinforcementsCameraCoordinates ; B1/95DC
+		.byte 14, 24
+
+	_Turn7ReinforcementsGroup ; B1/95DE
+		UNIT FriegeBallista1, Enemy, [11, 30], [11, 30], Barath, [Ballista], 6, False, [$00, $03, $00, $00]
+		UNIT FriegeBallista1, Enemy, [15, 30], [15, 30], Barath, [Ballista], 6, False, [$00, $03, $00, $00]
+		UNIT FriegeBallista1, Enemy, [19, 30], [19, 30], Barath, [Ballista], 6, False, [$00, $03, $00, $00]
+		UNIT FriegeBallista1, Enemy, [7, 30], [7, 30], Barath, [Ballista], 6, False, [$00, $03, $00, $00]
+	UNIT
+
+	_Turn10ReinforcementsCameraCoordinates ; B1/9630
+		.byte 14, 25
+
+	_Turn10ReinforcementsGroup ; B1/9632
+		UNIT FriegeBallista5, Enemy, [9, 30], [9, 30], Barath, [IronBallista], 6, False, [$00, $03, $00, $00]
+		UNIT FriegeBallista5, Enemy, [17, 30], [17, 30], Barath, [IronBallista], 6, False, [$00, $03, $00, $00]
+	UNIT
+
+	_Turn12ReinforcementsCameraCoordinates ; B1/965C
+		.byte 14, 24
+
+	_Turn12ReinforcementsGroup ; B1/965E
+		UNIT FriegeMage1, Enemy, [23, 30], [23, 30], Barath, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [25, 30], [25, 30], Barath, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [3, 30], [3, 30], Barath, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [1, 30], [1, 30], Barath, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+	UNIT
+
+	_MageReinforcementsCameraCoordinates ; B1/96B0
+		.byte 14, 24
+
+	_MageReinforcementsGroup ; B1/96B2
+		UNIT FriegeMage1, Enemy, [1, 30], [1, 30], Barath, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [3, 30], [3, 30], Barath, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [23, 30], [23, 30], Barath, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [25, 30], [25, 30], Barath, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+	UNIT
+
+	_ReoccurringReinforcementsCameraCoordinates ; B1/9704
+		.byte 14, 24
+
+	_ReoccuringReinforcementsGroup ; B1/9706
+		UNIT FriegeArmoredAxe1, Enemy, [1, 30], [1, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [3, 30], [3, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [5, 30], [5, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [7, 30], [7, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [9, 30], [9, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [11, 30], [11, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [16, 30], [16, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [18, 30], [18, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [20, 30], [20, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [22, 30], [22, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [24, 30], [24, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [26, 30], [26, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [28, 30], [28, 30], Barath, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+	UNIT
+
+	_UnusedCoordinates1 ; B1/980C
+		.byte 8, 7
+
+	_ReinhardtGroup ; B1/980E
+		UNIT Reinhardt, Enemy, [1, 28], [14, 29], Reinhardt, [], 2, False, [$00, $00, $00, $00]
+	UNIT
+
+	_StartingPositions ; B1/9824
+		.byte 3, 6
+		.byte 24, 19
+		.byte 27, 12
+		.byte 16, 24
+		.byte 10, 24
+		.byte 2, 7
+		.byte 4, 7
+		.byte 26, 24
+		.byte 5, 24
+		.byte 2, 19
+		.byte 10, 17
+		.byte 16, 17
+		.byte 21, 19
+		.byte 5, 19
+		.byte 12, 8
+		.byte 14, 8
+	.byte $FF
+
+	_Chest1Coordinates ; B1/9845
+		.byte 23, 12
+
+	_Chest1Item ; B1/9847
+		.word KnightCrest
+
+	_Chest1Events ; B1/9849
+		STORE_WORD wEventEngineXCoordinate, 23
+		STORE_WORD wEventEngineYCoordinate, 12
+		STORE_WORD wEventEngineParameter1, $0026
+
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+
+		STORE_WORD_FROM wEventEngineParameter1, _Chest1Item
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+	END2
+
+	_Vendor ; B1/9889
+		SHOP [9, 1], [Vulnerary, Torch, Heal, Thunder]

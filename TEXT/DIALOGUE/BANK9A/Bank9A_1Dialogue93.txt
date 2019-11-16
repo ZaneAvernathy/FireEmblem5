@@ -1,0 +1,15 @@
+; 9A/CCF5
+DIALOGUE_FONT_5
+.text "律"
+DIALOGUE_FONT_2
+.text "義"
+DIALOGUE_FONT_0
+.text "な"
+DIALOGUE_FONT_2
+.text "槍"
+DIALOGUE_FONT_1
+.text "騎士"
+DIALOGUE_FONT_0
+.text "　グレイド"
+DIALOGUE_NL
+DIALOGUE_EOF

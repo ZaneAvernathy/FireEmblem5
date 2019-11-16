@@ -1,0 +1,21 @@
+dialogueChapter3Ending6 ; 93/8B90
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD SapphiePortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "神"
+	DIALOGUE_FONT_0
+	.text "よ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "どうか"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "をお"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "りください･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

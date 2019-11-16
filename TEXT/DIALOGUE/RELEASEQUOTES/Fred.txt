@@ -1,0 +1,16 @@
+dialogueFredReleaseQuote ; 95/F479
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "すまない･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "この"
+	DIALOGUE_FONT_4
+	.text "借"
+	DIALOGUE_FONT_0
+	.text "りはきっと"
+	DIALOGUE_FONT_4
+	.text "返"
+	DIALOGUE_FONT_0
+	.text "す･･･"
+DIALOGUE_END_SCENE

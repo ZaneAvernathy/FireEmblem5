@@ -1,0 +1,8 @@
+; 90/8019
+DIALOGUE_FONT_0
+.text "マンスター"
+DIALOGUE_FONT_1
+.text "地下"
+DIALOGUE_FONT_3
+.text "牢獄"
+DIALOGUE_EOF

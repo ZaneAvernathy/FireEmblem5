@@ -1,0 +1,13 @@
+dialogueZailleDeathQuote ; 92/E8BD
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ぐぉっ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ち､"
+	DIALOGUE_PAUSE $08
+	.text "ちくしょう･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ぐふ･･･"
+DIALOGUE_END_SCENE

@@ -1,0 +1,12 @@
+; 8A/B443
+DIALOGUE_FONT_0
+.text "ほかに"
+DIALOGUE_FONT_4
+.text "欲"
+DIALOGUE_FONT_0
+.text "しい"
+DIALOGUE_FONT_1
+.text "物"
+DIALOGUE_FONT_0
+.text "はあるかい"
+DIALOGUE_EOF

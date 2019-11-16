@@ -1,0 +1,303 @@
+dialogueChapter11FredChange ; 95/F497
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD FredPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "フリージの"
+	DIALOGUE_FONT_1
+	.text "聖騎士"
+	DIALOGUE_FONT_0
+	.text "よ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "これがあなたたちのやり"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "なのか"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ノエル"
+	DIALOGUE_FONT_5
+	.text "渓"
+	DIALOGUE_FONT_1
+	.text "谷"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "ったときは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "さすがは"
+	DIALOGUE_FONT_1
+	.text "名"
+	DIALOGUE_FONT_4
+	.text "誉"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "重"
+	DIALOGUE_FONT_0
+	.text "んじるフリージ"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "と"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "感心"
+	DIALOGUE_FONT_0
+	.text "もしたが"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "どうやら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ぼくの"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "いちがいだったようだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "わが"
+	DIALOGUE_FONT_1
+	.text "公国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "名"
+	DIALOGUE_FONT_4
+	.text "誉"
+	DIALOGUE_FONT_0
+	.text "のために"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "っておくが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "このような"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "いは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "聖戦士"
+	DIALOGUE_FONT_0
+	.text "トードの"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "るところではない"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "すべてはあの"
+	DIALOGUE_FONT_1
+	.text "男"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ケンプフ"
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_NL
+	.text "おろかさから"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "たことだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "騎士"
+	DIALOGUE_FONT_0
+	.text "として"
+	DIALOGUE_FONT_2
+	.text "死"
+	DIALOGUE_FONT_0
+	.text "ぬことはいとわぬが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "こんなやりかたではがまんができぬ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･･もしあなたに"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "う"
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "がないのなら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ぼくたちは"
+	DIALOGUE_FONT_1
+	.text "手出"
+	DIALOGUE_FONT_0
+	.text "しはしない"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "もっとも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "おたがいそんな"
+	DIALOGUE_FONT_4
+	.text "余"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "はないはずだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "そうだな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "もまだやり"
+	DIALOGUE_FONT_2
+	.text "残"
+	DIALOGUE_FONT_0
+	.text "したことがある"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "いいだろう･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "おたがい"
+	DIALOGUE_FONT_2
+	.text "脱"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "することだけを"
+	DIALOGUE_FONT_5
+	.text "考"
+	DIALOGUE_FONT_0
+	.text "えよう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "わかった"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "我"
+	DIALOGUE_FONT_1
+	.text "々"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "城内"
+	DIALOGUE_FONT_0
+	.text "への"
+	DIALOGUE_FONT_2
+	.text "突"
+	DIALOGUE_FONT_1
+	.text "入"
+	DIALOGUE_FONT_0
+	.text "をはかるが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "あなたは"
+	DIALOGUE_FONT_1
+	.text "南"
+	DIALOGUE_FONT_0
+	.text "へ"
+	DIALOGUE_FONT_2
+	.text "脱"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "するといい"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_3
+	.text "扉"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_3
+	.text "我"
+	DIALOGUE_FONT_1
+	.text "々"
+	DIALOGUE_FONT_0
+	.text "がなんとかしよう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_4
+	.text "借"
+	DIALOGUE_FONT_0
+	.text "りができたようだな･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はシュターゼ"
+	DIALOGUE_FONT_1
+	.text "家"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "騎士"
+	DIALOGUE_FONT_0
+	.text "フレッドだが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "きみの"
+	DIALOGUE_FONT_1
+	.text "名"
+	DIALOGUE_FONT_0
+	.text "は？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "レンスター"
+	DIALOGUE_FONT_1
+	.text "王国"
+	DIALOGUE_FONT_0
+	.text "のリーフだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "レンスターの？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "なるほど･･･"
+	DIALOGUE_PAUSE $10
+	.text "そういうことか･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ではリーフどの､"
+	DIALOGUE_PAUSE $08
+	.text "いずれまた"
+	DIALOGUE_FONT_1
+	.text "会"
+	DIALOGUE_FONT_0
+	.text "おう！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

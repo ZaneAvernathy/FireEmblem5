@@ -1,0 +1,16 @@
+dialogueChapterFinalTitle ; 9A/BB6F
+	DIALOGUE_FONT_1
+	.text "⅛⅛⅛½最"
+	DIALOGUE_FONT_2
+	.text "終章"
+	DIALOGUE_FONT_1
+	.text "⅛"
+	DIALOGUE_FONT_0
+	.text "　　　　　"
+	DIALOGUE_FONT_4
+	.text "誓"
+	DIALOGUE_FONT_0
+	.text "いの"
+	DIALOGUE_FONT_1
+	.text "剣⅛⅛⅛½"
+DIALOGUE_EOF

@@ -1,0 +1,16 @@
+dialogueChapter10UnusedSaiasMareetaPlaceholder ; E7/96CB
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AnnaPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "元"
+	DIALOGUE_FONT_0
+	.text "メッセージ｢サイアス～マリータ｣です"
+	DIALOGUE_NL
+	.text "このメッセージは"
+	DIALOGUE_FONT_2
+	.text "移動"
+	DIALOGUE_FONT_0
+	.text "しました"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

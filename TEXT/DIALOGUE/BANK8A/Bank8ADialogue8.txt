@@ -1,0 +1,16 @@
+; 8A/B464
+DIALOGUE_FONT_0
+.text "どの"
+DIALOGUE_FONT_1
+.text "持"
+DIALOGUE_FONT_0
+.text "ち"
+DIALOGUE_FONT_1
+.text "物"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_3
+.text "売"
+DIALOGUE_FONT_0
+.text "るんだ"
+DIALOGUE_EOF

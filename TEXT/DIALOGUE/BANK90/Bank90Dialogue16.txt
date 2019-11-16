@@ -1,0 +1,6 @@
+; 90/80A0
+DIALOGUE_FONT_2
+.text "記録"
+DIALOGUE_FONT_0
+.text "　　　　やめる"
+DIALOGUE_EOF

@@ -1,0 +1,537 @@
+
+eventChapter9Events ; 8C/F011
+
+	_OpeningEventDefinitions ; 8C/F011
+		EVENT $00, _OpeningEvent
+			CMP_WORD wCurrentTurn, 0
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TurnEventDefinitions ; 8C/F01E
+		EVENT $02, eventMapDeathQuoteDummyEvent
+			CHECK_DEAD Merloch
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+		EVENT $01, eventMapDeathQuoteDummyEvent
+			TEST_FLAG_SET $03
+		END_DEFINITION
+		EVENT $00, _EnemyAIChange1
+			CMP_WORD wCurrentTurn, 20
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+		EVENT $00, _EnemyAIChange2
+			CMP_WORD wCurrentTurn, 22
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TalkEventDefinitions ; 8C/F057
+		EVENT $06, _LeifSelphinaTalk
+			CHECK_CHARS2 Leif, Selphina
+		END_DEFINITION
+		EVENT $07, _SelphinaFinnTalk
+			CHECK_CHARS2 Selphina, Finn
+		END_DEFINITION
+		EVENT $08, _CallionSelphinaTalk
+			CHECK_CHARS2 Callion, Selphina
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_LocationEventDefinitions ; 8C/F077
+		EVENT $21, _ValasScrollHouse
+			CMP_BYTE wCursorXCoord, 16
+			CMP_BYTE wCursorYCoord, 4
+			CMP_WORD wCurrentPhase, Player
+		END_DEFINITION
+		EVENT $22, _StaminaDrinkHouse
+			CMP_BYTE wCursorXCoord, 23
+			CMP_BYTE wCursorYCoord, 29
+			CMP_WORD wCurrentPhase, Player
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_BeforeActionEventDefinitions ; 8C/F0A3
+		EVENT $09, _PlayerRetreat
+			CMP_BITS $7E4F98, $0008
+			CMP_BYTE wCursorXCoord, 6
+			CMP_BYTE wCursorYCoord, 4
+			CMP_WORD aSelectedCharacterBuffer.Character, Leif
+		END_DEFINITION
+		EVENT $09, _PlayerRetreat
+			CMP_BITS $7E4F98, $0008
+			CMP_BYTE wCursorXCoord, 6
+			CMP_BYTE wCursorYCoord, 4
+			CHECK_CARRYING Leif
+		END_DEFINITION
+		EVENT $00, _PlayerRetreat
+			CMP_BITS $7E4F98, $0008
+			TEST_FLAG_UNSET $09
+			CMP_BYTE wCursorXCoord, 6
+			CMP_BYTE wCursorYCoord, 4
+		END_DEFINITION
+		EVENT $00, _PlayerLoss
+			CMP_BYTE wCursorXCoord, 6
+			CMP_BYTE wCursorYCoord, 4
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_AfterActionEventDefinitions ; 8C/F104
+		EVENT $00, _EndingEvent
+			TEST_FLAG_SET $09
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_BattleEventDefinitions ; 8C/F10D
+		EVENT $05, eventBattleQuoteDummyEvent
+			CHECK_SINGLE Merloch
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_ShopEventDefinitions ; 8C/F117
+		EVENT $00, eventChapter9Data._Vendor
+			CMP_BYTE_AT wCursorXCoord, eventChapter9Data._Vendor
+			CMP_BYTE_AT wCursorYCoord, eventChapter9Data._Vendor+1
+		END_DEFINITION
+		EVENT $00, eventChapter9Data._Armory
+			CMP_BYTE_AT wCursorXCoord, eventChapter9Data._Armory
+			CMP_BYTE_AT wCursorYCoord, eventChapter9Data._Armory+1
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_LeifSelphinaTalk ; 8C/F13F
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $45
+		YIELD
+
+		DIALOGUE dialogueChapter9LeifSelphinaTalk
+		YIELD
+	END2
+
+	_SelphinaFinnTalk ; 8C/F14F
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $4A
+		YIELD
+
+		DIALOGUE dialogueChapter9SelphinaFinnTalk1
+
+		EVENT_TEST_FLAG_SET $06
+		JUMP_FALSE +
+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter9SelphinaFinnTalk2
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+		+
+		YIELD
+	END2
+
+	_CallionSelphinaTalk ; 8C/F171
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $4B
+		YIELD
+
+		DIALOGUE dialogueChapter9CallionSelphinaTalk
+		YIELD
+
+		STORE_WORD wEventEngineParameter1, TurnStatusActing
+		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
+
+		STORE_WORD wEventEngineParameter1, ParagonSword
+		PAUSE_SKIPPABLE 10
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+
+		STORE_WORD wEventEngineParameter1, TurnStatusActing
+		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
+	END2
+
+	_EnemyAIChange1 ; 8C/F1C2
+		STORE_WORD wEventEngineCharacterTarget, Merloch
+		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		JUMP_FALSE +
+
+		SCROLL_CAMERA_CHAR Merloch
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		+
+		STORE_WORD wEventEngineCharacterTarget, ThracianBishop
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, ThracianBishop
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, ThracianBishop
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, ThracianBishop
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, ThracianArmoredLance
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, ThracianArmoredLance
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, ThracianArmoredLance
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, ThracianArmoredLance
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+	END2
+
+	_EnemyAIChange2 ; 8C/F297
+		STORE_WORD wEventEngineCharacterTarget, Merloch
+		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		JUMP_FALSE +
+
+		SCROLL_CAMERA_CHAR Merloch
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		+
+		STORE_WORD wEventEngineCharacterTarget, Merloch
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Merloch
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Merloch
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $0E
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Merloch
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, ThracianWyvernRider
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, ThracianWyvernRider
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, ThracianWyvernRider
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $0E
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, ThracianWyvernRider
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+	END2
+
+	_ValasScrollHouse ; 8C/F36C
+		PLAY_SOUND_WORD $00F7
+		DIALOGUE dialogueChapter9ValasScrollHouse
+		YIELD
+
+		STORE_WORD wEventEngineParameter1, TurnStatusActing
+		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
+
+		STORE_WORD wEventEngineParameter1, ValasScroll
+		PAUSE_SKIPPABLE 10
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+
+		STORE_WORD wEventEngineParameter1, TurnStatusActing
+		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
+
+		STORE_WORD wEventEngineXCoordinate, 16
+		STORE_WORD wEventEngineYCoordinate, 4
+		STORE_WORD wEventEngineParameter1, $0021
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+	END2
+
+	_StaminaDrinkHouse ; 8C/F3CF
+		PLAY_SOUND_WORD $00F7
+		DIALOGUE dialogueChapter9StaminaDrinkHouse
+		YIELD
+
+		STORE_WORD wEventEngineParameter1, TurnStatusActing
+		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
+
+		STORE_WORD wEventEngineParameter1, StaminaDrink
+		PAUSE_SKIPPABLE 10
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+
+		STORE_WORD wEventEngineParameter1, TurnStatusActing
+		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
+
+		STORE_WORD wEventEngineXCoordinate, 23
+		STORE_WORD wEventEngineYCoordinate, 29
+		STORE_WORD wEventEngineParameter1, $0021
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+	END2
+
+	_PlayerRetreat ; 8C/F432
+		PAUSE_SKIPPABLE 15
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, $0000
+		STORE_WORD_FROM wEventEngineCharacterTarget, aSelectedCharacterBuffer.Character
+		DIALOGUE_ARRAY aRetreatQuoteTable
+		YIELD
+
+		CALL_ASM_LOOP rlASMCUpdateRetreatingUnitTurnStatus, $0000
+		CALL_ASM_LOOP rlASMCCopyRetreatingUnitDataToEventBuffer, $0000
+
+		MOVE_UNIT $FFFF, [0, 0], [0, 0], 1, _RetreatMovestring
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCUnknown8CA097, $0000
+		WAIT_MOVE
+		YIELD
+
+		CALL_ASM_LOOP rlASMCCopyRetreatingUnitDataFromEventBuffer, $0000
+	END2
+
+	_RetreatMovestring ; 8C/F46F
+	MS_END
+
+	_PrepGroups ; 8C/F470
+		.long eventChapter9Data._PrepGroup1
+		.long eventChapter9Data._PrepGroup2
+	.word $0000
+
+	_OpeningEvent ; 8C/F478
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $3D
+		YIELD
+
+		STORE_LONG wProcInput1+1, dialogueChapter9Title
+		STORE_WORD wProcInput1, <>dialogueChapter9Title
+		STORE_LONG lR43, $9A814C
+		CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
+		YIELD
+
+		SCROLL_CAMERA_SPEED [18, 20], 4
+
+		LOAD1 eventChapter9Data._AltenaTravantGroup
+		WAIT_MOVE
+		YIELD
+
+		LOAD1 eventChapter9Data._MerlochGroup
+		WAIT_MOVE
+		YIELD
+
+		DIALOGUE dialogueChapter9Opening1
+		YIELD
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $31
+		YIELD
+
+		MOVE_UNIT Altena, [0, 0], [16, 28], 2, None
+		YIELD_UNK
+
+		MOVE_UNIT Travant, [0, 0], [18, 28], 2, None
+		YIELD_UNK
+
+		WAIT_MOVE
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, Altena
+		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Travant
+		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+
+		WAIT_MOVE
+		YIELD
+
+		MOVE_UNIT Merloch, [0, 0], [17, 28], 2, None
+		YIELD_UNK
+
+		WAIT_MOVE
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, FriegeBishop2
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.LeadershipStars
+		STORE_WORD wEventEngineParameter2, 3
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineXCoordinate, 6
+		STORE_WORD wEventEngineYCoordinate, 4
+		SET_ACTIVE_COORDS
+
+		SCROLL_CAMERA_SPEED [6, 4], 4
+		YIELD
+
+		STORE_WORD wEventEngineParameter1, 1
+		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter9Opening2
+		YIELD_UNK
+		YIELD_UNK
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+		YIELD
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+		YIELD
+
+		LOAD1 eventChapter9Data._SelphinaKaneGroup
+		WAIT_MOVE
+		YIELD
+
+		LOAD1 eventChapter9Data._AlbaRobertGroup
+		WAIT_MOVE
+		YIELD
+
+		SCROLL_CAMERA_CHAR Leif
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		DIALOGUE dialogueChapter9Opening3
+		YIELD
+	END2
+
+	_EndingEvent ; 8C/F56D
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 16
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $4B
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+
+		STORE_WORD wEventEngineParameter1, 1
+		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter9Ending1
+		YIELD_UNK
+		YIELD_UNK
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+		YIELD
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+		DIALOGUE dialogueChapter9Ending2
+		YIELD
+
+		LOAD1 eventChapter9Data._AltenaGroup
+		WAIT_MOVE
+		YIELD
+
+		SCROLL_CAMERA_CHAR Altena
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		DIALOGUE dialogueChapter9Ending3
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, Leif
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.LeadershipStars
+		STORE_WORD wEventEngineParameter2, 1
+		CALL_ASM_LOOP rlASMCAddCharacterDataByte, $0000
+
+		PLAY_SOUND_WORD $00E7
+
+		FADE_OUT $01
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured, $0000
+
+		FADE_OUT $01
+		YIELD
+
+		CALL_ASM_LOOP rlASMCChapterEnd, $0000
+	END1
+
+	_PlayerLoss ; 8C/F5F5
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $28
+		YIELD
+
+		DIALOGUE dialogueChapter9PlayerLoss
+		YIELD
+
+		CALL_ASM_SKIPPABLE rlUnknown80C29D, $0000
+
+		STORE_WORD wUnknown001791, $FFFF
+	END1

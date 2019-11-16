@@ -1,0 +1,17 @@
+; 8A/B53B
+DIALOGUE_FONT_4
+.text "次"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "相"
+DIALOGUE_FONT_1
+.text "手"
+DIALOGUE_FONT_0
+.text "とも"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "戦"
+DIALOGUE_FONT_0
+.text "うかい？"
+DIALOGUE_EOF

@@ -1,0 +1,25 @@
+dialogueChapter3Ending4 ; 93/8B52
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD OrsinPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ちぇっ･･･"
+	DIALOGUE_PAUSE $10
+	.text "しかたねえな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "リーフ！　"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "助"
+	DIALOGUE_FONT_0
+	.text "けに"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "ってやっからよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "くたばるんじゃねえぜ！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

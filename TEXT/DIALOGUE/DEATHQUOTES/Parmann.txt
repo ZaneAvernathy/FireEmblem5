@@ -1,0 +1,12 @@
+dialogueParmannDeathQuote ; E7/B1C4
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･･フリージは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･"
+	DIALOGUE_FONT_2
+	.text "遠"
+	DIALOGUE_FONT_0
+	.text "いな･･･"
+DIALOGUE_END_SCENE

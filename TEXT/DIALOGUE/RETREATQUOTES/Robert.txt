@@ -1,0 +1,9 @@
+dialogueRobertRetreatQuote ; 82/C43E
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD RobertPortrait
+	DIALOGUE_FONT_4
+	.text "次"
+	DIALOGUE_FONT_0
+	.text "こそは･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

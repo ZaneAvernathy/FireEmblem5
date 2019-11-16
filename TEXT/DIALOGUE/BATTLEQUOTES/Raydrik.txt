@@ -1,0 +1,16 @@
+dialogueRaydrikBattleQuote ; 93/A946
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "くっ･･･"
+	DIALOGUE_PAUSE $10
+	.text "アイゼナウめ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いったい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "をしておるのだ･･･"
+DIALOGUE_END_SCENE

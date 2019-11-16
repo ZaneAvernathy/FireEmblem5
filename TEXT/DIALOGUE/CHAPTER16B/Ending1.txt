@@ -1,0 +1,76 @@
+dialogueChapter16BEnding1 ; DA/E5CA
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "なんとか"
+	DIALOGUE_FONT_4
+	.text "抜"
+	DIALOGUE_FONT_0
+	.text "けることができましたな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "それにしても"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "このようなところに"
+	DIALOGUE_NL
+	.text "ロプトの"
+	DIALOGUE_FONT_3
+	.text "僧"
+	DIALOGUE_FONT_1
+	.text "院"
+	DIALOGUE_FONT_0
+	.text "があるとは"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "このアウグストの"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "不"
+	DIALOGUE_FONT_4
+	.text "覚"
+	DIALOGUE_FONT_0
+	.text "にございました･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "いや､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "にすることはない"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あなたとて"
+	DIALOGUE_FONT_1
+	.text "神"
+	DIALOGUE_FONT_0
+	.text "ではないのだから"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "だが"
+	DIALOGUE_FONT_4
+	.text "確"
+	DIALOGUE_FONT_0
+	.text "かにここは"
+	DIALOGUE_FONT_3
+	.text "迷"
+	DIALOGUE_FONT_0
+	.text "いの"
+	DIALOGUE_FONT_3
+	.text "森"
+	DIALOGUE_FONT_0
+	.text "だな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "よく"
+	DIALOGUE_FONT_4
+	.text "抜"
+	DIALOGUE_FONT_0
+	.text "けることができたものだ"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

@@ -1,0 +1,247 @@
+dialogueChapter7Ending1 ; 93/A3EC
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD HannibalPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "マンスターから"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "げてこられたそうだが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "どうされたのかな？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "はい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "東海岸"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_4
+	.text "住"
+	DIALOGUE_FONT_0
+	.text "んでいたのですが"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_3
+	.text "供"
+	DIALOGUE_FONT_4
+	.text "狩"
+	DIALOGUE_FONT_0
+	.text "りに"
+	DIALOGUE_FONT_2
+	.text "反"
+	DIALOGUE_FONT_3
+	.text "抗"
+	DIALOGUE_FONT_0
+	.text "した"
+	DIALOGUE_FONT_2
+	.text "罪"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "捕"
+	DIALOGUE_FONT_0
+	.text "われました"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "でも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "街"
+	DIALOGUE_FONT_0
+	.text "のレジスタンスに"
+	DIALOGUE_FONT_1
+	.text "救"
+	DIALOGUE_FONT_0
+	.text "われ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "一"
+	DIALOGUE_FONT_2
+	.text "緒"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "げ"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "してきました"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ふむ･･･"
+	DIALOGUE_PAUSE $10
+	.text "まだお"
+	DIALOGUE_FONT_3
+	.text "若"
+	DIALOGUE_FONT_0
+	.text "いが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "なかなかよい"
+	DIALOGUE_FONT_4
+	.text "顔"
+	DIALOGUE_FONT_0
+	.text "をされておられる"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "名前"
+	DIALOGUE_FONT_0
+	.text "は？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ルー･ファリスです"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ハンニバル"
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "うーむ､"
+	DIALOGUE_PAUSE $08
+	.text "にている･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "えっ？"
+	DIALOGUE_PAUSE $10
+	.text "･･･"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "がです？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "いや､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "でもない"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "それより"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "これからどうなされるおつもりか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ターラに"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "くつもりです"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あの"
+	DIALOGUE_FONT_1
+	.text "街"
+	DIALOGUE_FONT_0
+	.text "には"
+	DIALOGUE_FONT_3
+	.text "友"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "がいますから"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "中央山"
+	DIALOGUE_FONT_3
+	.text "脈"
+	DIALOGUE_FONT_0
+	.text "をこえてゆかれるおつもりか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "はい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちは"
+	DIALOGUE_FONT_2
+	.text "反"
+	DIALOGUE_FONT_3
+	.text "逆"
+	DIALOGUE_FONT_1
+	.text "者"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "領内"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_2
+	.text "歩"
+	DIALOGUE_FONT_0
+	.text "けません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "そうか･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あのあたりは"
+	DIALOGUE_FONT_1
+	.text "山賊"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "多"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "をつけて"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "かれよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

@@ -1,0 +1,4 @@
+; 8A/B438
+DIALOGUE_FONT_0
+.text "どれがほしいんだい"
+DIALOGUE_EOF

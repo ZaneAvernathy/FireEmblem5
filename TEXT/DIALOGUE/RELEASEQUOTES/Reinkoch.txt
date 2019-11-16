@@ -1,0 +1,11 @@
+dialogueReinkochReleaseQuote ; DA/E6BB
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "うべきことは"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "もない･･･"
+DIALOGUE_END_SCENE

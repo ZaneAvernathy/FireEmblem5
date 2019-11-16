@@ -1,0 +1,94 @@
+dialogueChapter3LuciaHouseLucia ; 93/859F
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman1Portrait
+	DIALOGUE_FONT_0
+	.text "ルチア､"
+	DIALOGUE_PAUSE $10
+	.text "よかった､"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "無事"
+	DIALOGUE_FONT_0
+	.text "だったのね"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	.text "ああ･･･"
+	DIALOGUE_PAUSE $10
+	.text "どんなに"
+	DIALOGUE_FONT_2
+	.text "心配"
+	DIALOGUE_FONT_0
+	.text "したことか･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ありがとうございます"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "たいしたお"
+	DIALOGUE_FONT_2
+	.text "礼"
+	DIALOGUE_FONT_0
+	.text "はできませんが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "この"
+	DIALOGUE_FONT_2
+	.text "古文"
+	DIALOGUE_FONT_1
+	.text "書"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "差"
+	DIALOGUE_FONT_0
+	.text "し"
+	DIALOGUE_FONT_1
+	.text "上"
+	DIALOGUE_FONT_0
+	.text "げましょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちにはよくわからないのですが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "なんでも､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "持"
+	DIALOGUE_FONT_0
+	.text "っているだけで"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "不"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_3
+	.text "議"
+	DIALOGUE_FONT_0
+	.text "な"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "授"
+	DIALOGUE_FONT_0
+	.text "かるとか･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "お"
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "てばよいのですが･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

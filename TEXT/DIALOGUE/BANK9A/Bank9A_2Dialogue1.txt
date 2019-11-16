@@ -1,0 +1,13 @@
+; 9A/DE58
+DIALOGUE_FONT_0
+.text "プロローグ２"
+DIALOGUE_NL
+.text "プロローグ２"
+DIALOGUE_NL
+.text "プロローグ２"
+DIALOGUE_NL
+.text "プロローグ２"
+DIALOGUE_NL
+.text "プロローグ２"
+DIALOGUE_NL
+DIALOGUE_EOF

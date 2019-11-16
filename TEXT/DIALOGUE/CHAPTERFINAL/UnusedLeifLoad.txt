@@ -1,0 +1,4 @@
+dialogueChapterFinalUnusedLeifLoad ; E7/DA6D
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD LeifPortrait
+DIALOGUE_END_SCENE

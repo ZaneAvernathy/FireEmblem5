@@ -1,0 +1,83 @@
+; 9A/C794
+DIALOGUE_FONT_0
+.text "マンスターに"
+DIALOGUE_FONT_3
+.text "戻"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_NL
+.text "その"
+DIALOGUE_FONT_2
+.text "再"
+DIALOGUE_FONT_1
+.text "建"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+DIALOGUE_FONT_3
+.text "情"
+DIALOGUE_FONT_2
+.text "熱"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_3
+.text "注"
+DIALOGUE_FONT_0
+.text "ぐ"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "やがて"
+DIALOGUE_NL
+.text "かつての"
+DIALOGUE_FONT_1
+.text "戦"
+DIALOGUE_FONT_3
+.text "友"
+DIALOGUE_FONT_0
+.text "と"
+DIALOGUE_NL
+DIALOGUE_FONT_3
+.text "結"
+DIALOGUE_FONT_2
+.text "婚"
+DIALOGUE_FONT_0
+.text "､"
+DIALOGUE_FONT_1
+.text "出"
+DIALOGUE_FONT_3
+.text "産"
+DIALOGUE_FONT_0
+.text "するが"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "マンスター"
+DIALOGUE_FONT_2
+.text "再"
+DIALOGUE_FONT_1
+.text "建"
+DIALOGUE_FONT_0
+.text "への"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "彼女"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_3
+.text "情"
+DIALOGUE_FONT_2
+.text "熱"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "生"
+DIALOGUE_FONT_3
+.text "涯"
+DIALOGUE_NL
+.text "変"
+DIALOGUE_FONT_0
+.text "わらなかったという"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

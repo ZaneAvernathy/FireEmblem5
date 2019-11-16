@@ -1,0 +1,4 @@
+; 9A/E11C
+DIALOGUE_FONT_0
+.text "𝑨𝑨𝑨"
+DIALOGUE_EOF

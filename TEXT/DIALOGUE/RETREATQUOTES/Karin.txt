@@ -1,0 +1,29 @@
+dialogueKarinRetreatQuote ; 82/C4EF
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD KarinPortrait
+	DIALOGUE_FONT_0
+	.text "ふう､"
+	DIALOGUE_PAUSE $08
+	.text "一"
+	DIALOGUE_FONT_2
+	.text "時"
+	DIALOGUE_FONT_0
+	.text "はどうなることかと"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "ったわ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "じゃあ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "先"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "くね"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

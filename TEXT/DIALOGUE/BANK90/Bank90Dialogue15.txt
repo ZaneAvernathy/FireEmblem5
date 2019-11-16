@@ -1,0 +1,4 @@
+; 90/8095
+DIALOGUE_FONT_0
+.text "Ｎむ　　　　やめる"
+DIALOGUE_EOF

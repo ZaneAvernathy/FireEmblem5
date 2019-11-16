@@ -1,0 +1,24 @@
+dialogueMischaDeathQuote ; 82/BDEA
+	DIALOGUE_FONT_0
+	.text "フフ･･･"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "も･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ディートバ"
+	DIALOGUE_FONT_1
+	.text "母様"
+	DIALOGUE_FONT_0
+	.text "の･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ところへ･･･"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "くのね････"
+DIALOGUE_END_SCENE

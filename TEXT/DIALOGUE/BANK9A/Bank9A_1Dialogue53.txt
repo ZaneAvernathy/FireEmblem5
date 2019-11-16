@@ -1,0 +1,70 @@
+; 9A/C018
+DIALOGUE_FONT_0
+.text "エーヴェルが"
+DIALOGUE_NL
+.text "いなくなった"
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_NL
+DIALOGUE_FONT_0
+.text "フィアナ"
+DIALOGUE_FONT_1
+.text "村"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "指"
+DIALOGUE_FONT_3
+.text "導"
+DIALOGUE_FONT_1
+.text "者"
+DIALOGUE_FONT_0
+.text "となる"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "彼"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_FONT_1
+.text "領主"
+DIALOGUE_FONT_0
+.text "としても"
+DIALOGUE_NL
+.text "その"
+DIALOGUE_FONT_1
+.text "才"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_2
+.text "発"
+DIALOGUE_FONT_1
+.text "揮"
+DIALOGUE_NL
+DIALOGUE_FONT_0
+.text "フィアナ"
+DIALOGUE_FONT_1
+.text "村"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_NL
+.text "まわりがうらやむほど"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "豊"
+DIALOGUE_FONT_0
+.text "かな"
+DIALOGUE_FONT_1
+.text "村"
+DIALOGUE_FONT_0
+.text "へと"
+DIALOGUE_FONT_2
+.text "発"
+DIALOGUE_FONT_4
+.text "展"
+DIALOGUE_FONT_0
+.text "する"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

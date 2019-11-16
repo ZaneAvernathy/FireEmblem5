@@ -1,0 +1,8 @@
+dialogueShiva1BattleQuote ; 95/C8DF
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ふっ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "おろかなやつらだ･･･"
+DIALOGUE_END_SCENE

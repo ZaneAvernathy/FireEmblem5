@@ -1,0 +1,41 @@
+dialogueChapter15ChurchOther ; 92/E56B
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD GunterPortrait
+	DIALOGUE_FONT_0
+	.text "おお"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "をお"
+	DIALOGUE_FONT_1
+	.text "救"
+	DIALOGUE_FONT_0
+	.text "いくださり"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ありがとうございます"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "リーダーの"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "にも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "お"
+	DIALOGUE_FONT_2
+	.text "礼"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "いたいのですが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "どちらにいらっしゃるのでしょう？"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

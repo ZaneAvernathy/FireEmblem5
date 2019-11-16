@@ -1,0 +1,10 @@
+dialogueCed1RetreatQuote ; 82/C491
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD CedPortrait
+	DIALOGUE_FONT_0
+	.text "ではここでおわかれだな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "がんばれよ！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

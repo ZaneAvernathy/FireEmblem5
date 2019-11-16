@@ -1,0 +1,216 @@
+
+eventChapter12xData ; B1/C3F7
+
+	_PrepEnemies ; B1/C3F7
+		.byte 9, 9
+
+		UNIT Trude, Enemy, [12, 3], [12, 3], Pan, [SilverSword, Vulnerary], 8, False, [$02, $08, $04, $00]
+		UNIT Pan, Enemy, [8, 10], [8, 10], Pan, [SwordOfKings, Vulnerary], 3, True, [$01, $03, $04, $80]
+		UNIT Tina, Enemy, [9, 10], [9, 10], Pan, [ThiefStaff, Unlock, StaminaDrink], 1, False, [$0D, $03, $00, $00]
+		UNIT ThiefEnemy2, Enemy, [7, 1], [7, 1], Pan, [SlimSword, Vulnerary], 12, False, [$00, $00, $02, $00]
+		UNIT ThiefEnemy2, Enemy, [17, 5], [17, 5], Pan, [SlimSword, Vulnerary, ChestKey], 12, False, [$00, $06, $02, $00]
+		UNIT ThiefEnemy2, Enemy, [3, 13], [3, 13], Pan, [SlimSword, Vulnerary], 12, False, [$00, $00, $02, $00]
+		UNIT ThiefEnemy2, Enemy, [19, 1], [19, 1], Pan, [SlimSword, Vulnerary], 12, False, [$00, $00, $02, $00]
+		UNIT ThiefEnemy2, Enemy, [19, 9], [19, 9], Pan, [SlimSword, Vulnerary, ChestKey], 12, False, [$02, $06, $02, $00]
+		UNIT ThiefEnemy2, Enemy, [7, 7], [7, 7], Pan, [SlimSword, Vulnerary, ChestKey], 12, False, [$00, $06, $02, $00]
+		UNIT ThiefEnemy2, Enemy, [23, 4], [23, 4], Pan, [SlimSword, Vulnerary, ChestKey], 12, False, [$00, $06, $02, $00]
+		UNIT ArcherEnemy1, Enemy, [17, 7], [17, 7], Pan, [IronBow], 6, False, [$00, $03, $00, $00]
+		UNIT ArcherEnemy1, Enemy, [9, 5], [9, 5], Pan, [IronBow], 8, False, [$00, $03, $00, $00]
+		UNIT ArcherEnemy1, Enemy, [5, 5], [5, 5], Pan, [IronBow], 9, False, [$00, $03, $00, $00]
+		UNIT DancerEnemy, Enemy, [19, 7], [19, 7], Pan, [SlimSword], 1, False, [$07, $07, $00, $80]
+		UNIT ThiefEnemy2, Enemy, [7, 13], [7, 13], Pan, [SlimSword, Vulnerary, ChestKey], 12, False, [$00, $06, $02, $00]
+		UNIT DancerEnemy, Enemy, [14, 3], [14, 3], Pan, [SlimSword], 1, False, [$07, $07, $00, $80]
+		UNIT DancerEnemy, Enemy, [7, 10], [7, 10], Pan, [SlimSword], 1, False, [$07, $07, $00, $80]
+	UNIT
+
+	_UnusedCoordinates1 ; B1/C54F
+		.byte 10, 7
+
+	_ArcherLeftGroup ; B1/C551
+		UNIT ArcherEnemy1, Enemy, [3, 5], [3, 5], Pan, [IronBow], 5, False, [$00, $10, $00, $00]
+	UNIT
+
+	_UnusedCoordinates2 ; B1/C567
+		.byte 13, 7
+
+	_ArcherMiddleGroup ; B1/C569
+		UNIT ArcherEnemy1, Enemy, [11, 5], [11, 5], Pan, [IronBow], 5, False, [$00, $10, $00, $00]
+	UNIT
+
+	_UnusedCoordinates3 ; B1/C57F
+		.byte 17, 8
+
+	_ArcherRightGroup ; B1/C581
+		UNIT ArcherEnemy1, Enemy, [21, 7], [21, 7], Pan, [IronBow], 5, False, [$00, $10, $00, $00]
+	UNIT
+
+	_UnusedCoordinates4 ; B1/C597
+		.byte 16, 8
+
+	_MyrmidonMiddleGroup ; B1/C599
+		UNIT MercenaryMyrmidon2, Enemy, [15, 7], [15, 7], Pan, [IronSword], 7, False, [$00, $00, $00, $00]
+	UNIT
+
+	_UnusedCoordinates5 ; B1/C5AF
+		.byte 17, 7
+
+	_MyrmidonBottomGroup ; B1/C5B1
+		UNIT MercenaryMyrmidon2, Enemy, [11, 13], [11, 13], Pan, [IronSword], 7, False, [$00, $00, $00, $00]
+	UNIT
+
+	_UnusedCoordinates6 ; B1/C5C7
+		.byte 16, 9
+
+	_ThiefGroup ; B1/C5C9
+		UNIT ThiefEnemy2, Enemy, [23, 1], [23, 1], Pan, [SlimSword, Vulnerary, ChestKey], 12, False, [$00, $05, $02, $00]
+	UNIT
+
+	_KnightCrestDancerCameraCoordinates ; B1/C5DF
+		.byte 8, 7
+
+	_KnightCrestDancerGroup ; B1/C5E1
+		UNIT DancerEnemy, Enemy, [17, 11], [17, 11], Pan, [SlimSword, KnightCrest], 1, False, [$02, $0B, $00, $00]
+	UNIT
+
+	_WarpDancerCameraCoordinates ; B1/C5F7
+		.byte 8, 7
+
+	_WarpDancerGroup ; B1/C5F9
+		UNIT DancerEnemy, Enemy, [17, 11], [17, 11], Pan, [SlimSword, Warp], 1, False, [$02, $0B, $00, $00]
+	UNIT
+
+	_UnusedCoordinates7 ; B1/C60F
+		.byte 8, 9
+
+	_SalemGroup ; B1/C611
+		UNIT Salem, Player, [15, 10], [15, 10], Leif, [Jormungand, Sleep], 5, False, [$00, $03, $00, $00]
+	UNIT
+
+	_StartingPositions ; B1/C627
+		.byte 14, 11
+		.byte 13, 12
+		.byte 15, 12
+		.byte 14, 13
+		.byte 13, 14
+		.byte 15, 14
+	.byte $FF
+
+	_Chest1Coordinates ; B1/C634
+		.byte 13, 1
+
+	_Chest1Item ; B1/C636
+		.word AssailManual
+
+	_Chest1Events ; B1/C638
+		STORE_WORD wEventEngineXCoordinate, 13
+		STORE_WORD wEventEngineYCoordinate, 1
+		STORE_WORD wEventEngineParameter1, $0026
+
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+
+		STORE_WORD_FROM wEventEngineParameter1, _Chest1Item
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+	END2
+
+	_Chest2Coordinates ; B1/C678
+		.byte 15, 1
+
+	_Chest2Item ; B1/C67A
+		.word ShieldRing
+
+	_Chest2Events ; B1/C67C
+		STORE_WORD wEventEngineXCoordinate, 15
+		STORE_WORD wEventEngineYCoordinate, 1
+		STORE_WORD wEventEngineParameter1, $0026
+
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+
+		STORE_WORD_FROM wEventEngineParameter1, _Chest2Item
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+	END2
+
+	_Chest3Coordinates ; B1/C6BC
+		.byte 14, 7
+
+	_Chest3Item ; B1/C6BE
+		.word Fortify
+
+	_Chest3Events ; B1/C67C
+		STORE_WORD wEventEngineXCoordinate, 14
+		STORE_WORD wEventEngineYCoordinate, 7
+		STORE_WORD wEventEngineParameter1, $0026
+
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+
+		STORE_WORD_FROM wEventEngineParameter1, _Chest3Item
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+	END2
+
+	_Chest4Coordinates ; B1/C700
+		.byte 18, 11
+
+	_Chest4Item ; B1/C702
+		.word Armorslayer
+
+	_Chest4Events ; B1/C704
+		STORE_WORD wEventEngineXCoordinate, 18
+		STORE_WORD wEventEngineYCoordinate, 11
+		STORE_WORD wEventEngineParameter1, $0026
+
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+
+		STORE_WORD_FROM wEventEngineParameter1, _Chest4Item
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+	END2
+
+	_Chest5Coordinates ; B1/C744
+		.byte 1, 13
+
+	_Chest5Item ; B1/C746
+		.word KnightCrest
+
+	_Chest5Events ; B1/C748
+		STORE_WORD wEventEngineXCoordinate, 1
+		STORE_WORD wEventEngineYCoordinate, 13
+		STORE_WORD wEventEngineParameter1, $0002
+
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+
+		STORE_WORD_FROM wEventEngineParameter1, _Chest5Item
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+	END2

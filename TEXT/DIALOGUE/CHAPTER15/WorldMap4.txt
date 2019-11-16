@@ -1,0 +1,30 @@
+dialogueChapter15WorldMap4 ; 82/D37A
+	DIALOGUE_FONT_0
+	.text "しかし､"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, LeifPortrait | (0 << 8), 13 | (8 << 8)
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "リーフは､"
+	DIALOGUE_PAUSE $08
+	.text "ここでまた"
+	DIALOGUE_FONT_2
+	.text "新"
+	DIALOGUE_FONT_0
+	.text "たな"
+	DIALOGUE_FONT_2
+	.text "選"
+	DIALOGUE_FONT_3
+	.text "択"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "求"
+	DIALOGUE_FONT_0
+	.text "められることとなる･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 0
+	DIALOGUE_PAUSE $20
+DIALOGUE_END_SCENE

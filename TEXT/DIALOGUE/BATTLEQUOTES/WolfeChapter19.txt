@@ -1,0 +1,14 @@
+dialogueWolfeChapter19BattleQuote ; B0/C32D
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "貴様"
+	DIALOGUE_FONT_0
+	.text "もわが"
+	DIALOGUE_FONT_4
+	.text "刃"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "えじきとなりたいか！"
+DIALOGUE_END_SCENE

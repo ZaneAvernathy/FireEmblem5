@@ -1,0 +1,12 @@
+dialogueHortefeuxDeathQuote ; 98/9CAA
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "フリージに"
+	DIALOGUE_FONT_2
+	.text "栄光"
+	DIALOGUE_FONT_0
+	.text "あれ･･･"
+	DIALOGUE_PAUSE $10
+	.text "ぐふっ"
+	DIALOGUE_NL
+DIALOGUE_END_SCENE

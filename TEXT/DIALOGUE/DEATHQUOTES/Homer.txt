@@ -1,0 +1,10 @@
+dialogueHomerDeathQuote ; 82/BF54
+	DIALOGUE_FONT_0
+	.text "げえっ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "死"
+	DIALOGUE_FONT_0
+	.text "にたかねえよ･･･"
+DIALOGUE_END_SCENE

@@ -1,0 +1,20 @@
+dialogueLithisBattleQuote ; 95/C8F2
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ま､"
+	DIALOGUE_PAUSE $08
+	.text "まってくれ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "オレが"
+	DIALOGUE_FONT_1
+	.text "悪"
+	DIALOGUE_FONT_0
+	.text "かった"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_0
+	.text "さないでくれ！"
+DIALOGUE_END_SCENE

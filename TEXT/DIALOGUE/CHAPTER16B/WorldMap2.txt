@@ -1,0 +1,73 @@
+dialogueChapter16BWorldMap2 ; 82/D52D
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_3
+	.text "迷"
+	DIALOGUE_FONT_0
+	.text "いの"
+	DIALOGUE_FONT_3
+	.text "森"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "と"
+	DIALOGUE_FONT_4
+	.text "呼"
+	DIALOGUE_FONT_0
+	.text "ばれるメルフィーユの"
+	DIALOGUE_NL
+	DIALOGUE_FONT_3
+	.text "森林"
+	DIALOGUE_FONT_1
+	.text "地"
+	DIALOGUE_FONT_2
+	.text "帯"
+	DIALOGUE_FONT_0
+	.text "をこえる"
+	DIALOGUE_FONT_1
+	.text "必要"
+	DIALOGUE_FONT_0
+	.text "があった"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "そこが､"
+	DIALOGUE_PAUSE $08
+	.text "なぜ"
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_3
+	.text "迷"
+	DIALOGUE_FONT_0
+	.text "いの"
+	DIALOGUE_FONT_3
+	.text "森"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "と"
+	DIALOGUE_FONT_4
+	.text "呼"
+	DIALOGUE_FONT_0
+	.text "ばれるのか"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そこを､"
+	DIALOGUE_PAUSE $08
+	.text "なぜ"
+	DIALOGUE_FONT_1
+	.text "人々"
+	DIALOGUE_FONT_0
+	.text "がさけようとするのか"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "リーフたちは"
+	DIALOGUE_FONT_1
+	.text "身"
+	DIALOGUE_FONT_0
+	.text "をもって"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "ることになる"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

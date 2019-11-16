@@ -1,0 +1,32 @@
+dialogueChapter15SkillRingHouse ; 92/E607
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan7Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "よう"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "おまえさんら､"
+	DIALOGUE_PAUSE $08
+	.text "ちょうどいい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "このうでわをやるよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "にすんなって"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "どうせ"
+	DIALOGUE_FONT_1
+	.text "持"
+	DIALOGUE_FONT_0
+	.text "ってたって"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "やつらにうばわれるんだから"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

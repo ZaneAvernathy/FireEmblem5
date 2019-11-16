@@ -1,0 +1,13 @@
+; 9A/D432
+DIALOGUE_FONT_0
+.text "ダグダの"
+DIALOGUE_FONT_1
+.text "愛"
+DIALOGUE_FONT_0
+.text "した"
+DIALOGUE_FONT_3
+.text "娘"
+DIALOGUE_FONT_0
+.text "　タニア"
+DIALOGUE_NL
+DIALOGUE_EOF

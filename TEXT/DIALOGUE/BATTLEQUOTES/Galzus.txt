@@ -1,0 +1,23 @@
+dialogueGalzusBattleQuote ; 92/97F9
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_4
+	.text "哀"
+	DIALOGUE_FONT_0
+	.text "れだな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "自分"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "運"
+	DIALOGUE_FONT_2
+	.text "命"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_3
+	.text "呪"
+	DIALOGUE_FONT_0
+	.text "え･･･"
+DIALOGUE_END_SCENE

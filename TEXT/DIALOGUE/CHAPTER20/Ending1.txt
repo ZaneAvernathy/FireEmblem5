@@ -1,0 +1,208 @@
+dialogueChapter20Ending1 ; 92/F2AF
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "敵"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_5
+	.text "撤"
+	DIALOGUE_FONT_1
+	.text "退"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "始"
+	DIALOGUE_FONT_0
+	.text "めましたぞ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "なに！？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いったいどういうことだ？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "セリス"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "来"
+	DIALOGUE_FONT_0
+	.text "たのです！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "すでにアルスター"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "包囲"
+	DIALOGUE_FONT_1
+	.text "攻撃"
+	DIALOGUE_FONT_0
+	.text "しているとのこと"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "われらは"
+	DIALOGUE_FONT_1
+	.text "救"
+	DIALOGUE_FONT_0
+	.text "われたのです！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "そうか･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "セリス"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "が･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "しかしアウグスト"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "どうしてそれがわかったのだ？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "あっ､"
+	DIALOGUE_PAUSE $08
+	.text "これは"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "としたことが･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "さきほどセリスどのから"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "いの"
+	DIALOGUE_FONT_1
+	.text "者"
+	DIALOGUE_FONT_0
+	.text "がまいりました"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_5
+	.text "歯"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "部屋"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "待"
+	DIALOGUE_FONT_0
+	.text "たせております"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "セリス"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "から･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "会"
+	DIALOGUE_FONT_0
+	.text "いたい！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "すぐにお"
+	DIALOGUE_FONT_3
+	.text "通"
+	DIALOGUE_FONT_0
+	.text "ししてくれ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_UNLOAD
+	DIALOGUE_CLOSE
+	DIALOGUE_PAUSE $20
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD DermottPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "はじめてお"
+	DIALOGUE_FONT_1
+	.text "目"
+	DIALOGUE_FONT_0
+	.text "にかかります"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はセリス"
+	DIALOGUE_FONT_1
+	.text "公子"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "配"
+	DIALOGUE_FONT_1
+	.text "下"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_NL
+	.text "デルムッドと"
+	DIALOGUE_FONT_3
+	.text "申"
+	DIALOGUE_FONT_0
+	.text "します"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "デルムッド！？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "では"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "あなたがナンナの"
+	DIALOGUE_FONT_2
+	.text "兄"
+	DIALOGUE_FONT_1
+	.text "上"
+	DIALOGUE_FONT_0
+	.text "ですか！？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "はい"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

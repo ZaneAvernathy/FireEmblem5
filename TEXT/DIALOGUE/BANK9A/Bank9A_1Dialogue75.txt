@@ -1,0 +1,17 @@
+; 9A/C6CB
+DIALOGUE_FONT_3
+.text "風"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_3
+.text "導"
+DIALOGUE_FONT_0
+.text "かれた"
+DIALOGUE_FONT_2
+.text "少"
+DIALOGUE_FONT_1
+.text "年"
+DIALOGUE_FONT_0
+.text "　アスベル"
+DIALOGUE_NL
+DIALOGUE_EOF

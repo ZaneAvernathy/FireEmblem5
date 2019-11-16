@@ -1,0 +1,134 @@
+dialogueChapter18Ending3A ; DA/EC8B
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD MirandaPortrait
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "話中"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_3
+	.text "申"
+	DIALOGUE_FONT_0
+	.text "し"
+	DIALOGUE_FONT_4
+	.text "訳"
+	DIALOGUE_FONT_0
+	.text "ないけど"
+	DIALOGUE_NL
+	DIALOGUE_FONT_3
+	.text "約束"
+	DIALOGUE_FONT_0
+	.text "はどうなったのですか！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ミランダ"
+	DIALOGUE_FONT_1
+	.text "王女"
+	DIALOGUE_FONT_0
+	.text "？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "アルスターの"
+	DIALOGUE_FONT_1
+	.text "解放"
+	DIALOGUE_FONT_0
+	.text "なら"
+	DIALOGUE_NL
+	DIALOGUE_FONT_3
+	.text "忘"
+	DIALOGUE_FONT_0
+	.text "れていないさ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "では､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "すぐ"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_3
+	.text "陣"
+	DIALOGUE_FONT_0
+	.text "してください"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "グズグズしてると"
+	DIALOGUE_FONT_1
+	.text "手後"
+	DIALOGUE_FONT_0
+	.text "れになります！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "どういうことだ？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "アルスターで"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "かあったのか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "市"
+	DIALOGUE_FONT_2
+	.text "民"
+	DIALOGUE_FONT_0
+	.text "たちが"
+	DIALOGUE_FONT_2
+	.text "反乱"
+	DIALOGUE_FONT_0
+	.text "をくわだてているの"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "でも､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "彼"
+	DIALOGUE_FONT_0
+	.text "らだけでは"
+	DIALOGUE_FONT_2
+	.text "勝"
+	DIALOGUE_FONT_0
+	.text "てない"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "このままでは"
+	DIALOGUE_FONT_1
+	.text "多"
+	DIALOGUE_FONT_0
+	.text "くの"
+	DIALOGUE_FONT_4
+	.text "犠牲"
+	DIALOGUE_FONT_0
+	.text "がでるわ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "彼"
+	DIALOGUE_FONT_0
+	.text "らをたすけて！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "アルスターをたすけてください！！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

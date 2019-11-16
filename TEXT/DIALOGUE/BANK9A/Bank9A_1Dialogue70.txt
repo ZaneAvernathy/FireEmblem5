@@ -1,0 +1,64 @@
+; 9A/C530
+DIALOGUE_FONT_0
+.text "マンスターに"
+DIALOGUE_FONT_3
+.text "戻"
+DIALOGUE_FONT_0
+.text "って"
+DIALOGUE_NL
+.text "その"
+DIALOGUE_FONT_2
+.text "再"
+DIALOGUE_FONT_1
+.text "建"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_1
+.text "力"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_3
+.text "注"
+DIALOGUE_FONT_0
+.text "ぎ"
+DIALOGUE_NL
+.text "そのかたわらで"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "人々"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_1
+.text "剣"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_3
+.text "教"
+DIALOGUE_FONT_0
+.text "える"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_FONT_0
+.text "､"
+DIALOGUE_FONT_3
+.text "妻"
+DIALOGUE_FONT_0
+.text "とともに"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "小"
+DIALOGUE_FONT_0
+.text "さな"
+DIALOGUE_FONT_1
+.text "店"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_1
+.text "出"
+DIALOGUE_FONT_0
+.text "したという"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

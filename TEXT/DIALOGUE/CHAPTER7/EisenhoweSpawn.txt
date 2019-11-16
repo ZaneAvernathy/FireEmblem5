@@ -1,0 +1,256 @@
+dialogueChapter7EisenhoweSpawn ; 93/9F5D
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD RaydrikPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_2
+	.text "反乱"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "どもは"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "歩"
+	DIALOGUE_FONT_1
+	.text "兵"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "主"
+	DIALOGUE_FONT_2
+	.text "体"
+	DIALOGUE_FONT_0
+	.text "ゆえそう"
+	DIALOGUE_FONT_2
+	.text "遠"
+	DIALOGUE_FONT_0
+	.text "くへはいけぬ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "アイゼナウ"
+	DIALOGUE_NL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD Leonsterite7Portrait
+	DIALOGUE_PAUSE $10
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "騎兵"
+	DIALOGUE_FONT_2
+	.text "隊"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "率"
+	DIALOGUE_FONT_0
+	.text "いて一"
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "にせん"
+	DIALOGUE_FONT_2
+	.text "滅"
+	DIALOGUE_FONT_0
+	.text "せよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "やつらがミーズ"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "近"
+	DIALOGUE_FONT_0
+	.text "づくまでに"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "全"
+	DIALOGUE_FONT_3
+	.text "員"
+	DIALOGUE_FONT_1
+	.text "始末"
+	DIALOGUE_FONT_0
+	.text "するのだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "はい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･しかし"
+	DIALOGUE_NL
+	.text "トラキアはわれらの"
+	DIALOGUE_FONT_1
+	.text "同盟国"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_FONT_2
+	.text "本当"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "反乱"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	.text "ミーズ"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "げこむのでしょうか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "とトラキアは"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "同盟"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_3
+	.text "結"
+	DIALOGUE_FONT_0
+	.text "んでいるとはいえ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "決"
+	DIALOGUE_FONT_0
+	.text "して"
+	DIALOGUE_FONT_3
+	.text "仲"
+	DIALOGUE_FONT_0
+	.text "はよくない"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "むしろ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "悪"
+	DIALOGUE_FONT_0
+	.text "いといってもいいだろう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_2
+	.text "連"
+	DIALOGUE_FONT_1
+	.text "中"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "少"
+	DIALOGUE_FONT_0
+	.text "しでも"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "目"
+	DIALOGUE_FONT_2
+	.text "先"
+	DIALOGUE_FONT_0
+	.text "のきくやつがおれば"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "状"
+	DIALOGUE_FONT_4
+	.text "況"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "利"
+	DIALOGUE_FONT_1
+	.text "用"
+	DIALOGUE_FONT_0
+	.text "しようと"
+	DIALOGUE_FONT_5
+	.text "考"
+	DIALOGUE_FONT_0
+	.text "えるにちがいない"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "なるほど"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ワシのとりこし"
+	DIALOGUE_FONT_1
+	.text "苦"
+	DIALOGUE_FONT_4
+	.text "労"
+	DIALOGUE_FONT_0
+	.text "なら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "それにこしたことはない"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "とにかく､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "急"
+	DIALOGUE_FONT_0
+	.text "げ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "ただ､"
+	DIALOGUE_PAUSE $10
+	.text "ミーズ"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "には"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ハンニバルの"
+	DIALOGUE_FONT_2
+	.text "装"
+	DIALOGUE_FONT_3
+	.text "甲"
+	DIALOGUE_FONT_1
+	.text "軍団"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_3
+	.text "控"
+	DIALOGUE_FONT_0
+	.text "えておる"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "まちがっても"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "やつらと"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "ってはならんぞ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "わかったか！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "はっ！"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

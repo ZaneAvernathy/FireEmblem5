@@ -1,0 +1,19 @@
+dialogueRumaighDeathQuote ; 93/C3B3
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "エリーヌ､"
+	DIALOGUE_PAUSE $20
+	.text "マハル､"
+	DIALOGUE_PAUSE $20
+	.text "ミン･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	.text "すまん･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "とうさんは"
+	DIALOGUE_FONT_2
+	.text "帰"
+	DIALOGUE_FONT_0
+	.text "れねぇ･･･"
+DIALOGUE_END_SCENE

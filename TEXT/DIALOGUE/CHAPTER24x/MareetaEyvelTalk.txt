@@ -1,0 +1,234 @@
+dialogueChapter24xMareetaEyvelTalk ; E7/B515
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD MareetaPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD EyvelPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･････"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "母様"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_PAUSE $10
+	.text "　しっかりして"
+	DIALOGUE_PAUSE $10
+	.text "　お"
+	DIALOGUE_FONT_1
+	.text "母様"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･････"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "母様"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_PAUSE $10
+	.text "　あたしがわからないの？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･････"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "母様"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	.text "ごめんなさい･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あたし･･･"
+	DIALOGUE_PAUSE $10
+	.text "あたし･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･･なにを"
+	DIALOGUE_FONT_4
+	.text "泣"
+	DIALOGUE_FONT_0
+	.text "くの"
+	DIALOGUE_PAUSE $10
+	.text "･･･マリータ･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "えっ･･･"
+	DIALOGUE_PAUSE $10
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "母様"
+	DIALOGUE_FONT_0
+	.text "？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "よかった､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "正"
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "ったのね"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "さあ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "早"
+	DIALOGUE_FONT_0
+	.text "くここから･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "えっ､"
+	DIALOGUE_PAUSE $08
+	.text "ここは･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "母様"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_PAUSE $10
+	.text "　よかった･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "マリータ､"
+	DIALOGUE_PAUSE $08
+	.text "ここは一"
+	DIALOGUE_FONT_2
+	.text "体"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はどうしてここに？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "母様"
+	DIALOGUE_FONT_0
+	.text "は･･･"
+	DIALOGUE_PAUSE $10
+	.text "レイドリックに"
+	DIALOGUE_FONT_1
+	.text "石"
+	DIALOGUE_FONT_0
+	.text "にされて･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "石"
+	DIALOGUE_FONT_0
+	.text "に？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･そういえば､"
+	DIALOGUE_PAUSE $08
+	.text "レイドリックは？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "レイドリックはあたしたちがたおしたわ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "でも､"
+	DIALOGUE_PAUSE $08
+	.text "まだ､"
+	DIALOGUE_PAUSE $08
+	.text "ロプトの"
+	DIALOGUE_FONT_1
+	.text "者"
+	DIALOGUE_FONT_0
+	.text "たちが･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "母様"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "願"
+	DIALOGUE_FONT_0
+	.text "い､"
+	DIALOGUE_PAUSE $08
+	.text "あたしたちに"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "貸"
+	DIALOGUE_FONT_0
+	.text "して！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "もちろんよ､"
+	DIALOGUE_PAUSE $08
+	.text "マリータ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ごめんなさい､"
+	DIALOGUE_PAUSE $08
+	.text "ずいぶん"
+	DIALOGUE_FONT_2
+	.text "心配"
+	DIALOGUE_FONT_0
+	.text "させたようね"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "もまだまだ､"
+	DIALOGUE_PAUSE $08
+	.text "ね･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "母様"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

@@ -1,0 +1,8 @@
+; 9A/BBCC
+DIALOGUE_FONT_0
+.text "にてデビルアクスで"
+DIALOGUE_FONT_1
+.text "自"
+DIALOGUE_FONT_2
+.text "滅"
+DIALOGUE_EOF

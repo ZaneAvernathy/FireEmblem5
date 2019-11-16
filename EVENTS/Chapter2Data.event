@@ -1,0 +1,105 @@
+
+eventChapter2Data ; B1/F91C
+
+	_BakstCameraCoordinates ; B1/F91C
+		.byte 8, 7
+
+	_BakstGroup ; B1/F91E
+		UNIT Bakst, Enemy, [9, 3], [9, 4], Bakst, [IronAxe, IronBow, Vulnerary], 4, True, [$01, $03, $00, $80]
+	UNIT
+
+	_HunterCameraCoordinates ; B1/F934
+		.byte 10, 7
+
+	_HunterGroup ; B1/F936
+		UNIT LithisCrewHunter, Enemy, [9, 3], [10, 4], Bakst, [IronBow, Vulnerary], 3, False, [$02, $08, $00, $00]
+		UNIT LithisCrewHunter, Enemy, [9, 3], [11, 4], Bakst, [IronBow], 3, False, [$02, $08, $00, $00]
+	UNIT
+
+	_TopPirateReinforcementsCameraCoordinates ; B1/F960
+		.byte 14, 7
+
+	_TopPirateReinforcementsGroup ; B1/F962
+		UNIT LithisCrewPirate, Enemy, [22, 7], [21, 7], Bakst, [HandAxe], 2, False, [$00, $00, $00, $00]
+		UNIT LithisCrewPirate, Enemy, [22, 6], [21, 6], Bakst, [IronAxe], 2, False, [$00, $00, $00, $00]
+		UNIT LithisCrewPirate, Enemy, [22, 8], [21, 8], Bakst, [SteelAxe, Vulnerary], 10, False, [$02, $09, $00, $01]
+	UNIT
+
+	_MiddlePirateReinforcementsCameraCoordinates ; B1/F9A0
+		.byte 14, 14
+
+	_MiddlePirateReinforcementsGroup ; B1/F9A2
+		UNIT LithisCrewPirate, Enemy, [22, 16], [21, 16], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
+		UNIT LithisCrewPirate, Enemy, [22, 15], [21, 15], Bakst, [IronAxe, Vulnerary], 1, False, [$00, $00, $00, $00]
+		UNIT LithisCrewPirate, Enemy, [22, 14], [21, 14], Bakst, [HandAxe], 3, False, [$00, $00, $00, $00]
+	UNIT
+
+	_BottomPirateReinforcementsCameraCoordinates ; B1/F9E0
+		.byte 14, 25
+
+	_BottomPirateReinforcementsGroup ; B1/F9E2
+		UNIT LithisCrewPirate, Enemy, [22, 28], [21, 28], Bakst, [IronAxe], 1, False, [$02, $09, $00, $00]
+		UNIT LithisCrewPirate, Enemy, [22, 29], [21, 29], Bakst, [IronAxe], 3, False, [$00, $00, $00, $00]
+		UNIT LithisCrewPirate, Enemy, [22, 30], [21, 30], Bakst, [HandAxe, Vulnerary], 1, False, [$02, $09, $00, $00]
+	UNIT
+
+	_HunterPirateCameraCoordinates ; B1/FA20
+		.byte 16, 24
+
+	_HunterPirateGroup ; B1/FA22
+		UNIT LithisCrewHunter, Enemy, [15, 16], [18, 22], Bakst, [IronBow], 1, False, [$00, $01, $00, $00]
+		UNIT LithisCrewPirate, Enemy, [14, 16], [17, 22], Bakst, [IronAxe], 2, False, [$00, $03, $00, $00]
+	UNIT
+
+	_PirateGroup1CameraCoordinates ; B1/FA4C
+		.byte 16, 23
+
+	_PirateGroup1 ; B1/FA4E
+		UNIT LithisCrewPirate, Enemy, [13, 15], [17, 20], Bakst, [HandAxe, Vulnerary], 3, False, [$00, $03, $00, $00]
+	UNIT
+
+	_PirateGroup2CameraCoordinates ; B1/FA64
+		.byte 11, 18
+
+	_PirateGroup2 ; B1/FA66
+		UNIT LithisCrewPirate, Enemy, [15, 26], [13, 22], Bakst, [IronAxe], 1, False, [$00, $03, $00, $00]
+		UNIT LithisCrewPirate, Enemy, [14, 25], [12, 21], Bakst, [IronAxe, Vulnerary], 2, False, [$00, $03, $00, $00]
+	UNIT
+
+	_PirateGroup3CameraCoordinates ; B1/FA90
+		.byte 14, 7
+
+	_PirateGroup3 ; B1/FA92
+		UNIT LithisCrewPirate, Enemy, [19, 5], [19, 5], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
+		UNIT LithisCrewPirate, Enemy, [18, 3], [18, 3], Bakst, [IronAxe, Vulnerary], 3, False, [$02, $09, $00, $00]
+		UNIT LithisCrewPirate, Enemy, [18, 4], [18, 4], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
+		UNIT LithisCrewPirate, Enemy, [19, 4], [19, 4], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
+	UNIT
+
+	_UnusedCameraCoordinates1 ; B1/FAE4
+		.byte 8, 7
+
+	_RonanGroup ; B1/FAE6
+		UNIT Ronan, Player, [9, 10], [9, 10], Leif, [IronBow], 1, False, [$00, $00, $00, $00]
+	UNIT
+
+	_BishopCameraCoordinates ; B1/FAFC
+		.byte 8, 7
+
+	_BishopGroup ; B1/FAFE
+		UNIT FriegeBishop2, Enemy, [9, 3], [9, 3], Bakst, [], 1, False, [$00, $00, $00, $00]
+	UNIT
+
+	_StartingPositions ; B1/FB14
+		.byte 7, 25
+		.byte 7, 24
+		.byte 8, 25
+		.byte 6, 24
+		.byte 6, 26
+		.byte 8, 26
+		.byte 8, 24
+		.byte 6, 25
+	.byte $FF
+
+	_Vendor ; B1/FB25
+		SHOP [3, 6], [Vulnerary]

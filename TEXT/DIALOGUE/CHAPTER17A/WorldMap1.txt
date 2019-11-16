@@ -1,0 +1,46 @@
+dialogueChapter17AWorldMap1 ; 82/D47E
+	DIALOGUE_FONT_0
+	.text "ノルデンを"
+	DIALOGUE_FONT_4
+	.text "抜"
+	DIALOGUE_FONT_0
+	.text "いたリーフたち"
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_1
+	.text "解放軍"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ついにレンスター"
+	DIALOGUE_FONT_1
+	.text "東門"
+	DIALOGUE_FONT_0
+	.text "にたどりつく"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "しかし､"
+	DIALOGUE_PAUSE $08
+	.text "そこにはノルデン"
+	DIALOGUE_FONT_1
+	.text "砦以上"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_2
+	.text "隊"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "リーフたちを"
+	DIALOGUE_FONT_1
+	.text "待"
+	DIALOGUE_FONT_0
+	.text "ちうけていた"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

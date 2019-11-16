@@ -1,0 +1,91 @@
+dialogueChapter11xUnusedOlwenFredTalk ; 98/9CEA
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD OlwenPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD FredPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "フレッド"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はこの"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "たちと"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_2
+	.text "動"
+	DIALOGUE_FONT_0
+	.text "をともにすることにしました"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "だから､"
+	DIALOGUE_PAUSE $08
+	.text "あなたは"
+	DIALOGUE_FONT_1
+	.text "自"
+	DIALOGUE_FONT_2
+	.text "由"
+	DIALOGUE_FONT_0
+	.text "に･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "をおっしゃいます！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はオルエン"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_5
+	.text "副"
+	DIALOGUE_FONT_2
+	.text "官"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_0
+	.text "オルエン"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "そう"
+	DIALOGUE_FONT_1
+	.text "決"
+	DIALOGUE_FONT_0
+	.text "められたのなら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "もそれに"
+	DIALOGUE_FONT_2
+	.text "従"
+	DIALOGUE_FONT_0
+	.text "うまでです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "フレッド･･･"
+	DIALOGUE_PAUSE $10
+	.text "ありがとう"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

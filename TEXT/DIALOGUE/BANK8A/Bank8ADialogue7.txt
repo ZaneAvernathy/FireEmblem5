@@ -1,0 +1,6 @@
+; 8A/B455
+DIALOGUE_FONT_3
+.text "売"
+DIALOGUE_FONT_0
+.text "るものがねぇじゃないか"
+DIALOGUE_EOF

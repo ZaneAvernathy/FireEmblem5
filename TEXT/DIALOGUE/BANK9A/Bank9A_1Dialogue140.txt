@@ -1,0 +1,47 @@
+; 9A/DAD6
+DIALOGUE_FONT_0
+.text "ひっそりと"
+DIALOGUE_NL
+.text "すがたを"
+DIALOGUE_FONT_2
+.text "消"
+DIALOGUE_FONT_0
+.text "す"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $20
+DIALOGUE_FONT_3
+.text "諸"
+DIALOGUE_FONT_2
+.text "伝"
+DIALOGUE_FONT_0
+.text "によれば"
+DIALOGUE_NL
+.text "リーフの"
+DIALOGUE_FONT_3
+.text "保"
+DIALOGUE_FONT_2
+.text "護"
+DIALOGUE_FONT_0
+.text "のもと"
+DIALOGUE_NL
+.text "つつましくも"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "心"
+DIALOGUE_FONT_1
+.text "豊"
+DIALOGUE_FONT_0
+.text "かな"
+DIALOGUE_NL
+.text "一"
+DIALOGUE_FONT_2
+.text "生"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_3
+.text "送"
+DIALOGUE_FONT_0
+.text "ったという"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

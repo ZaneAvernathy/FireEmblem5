@@ -1,0 +1,23 @@
+dialoguePanRetreatQuote ; 82/C3AB
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD PanPortrait
+	DIALOGUE_FONT_0
+	.text "すまねえな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "先"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "かせてもらうぜ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "さんよ！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

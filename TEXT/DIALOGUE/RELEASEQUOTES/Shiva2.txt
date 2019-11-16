@@ -1,0 +1,7 @@
+dialogueShiva2ReleaseQuote ; 92/97EB
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_4
+	.text "借"
+	DIALOGUE_FONT_0
+	.text "りができたな･･･"
+DIALOGUE_END_SCENE

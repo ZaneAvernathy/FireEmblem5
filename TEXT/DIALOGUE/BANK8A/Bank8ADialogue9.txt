@@ -1,0 +1,10 @@
+; 8A/B476
+DIALOGUE_FONT_1
+.text "他"
+DIALOGUE_FONT_0
+.text "にも"
+DIALOGUE_FONT_3
+.text "売"
+DIALOGUE_FONT_0
+.text "るのか"
+DIALOGUE_EOF

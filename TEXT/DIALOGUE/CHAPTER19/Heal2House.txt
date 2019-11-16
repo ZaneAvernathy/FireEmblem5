@@ -1,0 +1,34 @@
+dialogueChapter19Heal2House ; B0/BB53
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman1Portrait
+	DIALOGUE_FONT_0
+	.text "あんたのお"
+	DIALOGUE_FONT_3
+	.text "仲"
+	DIALOGUE_FONT_2
+	.text "間"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_0
+	.text "みんな"
+	DIALOGUE_FONT_4
+	.text "傷"
+	DIALOGUE_FONT_0
+	.text "だらけじゃないか"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "このライブの"
+	DIALOGUE_FONT_1
+	.text "杖"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	.text "あげるからさ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "早"
+	DIALOGUE_FONT_0
+	.text "くなおしておあげ"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

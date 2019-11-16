@@ -1,0 +1,12 @@
+; 8A/B523
+DIALOGUE_FONT_0
+.text "かけ"
+DIALOGUE_FONT_1
+.text "金"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_NUMBER
+.text "ゴールドだ"
+DIALOGUE_NL
+.text "やってみるかい？"
+DIALOGUE_EOF

@@ -1,0 +1,83 @@
+; 9A/D8DD
+DIALOGUE_FONT_0
+.text "フリージに"
+DIALOGUE_FONT_3
+.text "戻"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_NL
+.text "フリージ"
+DIALOGUE_FONT_1
+.text "公国"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "再"
+DIALOGUE_FONT_3
+.text "興"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "力"
+DIALOGUE_FONT_0
+.text "をつくす"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "フリージ"
+DIALOGUE_FONT_2
+.text "本"
+DIALOGUE_FONT_1
+.text "家"
+DIALOGUE_FONT_0
+.text "が"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "北"
+DIALOGUE_FONT_0
+.text "トラキアにて"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "壊滅"
+DIALOGUE_FONT_0
+.text "したことにより"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "国力"
+DIALOGUE_FONT_0
+.text "がひへいしていた"
+DIALOGUE_NL
+.text "フリージだが"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "アマルダたちの"
+DIALOGUE_NL
+.text "けんめいの"
+DIALOGUE_FONT_3
+.text "努"
+DIALOGUE_FONT_1
+.text "力"
+DIALOGUE_FONT_0
+.text "により"
+DIALOGUE_NL
+.text "しだいに"
+DIALOGUE_NL
+DIALOGUE_FONT_4
+.text "往"
+DIALOGUE_FONT_1
+.text "年"
+DIALOGUE_FONT_0
+.text "のかがやきを"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "取"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_FONT_3
+.text "戻"
+DIALOGUE_FONT_0
+.text "していった"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

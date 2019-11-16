@@ -1,0 +1,154 @@
+
+eventChapter24Data ; 99/F2A4
+
+	_PrepGroup ; 99/F2A4
+		.byte 8, 7
+
+		UNIT Civilian23, NPC, [4, 24], [4, 24], Rumaigh, [], 1, False, [$02, $10, $00, $00]
+		UNIT Civilian24, NPC, [5, 25], [5, 25], Rumaigh, [], 1, False, [$02, $10, $00, $00]
+		UNIT Civilian25, NPC, [4, 25], [4, 25], Rumaigh, [], 1, False, [$02, $10, $00, $00]
+		UNIT Civilian26, NPC, [3, 26], [3, 26], Rumaigh, [], 1, False, [$02, $10, $00, $00]
+		UNIT Civilian27, NPC, [2, 26], [2, 26], Rumaigh, [], 1, False, [$02, $10, $00, $00]
+		UNIT Civilian28, NPC, [2, 27], [2, 27], Rumaigh, [], 1, False, [$02, $10, $00, $00]
+		UNIT Civilian30, NPC, [2, 25], [2, 25], Rumaigh, [], 1, False, [$02, $10, $00, $00]
+		UNIT Civilian29, NPC, [1, 25], [1, 25], Rumaigh, [], 1, False, [$02, $10, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [1, 22], [1, 22], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [2, 24], [2, 24], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [1, 18], [1, 18], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [2, 17], [2, 17], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [2, 15], [2, 15], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [3, 22], [3, 22], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [15, 30], [15, 30], Codha, [SilenceStaff, Heal], 18, False, [$00, $07, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [16, 32], [16, 32], Codha, [Restore, Heal], 18, False, [$00, $07, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [15, 33], [15, 33], Codha, [Rescue, Heal], 18, False, [$00, $07, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [17, 34], [17, 34], Codha, [Ward, Heal], 18, False, [$00, $07, $00, $00]
+		UNIT LoptyrianDarkMage, Enemy, [19, 34], [19, 34], Codha, [Fortify, Heal], 18, False, [$00, $07, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [20, 32], [20, 32], Codha, [Fenrir, Heal], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [19, 31], [19, 31], Codha, [Berserk, Heal], 18, False, [$00, $07, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [20, 31], [20, 31], Codha, [Hel, Heal], 18, False, [$00, $07, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [21, 33], [21, 33], Codha, [Sleep, Heal], 18, False, [$00, $07, $00, $00]
+		UNIT Hero1, Enemy, [21, 29], [21, 29], RaydrikChp24, [SleepSword], 14, False, [$00, $03, $00, $00]
+		UNIT Hero2, Enemy, [21, 27], [21, 27], RaydrikChp24, [BerserkSword], 15, False, [$00, $03, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [1, 15], [1, 15], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [1, 13], [1, 13], Codha, [Jormungand, Hel], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [2, 19], [2, 19], Codha, [Jormungand, Hel], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [7, 8], [7, 8], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [9, 7], [9, 7], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [13, 8], [13, 8], Codha, [Jormungand, Hel], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [17, 7], [17, 7], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [19, 8], [19, 8], Codha, [Jormungand, Hel], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [17, 23], [17, 23], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [16, 25], [16, 25], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [15, 27], [15, 27], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [18, 26], [18, 26], Codha, [Jormungand], 18, False, [$00, $00, $00, $00]
+		UNIT Hero3, Enemy, [12, 15], [12, 15], RaydrikChp24, [MasterAxe, KillingEdge], 16, False, [$00, $00, $00, $00]
+		UNIT Hero3, Enemy, [8, 15], [8, 15], RaydrikChp24, [FireBrand, Armorslayer], 16, False, [$00, $00, $00, $00]
+		UNIT Hero3, Enemy, [9, 16], [9, 16], RaydrikChp24, [MasterSword, Hammer], 16, False, [$00, $00, $00, $00]
+		UNIT Hero3, Enemy, [11, 16], [11, 16], RaydrikChp24, [VoltEdge, PoisonAxe], 16, False, [$00, $00, $00, $00]
+		UNIT SniperEnemy, Enemy, [8, 13], [8, 13], RaydrikChp24, [MasterBow, PoisonBow], 18, False, [$00, $00, $00, $00]
+		UNIT SniperEnemy, Enemy, [12, 13], [12, 13], RaydrikChp24, [MasterBow, PoisonBow], 18, False, [$00, $00, $00, $00]
+		UNIT RaydrikChp24, Enemy, [10, 12], [10, 12], RaydrikChp24, [LoptyrsBlade], 20, True, [$01, $03, $00, $80]
+		UNIT LoptyrianDarkMage1, Enemy, [2, 8], [2, 8], Codha, [Jormungand, DoorKey], 18, False, [$00, $00, $00, $00]
+		UNIT MansterBishop1, Enemy, [9, 13], [9, 13], RaydrikChp24, [Restore, Physic, PureWater], 20, False, [$00, $07, $00, $00]
+		UNIT MansterBishop1, Enemy, [11, 13], [11, 13], RaydrikChp24, [Restore, Physic, PureWater], 20, False, [$00, $07, $00, $00]
+	UNIT
+
+	_OpenedDoorReinforcementsCameraCoordinates ; 99/F654
+		.byte 10, 8
+
+	_OpenedDoorReinforcementsGroup ; 99/F656
+		UNIT LoptyrianDarkMage1, Enemy, [5, 1], [5, 1], Codha, [Jormungand, Hel], 20, False, [$00, $03, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [15, 1], [15, 1], Codha, [Jormungand, Hel], 20, False, [$00, $03, $00, $00]
+	UNIT
+
+	_SoldierReinforcementsCameraCoordinates ; 99/F680
+		.byte 15, 23
+
+	_SoldierReinforcementsGroup ; 99/F682
+		UNIT MansterSoldier2, Enemy, [22, 23], [22, 23], RaydrikChp24, [Greatlance], 20, False, [$00, $00, $00, $00]
+		UNIT MansterSoldier2, Enemy, [22, 22], [22, 22], RaydrikChp24, [Greatlance], 20, False, [$00, $00, $00, $00]
+	UNIT
+
+	_DarkMageReinforcementsCameraCoordinates ; 99/F6AC
+		.byte 11, 12
+
+	_DarkMageReinforcementsGroup ; 99/F6AE
+		UNIT LoptyrianDarkMage1, Enemy, [9, 12], [9, 12], Codha, [Jormungand], 16, False, [$00, $00, $00, $00]
+		UNIT LoptyrianDarkMage1, Enemy, [11, 12], [11, 12], Codha, [Jormungand], 16, False, [$00, $00, $00, $00]
+	UNIT
+
+	_UnlockDarkMageReinforcementsCameraCoordinates ; 99/F6D8
+		.byte 10, 10
+
+	_UnlockDarkMageReinforcementsGroup ; 99/F6DA
+		UNIT LoptyrianDarkMage2, Enemy, [10, 10], [10, 10], Codha, [Jormungand, Unlock], 20, False, [$00, $00, $00, $00]
+	UNIT
+
+	_ThiefReinforcementsCameraCoordinates ; 99/F6F0
+		.byte 8, 7
+
+	_ThiefReinforcementsGroup ; 99/F6F2
+		UNIT ThiefEnemy1, Enemy, [22, 8], [22, 8], Raydrik, [KillingEdge, Lockpick], 20, False, [$02, $05, $00, $00]
+	UNIT
+
+	_UnusedCoordinates1 ; 99/F708
+		.byte 8, 7
+
+	_GalzusGroup ; 99/F70A
+		UNIT Galzus, Enemy, [10, 15], [10, 15], RaydrikChp24, [MasterSword, FireBrand, Vulnerary, Vulnerary, MasterAxe], 20, False, [$00, $00, $00, $00]
+	UNIT
+
+	_UnusedCoordinates2 ; 99/F720
+		.byte 8, 7
+
+	_VeldGroup ; 99/F722
+		UNIT Veld, Enemy, [10, 13], [10, 13], Veld, [], 3, False, [$00, $00, $00, $00]
+	UNIT
+
+	_StartingPositions ; 99/F738
+		.byte 10, 40
+		.byte 2, 32
+		.byte 20, 19
+		.byte 9, 40
+		.byte 3, 33
+		.byte 19, 18
+		.byte 11, 40
+		.byte 3, 34
+		.byte 21, 18
+		.byte 10, 41
+		.byte 2, 33
+		.byte 20, 13
+		.byte 9, 41
+		.byte 1, 34
+		.byte 19, 15
+		.byte 11, 41
+		.byte 1, 35
+		.byte 20, 16
+	.byte $FF
+
+	_Chest1Coordinates ; 99/F75D
+		.byte 10, 1
+
+	_Chest1Item ; 99/F75F
+		.word Kia
+
+	_Chest1Events ; 99/F761
+		STORE_WORD wEventEngineXCoordinate, 10
+		STORE_WORD wEventEngineYCoordinate, 1
+		STORE_WORD wEventEngineParameter1, $0026
+
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+
+		STORE_WORD_FROM wEventEngineParameter1, _Chest1Item
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+	END2
+
+	_SecretShop ; 99/F7A1
+		SHOP [21, 2], [LifeRing, SpeedRing, SkillRing, StrengthRing, ShieldRing]

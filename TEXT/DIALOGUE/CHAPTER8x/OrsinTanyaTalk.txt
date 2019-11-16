@@ -1,0 +1,134 @@
+dialogueChapter8xOrsinTanyaTalk ; 93/CD46
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD TanyaPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD OrsinPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "タニア！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "無事"
+	DIALOGUE_FONT_0
+	.text "だったんだな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "まったく"
+	DIALOGUE_FONT_2
+	.text "心配"
+	DIALOGUE_FONT_0
+	.text "させやがって･･･"
+	DIALOGUE_PAUSE $10
+	.text "このバカ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "バ､"
+	DIALOGUE_PAUSE $08
+	.text "バカってなによ､"
+	DIALOGUE_PAUSE $08
+	.text "バカって！"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "だいたい"
+	DIALOGUE_NL
+	DIALOGUE_FONT_4
+	.text "誰"
+	DIALOGUE_FONT_0
+	.text "もあんたなんかに"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "心配"
+	DIALOGUE_FONT_0
+	.text "してくれなんてたのんでないわよ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おまえなぁ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "こういうときくらい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "もう"
+	DIALOGUE_FONT_2
+	.text "少"
+	DIALOGUE_FONT_0
+	.text "しすなおに"
+	DIALOGUE_FONT_2
+	.text "感"
+	DIALOGUE_FONT_4
+	.text "謝"
+	DIALOGUE_FONT_0
+	.text "できないのかよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "なにさ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "そっちが"
+	DIALOGUE_NL
+	.text "ケンカうってくるからじゃない！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "･･･オーシンこそ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "こういうときくらい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "もう"
+	DIALOGUE_FONT_2
+	.text "少"
+	DIALOGUE_FONT_0
+	.text "し"
+	DIALOGUE_FONT_4
+	.text "優"
+	DIALOGUE_FONT_0
+	.text "しくしてくれたって･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "わあっ､"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ば､"
+	DIALOGUE_PAUSE $08
+	.text "ばかっ､"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "なにも"
+	DIALOGUE_FONT_4
+	.text "泣"
+	DIALOGUE_FONT_0
+	.text "くこと･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "いや､"
+	DIALOGUE_PAUSE $10
+	.text "その､"
+	DIALOGUE_PAUSE $10
+	.text "つまり､"
+	DIALOGUE_PAUSE $10
+	.text "なんだ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "と､"
+	DIALOGUE_PAUSE $10
+	.text "とにかく､"
+	DIALOGUE_PAUSE $10
+	.text "よかったよ､"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "無事"
+	DIALOGUE_FONT_0
+	.text "で､"
+	DIALOGUE_PAUSE $10
+	.text "うん"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

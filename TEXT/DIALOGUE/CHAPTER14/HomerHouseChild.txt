@@ -1,0 +1,22 @@
+dialogueChapter14HomerHouseChild ; 92/D39C
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD HomerPortrait
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_0
+	.text "どもに"
+	DIALOGUE_FONT_1
+	.text "用"
+	DIALOGUE_FONT_0
+	.text "はない"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ひるねのじゃまだ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "帰"
+	DIALOGUE_FONT_0
+	.text "ってくれ"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

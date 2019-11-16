@@ -1,0 +1,287 @@
+dialogueChapter12xLithisPanTalk1 ; 92/B1CA
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD PanPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD LithisPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ちっ､"
+	DIALOGUE_PAUSE $08
+	.text "まずい！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "なんだ？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･おまえ､"
+	DIALOGUE_PAUSE $08
+	.text "リフィスか？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･よぉ､"
+	DIALOGUE_PAUSE $08
+	.text "ひさしぶりだな！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "お､"
+	DIALOGUE_PAUSE $08
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "久"
+	DIALOGUE_FONT_0
+	.text "しぶりです･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "パーン･･･"
+	DIALOGUE_PAUSE $08
+	.text "さん･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "おまえぜんぜん"
+	DIALOGUE_FONT_3
+	.text "変"
+	DIALOGUE_FONT_0
+	.text "わってねぇのな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ガキのころのまんまじゃねえか"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "もう､"
+	DIALOGUE_PAUSE $08
+	.text "おもらしのくせはなおったのか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "や､"
+	DIALOGUE_PAUSE $08
+	.text "やめてくださいよぉ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そんなの"
+	DIALOGUE_FONT_2
+	.text "昔"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "話"
+	DIALOGUE_FONT_0
+	.text "じゃないですかぁ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "そうか？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いやぁ､"
+	DIALOGUE_PAUSE $08
+	.text "おまえが"
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "一"
+	DIALOGUE_FONT_4
+	.text "番"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_4
+	.text "泣"
+	DIALOGUE_FONT_0
+	.text "きむしでよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "いろんなヤツに"
+	DIALOGUE_NL
+	.text "さんざんいじめられてたのが"
+	DIALOGUE_NL
+	.text "ついきのうのことに"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "えるぜ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "真"
+	DIALOGUE_FONT_0
+	.text "っ"
+	DIALOGUE_FONT_2
+	.text "先"
+	DIALOGUE_FONT_0
+	.text "にいじめてたのは"
+	DIALOGUE_NL
+	.text "パーンさんじゃないですか･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ん？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "なんか"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "ったか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "いえ､"
+	DIALOGUE_PAUSE $08
+	.text "なんでもないです･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "そうか"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "でよ､"
+	DIALOGUE_PAUSE $08
+	.text "おまえの"
+	DIALOGUE_FONT_4
+	.text "働"
+	DIALOGUE_FONT_0
+	.text "いているところだけど"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "これがうわさに"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "く"
+	DIALOGUE_FONT_1
+	.text "解放軍"
+	DIALOGUE_FONT_0
+	.text "ってやつか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "なかなかおもしろそうじゃねえか"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "うん､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "入"
+	DIALOGUE_FONT_0
+	.text "った"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "俺"
+	DIALOGUE_FONT_0
+	.text "をリーダーにしょうかいしろ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ええっ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "なんだよ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "不"
+	DIALOGUE_FONT_3
+	.text "服"
+	DIALOGUE_FONT_0
+	.text "だってのか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･･いえ･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "これからは"
+	DIALOGUE_FONT_2
+	.text "昔"
+	DIALOGUE_FONT_0
+	.text "どおり"
+	DIALOGUE_NL
+	DIALOGUE_FONT_3
+	.text "仲良"
+	DIALOGUE_FONT_0
+	.text "くやっていこうぜ､"
+	DIALOGUE_PAUSE $08
+	.text "なっ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_RIGHT
+	DIALOGUE_UNLOAD
+	DIALOGUE_CLOSE
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "げっ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "このクソッタレとまた一"
+	DIALOGUE_FONT_2
+	.text "緒"
+	DIALOGUE_FONT_0
+	.text "だとぉ･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD PanPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "なんだ､"
+	DIALOGUE_PAUSE $08
+	.text "おまえ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "顔"
+	DIALOGUE_FONT_5
+	.text "色"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "悪"
+	DIALOGUE_FONT_0
+	.text "いぞ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "え？"
+	DIALOGUE_PAUSE $08
+	.text "　そそそ､"
+	DIALOGUE_PAUSE $08
+	.text "そうですかぁ？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "か､"
+	DIALOGUE_PAUSE $08
+	.text "か､"
+	DIALOGUE_PAUSE $08
+	.text "かぜでもひいたのかなぁ？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "アハ､"
+	DIALOGUE_PAUSE $08
+	.text "アハ､"
+	DIALOGUE_PAUSE $08
+	.text "アハハ･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+DIALOGUE_END_SCENE

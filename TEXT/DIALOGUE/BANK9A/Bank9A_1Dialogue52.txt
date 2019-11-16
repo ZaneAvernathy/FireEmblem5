@@ -1,0 +1,9 @@
+; 9A/C006
+DIALOGUE_FONT_0
+.text "しずかなる"
+DIALOGUE_FONT_1
+.text "勇者"
+DIALOGUE_FONT_0
+.text "　ハルヴァン"
+DIALOGUE_NL
+DIALOGUE_EOF

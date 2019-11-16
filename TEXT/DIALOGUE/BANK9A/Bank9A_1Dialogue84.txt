@@ -1,0 +1,166 @@
+; 9A/C98F
+DIALOGUE_FONT_2
+.text "新"
+DIALOGUE_FONT_0
+.text "トラキア"
+DIALOGUE_FONT_1
+.text "建国後"
+DIALOGUE_NL
+.text "近"
+DIALOGUE_FONT_3
+.text "衛"
+DIALOGUE_FONT_1
+.text "軍"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "指揮"
+DIALOGUE_FONT_2
+.text "官"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_4
+.text "辞"
+DIALOGUE_FONT_0
+.text "し"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "親"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_2
+.text "失"
+DIALOGUE_FONT_0
+.text "った"
+DIALOGUE_FONT_1
+.text "子"
+DIALOGUE_FONT_3
+.text "供"
+DIALOGUE_FONT_0
+.text "たちを"
+DIALOGUE_NL
+DIALOGUE_FONT_5
+.text "館"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_3
+.text "引"
+DIALOGUE_FONT_0
+.text "き"
+DIALOGUE_FONT_2
+.text "取"
+DIALOGUE_FONT_0
+.text "って"
+DIALOGUE_NL
+.text "その"
+DIALOGUE_FONT_1
+.text "母親代"
+DIALOGUE_FONT_0
+.text "わりとなった"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "セルフィナが"
+DIALOGUE_FONT_1
+.text "救"
+DIALOGUE_FONT_0
+.text "った"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "小"
+DIALOGUE_FONT_0
+.text "さな"
+DIALOGUE_FONT_2
+.text "命"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_NL
+.text "やがて"
+DIALOGUE_FONT_1
+.text "大"
+DIALOGUE_FONT_0
+.text "きく"
+DIALOGUE_FONT_5
+.text "花"
+DIALOGUE_FONT_2
+.text "開"
+DIALOGUE_FONT_0
+.text "き"
+DIALOGUE_NL
+DIALOGUE_FONT_4
+.text "次"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "時"
+DIALOGUE_FONT_1
+.text "代"
+DIALOGUE_FONT_0
+.text "をになう"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "多"
+DIALOGUE_FONT_0
+.text "くの"
+DIALOGUE_FONT_2
+.text "英雄"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_2
+.text "生"
+DIALOGUE_FONT_0
+.text "み"
+DIALOGUE_FONT_1
+.text "出"
+DIALOGUE_FONT_0
+.text "した"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "ゆえに"
+DIALOGUE_FONT_1
+.text "騎士"
+DIALOGUE_FONT_0
+.text "セルフィナは"
+DIALOGUE_NL
+.text "トラキアの"
+DIALOGUE_FONT_1
+.text "母"
+DIALOGUE_FONT_0
+.text "とも"
+DIALOGUE_FONT_4
+.text "呼"
+DIALOGUE_FONT_0
+.text "ばれ"
+DIALOGUE_NL
+.text "その"
+DIALOGUE_FONT_2
+.text "強"
+DIALOGUE_FONT_0
+.text "さと"
+DIALOGUE_FONT_4
+.text "優"
+DIALOGUE_FONT_0
+.text "しさは"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "時"
+DIALOGUE_FONT_1
+.text "代"
+DIALOGUE_FONT_0
+.text "まで"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "語"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_FONT_3
+.text "継"
+DIALOGUE_FONT_0
+.text "がれたという"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

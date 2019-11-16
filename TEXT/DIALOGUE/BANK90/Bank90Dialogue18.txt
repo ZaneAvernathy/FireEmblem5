@@ -1,0 +1,6 @@
+; 90/80B8
+DIALOGUE_FONT_2
+.text "消"
+DIALOGUE_FONT_0
+.text "す　　　　やめる"
+DIALOGUE_EOF

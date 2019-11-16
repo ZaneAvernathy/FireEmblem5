@@ -1,0 +1,27 @@
+dialogueFardenBattleQuote ; 98/EC0C
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_2
+	.text "反乱"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "かっ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "われらがマンスター"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "らせてやる！"
+DIALOGUE_END_SCENE

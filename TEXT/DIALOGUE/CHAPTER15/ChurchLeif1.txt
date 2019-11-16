@@ -1,0 +1,57 @@
+dialogueChapter15ChurchLeif1 ; 92/E379
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD GunterPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "おお"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "をお"
+	DIALOGUE_FONT_1
+	.text "救"
+	DIALOGUE_FONT_0
+	.text "いくださり"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ありがとうございます"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "おかげで"
+	DIALOGUE_FONT_1
+	.text "助"
+	DIALOGUE_FONT_0
+	.text "かりました"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "これは"
+	DIALOGUE_FONT_1
+	.text "村人"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "気持"
+	DIALOGUE_FONT_0
+	.text "ちです"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "どうかお"
+	DIALOGUE_FONT_2
+	.text "受"
+	DIALOGUE_FONT_0
+	.text "け"
+	DIALOGUE_FONT_2
+	.text "取"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_FONT_1
+	.text "下"
+	DIALOGUE_FONT_0
+	.text "さい"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

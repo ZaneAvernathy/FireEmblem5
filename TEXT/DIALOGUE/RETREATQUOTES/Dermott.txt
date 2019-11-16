@@ -1,0 +1,17 @@
+dialogueDermottRetreatQuote ; 82/C72F
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD DermottPortrait
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	.text "ご"
+	DIALOGUE_FONT_1
+	.text "武運"
+	DIALOGUE_FONT_0
+	.text "を！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

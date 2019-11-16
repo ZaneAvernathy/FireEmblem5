@@ -1,0 +1,12 @@
+; 90/84F0
+DIALOGUE_FONT_0
+.text "７５８　"
+DIALOGUE_FONT_1
+.text "⅛⅛"
+DIALOGUE_FONT_0
+.text "シアルフィ･レンスター"
+DIALOGUE_FONT_2
+.text "連"
+DIALOGUE_FONT_1
+.text "合軍"
+DIALOGUE_EOF

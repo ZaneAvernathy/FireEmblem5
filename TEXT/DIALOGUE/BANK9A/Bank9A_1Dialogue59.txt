@@ -1,0 +1,108 @@
+; 9A/C1E5
+DIALOGUE_FONT_1
+.text "剣"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_5
+.text "農"
+DIALOGUE_FONT_2
+.text "具"
+DIALOGUE_FONT_0
+.text "にもちかえ"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "荒"
+DIALOGUE_FONT_4
+.text "廃"
+DIALOGUE_FONT_0
+.text "したトラキアの"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "復"
+DIALOGUE_FONT_3
+.text "興"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_1
+.text "力"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_3
+.text "注"
+DIALOGUE_FONT_0
+.text "ぐ"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "以後"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_NL
+.text "ラルフについては"
+DIALOGUE_NL
+.text "このこと"
+DIALOGUE_FONT_1
+.text "以"
+DIALOGUE_FONT_3
+.text "外"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_NL
+.text "一"
+DIALOGUE_FONT_2
+.text "切伝"
+DIALOGUE_FONT_0
+.text "わっていない"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "ラルフは"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "復"
+DIALOGUE_FONT_3
+.text "興"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "土"
+DIALOGUE_FONT_3
+.text "台"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_2
+.text "支"
+DIALOGUE_FONT_0
+.text "える"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "無数"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "人々"
+DIALOGUE_FONT_0
+.text "の一"
+DIALOGUE_FONT_1
+.text "人"
+DIALOGUE_FONT_0
+.text "となり"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "歴"
+DIALOGUE_FONT_3
+.text "史"
+DIALOGUE_FONT_0
+.text "にうずもれる"
+DIALOGUE_FONT_1
+.text "道"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "選"
+DIALOGUE_FONT_0
+.text "んだのであろうか･･･"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

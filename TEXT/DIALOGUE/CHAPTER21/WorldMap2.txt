@@ -1,0 +1,33 @@
+dialogueChapter21WorldMap2 ; 82/D83F
+	DIALOGUE_FONT_0
+	.text "セリス"
+	DIALOGUE_FONT_1
+	.text "公子"
+	DIALOGUE_FONT_0
+	.text "ひきいるイザーク"
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_1
+	.text "解放軍"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "アルスター"
+	DIALOGUE_FONT_1
+	.text "攻"
+	DIALOGUE_FONT_2
+	.text "略"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "成"
+	DIALOGUE_FONT_4
+	.text "功"
+	DIALOGUE_FONT_0
+	.text "する"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

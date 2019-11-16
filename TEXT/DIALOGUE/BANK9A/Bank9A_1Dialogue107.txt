@@ -1,0 +1,10 @@
+; 9A/D19C
+DIALOGUE_FONT_0
+.text "シャイな"
+DIALOGUE_FONT_2
+.text "盗"
+DIALOGUE_FONT_1
+.text "賊"
+DIALOGUE_FONT_0
+.text "　リフィス"
+DIALOGUE_EOF

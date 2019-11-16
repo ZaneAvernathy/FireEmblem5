@@ -1,0 +1,19 @@
+dialogueGunterDeathQuote ; 82/BECF
+	DIALOGUE_FONT_0
+	.text "うむっ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ちと"
+	DIALOGUE_FONT_2
+	.text "長"
+	DIALOGUE_FONT_0
+	.text "く･･･"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "生"
+	DIALOGUE_FONT_0
+	.text "きすぎたな･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "アスベル･･･"
+DIALOGUE_END_SCENE

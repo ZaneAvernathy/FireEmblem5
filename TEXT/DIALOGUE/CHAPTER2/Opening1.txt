@@ -1,0 +1,250 @@
+dialogueChapter2Opening1 ; 95/B922
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD BakstPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "バクス､"
+	DIALOGUE_PAUSE $10
+	.text "おまえは"
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_0
+	.text "しすぎる"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	DIALOGUE_FONT_2
+	.text "略奪"
+	DIALOGUE_FONT_0
+	.text "するのはやむをえぬが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "無用"
+	DIALOGUE_FONT_0
+	.text "な"
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_2
+	.text "生"
+	DIALOGUE_FONT_0
+	.text "はするな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "うるせえなぁ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_3
+	.text "師"
+	DIALOGUE_FONT_0
+	.text "だかなんだか"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "らねえが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ここはオレがまかされているんだ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "よけいな"
+	DIALOGUE_FONT_3
+	.text "口"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "しはするんじゃねぇ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "あの"
+	DIALOGUE_NL
+	.text "いまいましいフィアナの"
+	DIALOGUE_FONT_1
+	.text "戦士団"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "なら"
+	DIALOGUE_FONT_1
+	.text "手出"
+	DIALOGUE_FONT_0
+	.text "しはできねぇんだぜ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "なんせ､"
+	DIALOGUE_PAUSE $08
+	.text "レンスターの"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	.text "かくまっていると"
+	DIALOGUE_FONT_3
+	.text "密告"
+	DIALOGUE_FONT_0
+	.text "したのは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "オレたちのボス"
+	DIALOGUE_PAUSE $08
+	.text "なんだからな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "だと！？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	.text "それは"
+	DIALOGUE_FONT_2
+	.text "本当"
+	DIALOGUE_FONT_0
+	.text "なのか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ああ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "村人"
+	DIALOGUE_FONT_0
+	.text "を一"
+	DIALOGUE_FONT_1
+	.text "人捕"
+	DIALOGUE_FONT_0
+	.text "まえて"
+	DIALOGUE_FONT_3
+	.text "口"
+	DIALOGUE_FONT_0
+	.text "をわらせた"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そいつは"
+	DIALOGUE_FONT_2
+	.text "死"
+	DIALOGUE_FONT_0
+	.text "んじまったがよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_5
+	.text "拷"
+	DIALOGUE_FONT_4
+	.text "問"
+	DIALOGUE_FONT_0
+	.text "か･･･"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "そうだ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "かしらは"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_5
+	.text "拷"
+	DIALOGUE_FONT_4
+	.text "問"
+	DIALOGUE_FONT_0
+	.text "のやり"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_NL
+	.text "あんたから"
+	DIALOGUE_FONT_3
+	.text "教"
+	DIALOGUE_FONT_0
+	.text "えられたといってたぜ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "さすがは"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "司祭"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "破門"
+	DIALOGUE_FONT_0
+	.text "されるだけのことはある"
+	DIALOGUE_NL
+	.text "と"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "笑"
+	DIALOGUE_FONT_0
+	.text "ってたがな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLOSE
+	DIALOGUE_UNLOAD
+	DIALOGUE_PAUSE $20
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "リフィスのこぞうめ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	DIALOGUE_FONT_4
+	.text "図"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_3
+	.text "乗"
+	DIALOGUE_FONT_0
+	.text "りおって･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "まあいい･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "さえ"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "つかれば"
+	DIALOGUE_NL
+	.text "もうヤツに"
+	DIALOGUE_FONT_1
+	.text "用"
+	DIALOGUE_FONT_0
+	.text "はない"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "さて･･･"
+	DIALOGUE_PAUSE $10
+	.text "これからどうするかだが･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "まずはあの"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_3
+	.text "報告"
+	DIALOGUE_FONT_0
+	.text "せねばならぬな･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

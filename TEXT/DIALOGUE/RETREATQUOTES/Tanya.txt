@@ -1,0 +1,25 @@
+dialogueTanyaRetreatQuote ; 82/C575
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD TanyaPortrait
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "なにグズグズしてんのさ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "先"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "くよ！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

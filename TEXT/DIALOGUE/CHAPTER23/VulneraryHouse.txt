@@ -1,0 +1,45 @@
+dialogueChapter23VulneraryHouse ; 98/E8B5
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman3Portrait
+	DIALOGUE_FONT_1
+	.text "解放軍"
+	DIALOGUE_FONT_0
+	.text "のみなさん"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "どうか"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちを"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_FONT_1
+	.text "救"
+	DIALOGUE_FONT_0
+	.text "ってください！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "これ､"
+	DIALOGUE_PAUSE $08
+	.text "きずぐすりです"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "みなさんのお"
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "てれば"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "いいんですけど･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

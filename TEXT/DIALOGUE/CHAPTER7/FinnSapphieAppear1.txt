@@ -1,0 +1,136 @@
+dialogueChapter7FinnSapphieAppear1 ; 93/A123
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD HannibalPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD BossUnknown5Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おかえりなさいませ､"
+	DIALOGUE_PAUSE $10
+	.text "ハンニバル"
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_3
+	.text "牢"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "捕"
+	DIALOGUE_FONT_0
+	.text "えられているものがいるようだが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "わしの"
+	DIALOGUE_FONT_3
+	.text "留"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "間"
+	DIALOGUE_FONT_0
+	.text "に､"
+	DIALOGUE_PAUSE $08
+	.text "なにかあったのか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "はっ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "領内"
+	DIALOGUE_FONT_0
+	.text "にふしんなものたちが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "おりましたので"
+	DIALOGUE_FONT_1
+	.text "捕"
+	DIALOGUE_FONT_0
+	.text "えました"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "おそらく"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "東"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "辺境"
+	DIALOGUE_FONT_0
+	.text "あたりからやってきた"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "山賊"
+	DIALOGUE_FONT_0
+	.text "どもではないかと･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ふむ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "本"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "たちは"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "と"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "っておるのだ？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_1
+	.text "自分"
+	DIALOGUE_FONT_0
+	.text "たちはただの"
+	DIALOGUE_FONT_1
+	.text "村人"
+	DIALOGUE_FONT_0
+	.text "だ"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_0
+	.text "などと"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "バカなことを"
+	DIALOGUE_FONT_3
+	.text "申"
+	DIALOGUE_FONT_0
+	.text "しておりますが"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "あのふてぶてしさからさっするに"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "かなりの"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "悪"
+	DIALOGUE_FONT_2
+	.text "党"
+	DIALOGUE_FONT_0
+	.text "どもにちがいありません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

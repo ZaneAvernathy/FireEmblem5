@@ -1,0 +1,20 @@
+dialogueHicksDeathQuote ; 82/BB03
+	DIALOGUE_FONT_0
+	.text "･･･マフィー"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "とにかく･･･"
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "無事"
+	DIALOGUE_FONT_0
+	.text "で･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "育"
+	DIALOGUE_FONT_0
+	.text "って･･･"
+	DIALOGUE_PAUSE $10
+	.text "ぐふっ"
+DIALOGUE_END_SCENE

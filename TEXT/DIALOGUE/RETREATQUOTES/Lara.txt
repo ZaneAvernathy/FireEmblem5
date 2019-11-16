@@ -1,0 +1,26 @@
+dialogueLaraRetreatQuote ; 82/C1F3
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LaraPortrait
+	DIALOGUE_FONT_0
+	.text "ごめんね､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "先"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "脱"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "するわ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "無"
+	DIALOGUE_FONT_2
+	.text "理"
+	DIALOGUE_FONT_0
+	.text "しないでね"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

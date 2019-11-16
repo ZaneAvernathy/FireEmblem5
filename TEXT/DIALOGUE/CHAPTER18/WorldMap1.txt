@@ -1,0 +1,65 @@
+dialogueChapter18WorldMap1 ; 82/D625
+	DIALOGUE_FONT_1
+	.text "城門"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "突"
+	DIALOGUE_FONT_1
+	.text "破"
+	DIALOGUE_FONT_0
+	.text "したリーフたち"
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_1
+	.text "解放軍"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "一"
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "城内"
+	DIALOGUE_FONT_0
+	.text "へとなだれこむ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "めざすはレンスター"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "玉座"
+	DIALOGUE_FONT_0
+	.text "ただ一つ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "リーフたちの"
+	DIALOGUE_FONT_1
+	.text "悲願"
+	DIALOGUE_FONT_0
+	.text "であった"
+	DIALOGUE_FONT_1
+	.text "王国"
+	DIALOGUE_FONT_2
+	.text "再"
+	DIALOGUE_FONT_3
+	.text "興"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "現"
+	DIALOGUE_FONT_3
+	.text "実"
+	DIALOGUE_FONT_0
+	.text "のものになりつつあった･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

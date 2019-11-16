@@ -1,0 +1,5 @@
+dialogueMooreReleaseQuote ; 98/CA06
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･････"
+DIALOGUE_END_SCENE

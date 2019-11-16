@@ -1,0 +1,17 @@
+dialogueMerlochDeathQuote ; 93/E649
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "トラバント"
+	DIALOGUE_FONT_3
+	.text "陛"
+	DIALOGUE_FONT_1
+	.text "下"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "お"
+	DIALOGUE_FONT_3
+	.text "許"
+	DIALOGUE_FONT_0
+	.text "しください･･･"
+DIALOGUE_END_SCENE

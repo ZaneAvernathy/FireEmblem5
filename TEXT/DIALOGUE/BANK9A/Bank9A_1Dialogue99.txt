@@ -1,0 +1,11 @@
+; 9A/CEFA
+DIALOGUE_FONT_0
+.text "レンスターの"
+DIALOGUE_FONT_2
+.text "弓"
+DIALOGUE_FONT_1
+.text "騎士"
+DIALOGUE_FONT_0
+.text "　ロベルト"
+DIALOGUE_NL
+DIALOGUE_EOF

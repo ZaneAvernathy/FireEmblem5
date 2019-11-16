@@ -1,0 +1,9 @@
+; 9A/DBA0
+DIALOGUE_FONT_0
+.text "オードの"
+DIALOGUE_FONT_1
+.text "黒剣士"
+DIALOGUE_FONT_0
+.text "　ガルザス"
+DIALOGUE_NL
+DIALOGUE_EOF

@@ -1,0 +1,13 @@
+; 9A/D4BF
+DIALOGUE_FONT_0
+.text "ターラに"
+DIALOGUE_FONT_5
+.text "咲"
+DIALOGUE_FONT_0
+.text "く"
+DIALOGUE_FONT_5
+.text "花"
+DIALOGUE_FONT_0
+.text "　リノアン"
+DIALOGUE_NL
+DIALOGUE_EOF

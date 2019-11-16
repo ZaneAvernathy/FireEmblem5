@@ -1,0 +1,13 @@
+; 9A/DEA2
+DIALOGUE_FONT_0
+.text "プロローグ４"
+DIALOGUE_NL
+.text "プロローグ４"
+DIALOGUE_NL
+.text "プロローグ４"
+DIALOGUE_NL
+.text "プロローグ４"
+DIALOGUE_NL
+.text "プロローグ４"
+DIALOGUE_NL
+DIALOGUE_EOF

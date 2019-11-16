@@ -1,0 +1,23 @@
+dialogueSapphieDeathQuote ; 82/B9F6
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_FONT_1
+	.text "神"
+	DIALOGUE_FONT_0
+	.text "よ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･この"
+	DIALOGUE_FONT_1
+	.text "世"
+	DIALOGUE_FONT_2
+	.text "界"
+	DIALOGUE_FONT_0
+	.text "に･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "光"
+	DIALOGUE_FONT_0
+	.text "を･･･"
+DIALOGUE_END_SCENE

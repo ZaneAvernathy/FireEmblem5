@@ -1,0 +1,87 @@
+; 9A/D1AC
+DIALOGUE_FONT_0
+.text "しばらくは"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "官"
+DIALOGUE_FONT_3
+.text "職"
+DIALOGUE_FONT_0
+.text "についていたが"
+DIALOGUE_NL
+.text "やがて"
+DIALOGUE_NL
+.text "そこから"
+DIALOGUE_FONT_3
+.text "姿"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_2
+.text "消"
+DIALOGUE_FONT_0
+.text "す"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "同"
+DIALOGUE_FONT_2
+.text "時"
+DIALOGUE_FONT_3
+.text "期"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "海賊"
+DIALOGUE_FONT_0
+.text "たちの"
+DIALOGUE_FONT_1
+.text "島々"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_NL
+.text "ケルベス"
+DIALOGUE_FONT_1
+.text "守備"
+DIALOGUE_FONT_2
+.text "隊"
+DIALOGUE_FONT_0
+.text "により"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "完全"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_2
+.text "制圧"
+DIALOGUE_FONT_0
+.text "される"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "その"
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_NL
+.text "彼"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_3
+.text "姿"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_1
+.text "見"
+DIALOGUE_FONT_0
+.text "たという"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "記録"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "残"
+DIALOGUE_FONT_0
+.text "っていない"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

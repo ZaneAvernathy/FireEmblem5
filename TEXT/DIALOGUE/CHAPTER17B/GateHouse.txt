@@ -1,0 +1,134 @@
+dialogueChapter17BGateHouse ; E7/A992
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD KolkhoPortrait
+	DIALOGUE_FONT_0
+	.text "よう､"
+	DIALOGUE_PAUSE $08
+	.text "おめえさんら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "レンスター"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "攻"
+	DIALOGUE_FONT_0
+	.text "めるんだろう？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "一つ"
+	DIALOGUE_FONT_3
+	.text "耳"
+	DIALOGUE_FONT_4
+	.text "寄"
+	DIALOGUE_FONT_0
+	.text "りな"
+	DIALOGUE_FONT_1
+	.text "話"
+	DIALOGUE_FONT_0
+	.text "があるんだが･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_3
+	.text "実"
+	DIALOGUE_FONT_0
+	.text "はな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "あの"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "東"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "門"
+	DIALOGUE_FONT_0
+	.text "にゃ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ちと"
+	DIALOGUE_FONT_5
+	.text "工"
+	DIALOGUE_FONT_2
+	.text "夫"
+	DIALOGUE_FONT_0
+	.text "がしてあってよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "オレたちが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ちょいとそれを"
+	DIALOGUE_FONT_2
+	.text "動"
+	DIALOGUE_FONT_0
+	.text "かしゃ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "門"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_2
+	.text "開"
+	DIALOGUE_FONT_0
+	.text "くって"
+	DIALOGUE_FONT_3
+	.text "仕"
+	DIALOGUE_FONT_0
+	.text "かけになってんだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "どうだい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "おれたちを"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "ってみる"
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "はねえか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "もちろんタダってわけにゃいかねえ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "２００００𝐆ばかし"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "積"
+	DIALOGUE_FONT_0
+	.text "んでもらうってセンで･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "なに､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "高"
+	DIALOGUE_FONT_0
+	.text "い？"
+	DIALOGUE_PAUSE $10
+	.text "　バカいっちゃいけねえ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "オレたちだって"
+	DIALOGUE_FONT_2
+	.text "命"
+	DIALOGUE_FONT_0
+	.text "がけなんだ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そのくらいはもらわねえとな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

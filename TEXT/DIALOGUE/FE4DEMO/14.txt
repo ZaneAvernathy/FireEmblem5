@@ -1,0 +1,13 @@
+dialogueFE4Demo14 ; 9C/FEE2
+	DIALOGUE_RIGHT
+	DIALOGUE_OPEN
+	DIALOGUE_LOAD GalzusPortrait
+	DIALOGUE_FONT_0
+	.text "アゼル､"
+	DIALOGUE_FONT_1
+	.text "無"
+	DIALOGUE_FONT_2
+	.text "理"
+	DIALOGUE_FONT_0
+	.text "をしてはだめです"
+DIALOGUE_EOF

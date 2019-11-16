@@ -1,0 +1,8 @@
+; 90/861E
+DIALOGUE_FONT_0
+.text "　　　　　　シグルド"
+DIALOGUE_FONT_1
+.text "公子軍"
+DIALOGUE_FONT_2
+.text "壊滅"
+DIALOGUE_EOF

@@ -1,0 +1,23 @@
+dialogueFE4Demo15 ; 9C/FEFC
+	DIALOGUE_RIGHT
+	DIALOGUE_OPEN
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_FONT_0
+	.text "やめろ､エルトシャン！"
+	DIALOGUE_NL
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "いに"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "意"
+	DIALOGUE_FONT_2
+	.text "味"
+	DIALOGUE_FONT_0
+	.text "がある！"
+DIALOGUE_EOF

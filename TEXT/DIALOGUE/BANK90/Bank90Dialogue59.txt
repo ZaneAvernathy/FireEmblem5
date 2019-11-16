@@ -1,0 +1,8 @@
+; 90/84C7
+DIALOGUE_FONT_0
+.text "　　　　　シグルド"
+DIALOGUE_FONT_1
+.text "公子"
+DIALOGUE_FONT_0
+.text "とともに､"
+DIALOGUE_EOF

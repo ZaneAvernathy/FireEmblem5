@@ -1,0 +1,12 @@
+; 9A/BBB2
+DIALOGUE_FONT_0
+.text "にて"
+DIALOGUE_FONT_1
+.text "¼¼"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_2
+.text "倒"
+DIALOGUE_FONT_0
+.text "される"
+DIALOGUE_EOF

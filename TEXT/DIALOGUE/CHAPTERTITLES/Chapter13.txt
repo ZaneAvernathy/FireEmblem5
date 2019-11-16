@@ -1,0 +1,14 @@
+dialogueChapter13Title ; 9A/B9CE
+	DIALOGUE_FONT_2
+	.text "第"
+	DIALOGUE_FONT_0
+	.text "１３"
+	DIALOGUE_FONT_2
+	.text "章"
+	DIALOGUE_FONT_1
+	.text "⅛"
+	DIALOGUE_FONT_0
+	.text "　　　　　"
+	DIALOGUE_FONT_1
+	.text "城塞都市"
+DIALOGUE_EOF

@@ -1,0 +1,42 @@
+dialogueChapter19UnusedBarath ; B0/B230
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD BarathPortrait
+	DIALOGUE_FONT_0
+	.text "ばかどもめ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "をぐずぐずしている！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "よし､"
+	DIALOGUE_PAUSE $08
+	.text "わしが"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "る"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "後方"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "部隊"
+	DIALOGUE_FONT_0
+	.text "にも"
+	DIALOGUE_FONT_2
+	.text "突"
+	DIALOGUE_FONT_1
+	.text "撃"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "命"
+	DIALOGUE_FONT_0
+	.text "じよ！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

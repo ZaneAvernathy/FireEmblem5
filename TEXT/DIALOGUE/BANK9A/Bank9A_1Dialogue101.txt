@@ -1,0 +1,9 @@
+; 9A/CFA0
+DIALOGUE_FONT_0
+.text "フリージの"
+DIALOGUE_FONT_1
+.text "聖騎士"
+DIALOGUE_FONT_0
+.text "　フレッド"
+DIALOGUE_NL
+DIALOGUE_EOF

@@ -1,0 +1,14 @@
+; 8A/B81C
+DIALOGUE_FONT_1
+.text "敵将"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "撃破"
+DIALOGUE_FONT_0
+.text "　かつ　１５ターン"
+DIALOGUE_FONT_2
+.text "防"
+DIALOGUE_FONT_3
+.text "衛"
+DIALOGUE_EOF

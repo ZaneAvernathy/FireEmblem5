@@ -1,0 +1,9 @@
+; 9A/C51D
+DIALOGUE_FONT_0
+.text "マンスターの"
+DIALOGUE_FONT_1
+.text "騎士"
+DIALOGUE_FONT_0
+.text "　ブライトン"
+DIALOGUE_NL
+DIALOGUE_EOF

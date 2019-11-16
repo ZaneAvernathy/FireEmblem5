@@ -1,0 +1,176 @@
+dialogueChapter12MareetaDialogue ; 92/A78C
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD MareetaPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman1Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "なにかさわがしいようですが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "どうかしたのですか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "山賊"
+	DIALOGUE_FONT_0
+	.text "たちが"
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "をおそっているの"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "にも"
+	DIALOGUE_FONT_1
+	.text "来"
+	DIALOGUE_FONT_0
+	.text "るかもしれないって"
+	DIALOGUE_NL
+	.text "みんなこわがっているのです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "たちが"
+	DIALOGUE_FONT_1
+	.text "話"
+	DIALOGUE_FONT_0
+	.text "していた"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "盗"
+	DIALOGUE_FONT_1
+	.text "賊団"
+	DIALOGUE_FONT_0
+	.text "ですか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "いいえ､"
+	DIALOGUE_PAUSE $08
+	.text "ダンディライオンなら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちを"
+	DIALOGUE_FONT_1
+	.text "助"
+	DIALOGUE_FONT_0
+	.text "けることはあっても"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "をおそったりはしないわ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "たぶん"
+	DIALOGUE_FONT_3
+	.text "別"
+	DIALOGUE_FONT_0
+	.text "のところからやってきた"
+	DIALOGUE_NL
+	.text "あらくれ"
+	DIALOGUE_FONT_1
+	.text "者"
+	DIALOGUE_FONT_0
+	.text "たちでしょうね"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "わかりました"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "でも､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "心配"
+	DIALOGUE_FONT_0
+	.text "しないでください"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "ります"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ばかなことを"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "わないで"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あなたのような"
+	DIALOGUE_FONT_3
+	.text "娘"
+	DIALOGUE_FONT_0
+	.text "さんが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "山賊"
+	DIALOGUE_FONT_0
+	.text "と"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "えるはずはないでしょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "いえ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はこれでも"
+	DIALOGUE_FONT_1
+	.text "剣士"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はフィアナのエーヴェルの"
+	DIALOGUE_FONT_3
+	.text "娘"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "山賊"
+	DIALOGUE_FONT_0
+	.text "なんかにまけません！！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

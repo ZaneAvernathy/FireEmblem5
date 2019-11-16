@@ -1,0 +1,9 @@
+
+aPrepItemsDescriptionPointers ; 81/F391
+	_MainDescription .addr menutextPrepItemsDescriptionLine1, menutextPrepItemsDescriptionLine2
+	_List .addr menutextPrepItemsListDescriptionLine1, menutextPrepItemsBlankDescriptionLine
+	_Trade .addr menutextPrepItemsTradeDescriptionLine1, menutextPrepItemsBlankDescriptionLine
+	_Convoy .addr menutextPrepItemsConvoyDescriptionLine1, menutextPrepItemsBlankDescriptionLine
+	_Discard .addr menutextPrepItemsDiscardDescriptionLine1, menutextPrepItemsBlankDescriptionLine
+	_ListActive .addr menutextPrepItemsListDescriptionLine1, menutextPrepItemsListDescriptionLine2
+	_Armory .addr menutextPrepItemsArmoryDescriptionLine1, menutextPrepItemsBlankDescriptionLine

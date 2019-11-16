@@ -1,0 +1,215 @@
+
+eventChapter18Data ; B1/9CE8
+
+	_PrepGroup ; B1/9CE8
+		.byte 8, 7
+
+		UNIT LeonsterSoldier, Enemy, [35, 13], [35, 13], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [37, 13], [37, 13], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [39, 13], [39, 13], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [41, 13], [41, 13], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [20, 15], [20, 15], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [22, 15], [22, 15], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [21, 15], [21, 15], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [29, 6], [29, 6], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [37, 3], [37, 3], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [39, 3], [39, 3], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [33, 5], [33, 5], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [32, 5], [32, 5], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [15, 5], [15, 5], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT ThiefEnemy1, Enemy, [38, 10], [38, 10], Raydrik, [KillingEdge, Lockpick], 10, False, [$15, $0B, $00, $00]
+		UNIT DancerEnemy, Enemy, [37, 10], [37, 10], Raydrik, [PureWater], 1, False, [$07, $0B, $00, $00]
+		UNIT DancerEnemy, Enemy, [40, 9], [40, 9], Raydrik, [PureWater], 1, False, [$07, $0B, $00, $00]
+		UNIT DancerEnemy, Enemy, [39, 10], [39, 10], Raydrik, [LuckRing], 1, False, [$07, $0B, $00, $00]
+		UNIT DancerEnemy, Enemy, [36, 9], [36, 9], Raydrik, [Recover], 1, False, [$07, $0B, $00, $00]
+		UNIT ThiefEnemy1, Enemy, [12, 12], [12, 12], Raydrik, [KillingEdge, ChestKey], 4, False, [$02, $06, $00, $00]
+		UNIT ThiefEnemy1, Enemy, [32, 1], [32, 1], Raydrik, [KillingEdge, ChestKey], 4, False, [$02, $06, $00, $00]
+		UNIT LeonsterSoldier, Enemy, [16, 5], [16, 5], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [26, 5], [26, 5], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT LeonsterSoldier, Enemy, [27, 5], [27, 5], Xavier, [Javelin], 1, False, [$00, $10, $02, $00]
+		UNIT Gustav, Enemy, [21, 3], [21, 3], Gustav, [MasterLance, Mend, Thoron, Vulnerary, AdeptManual], 17, True, [$01, $03, $00, $80]
+		UNIT FriegeArmoredAxe1, Enemy, [19, 11], [19, 11], Gustav, [Hammer, Vulnerary], 15, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [23, 11], [23, 11], Gustav, [Hammer, Vulnerary], 15, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [5, 13], [5, 13], Gustav, [Hammer, Vulnerary], 15, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredAxe1, Enemy, [11, 13], [11, 13], Gustav, [Hammer, Vulnerary], 15, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [19, 9], [19, 9], Gustav, [KillerLance, Vulnerary], 15, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [23, 9], [23, 9], Gustav, [KillerLance, Vulnerary], 15, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [2, 8], [2, 8], Gustav, [KillerLance, Vulnerary], 15, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [7, 13], [7, 13], Gustav, [KillerLance, Vulnerary], 15, False, [$00, $00, $00, $00]
+		UNIT XavierArmor1, Enemy, [18, 9], [18, 9], Xavier, [KillerLance, Vulnerary], 15, False, [$14, $00, $00, $80]
+		UNIT XavierArmor2, Enemy, [20, 9], [20, 9], Xavier, [KillerLance, Vulnerary], 15, False, [$14, $00, $00, $80]
+		UNIT XavierArmor3, Enemy, [22, 9], [22, 9], Xavier, [KillerLance, Vulnerary], 15, False, [$14, $00, $00, $80]
+		UNIT XavierArmor4, Enemy, [24, 9], [24, 9], Xavier, [KillerLance, Vulnerary], 15, False, [$14, $00, $00, $80]
+		UNIT XavierArmor5, Enemy, [18, 11], [18, 11], Xavier, [Hammer, Vulnerary], 15, False, [$14, $00, $00, $80]
+		UNIT XavierArmor6, Enemy, [20, 11], [20, 11], Xavier, [Hammer, Vulnerary], 15, False, [$14, $00, $00, $80]
+		UNIT XavierArmor7, Enemy, [22, 11], [22, 11], Xavier, [Hammer, Vulnerary], 15, False, [$14, $00, $00, $80]
+		UNIT XavierArmor8, Enemy, [24, 11], [24, 11], Xavier, [Hammer, Vulnerary], 15, False, [$14, $00, $00, $80]
+		UNIT Civilian9, NPC, [6, 6], [6, 6], Raydrik, [], 1, False, [$02, $1A, $00, $00]
+		UNIT Civilian10, NPC, [7, 6], [7, 6], Raydrik, [], 1, False, [$02, $1B, $00, $00]
+		UNIT Civilian11, NPC, [10, 8], [10, 8], Raydrik, [], 1, False, [$02, $1C, $00, $00]
+		UNIT Civilian12, NPC, [9, 8], [9, 8], Raydrik, [], 1, False, [$02, $1D, $00, $00]
+		UNIT Civilian13, NPC, [9, 9], [9, 9], Raydrik, [], 1, False, [$02, $1E, $00, $00]
+		UNIT Civilian14, NPC, [8, 10], [8, 10], Raydrik, [], 1, False, [$02, $1F, $00, $00]
+		UNIT Civilian15, NPC, [7, 10], [7, 10], Raydrik, [], 1, False, [$02, $20, $00, $00]
+		UNIT Civilian16, NPC, [5, 8], [5, 8], Raydrik, [], 1, False, [$02, $21, $00, $00]
+		UNIT Xavier, Enemy, [21, 6], [21, 6], Xavier, [MasterAxe, KillerBow], 6, False, [$14, $03, $00, $00]
+	UNIT
+
+	_SoldierReinforcementsCameraCoordinates ; B1/A0C0
+		.byte 9, 8
+
+	_SolderReinforcementsGroup ; B1/A0C2
+		UNIT FriegeSoldier2, Enemy, [3, 3], [3, 3], Gustav, [LongLance], 10, False, [$00, $00, $00, $00]
+		UNIT FriegeSoldier2, Enemy, [2, 5], [2, 5], Gustav, [KillerLance], 12, False, [$00, $00, $00, $00]
+	UNIT
+
+	_MageArmorReinforcementsCameraCoordinates ; B1/A0EC
+		.byte 9, 8
+
+	_MageArmorReinforcementsGroup ; B1/A0EE
+		UNIT FriegeArmoredSword2, Enemy, [3, 3], [3, 3], Gustav, [KillingEdge], 10, False, [$00, $00, $00, $00]
+		UNIT FriegeMage1, Enemy, [2, 5], [2, 5], Gustav, [Thunder], 12, False, [$00, $00, $00, $00]
+	UNIT
+
+	_FenrirDarkMageReinforcementsCameraCoordinates ; B1/A118
+		.byte 14, 14
+
+	_FenrirDarkMageReinforcementsGroup ; B1/A11A
+		UNIT LoptyrianDarkMage1, Enemy, [14, 17], [14, 17], Codha, [Jormungand, Fenrir], 10, False, [$00, $00, $00, $00]
+	UNIT
+
+	_RewarpDarkMageReinforcementsCameraCoordinates ; B1/A130
+		.byte 14, 14
+
+	_RewarpDarkMageReinforcementsGroup ; B1/A132
+		UNIT LoptyrianDarkMage1, Enemy, [14, 17], [14, 17], Codha, [Jormungand, Rewarp], 6, False, [$00, $00, $00, $00]
+	UNIT
+
+	_ThiefReinforcementsCameraCoordinates ; B1/A148
+		.byte 33, 11
+
+	_ThiefReinforcementsGroup ; B1/A14A
+		UNIT ThiefEnemy1, Enemy, [33, 11], [33, 11], Raydrik, [IronSword, ChestKey], 6, False, [$02, $06, $00, $00]
+	UNIT
+
+	_MageReinforcementsCameraCoordinates ; B1/A160
+		.byte 33, 11
+
+	_MageReinforcementsGroup ; B1/A162
+		UNIT FriegeMage1, Enemy, [33, 11], [33, 11], Gustav, [Thunder], 6, False, [$00, $00, $00, $00]
+	UNIT
+
+	_StartingPositions ; B1/A178
+		.byte 8, 16
+		.byte 32, 16
+		.byte 9, 16
+		.byte 33, 16
+		.byte 10, 16
+		.byte 34, 16
+		.byte 11, 16
+		.byte 35, 16
+		.byte 8, 17
+		.byte 32, 17
+		.byte 9, 17
+		.byte 33, 17
+		.byte 10, 17
+		.byte 34, 17
+		.byte 11, 17
+		.byte 35, 17
+	.byte $FF
+
+	_Chest1Coordinates ; B1/A199
+		.byte 3, 2
+
+	_Chest1Item ; B1/A19B
+		.word NovasScroll
+
+	_Chest1Events ; B1/A19D
+		STORE_WORD wEventEngineXCoordinate, 3
+		STORE_WORD wEventEngineYCoordinate, 2
+		STORE_WORD wEventEngineParameter1, $0026
+
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+
+		STORE_WORD_FROM wEventEngineParameter1, _Chest1Item
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+	END2
+
+	_Chest2Coordinates ; B1/A1DD
+		.byte 33, 10
+
+	_Chest2Item ; B1/A1DF
+		.word BodyRing
+
+	_Chest2Events ; B1/A1E1
+		STORE_WORD wEventEngineXCoordinate, 33
+		STORE_WORD wEventEngineYCoordinate, 10
+		STORE_WORD wEventEngineParameter1, $0026
+
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+
+		STORE_WORD_FROM wEventEngineParameter1, _Chest2Item
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+	END2
+
+	_Chest3Coordinates ; B1/A221
+		.byte 14, 16
+
+	_Chest3Item ; B1/A223
+		.word DoorKey
+
+	_Chest3Events ; B1/A225
+		STORE_WORD wEventEngineXCoordinate, 14
+		STORE_WORD wEventEngineYCoordinate, 16
+		STORE_WORD wEventEngineParameter1, $0026
+
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+
+		STORE_WORD_FROM wEventEngineParameter1, _Chest3Item
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+	END2
+
+	_Chest4Coordinates ; B1/A265
+		.byte 15, 17
+
+	_Chest4Item ; B1/A267
+		.word SilverSword
+
+	_Chest4Events ; B1/A269
+		STORE_WORD wEventEngineXCoordinate, 15
+		STORE_WORD wEventEngineYCoordinate, 17
+		STORE_WORD wEventEngineParameter1, $0026
+
+		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+		YIELD_UNK
+
+		STORE_WORD_FROM wEventEngineParameter1, _Chest4Item
+		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+	END2

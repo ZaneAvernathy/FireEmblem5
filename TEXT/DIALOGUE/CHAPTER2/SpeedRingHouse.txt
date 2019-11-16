@@ -1,0 +1,173 @@
+dialogueChapter2SpeedRingHouse ; 95/BDA3
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan7Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "あんたら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "よけいなことをしてくれたな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "このままでは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "海賊"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_3
+	.text "仕"
+	DIALOGUE_FONT_4
+	.text "返"
+	DIALOGUE_FONT_0
+	.text "しで"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "村人"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_3
+	.text "皆"
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_0
+	.text "しにされてしまう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "いったいどうしてくれるんだ！！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD NPCGirl5Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おにいちゃん！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そんな"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "ってないでしょう！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "たちは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "わたしたちのために"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "ってくれてるのよ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "うるせえ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "だからってオレたちが"
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_0
+	.text "されちゃ"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "元"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_0
+	.text "もねえだろ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_UNLOAD
+	DIALOGUE_CLOSE
+	DIALOGUE_RIGHT
+	.text "けっ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "よけいなおせっかいはやめて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "とっとと"
+	DIALOGUE_FONT_2
+	.text "帰"
+	DIALOGUE_FONT_0
+	.text "れってんだ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_UNLOAD
+	DIALOGUE_CLOSE
+	DIALOGUE_PAUSE $20
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCGirl5Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･･ごめんなさい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "兄"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_FONT_2
+	.text "昔"
+	DIALOGUE_FONT_0
+	.text "はあんなじゃなかったんですけど"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "いっしょうけんめいがんばっても"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "なにもむくわれないじゃないかって"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "すっかりひねくれてしまって･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "おわびといってはなんですが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "魔法"
+	DIALOGUE_FONT_0
+	.text "のうでわを"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "さしあげます"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "わたしは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "義"
+	DIALOGUE_FONT_1
+	.text "勇軍"
+	DIALOGUE_FONT_0
+	.text "のみなさんを"
+	DIALOGUE_FONT_3
+	.text "応"
+	DIALOGUE_FONT_1
+	.text "援"
+	DIALOGUE_FONT_0
+	.text "してます"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "がんばってくださいね"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

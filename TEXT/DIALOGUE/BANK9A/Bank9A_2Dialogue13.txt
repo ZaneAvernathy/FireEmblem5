@@ -1,0 +1,12 @@
+; 9A/E012
+DIALOGUE_FONT_0
+.text "まだ"
+DIALOGUE_FONT_1
+.text "戦"
+DIALOGUE_FONT_0
+.text "いは"
+DIALOGUE_FONT_2
+.text "終"
+DIALOGUE_FONT_0
+.text "わったわけではない"
+DIALOGUE_EOF

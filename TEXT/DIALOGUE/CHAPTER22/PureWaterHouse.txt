@@ -1,0 +1,85 @@
+dialogueChapter22PureWaterHouse ; B0/DD4D
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan8Portrait
+	DIALOGUE_FONT_4
+	.text "川"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "向"
+	DIALOGUE_FONT_0
+	.text "こうは"
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "兵"
+	DIALOGUE_FONT_2
+	.text "隊"
+	DIALOGUE_FONT_0
+	.text "でいっぱいじゃ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "中"
+	DIALOGUE_FONT_0
+	.text "には"
+	DIALOGUE_FONT_1
+	.text "恐"
+	DIALOGUE_FONT_0
+	.text "ろしい"
+	DIALOGUE_FONT_1
+	.text "魔法"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "う"
+	DIALOGUE_FONT_2
+	.text "連"
+	DIALOGUE_FONT_1
+	.text "中"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_NL
+	.text "いるという"
+	DIALOGUE_FONT_1
+	.text "話"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "く"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "準"
+	DIALOGUE_FONT_1
+	.text "備"
+	DIALOGUE_FONT_0
+	.text "もせずに"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "くのは"
+	DIALOGUE_FONT_4
+	.text "危険"
+	DIALOGUE_FONT_0
+	.text "じゃ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "このせいすいを"
+	DIALOGUE_FONT_1
+	.text "持"
+	DIALOGUE_FONT_0
+	.text "ってゆきなされ"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

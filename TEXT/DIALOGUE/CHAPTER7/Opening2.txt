@@ -1,0 +1,78 @@
+dialogueChapter7Opening2 ; 93/A985
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD ShivaPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "さわがしいな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "なにごとだ･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD KolkhoPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "マンスターで"
+	DIALOGUE_NL
+	.text "ひとさわぎあったようだぜ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "なんでも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "首謀"
+	DIALOGUE_FONT_1
+	.text "者"
+	DIALOGUE_FONT_0
+	.text "はリーフとかいう"
+	DIALOGUE_FONT_3
+	.text "若"
+	DIALOGUE_FONT_4
+	.text "造"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "レンスター"
+	DIALOGUE_FONT_1
+	.text "王家"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "生"
+	DIALOGUE_FONT_0
+	.text "き"
+	DIALOGUE_FONT_2
+	.text "残"
+	DIALOGUE_FONT_0
+	.text "りらしい"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "そいつを"
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_0
+	.text "すなり"
+	DIALOGUE_FONT_1
+	.text "捕"
+	DIALOGUE_FONT_0
+	.text "まえるなりすりゃ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "賞"
+	DIALOGUE_FONT_1
+	.text "金"
+	DIALOGUE_FONT_0
+	.text "もたんまり･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	.text "ひさしぶりのおいしいエモノってわけだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ふむ･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

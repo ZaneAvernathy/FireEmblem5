@@ -1,0 +1,132 @@
+; 9A/C095
+DIALOGUE_FONT_0
+.text "フィアナに"
+DIALOGUE_FONT_3
+.text "戻"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_NL
+.text "しばらくは"
+DIALOGUE_NL
+.text "おだやかな"
+DIALOGUE_FONT_2
+.text "時"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_4
+.text "過"
+DIALOGUE_FONT_0
+.text "ごす"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "竜"
+DIALOGUE_FONT_2
+.text "族"
+DIALOGUE_FONT_0
+.text "との"
+DIALOGUE_FONT_4
+.text "契"
+DIALOGUE_FONT_3
+.text "約"
+DIALOGUE_NL
+DIALOGUE_FONT_5
+.text "『"
+DIALOGUE_FONT_0
+.text "ゲッシュ"
+DIALOGUE_FONT_5
+.text "』"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "消滅"
+DIALOGUE_FONT_0
+.text "により"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_2
+.text "記"
+DIALOGUE_FONT_3
+.text "憶"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_2
+.text "取"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_FONT_3
+.text "戻"
+DIALOGUE_FONT_0
+.text "したのは"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "聖戦"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "勝利"
+DIALOGUE_FONT_0
+.text "から"
+DIALOGUE_NL
+.text "７"
+DIALOGUE_FONT_1
+.text "年"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "子"
+DIALOGUE_FONT_3
+.text "供"
+DIALOGUE_FONT_1
+.text "達"
+DIALOGUE_FONT_0
+.text "との"
+DIALOGUE_FONT_2
+.text "再"
+DIALOGUE_FONT_1
+.text "会"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "物"
+DIALOGUE_FONT_2
+.text "語"
+DIALOGUE_FONT_0
+.text "は､"
+DIALOGUE_FONT_4
+.text "吟"
+DIALOGUE_FONT_3
+.text "遊"
+DIALOGUE_FONT_4
+.text "詩"
+DIALOGUE_FONT_1
+.text "人"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_NL
+.text "リュートの"
+DIALOGUE_FONT_4
+.text "音"
+DIALOGUE_FONT_0
+.text "とともに"
+DIALOGUE_NL
+.text "またいつかきっと"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "語"
+DIALOGUE_FONT_0
+.text "られる"
+DIALOGUE_FONT_1
+.text "日"
+DIALOGUE_FONT_0
+.text "もあろう･･･"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

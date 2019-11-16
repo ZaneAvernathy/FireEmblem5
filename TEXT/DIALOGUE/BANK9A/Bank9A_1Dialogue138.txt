@@ -1,0 +1,61 @@
+; 9A/DA5E
+DIALOGUE_FONT_1
+.text "戦"
+DIALOGUE_FONT_2
+.text "乱終"
+DIALOGUE_FONT_3
+.text "結"
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "従兄"
+DIALOGUE_FONT_1
+.text "弟"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_NL
+.text "アレス"
+DIALOGUE_FONT_1
+.text "王子"
+DIALOGUE_FONT_0
+.text "とともに"
+DIALOGUE_NL
+.text "アグストリアへむかう"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "彼"
+DIALOGUE_FONT_0
+.text "らの"
+DIALOGUE_FONT_3
+.text "努"
+DIALOGUE_FONT_1
+.text "力"
+DIALOGUE_FONT_0
+.text "のもと"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "統"
+DIALOGUE_FONT_0
+.text "一された"
+DIALOGUE_NL
+.text "アグストリアは"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "空"
+DIALOGUE_FONT_1
+.text "前"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "発"
+DIALOGUE_FONT_4
+.text "展"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_NL
+.text "とげることとなる"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

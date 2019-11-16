@@ -1,0 +1,5 @@
+dialogueChapterFinalUnusedReleaseQuote ; E7/E007
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･････"
+DIALOGUE_END_SCENE

@@ -1,0 +1,34 @@
+dialogueVeldBattleQuote ; E7/DEDD
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "くっくっくっ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "らずわしに"
+	DIALOGUE_FONT_3
+	.text "逆"
+	DIALOGUE_FONT_0
+	.text "らうか･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ならばわが"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "れ！"
+DIALOGUE_END_SCENE

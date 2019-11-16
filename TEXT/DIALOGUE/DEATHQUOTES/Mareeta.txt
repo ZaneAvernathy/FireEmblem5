@@ -1,0 +1,11 @@
+dialogueMareetaDeathQuote ; 82/BE9A
+	DIALOGUE_FONT_0
+	.text "か､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "母様"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "くっ･･･"
+DIALOGUE_END_SCENE

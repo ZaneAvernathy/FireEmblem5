@@ -1,0 +1,37 @@
+dialogueChapter12WorldMap3 ; 82/D0A4
+	DIALOGUE_FONT_0
+	.text "そして､"
+	DIALOGUE_PAUSE $10
+	.text "ようやくターラ"
+	DIALOGUE_FONT_1
+	.text "東方"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_4
+	.text "広"
+	DIALOGUE_FONT_0
+	.text "がる"
+	DIALOGUE_NL
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_0
+	.text "ダキアの"
+	DIALOGUE_FONT_3
+	.text "森"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "にさしかかったとき"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "あたりは"
+	DIALOGUE_FONT_4
+	.text "深"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_3
+	.text "闇"
+	DIALOGUE_FONT_0
+	.text "におおわれていた"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

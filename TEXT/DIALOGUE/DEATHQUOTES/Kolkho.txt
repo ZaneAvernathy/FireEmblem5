@@ -1,0 +1,8 @@
+dialogueKolkhoDeathQuote ; 92/A3D4
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ぐおおおおおお～"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "やりやがったなぁ！"
+DIALOGUE_END_SCENE

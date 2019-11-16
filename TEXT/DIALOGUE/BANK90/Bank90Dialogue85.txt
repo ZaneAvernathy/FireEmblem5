@@ -1,0 +1,24 @@
+; 90/86FE
+DIALOGUE_FONT_0
+.text "　　　　　"
+DIALOGUE_FONT_1
+.text "国王暗殺"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_4
+.text "謀"
+DIALOGUE_FONT_0
+.text "る｡"
+DIALOGUE_FONT_1
+.text "大"
+DIALOGUE_FONT_4
+.text "帚"
+DIALOGUE_FONT_2
+.text "正"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "開"
+DIALOGUE_FONT_1
+.text "始"
+DIALOGUE_EOF

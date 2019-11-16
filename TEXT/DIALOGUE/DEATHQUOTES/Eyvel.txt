@@ -1,0 +1,16 @@
+dialogueEyvelDeathQuote ; 82/B933
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "みんな･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いつか･･･"
+	DIALOGUE_PAUSE $10
+	.text "きっと･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "だから､"
+	DIALOGUE_PAUSE $08
+	.text "あきらめないで･･･"
+DIALOGUE_END_SCENE

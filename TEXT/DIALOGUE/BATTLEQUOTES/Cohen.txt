@@ -1,0 +1,16 @@
+dialogueCohenBattleQuote ; B0/DECA
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "これ"
+	DIALOGUE_FONT_1
+	.text "以上"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "先"
+	DIALOGUE_FONT_0
+	.text "には"
+	DIALOGUE_FONT_1
+	.text "進"
+	DIALOGUE_FONT_0
+	.text "ません！"
+DIALOGUE_END_SCENE

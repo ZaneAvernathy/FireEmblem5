@@ -1,0 +1,62 @@
+dialogueChapter15LeftPath ; 92/E772
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD DoriasPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ここから"
+	DIALOGUE_FONT_1
+	.text "北"
+	DIALOGUE_FONT_0
+	.text "へ"
+	DIALOGUE_FONT_4
+	.text "抜"
+	DIALOGUE_FONT_0
+	.text "ければ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "レンスター"
+	DIALOGUE_FONT_1
+	.text "街道"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "ます"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "正"
+	DIALOGUE_FONT_3
+	.text "規"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "待"
+	DIALOGUE_FONT_0
+	.text "ちかまえており"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "困"
+	DIALOGUE_FONT_2
+	.text "難"
+	DIALOGUE_FONT_0
+	.text "な"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "いが"
+	DIALOGUE_FONT_3
+	.text "予想"
+	DIALOGUE_FONT_0
+	.text "されますが"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

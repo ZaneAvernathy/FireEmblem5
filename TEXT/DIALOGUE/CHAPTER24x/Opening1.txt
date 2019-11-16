@@ -1,0 +1,119 @@
+dialogueChapter24xOpening1 ; E7/B249
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "アウグスト"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ここは？･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "すでにロプトの"
+	DIALOGUE_FONT_1
+	.text "神"
+	DIALOGUE_FONT_2
+	.text "殿"
+	DIALOGUE_FONT_1
+	.text "内"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_3
+	.text "御"
+	DIALOGUE_FONT_1
+	.text "用"
+	DIALOGUE_FONT_2
+	.text "心"
+	DIALOGUE_FONT_0
+	.text "ください！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "そうか･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "暗"
+	DIALOGUE_FONT_0
+	.text "くてなにも"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "えないが･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "エーヴェルはどこにいるのだろう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "いずれにしても"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "進"
+	DIALOGUE_FONT_0
+	.text "むより"
+	DIALOGUE_FONT_1
+	.text "他"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "はありませぬ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "たぶん､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "中央"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "魔法"
+	DIALOGUE_FONT_3
+	.text "陣"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ベルドのいる"
+	DIALOGUE_FONT_2
+	.text "祭壇"
+	DIALOGUE_FONT_0
+	.text "へぬけるのでしょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	.text "あせりは"
+	DIALOGUE_FONT_4
+	.text "禁"
+	DIALOGUE_FONT_1
+	.text "物"
+	DIALOGUE_FONT_0
+	.text "ですぞ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "どうかおちついて"
+	DIALOGUE_NL
+	.text "しんちょうにお"
+	DIALOGUE_FONT_1
+	.text "進"
+	DIALOGUE_FONT_0
+	.text "みください"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

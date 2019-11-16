@@ -1,0 +1,14 @@
+dialogueChapter15Title ; 9A/BA12
+	DIALOGUE_FONT_2
+	.text "第"
+	DIALOGUE_FONT_0
+	.text "１５"
+	DIALOGUE_FONT_2
+	.text "章"
+	DIALOGUE_FONT_1
+	.text "⅛"
+	DIALOGUE_FONT_0
+	.text "　　　　　二つの"
+	DIALOGUE_FONT_1
+	.text "道"
+DIALOGUE_EOF

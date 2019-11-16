@@ -1,0 +1,4 @@
+dialogueChapter23SaiasLoad ; 98/E51F
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD SaiasPortrait
+DIALOGUE_END_SCENE

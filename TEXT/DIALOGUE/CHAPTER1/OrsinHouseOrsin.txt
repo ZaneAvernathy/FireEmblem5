@@ -1,0 +1,172 @@
+dialogueChapter1OrsinHouseOrsin ; 95/B216
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD OrsinPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD NPCMan1Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "オーシン､"
+	DIALOGUE_PAUSE $10
+	.text "まじめにやってるか"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	.text "エーヴェル"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "足"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "まといになるんじゃねぇぞ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	.text "くそおやじ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "説"
+	DIALOGUE_FONT_3
+	.text "教"
+	DIALOGUE_FONT_0
+	.text "はたくさんだぜ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	.text "この"
+	DIALOGUE_FONT_2
+	.text "不"
+	DIALOGUE_FONT_3
+	.text "良息"
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	DIALOGUE_FONT_3
+	.text "口"
+	DIALOGUE_FONT_0
+	.text "だけは一"
+	DIALOGUE_FONT_1
+	.text "人前"
+	DIALOGUE_FONT_0
+	.text "になりやがって"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "まあいい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	.text "ほら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "これをとりに"
+	DIALOGUE_FONT_1
+	.text "来"
+	DIALOGUE_FONT_0
+	.text "たんだろ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "お､"
+	DIALOGUE_PAUSE $08
+	.text "ありがてえ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "やっぱり"
+	DIALOGUE_NL
+	.text "このオノでなきゃどうも"
+	DIALOGUE_FONT_2
+	.text "落"
+	DIALOGUE_FONT_0
+	.text "ちつかねえんだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "まったく､"
+	DIALOGUE_PAUSE $08
+	.text "ドジなやろうだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "いくさに"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "くのに"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "自分"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "武器"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_3
+	.text "忘"
+	DIALOGUE_FONT_0
+	.text "れるやつの"
+	DIALOGUE_FONT_1
+	.text "話"
+	DIALOGUE_FONT_0
+	.text "なんざ"
+	DIALOGUE_NL
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "いたことがねえぞ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ちぇっ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "だから"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "説"
+	DIALOGUE_FONT_3
+	.text "教"
+	DIALOGUE_FONT_0
+	.text "はたくさんだって"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "ったろ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "フン"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "とっとと"
+	DIALOGUE_NL
+	.text "エーヴェル"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "をお"
+	DIALOGUE_FONT_1
+	.text "助"
+	DIALOGUE_FONT_0
+	.text "けしに"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "ってこい！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "われなくてもそうすらぁ"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+DIALOGUE_END_SCENE

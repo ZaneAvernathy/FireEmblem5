@@ -1,0 +1,81 @@
+dialogueChapter20SilenceHouse ; 92/FCA5
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman3Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "あの･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いよいよお"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_0
+	.text "あぶないんでしょうか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "杖"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "ってください"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちにはよく"
+	DIALOGUE_FONT_1
+	.text "分"
+	DIALOGUE_FONT_0
+	.text "からないんですが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "魔法"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "杖"
+	DIALOGUE_FONT_0
+	.text "だとかで･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "おねがいします"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "どうか"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "たちを"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_3
+	.text "捨"
+	DIALOGUE_FONT_0
+	.text "てないでください！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あの"
+	DIALOGUE_FONT_1
+	.text "恐"
+	DIALOGUE_FONT_0
+	.text "ろしい"
+	DIALOGUE_FONT_3
+	.text "毎"
+	DIALOGUE_FONT_1
+	.text "日"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "るのはイヤです！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

@@ -1,0 +1,99 @@
+; 9A/C371
+DIALOGUE_FONT_0
+.text "わがままな"
+DIALOGUE_FONT_1
+.text "王女"
+DIALOGUE_FONT_0
+.text "　ミランダ"
+DIALOGUE_NL
+DIALOGUE_FONT_0
+.text "アルスターで"
+DIALOGUE_NL
+.text "リーフを"
+DIALOGUE_FONT_1
+.text "待"
+DIALOGUE_FONT_0
+.text "つ"
+DIALOGUE_FONT_2
+.text "間"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+.text "一"
+DIALOGUE_FONT_1
+.text "人"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "騎士"
+DIALOGUE_FONT_0
+.text "と"
+DIALOGUE_FONT_3
+.text "恋"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_2
+.text "落"
+DIALOGUE_FONT_0
+.text "ち"
+DIALOGUE_NL
+.text "そのまま"
+DIALOGUE_FONT_1
+.text "行方"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_NL
+.text "くらませたという"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "その"
+DIALOGUE_FONT_1
+.text "気性"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "激"
+DIALOGUE_FONT_0
+.text "しさゆえに"
+DIALOGUE_NL
+DIALOGUE_FONT_5
+.text "誤"
+DIALOGUE_FONT_1
+.text "解"
+DIALOGUE_FONT_0
+.text "されることも"
+DIALOGUE_FONT_1
+.text "多"
+DIALOGUE_FONT_0
+.text "いが"
+DIALOGUE_NL
+DIALOGUE_FONT_3
+.text "妻"
+DIALOGUE_FONT_0
+.text "として"
+DIALOGUE_FONT_1
+.text "母"
+DIALOGUE_FONT_0
+.text "として"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "幸"
+DIALOGUE_FONT_0
+.text "せな"
+DIALOGUE_FONT_2
+.text "生"
+DIALOGUE_FONT_3
+.text "涯"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_3
+.text "送"
+DIALOGUE_FONT_0
+.text "ったと"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "伝"
+DIALOGUE_FONT_0
+.text "えられている"
+DIALOGUE_EOF

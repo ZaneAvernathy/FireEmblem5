@@ -1,0 +1,15 @@
+dialogueMuellerDeathQuote ; 98/CA30
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ぐうっ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "バカな･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "われらが"
+	DIALOGUE_FONT_1
+	.text "敗"
+	DIALOGUE_FONT_0
+	.text "れるとは･･･"
+DIALOGUE_END_SCENE

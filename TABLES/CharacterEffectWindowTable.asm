@@ -1,0 +1,40 @@
+	VulneraryCharacterEffectWindow				= 0
+		VulneraryCharacterEffectWindowUnknown	= $0019
+		VulneraryCharacterEffectWindowText		= menutextCharacterEffectVulnerary
+
+	HolyWaterCharacterEffectWindow				= 1
+		HolyWaterCharacterEffectWindowUnknown	= $002B
+		HolyWaterCharacterEffectWindowText		= menutextCharacterEffectHolyWater
+
+	PoisonCharacterEffectWindow					= 2
+		PoisonCharacterEffectWindowUnknown		= $002F
+		PoisonCharacterEffectWindowText			= menutextCharacterEffectPoison
+
+	BlankCharacterEffectWindow					= 3
+		BlankCharacterEffectWindowUnknown		= $0019
+		BlankCharacterEffectWindowText			= None
+
+	AntidoteCharacterEffectWindow				= 4
+		AntidoteCharacterEffectWindowUnknown	= $0035
+		AntidoteCharacterEffectWindowText		= menutextCharacterEffectAntidote
+
+	TorchCharacterEffectWindow					= 5
+		TorchCharacterEffectWindowUnknown		= $002D
+		TorchCharacterEffectWindowText			= menutextCharacterEffectTorch
+
+	Unknown1CharacterEffectWindow				= 6
+		Unknown1CharacterEffectWindowUnknown	= $0019
+		Unknown1CharacterEffectWindowText		= menutextCharacterEffectUnknown1
+
+	Unknown2CharacterEffectWindow				= 7
+		Unknown2CharacterEffectWindowUnknown	= $0019
+		Unknown2CharacterEffectWindowText		= menutextCharacterEffectUnknown2
+
+VulneraryCharacterEffectWindowCharacterEffectWindowTableEntry .dstruct StructCharacterEffectWindowEntry, VulneraryCharacterEffectWindowUnknown, VulneraryCharacterEffectWindowText
+HolyWaterCharacterEffectWindowCharacterEffectWindowTableEntry .dstruct StructCharacterEffectWindowEntry, HolyWaterCharacterEffectWindowUnknown, HolyWaterCharacterEffectWindowText
+PoisonCharacterEffectWindowCharacterEffectWindowTableEntry .dstruct StructCharacterEffectWindowEntry, PoisonCharacterEffectWindowUnknown, PoisonCharacterEffectWindowText
+BlankCharacterEffectWindowCharacterEffectWindowTableEntry .dstruct StructCharacterEffectWindowEntry, BlankCharacterEffectWindowUnknown, BlankCharacterEffectWindowText
+AntidoteCharacterEffectWindowCharacterEffectWindowTableEntry .dstruct StructCharacterEffectWindowEntry, AntidoteCharacterEffectWindowUnknown, AntidoteCharacterEffectWindowText
+TorchCharacterEffectWindowCharacterEffectWindowTableEntry .dstruct StructCharacterEffectWindowEntry, TorchCharacterEffectWindowUnknown, TorchCharacterEffectWindowText
+Unknown1CharacterEffectWindowCharacterEffectWindowTableEntry .dstruct StructCharacterEffectWindowEntry, Unknown1CharacterEffectWindowUnknown, Unknown1CharacterEffectWindowText
+Unknown2CharacterEffectWindowCharacterEffectWindowTableEntry .dstruct StructCharacterEffectWindowEntry, Unknown2CharacterEffectWindowUnknown, Unknown2CharacterEffectWindowText

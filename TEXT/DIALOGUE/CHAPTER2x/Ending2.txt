@@ -1,0 +1,237 @@
+dialogueChapter2xEnding2 ; 95/CE6F
+	DIALOGUE_ASMC_0 rlDialogueSilenceMusic
+	DIALOGUE_PAUSE $10
+	DIALOGUE_UNK $13
+	.text "げ"
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD LithisPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おいおい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "オレはいったいどうなるんだよぉ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "おまえは､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "村人"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_3
+	.text "引"
+	DIALOGUE_FONT_0
+	.text "きわたす"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "処"
+	DIALOGUE_FONT_1
+	.text "分"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "彼"
+	DIALOGUE_FONT_0
+	.text "らが"
+	DIALOGUE_FONT_1
+	.text "決"
+	DIALOGUE_FONT_0
+	.text "めるだろう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ま､"
+	DIALOGUE_PAUSE $08
+	.text "まってくれよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そんなことをされたら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "オレは"
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_0
+	.text "されちまう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "なあ､"
+	DIALOGUE_PAUSE $08
+	.text "たすけてくれよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "サフィ"
+	DIALOGUE_NL
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD SapphiePortrait
+	DIALOGUE_LEFT
+	.text "おまえからも"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "ってくれ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "一"
+	DIALOGUE_FONT_2
+	.text "緒"
+	DIALOGUE_FONT_0
+	.text "にターラへ"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "こうって"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_3
+	.text "約束"
+	DIALOGUE_FONT_0
+	.text "した"
+	DIALOGUE_FONT_3
+	.text "仲"
+	DIALOGUE_FONT_0
+	.text "じゃねえか"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "それほど"
+	DIALOGUE_FONT_1
+	.text "悪"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_2
+	.text "間"
+	DIALOGUE_FONT_0
+	.text "ではありません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "海賊行"
+	DIALOGUE_FONT_4
+	.text "為"
+	DIALOGUE_FONT_0
+	.text "はいけないことですが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "すでに"
+	DIALOGUE_FONT_3
+	.text "悔"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_3
+	.text "改"
+	DIALOGUE_FONT_0
+	.text "めております"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "どうか"
+	DIALOGUE_FONT_1
+	.text "助"
+	DIALOGUE_FONT_0
+	.text "けてあげてください"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "サフィがそれほどいうのなら･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LithisPortrait
+	DIALOGUE_LEFT
+	.text "わかった"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "しばらくようすを"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "よう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_UNLOAD
+	DIALOGUE_CLOSE
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ふっ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "たすかったぜ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "スキを"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "て"
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "げ"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "すか･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "まてよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "こいつが"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "というのが"
+	DIALOGUE_FONT_2
+	.text "本当"
+	DIALOGUE_FONT_0
+	.text "なら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_3
+	.text "売"
+	DIALOGUE_FONT_0
+	.text "るってテもあるな･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "まあいい､"
+	DIALOGUE_PAUSE $08
+	.text "ゆっくり"
+	DIALOGUE_FONT_5
+	.text "考"
+	DIALOGUE_FONT_0
+	.text "えよう"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いずれにしても"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "サフィをオレのものにしてからだ･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

@@ -1,0 +1,64 @@
+dialogueChapter16APureWaterHouse ; 98/ADEC
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCGirl3Portrait
+	DIALOGUE_FONT_0
+	.text "え､"
+	DIALOGUE_PAUSE $08
+	.text "あなたたち"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "レンスターゆかりの"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "たちなんですか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "じゃあ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "またレンスター"
+	DIALOGUE_FONT_1
+	.text "王国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "世"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "中"
+	DIALOGUE_FONT_0
+	.text "になるんですね"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "これ､"
+	DIALOGUE_PAUSE $08
+	.text "せいすいです､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "ってください"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "お"
+	DIALOGUE_FONT_2
+	.text "礼"
+	DIALOGUE_FONT_0
+	.text "なんていりません"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "わたしたちもお"
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "ちたいんです！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

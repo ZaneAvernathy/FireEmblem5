@@ -1,0 +1,47 @@
+dialogueChapter12xEnding1 ; 92/BCCB
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD DoriasPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "さあ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_5
+	.text "夜"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_FONT_2
+	.text "明"
+	DIALOGUE_FONT_0
+	.text "けました"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "兵"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "休養"
+	DIALOGUE_FONT_0
+	.text "も十"
+	DIALOGUE_FONT_1
+	.text "分"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ターラへ"
+	DIALOGUE_FONT_1
+	.text "向"
+	DIALOGUE_FONT_0
+	.text "けて"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_2
+	.text "発"
+	DIALOGUE_FONT_0
+	.text "しましょう！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

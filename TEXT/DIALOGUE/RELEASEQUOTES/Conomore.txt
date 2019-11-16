@@ -1,0 +1,26 @@
+dialogueConomoreReleaseQuote ; B0/C3EF
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_3
+	.text "虜"
+	DIALOGUE_FONT_4
+	.text "囚"
+	DIALOGUE_FONT_0
+	.text "のはずかしめを"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "受"
+	DIALOGUE_FONT_0
+	.text "けるとは･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "だが"
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_2
+	.text "生"
+	DIALOGUE_FONT_0
+	.text "きねばならぬ･･･"
+DIALOGUE_END_SCENE

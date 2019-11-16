@@ -1,0 +1,9 @@
+; 9A/D8CC
+DIALOGUE_FONT_0
+.text "なやめる"
+DIALOGUE_FONT_1
+.text "女騎士"
+DIALOGUE_FONT_0
+.text "　アマルダ"
+DIALOGUE_NL
+DIALOGUE_EOF

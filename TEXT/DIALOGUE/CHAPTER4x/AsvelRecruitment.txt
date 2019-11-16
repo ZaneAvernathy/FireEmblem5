@@ -1,0 +1,326 @@
+dialogueChapter4xAsvelRecruitment ; 98/8374
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AsvelPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "！！"
+	DIALOGUE_NL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "やっとあえた！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ぼくです､"
+	DIALOGUE_PAUSE $10
+	.text "アスベルです！！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "アスベル！？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "どうしてこんなところに？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ターラじゃなかったのか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "街"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "られたあと"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ぼくもすぐに"
+	DIALOGUE_FONT_1
+	.text "後"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "追"
+	DIALOGUE_FONT_0
+	.text "いました"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "でも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "どこに"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "かれたのかわからなくて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "半年前"
+	DIALOGUE_FONT_0
+	.text "からこの"
+	DIALOGUE_FONT_1
+	.text "街"
+	DIALOGUE_FONT_0
+	.text "に･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "すぐって！？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･じゃあ３"
+	DIALOGUE_FONT_1
+	.text "年前"
+	DIALOGUE_FONT_0
+	.text "から､"
+	DIALOGUE_PAUSE $08
+	.text "ずっと･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ええ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "だって､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_3
+	.text "約束"
+	DIALOGUE_FONT_0
+	.text "したでしょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "ぼくたちで"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "をあわせて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "トラキアを"
+	DIALOGUE_FONT_2
+	.text "取"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "そうって"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "それなのに"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ぼく一"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "置"
+	DIALOGUE_FONT_0
+	.text "いて"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "くなんて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ひどいですよ､"
+	DIALOGUE_PAUSE $08
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ごめん･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	.text "でもあのときは"
+	DIALOGUE_FONT_3
+	.text "仕"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "がなかったんだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ターラは"
+	DIALOGUE_FONT_1
+	.text "帝国軍"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "包囲"
+	DIALOGUE_FONT_0
+	.text "されて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ぼくはもう"
+	DIALOGUE_FONT_2
+	.text "死"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "覚悟"
+	DIALOGUE_FONT_0
+	.text "した"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "まさか"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "げ"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "せるなんて"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "わなかった"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "だから"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "アスベルを"
+	DIALOGUE_FONT_4
+	.text "巻"
+	DIALOGUE_FONT_0
+	.text "き"
+	DIALOGUE_FONT_2
+	.text "込"
+	DIALOGUE_FONT_0
+	.text "みたくなかったんだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "そんなこと･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	DIALOGUE_FONT_2
+	.text "生死"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_2
+	.text "共"
+	DIALOGUE_FONT_0
+	.text "にと"
+	DIALOGUE_FONT_4
+	.text "誓"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_1
+	.text "合"
+	DIALOGUE_FONT_0
+	.text "ったでしょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "それとも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "あの"
+	DIALOGUE_FONT_4
+	.text "誓"
+	DIALOGUE_FONT_0
+	.text "いは"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_0
+	.text "ども"
+	DIALOGUE_FONT_1
+	.text "同士"
+	DIALOGUE_FONT_0
+	.text "のお"
+	DIALOGUE_FONT_3
+	.text "遊"
+	DIALOGUE_FONT_0
+	.text "びだったのですか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ぼくは"
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "でも"
+	DIALOGUE_FONT_4
+	.text "覚"
+	DIALOGUE_FONT_0
+	.text "えています"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ぼくはリーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "になると"
+	DIALOGUE_FONT_1
+	.text "決"
+	DIALOGUE_FONT_0
+	.text "めたんです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "アスベル･･･"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	.text "トラキアを"
+	DIALOGUE_FONT_2
+	.text "取"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "してください"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	.text "そのためなら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ぼくはどんな"
+	DIALOGUE_FONT_1
+	.text "苦"
+	DIALOGUE_FONT_4
+	.text "労"
+	DIALOGUE_FONT_0
+	.text "もいといません！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

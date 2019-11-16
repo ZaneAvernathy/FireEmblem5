@@ -1,0 +1,15 @@
+; 9A/C30C
+DIALOGUE_FONT_0
+.text "イス"
+DIALOGUE_FONT_1
+.text "村"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_3
+.text "若"
+DIALOGUE_FONT_1
+.text "者"
+DIALOGUE_FONT_0
+.text "　ロナン"
+DIALOGUE_NL
+DIALOGUE_EOF

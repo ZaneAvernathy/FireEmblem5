@@ -1,0 +1,49 @@
+dialogueChapter13KnightCrestHouse ; B9/CFEC
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan9Portrait
+	DIALOGUE_FONT_0
+	.text "よくいらっしゃった"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "あんたがたの"
+	DIALOGUE_FONT_2
+	.text "活"
+	DIALOGUE_FONT_4
+	.text "躍"
+	DIALOGUE_FONT_0
+	.text "ぶりは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "いておりますぞ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "このナイトプルフを"
+	DIALOGUE_FONT_4
+	.text "差"
+	DIALOGUE_FONT_0
+	.text "し"
+	DIALOGUE_FONT_1
+	.text "上"
+	DIALOGUE_FONT_0
+	.text "げよう"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "お"
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "てて"
+	DIALOGUE_FONT_1
+	.text "下"
+	DIALOGUE_FONT_0
+	.text "されや"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

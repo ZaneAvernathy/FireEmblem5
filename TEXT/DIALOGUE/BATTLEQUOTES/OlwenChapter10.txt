@@ -1,0 +1,24 @@
+dialogueOlwenChapter10BattleQuote ; E7/9653
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ここは"
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "領土"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "すぐに"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "ち"
+	DIALOGUE_FONT_2
+	.text "去"
+	DIALOGUE_FONT_0
+	.text "りなさい！"
+DIALOGUE_END_SCENE

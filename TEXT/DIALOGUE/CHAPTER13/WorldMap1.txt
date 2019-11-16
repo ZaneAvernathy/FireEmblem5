@@ -1,0 +1,38 @@
+dialogueChapter13WorldMap1 ; 82/D0E9
+	DIALOGUE_FONT_0
+	.text "いわゆる"
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_2
+	.text "盗"
+	DIALOGUE_FONT_1
+	.text "賊"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_3
+	.text "森"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "をぬけた"
+	DIALOGUE_NL
+	.text "リーフたち"
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_1
+	.text "解放軍"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "目"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "前"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

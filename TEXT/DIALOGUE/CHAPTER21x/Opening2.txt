@@ -1,0 +1,162 @@
+dialogueChapter21xOpening2 ; 95/F7D7
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ここが"
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "捕"
+	DIALOGUE_FONT_3
+	.text "虜"
+	DIALOGUE_FONT_5
+	.text "収"
+	DIALOGUE_FONT_4
+	.text "容"
+	DIALOGUE_FONT_2
+	.text "所"
+	DIALOGUE_FONT_0
+	.text "か･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "トラキア"
+	DIALOGUE_FONT_2
+	.text "各"
+	DIALOGUE_FONT_1
+	.text "地"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_1
+	.text "捕"
+	DIALOGUE_FONT_3
+	.text "虜"
+	DIALOGUE_FONT_0
+	.text "となったものは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "そのほとんどがここに"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "護"
+	DIALOGUE_FONT_3
+	.text "送"
+	DIALOGUE_FONT_0
+	.text "されるといわれています"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "わが"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "でつかまったものも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ここにとらわれている"
+	DIALOGUE_FONT_3
+	.text "可"
+	DIALOGUE_FONT_2
+	.text "能"
+	DIALOGUE_FONT_1
+	.text "性"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "きわめて"
+	DIALOGUE_FONT_2
+	.text "高"
+	DIALOGUE_FONT_0
+	.text "いといえるでしょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_2
+	.text "急"
+	DIALOGUE_FONT_0
+	.text "ぎませんと"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_3
+	.text "変"
+	DIALOGUE_FONT_0
+	.text "なことになりますぞ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_3
+	.text "変"
+	DIALOGUE_FONT_0
+	.text "なこと？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_2
+	.text "先"
+	DIALOGUE_FONT_0
+	.text "ほど"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "のものから"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ロプトの"
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_2
+	.text "部隊"
+	DIALOGUE_FONT_0
+	.text "がこちらに"
+	DIALOGUE_FONT_1
+	.text "向"
+	DIALOGUE_FONT_0
+	.text "かいつつあり"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "との"
+	DIALOGUE_FONT_3
+	.text "報告"
+	DIALOGUE_FONT_0
+	.text "が･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ベルクローゼンか･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "それはたしかに"
+	DIALOGUE_FONT_3
+	.text "面"
+	DIALOGUE_FONT_2
+	.text "倒"
+	DIALOGUE_FONT_0
+	.text "だな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "よし､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "急"
+	DIALOGUE_FONT_0
+	.text "いで"
+	DIALOGUE_FONT_1
+	.text "捕"
+	DIALOGUE_FONT_3
+	.text "虜"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "救出"
+	DIALOGUE_FONT_0
+	.text "しよう"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

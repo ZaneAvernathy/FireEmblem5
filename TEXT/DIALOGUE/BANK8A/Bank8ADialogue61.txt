@@ -1,0 +1,8 @@
+; 8A/B7FB
+DIALOGUE_FONT_1
+.text "城門"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "制圧"
+DIALOGUE_EOF

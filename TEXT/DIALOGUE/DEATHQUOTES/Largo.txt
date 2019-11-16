@@ -1,0 +1,7 @@
+dialogueLargoDeathQuote ; E7/9624
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "むぅ･･･"
+	DIALOGUE_PAUSE $20
+	.text "もはやこれまでか･･･"
+DIALOGUE_END_SCENE

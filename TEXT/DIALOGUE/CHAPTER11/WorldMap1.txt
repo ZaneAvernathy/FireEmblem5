@@ -1,0 +1,31 @@
+dialogueChapter11WorldMap1 ; 82/CFB4
+	DIALOGUE_FONT_1
+	.text "国境"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "突"
+	DIALOGUE_FONT_1
+	.text "破"
+	DIALOGUE_FONT_0
+	.text "し､"
+	DIALOGUE_PAUSE $10
+	.text "ついに"
+	DIALOGUE_FONT_1
+	.text "帝国領"
+	DIALOGUE_FONT_0
+	.text "への"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "進攻"
+	DIALOGUE_FONT_0
+	.text "をはたしたリーフたち"
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_1
+	.text "解放軍"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

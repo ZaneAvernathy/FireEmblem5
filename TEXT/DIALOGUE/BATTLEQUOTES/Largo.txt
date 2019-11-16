@@ -1,0 +1,20 @@
+dialogueLargoBattleQuote ; E7/9601
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "われらが"
+	DIALOGUE_FONT_1
+	.text "領土"
+	DIALOGUE_FONT_0
+	.text "をおかすものよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いったい"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_1
+	.text "目的"
+	DIALOGUE_FONT_0
+	.text "だ！"
+DIALOGUE_END_SCENE

@@ -1,0 +1,9 @@
+; 9A/C083
+DIALOGUE_FONT_0
+.text "フィアナの"
+DIALOGUE_FONT_1
+.text "女神"
+DIALOGUE_FONT_0
+.text "　エーヴェル"
+DIALOGUE_NL
+DIALOGUE_EOF

@@ -1,0 +1,75 @@
+; 9A/BF84
+DIALOGUE_FONT_0
+.text "フィアナに"
+DIALOGUE_FONT_3
+.text "戻"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_NL
+.text "のち､"
+DIALOGUE_FONT_3
+.text "結"
+DIALOGUE_FONT_2
+.text "婚"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "多"
+DIALOGUE_FONT_0
+.text "くの"
+DIALOGUE_FONT_1
+.text "子"
+DIALOGUE_FONT_3
+.text "供"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+.text "めぐまれる"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "そのきっぷのよさと"
+DIALOGUE_NL
+.text "けんかっ"
+DIALOGUE_FONT_4
+.text "早"
+DIALOGUE_FONT_0
+.text "さは"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "生"
+DIALOGUE_FONT_3
+.text "涯変"
+DIALOGUE_FONT_0
+.text "わることなく"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_5
+.text "『"
+DIALOGUE_FONT_1
+.text "村"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "名物"
+DIALOGUE_FONT_0
+.text "おやじ"
+DIALOGUE_FONT_5
+.text "』"
+DIALOGUE_NL
+DIALOGUE_FONT_0
+.text "として"
+DIALOGUE_NL
+.text "けむたがられつつも"
+DIALOGUE_NL
+DIALOGUE_FONT_3
+.text "頼"
+DIALOGUE_FONT_0
+.text "りになる"
+DIALOGUE_NL
+DIALOGUE_FONT_3
+.text "存在"
+DIALOGUE_FONT_0
+.text "だったという"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

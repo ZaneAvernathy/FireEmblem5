@@ -1,0 +1,307 @@
+dialogueChapter20UnusedEnding ; 92/F8D6
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NannaPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD DermottPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "きみは･･･"
+	DIALOGUE_PAUSE $10
+	.text "ナンナ？"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "ええ､"
+	DIALOGUE_PAUSE $08
+	.text "そうだけど､"
+	DIALOGUE_PAUSE $08
+	.text "あなたは？"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "よかった！"
+	DIALOGUE_PAUSE $10
+	.text "　やっと"
+	DIALOGUE_FONT_1
+	.text "会"
+	DIALOGUE_FONT_0
+	.text "えた！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はデルムッド"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "きみの"
+	DIALOGUE_FONT_2
+	.text "兄"
+	DIALOGUE_FONT_0
+	.text "だよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "えっ？"
+	DIALOGUE_PAUSE $10
+	.text "　･･･まさか･･･"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "もレヴィン"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "からきかされるまで"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "知"
+	DIALOGUE_FONT_0
+	.text "らなかったんだ"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "レヴィン"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "かつてシグルド"
+	DIALOGUE_FONT_1
+	.text "公子"
+	DIALOGUE_FONT_0
+	.text "といっしょに"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "ってこられた"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "でね"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "は､"
+	DIALOGUE_PAUSE $08
+	.text "セリス"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_3
+	.text "師"
+	DIALOGUE_FONT_0
+	.text "をなさっている"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "そうだったのですか･･･"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	.text "では､"
+	DIALOGUE_PAUSE $08
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "母"
+	DIALOGUE_FONT_0
+	.text "さまは！？"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "母上"
+	DIALOGUE_FONT_0
+	.text "？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･ナンナ､"
+	DIALOGUE_PAUSE $08
+	.text "それはどういうことだ？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "が３"
+	DIALOGUE_FONT_1
+	.text "才"
+	DIALOGUE_FONT_0
+	.text "のとき"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "母"
+	DIALOGUE_FONT_0
+	.text "さまは､"
+	DIALOGUE_PAUSE $08
+	.text "デルムッド"
+	DIALOGUE_FONT_2
+	.text "兄"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "迎"
+	DIALOGUE_FONT_0
+	.text "えに"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "くと"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "われてイザークへ･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "なんだって！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "でも､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "母上"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "来"
+	DIALOGUE_FONT_0
+	.text "られていないぞ！"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "そんな･･･"
+	DIALOGUE_PAUSE $10
+	.text "では､"
+	DIALOGUE_PAUSE $08
+	.text "お"
+	DIALOGUE_FONT_1
+	.text "母"
+	DIALOGUE_FONT_0
+	.text "さまは･･･"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "イードは"
+	DIALOGUE_FONT_1
+	.text "魔"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "砂漠"
+	DIALOGUE_FONT_0
+	.text "だ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "一"
+	DIALOGUE_FONT_1
+	.text "人"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "かれるなんてムチャだよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ああ･･･"
+	DIALOGUE_PAUSE $10
+	.text "ラケシス"
+	DIALOGUE_FONT_1
+	.text "母"
+	DIALOGUE_FONT_0
+	.text "さま･･･"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ナンナ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "これからは"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_4
+	.text "君"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "ってあげるよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "だから"
+	DIALOGUE_FONT_2
+	.text "心配"
+	DIALOGUE_FONT_0
+	.text "することはない"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "セリス"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "におねがいして"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "もリーフ"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "とともに"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "おう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ありがとう･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "デルムッド"
+	DIALOGUE_FONT_2
+	.text "兄"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

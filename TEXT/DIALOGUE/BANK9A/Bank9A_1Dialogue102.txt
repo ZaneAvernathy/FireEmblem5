@@ -1,0 +1,94 @@
+; 9A/CFB2
+DIALOGUE_FONT_1
+.text "戦"
+DIALOGUE_FONT_0
+.text "いの"
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_NL
+DIALOGUE_FONT_0
+.text "フリージ"
+DIALOGUE_FONT_1
+.text "公国"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_3
+.text "戻"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_NL
+DIALOGUE_FONT_3
+.text "若"
+DIALOGUE_FONT_0
+.text "き"
+DIALOGUE_FONT_1
+.text "主"
+DIALOGUE_FONT_4
+.text "君"
+DIALOGUE_FONT_0
+.text "を"
+DIALOGUE_FONT_1
+.text "助"
+DIALOGUE_FONT_0
+.text "けて"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "祖国"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "復"
+DIALOGUE_FONT_3
+.text "興"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "力"
+DIALOGUE_FONT_0
+.text "をつくす"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_1
+.text "主筋"
+DIALOGUE_FONT_0
+.text "にあたる"
+DIALOGUE_FONT_3
+.text "娘"
+DIALOGUE_FONT_0
+.text "と"
+DIALOGUE_NL
+DIALOGUE_FONT_3
+.text "結"
+DIALOGUE_FONT_0
+.text "ばれたのだが"
+DIALOGUE_NL
+.text "あまりの"
+DIALOGUE_FONT_1
+.text "年"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_4
+.text "差"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+DIALOGUE_FONT_4
+.text "周"
+DIALOGUE_FONT_0
+.text "りからは"
+DIALOGUE_FONT_1
+.text "大"
+DIALOGUE_FONT_0
+.text "いに"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "冷"
+DIALOGUE_FONT_0
+.text "やかされたという"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

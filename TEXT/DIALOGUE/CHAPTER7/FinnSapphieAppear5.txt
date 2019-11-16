@@ -1,0 +1,194 @@
+dialogueChapter7FinnSapphieAppear5 ; 93/AD27
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD SapphiePortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はもう"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "かねばなりません"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "シスターは"
+	DIALOGUE_FONT_1
+	.text "街"
+	DIALOGUE_FONT_0
+	.text "へ"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "ってください"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "フィン"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "やはり"
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "足"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "まといでしょうか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "いや､"
+	DIALOGUE_PAUSE $08
+	.text "そんなことはない"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あなたの"
+	DIALOGUE_FONT_2
+	.text "恊"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_2
+	.text "心強"
+	DIALOGUE_FONT_0
+	.text "いが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "にはシスターを"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "る"
+	DIALOGUE_FONT_1
+	.text "自"
+	DIALOGUE_FONT_2
+	.text "信"
+	DIALOGUE_FONT_0
+	.text "がないのだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はターラを"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "るとき"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "軍神"
+	DIALOGUE_FONT_0
+	.text "ヘイムに"
+	DIALOGUE_FONT_4
+	.text "誓"
+	DIALOGUE_FONT_0
+	.text "いました"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "ターラを"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "る"
+	DIALOGUE_FONT_1
+	.text "勇者"
+	DIALOGUE_FONT_0
+	.text "のためなら"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "神"
+	DIALOGUE_FONT_0
+	.text "にめされることもいとわぬと"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "フィン"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "づかうことは"
+	DIALOGUE_FONT_1
+	.text "無用"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "もしもお"
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "てるのなら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "どうぞお"
+	DIALOGUE_FONT_2
+	.text "連"
+	DIALOGUE_FONT_0
+	.text "れくださいませ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "わかりました"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "シスターが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "そこまで"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "われるなら･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "では"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "きましょう"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "日"
+	DIALOGUE_FONT_0
+	.text "がくれるまでに"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "探"
+	DIALOGUE_FONT_0
+	.text "さねばなりません"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

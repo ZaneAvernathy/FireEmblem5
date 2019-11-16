@@ -1,0 +1,333 @@
+dialogueChapter24Ending1 ; B0/EF1A
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "きびしい"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "いでしたが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "王宮"
+	DIALOGUE_FONT_0
+	.text "はあらかた"
+	DIALOGUE_FONT_2
+	.text "制圧"
+	DIALOGUE_FONT_0
+	.text "できたようです"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "いぶりもおみごとでした"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "だがアウグスト"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "レイドリックは"
+	DIALOGUE_FONT_2
+	.text "本当"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "倒"
+	DIALOGUE_FONT_0
+	.text "せたのか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "とどめをさしたはずだが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "彼"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_3
+	.text "姿"
+	DIALOGUE_FONT_0
+	.text "はまぼろしのように"
+	DIALOGUE_FONT_2
+	.text "消"
+	DIALOGUE_FONT_0
+	.text "えたぞ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "か"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "邪"
+	DIALOGUE_FONT_1
+	.text "悪"
+	DIALOGUE_FONT_0
+	.text "な"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "でおおわれているようです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "マンスター"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "地下"
+	DIALOGUE_FONT_0
+	.text "にはロプト"
+	DIALOGUE_FONT_3
+	.text "教"
+	DIALOGUE_FONT_1
+	.text "団"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "秘"
+	DIALOGUE_FONT_3
+	.text "密"
+	DIALOGUE_FONT_1
+	.text "神"
+	DIALOGUE_FONT_2
+	.text "殿"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_3
+	.text "設"
+	DIALOGUE_FONT_0
+	.text "けられておるゆえ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "そのせいかもしれません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "それをつぶさぬ"
+	DIALOGUE_FONT_3
+	.text "限"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "真"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "解放"
+	DIALOGUE_FONT_0
+	.text "がなったとはいえませぬな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_2
+	.text "秘"
+	DIALOGUE_FONT_3
+	.text "密"
+	DIALOGUE_FONT_1
+	.text "神"
+	DIALOGUE_FONT_2
+	.text "殿"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "トラキアにおける"
+	DIALOGUE_NL
+	.text "ロプトの"
+	DIALOGUE_FONT_2
+	.text "本"
+	DIALOGUE_FONT_3
+	.text "拠"
+	DIALOGUE_FONT_1
+	.text "地"
+	DIALOGUE_FONT_0
+	.text "だな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "はい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "その"
+	DIALOGUE_FONT_4
+	.text "責"
+	DIALOGUE_FONT_3
+	.text "任"
+	DIALOGUE_FONT_1
+	.text "者"
+	DIALOGUE_FONT_0
+	.text "がマンフロイの"
+	DIALOGUE_FONT_4
+	.text "腹"
+	DIALOGUE_FONT_2
+	.text "心"
+	DIALOGUE_FONT_0
+	.text "である"
+	DIALOGUE_NL
+	.text "ベルド"
+	DIALOGUE_FONT_2
+	.text "司"
+	DIALOGUE_FONT_3
+	.text "教"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ベルド"
+	DIALOGUE_FONT_2
+	.text "司"
+	DIALOGUE_FONT_3
+	.text "教"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "どんな"
+	DIALOGUE_FONT_1
+	.text "男"
+	DIALOGUE_FONT_0
+	.text "なんだ？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "彼"
+	DIALOGUE_FONT_0
+	.text "はトラキア"
+	DIALOGUE_FONT_3
+	.text "教"
+	DIALOGUE_FONT_1
+	.text "区"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_4
+	.text "責"
+	DIALOGUE_FONT_3
+	.text "任"
+	DIALOGUE_FONT_1
+	.text "者"
+	DIALOGUE_FONT_0
+	.text "として"
+	DIALOGUE_NL
+	.text "すべてを"
+	DIALOGUE_FONT_2
+	.text "取"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_FONT_3
+	.text "仕"
+	DIALOGUE_FONT_2
+	.text "切"
+	DIALOGUE_FONT_0
+	.text "っていました"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_3
+	.text "供"
+	DIALOGUE_FONT_4
+	.text "狩"
+	DIALOGUE_FONT_0
+	.text "りをおしすすめたのも"
+	DIALOGUE_NL
+	.text "ベルクローゼンに"
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_3
+	.text "燎"
+	DIALOGUE_FONT_0
+	.text "かせたのも"
+	DIALOGUE_NL
+	.text "すべて"
+	DIALOGUE_FONT_1
+	.text "彼"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_3
+	.text "仕業"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "レイドリックなどは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ただの"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_3
+	.text "走"
+	DIALOGUE_FONT_0
+	.text "りにすぎません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "捕"
+	DIALOGUE_FONT_3
+	.text "虜"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "話"
+	DIALOGUE_FONT_0
+	.text "では"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "エーヴェルどのを"
+	DIALOGUE_FONT_1
+	.text "石"
+	DIALOGUE_FONT_0
+	.text "にしたのも"
+	DIALOGUE_NL
+	.text "ベルドだということでした"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "なっ､"
+	DIALOGUE_PAUSE $08
+	.text "なんだと！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "許"
+	DIALOGUE_FONT_0
+	.text "さない！･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そのベルドという"
+	DIALOGUE_FONT_1
+	.text "男"
+	DIALOGUE_FONT_0
+	.text "！･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+DIALOGUE_END_SCENE

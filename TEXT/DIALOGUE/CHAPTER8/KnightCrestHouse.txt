@@ -1,0 +1,87 @@
+dialogueChapter8KnightCrestHouse ; 93/BC45
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan3Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ダグダが"
+	DIALOGUE_NL
+	.text "フィアナ"
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "にでかけているあいだに"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "手下"
+	DIALOGUE_FONT_0
+	.text "のゴメスが"
+	DIALOGUE_FONT_1
+	.text "山賊"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "っちまったんだ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "あいつはバカだが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "だけは"
+	DIALOGUE_FONT_2
+	.text "強"
+	DIALOGUE_FONT_0
+	.text "ぇからなぁ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "えっ､"
+	DIALOGUE_PAUSE $08
+	.text "おまえさんら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ゴメスをやっつけてくれんのか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "そいつはありがてえ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "おれたちがせっかく"
+	DIALOGUE_FONT_2
+	.text "切"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_FONT_2
+	.text "開"
+	DIALOGUE_FONT_0
+	.text "いたこの"
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_0
+	.text "めちゃくちゃにされたくねえもんな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "お"
+	DIALOGUE_FONT_2
+	.text "礼"
+	DIALOGUE_FONT_0
+	.text "といっちゃなんだが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "この"
+	DIALOGUE_FONT_5
+	.text "勲"
+	DIALOGUE_FONT_2
+	.text "章"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_0
+	.text "おまえさんたちにあげるよ"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

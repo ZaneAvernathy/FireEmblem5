@@ -1,0 +1,26 @@
+; 8A/B76E
+DIALOGUE_FONT_1
+.text "指"
+DIALOGUE_FONT_3
+.text "定"
+DIALOGUE_FONT_2
+.text "位"
+DIALOGUE_FONT_4
+.text "置"
+DIALOGUE_FONT_0
+.text "へ"
+DIALOGUE_FONT_3
+.text "離"
+DIALOGUE_FONT_2
+.text "脱"
+DIALOGUE_FONT_3
+.text "/"
+DIALOGUE_FONT_1
+.text "城"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_2
+.text "防"
+DIALOGUE_FONT_3
+.text "衛"
+DIALOGUE_EOF

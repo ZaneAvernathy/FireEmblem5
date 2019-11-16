@@ -1,0 +1,632 @@
+
+eventChapter11xEvents ; 99/D51C
+
+	_OpeningEventDefinitions ; 99/D51C
+		EVENT $00, _OpeningEvent
+			CMP_WORD wCurrentTurn, 0
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TurnEventDefinitions ; 99/D529
+		EVENT $02, eventMapDeathQuoteDummyEvent
+			CHECK_DEAD Hortefeux
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+		EVENT $01, eventMapDeathQuoteDummyEvent
+			TEST_FLAG_SET $03
+		END_DEFINITION
+		EVENT $00, _FredCheck
+			CMP_WORD_RANGE wCurrentTurn, 2, $FF
+			CMP_WORD wCurrentPhase, NPC
+			TEST_FLAG_UNSET $02
+		END_DEFINITION
+		EVENT $00, _FredArrive
+			CMP_WORD wCurrentTurn, 2
+			TEST_FLAG_SET $90
+			CMP_WORD wCurrentPhase, Player
+		END_DEFINITION
+		EVENT $00, _HortefeuxLeave
+			CMP_WORD wCurrentPhase, Enemy
+			CMP_WORD wCurrentTurn, 30
+			CHECK_NUM_UNITS_GTE Hortefeux, 1
+		END_DEFINITION
+		EVENT $00, _Left1Reinforcements
+			CMP_WORD wCurrentPhase, Enemy
+			CMP_WORD wCurrentTurn, 10
+			TEST_FLAG_UNSET $02
+		END_DEFINITION
+		EVENT $00, _RightReinforcements
+			CMP_WORD wCurrentPhase, Enemy
+			CMP_WORD wCurrentTurn, 8
+			TEST_FLAG_UNSET $02
+		END_DEFINITION
+		EVENT $00, _Left2Reinforcements
+			CMP_WORD wCurrentPhase, Enemy
+			CMP_WORD wCurrentTurn, 15
+			TEST_FLAG_UNSET $02
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TalkEventDefinitions ; 99/D5B6
+		EVENT $06, _LeifOlwenTalk
+			CHECK_CHARS2 Leif, Olwen
+			TEST_FLAG_SET $07
+		END_DEFINITION
+		EVENT $07, _FredOlwenTalk
+			CHECK_CHARS2 Fred, Olwen
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_LocationEventDefinitions ; 99/D5CE
+		EVENT $21, _Door1
+			CMP_BYTE wEventEngineUnknownXTarget, 5
+			CMP_BYTE wEventEngineUnknownYTarget, 4
+		END_DEFINITION
+		EVENT $22, _Door2
+			CMP_BYTE wEventEngineUnknownXTarget, 9
+			CMP_BYTE wEventEngineUnknownYTarget, 4
+		END_DEFINITION
+		EVENT $23, _Door3
+			CMP_BYTE wEventEngineUnknownXTarget, 13
+			CMP_BYTE wEventEngineUnknownYTarget, 4
+		END_DEFINITION
+		EVENT $24, _Door4
+			CMP_BYTE wEventEngineUnknownXTarget, 13
+			CMP_BYTE wEventEngineUnknownYTarget, 7
+		END_DEFINITION
+		EVENT $25, _Door5
+			CMP_BYTE wEventEngineUnknownXTarget, 1
+			CMP_BYTE wEventEngineUnknownYTarget, 9
+		END_DEFINITION
+		EVENT $26, _Door6
+			CMP_BYTE wEventEngineUnknownXTarget, 5
+			CMP_BYTE wEventEngineUnknownYTarget, 9
+		END_DEFINITION
+		EVENT $27, _Door7
+			CMP_BYTE wEventEngineUnknownXTarget, 12
+			CMP_BYTE wEventEngineUnknownYTarget, 11
+		END_DEFINITION
+		EVENT $28, _Door8
+			CMP_BYTE wEventEngineUnknownXTarget, 12
+			CMP_BYTE wEventEngineUnknownYTarget, 17
+		END_DEFINITION
+		EVENT $29, _Door9
+			CMP_BYTE wEventEngineUnknownXTarget, 2
+			CMP_BYTE wEventEngineUnknownYTarget, 23
+		END_DEFINITION
+		EVENT $00, _EndingEvent
+			CMP_BYTE wCursorXCoord, 12
+			CMP_BYTE wCursorYCoord, 14
+			CMP_WORD wCurrentPhase, Player
+			CMP_WORD aSelectedCharacterBuffer.Character, Leif
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_BeforeActionEventDefinitions ; 99/D672
+		EVENT $00, _NPCRetreat
+			CMP_WORD wCurrentPhase, NPC
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_AfterActionEventDefinitions ; 99/D67F
+		EVENT $09, _FredLeaderChange
+			TEST_FLAG_SET $07
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_BattleEventDefinitions ; 99/D688
+		EVENT $05, eventBattleQuoteDummyEvent
+			CHECK_SINGLE Kempf
+		END_DEFINITION
+		EVENT $0A, eventBattleQuoteDummyEvent
+			CHECK_SINGLE Hortefeux
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_ShopEventDefinitions ; 99/D69A
+	END_DEFINITION_ARRAY
+
+	_FredCheck ; 99/D69C
+		STORE_WORD wEventEngineCharacterTarget, Fred
+		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+
+		EVENT_CMP_BYTE_AT_LT wEventEngineParameter1, 1
+		JUMP_TRUE +
+
+		STORE_WORD wEventEngineCharacterTarget, Olwen
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3F
+		STORE_WORD wEventEngineParameter2, $80
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		+
+	END2
+
+	_HortefeuxLeave ; 99/D6C9
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $39
+		YIELD
+
+		STORE_WORD wEventEngineParameter1, 1
+		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter11xHortefeuxLeave
+		YIELD_UNK
+		YIELD_UNK
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+		YIELD
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, Hortefeux
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $02
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Hortefeux
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Hortefeux
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $0B
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Hortefeux
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		PLAY_SOUND_WORD $00E0
+
+		EVENT_TEST_FLAG_SET $28
+		JUMP_FALSE _Door8
+
+	END2
+
+	_Left1Reinforcements ; 99/D765
+		LOAD2 eventChapter11xData._Left1ReinforcementsGroup
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_RightReinforcements ; 99/D76C
+		LOAD2 eventChapter11xData._RightReinforcementsGroup
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_Left2Reinforcements ; 99/D773
+		LOAD2 eventChapter11xData._Left2ReinforcementsGroup
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_FredArrive ; 99/D77A
+		SCROLL_CAMERA_ADDRESS eventChapter11xData._FredCameraCoordinates
+		YIELD
+
+		LOAD1 eventChapter11xData._FredGroup
+		WAIT_MOVE
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, Fred
+		CALL_ASM_LOOP rlASMCDismount, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Fred
+		STORE_WORD wEventEngineParameter1, 3
+		STORE_WORD wEventEngineParameter2, 1
+		CALL_ASM_LOOP rlASMCSetCharacterDataWord, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Fred
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Skills2
+		STORE_WORD wEventEngineParameter2, Skill2Unknown | (Skill3Immortal << 8)
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		MOVE_UNIT Fred, [0, 0], [1, 2], 1, None
+		YIELD_UNK
+
+		WAIT_MOVE
+		YIELD
+
+		CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog, $0000
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $33
+		YIELD
+
+		DIALOGUE dialogueChapter11xFredArrive
+		YIELD
+	END2
+
+	_Door1 ; 99/D7E5
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 0
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door2 ; 99/D810
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 1
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door3 ; 99/D83B
+		STORE_WORD wEventEngineCharacterTarget, Olwen
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $16
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Olwen
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 2
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door4 ; 99/D896
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 3
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door5 ; 99/D8C1
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 4
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door6 ; 99/D8EC
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 5
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door7 ; 99/D917
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 6
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door8 ; 99/D942
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 7
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+
+		SET_FLAG $28
+	END1
+
+	_Door9 ; 99/D96F
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 8
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_LeifOlwenTalk ; 99/D99A
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $4B
+		YIELD
+
+		DIALOGUE dialogueChapter11xLeifOlwenTalk
+		YIELD
+	END2
+
+	_FredOlwenTalk ; 99/D9AA
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $4B
+		YIELD
+
+		DIALOGUE dialogueChapter11xFredOlwenTalk
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, Olwen
+		CALL_ASM_LOOP rlASMCChangeAllegianceToPlayer, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Olwen
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Leader
+		STORE_WORD wEventEngineParameter2, Leif
+		CALL_ASM_LOOP rlASMCSetCharacterDataWord, $0000
+	END2
+
+	_FredLeaderChange ; 99/D9DE
+		STORE_WORD wEventEngineCharacterTarget, Fred
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Leader
+		STORE_WORD wEventEngineParameter2, Leif
+		CALL_ASM_LOOP rlASMCSetCharacterDataWord, $0000
+	END1
+
+	_CapturedUnitTable ; 99/D9F7
+		.byte 12, 3
+		.byte 13, 3
+		.byte 14, 3
+		.byte 12, 2
+		.byte 13, 2
+		.byte 14, 2
+		.byte 4, 3
+		.byte 5, 3
+		.byte 6, 3
+		.byte 4, 2
+		.byte 5, 2
+		.byte 6, 2
+	.byte $00
+
+	_NPCRetreat ; 99/DA10
+		EVENT_CMP_BYTE_AT_EQ $7E402E, $05
+		JUMP_FALSE +
+
+		STORE_LONG lEventEngineLongParameter, _NPCTable
+		CALL_ASM_LOOP rlASMCSetFlagIfRetreatingUnitByTable, $0000
+
+		+
+	END1
+
+	_PrepGroups ; 99/DA26
+		.long eventChapter11xData._PrepGroup1
+		.long eventChapter11xData._PrepGroup2
+		.long eventChapter11xData._PrepGroup3
+	.word $0000
+
+	_OpeningEvent ; 99/DA31
+		CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
+
+		UNSET_FLAG $91
+		UNSET_FLAG $93
+		UNSET_FLAG $92
+
+		STORE_LONG lEventEngineLongParameter, _CapturedUnitTable
+		STORE_WORD lEventEngineUnitGroupPointer, $0002
+		CALL_ASM_LOOP rlASMCPrepareCapturedUnitsForRescue, $0000
+
+		SET_FLAG $29
+
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 8
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, Olwen
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3F
+		STORE_WORD wEventEngineParameter2, $80
+		CALL_ASM_LOOP rlASMCSetBitsCharacterDataWord, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Olwen
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3F
+		STORE_WORD wEventEngineParameter2, $80
+		CALL_ASM_LOOP rlASMCSetBitsCharacterDataWord, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Olwen
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Skills2
+		STORE_WORD wEventEngineParameter2, Skill2Unknown | (Skill3Immortal << 8)
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Olwen
+		CALL_ASM_LOOP rlASMCDismount, $0000
+
+		CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog, $0000
+
+		FADE_IN $02
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $39
+		YIELD
+
+		STORE_LONG wProcInput1+1, dialogueChapter11xTitle
+		STORE_WORD wProcInput1, <>dialogueChapter11xTitle
+		STORE_LONG lR43, $9A814C
+		CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
+		YIELD
+
+		SCROLL_CAMERA_CHAR Kempf
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		STORE_WORD wEventEngineParameter1, 1
+		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter11xOpening1
+		YIELD_UNK
+		YIELD_UNK
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+		YIELD
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $33
+		YIELD
+
+		SCROLL_CAMERA_CHAR Olwen
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		DIALOGUE dialogueChapter11xOpening2
+		YIELD
+	END2
+
+	_EndingEvent ; 99/DB42
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 16
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $42
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+
+		STORE_WORD wEventEngineParameter1, 1
+		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter11xEnding1
+		YIELD_UNK
+		YIELD_UNK
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, Olwen
+		CALL_ASM_LOOP rlASMCCountPlayerUnitUncapturedAlive, $0000
+		JUMP_FALSE +
+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter11xEnding2
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+		+
+		YIELD
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
+
+		FADE_OUT $01
+		YIELD
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
+
+		STORE_BYTE bBuf_INIDISP, $00
+
+		STORE_LONG lEventEngineLongParameter, $000000
+		STORE_WORD lEventEngineUnitGroupPointer, $0002
+
+		CALL_ASM_LOOP rlASMCPrepareCapturedUnitsForRescue, $0000
+
+		FADE_OUT $01
+		YIELD
+
+		CALL_ASM_LOOP rlASMCChapterEnd, $0000
+	END1
+
+	_NPCTable ; 99/DBC9
+		.word Rosa
+		.byte $92
+
+		.word Sayla
+		.byte $93
+
+		.word Peter
+		.byte $91
+
+	.word $0000, $0000

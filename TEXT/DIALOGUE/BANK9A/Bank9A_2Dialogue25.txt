@@ -1,0 +1,4 @@
+; 9A/E0DD
+DIALOGUE_FONT_0
+.text "ターンクリア"
+DIALOGUE_EOF

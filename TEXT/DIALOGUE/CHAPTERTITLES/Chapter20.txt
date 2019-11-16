@@ -1,0 +1,18 @@
+dialogueChapter20Title ; 9A/BAB2
+	DIALOGUE_FONT_2
+	.text "第"
+	DIALOGUE_FONT_0
+	.text "２０"
+	DIALOGUE_FONT_2
+	.text "章"
+	DIALOGUE_FONT_1
+	.text "⅛"
+	DIALOGUE_FONT_0
+	.text "　　　　　"
+	DIALOGUE_FONT_2
+	.text "光"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "公子"
+DIALOGUE_EOF

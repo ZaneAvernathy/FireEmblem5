@@ -1,0 +1,25 @@
+dialogueGomerDeathQuote ; 93/D585
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ダグダおやぶん"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "すまねぇ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $40
+	DIALOGUE_SCROLL
+	.text "このままでは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "みんな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_5
+	.text "飢"
+	DIALOGUE_FONT_0
+	.text "え"
+	DIALOGUE_FONT_2
+	.text "死"
+	DIALOGUE_FONT_0
+	.text "にしちまうんだ･･･"
+DIALOGUE_END_SCENE

@@ -1,0 +1,971 @@
+
+eventChapter18Events ; E7/8000
+
+	_OpeningEventDefinitions ; E7/8000
+		EVENT $00, _OpeningEvent
+			CMP_WORD wCurrentTurn, 0
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TurnEventDefinitions ; E7/800D
+		EVENT $01, eventMapDeathQuoteDummyEvent
+			TEST_FLAG_SET $03
+		END_DEFINITION
+		EVENT $00, _SoldierReinforcements
+			CMP_WORD wCurrentPhase, Enemy
+			CMP_WORD_RANGE wCurrentTurn, 2, 11
+		END_DEFINITION
+		EVENT $00, _RewarpDarkMageReinforcements
+			CMP_WORD wCurrentPhase, Enemy
+			CMP_WORD_RANGE wCurrentTurn, 2, 11
+			ROLL_RNG 50
+		END_DEFINITION
+		EVENT $00, _MageArmorReinforcements
+			CMP_WORD wCurrentPhase, Enemy
+			CMP_WORD_RANGE wCurrentTurn, 12, 21
+		END_DEFINITION
+		EVENT $00, _FenrirDarkMageReinforcements
+			CMP_WORD wCurrentPhase, Enemy
+			CMP_WORD_RANGE wCurrentTurn, 19, 20
+		END_DEFINITION
+		EVENT $00, _ThiefReinforcements
+			CMP_WORD wCurrentPhase, Enemy
+			CMP_WORD_RANGE wCurrentTurn, 2, 5
+		END_DEFINITION
+		EVENT $00, _MageReinforcements
+			CMP_WORD wCurrentPhase, Enemy
+			CMP_WORD_RANGE wCurrentTurn, 6, 15
+		END_DEFINITION
+		EVENT $08, _XavierAIChange
+			CMP_WORD wCurrentPhase, Enemy
+			CMP_BYTE $7E4976, 8
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TalkEventDefinitions ; E7/809A
+		EVENT $07, _XavierLeifTalk
+			CHECK_CHARS2 Xavier, Leif
+		END_DEFINITION
+		EVENT $07, _LeifXavierTalk
+			CHECK_CHARS2 Leif, Xavier
+			CMP_BYTE $7E4976, 8
+		END_DEFINITION
+		EVENT $00, _XavierArmorDialogue1
+			CHECK_CHARS2 Civilian9, XavierArmor1
+		END_DEFINITION
+		EVENT $00, _XavierArmorDialogue2
+			CHECK_CHARS2 Civilian10, XavierArmor2
+		END_DEFINITION
+		EVENT $00, _XavierArmorDialogue3
+			CHECK_CHARS2 Civilian11, XavierArmor3
+		END_DEFINITION
+		EVENT $00, _XavierArmorDialogue4
+			CHECK_CHARS2 Civilian12, XavierArmor4
+		END_DEFINITION
+		EVENT $00, _XavierArmorDialogue5
+			CHECK_CHARS2 Civilian13, XavierArmor5
+		END_DEFINITION
+		EVENT $00, _XavierArmorDialogue6
+			CHECK_CHARS2 Civilian14, XavierArmor6
+		END_DEFINITION
+		EVENT $00, _XavierArmorDialogue7
+			CHECK_CHARS2 Civilian15, XavierArmor7
+		END_DEFINITION
+		EVENT $00, _XavierArmorDialogue8
+			CHECK_CHARS2 Civilian16, XavierArmor8
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_LocationEventDefinitions ; E7/8105
+		EVENT $26, _Door1
+			CMP_BYTE wEventEngineUnknownXTarget, 3
+			CMP_BYTE wEventEngineUnknownYTarget, 8
+		END_DEFINITION
+		EVENT $27, _Door2
+			CMP_BYTE wEventEngineUnknownXTarget, 6
+			CMP_BYTE wEventEngineUnknownYTarget, 15
+		END_DEFINITION
+		EVENT $28, _Door3
+			CMP_BYTE wEventEngineUnknownXTarget, 15
+			CMP_BYTE wEventEngineUnknownYTarget, 3
+		END_DEFINITION
+		EVENT $29, _Door4
+			CMP_BYTE wEventEngineUnknownXTarget, 27
+			CMP_BYTE wEventEngineUnknownYTarget, 3
+		END_DEFINITION
+		EVENT $2A, _Door5
+			CMP_BYTE wEventEngineUnknownXTarget, 38
+			CMP_BYTE wEventEngineUnknownYTarget, 4
+		END_DEFINITION
+		EVENT $2B, _Door6
+			CMP_BYTE wEventEngineUnknownXTarget, 36
+			CMP_BYTE wEventEngineUnknownYTarget, 15
+		END_DEFINITION
+		EVENT $22, eventChapter18Data._Chest1Events
+			CMP_BYTE_AT wCursorXCoord, eventChapter18Data._Chest1Coordinates
+			CMP_BYTE_AT wCursorYCoord, eventChapter18Data._Chest1Coordinates+1
+		END_DEFINITION
+		EVENT $23, eventChapter18Data._Chest2Events
+			CMP_BYTE_AT wCursorXCoord, eventChapter18Data._Chest2Coordinates
+			CMP_BYTE_AT wCursorYCoord, eventChapter18Data._Chest2Coordinates+1
+		END_DEFINITION
+		EVENT $24, eventChapter18Data._Chest3Events
+			CMP_BYTE_AT wCursorXCoord, eventChapter18Data._Chest3Coordinates
+			CMP_BYTE_AT wCursorYCoord, eventChapter18Data._Chest3Coordinates+1
+		END_DEFINITION
+		EVENT $25, eventChapter18Data._Chest4Events
+			CMP_BYTE_AT wCursorXCoord, eventChapter18Data._Chest4Coordinates
+			CMP_BYTE_AT wCursorYCoord, eventChapter18Data._Chest4Coordinates+1
+		END_DEFINITION
+		EVENT $00, _EndingEvent
+			CMP_BYTE wCursorXCoord, 21
+			CMP_BYTE wCursorYCoord, 3
+			CMP_WORD wCurrentPhase, Player
+			CMP_WORD aSelectedCharacterBuffer.Character, Leif
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_BeforeActionEventDefinitions ; E7/81C8
+		EVENT $00, _XavierArmorDummyEvent
+			CMP_WORD aSelectedCharacterBuffer.Character, XavierArmor1
+		END_DEFINITION
+		EVENT $00, _XavierArmorDummyEvent
+			CMP_WORD aSelectedCharacterBuffer.Character, XavierArmor2
+		END_DEFINITION
+		EVENT $00, _XavierArmorDummyEvent
+			CMP_WORD aSelectedCharacterBuffer.Character, XavierArmor3
+		END_DEFINITION
+		EVENT $00, _XavierArmorDummyEvent
+			CMP_WORD aSelectedCharacterBuffer.Character, XavierArmor4
+		END_DEFINITION
+		EVENT $00, _XavierArmorDummyEvent
+			CMP_WORD aSelectedCharacterBuffer.Character, XavierArmor5
+		END_DEFINITION
+		EVENT $00, _XavierArmorDummyEvent
+			CMP_WORD aSelectedCharacterBuffer.Character, XavierArmor6
+		END_DEFINITION
+		EVENT $00, _XavierArmorDummyEvent
+			CMP_WORD aSelectedCharacterBuffer.Character, XavierArmor7
+		END_DEFINITION
+		EVENT $00, _XavierArmorDummyEvent
+			CMP_WORD aSelectedCharacterBuffer.Character, XavierArmor8
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_AfterActionEventDefinitions ; E7/8222
+	END_DEFINITION_ARRAY
+
+	_BattleEventDefinitions ; E7/8224
+		EVENT $05, eventBattleQuoteDummyEvent
+			CHECK_SINGLE Gustav
+		END_DEFINITION
+		EVENT $06, eventBattleQuoteDummyEvent
+			CHECK_SINGLE Xavier
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_ShopEventDefinitions ; E7/8236
+	END_DEFINITION_ARRAY
+
+	_Door1 ; E7/8238
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 0
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door2 ; E7/8263
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 1
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door3 ; E7/828E
+		STORE_WORD wEventEngineCharacterTarget, FriegeArmoredLance1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, 0
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, FriegeArmoredLance1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, 0
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, FriegeArmoredAxe1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, 0
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, FriegeArmoredAxe1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, 0
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 2
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door4 ; E7/8319
+		STORE_WORD wEventEngineCharacterTarget, FriegeArmoredLance1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, 0
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, FriegeArmoredLance1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, 0
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, FriegeArmoredAxe1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, 0
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, FriegeArmoredAxe1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, 0
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 3
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door5 ; E7/83A4
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 4
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door6 ; E7/83CF
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 5
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_XavierLeifTalk ; E7/83FA
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $4A
+		YIELD
+
+		DIALOGUE dialogueChapter18XavierRecruitment
+		YIELD
+
+		STORE_BYTE aSelectedCharacterBuffer.LeadershipStars, 1
+
+		CALL_ASM_SKIPPABLE $83A3BF, $0000
+	END2
+
+	_LeifXavierTalk ; E7/8415
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $4A
+		YIELD
+
+		DIALOGUE dialogueChapter18XavierRecruitment
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, Xavier
+		CALL_ASM_LOOP rlASMCChangeAllegianceToPlayer, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Xavier
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Leader
+		STORE_WORD wEventEngineParameter2, Leif
+		CALL_ASM_LOOP rlASMCSetCharacterDataWord, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Xavier
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.LeadershipStars
+		STORE_WORD wEventEngineParameter2, 1
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		SET_FLAG $06
+	END2
+
+	_XavierArmorDialogue1 ; E7/8463
+		PLAY_SOUND_WORD $00F7
+		DIALOGUE dialogueChapter18XavierArmor1
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor1
+		CALL_ASM_LOOP rlASMCChangeAllegianceToNPC, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3F
+		STORE_WORD wEventEngineParameter2, $80
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		ADD_BYTE $7E4976, 1
+		YIELD_UNK
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $02
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $0B
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor1
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+	END2
+
+	_XavierArmorDialogue2 ; E7/84F7
+		PLAY_SOUND_WORD $00F7
+		DIALOGUE dialogueChapter18XavierArmor2
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor2
+		CALL_ASM_LOOP rlASMCChangeAllegianceToNPC, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor2
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3F
+		STORE_WORD wEventEngineParameter2, $80
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		ADD_BYTE $7E4976, 1
+		YIELD_UNK
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor2
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $02
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor2
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor2
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $0B
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor2
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+	END2
+
+	_XavierArmorDialogue3 ; E7/858B
+		PLAY_SOUND_WORD $00F7
+		DIALOGUE dialogueChapter18XavierArmor3
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor3
+		CALL_ASM_LOOP rlASMCChangeAllegianceToNPC, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor3
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3F
+		STORE_WORD wEventEngineParameter2, $80
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		ADD_BYTE $7E4976, 1
+		YIELD_UNK
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor3
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $02
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor3
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor3
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $0B
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor3
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+	END2
+
+	_XavierArmorDialogue4 ; E7/861F
+		PLAY_SOUND_WORD $00F7
+		DIALOGUE dialogueChapter18XavierArmor4
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor4
+		CALL_ASM_LOOP rlASMCChangeAllegianceToNPC, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor4
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3F
+		STORE_WORD wEventEngineParameter2, $80
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		ADD_BYTE $7E4976, 1
+		YIELD_UNK
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor4
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $02
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor4
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor4
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $0B
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor4
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+	END2
+
+	_XavierArmorDialogue5 ; E7/86B3
+		PLAY_SOUND_WORD $00F7
+		DIALOGUE dialogueChapter18XavierArmor5
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor5
+		CALL_ASM_LOOP rlASMCChangeAllegianceToNPC, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor5
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3F
+		STORE_WORD wEventEngineParameter2, $80
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		ADD_BYTE $7E4976, 1
+		YIELD_UNK
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor5
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $02
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor5
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor5
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $0B
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor5
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+	END2
+
+	_XavierArmorDialogue6 ; E7/8747
+		PLAY_SOUND_WORD $00F7
+		DIALOGUE dialogueChapter18XavierArmor6
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor6
+		CALL_ASM_LOOP rlASMCChangeAllegianceToNPC, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor6
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3F
+		STORE_WORD wEventEngineParameter2, $80
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		ADD_BYTE $7E4976, 1
+		YIELD_UNK
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor6
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $02
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor6
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor6
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $0B
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor6
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+	END2
+
+	_XavierArmorDialogue7 ; E7/87DB
+		PLAY_SOUND_WORD $00F7
+		DIALOGUE dialogueChapter18XavierArmor7
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor7
+		CALL_ASM_LOOP rlASMCChangeAllegianceToNPC, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor7
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3F
+		STORE_WORD wEventEngineParameter2, $80
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		ADD_BYTE $7E4976, 1
+		YIELD_UNK
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor7
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $02
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor7
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor7
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $0B
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor7
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+	END2
+
+	_XavierArmorDialogue8 ; E7/886F
+		PLAY_SOUND_WORD $00F7
+		DIALOGUE dialogueChapter18XavierArmor8
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor8
+		CALL_ASM_LOOP rlASMCChangeAllegianceToNPC, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor8
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3F
+		STORE_WORD wEventEngineParameter2, $80
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		ADD_BYTE $7E4976, 1
+		YIELD_UNK
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor8
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $02
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor8
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor8
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $0B
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, XavierArmor8
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+	END2
+
+	_XavierAIChange ; E7/8903
+		STORE_WORD wEventEngineCharacterTarget, Xavier
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+		STORE_WORD wEventEngineParameter2, $0E
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Xavier
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Xavier
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+		STORE_WORD wEventEngineParameter2, $11
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Xavier
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+		STORE_WORD wEventEngineParameter2, $00
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+	END2
+
+	_XavierArmorDummyEvent ; E7/8964
+	END2
+
+	_SoldierReinforcements ; E7/8965
+		SCROLL_CAMERA_ADDRESS eventChapter18Data._SoldierReinforcementsCameraCoordinates
+		YIELD
+
+		LOAD2 eventChapter18Data._SolderReinforcementsGroup
+		WAIT_MOVE
+		YIELD
+
+		YIELD_UNK
+	END2
+
+	_MageArmorReinforcements ; E7/8972
+		SCROLL_CAMERA_ADDRESS eventChapter18Data._MageArmorReinforcementsCameraCoordinates
+		YIELD
+
+		LOAD2 eventChapter18Data._MageArmorReinforcementsGroup
+		WAIT_MOVE
+		YIELD
+
+		YIELD_UNK
+	END2
+
+	_FenrirDarkMageReinforcements ; E7/897F
+		SCROLL_CAMERA_ADDRESS eventChapter18Data._FenrirDarkMageReinforcementsCameraCoordinates
+		YIELD
+
+		LOAD2 eventChapter18Data._FenrirDarkMageReinforcementsGroup
+		WAIT_MOVE
+		YIELD
+
+		YIELD_UNK
+	END2
+
+	_RewarpDarkMageReinforcements ; E7/898C
+		SCROLL_CAMERA_ADDRESS eventChapter18Data._RewarpDarkMageReinforcementsCameraCoordinates
+		YIELD
+
+		LOAD2 eventChapter18Data._RewarpDarkMageReinforcementsGroup
+		WAIT_MOVE
+		YIELD
+
+		YIELD_UNK
+	END2
+
+	_ThiefReinforcements ; E7/8999
+		SCROLL_CAMERA_ADDRESS eventChapter18Data._ThiefReinforcementsCameraCoordinates
+		YIELD
+
+		LOAD2 eventChapter18Data._ThiefReinforcementsGroup
+		WAIT_MOVE
+		YIELD
+
+		YIELD_UNK
+	END2
+
+	_MageReinforcements ; E7/89A6
+		SCROLL_CAMERA_ADDRESS eventChapter18Data._MageReinforcementsCameraCoordinates
+		YIELD
+
+		LOAD2 eventChapter18Data._MageReinforcementsGroup
+		WAIT_MOVE
+		YIELD
+
+		YIELD_UNK
+	END2
+
+	_PrepGroups ; E7/89B3
+		.long eventChapter18Data._PrepGroup
+	.word $0000
+
+	_OpeningEvent ; E7/89B8
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $39
+		YIELD
+
+		STORE_LONG wProcInput1+1, dialogueChapter18Title
+		STORE_WORD wProcInput1, <>dialogueChapter18Title
+		STORE_LONG lR43, $9A814C
+		CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
+		YIELD
+
+		MOVE_UNIT Xavier, [0, 0], [21, 4], 1, None
+		YIELD_UNK
+
+		WAIT_MOVE
+		YIELD
+
+		SCROLL_CAMERA_CHAR Xavier
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		DIALOGUE dialogueChapter18Opening1
+		YIELD
+
+		MOVE_UNIT Xavier, [0, 0], [21, 6], 1, None
+		YIELD_UNK
+
+		WAIT_MOVE
+		YIELD
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $32
+		YIELD
+
+		SCROLL_CAMERA_CHAR Leif
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		DIALOGUE dialogueChapter18Opening2
+		YIELD
+	END2
+
+	_EndingEvent ; E7/8A1D
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 16
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $45
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+
+		STORE_WORD wEventEngineParameter1, 1
+		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter18Ending1
+		YIELD_UNK
+		YIELD_UNK
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, Finn
+		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+		JUMP_FALSE +
+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter18Ending2
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+		+
+		STORE_WORD wEventEngineCharacterTarget, Miranda
+		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+		JUMP_FALSE +
+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter18Ending3A
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+		JUMP ++
+
+		+
+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter18Ending3B
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+		+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter18Ending4
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+		YIELD
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+		STORE_WORD wEventEngineCharacterTarget, Leif
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.LeadershipStars
+		STORE_WORD wEventEngineParameter2, 1
+		CALL_ASM_LOOP rlASMCSubtractCharacterDataByte, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Leif
+		CALL_ASM_LOOP rlASMCCheckUnitExists, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Leif
+		STORE_WORD wEventEngineParameter1, Prince
+		CALL_ASM_LOOP rlASMCPromoteUnit, $0000
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $00
+
+		HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $00
+
+		CALL_ASM_LOOP rlEventEngineCancelFading, $0000
+
+		PLAY_SOUND_WORD $00E0
+
+		CALL_ASM_LOOP rlASMCSaveActiveUnitData, $0000
+
+		STORE_WORD wUnknown001791, $FFFF
+
+		PAUSE_SKIPPABLE 10
+		YIELD
+
+		EVENT_TEST_FLAG_SET $09
+		JUMP_TRUE +
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $45
+		YIELD
+
+		STORE_WORD wEventEngineParameter1, 3
+		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter18Ending5
+		YIELD_UNK
+		YIELD_UNK
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+		YIELD
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+		STORE_WORD wEventEngineParameter1, MemberCard
+		CALL_ASM_LOOP rlASMCSetRewardGivenItem, $0000
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+
+		+
+		STORE_WORD wEventEngineCharacterTarget, Dean
+		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+		JUMP_FALSE +
+
+		STORE_WORD wEventEngineCharacterTarget, Linoan
+		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+		JUMP_TRUE +
+
+		STORE_WORD wCurrentMapMusic, $0000
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $42
+		YIELD
+
+		STORE_WORD wEventEngineParameter1, 3
+		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapterEndLinoanDead
+		YIELD_UNK
+		YIELD_UNK
+		YIELD_UNK
+		YIELD
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
+		FADE_OUT $01
+		YIELD
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
+
+		STORE_BYTE bBuf_INIDISP, $00
+		STORE_WORD wEventEngineCharacterTarget, Dean
+		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+
+		+
+		PAUSE_SKIPPABLE 10
+		YIELD
+
+		FADE_OUT $01
+		YIELD
+
+		CALL_ASM_LOOP rlASMCChapterEnd, $0000
+	END1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

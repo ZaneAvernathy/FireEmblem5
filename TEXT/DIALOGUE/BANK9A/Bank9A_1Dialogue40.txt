@@ -1,0 +1,8 @@
+; 9A/BB9F
+DIALOGUE_FONT_0
+.text "にて　"
+DIALOGUE_FONT_1
+.text "行方"
+DIALOGUE_FONT_2
+.text "不明"
+DIALOGUE_EOF

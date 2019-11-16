@@ -1,0 +1,210 @@
+dialogueChapter24Ending2A ; B0/F28B
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "だが･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "はエーヴェルの"
+	DIALOGUE_FONT_1
+	.text "救出"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_2
+	.text "先"
+	DIALOGUE_FONT_0
+	.text "だ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "アウグスト､"
+	DIALOGUE_PAUSE $08
+	.text "どうすればいいんだ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "キアの"
+	DIALOGUE_FONT_1
+	.text "杖"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "入手"
+	DIALOGUE_FONT_0
+	.text "できましたが"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "前"
+	DIALOGUE_FONT_0
+	.text "にも"
+	DIALOGUE_FONT_3
+	.text "申"
+	DIALOGUE_FONT_0
+	.text "し"
+	DIALOGUE_FONT_1
+	.text "上"
+	DIALOGUE_FONT_0
+	.text "げたように"
+	DIALOGUE_NL
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "杖"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "えるものは"
+	DIALOGUE_NL
+	.text "マンフロイの一"
+	DIALOGUE_FONT_2
+	.text "族"
+	DIALOGUE_FONT_0
+	.text "だけです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_2
+	.text "残"
+	DIALOGUE_FONT_3
+	.text "念"
+	DIALOGUE_FONT_0
+	.text "ですが､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_FONT_0
+	.text "のわれらには"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "どうすることもできません･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "やはりだめなのか！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "エーヴェルは"
+	DIALOGUE_FONT_1
+	.text "救"
+	DIALOGUE_FONT_0
+	.text "えないのか！！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "ああっ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ぼくはいったい"
+	DIALOGUE_FONT_1
+	.text "何"
+	DIALOGUE_FONT_0
+	.text "のために！･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_ASMC_0 rlDialogueSilenceMusic
+	DIALOGUE_PAUSE $10
+	DIALOGUE_UNK $13
+	.text "ぶ"
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD SarahPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "そんなことないよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あたしならその"
+	DIALOGUE_FONT_1
+	.text "杖使"
+	DIALOGUE_FONT_0
+	.text "えるよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "サラ！？･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "きみが？･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ほんとうなのか！！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "うん､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "えるよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "だってわかるもの"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "その"
+	DIALOGUE_FONT_2
+	.text "封印"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "おじいさまのだから"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "おじいさまって？･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "まさか･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "サラはマンフロイの"
+	DIALOGUE_FONT_3
+	.text "孫"
+	DIALOGUE_FONT_0
+	.text "なのか！？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "おじいさまの"
+	DIALOGUE_FONT_1
+	.text "話"
+	DIALOGUE_FONT_0
+	.text "はしたくないの"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あのひと､"
+	DIALOGUE_PAUSE $08
+	.text "きらいだから"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いいじゃない､"
+	DIALOGUE_PAUSE $08
+	.text "そんなこと"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "ほらっ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "きましょうよ､"
+	DIALOGUE_PAUSE $08
+	.text "リーフさま"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "キアの"
+	DIALOGUE_FONT_1
+	.text "杖"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_3
+	.text "忘"
+	DIALOGUE_FONT_0
+	.text "れないでねっ"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

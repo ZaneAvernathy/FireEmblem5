@@ -1,0 +1,40 @@
+
+eventDemo1Data ; 9A/E936
+
+	_UnusedCoordinates1 ; 9A/E936
+		.byte 23, 11
+
+	_Chapter12Group ; 9A/E938
+		UNIT Leif, Player, [29, 11], [29, 11], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT Finn, Player, [28, 10], [28, 10], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT Nanna, Player, [28, 12], [28, 12], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT Orsin, Player, [27, 11], [27, 11], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT Halvan, Player, [29, 9], [29, 9], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+	UNIT
+
+	_UnusedCoordinates2 ; 9A/E99E
+		.byte 11, 17
+
+	_Chapter16AGroup ; 9A/E9A0
+		UNIT Finn, Player, [42, 7], [42, 7], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT Nanna, Player, [26, 11], [26, 11], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT ThracianWyvernKnight2, Enemy, [57, 9], [57, 9], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT ThracianWyvernKnight2, Enemy, [55, 11], [55, 11], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT ThracianWyvernKnight2, Enemy, [56, 12], [56, 12], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT ThracianWyvernKnight2, Enemy, [58, 10], [58, 10], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+	UNIT
+
+	_UnusedCoordinates3 ; 9AEA1A
+		.byte 11, 17
+
+	_Chapter13Group ; 9A/EA1C
+		UNIT Olwen, Player, [20, 10], [20, 10], Leif, [IronBow], 5, False, [$00, $00, $00, $00]
+		UNIT Orsin, Player, [20, 7], [20, 7], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT Marty, Player, [22, 4], [22, 4], Leif, [IronAxe], 5, False, [$00, $00, $00, $00]
+		UNIT Lithis, Player, [25, 5], [25, 5], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT Leif, Player, [22, 5], [22, 5], Leif, [IronSword], 5, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [12, 13], [12, 13], Leif, [Javelin], 5, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [14, 12], [14, 12], Leif, [Javelin], 5, False, [$00, $00, $00, $00]
+		UNIT FriegeArmoredLance1, Enemy, [15, 11], [15, 11], Leif, [Javelin], 5, False, [$00, $00, $00, $00]
+		UNIT FriegeBallista1, Enemy, [17, 12], [17, 12], Leif, [Ballista], 5, False, [$00, $00, $00, $00]
+	UNIT

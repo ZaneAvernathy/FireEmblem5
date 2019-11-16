@@ -1,0 +1,55 @@
+dialogueChapter7Ending9 ; 93/A888
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD HannibalPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ルーどの"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "日"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_3
+	.text "暮"
+	DIALOGUE_FONT_0
+	.text "れてしまう"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そろそろ"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_2
+	.text "発"
+	DIALOGUE_FONT_0
+	.text "されたほうがよいな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "はい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いろいろお"
+	DIALOGUE_FONT_1
+	.text "世話"
+	DIALOGUE_FONT_0
+	.text "になりました"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ハンニバル"
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_FONT_0
+	.text "このご"
+	DIALOGUE_FONT_1
+	.text "恩"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "決"
+	DIALOGUE_FONT_0
+	.text "してわすれません！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

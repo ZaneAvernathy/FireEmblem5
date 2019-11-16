@@ -1,0 +1,101 @@
+; 9A/C6E1
+DIALOGUE_FONT_1
+.text "解放戦争"
+DIALOGUE_FONT_0
+.text "では"
+DIALOGUE_FONT_1
+.text "最後"
+DIALOGUE_FONT_0
+.text "まで"
+DIALOGUE_NL
+.text "リーフの"
+DIALOGUE_FONT_3
+.text "側"
+DIALOGUE_FONT_1
+.text "近"
+DIALOGUE_FONT_0
+.text "として"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "苦"
+DIALOGUE_FONT_2
+.text "難"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "道"
+DIALOGUE_FONT_0
+.text "のりを"
+DIALOGUE_NL
+.text "ともに"
+DIALOGUE_FONT_2
+.text "歩"
+DIALOGUE_FONT_0
+.text "んだ"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "戦"
+DIALOGUE_FONT_0
+.text "いの"
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "生"
+DIALOGUE_FONT_0
+.text "まれ"
+DIALOGUE_FONT_5
+.text "故郷"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_NL
+.text "フレストに"
+DIALOGUE_FONT_3
+.text "戻"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "父"
+DIALOGUE_FONT_0
+.text "のあとをついで"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "司祭"
+DIALOGUE_FONT_0
+.text "となる"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_2
+.text "賢"
+DIALOGUE_FONT_1
+.text "者"
+DIALOGUE_FONT_0
+.text "アスベルの"
+DIALOGUE_FONT_1
+.text "名"
+DIALOGUE_FONT_0
+.text "が"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "大陸"
+DIALOGUE_FONT_0
+.text "のすみずみまで"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "知"
+DIALOGUE_FONT_0
+.text "れわたるのは"
+DIALOGUE_NL
+.text "さらに"
+DIALOGUE_NL
+.text "十"
+DIALOGUE_FONT_1
+.text "数年後"
+DIALOGUE_FONT_0
+.text "のことである"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

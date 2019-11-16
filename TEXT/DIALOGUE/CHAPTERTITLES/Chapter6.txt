@@ -1,0 +1,18 @@
+dialogueChapter6Title ; 9A/B8C3
+	DIALOGUE_FONT_1
+	.text "⅛½⅛½"
+	DIALOGUE_FONT_2
+	.text "第"
+	DIALOGUE_FONT_0
+	.text "６"
+	DIALOGUE_FONT_2
+	.text "章"
+	DIALOGUE_FONT_1
+	.text "⅛"
+	DIALOGUE_FONT_0
+	.text "　　　　　"
+	DIALOGUE_FONT_2
+	.text "脱"
+	DIALOGUE_FONT_1
+	.text "出⅛½⅛½"
+DIALOGUE_EOF

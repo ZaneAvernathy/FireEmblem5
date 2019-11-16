@@ -1,0 +1,9 @@
+; 9A/DFD3
+DIALOGUE_FONT_0
+.text "はじまったリーフたちの"
+DIALOGUE_FONT_1
+.text "戦"
+DIALOGUE_FONT_0
+.text "いは"
+DIALOGUE_NL
+DIALOGUE_EOF

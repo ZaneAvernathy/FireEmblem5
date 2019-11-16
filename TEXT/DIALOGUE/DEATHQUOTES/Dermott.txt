@@ -1,0 +1,17 @@
+dialogueDermottDeathQuote ; 82/BF69
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "妹"
+	DIALOGUE_FONT_0
+	.text "を･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ナンナをどうか･･･"
+DIALOGUE_END_SCENE

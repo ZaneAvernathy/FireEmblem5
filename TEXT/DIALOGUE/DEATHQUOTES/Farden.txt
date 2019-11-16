@@ -1,0 +1,8 @@
+dialogueFardenDeathQuote ; 98/EC38
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "うぐっ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "こんなはずでは･･･"
+DIALOGUE_END_SCENE

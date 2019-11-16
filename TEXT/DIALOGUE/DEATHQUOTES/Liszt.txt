@@ -1,0 +1,10 @@
+dialogueLisztDeathQuote ; B9/D44B
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "うむむ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "わしのてがらが･･･"
+	DIALOGUE_PAUSE $20
+	.text "ぐふっ"
+DIALOGUE_END_SCENE

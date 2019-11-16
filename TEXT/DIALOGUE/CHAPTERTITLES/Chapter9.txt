@@ -1,0 +1,18 @@
+dialogueChapter9Title ; 9A/B93A
+	DIALOGUE_FONT_1
+	.text "⅛½⅛½"
+	DIALOGUE_FONT_2
+	.text "第"
+	DIALOGUE_FONT_0
+	.text "９"
+	DIALOGUE_FONT_2
+	.text "章"
+	DIALOGUE_FONT_1
+	.text "⅛"
+	DIALOGUE_FONT_0
+	.text "　　　　　ノヴァの"
+	DIALOGUE_FONT_2
+	.text "紋章"
+	DIALOGUE_FONT_1
+	.text "⅛½⅛½"
+DIALOGUE_EOF

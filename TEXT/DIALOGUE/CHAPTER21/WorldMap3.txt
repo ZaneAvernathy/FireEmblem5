@@ -1,0 +1,19 @@
+dialogueChapter21WorldMap3 ; 82/D871
+	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, BlumePortrait | (1 << 8), 8 | (8 << 8)
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "フリージの"
+	DIALOGUE_FONT_1
+	.text "国王"
+	DIALOGUE_FONT_0
+	.text "ブルームは"
+	DIALOGUE_NL
+	.text "コノートに"
+	DIALOGUE_FONT_2
+	.text "逃"
+	DIALOGUE_FONT_0
+	.text "れ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 1
+DIALOGUE_END_SCENE

@@ -1,0 +1,32 @@
+dialogueChapter17BLowerGateOpen ; E7/A2D4
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD GomerPortrait
+	DIALOGUE_FONT_0
+	.text "よう､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "待"
+	DIALOGUE_FONT_0
+	.text "ってたぜ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "話"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "親分"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "いてるよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ま､"
+	DIALOGUE_PAUSE $08
+	.text "がんばんな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

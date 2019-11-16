@@ -1,0 +1,87 @@
+dialogueChapter20Ending2A ; 92/F44B
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ナンナに"
+	DIALOGUE_FONT_1
+	.text "会"
+	DIALOGUE_FONT_0
+	.text "えるのを"
+	DIALOGUE_NL
+	DIALOGUE_FONT_4
+	.text "楽"
+	DIALOGUE_FONT_0
+	.text "しみにしていたのですが･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "残"
+	DIALOGUE_FONT_3
+	.text "念"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "すまない"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ぼくに"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "がないばかりに･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "いいえ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_4
+	.text "責"
+	DIALOGUE_FONT_3
+	.text "任"
+	DIALOGUE_FONT_0
+	.text "ではありません"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "は･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "のお"
+	DIALOGUE_FONT_3
+	.text "側"
+	DIALOGUE_FONT_0
+	.text "にいられて"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "妹"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_2
+	.text "幸"
+	DIALOGUE_FONT_0
+	.text "せだったと"
+	DIALOGUE_FONT_2
+	.text "信"
+	DIALOGUE_FONT_0
+	.text "じています"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "デルムッド･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+DIALOGUE_END_SCENE

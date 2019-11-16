@@ -1,0 +1,125 @@
+dialogueChapter7PureWaterHouse ; 93/B603
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman1Portrait
+	DIALOGUE_FONT_0
+	.text "あんたたち"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "よかったら"
+	DIALOGUE_FONT_1
+	.text "南"
+	DIALOGUE_FONT_0
+	.text "にある"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "閾技場"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "ってみたらどうだい？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "そこで"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "って"
+	DIALOGUE_FONT_2
+	.text "勝"
+	DIALOGUE_FONT_0
+	.text "てば"
+	DIALOGUE_FONT_1
+	.text "金"
+	DIALOGUE_FONT_0
+	.text "も"
+	DIALOGUE_FONT_1
+	.text "入"
+	DIALOGUE_FONT_0
+	.text "るし"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ちょっとした"
+	DIALOGUE_FONT_3
+	.text "腕"
+	DIALOGUE_FONT_4
+	.text "試"
+	DIALOGUE_FONT_0
+	.text "しにもなるよ"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "あ､"
+	DIALOGUE_PAUSE $08
+	.text "でも"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "そこで"
+	DIALOGUE_FONT_2
+	.text "負"
+	DIALOGUE_FONT_0
+	.text "けちまうってことは"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "命"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "落"
+	DIALOGUE_FONT_0
+	.text "とすってことだからさ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_4
+	.text "調"
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_0
+	.text "にのって"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "あんまりムチャをしちゃいけないよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "なにごとも"
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_0
+	.text "ほどほど"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "が一"
+	DIALOGUE_FONT_4
+	.text "番"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "くのなら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "いざというときのためにこれをあげるよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "なにかの"
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "つと"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "うよ"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

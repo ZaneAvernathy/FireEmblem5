@@ -1,0 +1,263 @@
+dialogueChapter13SelphinaGladeTalk1A ; B9/C736
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD GladePortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD SelphinaPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "グレイド"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "無事"
+	DIALOGUE_FONT_0
+	.text "だったのね"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "よかった･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "セルフィナ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "きみも"
+	DIALOGUE_FONT_1
+	.text "来"
+	DIALOGUE_FONT_0
+	.text "てくれたのか"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ええ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ターラの"
+	DIALOGUE_FONT_4
+	.text "危"
+	DIALOGUE_FONT_3
+	.text "機"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_4
+	.text "聞"
+	DIALOGUE_FONT_0
+	.text "いて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "とごいっしょに"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "でもほんとうに"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "会"
+	DIALOGUE_FONT_0
+	.text "えてよかった･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "きみには"
+	DIALOGUE_FONT_2
+	.text "心配"
+	DIALOGUE_FONT_0
+	.text "をかけて"
+	DIALOGUE_NL
+	.text "すまないと"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "っている"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "だがセルフィナ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "俺"
+	DIALOGUE_FONT_0
+	.text "はまた"
+	DIALOGUE_FONT_1
+	.text "多"
+	DIALOGUE_FONT_0
+	.text "くの"
+	DIALOGUE_FONT_3
+	.text "若"
+	DIALOGUE_FONT_1
+	.text "者"
+	DIALOGUE_FONT_0
+	.text "たちを"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "死"
+	DIALOGUE_FONT_0
+	.text "なせてしまった"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "俺"
+	DIALOGUE_FONT_0
+	.text "にもっと"
+	DIALOGUE_FONT_1
+	.text "力"
+	DIALOGUE_FONT_0
+	.text "があればと"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "うと"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_3
+	.text "悔"
+	DIALOGUE_FONT_0
+	.text "やまれてならない･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "いいえ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あなたはレンスターで"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "最"
+	DIALOGUE_FONT_2
+	.text "高"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "騎士"
+	DIALOGUE_FONT_0
+	.text "です"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "はあなたの"
+	DIALOGUE_FONT_3
+	.text "妻"
+	DIALOGUE_FONT_0
+	.text "であることを"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "誇"
+	DIALOGUE_FONT_0
+	.text "りに"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "っています"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "だから､"
+	DIALOGUE_PAUSE $08
+	.text "そんなにご"
+	DIALOGUE_FONT_1
+	.text "自分"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "おせめにならないで･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ありがとう､"
+	DIALOGUE_PAUSE $08
+	.text "セルフィナ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "きみと"
+	DIALOGUE_FONT_1
+	.text "会"
+	DIALOGUE_FONT_0
+	.text "えて"
+	DIALOGUE_FONT_1
+	.text "元気"
+	DIALOGUE_FONT_0
+	.text "になれたよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あ､"
+	DIALOGUE_PAUSE $08
+	.text "そうだ､"
+	DIALOGUE_PAUSE $08
+	.text "これを"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "てくれ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "これは？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･まさか･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "伝説"
+	DIALOGUE_FONT_0
+	.text "のゆうしゃの"
+	DIALOGUE_FONT_2
+	.text "弓"
+	DIALOGUE_FONT_0
+	.text "では！？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "そのようだな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ターラの"
+	DIALOGUE_FONT_1
+	.text "街"
+	DIALOGUE_FONT_0
+	.text "でぐうぜん"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "つけた"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "きみにと"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "い"
+	DIALOGUE_FONT_3
+	.text "買"
+	DIALOGUE_FONT_0
+	.text "っておいたが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "ってくれるか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ええ､"
+	DIALOGUE_PAUSE $08
+	.text "もちろんです！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ありがとう､"
+	DIALOGUE_PAUSE $08
+	.text "あなた！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

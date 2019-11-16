@@ -1,0 +1,12 @@
+; 90/8598
+DIALOGUE_FONT_0
+.text "　　　　　キュアン"
+DIALOGUE_FONT_1
+.text "王子"
+DIALOGUE_FONT_0
+.text "レンスターに"
+DIALOGUE_FONT_2
+.text "帰"
+DIALOGUE_FONT_1
+.text "国"
+DIALOGUE_EOF

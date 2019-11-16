@@ -1,0 +1,86 @@
+; 9A/C59E
+DIALOGUE_FONT_1
+.text "戦"
+DIALOGUE_FONT_0
+.text "いの"
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_NL
+.text "彼"
+DIALOGUE_FONT_0
+.text "は"
+DIALOGUE_NL
+DIALOGUE_FONT_3
+.text "風"
+DIALOGUE_FONT_0
+.text "のように"
+DIALOGUE_FONT_2
+.text "去"
+DIALOGUE_FONT_0
+.text "っていった"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "コノート"
+DIALOGUE_FONT_1
+.text "王家"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "血"
+DIALOGUE_FONT_0
+.text "をひく"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "王子"
+DIALOGUE_FONT_0
+.text "だとか"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "伝説"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "騎士"
+DIALOGUE_FONT_0
+.text "ベオウルフの"
+DIALOGUE_NL
+DIALOGUE_FONT_4
+.text "隠"
+DIALOGUE_FONT_0
+.text "し"
+DIALOGUE_FONT_1
+.text "子"
+DIALOGUE_FONT_0
+.text "だとか"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "何"
+DIALOGUE_FONT_0
+.text "かと"
+DIALOGUE_NL
+.text "うわさのたえない"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "人物"
+DIALOGUE_FONT_0
+.text "だったが"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "今"
+DIALOGUE_FONT_0
+.text "となっては"
+DIALOGUE_NL
+.text "もはや"
+DIALOGUE_FONT_1
+.text "知"
+DIALOGUE_FONT_0
+.text "る"
+DIALOGUE_FONT_3
+.text "術"
+DIALOGUE_FONT_0
+.text "もない"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

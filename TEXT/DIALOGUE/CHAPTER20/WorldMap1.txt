@@ -1,0 +1,94 @@
+dialogueChapter20WorldMap1 ; 82/D754
+	DIALOGUE_FONT_0
+	.text "･･･それから"
+	DIALOGUE_FONT_1
+	.text "半年"
+	DIALOGUE_FONT_0
+	.text "あまりがすぎた"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_2
+	.text "奪回"
+	DIALOGUE_FONT_0
+	.text "にもえる"
+	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, BarathPortrait | (0 << 8), 11 | (10 << 8)
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_0
+	.text "バラート"
+	DIALOGUE_FONT_1
+	.text "率"
+	DIALOGUE_FONT_0
+	.text "いるフリージ"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_NL
+	.text "レンスター"
+	DIALOGUE_FONT_1
+	.text "攻撃"
+	DIALOGUE_FONT_0
+	.text "はすさまじく"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "リーフたち"
+	DIALOGUE_FONT_5
+	.text "『"
+	DIALOGUE_FONT_1
+	.text "解放軍"
+	DIALOGUE_FONT_5
+	.text "』"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_4
+	.text "善"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "するも､"
+	DIALOGUE_PAUSE $08
+	.text "しだいに"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "のかたすみに"
+	DIALOGUE_FONT_2
+	.text "追"
+	DIALOGUE_FONT_0
+	.text "いつめられていく"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "もはや､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_4
+	.text "誰"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "目"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "てもレンスター"
+	DIALOGUE_FONT_2
+	.text "落"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "時間"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_4
+	.text "問題"
+	DIALOGUE_FONT_0
+	.text "であった･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 0
+	DIALOGUE_PAUSE $20
+DIALOGUE_END_SCENE

@@ -1,0 +1,10 @@
+dialogueConomoreDeathQuote ; 82/BF30
+	DIALOGUE_FONT_0
+	.text "アルスターが･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ふたたび･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "よみがえらんことを･･･"
+DIALOGUE_END_SCENE

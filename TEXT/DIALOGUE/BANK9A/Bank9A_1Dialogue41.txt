@@ -1,0 +1,6 @@
+; 9A/BBAA
+DIALOGUE_FONT_0
+.text "にて　"
+DIALOGUE_FONT_2
+.text "死亡"
+DIALOGUE_EOF

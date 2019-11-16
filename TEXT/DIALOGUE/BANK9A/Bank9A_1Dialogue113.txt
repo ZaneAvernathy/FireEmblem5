@@ -1,0 +1,9 @@
+; 9A/D349
+DIALOGUE_FONT_0
+.text "ホラふき"
+DIALOGUE_FONT_1
+.text "剣士"
+DIALOGUE_FONT_0
+.text "　シャナム"
+DIALOGUE_NL
+DIALOGUE_EOF

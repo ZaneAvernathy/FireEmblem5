@@ -1,0 +1,16 @@
+dialogueCoulterBattleQuote ; 98/EB48
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ふふふ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "悪"
+	DIALOGUE_FONT_0
+	.text "いが､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "死"
+	DIALOGUE_FONT_0
+	.text "んでもらうぞ"
+DIALOGUE_END_SCENE

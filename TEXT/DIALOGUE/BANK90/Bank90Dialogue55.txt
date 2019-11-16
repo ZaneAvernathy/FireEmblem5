@@ -1,0 +1,20 @@
+; 90/8469
+DIALOGUE_FONT_1
+.text "½⅛⅛⅛最"
+DIALOGUE_FONT_2
+.text "終章"
+DIALOGUE_FONT_1
+.text "⅛⅛"
+DIALOGUE_FONT_0
+.text "　　"
+DIALOGUE_FONT_4
+.text "誓"
+DIALOGUE_FONT_0
+.text "いの"
+DIALOGUE_FONT_1
+.text "剣"
+DIALOGUE_FONT_0
+.text "（"
+DIALOGUE_NUMBER
+.text "）"
+DIALOGUE_EOF

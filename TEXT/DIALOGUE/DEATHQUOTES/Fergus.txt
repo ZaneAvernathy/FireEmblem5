@@ -1,0 +1,10 @@
+dialogueFergusDeathQuote ; 82/BA5A
+	DIALOGUE_FONT_0
+	.text "ぐっ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そうそううまくは･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いかないものだな･･･"
+DIALOGUE_END_SCENE

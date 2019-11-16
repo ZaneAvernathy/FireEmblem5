@@ -1,0 +1,842 @@
+
+eventChapter5Events ; 99/9246
+
+	_OpeningEventDefinitions ; 99/9246
+		EVENT $00, _OpeningEvent
+			CMP_WORD wCurrentTurn, 0
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TurnEventDefinitions ; 99/9253
+		EVENT $07, _EyvelCaptured
+			CMP_STATUS_SET Eyvel, TurnStatusRescued
+			TEST_FLAG_UNSET $08
+			CMP_WORD wCurrentPhase, Player
+		END_DEFINITION
+		EVENT $01, eventMapDeathQuoteDummyEvent
+			CMP_STATUS_SET Nanna, TurnStatusDead
+		END_DEFINITION
+		EVENT $00, _ArenaEnemyCheck
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+		EVENT $00, _RaydrikDialogue
+			CMP_WORD wCurrentTurn, 1
+			CMP_STATUS_UNSET Eyvel, TurnStatusActing
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+		EVENT $0B, _MareetaAppears
+			CMP_WORD wCurrentPhase, Enemy
+			TEST_FLAG_UNSET $08
+			TEST_FLAG_UNSET $06
+		END_DEFINITION
+		EVENT $10, _SwordmasterSpawn
+			CMP_WORD wCurrentPhase, Enemy
+			TEST_FLAG_UNSET $06
+			TEST_FLAG_UNSET $08
+		END_DEFINITION
+		EVENT $11, _BerserkerSpawn
+			CMP_WORD wCurrentPhase, Enemy
+			TEST_FLAG_UNSET $06
+			TEST_FLAG_UNSET $08
+		END_DEFINITION
+		EVENT $12, _GalzusSpawn
+			CMP_WORD wCurrentPhase, Enemy
+			TEST_FLAG_UNSET $06
+			TEST_FLAG_UNSET $08
+			RUN_ASM _Chapter4xCheck
+		END_DEFINITION
+		EVENT $00, _Counter
+			CMP_WORD wCurrentPhase, Player
+			TEST_FLAG_SET $0B
+		END_DEFINITION
+		EVENT $13, _MareetaDialogue
+			CMP_BYTE $7E4976, 2
+			CHECK_NUM_UNITS_GTE Mareeta, 1
+			CMP_STATUS_UNSET Mareeta, TurnStatusRescued
+			CMP_WORD wCurrentPhase, Player
+			TEST_FLAG_UNSET $08
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TalkEventDefinitions ; 99/92FA
+	END_DEFINITION_ARRAY
+
+	_LocationEventDefinitions ; 99/92FC
+		macroDoorDefinition $21, [21, 3], eventChapter5Events._Door1
+		macroDoorDefinition $22, [1, 11], eventChapter5Events._Door2
+		macroDoorDefinition $23, [1, 15], eventChapter5Events._Door3
+		macroDoorDefinition $24, [23, 12], eventChapter5Events._Door4
+		macroChestDefinition $25, eventChapter5Data._Chest1Events, eventChapter5Data._Chest1Coordinates
+		macroChestDefinition $26, eventChapter5Data._Chest2Events, eventChapter5Data._Chest2Coordinates
+		macroChestDefinition $27, eventChapter5Data._Chest3Events, eventChapter5Data._Chest3Coordinates
+	END_DEFINITION_ARRAY
+
+	_BeforeActionEventDefinitions ; 99/9373
+		macroPlayerRetreatDefinition $0E, eventChapter5Events._PlayerRetreat
+	END_DEFINITION_ARRAY
+
+	_AfterActionEventDefinitions ; 99/93B3
+		EVENT $0B, _MareetaAppears
+			macroEventConditionCheckCoordRanges [24, 9], [26, 19]
+			CMP_WORD wCurrentPhase, Player
+			TEST_FLAG_UNSET $08
+		END_DEFINITION
+		EVENT $0C, _MareetaCaptured
+			CMP_STATUS_SET Mareeta, TurnStatusRescued
+			TEST_FLAG_UNSET $08
+		END_DEFINITION
+		EVENT $0D, _MareetaKilled
+			TEST_FLAG_SET FlagMareetaDiedInChp5
+			TEST_FLAG_UNSET $08
+		END_DEFINITION
+		EVENT $0A, _ArenaOpened
+			TEST_FLAG_SET $24
+		END_DEFINITION
+		EVENT $00, _EndingEvent
+			TEST_FLAG_SET $0E
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_BattleEventDefinitions ; 99/93F1
+	END_DEFINITION_ARRAY
+
+	_ShopEventDefinitions ; 99/93F3
+	END_DEFINITION_ARRAY
+
+	_Chapter4xCheck ; 9993F5
+
+		.al
+		.xl
+		.autsiz
+		.databank ?
+
+		lda #Chapter4x
+		sta wEventEngineParameter1,b
+		jsl rlASMCGetChapterTurncount
+		lda wEventEngineParameter1,b
+		beq +
+
+		sec
+		rtl
+
+		+
+		clc
+		rtl
+
+	_Door1 ; 99/9408
+		macroOpenDoorByTileChangeID 0
+	END1
+
+	_Door2 ; 99/9433
+		macroOpenDoorByTileChangeID 1
+	END1
+
+	_Door3 ; 99/945E
+		macroOpenDoorByTileChangeID 2
+	END1
+
+	_Door4 ; 99/9489
+		macroOpenDoorByTileChangeID 3
+
+		macroTileChangeByID 7
+	END1
+
+	_RaydrikDialogue ; 99/94DC
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $3E
+		YIELD
+
+		SCROLL_CAMERA_CHAR Raydrik
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		DIALOGUE dialogueChapter5RaydrikDialogue
+		YIELD
+	END2
+
+	_MareetaAppears ; 99/94F1
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $50
+		YIELD
+
+		SCROLL_CAMERA_CHAR Raydrik
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		DIALOGUE dialogueChapter5MareetaAppears1
+		YIELD
+
+		LOAD1 eventChapter5Data._MareetaGroup
+		WAIT_MOVE
+		YIELD
+
+		SET_FLAG $0B
+
+		SCROLL_CAMERA_CHAR Eyvel
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		YIELD
+
+		DIALOGUE dialogueChapter5MareetaAppears2
+
+		macroCheckTurnStatusSet Nanna, (TurnStatusDead | TurnStatusUnknown1 | TurnStatusInvisible | TurnStatusCaptured)
+		JUMP_TRUE +
+
+		STORE_WORD wEventEngineCharacterTarget, Nanna
+		CALL_ASM_LOOP rlASMCIsUnitCaptured, $0000
+		JUMP_TRUE +
+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter5MareetaAppears3
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+		+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter5MareetaAppears4
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+		YIELD
+	END2
+
+	_MareetaDialogue ; 99/9557
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $50
+		YIELD
+
+		DIALOGUE dialogueChapter5MareetaDialogue
+		YIELD
+	END2
+
+	_Counter ; 99/9567
+		ADD_BYTE $7E4976, 1
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_MareetaCaptured ; 99/956F
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $50
+		YIELD
+
+		DIALOGUE dialogueChapter5MareetaCaptured
+		JUMP +
+
+	_MareetaKilled ; 99/9580
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $50
+		YIELD
+
+		DIALOGUE dialogueChapter5MareetaKilled
+
+		+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter5EyvelStone1A
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+		YIELD
+
+		CALL_ASM_LONG_SKIPPABLE rlASMCChangeMapMusic, $3E
+
+		STORE_WORD wEventEngineCharacterTarget, Mareeta
+		CALL_ASM_LOOP rlASMCClearRescue, $0000
+
+		macroUnsetCharacterTurnStatus Mareeta, TurnStatusActing
+
+		CALL_ASM_SKIPPABLE rlASMCUnknown8CA0C0, $0000
+
+		MOVE_UNIT Raydrik, [0, 0], [7, 16], 1, None
+		YIELD_UNK
+
+		WAIT_MOVE
+		YIELD
+
+		macroScriptedWarpStaff Veld, Eyvel, [8, 16]
+		WARP_UNIT Eyvel, [0, 0], [8, 16]
+
+		macroUnsetCharacterTurnStatus Veld, TurnStatusActing
+
+		macroScriptedStoneCast Veld, Eyvel
+
+		macroUnsetCharacterTurnStatus Veld, TurnStatusActing
+
+		SET_FLAG $08
+
+		macroSetCharacterByte Galzus, structCharacterDataRAM.AI1, $02
+		macroSetCharacterByte Galzus, structCharacterDataRAM.AI4, $00
+		macroSetCharacterByte Galzus, structCharacterDataRAM.AI2, $0B
+		macroSetCharacterByte Galzus, structCharacterDataRAM.Unknown3E, $00
+
+		DIALOGUE dialogueChapter5EyvelStone2
+
+		macroCheckTurnStatusSet Nanna, (TurnStatusDead | TurnStatusUnknown1 | TurnStatusInvisible | TurnStatusCaptured)
+		JUMP_TRUE +
+
+		STORE_WORD wEventEngineCharacterTarget, Nanna
+		CALL_ASM_LOOP rlASMCIsUnitCaptured, $0000
+		JUMP_TRUE +
+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter5ArenaOpen3
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+		+
+		YIELD
+
+		macroScriptedWarpStaff Veld, Mareeta, [-1, -1]
+		macroScriptedWarpStaff Veld, Raydrik, [-1, -1]
+		macroScriptedRewarpStaff Veld, [-1, -1]
+
+		macroRemoveUnit Raydrik
+		macroRemoveUnit Veld
+
+		macroCheckTurnStatusSet Mareeta, TurnStatusCaptured
+		JUMP_TRUE +
+
+		STORE_WORD wEventEngineCharacterTarget, Mareeta
+		CALL_ASM_LOOP rlASMCClearRescue, $0000
+
+		macroUnsetCharacterTurnStatus Mareeta, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+
+		macroSetCharacterTurnStatus Mareeta, (TurnStatusActing | TurnStatusInvisible)
+
+		+
+		CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog, $0000
+	END2
+
+	_ArenaOpened ; 99/98EF
+		STORE_LONG lEventEngineUnitGroupPointer, eventChapter5Data._ThunderMageGroup
+		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+		YIELD_UNK
+
+		STORE_WORD wEventEngineCharacterTarget, Leif
+		CALL_ASM_LOOP rlASMCIsUnitCaptured, $0000
+		JUMP_TRUE ++
+
+		STORE_WORD wEventEngineCharacterTarget, Leif
+		CALL_ASM_LOOP rlASMCIsUnitRescued, $0000
+		JUMP_FALSE +
+
+		STORE_WORD wEventEngineCharacterTarget, Leif
+		CALL_ASM_LOOP rlASMCClearRescue, $0000
+
+		+
+		macroCheckTurnStatusSet Leif, TurnStatusGrayed
+
+		STORE_WORD_FROM wEventEngineParameter3, wEventEngineTruthFlag
+
+		MOVE_UNIT Leif, [0, 0], [23, 12], 1, None
+		YIELD_UNK
+
+		WAIT_MOVE
+		YIELD
+
+		STORE_WORD_FROM wEventEngineTruthFlag, wEventEngineParameter3
+		JUMP_FALSE +
+
+		macroSetCharacterTurnStatus Leif, TurnStatusGrayed
+
+		+
+		EVENT_TEST_FLAG_SET $08
+		JUMP_TRUE _AlreadyLeft
+
+		STORE_WORD wEventEngineCharacterTarget, Eyvel
+		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		JUMP_FALSE _AlreadyLeft
+
+		STORE_WORD wEventEngineCharacterTarget, Leif
+		CALL_ASM_LOOP rlASMCIsUnitCaptured, $0000
+		JUMP_TRUE ++++
+
+		macroCheckTurnStatusSet Nanna, TurnStatusDead
+		JUMP_TRUE +
+
+		STORE_WORD wEventEngineCharacterTarget, Nanna
+		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+		JUMP_FALSE ++
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $50
+		YIELD
+
+		DIALOGUE dialogueChapter5ArenaOpen1A
+		JUMP +++
+
+		+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $4E
+		YIELD
+
+		DIALOGUE dialogueChapter5ArenaOpen1B
+		JUMP ++
+
+		+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $50
+		YIELD
+
+		DIALOGUE dialogueChapter5ArenaOpen1C
+
+		+
+		YIELD
+
+		+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $50
+		YIELD
+
+		SCROLL_CAMERA_CHAR Raydrik
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		DIALOGUE dialogueChapter5ArenaOpen2
+		STORE_LONG lEventEngineLongParameter, dialogueChapter5EyvelStone1A
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+		YIELD
+
+		CALL_ASM_LONG_SKIPPABLE rlASMCChangeMapMusic, $3E
+
+		MOVE_UNIT Raydrik, [0, 0], [7, 16], 1, None
+		YIELD_UNK
+
+		WAIT_MOVE
+		YIELD
+
+		macroScriptedWarpStaff Veld, Eyvel, [8, 16]
+
+		WARP_UNIT Eyvel, [0, 0], [8, 16]
+
+		macroUnsetCharacterTurnStatus Veld, TurnStatusActing
+
+		macroScriptedStoneCast Veld, Eyvel
+
+		macroUnsetCharacterTurnStatus Veld, TurnStatusActing
+
+		SET_FLAG $08
+
+		macroSetCharacterByte Galzus, structCharacterDataRAM.AI1, $02
+		macroSetCharacterByte Galzus, structCharacterDataRAM.AI4, $00
+		macroSetCharacterByte Galzus, structCharacterDataRAM.AI2, $0B
+		macroSetCharacterByte Galzus, structCharacterDataRAM.Unknown3E, $00
+
+		DIALOGUE dialogueChapter5EyvelStone2
+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter5EyvelStone3
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+		YIELD
+
+		macroScriptedWarpStaff Veld, Mareeta, [-1, -1]
+		macroScriptedWarpStaff Veld, Raydrik, [-1, -1]
+		macroScriptedRewarpStaff Veld, [-1, -1]
+
+		macroRemoveUnit Raydrik
+		macroRemoveUnit Veld
+
+		macroCheckTurnStatusSet Mareeta, TurnStatusCaptured
+		JUMP_TRUE +
+
+		STORE_WORD wEventEngineCharacterTarget, Mareeta
+		CALL_ASM_LOOP rlASMCClearRescue, $0000
+
+		macroUnsetCharacterTurnStatus Mareeta, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+		macroSetCharacterTurnStatus Mareeta, (TurnStatusActing | TurnStatusInvisible)
+
+		+
+		CALL_ASM_SKIPPABLE rlASMCUnknown8CA0C0, $0000
+	END2
+
+		_AlreadyLeft
+		STORE_WORD wEventEngineCharacterTarget, Leif
+		CALL_ASM_LOOP rlASMCIsUnitCaptured, $0000
+		JUMP_TRUE +++
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $50
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, Nanna
+		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		JUMP_FALSE +
+
+		DIALOGUE dialogueChapter5ArenaOpen1D
+		JUMP ++
+
+		+
+		DIALOGUE dialogueChapter5ArenaOpen1E
+
+		+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter5ArenaOpenAfterStone
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+		YIELD
+
+		+
+	END2
+
+	_EyvelCaptured ; 99/9D50
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $3E
+		YIELD
+
+		DIALOGUE dialogueChapter5EyvelStone1B
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, Eyvel
+		CALL_ASM_LOOP rlASMCClearRescue, $0000
+
+		macroUnsetCharacterTurnStatus Eyvel, TurnStatusActing
+
+		CALL_ASM_SKIPPABLE rlASMCUnknown8CA0C0, $0000
+
+		MOVE_UNIT Raydrik, [0, 0], [7, 16], 1, None
+		YIELD_UNK
+
+		WAIT_MOVE
+		YIELD
+
+		macroScriptedWarpStaff Veld, Eyvel, [8, 16]
+
+		WARP_UNIT Eyvel, [0, 0], [8, 16]
+
+		macroUnsetCharacterTurnStatus Veld, TurnStatusActing
+
+		macroScriptedStoneCast Veld, Eyvel
+
+		macroUnsetCharacterTurnStatus Veld, TurnStatusActing
+
+		SET_FLAG $08
+
+		macroSetCharacterByte Galzus, structCharacterDataRAM.AI1, $02
+		macroSetCharacterByte Galzus, structCharacterDataRAM.AI4, $00
+		macroSetCharacterByte Galzus, structCharacterDataRAM.AI2, $0B
+		macroSetCharacterByte Galzus, structCharacterDataRAM.Unknown3E, $00
+
+		DIALOGUE dialogueChapter5EyvelStone2
+
+		macroCheckTurnStatusSet Nanna, (TurnStatusDead | TurnStatusUnknown1 | TurnStatusInvisible | TurnStatusCaptured)
+		JUMP_TRUE +
+
+		STORE_WORD wEventEngineCharacterTarget, Nanna
+		CALL_ASM_LOOP rlASMCIsUnitCaptured, $0000
+		JUMP_TRUE +
+
+		STORE_LONG lEventEngineLongParameter, dialogueChapter5ArenaOpen3
+		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+		+
+		YIELD
+
+		STORE_WORD wEventEngineCharacterTarget, Mareeta
+		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		JUMP_FALSE +
+
+		macroScriptedWarpStaff Veld, Mareeta, [-1, -1]
+
+		+
+		macroScriptedWarpStaff Veld, Raydrik, [-1, -1]
+
+		macroScriptedRewarpStaff Veld, [-1, -1]
+
+		macroRemoveUnit Raydrik
+		macroRemoveUnit Veld
+
+		macroCheckTurnStatusSet Mareeta, TurnStatusCaptured
+		JUMP_TRUE +
+
+		STORE_WORD wEventEngineCharacterTarget, Mareeta
+		CALL_ASM_LOOP rlASMCClearRescue, $0000
+
+		macroUnsetCharacterTurnStatus Mareeta, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+		macroSetCharacterTurnStatus Mareeta, (TurnStatusActing | TurnStatusInvisible)
+
+		+
+		CALL_ASM_SKIPPABLE rlASMCUnknown8CA0C0, $0000
+	END2
+
+	_UnusedMareetaSpawn ; 99/A0BA
+		LOAD2 eventChapter5Data._MareetaGroup
+		WAIT_MOVE
+		YIELD
+
+		JUMP _ArenaEnemyCheck
+
+	_SwordmasterSpawn ; 99/A0C3
+		LOAD2 eventChapter5Data._PitfighterSwordmasterGroup
+		WAIT_MOVE
+		YIELD
+
+		JUMP _ArenaEnemyCheck
+
+	_BerserkerSpawn ; 99/A0CC
+		LOAD2 eventChapter5Data._PitfighterBerserkerGroup
+		WAIT_MOVE
+		YIELD
+
+		JUMP _ArenaEnemyCheck
+
+	_GalzusSpawn ; 99/A0D5
+		LOAD2 eventChapter5Data._GalzusGroup
+		WAIT_MOVE
+		YIELD
+
+		macroSetCharacterByte Galzus, structCharacterDataRAM.MovementStars, 0
+
+		JUMP _ArenaEnemyCheck
+
+	_UnusedEventIDSet ; 99/A0F6
+		SET_FLAG $0F
+	END2
+
+	_UnusedBandoleSpawn ; 99/A0F9
+		LOAD2 eventChapter5Data._BandoleGroup
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_UnusedAxeArmorSpawn ; 99/A100
+		LOAD2 eventChapter5Data._UnusedAxeArmorGroup
+		WAIT_MOVE
+		YIELD
+	END2
+
+	_ArenaEnemyCheck ; 99/A107
+		UNSET_FLAG $06
+		CALL_ASM_LOOP _rlArenaCheckRoutine, $0000
+
+		EVENT_CMP_BYTE_AT_LT wEventEngineParameter1, 3
+		JUMP_FALSE +
+
+		SET_FLAG $06
+
+		+
+	END2
+
+	_rlArenaCheckRoutine ; 99/A11A
+
+		.al
+		.xl
+		.autsiz
+		.databank ?
+
+		lda #(`_ArenaEnemyTable)<<8
+		sta lEventEngineLongParameter+1,b
+		lda #<>_ArenaEnemyTable
+		sta lEventEngineLongParameter,b
+		jsl rlASMCCountAllUnitUncapturedAliveByTable
+		rtl
+
+	_ArenaEnemyTable ; 99/A12B
+		.word PitfighterHero
+		.word PitfighterWarrior
+		.word PitfighterGeneral
+		.word PitfighterSwordmaster
+		.word PitfighterBerserker
+		.word Mareeta
+	.word $0000
+
+	_PlayerRetreat ; 99/A139
+		PAUSE_SKIPPABLE 15
+		YIELD
+
+		macroHaveActiveUnitRetreat eventChapter5Events._RetreatMovestring
+
+	END2
+
+	_RetreatMovestring ; 99/A176
+		MS_MOVE_LEFT
+		MS_MOVE_LEFT
+	MS_END
+
+	_OpeningEvent ; 99/A179
+		CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
+
+		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusActing
+		CALL_ASM_LOOP rlASMCAllUnitsSetTurnStatus, $0000
+
+		STORE_WORD wEventEngineParameter1, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved
+		CALL_ASM_LOOP rlASMCAllUnitsUnsetTurnStatus, $0000
+
+		macroCheckTurnStatusSet Eyvel, TurnStatusInvisible
+		JUMP_FALSE +
+
+		macroUnsetCharacterTurnStatus Eyvel, (TurnStatusUnknown1 | TurnStatusInvisible)
+
+		macroSetUnitPosition Eyvel, [14, 16]
+		macroSetCharacterByte Eyvel, structCharacterDataRAM.Fatigue, 0
+
+		+
+		STORE_WORD wEventEngineCharacterTarget, Eyvel
+		CALL_ASM_LOOP rlASMCGiveUnitItemsToConvoy, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Eyvel
+		STORE_WORD wEventEngineParameter1, IronBlade
+		CALL_ASM_LOOP rlASMCGiveUnitItemSilent, $0000
+
+		STORE_WORD lEventEngineUnitGroupPointer, $000002
+		CALL_ASM_LOOP rlASMCGetStartingPositionsArrayPointerAndLength, $0000
+
+		CALL_ASM_LOOP rlASMCLoadPlayerUnitsByStartingPositions, $0000
+
+		STORE_LONG lEventEngineUnitGroupPointer, eventChapter5Data._RaydrikVeldGroup
+		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+		YIELD_UNK
+
+		STORE_LONG lEventEngineUnitGroupPointer, eventChapter5Data._BandoleGroup
+		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+		YIELD_UNK
+
+		STORE_LONG lEventEngineUnitGroupPointer, eventChapter5Data._SoldierGroups
+		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+		YIELD_UNK
+
+		STORE_LONG lEventEngineUnitGroupPointer, eventChapter5Data._MageGroups
+		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+		YIELD_UNK
+
+		CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog, $0000
+
+		FADE_IN $02
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $58
+		YIELD
+
+		macroChapterTitlePopup dialogueChapter5Title
+
+		SCROLL_CAMERA_ADDRESS eventChapter5Data._NannaCameraCoordinates
+		YIELD
+
+		LOAD1 eventChapter5Data._NannaGroup
+		WAIT_MOVE
+		YIELD
+
+		DIALOGUE dialogueChapter5Opening1
+		YIELD
+
+		CALL_ASM_LONG_SKIPPABLE rlASMCChangeMapMusic, $3B
+
+		LOAD1 eventChapter5Data._PitfighterHeroGroup
+		WAIT_MOVE
+		YIELD
+
+		LOAD1 eventChapter5Data._PitfighterWarriorGroup
+		WAIT_MOVE
+		YIELD
+
+		LOAD1 eventChapter5Data._PitfighterGeneralGroup
+		WAIT_MOVE
+		YIELD
+
+		SCROLL_CAMERA_CHAR Eyvel
+		SET_CAMERA_SPEED 4
+		YIELD
+
+		DIALOGUE dialogueChapter5Opening2
+		YIELD
+
+		MOVE_UNIT Eyvel, [0, 0], [15, 15], 1, None
+		YIELD_UNK
+
+		MOVE_UNIT Nanna, [0, 0], [14, 17], 1, None
+		YIELD_UNK
+
+		WAIT_MOVE
+		YIELD
+
+		SCROLL_CAMERA_SPEED [15, 26], 4
+		YIELD
+	END2
+
+	_EndingEvent ; 99/A2DB
+		STORE_WORD wCurrentMapMusic, $0000
+
+		PAUSE_SKIPPABLE 16
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+
+		macroCheckTurnStatusSet Eyvel, TurnStatusCaptured
+		JUMP_TRUE +
+
+		STORE_WORD wEventEngineCharacterTarget, Eyvel
+		CALL_ASM_LOOP rlASMCClearRescue, $0000
+
+		macroUnsetCharacterTurnStatus Eyvel, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+		macroSetCharacterTurnStatus Eyvel, (TurnStatusActing | TurnStatusInvisible)
+
+		+
+		CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured, $0000
+
+		FADE_OUT $01
+		YIELD
+
+		CALL_ASM_LOOP rlASMCChapterEnd, $0000
+	END1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

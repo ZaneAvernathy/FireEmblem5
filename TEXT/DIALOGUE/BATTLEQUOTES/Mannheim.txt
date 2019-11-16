@@ -1,0 +1,16 @@
+dialogueMannheimBattleQuote ; 92/FB98
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "こんなところで"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "足止"
+	DIALOGUE_FONT_0
+	.text "めを"
+	DIALOGUE_FONT_5
+	.text "食"
+	DIALOGUE_FONT_0
+	.text "うわけには"
+	DIALOGUE_NL
+	.text "いかぬのだ！"
+DIALOGUE_END_SCENE

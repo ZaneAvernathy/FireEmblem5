@@ -1,0 +1,373 @@
+
+eventChapter8xEvents ; 97/844D
+
+	_OpeningEventDefinitions ; 97/844D
+		EVENT $00, _OpeningEvent
+			CMP_WORD wCurrentTurn, 0
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TurnEventDefinitions ; 97/845A
+		EVENT $02, eventMapDeathQuoteDummyEvent
+			CHECK_DEAD Gomer
+			CMP_WORD wCurrentPhase, Enemy
+		END_DEFINITION
+		EVENT $01, eventMapDeathQuoteDummyEvent
+			TEST_FLAG_SET $03
+		END_DEFINITION
+		EVENT $00, _TanyaRemoveImmortality
+			CMP_WORD wCurrentPhase, Player
+			CMP_WORD wCurrentTurn, 15
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_TalkEventDefinitions ; 97/8482
+		EVENT $05, _OrsinTanyaTalk
+			CHECK_CHARS2 Orsin, Tanya
+		END_DEFINITION
+		EVENT $06, _LeifDagdarTalk
+			CHECK_CHARS2 Leif, Dagdar
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_LocationEventDefinitions ; 97/8498
+		EVENT $22, _Door1
+			CMP_BYTE wEventEngineUnknownXTarget, 10
+			CMP_BYTE wEventEngineUnknownYTarget, 6
+		END_DEFINITION
+		EVENT $23, _Door2
+			CMP_BYTE wEventEngineUnknownXTarget, 5
+			CMP_BYTE wEventEngineUnknownYTarget, 9
+		END_DEFINITION
+		EVENT $24, _Door3
+			CMP_BYTE wEventEngineUnknownXTarget, 5
+			CMP_BYTE wEventEngineUnknownYTarget, 13
+		END_DEFINITION
+		EVENT $25, _Door4
+			CMP_BYTE wEventEngineUnknownXTarget, 17
+			CMP_BYTE wEventEngineUnknownYTarget, 7
+		END_DEFINITION
+		EVENT $26, _Door5
+			CMP_BYTE wEventEngineUnknownXTarget, 15
+			CMP_BYTE wEventEngineUnknownYTarget, 9
+		END_DEFINITION
+		EVENT $27, _Door6
+			CMP_BYTE wEventEngineUnknownXTarget, 15
+			CMP_BYTE wEventEngineUnknownYTarget, 13
+		END_DEFINITION
+		EVENT $28, eventChapter8xData._Chest1Events
+			CMP_BYTE_AT wCursorXCoord, eventChapter8xData._Chest1Coordinates
+			CMP_BYTE_AT wCursorYCoord, eventChapter8xData._Chest1Coordinates+1
+		END_DEFINITION
+		EVENT $29, eventChapter8xData._Chest2Events
+			CMP_BYTE_AT wCursorXCoord, eventChapter8xData._Chest2Coordinates
+			CMP_BYTE_AT wCursorYCoord, eventChapter8xData._Chest2Coordinates+1
+		END_DEFINITION
+		EVENT $2A, eventChapter8xData._Chest3Events
+			CMP_BYTE_AT wCursorXCoord, eventChapter8xData._Chest3Coordinates
+			CMP_BYTE_AT wCursorYCoord, eventChapter8xData._Chest3Coordinates+1
+		END_DEFINITION
+		EVENT $2B, eventChapter8xData._Chest4Events
+			CMP_BYTE_AT wCursorXCoord, eventChapter8xData._Chest4Coordinates
+			CMP_BYTE_AT wCursorYCoord, eventChapter8xData._Chest4Coordinates+1
+		END_DEFINITION
+		EVENT $2C, eventChapter8xData._Chest5Events
+			CMP_BYTE_AT wCursorXCoord, eventChapter8xData._Chest5Coordinates
+			CMP_BYTE_AT wCursorYCoord, eventChapter8xData._Chest5Coordinates+1
+		END_DEFINITION
+		EVENT $2D, eventChapter8xData._Chest6Events
+			CMP_BYTE_AT wCursorXCoord, eventChapter8xData._Chest6Coordinates
+			CMP_BYTE_AT wCursorYCoord, eventChapter8xData._Chest6Coordinates+1
+		END_DEFINITION
+		EVENT $00, _EndingEvent
+			CMP_BYTE wCursorXCoord, 10
+			CMP_BYTE wCursorYCoord, 2
+			CMP_WORD wCurrentPhase, Player
+			CMP_WORD aSelectedCharacterBuffer.Character, Leif
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_BeforeActionEventDefinitions ; 97/8581
+	END_DEFINITION_ARRAY
+
+	_AfterActionEventDefinitions ; 97/8583
+	END_DEFINITION_ARRAY
+
+	_BattleEventDefinitions ; 97/8585
+		EVENT $07, eventBattleQuoteDummyEvent
+			CHECK_SINGLE Gomer
+		END_DEFINITION
+	END_DEFINITION_ARRAY
+
+	_ShopEventDefinitions ; 97/858F
+	END_DEFINITION_ARRAY
+
+	_Door1 ; 97/8591
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 0
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 1
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door2 ; 97/85E6
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 2
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door3 ; 97/8611
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 3
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door4 ; 97/863C
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 4
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door5 ; 97/8667
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 5
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_Door6 ; 97/8692
+		PLAY_SOUND_BYTE $6B
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+
+		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+		HALT_UNTIL_BYTE bDecompListFlag, $00
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+		STORE_WORD wEventEngineParameter1, 6
+		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+		HALT_UNTIL_BYTE bDMAArrayFlag, $00
+		YIELD_UNK
+		YIELD_UNK
+	END1
+
+	_TanyaRemoveImmortality ; 97/86BD
+		STORE_WORD wEventEngineCharacterTarget, Tanya
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Skills2
+		STORE_WORD wEventEngineParameter2, Skill2Unknown | (Skill3Immortal << 8)
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+	END2
+
+	_OrsinTanyaTalk ; 97/86D6
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $4A
+		YIELD
+
+		DIALOGUE dialogueChapter8xOrsinTanyaTalk
+		YIELD
+	END2
+
+	_LeifDagdarTalk ; 97/86E6
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $4A
+		YIELD
+
+		DIALOGUE dialogueChapter8xLeifDagdarTalk
+		YIELD
+	END2
+
+	_PrepGroups ; 97/86F6
+		.long eventChapter8xData._PrepGroup
+	.word $0000
+
+	_OpeningEvent ; 97/86FB
+		CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Dagdar
+		STORE_WORD wEventEngineParameter1, TurnStatusInvisible
+		CALL_ASM_LOOP rlASMCCheckUnitTurnStatusSet, $0000
+		JUMP_FALSE +
+
+		STORE_WORD wEventEngineCharacterTarget, Dagdar
+		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusInvisible
+		CALL_ASM_LOOP rlASMCUnsetUnitTurnStatus, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Dagdar
+		STORE_WORD wEventEngineXCoordinate, 9
+		STORE_WORD wEventEngineYCoordinate, 15
+		CALL_ASM_LOOP rlASMCSetUnitPosition, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Dagdar
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Fatigue
+		STORE_WORD wEventEngineParameter2, 0
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		+
+		STORE_WORD wEventEngineCharacterTarget, Tanya
+		STORE_WORD wEventEngineParameter1, TurnStatusInvisible
+		CALL_ASM_LOOP rlASMCCheckUnitTurnStatusSet, $0000
+		JUMP_FALSE +
+
+		STORE_WORD wEventEngineCharacterTarget, Tanya
+		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusInvisible
+		CALL_ASM_LOOP rlASMCUnsetUnitTurnStatus, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Tanya
+		STORE_WORD wEventEngineXCoordinate, 11
+		STORE_WORD wEventEngineYCoordinate, 16
+		CALL_ASM_LOOP rlASMCSetUnitPosition, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Tanya
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Fatigue
+		STORE_WORD wEventEngineParameter2, 0
+		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+		+
+		STORE_WORD wEventEngineCharacterTarget, Tanya
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Skills2
+		STORE_WORD wEventEngineParameter2, Skill3Immortal << 8
+		CALL_ASM_LOOP rlASMCSetBitsCharacterDataWord, $0000
+
+		CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog, $0000
+
+		FADE_IN $02
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $31
+		YIELD
+
+		STORE_LONG wProcInput1+1, dialogueChapter8xTitle
+		STORE_WORD wProcInput1, <>dialogueChapter8xTitle
+		STORE_LONG lR43, $9A814C
+		CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
+		YIELD
+
+		STORE_WORD wEventEngineParameter1, 1
+		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter8xOpening1
+		YIELD_UNK
+		YIELD_UNK
+		YIELD_UNK
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+		YIELD
+
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+	END2
+
+	_EndingEvent ; 97/8822
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 16
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+
+		PLAY_SOUND_WORD $00E0
+		PAUSE_SKIPPABLE 32
+		YIELD
+
+		SET_MUSIC $44
+		YIELD
+
+		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+
+		STORE_WORD wEventEngineCharacterTarget, Tanya
+		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Skills2
+		STORE_WORD wEventEngineParameter2, Skill2Unknown | (Skill3Immortal << 8)
+		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+		STORE_WORD wEventEngineParameter1, 1
+		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter8xEnding1
+		YIELD_UNK
+		YIELD_UNK
+		YIELD_UNK
+		YIELD
+
+		HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
+
+		FADE_OUT $01
+		YIELD
+
+		CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
+
+		STORE_BYTE bBuf_INIDISP, $00
+
+		PLAY_SOUND_WORD $00E7
+
+		FADE_OUT $01
+		YIELD
+
+		CALL_ASM_LOOP rlASMCChapterEnd, $0000
+	END1

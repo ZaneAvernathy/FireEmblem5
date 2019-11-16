@@ -1,0 +1,84 @@
+dialogueChapter4LithisCellUnlock ; 95/E42A
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LithisPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD KolkhoPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "リフィスさん､"
+	DIALOGUE_PAUSE $08
+	.text "カギが"
+	DIALOGUE_FONT_2
+	.text "開"
+	DIALOGUE_FONT_0
+	.text "きましたぜ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "すげえな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "リフィスさんの"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "ったとおりだ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･････"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "あれ､どうしたんです？"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_FONT_1
+	.text "子分"
+	DIALOGUE_FONT_0
+	.text "さんたちが"
+	DIALOGUE_FONT_1
+	.text "助"
+	DIALOGUE_FONT_0
+	.text "けに"
+	DIALOGUE_FONT_1
+	.text "来"
+	DIALOGUE_FONT_0
+	.text "たってのに"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "うれしくないんですかい？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "い､"
+	DIALOGUE_PAUSE $08
+	.text "いや､"
+	DIALOGUE_PAUSE $08
+	.text "そんなことはねえよ･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_UNLOAD
+	DIALOGUE_CLOSE
+	DIALOGUE_RIGHT
+	.text "おいおい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "本当"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_4
+	.text "誰"
+	DIALOGUE_FONT_0
+	.text "か"
+	DIALOGUE_FONT_1
+	.text "助"
+	DIALOGUE_FONT_0
+	.text "けにきたのかよ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ホラもふいてみるもんだな･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

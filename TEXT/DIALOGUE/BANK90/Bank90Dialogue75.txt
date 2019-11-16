@@ -1,0 +1,8 @@
+; 90/860E
+DIALOGUE_FONT_0
+.text "　　　　　バーハラの"
+DIALOGUE_FONT_1
+.text "悲"
+DIALOGUE_FONT_5
+.text "悧"
+DIALOGUE_EOF

@@ -1,0 +1,14 @@
+; 90/8317
+DIALOGUE_FONT_2
+.text "第"
+DIALOGUE_FONT_0
+.text "１７"
+DIALOGUE_FONT_2
+.text "章"
+DIALOGUE_FONT_1
+.text "⅛⅛"
+DIALOGUE_FONT_0
+.text "　　レンスターゲイト（"
+DIALOGUE_NUMBER
+.text "）"
+DIALOGUE_EOF

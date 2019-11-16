@@ -1,0 +1,12 @@
+dialogueWeissmannReleaseQuote ; 95/A92A
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "くっ､"
+	DIALOGUE_PAUSE $08
+	.text "くそっ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "お､"
+	DIALOGUE_PAUSE $08
+	.text "おぼえとけよ！"
+DIALOGUE_END_SCENE

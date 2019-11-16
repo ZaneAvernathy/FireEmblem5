@@ -1,0 +1,10 @@
+dialogueChapterFinalUnusedBattleQuote ; E7/DFE0
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "シンニュウシャヨ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ココヨリ･･･"
+	DIALOGUE_PAUSE $10
+	.text "サレ･･･"
+DIALOGUE_END_SCENE

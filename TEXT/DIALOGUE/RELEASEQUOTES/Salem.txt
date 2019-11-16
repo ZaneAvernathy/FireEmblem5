@@ -1,0 +1,8 @@
+dialogueSalemReleaseQuote ; 92/A3A1
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "そうか･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "おまえたちが･･･"
+DIALOGUE_END_SCENE

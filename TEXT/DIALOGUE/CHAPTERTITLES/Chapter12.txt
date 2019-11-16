@@ -1,0 +1,16 @@
+dialogueChapter12Title ; 9A/B99F
+	DIALOGUE_FONT_2
+	.text "第"
+	DIALOGUE_FONT_0
+	.text "１２"
+	DIALOGUE_FONT_2
+	.text "章"
+	DIALOGUE_FONT_1
+	.text "⅛"
+	DIALOGUE_FONT_0
+	.text "　　　　　ダキアの"
+	DIALOGUE_FONT_2
+	.text "盗"
+	DIALOGUE_FONT_1
+	.text "賊"
+DIALOGUE_EOF

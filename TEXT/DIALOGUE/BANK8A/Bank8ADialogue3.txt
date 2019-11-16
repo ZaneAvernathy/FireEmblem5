@@ -1,0 +1,20 @@
+; 8A/B40B
+DIALOGUE_FONT_0
+.text "ここは"
+DIALOGUE_FONT_1
+.text "道"
+DIALOGUE_FONT_2
+.text "具屋"
+DIALOGUE_FONT_0
+.text "だぜ"
+DIALOGUE_NL
+.text "いろいろ"
+DIALOGUE_FONT_3
+.text "売"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_FONT_3
+.text "買"
+DIALOGUE_FONT_0
+.text "いしてくれよ"
+DIALOGUE_EOF

@@ -1,0 +1,112 @@
+; 9A/D585
+DIALOGUE_FONT_0
+.text "シレジアに"
+DIALOGUE_FONT_3
+.text "戻"
+DIALOGUE_FONT_0
+.text "り"
+DIALOGUE_NL
+DIALOGUE_FONT_5
+.text "『"
+DIALOGUE_FONT_2
+.text "天"
+DIALOGUE_FONT_3
+.text "馬"
+DIALOGUE_FONT_1
+.text "騎士団"
+DIALOGUE_FONT_5
+.text "』"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+.text "むかえられる"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+.text "その"
+DIALOGUE_FONT_1
+.text "後"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_NL
+.text "シレジア"
+DIALOGUE_FONT_1
+.text "解放戦争"
+DIALOGUE_FONT_0
+.text "では"
+DIALOGUE_NL
+DIALOGUE_FONT_5
+.text "勲"
+DIALOGUE_FONT_4
+.text "功"
+DIALOGUE_FONT_0
+.text "いちじるしく"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "新生"
+DIALOGUE_FONT_0
+.text "シレジア"
+DIALOGUE_FONT_1
+.text "王国"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "初"
+DIALOGUE_FONT_1
+.text "代"
+DIALOGUE_FONT_2
+.text "天"
+DIALOGUE_FONT_3
+.text "馬"
+DIALOGUE_FONT_1
+.text "騎士団"
+DIALOGUE_FONT_2
+.text "長"
+DIALOGUE_FONT_0
+.text "となる"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_3
+.text "有"
+DIALOGUE_FONT_2
+.text "能"
+DIALOGUE_FONT_0
+.text "で"
+DIALOGUE_FONT_1
+.text "公"
+DIALOGUE_FONT_2
+.text "正"
+DIALOGUE_FONT_0
+.text "な"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "指揮"
+DIALOGUE_FONT_2
+.text "官"
+DIALOGUE_FONT_0
+.text "として"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "上"
+DIALOGUE_FONT_0
+.text "からも"
+DIALOGUE_FONT_1
+.text "下"
+DIALOGUE_FONT_0
+.text "からも"
+DIALOGUE_NL
+DIALOGUE_FONT_2
+.text "信望"
+DIALOGUE_FONT_4
+.text "厚"
+DIALOGUE_FONT_0
+.text "い"
+DIALOGUE_NL
+DIALOGUE_FONT_3
+.text "存在"
+DIALOGUE_FONT_0
+.text "だったという"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

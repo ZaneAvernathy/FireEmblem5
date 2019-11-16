@@ -1,0 +1,9 @@
+; 9A/C626
+DIALOGUE_FONT_0
+.text "トラキアの"
+DIALOGUE_FONT_1
+.text "竜騎士"
+DIALOGUE_FONT_0
+.text "　エダ"
+DIALOGUE_NL
+DIALOGUE_EOF

@@ -1,0 +1,20 @@
+dialogueChapter4Title ; 9A/B867
+	DIALOGUE_FONT_1
+	.text "⅛½⅛½"
+	DIALOGUE_FONT_2
+	.text "第"
+	DIALOGUE_FONT_0
+	.text "４"
+	DIALOGUE_FONT_2
+	.text "章"
+	DIALOGUE_FONT_1
+	.text "⅛"
+	DIALOGUE_FONT_0
+	.text "　　　　　"
+	DIALOGUE_FONT_1
+	.text "地下"
+	DIALOGUE_FONT_3
+	.text "牢獄"
+	DIALOGUE_FONT_1
+	.text "⅛½⅛½"
+DIALOGUE_EOF

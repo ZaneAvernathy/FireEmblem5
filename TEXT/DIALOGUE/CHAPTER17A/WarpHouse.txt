@@ -1,0 +1,49 @@
+dialogueChapter17AWarpHouse ; 98/CB61
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman3Portrait
+	DIALOGUE_FONT_0
+	.text "ついに"
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "支配"
+	DIALOGUE_FONT_0
+	.text "から"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "抜"
+	DIALOGUE_FONT_0
+	.text "け"
+	DIALOGUE_FONT_1
+	.text "出"
+	DIALOGUE_FONT_0
+	.text "すことができるのですね"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ああ､"
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_5
+	.text "夢"
+	DIALOGUE_FONT_0
+	.text "のよう･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "がんばってください！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "このワープの"
+	DIALOGUE_FONT_1
+	.text "杖"
+	DIALOGUE_FONT_0
+	.text "をさしあげます"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "をおいはらってください！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

@@ -1,0 +1,4 @@
+; 8A/B49F
+DIALOGUE_FONT_0
+.text "それでいいのかい"
+DIALOGUE_EOF

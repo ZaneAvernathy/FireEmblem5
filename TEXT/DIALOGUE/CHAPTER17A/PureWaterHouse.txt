@@ -1,0 +1,23 @@
+dialogueChapter17APureWaterHouse ; 98/CBCF
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan12Portrait
+	DIALOGUE_FONT_0
+	.text "レンスター"
+	DIALOGUE_FONT_1
+	.text "城"
+	DIALOGUE_FONT_0
+	.text "にはロプトの"
+	DIALOGUE_FONT_2
+	.text "連"
+	DIALOGUE_FONT_1
+	.text "中"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "かなりいるらしいぜ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "このせいすいをもっていきな"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

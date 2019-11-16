@@ -1,0 +1,111 @@
+dialogueChapter22Ending1 ; B0/DC3B
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "ようやく"
+	DIALOGUE_FONT_4
+	.text "河"
+	DIALOGUE_FONT_0
+	.text "をこえましたな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "多"
+	DIALOGUE_FONT_0
+	.text "くのものが"
+	DIALOGUE_FONT_1
+	.text "血"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_3
+	.text "流"
+	DIALOGUE_FONT_0
+	.text "した"
+	DIALOGUE_FONT_4
+	.text "河"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "か"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "アウグストが"
+	DIALOGUE_FONT_1
+	.text "言"
+	DIALOGUE_FONT_0
+	.text "おうとしていたことが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "なんとなくわかった"
+	DIALOGUE_FONT_1
+	.text "気"
+	DIALOGUE_FONT_0
+	.text "がするよ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "一"
+	DIALOGUE_FONT_2
+	.text "度"
+	DIALOGUE_FONT_3
+	.text "流"
+	DIALOGUE_FONT_0
+	.text "れた"
+	DIALOGUE_FONT_1
+	.text "血"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_FONT_1
+	.text "元"
+	DIALOGUE_FONT_0
+	.text "には"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "りません"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "大事"
+	DIALOGUE_FONT_0
+	.text "なのは"
+	DIALOGUE_NL
+	.text "その"
+	DIALOGUE_FONT_1
+	.text "血"
+	DIALOGUE_FONT_0
+	.text "をいかに"
+	DIALOGUE_FONT_4
+	.text "価値"
+	DIALOGUE_FONT_0
+	.text "あるものにするか"
+	DIALOGUE_NL
+	.text "ということです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "さあ､"
+	DIALOGUE_PAUSE $08
+	.text "マンスターはもうすぐですぞ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "先"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "急"
+	DIALOGUE_FONT_0
+	.text "ぎましょう､"
+	DIALOGUE_PAUSE $08
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

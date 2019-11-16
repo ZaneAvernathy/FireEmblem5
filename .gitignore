@@ -1,0 +1,9 @@
+*.sfc
+*.sym
+*.sav
+*.bst
+/*.png
+*.4bpp
+*.2bpp
+TOOLS/64tass
+TOOLS/superfamiconv

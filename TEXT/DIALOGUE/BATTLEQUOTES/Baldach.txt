@@ -1,0 +1,12 @@
+dialogueBaldachBattleQuote ; 92/D199
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "おもしろい"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "きさまにこのわしが"
+	DIALOGUE_FONT_2
+	.text "倒"
+	DIALOGUE_FONT_0
+	.text "せるかな"
+DIALOGUE_END_SCENE

@@ -1,0 +1,50 @@
+dialogueChapter19WindHouse ; B0/BB98
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman3Portrait
+	DIALOGUE_FONT_0
+	.text "あのう･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "もしよろしければ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "魔法書"
+	DIALOGUE_FONT_0
+	.text "をお"
+	DIALOGUE_FONT_1
+	.text "使"
+	DIALOGUE_FONT_0
+	.text "いください"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "なんでもウインドとかいう"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_3
+	.text "風"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "魔法"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "書"
+	DIALOGUE_FONT_0
+	.text "だとか･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "それで･･･"
+	DIALOGUE_PAUSE $10
+	.text "その･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "わたしたちを"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "ってくださいね"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

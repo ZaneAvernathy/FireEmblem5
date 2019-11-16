@@ -1,0 +1,23 @@
+dialogueBarathReleaseQuote ; 92/FC89
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "殺"
+	DIALOGUE_FONT_0
+	.text "せ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_4
+	.text "私"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_2
+	.text "帰"
+	DIALOGUE_FONT_0
+	.text "る"
+	DIALOGUE_FONT_1
+	.text "場"
+	DIALOGUE_FONT_2
+	.text "所"
+	DIALOGUE_FONT_0
+	.text "などない！"
+DIALOGUE_END_SCENE

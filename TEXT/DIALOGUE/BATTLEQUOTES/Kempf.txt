@@ -1,0 +1,17 @@
+dialogueKempfBattleQuote ; 98/B368
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "くそっ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "貴様"
+	DIALOGUE_FONT_0
+	.text "らさえいなければ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "貴様"
+	DIALOGUE_FONT_0
+	.text "らさえいなければぁっ"
+DIALOGUE_END_SCENE

@@ -1,0 +1,12 @@
+; 90/8026
+DIALOGUE_FONT_1
+.text "最"
+DIALOGUE_FONT_2
+.text "初"
+DIALOGUE_FONT_0
+.text "から"
+DIALOGUE_FONT_1
+.text "始"
+DIALOGUE_FONT_0
+.text "める"
+DIALOGUE_EOF

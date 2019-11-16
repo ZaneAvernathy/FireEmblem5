@@ -1,0 +1,105 @@
+dialogueChapter9PlayerLoss ; 93/E684
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_PAUSE $10
+	.text "　"
+	DIALOGUE_FONT_1
+	.text "大"
+	DIALOGUE_FONT_3
+	.text "変"
+	DIALOGUE_FONT_0
+	.text "です！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "山"
+	DIALOGUE_FONT_5
+	.text "荘"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_2
+	.text "落"
+	DIALOGUE_FONT_0
+	.text "ちました！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_FONT_0
+	.text "なんだって！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "それじゃ､"
+	DIALOGUE_PAUSE $08
+	.text "ドリアスたちは･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "レンスターの"
+	DIALOGUE_FONT_4
+	.text "旧"
+	DIALOGUE_FONT_2
+	.text "臣"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ほとんどこの"
+	DIALOGUE_FONT_1
+	.text "山"
+	DIALOGUE_FONT_5
+	.text "荘"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "集"
+	DIALOGUE_FONT_0
+	.text "まっていたということです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "その"
+	DIALOGUE_FONT_1
+	.text "彼"
+	DIALOGUE_FONT_0
+	.text "らが"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "全滅"
+	DIALOGUE_FONT_0
+	.text "した"
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_NL
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_2
+	.text "残"
+	DIALOGUE_FONT_3
+	.text "念"
+	DIALOGUE_FONT_0
+	.text "ですが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "レンスター"
+	DIALOGUE_FONT_1
+	.text "王国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "再"
+	DIALOGUE_FONT_1
+	.text "建"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "あきらめるしかないでしょう"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

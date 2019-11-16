@@ -1,0 +1,9 @@
+dialogueChapter1DagdarArrive2 ; 95/AE8C
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD MartyPortrait
+	DIALOGUE_FONT_0
+	.text "まいったなぁ､"
+	DIALOGUE_PAUSE $08
+	.text "もう･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

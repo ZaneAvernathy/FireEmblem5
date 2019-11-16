@@ -1,0 +1,16 @@
+dialogueChapter10UnusedNotNannaPlaceholder ; E7/96F9
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_1
+	.text "元"
+	DIALOGUE_FONT_0
+	.text "メッセージ｢ナンナ"
+	DIALOGUE_FONT_1
+	.text "以"
+	DIALOGUE_FONT_3
+	.text "外"
+	DIALOGUE_FONT_0
+	.text "｣です"
+	DIALOGUE_NL
+	.text "このメッセージはさくじょしました"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

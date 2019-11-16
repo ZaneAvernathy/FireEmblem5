@@ -1,0 +1,57 @@
+dialogueChapter12UnusedHouseAlive ; 92/A2A8
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan2Portrait
+	DIALOGUE_FONT_0
+	.text "よくきてくれた"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "うちの"
+	DIALOGUE_FONT_1
+	.text "子"
+	DIALOGUE_FONT_0
+	.text "どもが"
+	DIALOGUE_FONT_2
+	.text "本当"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "世話"
+	DIALOGUE_FONT_0
+	.text "になったな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "お"
+	DIALOGUE_FONT_2
+	.text "礼"
+	DIALOGUE_FONT_0
+	.text "にこのうでわをやるよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "魔法"
+	DIALOGUE_FONT_0
+	.text "のうでわらしいから"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "けっこういいものだと"
+	DIALOGUE_FONT_1
+	.text "思"
+	DIALOGUE_FONT_0
+	.text "うぜ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "道"
+	DIALOGUE_FONT_2
+	.text "具屋"
+	DIALOGUE_FONT_0
+	.text "にでも"
+	DIALOGUE_FONT_3
+	.text "売"
+	DIALOGUE_FONT_0
+	.text "れば"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いいねだんがつくんじゃねえかな"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

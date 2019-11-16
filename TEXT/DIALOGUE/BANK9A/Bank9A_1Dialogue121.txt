@@ -1,0 +1,13 @@
+; 9A/D570
+DIALOGUE_FONT_0
+.text "シレジア四"
+DIALOGUE_FONT_2
+.text "天"
+DIALOGUE_FONT_3
+.text "馬"
+DIALOGUE_FONT_1
+.text "騎士"
+DIALOGUE_FONT_0
+.text "　ミーシャ"
+DIALOGUE_NL
+DIALOGUE_EOF

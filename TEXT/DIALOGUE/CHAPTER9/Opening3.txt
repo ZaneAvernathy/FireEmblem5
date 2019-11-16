@@ -1,0 +1,175 @@
+dialogueChapter9Opening3 ; 93/DBB9
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD Leif2Portrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "あれが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "目的"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "山"
+	DIALOGUE_FONT_5
+	.text "荘"
+	DIALOGUE_FONT_0
+	.text "ですな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "みんな"
+	DIALOGUE_FONT_1
+	.text "元気"
+	DIALOGUE_FONT_0
+	.text "だろうか･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "まわりに"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_2
+	.text "隊"
+	DIALOGUE_FONT_0
+	.text "がいるようだが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ドリアスたちだろうか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_2
+	.text "隊"
+	DIALOGUE_FONT_0
+	.text "ですって？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "いかん！"
+	DIALOGUE_PAUSE $10
+	.text "　あの"
+	DIALOGUE_FONT_2
+	.text "装"
+	DIALOGUE_FONT_1
+	.text "備"
+	DIALOGUE_FONT_0
+	.text "はトラキア"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_0
+	.text "だ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "なんだって！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あそこはハンニバル"
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "山"
+	DIALOGUE_FONT_5
+	.text "荘"
+	DIALOGUE_FONT_0
+	.text "だろう？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_4
+	.text "隠"
+	DIALOGUE_FONT_0
+	.text "れていたのが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "見"
+	DIALOGUE_FONT_0
+	.text "つかったのかもしれません"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "それとも､"
+	DIALOGUE_PAUSE $08
+	.text "ハンニバル"
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_FONT_3
+	.text "密告"
+	DIALOGUE_FONT_0
+	.text "したか･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "やめろ！"
+	DIALOGUE_PAUSE $10
+	.text "　アウグスト！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ハンニバル"
+	DIALOGUE_FONT_1
+	.text "将軍"
+	DIALOGUE_FONT_0
+	.text "はそんな"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "ではない"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_PAUSE $10
+	.text "いずれにせよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "救援"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "向"
+	DIALOGUE_FONT_0
+	.text "かわねばなりませんな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "山"
+	DIALOGUE_FONT_5
+	.text "荘"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_2
+	.text "落"
+	DIALOGUE_FONT_0
+	.text "とされるようなことがあれば"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "トラキアの"
+	DIALOGUE_FONT_1
+	.text "解放"
+	DIALOGUE_FONT_0
+	.text "やレンスターの"
+	DIALOGUE_FONT_2
+	.text "再"
+	DIALOGUE_FONT_1
+	.text "建"
+	DIALOGUE_FONT_0
+	.text "など"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "とてもおぼつきませんぞ"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

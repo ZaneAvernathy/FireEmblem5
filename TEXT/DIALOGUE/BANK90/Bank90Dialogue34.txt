@@ -1,0 +1,12 @@
+; 90/8254
+DIALOGUE_FONT_2
+.text "第"
+DIALOGUE_FONT_0
+.text "１１"
+DIALOGUE_FONT_2
+.text "章"
+DIALOGUE_FONT_0
+.text "Ｘ　マーダーホレス（"
+DIALOGUE_NUMBER
+.text "）"
+DIALOGUE_EOF

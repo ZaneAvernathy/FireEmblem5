@@ -1,0 +1,8 @@
+dialogueShiva1DeathQuote ; 95/C917
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ばかな･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "こんなやつらに･･･"
+DIALOGUE_END_SCENE

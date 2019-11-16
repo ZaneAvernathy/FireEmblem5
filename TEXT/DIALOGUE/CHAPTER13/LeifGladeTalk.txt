@@ -1,0 +1,300 @@
+dialogueChapter13LeifGladeTalk ; B9/CD7B
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD GladePortrait
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "グレイド？･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "騎士"
+	DIALOGUE_FONT_0
+	.text "グレイドなのか！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "･･･リーフ"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "！？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "ま･･･"
+	DIALOGUE_PAUSE $10
+	.text "まさか･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD DoriasPortrait
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "グレイド"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "おどろいているようだな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "たしかにこの"
+	DIALOGUE_FONT_1
+	.text "方"
+	DIALOGUE_FONT_0
+	.text "はリーフ"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "だ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "わがレンスター"
+	DIALOGUE_FONT_1
+	.text "王国軍"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "率"
+	DIALOGUE_FONT_0
+	.text "いる"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "主"
+	DIALOGUE_FONT_4
+	.text "君"
+	DIALOGUE_FONT_0
+	.text "であり､"
+	DIALOGUE_PAUSE $08
+	.text "そして"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_1
+	.text "北"
+	DIALOGUE_FONT_0
+	.text "トラキア"
+	DIALOGUE_FONT_1
+	.text "解放軍"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "盟主"
+	DIALOGUE_FONT_0
+	.text "でもある"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "レンスター"
+	DIALOGUE_FONT_1
+	.text "王国軍"
+	DIALOGUE_FONT_0
+	.text "･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	.text "では､"
+	DIALOGUE_PAUSE $08
+	.text "ドリアス"
+	DIALOGUE_FONT_2
+	.text "卿"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_0
+	.text "われらが"
+	DIALOGUE_FONT_1
+	.text "悲願"
+	DIALOGUE_FONT_0
+	.text "が"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ようやくかなうのですね！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "そうだグレイド"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_3
+	.text "我"
+	DIALOGUE_FONT_0
+	.text "らはレンスターへ"
+	DIALOGUE_FONT_2
+	.text "帰"
+	DIALOGUE_FONT_0
+	.text "る"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_2
+	.text "圧政"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "苦"
+	DIALOGUE_FONT_0
+	.text "しむ"
+	DIALOGUE_FONT_2
+	.text "民"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_FONT_3
+	.text "我"
+	DIALOGUE_FONT_0
+	.text "らが"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "で"
+	DIALOGUE_FONT_1
+	.text "解放"
+	DIALOGUE_FONT_0
+	.text "し"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "王城"
+	DIALOGUE_FONT_0
+	.text "ノヴァに"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_2
+	.text "再"
+	DIALOGUE_FONT_0
+	.text "びこのゲイボルグの"
+	DIALOGUE_FONT_3
+	.text "旗"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	DIALOGUE_FONT_4
+	.text "押"
+	DIALOGUE_FONT_0
+	.text "し"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "てるのだ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ああ･･･"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "やっとこの"
+	DIALOGUE_FONT_1
+	.text "日"
+	DIALOGUE_FONT_0
+	.text "が･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "カルフ"
+	DIALOGUE_FONT_1
+	.text "王"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $08
+	.text "キュアン"
+	DIALOGUE_FONT_1
+	.text "王子"
+	DIALOGUE_FONT_0
+	.text "なき"
+	DIALOGUE_FONT_1
+	.text "今"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	DIALOGUE_FONT_3
+	.text "我"
+	DIALOGUE_FONT_0
+	.text "らが"
+	DIALOGUE_FONT_2
+	.text "希望"
+	DIALOGUE_FONT_0
+	.text "はリーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "だけです"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "どうかお"
+	DIALOGUE_FONT_1
+	.text "父上"
+	DIALOGUE_FONT_0
+	.text "のご"
+	DIALOGUE_FONT_3
+	.text "遺"
+	DIALOGUE_FONT_2
+	.text "志"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_NL
+	.text "お"
+	DIALOGUE_FONT_3
+	.text "継"
+	DIALOGUE_FONT_0
+	.text "ぎください！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "もちろんだ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "グレイド"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ともにレンスターを"
+	DIALOGUE_FONT_2
+	.text "取"
+	DIALOGUE_FONT_0
+	.text "り"
+	DIALOGUE_FONT_3
+	.text "戻"
+	DIALOGUE_FONT_0
+	.text "そう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "はっ！"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_FONT_3
+	.text "我"
+	DIALOGUE_FONT_0
+	.text "らレンスターの"
+	DIALOGUE_FONT_1
+	.text "家"
+	DIALOGUE_FONT_2
+	.text "臣"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "どこまでもリーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_NL
+	.text "ついてまいります！"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

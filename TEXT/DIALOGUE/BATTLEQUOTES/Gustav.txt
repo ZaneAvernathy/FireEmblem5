@@ -1,0 +1,18 @@
+dialogueGustavBattleQuote ; 92/FBF5
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "おのれ！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "きさまらごときには"
+	DIALOGUE_FONT_2
+	.text "負"
+	DIALOGUE_FONT_0
+	.text "けん！"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "負"
+	DIALOGUE_FONT_0
+	.text "けんぞっ！"
+DIALOGUE_END_SCENE

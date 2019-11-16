@@ -1,0 +1,61 @@
+; 9A/D9DE
+DIALOGUE_FONT_4
+.text "吟"
+DIALOGUE_FONT_3
+.text "遊"
+DIALOGUE_FONT_4
+.text "詩"
+DIALOGUE_FONT_1
+.text "人"
+DIALOGUE_FONT_0
+.text "として"
+DIALOGUE_NL
+.text "トラキア"
+DIALOGUE_FONT_2
+.text "各"
+DIALOGUE_FONT_1
+.text "地"
+DIALOGUE_FONT_0
+.text "をめぐり"
+DIALOGUE_NL
+.text "リーフたちのサガを"
+DIALOGUE_NL
+.text "うたいつづける"
+DIALOGUE_PAUSE $40
+DIALOGUE_SCROLL
+DIALOGUE_PAUSE $10
+DIALOGUE_FONT_1
+.text "彼"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_3
+.text "実経験"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_FONT_4
+.text "基"
+DIALOGUE_FONT_0
+.text "づく"
+DIALOGUE_NL
+.text "そのサガは"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "他"
+DIALOGUE_FONT_0
+.text "のどのサガよりも"
+DIALOGUE_NL
+DIALOGUE_FONT_4
+.text "広"
+DIALOGUE_FONT_0
+.text "くトラキアの"
+DIALOGUE_FONT_1
+.text "人々"
+DIALOGUE_FONT_0
+.text "に"
+DIALOGUE_NL
+DIALOGUE_FONT_1
+.text "愛"
+DIALOGUE_FONT_0
+.text "されたという"
+DIALOGUE_PAUSE $40
+DIALOGUE_EOF

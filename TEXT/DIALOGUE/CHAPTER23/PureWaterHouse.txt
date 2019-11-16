@@ -1,0 +1,34 @@
+dialogueChapter23PureWaterHouse ; 98/E913
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCMan9Portrait
+	DIALOGUE_FONT_0
+	.text "マンスターに"
+	DIALOGUE_FONT_1
+	.text "攻"
+	DIALOGUE_FONT_0
+	.text "めこみなさるか"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "では､"
+	DIALOGUE_PAUSE $08
+	.text "このせいすいを"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "もっていきなされ"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "マンスターはロプトの"
+	DIALOGUE_FONT_3
+	.text "僧"
+	DIALOGUE_FONT_0
+	.text "でいっぱいじゃ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "用"
+	DIALOGUE_FONT_2
+	.text "心"
+	DIALOGUE_FONT_0
+	.text "にこしたことはないて"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

@@ -1,0 +1,80 @@
+dialogueChapter1WorldMap2 ; 82/C86C
+	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, FinnPortrait | (1 << 8), 16 | (13 << 8)
+	DIALOGUE_FONT_1
+	.text "彼"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "守"
+	DIALOGUE_FONT_0
+	.text "る"
+	DIALOGUE_FONT_1
+	.text "騎士"
+	DIALOGUE_FONT_0
+	.text "フィンや"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, NannaPortrait | (2 << 8), 24 | (4 << 8)
+	DIALOGUE_FONT_0
+	.text "その"
+	DIALOGUE_FONT_3
+	.text "娘"
+	DIALOGUE_FONT_0
+	.text "､"
+	DIALOGUE_PAUSE $10
+	.text "ナンナとともに"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 0
+	DIALOGUE_PAUSE $20
+	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 1
+	DIALOGUE_PAUSE $20
+	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 2
+	DIALOGUE_FONT_0
+	.text "トラキアや､"
+	DIALOGUE_PAUSE $10
+	.text "そのトラキアをやぶり"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "北"
+	DIALOGUE_FONT_0
+	.text "トラキアの"
+	DIALOGUE_FONT_2
+	.text "支配"
+	DIALOGUE_FONT_4
+	.text "権"
+	DIALOGUE_FONT_0
+	.text "を"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "入"
+	DIALOGUE_FONT_0
+	.text "れた"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	DIALOGUE_FONT_1
+	.text "西方"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "大国"
+	DIALOGUE_FONT_0
+	.text "グランベル"
+	DIALOGUE_FONT_1
+	.text "帝国"
+	DIALOGUE_FONT_0
+	.text "などの"
+	DIALOGUE_NL
+	DIALOGUE_FONT_2
+	.text "追"
+	DIALOGUE_FONT_1
+	.text "手"
+	DIALOGUE_FONT_0
+	.text "をかわしながら"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+DIALOGUE_END_SCENE

@@ -1,0 +1,49 @@
+dialogueChapter12RosaHouseRosaAlive ; 92/A084
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD NPCWoman1Portrait
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "この"
+	DIALOGUE_FONT_1
+	.text "村"
+	DIALOGUE_FONT_0
+	.text "は"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $08
+	.text "ただでさえ"
+	DIALOGUE_FONT_2
+	.text "盗"
+	DIALOGUE_FONT_1
+	.text "賊"
+	DIALOGUE_FONT_0
+	.text "がいて"
+	DIALOGUE_FONT_4
+	.text "危険"
+	DIALOGUE_FONT_0
+	.text "なんだよ"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "そのうえ"
+	DIALOGUE_FONT_1
+	.text "軍"
+	DIALOGUE_FONT_2
+	.text "隊"
+	DIALOGUE_FONT_0
+	.text "まで･･･"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "このきずぐすりを"
+	DIALOGUE_NL
+	.text "もっておゆきなさいな"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "てばいいんだけど･･･"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

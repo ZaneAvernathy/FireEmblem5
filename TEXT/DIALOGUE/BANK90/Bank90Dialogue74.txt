@@ -1,0 +1,8 @@
+; 90/85FB
+DIALOGUE_FONT_0
+.text "　　　　　　キュアン"
+DIALOGUE_FONT_1
+.text "王子軍"
+DIALOGUE_FONT_2
+.text "壊滅"
+DIALOGUE_EOF

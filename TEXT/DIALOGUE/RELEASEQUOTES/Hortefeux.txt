@@ -1,0 +1,12 @@
+dialogueHortefeuxReleaseQuote ; 98/9CC1
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "これがレンスターの"
+	DIALOGUE_FONT_1
+	.text "戦"
+	DIALOGUE_FONT_0
+	.text "いかた？"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "わしはまちがっていたのかもしれぬ･･･"
+DIALOGUE_END_SCENE

@@ -1,0 +1,12 @@
+; 9A/E0FB
+DIALOGUE_FONT_0
+.text "～"
+DIALOGUE_FONT_4
+.text "総"
+DIALOGUE_FONT_1
+.text "合戦"
+DIALOGUE_FONT_3
+.text "績"
+DIALOGUE_FONT_0
+.text "～"
+DIALOGUE_EOF

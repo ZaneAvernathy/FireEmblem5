@@ -1,0 +1,137 @@
+dialogueChapter2Ending1A ; 95/C0AD
+	DIALOGUE_RIGHT
+	DIALOGUE_LOAD LeifPortrait
+	DIALOGUE_PAUSE $20
+	DIALOGUE_RIGHT
+	DIALOGUE_LEFT
+	DIALOGUE_LOAD AugustPortrait
+	DIALOGUE_FONT_0
+	.text "リーフ"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "ですな"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "･･･あなたは？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "アウグストと"
+	DIALOGUE_FONT_3
+	.text "申"
+	DIALOGUE_FONT_0
+	.text "します"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "旅"
+	DIALOGUE_FONT_0
+	.text "のブラギ"
+	DIALOGUE_FONT_3
+	.text "僧"
+	DIALOGUE_FONT_0
+	.text "にございます"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ぼくになにか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "マンスターに"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "きたいのですが"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_1
+	.text "海賊"
+	DIALOGUE_FONT_0
+	.text "たちが"
+	DIALOGUE_FONT_5
+	.text "横"
+	DIALOGUE_FONT_1
+	.text "行"
+	DIALOGUE_FONT_0
+	.text "していて"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	DIALOGUE_FONT_2
+	.text "難"
+	DIALOGUE_FONT_4
+	.text "儀"
+	DIALOGUE_FONT_0
+	.text "しています"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "よろしければ"
+	DIALOGUE_NL
+	DIALOGUE_FONT_1
+	.text "同行"
+	DIALOGUE_FONT_0
+	.text "させていただけぬでしょうか？"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_RIGHT
+	DIALOGUE_FONT_0
+	.text "ケルベス"
+	DIALOGUE_FONT_1
+	.text "砦"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "近"
+	DIALOGUE_FONT_0
+	.text "くまでなら"
+	DIALOGUE_NL
+	.text "かまいませんが"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_CLEAR_ALL
+	DIALOGUE_LEFT
+	DIALOGUE_FONT_0
+	.text "それはかたじけない"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $20
+	DIALOGUE_FONT_1
+	.text "旅"
+	DIALOGUE_FONT_0
+	.text "の"
+	DIALOGUE_FONT_1
+	.text "道"
+	DIALOGUE_FONT_0
+	.text "すがら"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "いろいろとお"
+	DIALOGUE_FONT_3
+	.text "教"
+	DIALOGUE_FONT_0
+	.text "えしましょう"
+	DIALOGUE_WAIT_PRESS
+	DIALOGUE_SCROLL
+	.text "このアウグスト"
+	DIALOGUE_NL
+	DIALOGUE_PAUSE $10
+	.text "あなた"
+	DIALOGUE_FONT_1
+	.text "様"
+	DIALOGUE_FONT_0
+	.text "のお"
+	DIALOGUE_FONT_3
+	.text "役"
+	DIALOGUE_FONT_0
+	.text "に"
+	DIALOGUE_FONT_1
+	.text "立"
+	DIALOGUE_FONT_0
+	.text "ちたいと"
+	DIALOGUE_FONT_3
+	.text "存"
+	DIALOGUE_FONT_0
+	.text "じます"
+	DIALOGUE_WAIT_PRESS
+DIALOGUE_END_SCENE

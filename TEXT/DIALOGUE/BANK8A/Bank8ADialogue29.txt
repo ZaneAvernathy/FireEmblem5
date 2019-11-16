@@ -1,0 +1,8 @@
+; 8A/B633
+DIALOGUE_FONT_1
+.text "金"
+DIALOGUE_FONT_0
+.text "がたりないぜ"
+DIALOGUE_NL
+.text "でなおしてきな"
+DIALOGUE_EOF

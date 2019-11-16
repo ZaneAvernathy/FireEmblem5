@@ -1,0 +1,15 @@
+; 9A/D78C
+DIALOGUE_FONT_1
+.text "月"
+DIALOGUE_FONT_0
+.text "と"
+DIALOGUE_FONT_1
+.text "星"
+DIALOGUE_FONT_0
+.text "の"
+DIALOGUE_FONT_1
+.text "剣士"
+DIALOGUE_FONT_0
+.text "　マリータ"
+DIALOGUE_NL
+DIALOGUE_EOF

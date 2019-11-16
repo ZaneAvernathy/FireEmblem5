@@ -1,0 +1,22 @@
+
+eventDemo2Data ; 9A/EB5F
+
+	_UnusedCoordinates1 ; 9A/EB5F
+		.byte 20, 17
+
+	_Chapter1Group ; 9A/EB61
+		UNIT SoldierEnemy, Enemy, [6, 1], [6, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT SoldierEnemy, Enemy, [7, 1], [7, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT SoldierEnemy, Enemy, [8, 1], [8, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT SoldierEnemy, Enemy, [9, 1], [9, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT SoldierEnemy, Enemy, [10, 1], [10, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT SoldierEnemy, Enemy, [14, 1], [14, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT SoldierEnemy, Enemy, [15, 1], [15, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT SoldierEnemy, Enemy, [16, 1], [16, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT SoldierEnemy, Enemy, [17, 1], [17, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT SoldierEnemy, Enemy, [11, 1], [11, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT SoldierEnemy, Enemy, [12, 1], [12, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT SoldierEnemy, Enemy, [13, 1], [13, 1], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT Raydrik, Enemy, [12, 0], [12, 0], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+		UNIT Weissmann, Enemy, [13, 0], [13, 0], Leif, [IronLance], 5, False, [$00, $00, $00, $00]
+	UNIT

@@ -1,0 +1,11 @@
+dialogueFE4Demo3 ; 9C/FD46
+	DIALOGUE_RIGHT
+	DIALOGUE_OPEN
+	DIALOGUE_LOAD CallionPortrait
+	DIALOGUE_FONT_0
+	.text "なにさ！"
+	DIALOGUE_NL
+	.text "あんたなんかがいるから"
+	DIALOGUE_NL
+	.text "レヴィンがあたしのことを･･･"
+DIALOGUE_EOF
