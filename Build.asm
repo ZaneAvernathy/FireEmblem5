@@ -364,7 +364,7 @@ DSizeEnds		:= []
 	segmentStart
 
 	.include "TABLES/ChapterDataPointers.asm"
-	aChapterData .include "TABLES/ChapterDataTable.asm"
+	aChapterData .include "TABLES/ChapterDataTable.casm"
 	.include "TABLES/TilesetAnimations.asm"
 
 	segmentEnd
@@ -387,16 +387,16 @@ DSizeEnds		:= []
 
 	segmentStart
 
-	aClassData .include "TABLES/ClassData.asm" ; 86/8000
-	.include "TABLES/MovementType.asm"
-	.include "TABLES/TerrainHitAvoid.asm"
-	.include "TABLES/TerrainAvoid.asm"
-	.include "TABLES/TerrainDefense.asm"
-	aTerrainMagicTable .include "TABLES/TerrainMagic.asm"
+	aClassData .include "TABLES/ClassData.casm" ; 86/8000
+	.include "TABLES/MovementType.casm"
+	.include "TABLES/TerrainHitAvoid.casm"
+	.include "TABLES/TerrainAvoid.casm"
+	.include "TABLES/TerrainDefense.casm"
+	aTerrainMagicTable .include "TABLES/TerrainMagic.casm"
 	.include "TABLES/Unknown869484.asm"
 	.include "TABLES/Unknown8694AF.asm"
 	TerrainNames .block ; 86/98BF
-		.include "TABLES/TerrainNamePointers.asm"
+		.include "TABLES/TerrainNamePointers.casm"
 		.include "TEXT/TERRAINS/MapEdge.asm"
 		.include "TEXT/TERRAINS/Peak.asm"
 		.include "TEXT/TERRAINS/Thicket.asm"
@@ -442,9 +442,9 @@ DSizeEnds		:= []
 		.include "TEXT/TERRAINS/Church2.asm"
 		.include "TEXT/TERRAINS/Chest2.asm"
 	.bend
-	aCharacterData .include "TABLES/CharacterData.asm" ; 86/9A2D
+	aCharacterData .include "TABLES/CharacterData.casm" ; 86/9A2D
 	CharacterNames .block ; 86/DA4D
-		aCharacterNamePointers .include "TABLES/CharacterNamePointers.asm" ; 86/DA4D
+		aCharacterNamePointers .include "TABLES/CharacterNamePointers.casm" ; 86/DA4D
 		.include "TEXT/CHARACTERNAMES/Leif.asm"
 		.include "TEXT/CHARACTERNAMES/Finn.asm"
 		.include "TEXT/CHARACTERNAMES/Orsin.asm"
@@ -612,8 +612,8 @@ DSizeEnds		:= []
 		.include "TEXT/CHARACTERNAMES/Convoy.asm"
 	.bend
 	aMapSpriteIndexTable ; 86/E3AD
-	.include "TABLES/NormalMapSpriteIndexes.asm"
-	.include "TABLES/TallMapSpriteIndexes.asm"
+	.include "TABLES/NormalMapSpriteIndexes.casm"
+	.include "TABLES/TallMapSpriteIndexes.casm"
 	.include "ASM/PROCS/InventoryFullConvoyMenu.asm"
 
 	.fill ($870000 - *), $FF
@@ -640,7 +640,7 @@ DSizeEnds		:= []
 
 	.include "TABLES/TransformingItemTables.asm"
 	.include "TABLES/AutolevelSchemePointers.asm"
-	.include "TABLES/AutolevelData.asm"
+	.include "TABLES/AutolevelData.casm"
 
 	segmentEnd
 
@@ -663,7 +663,7 @@ DSizeEnds		:= []
 	segmentStart
 
 	ClassNames .block ; 89/8000
-		aClassNamePointers .include "TABLES/ClassNamePointers.asm"
+		aClassNamePointers .include "TABLES/ClassNamePointers.casm"
 		.include "TEXT/CLASSNAMES/Cavalier.asm"
 		.include "TEXT/CLASSNAMES/LanceKnight.asm"
 		.include "TEXT/CLASSNAMES/BowKnight.asm"
@@ -795,23 +795,23 @@ DSizeEnds		:= []
 	segmentStart
 
 	.include "ASM/EventEngine.asm"
-	aPortraitTable .include "TABLES/PortraitTable.asm" ; 8C/D12A
+	aPortraitTable .include "TABLES/PortraitTable.casm" ; 8C/D12A
 	.include "ASM/Code8CD50E.asm"
-	aChapterEventPointers .include "TABLES/ChapterEventPointers.asm" ; 8C/D561
+	aChapterEventPointers .include "TABLES/ChapterEventPointers.casm" ; 8C/D561
 	.include "EVENTS/DummyPrepGroups.asm"
 	.include "TABLES/WorldMapEventPointers.asm"
-	aBattleQuoteTable .include "TABLES/BattleQuoteTable.asm" ; 8C/DA07
+	aBattleQuoteTable .include "TABLES/BattleQuoteTable.casm" ; 8C/DA07
 		.word $0000
-	aDeathQuoteTable .include "TABLES/DeathQuoteTable.asm" ; 8C/DBC9
+	aDeathQuoteTable .include "TABLES/DeathQuoteTable.casm" ; 8C/DBC9
 		.word $0000
-	aReleaseQuoteTable .include "TABLES/ReleaseQuoteTable.asm" ; 8C/DF60
+	aReleaseQuoteTable .include "TABLES/ReleaseQuoteTable.casm" ; 8C/DF60
 		.word $0000
-	aRetreatQuoteTable .include "TABLES/RetreatQuoteTable.asm" ; 8C/E0FF
+	aRetreatQuoteTable .include "TABLES/RetreatQuoteTable.casm" ; 8C/E0FF
 		.word $0000
-	aBattleMusicTable .include "TABLES/BattleMusicTable.asm" ; 8C/E282
+	aBattleMusicTable .include "TABLES/BattleMusicTable.casm" ; 8C/E282
 		.word $0000
 		.word $0000
-	aBattleBannerTable .include "TABLES/BattleBannerTable.asm" ; 8C/E37A
+	aBattleBannerTable .include "TABLES/BattleBannerTable.casm" ; 8C/E37A
 		.word $0000
 		.word $0000
 	.include "EVENTS/Chapter3.event"
@@ -918,7 +918,7 @@ DSizeEnds		:= []
 	dialogueBank90Dialogue86 .binclude "TEXT/DIALOGUE/BANK90/Bank90Dialogue86.txt"
 	dialogueBank90Dialogue87 .binclude "TEXT/DIALOGUE/BANK90/Bank90Dialogue87.txt"
 	dialogueBank90Dialogue88 .binclude "TEXT/DIALOGUE/BANK90/Bank90Dialogue88.txt"
-	aCharacterEffectWindowTable .include "TABLES/CharacterEffectWindowTable.asm" ; 90/8764
+	aCharacterEffectWindowTable .include "TABLES/CharacterEffectWindowTable.casm" ; 90/8764
 	.include "TEXT/CHARACTEREFFECTWINDOW/Vulnerary.asm"
 	.include "TEXT/CHARACTEREFFECTWINDOW/Poison.asm"
 	.include "TEXT/CHARACTEREFFECTWINDOW/HolyWater.asm"
@@ -931,7 +931,7 @@ DSizeEnds		:= []
 	.include "TABLES/Unknown908988.asm"
 	.include "TABLES/Unknown908992.asm"
 	.include "TABLES/Unknown9089FC.asm"
-	.include "TABLES/MapAnimationItemGraphicsInfo.asm"
+	.include "TABLES/MapAnimationItemGraphicsInfo.casm"
 
 	segmentEnd
 
@@ -1828,7 +1828,7 @@ DSizeEnds		:= []
 	ItemEffectivenesses .block
 		.include "TABLES/ItemEffectiveness.asm"
 	.bend
-	aItemData .include "TABLES/ItemData.asm"
+	aItemData .include "TABLES/ItemData.casm"
 	ItemNames .block
 		.include "TABLES/ItemNamePointerTable.asm"
 		.include "TEXT/ITEMNAMES/IronSword.asm"
@@ -1999,7 +1999,7 @@ DSizeEnds		:= []
 		.include "TEXT/ITEMNAMES/SolManual.asm"
 		.include "TEXT/ITEMNAMES/LunaManual.asm"
 	.bend
-	aItemSortTable .include "TABLES/SortTable.asm"
+	aItemSortTable .include "TABLES/SortTable.casm"
 	WeaponLocks .block
 		.include "TABLES/WeaponLocks.asm"
 	.bend

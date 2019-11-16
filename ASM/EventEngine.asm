@@ -225,7 +225,7 @@ aEndEventCodeTable ; 8C/80F7
 .byte $00
 .byte $00
 
-aEventCodeTable .include "../TABLES/EventCodeHandlerPointers.asm" ; 8C/80FF
+aEventCodeTable .include "../TABLES/EventCodeHandlerPointers.casm" ; 8C/80FF
 .word $0000
 
 rsUnknown8C818F ; 8C/818F

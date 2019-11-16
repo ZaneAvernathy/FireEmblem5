@@ -7,3 +7,4 @@
 *.2bpp
 TOOLS/64tass
 TOOLS/superfamiconv
+*.casm

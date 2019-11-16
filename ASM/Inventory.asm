@@ -1,5 +1,5 @@
 
-aMainInventoryActionTable .binclude "../TABLES/InventoryActionTable.asm" ; 81/CE55
+aMainInventoryActionTable .binclude "../TABLES/InventoryActionTable.casm" ; 81/CE55
 
 rlBuildInventoryWindow ; 81/CE71
 

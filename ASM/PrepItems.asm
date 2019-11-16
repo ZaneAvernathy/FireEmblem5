@@ -1,5 +1,5 @@
 
-aMainPrepItemsActionTable .binclude "../TABLES/PrepItemsActionTable.asm" ; 81/E14D
+aMainPrepItemsActionTable .binclude "../TABLES/PrepItemsActionTable.casm" ; 81/E14D
 
 aUnknown81E1B9 ; 81/E1B9
 	.sint  0

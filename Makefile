@@ -51,13 +51,14 @@ clean:
 	$(RM) *.png
 	$(RM) *.srm
 	$(RM) *.bst
+	$(RM) *.casm
 
 veryclean: clean
 	$(RM) $(ROM_SOURCE)
 
 # Table rules
 
-%.asm: %.csv
+%.casm: %.csv
 	@python3 $(c2a) $< $@
 
 # Image rules
