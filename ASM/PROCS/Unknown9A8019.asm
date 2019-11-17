@@ -27,21 +27,21 @@ rlProcUnknown9A8019Init ; 9A/8021
 
 aProcUnknown9A8019Code ; 9A/8043
 
-	.dstruct structProcCodeHaltWhile, procUnknown9A804A
-	.dstruct structProcCodeEnd
+	PROC_HALT_WHILE procUnknown9A804A
+	PROC_END
 
 procUnknown9A804A .dstruct structProcInfo, "xx", None, None, aProcUnknown9A804ACode ; 9A/804A
 
 aProcUnknown9A804ACode ; 9A/8052
 
-	.dstruct structProcCodeCall, rlUnknown9A8074
-	.dstruct structProcCodeCall, rlUnknown9A8098
-	.dstruct structProcCodeCall, rlUnknown9A80D7
-	.dstruct structProcCodeHaltWhile, $94CCDF
-	.dstruct structProcCodeCall, rlUnknown9A808B
-	.dstruct structProcCodeYield, 120
-	.dstruct structProcCodeCall, rlUnknown9A80FE
-	.dstruct structProcCodeEnd
+	PROC_CALL rlUnknown9A8074
+	PROC_CALL rlUnknown9A8098
+	PROC_CALL rlUnknown9A80D7
+	PROC_HALT_WHILE $94CCDF
+	PROC_CALL rlUnknown9A808B
+	PROC_YIELD 120
+	PROC_CALL rlUnknown9A80FE
+	PROC_END
 
 rlUnknown9A8074 ; 9A/8074
 

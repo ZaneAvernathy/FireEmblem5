@@ -124,7 +124,7 @@ rlProcUnknown828F09OnCycle ; 82/8F5E
 
 aProcUnknown828F09Code ; 82/8FBE
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 
 

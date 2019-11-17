@@ -34,7 +34,7 @@ rlProcFadeIn1OnCycle ; 82/A127
 
 aProcFadeIn1Code ; 82/A135
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 procFadeOut1 .dstruct structProcInfo, "FO", rlProcFadeOut1Init, rlProcFadeOut1OnCycle, aProcFadeOut1Code ; 82/A137
 
@@ -71,7 +71,7 @@ rlProcFadeOut1OnCycle ; 82/A14D
 
 aProcFadeOut1Code ; 82/A15B
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 rlClearFadeIns ; 82/A15D
 
@@ -202,7 +202,7 @@ rlProcUnknown82A1BBOnCycle ; 82/A1E4
 
 aProcUnknown82A1BBCode ; 82/A20A
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 procFadeIn2 .dstruct structProcInfo, "FI", rlProcFadeIn2Init, rlProcFadeIn2OnCycle, aProcFadeIn2Code ; 82/A20C
 
@@ -263,7 +263,7 @@ rlProcFadeIn2OnCycle3 ; 82/A236
 
 aProcFadeIn2Code ; 82/A244
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 procFadeOut2 .dstruct structProcInfo, "FO", rlProcFadeOut2Init, rlProcFadeOut2OnCycle, aProcFadeOut2Code ; 82/A246
 
@@ -302,7 +302,7 @@ rlProcFadeOut2OnCycle ; 82/A262
 
 aProcFadeOut2Code ; 82/A270
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 procUnknown82A272 .dstruct structProcInfo, "Bt", rlProcUnknown82A272Init, rlProcUnknown82A272OnCycle, aProcUnknown82A272Code ; 82/A272
 
@@ -363,7 +363,7 @@ rlProcUnknown82A272OnCycle ; 82/A29B
 
 aProcUnknown82A272Code ; 82/A2C1
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 procUnknown82A2C3 .dstruct structProcInfo, "Bt", rlProcUnknown82A2C3Init, rlProcUnknown82A2C3OnCycle, aProcUnknown82A2C3Code ; 82/A2C3
 
@@ -429,4 +429,4 @@ rlProcUnknown82A2C3OnCycle ; 82/A2E4
 
 aProcUnknown82A2C3Code ; 82/A318
 
-	.dstruct structProcCodeHalt
+	PROC_HALT

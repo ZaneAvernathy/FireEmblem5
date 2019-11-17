@@ -37,4 +37,4 @@ rlProcDecompressOnCycle ; 82/A339
 
 aProcDecompressCode ; 82/A346
 
-	.dstruct structProcCodeHalt
+	PROC_HALT

@@ -57,67 +57,67 @@ rlProcDialogueInit ; 82/867C
 
 aProcDialogueCode ; 82/86D0
 
-	.dstruct structProcCodeSetOnCycle, rlProcDialogueGetPalettes
+	PROC_SET_ONCYCLE rlProcDialogueGetPalettes
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlProcDialogueFadeToPalette
+	PROC_SET_ONCYCLE rlProcDialogueFadeToPalette
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlProcDialogueMain
+	PROC_SET_ONCYCLE rlProcDialogueMain
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown828880
+	PROC_SET_ONCYCLE rlUnknown828880
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8288AB
+	PROC_SET_ONCYCLE rlUnknown8288AB
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8288D1
+	PROC_SET_ONCYCLE rlUnknown8288D1
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8288F7
+	PROC_SET_ONCYCLE rlUnknown8288F7
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown82891D
+	PROC_SET_ONCYCLE rlUnknown82891D
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown828943
+	PROC_SET_ONCYCLE rlUnknown828943
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeCall, $84A17D
+	PROC_CALL $84A17D
 
-	.dstruct structProcCodeCall, rlRestoreMenuTextPalette
+	PROC_CALL rlRestoreMenuTextPalette
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeEnd
+	PROC_END
 
 rlProcDialogueGetPalettes ; 82/8738
 
@@ -740,77 +740,77 @@ rlProcDialogueUnknown828A38Init ; 82/8A42
 
 aProcDialogueUnknown828A38Code ; 82/8AC8
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown828B3F
+	PROC_SET_ONCYCLE rlUnknown828B3F
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown828BA6
+	PROC_SET_ONCYCLE rlUnknown828BA6
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown828BDC
+	PROC_SET_ONCYCLE rlUnknown828BDC
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown828BF0
+	PROC_SET_ONCYCLE rlUnknown828BF0
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown828C08
+	PROC_SET_ONCYCLE rlUnknown828C08
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown828C1C
+	PROC_SET_ONCYCLE rlUnknown828C1C
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8288AB
+	PROC_SET_ONCYCLE rlUnknown8288AB
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8288D1
+	PROC_SET_ONCYCLE rlUnknown8288D1
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8288F7
+	PROC_SET_ONCYCLE rlUnknown8288F7
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown82891D
+	PROC_SET_ONCYCLE rlUnknown82891D
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown828943
+	PROC_SET_ONCYCLE rlUnknown828943
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeCall, $84A17D
+	PROC_CALL $84A17D
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeEnd
+	PROC_END
 
 rlUnknown828B3F ; 82/8B3F
 

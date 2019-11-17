@@ -38,7 +38,7 @@ rlProcEventFadeInOnCycle ; 82/8EC6
 
 aProcEventFadeInCode ; 82/8ED4
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 procEventFadeOut .dstruct structProcInfo, "EO", rlProcEventFadeOutInit, rlProcEventFadeOutOnCycle, aProcEventFadeOutCode ; 82/8ED6
 
@@ -84,5 +84,5 @@ rlProcEventFadeOutOnCycle ; 82/8EF0
 
 aProcEventFadeOutCode ; 82/8F07
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 

@@ -51,4 +51,4 @@ rlProcMEOnCycle ; 82/8D1E
 
 aProcMECode ; 82/8D2B
 
-	.dstruct structProcCodeHalt
+	PROC_HALT

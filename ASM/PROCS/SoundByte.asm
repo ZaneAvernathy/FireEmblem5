@@ -72,8 +72,8 @@ rlProcSoundByteOnCycle3 ; 81/A384
 
 aProcSoundByteCode ; 82/A38E
 
-	.dstruct structProcCodeYield, 3
+	PROC_YIELD 3
 
-	.dstruct structProcCodeSetOnCycle, rlProcSoundByteOnCycle2
+	PROC_SET_ONCYCLE rlProcSoundByteOnCycle2
 
-	.dstruct structProcCodeHalt
+	PROC_HALT

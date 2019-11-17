@@ -63,4 +63,4 @@ rlProcUnitActionOnCycle2 ; 82/8FFE
 
 aProcUnitActionCode ; 82/9029
 
-	.dstruct structProcCodeHalt
+	PROC_HALT

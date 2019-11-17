@@ -12,15 +12,15 @@ rlProcMapSwitchInit ; 82/8624
 
 aProcMapSwitchCode ; 82/8625
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, rlProcMapSwitchMain
+	PROC_SET_ONCYCLE rlProcMapSwitchMain
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeEnd
+	PROC_END
 
 rlProcMapSwitchMain ; 82/8633
 

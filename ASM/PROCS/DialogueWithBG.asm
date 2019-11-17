@@ -181,5 +181,5 @@ rlProcDialogueWithBGOnCycle5 ; 82/8E0B
 
 aProcDialogueWithBGCode ; 82/8E2C
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 

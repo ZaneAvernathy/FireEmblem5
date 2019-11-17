@@ -30,4 +30,4 @@ rlProcMusicEventOnCycle ; 82/8E39
 
 aProcMusicEventCode ; 82/8E43
 
-	.dstruct structProcCodeHalt
+	PROC_HALT

@@ -326,7 +326,7 @@ rlProcPortraitOnCycle5 ; 82/918C
 	rtl
 
 aProcPortraitCode ; 82/91AA
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 rsProcPortraitRenderPortrait ; 82/91AC
 
@@ -936,7 +936,7 @@ rlProcItemSelectPortraitOnCycle3 ; 82/940D
 	rtl
 
 aProcItemSelectPortraitCode ; 82/9412
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 aDialogueBoxHDMAInfo .dstruct structHDMAArrayEntryInfo, rlDialogueBoxHDMAInit, rlDialogueBoxHDMAOnCycle, aDialogueBoxHDMACode, aDialogueHDMATable, CGADSUB - PPU_REG_BASE, DMAPx_Setting(DMAPx_TransferCPUToIO, DMAPx_Mode1, DMAPx_ABusIncrement, DMAPx_Direct) ; 82/9414
 
@@ -1068,73 +1068,73 @@ procPortrait5 .dstruct structProcInfo, (5, "@"), rlProcPortraitBGInit, None, aPr
 
 aProcPortraitBGCode ; 82/960D
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown829832
+	PROC_SET_ONCYCLE rlUnknown829832
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlCopyDialogueBoxGraphicsAndPalette
+	PROC_SET_ONCYCLE rlCopyDialogueBoxGraphicsAndPalette
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rsClearDialogueBoxBG3
+	PROC_SET_ONCYCLE rsClearDialogueBoxBG3
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8298F0
+	PROC_SET_ONCYCLE rlUnknown8298F0
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeHaltWhileDecompressing
+	PROC_HALT_WHILE_DECOMPRESSING
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown829921
+	PROC_SET_ONCYCLE rlUnknown829921
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8296E2
+	PROC_SET_ONCYCLE rlUnknown8296E2
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeCall, rlUnknown829684
+	PROC_CALL rlUnknown829684
 
-	.dstruct structProcCodeHaltWhile, $9A94AB
+	PROC_HALT_WHILE $9A94AB
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown82999C
+	PROC_SET_ONCYCLE rlUnknown82999C
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8299AC
+	PROC_SET_ONCYCLE rlUnknown8299AC
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeCall, rlUnknown82974B
+	PROC_CALL rlUnknown82974B
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8296E2
+	PROC_SET_ONCYCLE rlUnknown8296E2
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeCall, rlUnknown8296B3
+	PROC_CALL rlUnknown8296B3
 
-	.dstruct structProcCodeHaltWhile, $9A94AB
+	PROC_HALT_WHILE $9A94AB
 
-	.dstruct structProcCodeEnd
+	PROC_END
 
 rlUnknown829684 ; 82/9684
 

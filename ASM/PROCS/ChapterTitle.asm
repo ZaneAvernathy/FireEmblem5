@@ -59,26 +59,26 @@ rlSetupChapterTitleWindow ; 9A/8154
 
 aProcChapterTitleCode ; 9A/8198
 
-	.dstruct structProcCodeCall, $9A8154
-	.dstruct structProcCodeSetOnCycle, $9A823E
-	.dstruct structProcCodeYield, 1
+	PROC_CALL $9A8154
+	PROC_SET_ONCYCLE $9A823E
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeHaltWhileDecompressing
+	PROC_HALT_WHILE_DECOMPRESSING
 
-	.dstruct structProcCodeCall, $9A82B7
-	.dstruct structProcCodeHaltWhile, $94CCDF
+	PROC_CALL $9A82B7
+	PROC_HALT_WHILE $94CCDF
 
-	.dstruct structProcCodeCall, $9A827D
-	.dstruct structProcCodeYield, 1
+	PROC_CALL $9A827D
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, $9A82ED
-	.dstruct structProcCodeYield, 1
+	PROC_SET_ONCYCLE $9A82ED
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeCallArgs, $8EEC3A, size(_Args1)
+	PROC_CALL_ARGS $8EEC3A, size(_Args1)
 	_Args1 .block
 		.word $0030
 		.long $7E4BF8
@@ -86,23 +86,23 @@ aProcChapterTitleCode ; 9A/8198
 		.word $0040
 		.byte $00
 	.bend
-	.dstruct structProcCodeYield, 10
+	PROC_YIELD 10
 
-	.dstruct structProcCodeCall, rlUnknown9A8220
-	.dstruct structProcCodeCall, $8EB1AC
+	PROC_CALL rlUnknown9A8220
+	PROC_CALL $8EB1AC
 
 	_Label1
-	.dstruct structProcCodeYield, 1
-	.dstruct structProcCodeJumpIfRoutineTrue, _Label1, $8EB1CE
+	PROC_YIELD 1
+	PROC_JUMP_IF_ROUTINE_TRUE _Label1, $8EB1CE
 
-	.dstruct structProcCodeHaltWhile, $8EEC55
+	PROC_HALT_WHILE $8EEC55
 
 	.word <>rsProcCodeUnknown82A088
 
-	.dstruct structProcCodeHaltUntilButtonNewAndTime, 150, (JoypadA | JoypadStart | JoypadB)
-	.dstruct structProcCodeCall, $8EB1E2
+	PROC_HALT_UNTIL_BUTTON_NEW_TIME 150, (JoypadA | JoypadStart | JoypadB)
+	PROC_CALL $8EB1E2
 
-	.dstruct structProcCodeCallArgs, $8EEC3A, size(_Args2)
+	PROC_CALL_ARGS $8EEC3A, size(_Args2)
 	_Args2 .block
 		.word $0030
 		.long $7E4CF8
@@ -112,14 +112,14 @@ aProcChapterTitleCode ; 9A/8198
 	.bend
 
 	_Label2
-	.dstruct structProcCodeYield, 1
-	.dstruct structProcCodeJumpIfRoutineTrue, _Label2, $8EB1F6
+	PROC_YIELD 1
+	PROC_JUMP_IF_ROUTINE_TRUE _Label2, $8EB1F6
 
-	.dstruct structProcCodeHaltWhile, $8EEC55
+	PROC_HALT_WHILE $8EEC55
 
-	.dstruct structProcCodeCall, $9A8229
+	PROC_CALL $9A8229
 
-	.dstruct structProcCodeEnd
+	PROC_END
 
 rlUnknown9A8220 ; 9A/8220
 

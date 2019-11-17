@@ -12,4 +12,4 @@ rlProcNPStub ; 82/866F
 
 aProcNPCode ; 82/8670
 
-	.dstruct structProcCodeEnd
+	PROC_END

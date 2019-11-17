@@ -29,7 +29,7 @@ rlProcMapScrollOnCycle ; 82/8FC9
 
 aProcMapScrollCode ; 82/8FD5
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 procMapScrollUnknown .dstruct structProcInfo, "MS", rlProcMapScrollInitUnknown, rlProcMapScrollOnCycleUnknown, aProcMapScrollCodeUnknown
 
@@ -61,4 +61,4 @@ rlProcMapScrollOnCycleUnknown ; 82/8FE0
 
 aProcMapScrollCodeUnknown ; 82/8FEC
 
-	.dstruct structProcCodeHalt
+	PROC_HALT

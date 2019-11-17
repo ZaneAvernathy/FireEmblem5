@@ -39,7 +39,7 @@ rlProcEventPauseOnCycle ; 82/8E60
 
 aProcEventPauseCode ; 82/8E6A
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 procEventPauseUntilButton .dstruct structProcInfo, "e0", rlProcEventPauseUntilButtonInit, rlProcEventPauseUntilButtonOnCycle, aProcEventPauseUntilButtonCode
 
@@ -73,7 +73,7 @@ rlProcEventPauseUntilButtonOnCycle ; 82/8E77
 
 aProcEventPauseUntilButtonCode ; 82/8E83
 
-	.dstruct structProcCodeHalt
+	PROC_HALT
 
 procEventPauseUntilTimeOrButton .dstruct structProcInfo, "e0", rlProcEventPauseUntilTimeOrButtonInit, rlProcEventPauseUntilTimeOrButtonOnCycle, aProcEventPauseUntilTimeOrButtonCode
 
@@ -114,4 +114,4 @@ rlProcEventPauseUntilTimeOrButtonOnCycle ; 82/8E98
 
 aProcEventPauseUntilTimeOrButtonCode ; 82/8EAA
 
-	.dstruct structProcCodeHalt
+	PROC_HALT

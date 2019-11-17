@@ -21,59 +21,59 @@ rlProcEventTestInit ; 82/8008
 
 aProcEventTestCode ; 82/801D
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8288AB
+	PROC_SET_ONCYCLE rlUnknown8288AB
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8288D1
+	PROC_SET_ONCYCLE rlUnknown8288D1
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown8288F7
+	PROC_SET_ONCYCLE rlUnknown8288F7
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown82891D
+	PROC_SET_ONCYCLE rlUnknown82891D
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeSetOnCycle, rlUnknown828943
+	PROC_SET_ONCYCLE rlUnknown828943
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeCall, rlProcEventTestSetBG3
+	PROC_CALL rlProcEventTestSetBG3
 
-	.dstruct structProcCodeCall, rlProcEventTestClearBG1Tilemap
+	PROC_CALL rlProcEventTestClearBG1Tilemap
 
-	.dstruct structProcCodeSetOnCycle, rlProcEventTestGetJoypadInput
+	PROC_SET_ONCYCLE rlProcEventTestGetJoypadInput
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeCall, rlProcEventTestHandleAction
+	PROC_CALL rlProcEventTestHandleAction
 
-	.dstruct structProcCodeSetOnCycle, rlProcEventTestWaitForEventEnd
+	PROC_SET_ONCYCLE rlProcEventTestWaitForEventEnd
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeSetOnCycle, None
+	PROC_SET_ONCYCLE None
 
-	.dstruct structProcCodeYield, 1
+	PROC_YIELD 1
 
-	.dstruct structProcCodeJump, aProcEventTestCode
+	PROC_JUMP aProcEventTestCode
 
 rlProcEventTestSetBG3 ; 82/807A
 
