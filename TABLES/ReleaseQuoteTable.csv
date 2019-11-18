@@ -1,6 +1,6 @@
 structReleaseQuoteEntry 0,Character,Chapter,Flag,DialoguePointer
-GalzusChapter5ReleaseQuote,Galzus,Chapter5,$A6,None
-GalzusChapter6ReleaseQuote,Galzus,Chapter6,$A6,None
+GalzusChapter5ReleaseQuote,Galzus,Chapter5,FlagGalzusDead,None
+GalzusChapter6ReleaseQuote,Galzus,Chapter6,FlagGalzusDead,None
 BaldachChapter13ReleaseQuote,Baldach,Chapter13,None,dialogueBaldachChapter13ReleaseQuote
 ConomoreChapter16AReleaseQuote,Conomore,Chapter16A,None,dialogueConomoreChapter16AReleaseQuote
 AmaldaChapter17BReleaseQuote,Amalda,Chapter17B,None,dialogueAmaldaChapter17BReleaseQuote
