@@ -2,30 +2,30 @@
 eventChapter2Events ; 99/81B4
 
 	_OpeningEventDefinitions ; 99/81B4
-		EVENT $00, _OpeningEvent
+		EVENT FlagAlwaysZero, _OpeningEvent
 			CMP_WORD wCurrentTurn, 0
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_TurnEventDefinitions ; 99/81C1
-		EVENT $02, eventMapDeathQuoteDummyEvent
+		EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
 			CHECK_DEAD Bakst
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
-		EVENT $00, _BottomPirateReinforcements
+		EVENT FlagAlwaysZero, _BottomPirateReinforcements
 			CMP_WORD wCurrentTurn, 3
 			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_UNSET $02
+			TEST_FLAG_UNSET FlagBossDeath
 		END_DEFINITION
-		EVENT $00, _MiddlePirateReinforcements
+		EVENT FlagAlwaysZero, _MiddlePirateReinforcements
 			CMP_WORD wCurrentTurn, 6
 			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_UNSET $02
+			TEST_FLAG_UNSET FlagBossDeath
 		END_DEFINITION
-		EVENT $00, _TopPirateReinforcements
+		EVENT FlagAlwaysZero, _TopPirateReinforcements
 			CMP_WORD wCurrentTurn, 8
 			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_UNSET $02
+			TEST_FLAG_UNSET FlagBossDeath
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
@@ -42,7 +42,7 @@ eventChapter2Events ; 99/81B4
 			macroEventConditionCheckCoords [8, 10]
 			TEST_FLAG_UNSET $0A
 		END_DEFINITION
-		EVENT $00, _RonanHouseVisitVillageAttacked
+		EVENT FlagAlwaysZero, _RonanHouseVisitVillageAttacked
 			CMP_WORD wCurrentPhase, Player
 			macroEventConditionCheckCoords [8, 10]
 			TEST_FLAG_SET $0A
@@ -56,7 +56,7 @@ eventChapter2Events ; 99/81B4
 			macroEventConditionCheckCoords [16, 13]
 			TEST_FLAG_UNSET $0A
 		END_DEFINITION
-		EVENT $00, _SpeedRingHouseVisitVillageAttacked
+		EVENT FlagAlwaysZero, _SpeedRingHouseVisitVillageAttacked
 			CMP_WORD wCurrentPhase, Player
 			macroEventConditionCheckCoords [16, 13]
 			TEST_FLAG_SET $0A
@@ -70,7 +70,7 @@ eventChapter2Events ; 99/81B4
 			macroEventConditionCheckCoords [10, 20]
 			TEST_FLAG_UNSET $0A
 		END_DEFINITION
-		EVENT $00, _VulneraryHouseVisitVillageAttacked
+		EVENT FlagAlwaysZero, _VulneraryHouseVisitVillageAttacked
 			CMP_WORD wCurrentPhase, Player
 			macroEventConditionCheckCoords [10, 20]
 			TEST_FLAG_SET $0A
@@ -79,7 +79,7 @@ eventChapter2Events ; 99/81B4
 			macroEventConditionCheckCoords [17, 19]
 			CMP_WORD wCurrentPhase, Player
 		END_DEFINITION
-		EVENT $00, _EndingEvent
+		EVENT FlagAlwaysZero, _EndingEvent
 			macroEventConditionCheckCoords [9, 3]
 			CMP_WORD wCurrentPhase, Player
 		END_DEFINITION
@@ -185,21 +185,21 @@ eventChapter2Events ; 99/81B4
 		macroDestroyHouseByTileChangeID 1
 
 		SET_FLAG $0A
-		SET_FLAG $01
+		SET_FLAG FlagAlliedDeath
 	END1
 
 	_SpeedRingHouseDestroy ; 99/853D
 		macroDestroyHouseByTileChangeID 2
 
 		SET_FLAG $0A
-		SET_FLAG $01
+		SET_FLAG FlagAlliedDeath
 	END1
 
 	_VulneraryHouseDestroy
 		macroDestroyHouseByTileChangeID 3
 
 		SET_FLAG $0A
-		SET_FLAG $01
+		SET_FLAG FlagAlliedDeath
 	END1
 
 	_BottomPirateReinforcements ; 99/85A3
@@ -233,11 +233,9 @@ eventChapter2Events ; 99/81B4
 	END2
 
 	_OpeningEvent ; 99/85CA
-		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusActing
-		CALL_ASM_LOOP rlASMCAllUnitsSetTurnStatus, $0000
+		macroSetAllCharacterTurnStatus (TurnStatusUnknown1 | TurnStatusActing)
 
-		STORE_WORD wEventEngineParameter1, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved
-		CALL_ASM_LOOP rlASMCAllUnitsUnsetTurnStatus, $0000
+		macroUnsetAllCharacterTurnStatus (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved)
 
 		STORE_WORD lEventEngineUnitGroupPointer, $0002
 		CALL_ASM_LOOP rlASMCGetStartingPositionsArrayPointerAndLength, $0000
@@ -246,7 +244,7 @@ eventChapter2Events ; 99/81B4
 
 		SET_CAMERA [2, 2]
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
 		PLAY_SOUND_WORD $00E0
 		PAUSE_SKIPPABLE 32
@@ -280,8 +278,7 @@ eventChapter2Events ; 99/81B4
 		DIALOGUE dialogueChapter2Opening1
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, FriegeBishop2
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+		macroRemoveUnit FriegeBishop2
 
 		WAIT_MOVE
 		YIELD
@@ -345,8 +342,7 @@ eventChapter2Events ; 99/81B4
 		SCROLL_CAMERA_SPEED [7, 20], 3
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Eyvel
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		macroCountAllUncapturedAliveUnits Eyvel
 		JUMP_FALSE +
 
 		DIALOGUE dialogueChapter2Opening2A
@@ -355,8 +351,7 @@ eventChapter2Events ; 99/81B4
 		JUMP +++
 
 		+
-		STORE_WORD wEventEngineCharacterTarget, Finn
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		macroCountAllUncapturedAliveUnits Finn
 		JUMP_FALSE +
 
 		DIALOGUE dialogueChapter2Opening2B

@@ -2,38 +2,38 @@
 eventChapter4xEvents ; FD/85C5
 
 	_OpeningEventDefinitions ; FD/85C5
-		EVENT $00, _OpeningEvent
+		EVENT FlagAlwaysZero, _OpeningEvent
 			CMP_WORD wCurrentTurn, 0
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_TurnEventDefinitions ; FD/85D2
-		EVENT $00, _SoldierLeftReinforcements
+		EVENT FlagAlwaysZero, _SoldierLeftReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 10, 24
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 40
 		END_DEFINITION
-		EVENT $00, _ArcherLeftReinforcements
+		EVENT FlagAlwaysZero, _ArcherLeftReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 10, 24
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 40
 		END_DEFINITION
-		EVENT $00, _SoldierRightReinforcements
+		EVENT FlagAlwaysZero, _SoldierRightReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 10, 24
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 40
 		END_DEFINITION
-		EVENT $00, _ArcherRightReinforcements
+		EVENT FlagAlwaysZero, _ArcherRightReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 10, 24
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 40
 		END_DEFINITION
-		EVENT $00, _MyrmidonLeftReinforcements
+		EVENT FlagAlwaysZero, _MyrmidonLeftReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 12, 32
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 40
 		END_DEFINITION
-		EVENT $00, _MyrmidonRightReinforcements
+		EVENT FlagAlwaysZero, _MyrmidonRightReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 12, 32
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 40
@@ -75,14 +75,14 @@ eventChapter4xEvents ; FD/85C5
 
 	_BeforeActionEventDefinitions ; FD/875A
 		macroPlayerRetreatDefinition $08, eventChapter4xEvents._PlayerRetreat
-		EVENT $00, _NPCRetreat
+		EVENT FlagAlwaysZero, _NPCRetreat
 			CMP_WORD wCurrentPhase, NPC
 			TEST_FLAG_UNSET $08
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_AfterActionEventDefinitions ; FD/87A7
-		EVENT $00, _EndingEvent
+		EVENT FlagAlwaysZero, _EndingEvent
 			TEST_FLAG_SET $08
 		END_DEFINITION
 	END_DEFINITION_ARRAY
@@ -372,11 +372,9 @@ eventChapter4xEvents ; FD/85C5
 	_OpeningEvent ; FD/8E69
 		CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
 
-		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusActing
-		CALL_ASM_LOOP rlASMCAllUnitsSetTurnStatus, $0000
+		macroSetAllCharacterTurnStatus (TurnStatusUnknown1 | TurnStatusActing)
 
-		STORE_WORD wEventEngineParameter1, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved
-		CALL_ASM_LOOP rlASMCAllUnitsUnsetTurnStatus, $0000
+		macroUnsetAllCharacterTurnStatus (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved)
 
 		STORE_WORD lEventEngineUnitGroupPointer, $0002
 		CALL_ASM_LOOP rlASMCGetStartingPositionsArrayPointerAndLength, $0000
@@ -509,9 +507,3 @@ eventChapter4xEvents ; FD/85C5
 
 	.word $0000
 	.word $0000
-
-
-
-
-
-

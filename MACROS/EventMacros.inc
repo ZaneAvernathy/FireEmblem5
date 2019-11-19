@@ -1,4 +1,50 @@
 
+macroCountAllUncapturedAliveUnits .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+	.endm
+
+macroCountPlayerUncapturedAliveUnits .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCCountPlayerUnitUncapturedAlive, $0000
+	.endm
+
+macroCountEnemyUncapturedAliveUnits .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCCountEnemyUnitUncapturedAlive, $0000
+	.endm
+
+macroCountNPCUncapturedAliveUnits .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCCountNPCUnitUncapturedAlive, $0000
+	.endm
+
+macroMountUnit .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCMount, $0000
+	.endm
+
+macroDismountUnit .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCDismount, $0000
+	.endm
+
+macroCountAllUnitsWithCharacterDataWord .macro Field, Value
+		STORE_WORD wEventEngineParameter1, \Field
+		STORE_WORD wEventEngineParameter2, \Value
+		CALL_ASM_LOOP rlASMCCountAllUnitsWithCharacterDataWord, $0000
+	.endm
+
+macroCheckIfCaptured .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCIsUnitCaptured, $0000
+	.endm
+
+macroCheckAlive .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+	.endm
+
 macroItemHouse .macro DialoguePointer, Item, Coords, TileID
 		PLAY_SOUND_WORD $00F7
 		DIALOGUE \DialoguePointer
@@ -57,6 +103,20 @@ macroSetCharacterByte .macro Character, Field, Value
 		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
 	.endm
 
+macroSetAllCharacterByteIfCharacterWord .macro Field, Value, CheckCharacter, CheckField
+		STORE_WORD wEventEngineCharacterStructParameter, \CheckField
+		STORE_WORD wEventEngineCharacterTarget, \CheckCharacter
+		STORE_WORD wEventEngineParameter1, \Field
+		STORE_WORD wEventEngineParameter2, \Value
+		CALL_ASM_LOOP rlASMCSetCharacterDataByteIfWord, $0000
+	.endm
+
+macroSetAllCharacterByte .macro Field, Value
+		STORE_WORD wEventEngineParameter1, \Field
+		STORE_WORD wEventEngineParameter2, \Value
+		CALL_ASM_LOOP rlASMCAllUnitsSetCharacterDataByte, $0000
+	.endm
+
 macroAddCharacterByte .macro Character, Field, Value
 		STORE_WORD wEventEngineCharacterTarget, \Character
 		STORE_WORD wEventEngineParameter1, \Field
@@ -69,6 +129,13 @@ macroSubtractCharacterByte .macro Character, Field, Value
 		STORE_WORD wEventEngineParameter1, \Field
 		STORE_WORD wEventEngineParameter2, \Value
 		CALL_ASM_LOOP rlASMCSubtractCharacterDataByte, $0000
+	.endm
+
+macroSetCharacterBitsWord .macro Character, Field, Bits
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		STORE_WORD wEventEngineParameter1, \Field
+		STORE_WORD wEventEngineParameter2, \Bits
+		CALL_ASM_LOOP rlASMCSetBitsCharacterDataWord, $0000
 	.endm
 
 macroUnsetCharacterBitsWord .macro Character, Field, Bits
@@ -102,6 +169,31 @@ macroUnsetCharacterTurnStatus .macro Character, TurnStatus
 		CALL_ASM_LOOP rlASMCUnsetUnitTurnStatus, $0000
 	.endm
 
+macroSetAllCharacterTurnStatus .macro TurnStatus
+		STORE_WORD wEventEngineParameter1, \TurnStatus
+		CALL_ASM_LOOP rlASMCAllUnitsSetTurnStatus, $0000
+	.endm
+
+macroUnsetAllCharacterTurnStatus .macro TurnStatus
+		STORE_WORD wEventEngineParameter1, \TurnStatus
+		CALL_ASM_LOOP rlASMCAllUnitsUnsetTurnStatus, $0000
+	.endm
+
+macroCheckIfRescuedByAllyOrNPC .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+	.endm
+
+macroCheckIfRescued .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCIsUnitRescued, $0000
+	.endm
+
+macroClearRescue .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCClearRescue, $0000
+	.endm
+
 macroDialogueWithBackground .macro DialoguePointer, BackgroundID
 		STORE_WORD wEventEngineParameter1, \BackgroundID
 		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
@@ -123,7 +215,7 @@ macroEventConditionCheckCoordRanges .macro UpperLeft, LowerRight
 	.endm
 
 macroShopDefinition .macro ChapterShopData
-		EVENT $00, \ChapterShopData
+		EVENT FlagAlwaysZero, \ChapterShopData
 			CMP_BYTE_AT wCursorXCoord, \ChapterShopData
 			CMP_BYTE_AT wCursorYCoord, \ChapterShopData+1
 		END_DEFINITION
@@ -146,6 +238,11 @@ macroDestroyHouseByTileChangeID .macro TileChangeID
 	.endm
 
 macroOpenDoorByTileChangeID .macro TileChangeID, SoundID=$6B
+		PLAY_SOUND_BYTE \SoundID
+		macroTileChangeByID \TileChangeID
+	.endm
+
+macroOpenDrawbridgeByTileChangeID .macro TileChangeID, SoundID=$6E
 		PLAY_SOUND_BYTE \SoundID
 		macroTileChangeByID \TileChangeID
 	.endm
@@ -184,6 +281,13 @@ macroDoorDefinition .macro EventFlag, Coords, EventPointer
 		END_DEFINITION
 	.endm
 
+macroDrawbridgeDefinition .macro EventFlag, Coords, EventPointer
+		EVENT \EventFlag, \EventPointer
+			CMP_BYTE wEventEngineUnknownXTarget, \Coords[0]
+			CMP_BYTE wEventEngineUnknownYTarget, \Coords[1]
+		END_DEFINITION
+	.endm
+
 macroRemoveUnit .macro Character
 		STORE_WORD wEventEngineCharacterTarget, \Character
 		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
@@ -200,7 +304,7 @@ macroPlayerRetreatDefinition .macro EventFlag, EventPointer
 			RUN_ASM rlEventDefinitionCheckRetreatCoordinates
 			CHECK_CARRYING Leif
 		END_DEFINITION
-		EVENT $00, \EventPointer
+		EVENT FlagAlwaysZero, \EventPointer
 			CMP_BITS $7E4F98, $0008
 			TEST_FLAG_UNSET \EventFlag
 			RUN_ASM rlEventDefinitionCheckRetreatCoordinates
@@ -239,16 +343,29 @@ macroConvertToPlayerAllegiance .macro Character
 		CALL_ASM_LOOP rlASMCChangeAllegianceToPlayer, $0000
 	.endm
 
+macroConvertToEnemyAllegiance .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCChangeAllegianceToEnemy, $0000
+	.endm
+
+macroConvertToNPCAllegiance .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCChangeAllegianceToNPC, $0000
+	.endm
+
+macroConvertToPlayerAllegianceIfCaptured .macro Character
+		STORE_WORD wEventEngineCharacterTarget, \Character
+		CALL_ASM_LOOP rlASMCChangeAllegianceToPlayerIfCaptured, $0000
+	.endm
+
 macroScriptedWarpStaff .macro CastingCharacter, TargetCharacter, Coords
 		; Coords of [-1, -1] mean "off the map" and
 		; should be followed by removing the target unit
 		; Otherwise this thould be followed by a WARP_UNIT
-		STORE_WORD wEventEngineCharacterTarget, \CastingCharacter
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		macroCountAllUncapturedAliveUnits \CastingCharacter
 		JUMP_FALSE +
 
-		STORE_WORD wEventEngineCharacterTarget, \TargetCharacter
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		macroCountAllUncapturedAliveUnits \TargetCharacter
 		JUMP_FALSE +
 
 		STORE_WORD wEventEngineParameter1, Warp
@@ -274,12 +391,10 @@ macroScriptedWarpStaff .macro CastingCharacter, TargetCharacter, Coords
 	.endm
 
 macroScriptedStoneCast .macro CastingCharacter, TargetCharacter
-		STORE_WORD wEventEngineCharacterTarget, \CastingCharacter
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		macroCountAllUncapturedAliveUnits \CastingCharacter
 		JUMP_FALSE +
 
-		STORE_WORD wEventEngineCharacterTarget, \TargetCharacter
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		macroCountAllUncapturedAliveUnits \TargetCharacter
 		JUMP_FALSE +
 
 		STORE_WORD wEventEngineParameter1, Stone

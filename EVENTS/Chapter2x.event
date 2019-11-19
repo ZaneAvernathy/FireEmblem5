@@ -2,51 +2,51 @@
 eventChapter2xEvents ; 97/805A
 
 	_OpeningEventDefinitions ; 97/805A
-		EVENT $00, _OpeningEvent
+		EVENT FlagAlwaysZero, _OpeningEvent
 			CMP_WORD wCurrentTurn, 0
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_TurnEventDefinitions ; 97/8067
-		EVENT $02, eventMapDeathQuoteDummyEvent
+		EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
 			CHECK_DEAD Lithis
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
-		EVENT $00, _ShivaAIChange
+		EVENT FlagAlwaysZero, _ShivaAIChange
 			CMP_WORD wCurrentTurn, 25
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
-		EVENT $01, eventMapDeathQuoteDummyEvent
+		EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
 			CMP_WORD wCurrentTurn, 22
 			CHECK_NUM_UNITS_GTE Shiva, 1
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
-		EVENT $00, _MyrmidonWarriorReinforcements
+		EVENT FlagAlwaysZero, _MyrmidonWarriorReinforcements
 			CMP_WORD wCurrentTurn, 2
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
-		EVENT $00, _TopIslandReinforcements
+		EVENT FlagAlwaysZero, _TopIslandReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 5, 9
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 30
-			TEST_FLAG_UNSET $02
+			TEST_FLAG_UNSET FlagBossDeath
 		END_DEFINITION
-		EVENT $00, _LowerRightIslandReinforcements
+		EVENT FlagAlwaysZero, _LowerRightIslandReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 10, 14
 			ROLL_RNG 80
 			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_UNSET $02
+			TEST_FLAG_UNSET FlagBossDeath
 		END_DEFINITION
-		EVENT $00, _LowerLeftIslandReinforcements
+		EVENT FlagAlwaysZero, _LowerLeftIslandReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 15, 20
 			ROLL_RNG 20
 			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_UNSET $02
+			TEST_FLAG_UNSET FlagBossDeath
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_LocationEventDefinitions ; 97/80F3
-		EVENT $00, _EndingEvent
+		EVENT FlagAlwaysZero, _EndingEvent
 			macroEventConditionCheckCoords [23, 2]
 			CMP_WORD wCurrentPhase, Player
 			CMP_WORD aSelectedCharacterBuffer.Character, Leif
@@ -119,7 +119,7 @@ eventChapter2xEvents ; 97/805A
 	.word $0000
 
 	_OpeningEvent ; 97/8208
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
 		PLAY_SOUND_WORD $00E0
 		PAUSE_SKIPPABLE 32
@@ -132,11 +132,9 @@ eventChapter2xEvents ; 97/805A
 
 		macroAddCharacterByte Leif, structCharacterDataRAM.LeadershipStars, 1
 
-		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusActing
-		CALL_ASM_LOOP rlASMCAllUnitsSetTurnStatus, $0000
+		macroSetAllCharacterTurnStatus (TurnStatusUnknown1 | TurnStatusActing)
 
-		STORE_WORD wEventEngineParameter1, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved
-		CALL_ASM_LOOP rlASMCAllUnitsUnsetTurnStatus, $0000
+		macroUnsetAllCharacterTurnStatus (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved)
 
 		STORE_WORD lEventEngineUnitGroupPointer, $000002
 		CALL_ASM_LOOP rlASMCGetStartingPositionsArrayPointerAndLength, $0000
@@ -315,7 +313,7 @@ eventChapter2xEvents ; 97/805A
 
 		CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
 
-		STORE_BYTE bBuf_INIDISP, $00
+		STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
 
 		STORE_LONG lEventEngineUnitGroupPointer, eventChapter2xData._SapphieGroup
 		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000

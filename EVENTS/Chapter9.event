@@ -2,24 +2,24 @@
 eventChapter9Events ; 8C/F011
 
 	_OpeningEventDefinitions ; 8C/F011
-		EVENT $00, _OpeningEvent
+		EVENT FlagAlwaysZero, _OpeningEvent
 			CMP_WORD wCurrentTurn, 0
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_TurnEventDefinitions ; 8C/F01E
-		EVENT $02, eventMapDeathQuoteDummyEvent
+		EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
 			CHECK_DEAD Merloch
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
-		EVENT $01, eventMapDeathQuoteDummyEvent
-			TEST_FLAG_SET $03
+		EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+			TEST_FLAG_SET FlagPlayerDeath
 		END_DEFINITION
-		EVENT $00, _EnemyAIChange1
+		EVENT FlagAlwaysZero, _EnemyAIChange1
 			CMP_WORD wCurrentTurn, 20
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
-		EVENT $00, _EnemyAIChange2
+		EVENT FlagAlwaysZero, _EnemyAIChange2
 			CMP_WORD wCurrentTurn, 22
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
@@ -39,13 +39,11 @@ eventChapter9Events ; 8C/F011
 
 	_LocationEventDefinitions ; 8C/F077
 		EVENT $21, _ValasScrollHouse
-			CMP_BYTE wCursorXCoord, 16
-			CMP_BYTE wCursorYCoord, 4
+			macroEventConditionCheckCoords [16, 4]
 			CMP_WORD wCurrentPhase, Player
 		END_DEFINITION
 		EVENT $22, _StaminaDrinkHouse
-			CMP_BYTE wCursorXCoord, 23
-			CMP_BYTE wCursorYCoord, 29
+			macroEventConditionCheckCoords [23, 29]
 			CMP_WORD wCurrentPhase, Player
 		END_DEFINITION
 	END_DEFINITION_ARRAY
@@ -53,50 +51,38 @@ eventChapter9Events ; 8C/F011
 	_BeforeActionEventDefinitions ; 8C/F0A3
 		EVENT $09, _PlayerRetreat
 			CMP_BITS $7E4F98, $0008
-			CMP_BYTE wCursorXCoord, 6
-			CMP_BYTE wCursorYCoord, 4
+			macroEventConditionCheckCoords [6, 4]
 			CMP_WORD aSelectedCharacterBuffer.Character, Leif
 		END_DEFINITION
 		EVENT $09, _PlayerRetreat
 			CMP_BITS $7E4F98, $0008
-			CMP_BYTE wCursorXCoord, 6
-			CMP_BYTE wCursorYCoord, 4
+			macroEventConditionCheckCoords [6, 4]
 			CHECK_CARRYING Leif
 		END_DEFINITION
-		EVENT $00, _PlayerRetreat
+		EVENT FlagAlwaysZero, _PlayerRetreat
 			CMP_BITS $7E4F98, $0008
 			TEST_FLAG_UNSET $09
-			CMP_BYTE wCursorXCoord, 6
-			CMP_BYTE wCursorYCoord, 4
+			macroEventConditionCheckCoords [6, 4]
 		END_DEFINITION
-		EVENT $00, _PlayerLoss
-			CMP_BYTE wCursorXCoord, 6
-			CMP_BYTE wCursorYCoord, 4
+		EVENT FlagAlwaysZero, _PlayerLoss
+			macroEventConditionCheckCoords [6, 4]
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_AfterActionEventDefinitions ; 8C/F104
-		EVENT $00, _EndingEvent
+		EVENT FlagAlwaysZero, _EndingEvent
 			TEST_FLAG_SET $09
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_BattleEventDefinitions ; 8C/F10D
-		EVENT $05, eventBattleQuoteDummyEvent
-			CHECK_SINGLE Merloch
-		END_DEFINITION
+		macroBossQuoteDefinition $05, Merloch
 	END_DEFINITION_ARRAY
 
 	_ShopEventDefinitions ; 8C/F117
-		EVENT $00, eventChapter9Data._Vendor
-			CMP_BYTE_AT wCursorXCoord, eventChapter9Data._Vendor
-			CMP_BYTE_AT wCursorYCoord, eventChapter9Data._Vendor+1
-		END_DEFINITION
-		EVENT $00, eventChapter9Data._Armory
-			CMP_BYTE_AT wCursorXCoord, eventChapter9Data._Armory
-			CMP_BYTE_AT wCursorYCoord, eventChapter9Data._Armory+1
-		END_DEFINITION
+		macroShopDefinition eventChapter9Data._Vendor
+		macroShopDefinition eventChapter9Data._Armory
 	END_DEFINITION_ARRAY
 
 	_LeifSelphinaTalk ; 8C/F13F
@@ -145,25 +131,14 @@ eventChapter9Events ; 8C/F011
 		STORE_WORD wEventEngineParameter1, TurnStatusActing
 		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
 
-		STORE_WORD wEventEngineParameter1, ParagonSword
-		PAUSE_SKIPPABLE 10
-		YIELD
-
-		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
-		YIELD_UNK
-
-		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+		macroGiveItemToActiveUnit ParagonSword
 
 		STORE_WORD wEventEngineParameter1, TurnStatusActing
 		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
 	END2
 
 	_EnemyAIChange1 ; 8C/F1C2
-		STORE_WORD wEventEngineCharacterTarget, Merloch
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		macroCountAllUncapturedAliveUnits Merloch
 		JUMP_FALSE +
 
 		SCROLL_CAMERA_CHAR Merloch
@@ -171,50 +146,19 @@ eventChapter9Events ; 8C/F011
 		YIELD
 
 		+
-		STORE_WORD wEventEngineCharacterTarget, ThracianBishop
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+		macroSetCharacterByte ThracianBishop, structCharacterDataRAM.AI1, $00
+		macroSetCharacterByte ThracianBishop, structCharacterDataRAM.AI4, $00
+		macroSetCharacterByte ThracianBishop, structCharacterDataRAM.AI2, $00
+		macroSetCharacterByte ThracianBishop, structCharacterDataRAM.Unknown3E, $00
 
-		STORE_WORD wEventEngineCharacterTarget, ThracianBishop
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, ThracianBishop
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, ThracianBishop
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, ThracianArmoredLance
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, ThracianArmoredLance
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, ThracianArmoredLance
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, ThracianArmoredLance
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+		macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.AI1, $00
+		macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.AI4, $00
+		macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.AI2, $00
+		macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.Unknown3E, $00
 	END2
 
 	_EnemyAIChange2 ; 8C/F297
-		STORE_WORD wEventEngineCharacterTarget, Merloch
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		macroCountAllUncapturedAliveUnits Merloch
 		JUMP_FALSE +
 
 		SCROLL_CAMERA_CHAR Merloch
@@ -222,127 +166,30 @@ eventChapter9Events ; 8C/F011
 		YIELD
 
 		+
-		STORE_WORD wEventEngineCharacterTarget, Merloch
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+		macroSetCharacterByte Merloch, structCharacterDataRAM.AI1, $00
+		macroSetCharacterByte Merloch, structCharacterDataRAM.AI4, $00
+		macroSetCharacterByte Merloch, structCharacterDataRAM.AI2, $0E
+		macroSetCharacterByte Merloch, structCharacterDataRAM.Unknown3E, $00
 
-		STORE_WORD wEventEngineCharacterTarget, Merloch
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Merloch
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $0E
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Merloch
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, ThracianWyvernRider
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, ThracianWyvernRider
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, ThracianWyvernRider
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $0E
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, ThracianWyvernRider
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+		macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.AI1, $00
+		macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.AI4, $00
+		macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.AI2, $0E
+		macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.Unknown3E, $00
 	END2
 
 	_ValasScrollHouse ; 8C/F36C
-		PLAY_SOUND_WORD $00F7
-		DIALOGUE dialogueChapter9ValasScrollHouse
-		YIELD
-
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
-
-		STORE_WORD wEventEngineParameter1, ValasScroll
-		PAUSE_SKIPPABLE 10
-		YIELD
-
-		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
-		YIELD_UNK
-
-		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
-
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
-
-		STORE_WORD wEventEngineXCoordinate, 16
-		STORE_WORD wEventEngineYCoordinate, 4
-		STORE_WORD wEventEngineParameter1, $0021
-		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
-		YIELD_UNK
+		macroItemHouse dialogueChapter9ValasScrollHouse, ValasScroll, [16, 4], $0021
 	END2
 
 	_StaminaDrinkHouse ; 8C/F3CF
-		PLAY_SOUND_WORD $00F7
-		DIALOGUE dialogueChapter9StaminaDrinkHouse
-		YIELD
-
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
-
-		STORE_WORD wEventEngineParameter1, StaminaDrink
-		PAUSE_SKIPPABLE 10
-		YIELD
-
-		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
-		YIELD_UNK
-
-		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
-
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
-
-		STORE_WORD wEventEngineXCoordinate, 23
-		STORE_WORD wEventEngineYCoordinate, 29
-		STORE_WORD wEventEngineParameter1, $0021
-		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
-		YIELD_UNK
+		macroItemHouse dialogueChapter9StaminaDrinkHouse, StaminaDrink, [23, 29], $0021
 	END2
 
 	_PlayerRetreat ; 8C/F432
 		PAUSE_SKIPPABLE 15
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, $0000
-		STORE_WORD_FROM wEventEngineCharacterTarget, aSelectedCharacterBuffer.Character
-		DIALOGUE_ARRAY aRetreatQuoteTable
-		YIELD
-
-		CALL_ASM_LOOP rlASMCUpdateRetreatingUnitTurnStatus, $0000
-		CALL_ASM_LOOP rlASMCCopyRetreatingUnitDataToEventBuffer, $0000
-
-		MOVE_UNIT $FFFF, [0, 0], [0, 0], 1, _RetreatMovestring
-		YIELD_UNK
-
-		CALL_ASM_LOOP rlASMCUnknown8CA097, $0000
-		WAIT_MOVE
-		YIELD
-
-		CALL_ASM_LOOP rlASMCCopyRetreatingUnitDataFromEventBuffer, $0000
+		macroHaveActiveUnitRetreat eventChapter9Events._RetreatMovestring
 	END2
 
 	_RetreatMovestring ; 8C/F46F
@@ -354,7 +201,7 @@ eventChapter9Events ; 8C/F011
 	.word $0000
 
 	_OpeningEvent ; 8C/F478
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
 		PLAY_SOUND_WORD $00E0
 		PAUSE_SKIPPABLE 32
@@ -363,11 +210,7 @@ eventChapter9Events ; 8C/F011
 		SET_MUSIC $3D
 		YIELD
 
-		STORE_LONG wProcInput1+1, dialogueChapter9Title
-		STORE_WORD wProcInput1, <>dialogueChapter9Title
-		STORE_LONG lR43, $9A814C
-		CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
-		YIELD
+		macroChapterTitlePopup dialogueChapter9Title
 
 		SCROLL_CAMERA_SPEED [18, 20], 4
 
@@ -398,11 +241,8 @@ eventChapter9Events ; 8C/F011
 		WAIT_MOVE
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Altena
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Travant
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+		macroRemoveUnit Altena
+		macroRemoveUnit Travant
 
 		WAIT_MOVE
 		YIELD
@@ -413,10 +253,7 @@ eventChapter9Events ; 8C/F011
 		WAIT_MOVE
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, FriegeBishop2
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.LeadershipStars
-		STORE_WORD wEventEngineParameter2, 3
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+		macroSetCharacterByte FriegeBishop2, structCharacterDataRAM.LeadershipStars, 3
 
 		STORE_WORD wEventEngineXCoordinate, 6
 		STORE_WORD wEventEngineYCoordinate, 4
@@ -425,20 +262,12 @@ eventChapter9Events ; 8C/F011
 		SCROLL_CAMERA_SPEED [6, 4], 4
 		YIELD
 
-		STORE_WORD wEventEngineParameter1, 1
-		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
-
-		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter9Opening2
-		YIELD_UNK
-		YIELD_UNK
-		YIELD_UNK
+		macroDialogueWithBackground dialogueChapter9Opening2, 1
 
 		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
 		YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
 		YIELD
 
@@ -474,19 +303,12 @@ eventChapter9Events ; 8C/F011
 
 		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
 
-		STORE_WORD wEventEngineParameter1, 1
-		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
-		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter9Ending1
-		YIELD_UNK
-		YIELD_UNK
-		YIELD_UNK
+		macroDialogueWithBackground dialogueChapter9Ending1, 1
 
 		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
 		YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
 		DIALOGUE dialogueChapter9Ending2
 		YIELD
@@ -502,10 +324,7 @@ eventChapter9Events ; 8C/F011
 		DIALOGUE dialogueChapter9Ending3
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Leif
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.LeadershipStars
-		STORE_WORD wEventEngineParameter2, 1
-		CALL_ASM_LOOP rlASMCAddCharacterDataByte, $0000
+		macroAddCharacterByte Leif, structCharacterDataRAM.LeadershipStars, 1
 
 		PLAY_SOUND_WORD $00E7
 

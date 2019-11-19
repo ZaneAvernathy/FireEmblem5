@@ -2,16 +2,16 @@
 eventChapter1Events ; FD/8000
 
 	_OpeningEventDefinitions ; FD/8000
-		EVENT $00, _OpeningEvent
+		EVENT FlagAlwaysZero, _OpeningEvent
 			CMP_WORD wCurrentTurn, 0
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_TurnEventDefinitions ; FD/800D
-		EVENT $01, eventMapDeathQuoteDummyEvent
-			TEST_FLAG_SET $03
+		EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+			TEST_FLAG_SET FlagPlayerDeath
 		END_DEFINITION
-		EVENT $00, _DagdarAndCo
+		EVENT FlagAlwaysZero, _DagdarAndCo
 			CMP_WORD wCurrentTurn, 3
 			CMP_WORD wCurrentPhase, Player
 		END_DEFINITION
@@ -31,7 +31,7 @@ eventChapter1Events ; FD/8000
 			macroEventConditionCheckCoords [13, 16]
 			CMP_WORD aSelectedCharacterBuffer.Character, Orsin
 		END_DEFINITION
-		EVENT $00, _OrsinHouseOther
+		EVENT FlagAlwaysZero, _OrsinHouseOther
 			TEST_FLAG_UNSET $21
 			macroEventConditionCheckCoords [13, 16]
 		END_DEFINITION
@@ -51,11 +51,11 @@ eventChapter1Events ; FD/8000
 			macroEventConditionCheckCoords [18, 10]
 			CMP_WORD aSelectedCharacterBuffer.Character, Halvan
 		END_DEFINITION
-		EVENT $00, _HalvanHouseOther
+		EVENT FlagAlwaysZero, _HalvanHouseOther
 			TEST_FLAG_UNSET $22
 			macroEventConditionCheckCoords [18, 10]
 		END_DEFINITION
-		EVENT $00, _EndingEvent
+		EVENT FlagAlwaysZero, _EndingEvent
 			macroEventConditionCheckCoords [17, 5]
 			CMP_WORD wCurrentPhase, Player
 			CMP_WORD aSelectedCharacterBuffer.Character, Leif
@@ -174,7 +174,7 @@ eventChapter1Events ; FD/8000
 
 	_OpeningEvent ; FD/8398
 		SET_CAMERA [2, 2]
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
 		PLAY_SOUND_WORD $00E0
 		PAUSE_SKIPPABLE 32
@@ -230,8 +230,8 @@ eventChapter1Events ; FD/8000
 		WAIT_MOVE
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Nanna
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+		macroRemoveUnit Nanna
+
 		WAIT_MOVE
 		YIELD
 
@@ -240,8 +240,8 @@ eventChapter1Events ; FD/8000
 		WAIT_MOVE
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Mareeta
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+		macroRemoveUnit Mareeta
+
 		WAIT_MOVE
 		YIELD
 
@@ -250,8 +250,7 @@ eventChapter1Events ; FD/8000
 		WAIT_MOVE
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Raydrik
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+		macroRemoveUnit Raydrik
 		WAIT_MOVE
 		YIELD
 
@@ -403,7 +402,7 @@ eventChapter1Events ; FD/8000
 
 		CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
 
-		STORE_BYTE bBuf_INIDISP, $00
+		STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
 		PLAY_SOUND_WORD $00E7
 		FADE_OUT $01
 		YIELD

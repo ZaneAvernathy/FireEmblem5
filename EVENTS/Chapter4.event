@@ -2,59 +2,59 @@
 eventChapter4Events ; 99/8778
 
 	_OpeningEventDefinitions ; 99/8778
-		EVENT $00, _OpeningEvent
+		EVENT FlagAlwaysZero, _OpeningEvent
 			CMP_WORD wCurrentTurn, 0
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_TurnEventDefinitions ; 99/8785
-		EVENT $00, _DetectedCheck
+		EVENT FlagAlwaysZero, _DetectedCheck
 			CMP_WORD wCurrentPhase, Enemy
 			TEST_FLAG_UNSET $07
 		END_DEFINITION
-		EVENT $00, _LeftSoldierReinforcements
+		EVENT FlagAlwaysZero, _LeftSoldierReinforcements
 			CMP_WORD wCurrentPhase, Enemy
 			TEST_FLAG_SET $07
 			CMP_WORD_RANGE wCurrentTurn, 7, 20
 			ROLL_RNG 40
 			CHECK_NUM_UNITS_LTE MansterSoldier2, 12
 		END_DEFINITION
-		EVENT $00, _MiddleLeftSoldierReinforcements
+		EVENT FlagAlwaysZero, _MiddleLeftSoldierReinforcements
 			CMP_WORD wCurrentPhase, Enemy
 			TEST_FLAG_SET $07
 			CMP_WORD_RANGE wCurrentTurn, 8, 60
 			ROLL_RNG 40
 			CHECK_NUM_UNITS_LTE MansterSoldier2, 12
 		END_DEFINITION
-		EVENT $00, _MiddleRightSoldierReinforcements
+		EVENT FlagAlwaysZero, _MiddleRightSoldierReinforcements
 			CMP_WORD wCurrentPhase, Enemy
 			TEST_FLAG_SET $07
 			CMP_WORD_RANGE wCurrentTurn, 12, 24
 			ROLL_RNG 40
 			CHECK_NUM_UNITS_LTE MansterSoldier2, 12
 		END_DEFINITION
-		EVENT $00, _RightSoldierReinforcements
+		EVENT FlagAlwaysZero, _RightSoldierReinforcements
 			CMP_WORD wCurrentPhase, Enemy
 			TEST_FLAG_SET $07
 			CMP_WORD_RANGE wCurrentTurn, 10, 24
 			ROLL_RNG 40
 			CHECK_NUM_UNITS_LTE MansterSoldier2, 12
 		END_DEFINITION
-		EVENT $00, _LithisDialogue
+		EVENT FlagAlwaysZero, _LithisDialogue
 			CMP_WORD wCurrentPhase, Enemy
 			CMP_WORD wCurrentTurn, 1
 			TEST_FLAG_UNSET $2C
 		END_DEFINITION
-		EVENT $00, _LeifDialogue
+		EVENT FlagAlwaysZero, _LeifDialogue
 			CMP_WORD wCurrentPhase, Player
 			CMP_WORD wCurrentTurn, 2
 		END_DEFINITION
-		EVENT $00, _NPCDialogue
+		EVENT FlagAlwaysZero, _NPCDialogue
 			CMP_WORD wCurrentPhase, NPC
 			CMP_WORD wCurrentTurn, 2
 			TEST_FLAG_UNSET $23
 		END_DEFINITION
-		EVENT $00, _BrigandFlee
+		EVENT FlagAlwaysZero, _BrigandFlee
 			CMP_WORD wCurrentPhase, NPC
 			CMP_WORD wCurrentTurn, 15
 		END_DEFINITION
@@ -84,21 +84,21 @@ eventChapter4Events ; 99/8778
 		macroDoorDefinition $2A, [18, 21], eventChapter4Events._Door8
 		macroDoorDefinition $2B, [7, 24], eventChapter4Events._Door9
 		macroDoorDefinition $2C, [16, 24], eventChapter4Events._Door10
-		EVENT $00, _RandomChest
+		EVENT FlagAlwaysZero, _RandomChest
 			CHECK_IF_RANDOM_CHEST
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_BeforeActionEventDefinitions ; 99/891E
 		macroPlayerRetreatDefinition $08, eventChapter4Events._PlayerRetreat
-		EVENT $00, _NPCRetreat
+		EVENT FlagAlwaysZero, _NPCRetreat
 			CMP_WORD wCurrentPhase, NPC
 			TEST_FLAG_UNSET $08
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_AfterActionEventDefinitions ; 99/896B
-		EVENT $00, _EndingEvent
+		EVENT FlagAlwaysZero, _EndingEvent
 			TEST_FLAG_SET $08
 		END_DEFINITION
 	END_DEFINITION_ARRAY
@@ -261,12 +261,10 @@ eventChapter4Events ; 99/8778
 		EVENT_CMP_BYTE_AT_EQ wUnknown001730, 0
 		JUMP_FALSE +
 
-		STORE_WORD wEventEngineCharacterTarget, Karin
-		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+		macroCheckIfRescuedByAllyOrNPC Karin
 		JUMP_FALSE +
 
-		STORE_WORD wEventEngineCharacterTarget, Fergus
-		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+		macroCheckIfRescuedByAllyOrNPC Fergus
 		JUMP_FALSE +
 
 		PLAY_SOUND_WORD $00E0
@@ -332,17 +330,14 @@ eventChapter4Events ; 99/8778
 		DIALOGUE dialogueChapter4DahlsonRecruitment
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Dahlson
-		CALL_ASM_LOOP rlASMCChangeAllegianceToPlayer, $0000
-
+		macroConvertToPlayerAllegiance Dahlson
 		macroSetCharacterWord Dahlson, structCharacterDataRAM.Leader, Leif
 
 		SET_FLAG $09
 	END2
 
 	_LithisDialogue ; 99/8F07
-		STORE_WORD wEventEngineCharacterTarget, Lithis
-		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+		macroCheckIfRescuedByAllyOrNPC Lithis
 		JUMP_FALSE +
 
 		PLAY_SOUND_WORD $00E0
@@ -447,17 +442,13 @@ eventChapter4Events ; 99/8778
 	_OpeningEvent ; 99/8FD4
 		CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
 
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Fatigue
-		STORE_WORD wEventEngineParameter2, 0
-		CALL_ASM_LOOP rlASMCAllUnitsSetCharacterDataByte, $0000
+		macroSetAllCharacterByte structCharacterDataRAM.Fatigue, 0
 
 		CALL_ASM_LOOP $83ACEA, $0000
 
-		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusActing
-		CALL_ASM_LOOP rlASMCAllUnitsSetTurnStatus, $0000
+		macroSetAllCharacterTurnStatus (TurnStatusUnknown1 | TurnStatusActing)
 
-		STORE_WORD wEventEngineParameter1, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved
-		CALL_ASM_LOOP rlASMCAllUnitsUnsetTurnStatus, $0000
+		macroUnsetAllCharacterTurnStatus (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved)
 
 		SCROLL_CAMERA_ADDRESS eventChapter4Data._PlayerGroup2CameraCoordinates
 		YIELD
@@ -616,22 +607,22 @@ eventChapter4Events ; 99/8778
 		macroSetCharacterWord Lara, structCharacterDataRAM.Leader, Leif
 		macroSetCharacterWord Brighton, structCharacterDataRAM.Leader, Leif
 
-		EVENT_TEST_FLAG_SET $95
+		EVENT_TEST_FLAG_SET FlagChp4Civilian2Saved
 		JUMP_FALSE +
 
-		EVENT_TEST_FLAG_SET $96
+		EVENT_TEST_FLAG_SET FlagChp4Civilian3Saved
 		JUMP_FALSE +
 
-		EVENT_TEST_FLAG_SET $97
+		EVENT_TEST_FLAG_SET FlagChp4Civilian4Saved
 		JUMP_FALSE +
 
-		EVENT_TEST_FLAG_SET $98
+		EVENT_TEST_FLAG_SET FlagChp4Civilian5Saved
 		JUMP_FALSE +
 
-		EVENT_TEST_FLAG_SET $99
+		EVENT_TEST_FLAG_SET FlagChp4Civilian6Saved
 		JUMP_FALSE +
 
-		EVENT_TEST_FLAG_SET $9A
+		EVENT_TEST_FLAG_SET FlagChp4Civilian7Saved
 		JUMP_FALSE +
 
 		JUMP ++

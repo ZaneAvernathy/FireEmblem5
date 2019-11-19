@@ -2,35 +2,35 @@
 eventChapter3Events ; 8C/E435
 
 	_OpeningEventDefinitions ; 8C/E435
-		EVENT $00, _OpeningEvent
+		EVENT FlagAlwaysZero, _OpeningEvent
 			CMP_WORD wCurrentTurn, 0
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_TurnEventDefinitions ; 8C/E442
-		EVENT $02, eventMapDeathQuoteDummyEvent
+		EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
 			CHECK_DEAD Lobos
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
-		EVENT $00, _Brigand1Reinforcements
+		EVENT FlagAlwaysZero, _Brigand1Reinforcements
 			CMP_WORD_RANGE wCurrentTurn, 10, 16
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 60
-			TEST_FLAG_UNSET $02
+			TEST_FLAG_UNSET FlagBossDeath
 		END_DEFINITION
-		EVENT $00, _Brigand2Reinforcements
+		EVENT FlagAlwaysZero, _Brigand2Reinforcements
 			CMP_WORD_RANGE wCurrentTurn, 10, 16
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 60
-			TEST_FLAG_UNSET $02
+			TEST_FLAG_UNSET FlagBossDeath
 		END_DEFINITION
-		EVENT $00, _SoldierReinforcements
+		EVENT FlagAlwaysZero, _SoldierReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 14, 16
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 75
-			TEST_FLAG_UNSET $02
+			TEST_FLAG_UNSET FlagBossDeath
 		END_DEFINITION
-		EVENT $00, _ArmorReinforcements
+		EVENT FlagAlwaysZero, _ArmorReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 11, 17
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 50
@@ -51,7 +51,7 @@ eventChapter3Events ; 8C/E435
 			CHECK_CARRYING Cairpre
 			macroEventConditionCheckCoords [23, 22]
 		END_DEFINITION
-		EVENT $00, _CairpreHouseOther
+		EVENT FlagAlwaysZero, _CairpreHouseOther
 			CMP_WORD wCurrentPhase, Player
 			TEST_FLAG_UNSET $2E
 			macroEventConditionCheckCoords [23, 22]
@@ -65,7 +65,7 @@ eventChapter3Events ; 8C/E435
 			CHECK_CARRYING Lucia
 			macroEventConditionCheckCoords [20, 27]
 		END_DEFINITION
-		EVENT $00, _LuciaHouseOther
+		EVENT FlagAlwaysZero, _LuciaHouseOther
 			CMP_WORD wCurrentPhase, Player
 			TEST_FLAG_UNSET $2F
 			macroEventConditionCheckCoords [20, 27]
@@ -79,7 +79,7 @@ eventChapter3Events ; 8C/E435
 			CHECK_CARRYING Romeo
 			macroEventConditionCheckCoords [20, 22]
 		END_DEFINITION
-		EVENT $00, _RomeoHouseOther
+		EVENT FlagAlwaysZero, _RomeoHouseOther
 			CMP_WORD wCurrentPhase, Player
 			TEST_FLAG_UNSET $30
 			macroEventConditionCheckCoords [20, 22]
@@ -93,7 +93,7 @@ eventChapter3Events ; 8C/E435
 			CHECK_CARRYING Hubert
 			macroEventConditionCheckCoords [23, 27]
 		END_DEFINITION
-		EVENT $00, _HubertHouseOther
+		EVENT FlagAlwaysZero, _HubertHouseOther
 			CMP_WORD wCurrentPhase, Player
 			TEST_FLAG_UNSET $31
 			macroEventConditionCheckCoords [23, 27]
@@ -109,7 +109,7 @@ eventChapter3Events ; 8C/E435
 		macroDoorDefinition $33, [15, 1], eventChapter3Events._Door9
 		macroChestDefinition $28, eventChapter3Data._Chest1Events, eventChapter3Data._Chest1Coordinates
 		macroChestDefinition $29, eventChapter3Data._Chest2Events, eventChapter3Data._Chest2Coordinates
-		EVENT $00, _EndingEvent
+		EVENT FlagAlwaysZero, _EndingEvent
 			macroEventConditionCheckCoords [12, 4]
 			CMP_WORD wCurrentPhase, Player
 			CMP_WORD aSelectedCharacterBuffer.Character, Leif
@@ -202,7 +202,7 @@ eventChapter3Events ; 8C/E435
 
 		macroSingleTileChangeByCoordinates [23, 22], $03F0
 
-		SET_FLAG $81
+		SET_FLAG FlagCairpreSaved
 	END2
 
 	_LuciaHouseOther ; 8C/E733
@@ -281,7 +281,7 @@ eventChapter3Events ; 8C/E435
 		DIALOGUE dialogueChapter3HubertHouseHubert
 		YIELD
 
-		SET_FLAG $83
+		SET_FLAG FlagHubertSaved
 
 		macroSingleTileChangeByCoordinates [23, 27], $03F0
 	END2
@@ -344,16 +344,14 @@ eventChapter3Events ; 8C/E435
 	_OpeningEvent ; 8C/EAC4
 		CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
 
-		STORE_BYTE bBuf_INIDISP, $00
+		STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
 
 		SET_CAMERA [13, 8]
 		YIELD
 
-		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusActing
-		CALL_ASM_LOOP rlASMCAllUnitsSetTurnStatus, $0000
+		macroSetAllCharacterTurnStatus (TurnStatusUnknown1 | TurnStatusActing)
 
-		STORE_WORD wEventEngineParameter1, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved
-		CALL_ASM_LOOP rlASMCAllUnitsUnsetTurnStatus, $0000
+		macroUnsetAllCharacterTurnStatus (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved)
 
 		STORE_WORD lEventEngineUnitGroupPointer, $000002
 		CALL_ASM_LOOP rlASMCGetStartingPositionsArrayPointerAndLength, $0000
@@ -377,7 +375,7 @@ eventChapter3Events ; 8C/E435
 
 		FADE_IN $02
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
 		PLAY_SOUND_WORD $00E0
 		PAUSE_SKIPPABLE 32
@@ -546,9 +544,7 @@ eventChapter3Events ; 8C/E435
 		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
 		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
 
-		STORE_WORD wEventEngineCharacterTarget, Leif
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
+		macroSetCharacterTurnStatus Leif, TurnStatusActing
 
 		macroDialogueWithBackground dialogueChapter3Ending1, 1
 
@@ -564,8 +560,7 @@ eventChapter3Events ; 8C/E435
 		SET_MUSIC $42
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Eyvel
-		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+		macroCheckIfRescuedByAllyOrNPC Eyvel
 		JUMP_FALSE +
 
 		SCROLL_CAMERA_CHAR Eyvel
@@ -576,8 +571,7 @@ eventChapter3Events ; 8C/E435
 		YIELD
 
 		+
-		STORE_WORD wEventEngineCharacterTarget, Finn
-		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+		macroCheckIfRescuedByAllyOrNPC Finn
 		JUMP_FALSE +
 
 		SCROLL_CAMERA_CHAR Finn
@@ -588,8 +582,7 @@ eventChapter3Events ; 8C/E435
 		YIELD
 
 		+
-		STORE_WORD wEventEngineCharacterTarget, Orsin
-		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+		macroCheckIfRescuedByAllyOrNPC Orsin
 		JUMP_FALSE +
 
 		SCROLL_CAMERA_CHAR Orsin
@@ -600,8 +593,7 @@ eventChapter3Events ; 8C/E435
 		YIELD
 
 		+
-		STORE_WORD wEventEngineCharacterTarget, Halvan
-		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+		macroCheckIfRescuedByAllyOrNPC Halvan
 		JUMP_FALSE +
 
 		SCROLL_CAMERA_CHAR Halvan
@@ -612,8 +604,7 @@ eventChapter3Events ; 8C/E435
 		YIELD
 
 		+
-		STORE_WORD wEventEngineCharacterTarget, Sapphie
-		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+		macroCheckIfRescuedByAllyOrNPC Sapphie
 		JUMP_FALSE +
 
 		SCROLL_CAMERA_CHAR Sapphie
@@ -624,8 +615,7 @@ eventChapter3Events ; 8C/E435
 		YIELD
 
 		+
-		STORE_WORD wEventEngineCharacterTarget, Dagdar
-		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+		macroCheckIfRescuedByAllyOrNPC Dagdar
 		JUMP_FALSE +
 
 		SCROLL_CAMERA_CHAR Dagdar
@@ -641,107 +631,98 @@ eventChapter3Events ; 8C/E435
 		FADE_OUT $01
 		YIELD
 
-		STORE_BYTE bBuf_INIDISP, $00
+		STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
 
 		macroUnsetCharacterTurnStatus Eyvel, TurnStatusCaptured
 
 		macroCheckTurnStatusSet Eyvel, TurnStatusCaptured
 		JUMP_TRUE +
 
-		STORE_WORD wEventEngineCharacterTarget, Eyvel
-		CALL_ASM_LOOP rlASMCClearRescue, $0000
+		macroClearRescue Eyvel
 
-		macroUnsetCharacterTurnStatus Eyvel, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2
+		macroUnsetCharacterTurnStatus Eyvel, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Eyvel, TurnStatusActing | TurnStatusInvisible
+		macroSetCharacterTurnStatus Eyvel, (TurnStatusActing | TurnStatusInvisible)
 
 		+
 		macroCheckTurnStatusSet Finn, TurnStatusCaptured
 		JUMP_TRUE +
 
-		STORE_WORD wEventEngineCharacterTarget, Finn
-		CALL_ASM_LOOP rlASMCClearRescue, $0000
+		macroClearRescue Finn
 
-		macroUnsetCharacterTurnStatus Finn, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2
+		macroUnsetCharacterTurnStatus Finn, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Finn, TurnStatusActing | TurnStatusInvisible
+		macroSetCharacterTurnStatus Finn, (TurnStatusActing | TurnStatusInvisible)
 
 		+
 		macroCheckTurnStatusSet Orsin, TurnStatusCaptured
 		JUMP_TRUE +
 
-		STORE_WORD wEventEngineCharacterTarget, Orsin
-		CALL_ASM_LOOP rlASMCClearRescue, $0000
+		macroClearRescue Orsin
 
-		macroUnsetCharacterTurnStatus Orsin, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2
+		macroUnsetCharacterTurnStatus Orsin, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Orsin, TurnStatusActing | TurnStatusInvisible
+		macroSetCharacterTurnStatus Orsin, (TurnStatusActing | TurnStatusInvisible)
 
 		+
 		macroCheckTurnStatusSet Halvan, TurnStatusCaptured
 		JUMP_TRUE +
 
-		STORE_WORD wEventEngineCharacterTarget, Halvan
-		CALL_ASM_LOOP rlASMCClearRescue, $0000
+		macroClearRescue Halvan
 
-		macroUnsetCharacterTurnStatus Halvan, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2
+		macroUnsetCharacterTurnStatus Halvan, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Halvan, TurnStatusActing | TurnStatusInvisible
+		macroSetCharacterTurnStatus Halvan, (TurnStatusActing | TurnStatusInvisible)
 
 		+
 		macroCheckTurnStatusSet Dagdar, TurnStatusCaptured
 		JUMP_TRUE +
 
-		STORE_WORD wEventEngineCharacterTarget, Dagdar
-		CALL_ASM_LOOP rlASMCClearRescue, $0000
+		macroClearRescue Dagdar
 
-		macroUnsetCharacterTurnStatus Dagdar, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2
+		macroUnsetCharacterTurnStatus Dagdar, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Dagdar, TurnStatusActing | TurnStatusInvisible
+		macroSetCharacterTurnStatus Dagdar, (TurnStatusActing | TurnStatusInvisible)
 
 		+
 		macroCheckTurnStatusSet Marty, TurnStatusCaptured
 		JUMP_TRUE +
 
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		CALL_ASM_LOOP rlASMCClearRescue, $0000
+		macroClearRescue Marty
 
-		macroUnsetCharacterTurnStatus Marty, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2
+		macroUnsetCharacterTurnStatus Marty, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Marty, TurnStatusActing | TurnStatusInvisible
+		macroSetCharacterTurnStatus Marty, (TurnStatusActing | TurnStatusInvisible)
 
 		+
 		macroCheckTurnStatusSet Ronan, TurnStatusCaptured
 		JUMP_TRUE +
 
-		STORE_WORD wEventEngineCharacterTarget, Ronan
-		CALL_ASM_LOOP rlASMCClearRescue, $0000
+		macroClearRescue Ronan
 
-		macroUnsetCharacterTurnStatus Ronan, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2
+		macroUnsetCharacterTurnStatus Ronan, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Ronan, TurnStatusActing | TurnStatusInvisible
+		macroSetCharacterTurnStatus Ronan, (TurnStatusActing | TurnStatusInvisible)
 
 		+
 		macroCheckTurnStatusSet Sapphie, TurnStatusCaptured
 		JUMP_TRUE +
 
-		STORE_WORD wEventEngineCharacterTarget, Sapphie
-		CALL_ASM_LOOP rlASMCClearRescue, $0000
+		macroClearRescue Sapphie
 
-		macroUnsetCharacterTurnStatus Sapphie, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2
+		macroUnsetCharacterTurnStatus Sapphie, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Sapphie, TurnStatusActing | TurnStatusInvisible
+		macroSetCharacterTurnStatus Sapphie, (TurnStatusActing | TurnStatusInvisible)
 
 		+
 		macroCheckTurnStatusSet Tanya, TurnStatusCaptured
 		JUMP_TRUE +
 
-		STORE_WORD wEventEngineCharacterTarget, Tanya
-		CALL_ASM_LOOP rlASMCClearRescue, $0000
+		macroClearRescue Tanya
 
-		macroUnsetCharacterTurnStatus Tanya, TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2
+		macroUnsetCharacterTurnStatus Tanya, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Tanya, TurnStatusActing | TurnStatusInvisible
+		macroSetCharacterTurnStatus Tanya, (TurnStatusActing | TurnStatusInvisible)
 
 		+
 		FADE_OUT $01

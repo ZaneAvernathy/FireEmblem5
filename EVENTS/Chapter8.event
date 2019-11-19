@@ -2,39 +2,39 @@
 eventChapter8Events ; 99/BE7D
 
 	_OpeningEventDefinitions ; 99/BE7D
-		EVENT $00, _OpeningEvent
+		EVENT FlagAlwaysZero, _OpeningEvent
 			CMP_WORD wCurrentTurn, 0
 		END_DEFINITION
 	END_DEFINITION_ARRAY
 
 	_TurnEventDefinitions ; 99/BE8A
-		EVENT $02, eventMapDeathQuoteDummyEvent
+		EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
 			CHECK_DEAD Rumaigh
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
-		EVENT $00, _GomerAppear
+		EVENT FlagAlwaysZero, _GomerAppear
 			CMP_WORD wCurrentTurn, 1
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
-		EVENT $00, _RightReinforcements
+		EVENT FlagAlwaysZero, _RightReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 7, 24
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 30
-			TEST_FLAG_UNSET $02
+			TEST_FLAG_UNSET FlagBossDeath
 		END_DEFINITION
-		EVENT $00, _LeftReinforcements
+		EVENT FlagAlwaysZero, _LeftReinforcements
 			CMP_WORD_RANGE wCurrentTurn, 5, 30
 			CMP_WORD wCurrentPhase, Enemy
 			ROLL_RNG 80
-			TEST_FLAG_UNSET $02
+			TEST_FLAG_UNSET FlagBossDeath
 		END_DEFINITION
-		EVENT $00, _RumaighAIChange
+		EVENT FlagAlwaysZero, _RumaighAIChange
 			CMP_WORD wCurrentTurn, 16
 			CHECK_NUM_UNITS_GTE Rumaigh, 1
 			CMP_STATUS_UNSET Rumaigh, TurnStatusRescued
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
-		EVENT $01, eventMapDeathQuoteDummyEvent
+		EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
 			CMP_WORD wCurrentTurn, 16
 			CHECK_NUM_UNITS_GTE Rumaigh, 1
 			CMP_STATUS_UNSET Rumaigh, TurnStatusRescued
@@ -53,28 +53,23 @@ eventChapter8Events ; 99/BE7D
 
 	_LocationEventDefinitions ; 99/BF23
 		EVENT $25, _KnightCrestHouseDestroy
-			CMP_BYTE wCursorXCoord, 12
-			CMP_BYTE wCursorYCoord, 9
+			macroEventConditionCheckCoords [12, 9]
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
 		EVENT $21, _KnightCrestHouseVisit
 			CMP_WORD wCurrentPhase, Player
-			CMP_BYTE wCursorXCoord, 12
-			CMP_BYTE wCursorYCoord, 9
+			macroEventConditionCheckCoords [12, 9]
 		END_DEFINITION
 		EVENT $28, _LuckRingHouseDestroy
-			CMP_BYTE wCursorXCoord, 18
-			CMP_BYTE wCursorYCoord, 16
+			macroEventConditionCheckCoords [18, 16]
 			CMP_WORD wCurrentPhase, Enemy
 		END_DEFINITION
 		EVENT $24, _LuckRingHouseVisit
 			CMP_WORD wCurrentPhase, Player
-			CMP_BYTE wCursorXCoord, 18
-			CMP_BYTE wCursorYCoord, 16
+			macroEventConditionCheckCoords [18, 16]
 		END_DEFINITION
-		EVENT $00, _EndingEvent
-			CMP_BYTE wCursorXCoord, 2
-			CMP_BYTE wCursorYCoord, 9
+		EVENT FlagAlwaysZero, _EndingEvent
+			macroEventConditionCheckCoords [2, 9]
 			CMP_WORD wCurrentPhase, Player
 			CMP_WORD aSelectedCharacterBuffer.Character, Leif
 		END_DEFINITION
@@ -90,23 +85,13 @@ eventChapter8Events ; 99/BE7D
 	END_DEFINITION_ARRAY
 
 	_BattleEventDefinitions ; 99/BFA0
-		EVENT $06, eventBattleQuoteDummyEvent
-			CHECK_SINGLE Rumaigh
-		END_DEFINITION
-		EVENT $0A, eventBattleQuoteDummyEvent
-			CHECK_SINGLE Marty
-		END_DEFINITION
+		macroBossQuoteDefinition $06, Rumaigh
+		macroBossQuoteDefinition $0A, Marty
 	END_DEFINITION_ARRAY
 
 	_ShopEventDefinitions ; 99/BFB2
-		EVENT $00, eventChapter8Data._Armory
-			CMP_BYTE_AT wCursorXCoord, eventChapter8Data._Armory
-			CMP_BYTE_AT wCursorYCoord, eventChapter8Data._Armory+1
-		END_DEFINITION
-		EVENT $00, eventChapter8Data._Vendor
-			CMP_BYTE_AT wCursorXCoord, eventChapter8Data._Vendor
-			CMP_BYTE_AT wCursorYCoord, eventChapter8Data._Vendor+1
-		END_DEFINITION
+		macroShopDefinition eventChapter8Data._Armory
+		macroShopDefinition eventChapter8Data._Vendor
 	END_DEFINITION_ARRAY
 
 	_RightReinforcements ; 99/BFDA
@@ -156,28 +141,12 @@ eventChapter8Events ; 99/BE7D
 		DIALOGUE dialogueChapter8RumaighMount
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Rumaigh
-		CALL_ASM_LOOP rlASMCMount, $0000
+		macroMountUnit Rumaigh
 
-		STORE_WORD wEventEngineCharacterTarget, Rumaigh
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Rumaigh
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Rumaigh
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $03
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Rumaigh
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+		macroSetCharacterByte Rumaigh, structCharacterDataRAM.AI1, $00
+		macroSetCharacterByte Rumaigh, structCharacterDataRAM.AI4, $00
+		macroSetCharacterByte Rumaigh, structCharacterDataRAM.AI2, $03
+		macroSetCharacterByte Rumaigh, structCharacterDataRAM.Unknown3E, $00
 	END2
 
 	_OrsinMartyTalk ; 99/C084
@@ -191,13 +160,8 @@ eventChapter8Events ; 99/BE7D
 		DIALOGUE dialogueChapter8OrsinMartyTalk
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		CALL_ASM_LOOP rlASMCChangeAllegianceToPlayer, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Leader
-		STORE_WORD wEventEngineParameter2, Leif
-		CALL_ASM_LOOP rlASMCSetCharacterDataWord, $0000
+		macroConvertToPlayerAllegiance Marty
+		macroSetCharacterWord Marty, structCharacterDataRAM.Leader, Leif
 
 		SET_FLAG $0A
 	END2
@@ -213,13 +177,8 @@ eventChapter8Events ; 99/BE7D
 		DIALOGUE dialogueChapter8HalvanMartyTalk
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		CALL_ASM_LOOP rlASMCChangeAllegianceToPlayer, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Leader
-		STORE_WORD wEventEngineParameter2, Leif
-		CALL_ASM_LOOP rlASMCSetCharacterDataWord, $0000
+		macroConvertToPlayerAllegiance Marty
+		macroSetCharacterWord Marty, structCharacterDataRAM.Leader, Leif
 
 		SET_FLAG $0A
 	END2
@@ -230,8 +189,7 @@ eventChapter8Events ; 99/BE7D
 		DIALOGUE dialogueChapter8MartyCaptured
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		CALL_ASM_LOOP rlASMCChangeAllegianceToPlayerIfCaptured, $0000
+		macroConvertToPlayerAllegianceIfCaptured Marty
 
 		SET_FLAG $0A
 	END2
@@ -244,13 +202,10 @@ eventChapter8Events ; 99/BE7D
 		SET_MUSIC $3A
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Rumaigh
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+		macroCountAllUncapturedAliveUnits Rumaigh
 		JUMP_FALSE +
 
-		STORE_WORD wEventEngineCharacterTarget, Rumaigh
-		STORE_WORD wEventEngineParameter1, TurnStatusDead | TurnStatusUnknown1 | TurnStatusInvisible | TurnStatusCaptured
-		CALL_ASM_LOOP rlASMCCheckUnitTurnStatusSet, $0000
+		macroCheckTurnStatusSet Rumaigh, (TurnStatusDead | TurnStatusUnknown1 | TurnStatusInvisible | TurnStatusCaptured)
 		JUMP_TRUE +
 
 		SCROLL_CAMERA_CHAR Rumaigh
@@ -270,8 +225,7 @@ eventChapter8Events ; 99/BE7D
 		DIALOGUE dialogueChapter8GomerAppear
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Gomer
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+		macroRemoveUnit Gomer
 
 		WAIT_MOVE
 		YIELD
@@ -286,101 +240,19 @@ eventChapter8Events ; 99/BE7D
 	END2
 
 	_KnightCrestHouseVisit ; 99/C170
-		PLAY_SOUND_WORD $00F7
-
-		DIALOGUE dialogueChapter8KnightCrestHouse
-		YIELD
-
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
-
-		STORE_WORD wEventEngineParameter1, KnightCrest
-		PAUSE_SKIPPABLE 10
-		YIELD
-
-		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
-		YIELD_UNK
-
-		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
-
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
-
-		STORE_WORD wEventEngineXCoordinate, 12
-		STORE_WORD wEventEngineYCoordinate, 9
-		STORE_WORD wEventEngineParameter1, $03F0
-		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
-		YIELD_UNK
+		macroItemHouse dialogueChapter8KnightCrestHouse, KnightCrest, [12, 9], $03F0
 	END2
 
 	_LuckRingHouseVisit ; 99/C1D3
-		PLAY_SOUND_WORD $00F7
-
-		DIALOGUE dialogueChapter8LuckRingHouse
-		YIELD
-
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
-
-		STORE_WORD wEventEngineParameter1, LuckRing
-		PAUSE_SKIPPABLE 10
-		YIELD
-
-		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
-		YIELD_UNK
-
-		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
-
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
-
-		STORE_WORD wEventEngineXCoordinate, 18
-		STORE_WORD wEventEngineYCoordinate, 16
-		STORE_WORD wEventEngineParameter1, $03F0
-		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
-		YIELD_UNK
+		macroItemHouse dialogueChapter8LuckRingHouse, LuckRing, [18, 16], $03F0
 	END2
 
 	_KnightCrestHouseDestroy ; 99/C236
-		PLAY_SOUND_BYTE $45
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 0
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-
-		PAUSE_SKIPPABLE 10
-		YIELD
+		macroDestroyHouseByTileChangeID 0
 	END1
 
 	_LuckRingHouseDestroy ; 99/C265
-		PLAY_SOUND_BYTE $45
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 3
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-
-		PAUSE_SKIPPABLE 10
-		YIELD
+		macroDestroyHouseByTileChangeID 3
 	END1
 
 	_PrepGroups ; 99/C294
@@ -391,7 +263,7 @@ eventChapter8Events ; 99/BE7D
 	_OpeningEvent ; 99/C29C
 		SET_CAMERA [22, 12]
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
 		PLAY_SOUND_WORD $00E0
 		PAUSE_SKIPPABLE 32
@@ -400,59 +272,24 @@ eventChapter8Events ; 99/BE7D
 		SET_MUSIC $31
 		YIELD
 
-		STORE_LONG wProcInput1+1, dialogueChapter8Title
-		STORE_WORD wProcInput1, <>dialogueChapter8Title
-		STORE_LONG lR43, $9A814C
-		CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
-		YIELD
+		macroChapterTitlePopup dialogueChapter8Title
 
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		STORE_WORD wEventEngineParameter1, TurnStatusInvisible
-		CALL_ASM_LOOP rlASMCCheckUnitTurnStatusSet, $0000
+		macroCheckTurnStatusSet Marty, TurnStatusInvisible
 		JUMP_FALSE +
 
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusInvisible
-		CALL_ASM_LOOP rlASMCUnsetUnitTurnStatus, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		STORE_WORD wEventEngineXCoordinate, 13
-		STORE_WORD wEventEngineYCoordinate, 11
-		CALL_ASM_LOOP rlASMCSetUnitPosition, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Fatigue
-		STORE_WORD wEventEngineParameter2, 0
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+		macroUnsetCharacterTurnStatus Marty, (TurnStatusUnknown1 | TurnStatusInvisible)
+		macroSetUnitPosition Marty, [13, 11]
+		macroSetCharacterByte Marty, structCharacterDataRAM.Fatigue, 0
 
 		+
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		CALL_ASM_LOOP rlASMCChangeAllegianceToEnemy, $0000
+		macroConvertToEnemyAllegiance Marty
 
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+		macroSetCharacterByte Marty, structCharacterDataRAM.AI1, $00
+		macroSetCharacterByte Marty, structCharacterDataRAM.AI4, $00
+		macroSetCharacterByte Marty, structCharacterDataRAM.AI2, $03
+		macroSetCharacterByte Marty, structCharacterDataRAM.Unknown3E, $00
 
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $03
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Marty
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Leader
-		STORE_WORD wEventEngineParameter2, Gomer
-		CALL_ASM_LOOP rlASMCSetCharacterDataWord, $0000
+		macroSetCharacterWord Marty, structCharacterDataRAM.Leader, Gomer
 
 		STORE_WORD wEventEngineXCoordinate, 22
 		STORE_WORD wEventEngineYCoordinate, 12
@@ -462,8 +299,7 @@ eventChapter8Events ; 99/BE7D
 		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
 		YIELD_UNK
 
-		STORE_WORD wEventEngineCharacterTarget, Rumaigh
-		CALL_ASM_LOOP rlASMCDismount, $0000
+		macroDismountUnit Rumaigh
 
 		MOVE_UNIT Rumaigh, [0, 0], [2, 9], 1, None
 		YIELD_UNK
@@ -497,17 +333,13 @@ eventChapter8Events ; 99/BE7D
 		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
 		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
 
-
-		STORE_WORD wEventEngineCharacterTarget, Dagdar
-		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+		macroCheckAlive Dagdar
 		JUMP_FALSE ++
 
-		STORE_WORD wEventEngineCharacterTarget, Tanya
-		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+		macroCheckAlive Tanya
 		JUMP_FALSE +
 
-		STORE_WORD wEventEngineCharacterTarget, Rumaigh
-		CALL_ASM_LOOP rlASMCIsUnitRescued, $0000
+		macroCheckIfRescued Rumaigh
 		JUMP_FALSE +++
 
 		PLAY_SOUND_WORD $00E0
@@ -517,20 +349,12 @@ eventChapter8Events ; 99/BE7D
 		SET_MUSIC $41
 		YIELD
 
-		STORE_WORD wEventEngineParameter1, 1
-		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
-
-		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter8Ending1A
-		YIELD_UNK
-		YIELD_UNK
-		YIELD_UNK
+		macroDialogueWithBackground dialogueChapter8Ending1A, 1
 
 		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
 		YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
 		JUMP _End
 
@@ -542,31 +366,19 @@ eventChapter8Events ; 99/BE7D
 		SET_MUSIC $42
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Dagdar
-		STORE_WORD wEventEngineParameter1, TurnStatusInvisible
-		CALL_ASM_LOOP rlASMCUnsetUnitTurnStatus, $0000
+		macroUnsetCharacterTurnStatus Dagdar, TurnStatusInvisible
 
-		STORE_WORD wEventEngineParameter1, 1
-		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
-
-		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter8Ending1B
-		YIELD_UNK
-		YIELD_UNK
-		YIELD_UNK
+		macroDialogueWithBackground dialogueChapter8Ending1B, 1
 
 		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
 		YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
 		JUMP +++
 
 		+
-		STORE_WORD wEventEngineCharacterTarget, Tanya
-		STORE_WORD wEventEngineParameter1, TurnStatusDead | TurnStatusCaptured
-		CALL_ASM_LOOP rlASMCCheckUnitTurnStatusSet, $0000
+		macroCheckTurnStatusSet Tanya, (TurnStatusDead | TurnStatusCaptured)
 		JUMP_TRUE +
 
 		PLAY_SOUND_WORD $00E0
@@ -576,24 +388,14 @@ eventChapter8Events ; 99/BE7D
 		SET_MUSIC $42
 		YIELD
 
-		STORE_WORD wEventEngineCharacterTarget, Tanya
-		STORE_WORD wEventEngineParameter1, TurnStatusInvisible
-		CALL_ASM_LOOP rlASMCUnsetUnitTurnStatus, $0000
+		macroUnsetCharacterTurnStatus Tanya, TurnStatusInvisible
 
-		STORE_WORD wEventEngineParameter1, 1
-		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
-
-		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter8Ending1C
-		YIELD_UNK
-		YIELD_UNK
-		YIELD_UNK
+		macroDialogueWithBackground dialogueChapter8Ending1C, 1
 
 		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
 		YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 		JUMP ++
 
 		+
@@ -604,20 +406,12 @@ eventChapter8Events ; 99/BE7D
 		SET_MUSIC $41
 		YIELD
 
-		STORE_WORD wEventEngineParameter1, 1
-		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
-
-		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter8Ending1D
-		YIELD_UNK
-		YIELD_UNK
-		YIELD_UNK
+		macroDialogueWithBackground dialogueChapter8Ending1D, 1
 
 		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
 		YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 		YIELD
 
 		+

@@ -1,7 +1,7 @@
 
 ; Temporary Flags
 
-	FlagVoid		= $00
+	FlagAlwaysZero	= $00
 	FlagAlliedDeath	= $01 ; Sets sad music
 	FlagBossDeath	= $02
 	FlagPlayerDeath	= $03
