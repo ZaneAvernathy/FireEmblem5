@@ -9,7 +9,7 @@ import sys
 
 def main():
 
-	with open(sys.argv[1], "r") as i:
+	with open(sys.argv[1], "r", encoding="utf-8") as i:
 		lines = i.readlines()
 
 	# We've got three goals:
@@ -28,7 +28,7 @@ def main():
 
 		fixed.append("al {0:06x} {1}\n".format(int(address, 16), label))
 
-	with open(sys.argv[1], "w") as o:
+	with open(sys.argv[1], "w", encoding="utf-8") as o:
 		o.writelines(fixed)
 
 if __name__ == "__main__":
