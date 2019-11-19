@@ -9,3 +9,4 @@ TOOLS/64tass
 TOOLS/superfamiconv
 *.casm
 *.~lock*
+*.exe
