@@ -10,7 +10,7 @@ def scan(file, deps):
 	"""
 
 	try:
-		with open(file, "r", encoding="utf-8") as i:
+		with open(file, "r") as i:
 			f = i.readlines()
 	except OSError:
 		return deps

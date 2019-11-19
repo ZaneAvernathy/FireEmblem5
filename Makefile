@@ -8,36 +8,20 @@ SYM_TARGET := $(patsubst %.sfc,%.cpu.sym,$(ROM_TARGET))
 
 # Folders
 
-GFX             := $(realpath .)/GFX
-TOOLS           := $(realpath .)/TOOLS
-
-# Ensure that we're using the right version of python
-# credit to Stan
-
-ifeq ($(shell python -c 'import sys; print(int(sys.version_info[0] > 2))'),1)
-  PYTHON3 := python
-else
-  PYTHON3 := python3
-endif
-
-# Ensure the right file extensions on Windows
-ifeq ($(OS),Windows_NT)
-  EXE := .exe
-else
-  EXE :=
-endif
+GFX             := "$(CURDIR)/GFX"
+TOOLS           := "$(CURDIR)/TOOLS"
 
 # Tools
 
-SF              := $(TOOLS)/superfamiconv$(EXE)
-64tass          := $(TOOLS)/64tass$(EXE)
-scan_includes   := $(PYTHON3) $(TOOLS)/scan_includes.py
-compare         := $(PYTHON3) $(TOOLS)/compare.py
-c2a             := $(PYTHON3) $(TOOLS)/c2a.py
-update_checksum := $(PYTHON3) $(TOOLS)/update_checksum.py
-fix_sym         := $(PYTHON3) $(TOOLS)/fix_sym.py
+SF              := "$(TOOLS)/superfamiconv"
+64tass          := "$(TOOLS)/64tass"
+scan_includes   := "$(TOOLS)/scan_includes.py"
+compare         := "$(TOOLS)/compare.py"
+c2a             := "$(TOOLS)/c2a.py"
+update_checksum := "$(TOOLS)/update_checksum.py"
+fix_sym         := "$(TOOLS)/fix_sym.py"
 
-DEPS := $(shell $(scan_includes) Build.asm)
+DEPS := $(shell python3 $(scan_includes) Build.asm)
 
 ASFLAGS := -f -i Build.asm -o $(ROM_TARGET) --vice-labels -l $(SYM_TARGET)
 
@@ -49,13 +33,13 @@ $(ROM_TARGET): $(DEPS) Build.asm Makefile
 	$(64tass) $(ASFLAGS)
 
 checksum: $(ROM_TARGET)
-	@$(update_checksum) $(ROM_TARGET)
+	@python3 $(update_checksum) $(ROM_TARGET)
 
 compare: $(ROM_TARGET)
-	@$(compare) $(ROM_SOURCE) $(ROM_TARGET)
+	@python3 $(compare) $(ROM_SOURCE) $(ROM_TARGET)
 
 symbols: $(SYM_TARGET)
-	@$(fix_sym) $(SYM_TARGET)
+	@python3 $(fix_sym) $(SYM_TARGET)
 
 # Going to avoid cleaning most things until
 # they're able to be generated automatically
@@ -67,7 +51,7 @@ clean:
 	$(RM) *.png
 	$(RM) *.srm
 	$(RM) *.bst
-	$(RM) $(TABLES)/*.casm
+	$(RM) *.casm
 
 veryclean: clean
 	$(RM) $(ROM_SOURCE)
@@ -75,7 +59,7 @@ veryclean: clean
 # Table rules
 
 %.casm: %.csv
-	$(c2a) $< $@
+	@python3 $(c2a) $< $@
 
 # Image rules
 

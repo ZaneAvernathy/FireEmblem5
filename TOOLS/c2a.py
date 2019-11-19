@@ -7,7 +7,7 @@ def process(csvname, outname):
 	defs = ""
 	table = ""
 
-	with open(csvname, "r", encoding="utf-8") as c:
+	with open(csvname, "r") as c:
 
 		tablename = os.path.splitext(os.path.split(outname)[1])[0]
 
@@ -44,7 +44,7 @@ def process(csvname, outname):
 
 			table += name + tablename + "Entry .dstruct " + structname + ", " + ", ".join([name+param for param in params]) + "\n"
 
-	with open(outname, "w", encoding="utf-8") as o:
+	with open(outname, "w") as o:
 		o.write(defs)
 		o.write(table)
 
