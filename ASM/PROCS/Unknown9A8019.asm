@@ -18,9 +18,9 @@ rlProcUnknown9A8019Init ; 9A/8021
   sta wR0
 
   lda #(`procUnknown9A804A)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown9A804A
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
 
   rtl

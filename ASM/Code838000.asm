@@ -370,9 +370,9 @@ rsUnknown8381C2 ; 83/81C2
 
   phx
   lda #(`$87C4EF)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$87C4EF
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -787,9 +787,9 @@ rsUnknown838459 ; 83/8459
 
   phx
   lda #(`procPrepScreenMapScroll)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPrepScreenMapScroll
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   stz $7E4F98
@@ -1224,9 +1224,9 @@ rsUnknown8386A4 ; 83/86A4
   sta wUnknown000E25,b
   phx
   lda #(`$8A82D7)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8A82D7
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rts
@@ -1593,9 +1593,9 @@ rsUnknown83897C ; 83/897C
   jsl $858466
   phx
   lda #(`$878350)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$878350
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   jmp rsUnknown838529
@@ -1621,9 +1621,9 @@ rsUnknown838997 ; 83/8997
   jsl $858466
   phx
   lda #(`$878350)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$878350
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   jmp rsUnknown838529
@@ -1761,9 +1761,9 @@ rlUnknown838A72 ; 83/8A72
 
   phx
   lda #(`$849DF4)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$849DF4
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   plx
   bcs +
@@ -1783,9 +1783,9 @@ rlUnknown838A72 ; 83/8A72
   stz $7EBADD
   phx
   lda #(`$849CDB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$849CDB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -1931,9 +1931,9 @@ rsUnknown838B5C ; 83/8B5C
 
   phx
   lda #(`$849DF4)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$849DF4
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -1984,9 +1984,9 @@ rsUnknown838BDB ; 83/8BDB
 
   phx
   lda #(`$849DF4)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$849DF4
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   plx
   bcc +
@@ -2028,9 +2028,9 @@ rsUnknown838BDB ; 83/8BDB
   _8C2D
   phx
   lda #(`$87C674)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$87C674
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rts
@@ -2143,9 +2143,9 @@ rsUnknown838D09 ; 83/8D09
   jsl $858466
   phx
   lda #(`$878AE0)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$878AE0
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rts
@@ -2268,9 +2268,9 @@ rsUnknown838DD9 ; 83/8DD9
 
   phx
   lda #(`$8A8580)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8A8580
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   jmp rsUnknown838529

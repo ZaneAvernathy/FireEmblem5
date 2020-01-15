@@ -163,11 +163,11 @@ rlProcDialogueGetPalettes ; 82/8738
   jsl rlAppendDecompList
 
   lda #(`aDialogueBoxHDMAInfo)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aDialogueBoxHDMAInfo
-  sta lR43
+  sta lR44
   lda #$0006
-  sta wR39
+  sta wR40
   jsl rlHDMAArrayEngineCreateEntryByIndex
 
   ; Sleep

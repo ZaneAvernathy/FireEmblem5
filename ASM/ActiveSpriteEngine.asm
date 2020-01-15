@@ -231,12 +231,12 @@ rlActiveSpriteEngineFindEntry ; 81/8187
   -
   rep #$20
   lda aActiveSpriteTypeOffset,b,x
-  cmp lR43
+  cmp lR44
   bne +
 
   sep #$20
   lda aActiveSpriteBanks,b,x
-  cmp lR43+2
+  cmp lR44+2
   rep #$20
   beq ++
 
@@ -416,7 +416,7 @@ rlUnknown81822E ; 81/822E
   phb
   phy
   phx
-  lda lR43+1
+  lda lR44+1
   pha
   plb
   plb
@@ -452,7 +452,7 @@ rlUnknown81824B ; 81/824B
   phb
   phy
   phx
-  lda lR43+1
+  lda lR44+1
   pha
   plb
   plb
@@ -487,7 +487,7 @@ rlUnknown818268 ; 81/8268
   phy
   phx
   tax
-  lda lR43+1
+  lda lR44+1
   pha
   plb
   plb
@@ -513,7 +513,7 @@ rlUnknown81827C ; 81/827C
   phb
   phy
   phx
-  lda lR43+1
+  lda lR44+1
   pha
   plb
   plb
@@ -545,7 +545,7 @@ rlUnknown818296 ; 81/8296
   phb
   phy
   phx
-  lda lR43+1
+  lda lR44+1
   pha
   plb
   plb
@@ -579,7 +579,7 @@ rlUnknown8182B3 ; 81/82B3
   phy
   phx
   tax
-  lda lR43+1
+  lda lR44+1
   pha
   plb
   plb
@@ -602,8 +602,8 @@ rlUnknown8182C7 ; 81/82C7
   .autsiz
   .databank ?
 
-  lda lR43
-  stz lR43
+  lda lR44
+  stz lR44
   bra rlCreateActiveSpriteMain
 
 rlUnknown8182CD ; 81/82CD
@@ -613,7 +613,7 @@ rlUnknown8182CD ; 81/82CD
   .autsiz
   .databank ?
 
-  lda lR43
+  lda lR44
 
 rlCreateActiveSpriteMain ; 81/82CF
 
@@ -626,7 +626,7 @@ rlCreateActiveSpriteMain ; 81/82CF
 
   ; Inputs:
   ; A: Offset of data
-  ; lR43: Uppermost byte should be data's bank
+  ; lR44: Uppermost byte should be data's bank
 
   ; Outputs:
   ; None
@@ -643,7 +643,7 @@ rlCreateActiveSpriteMain ; 81/82CF
 
   ; Store bank of type and renderer
 
-  lda @l lR43+1
+  lda @l lR44+1
   and #$FF00
   sta @l lActiveSpriteCodePointer+1
   xba
@@ -664,13 +664,13 @@ rlCreateActiveSpriteMain ; 81/82CF
 
   lda $0002,b,y
   clc
-  adc lR43
+  adc lR44
   sta @l aActiveSpriteOnCycle,x
   lda #$0001
   sta @l aActiveSpriteFrameTimer,x
   lda $0004,b,y
   clc
-  adc lR43
+  adc lR44
   sta @l aActiveSpriteCodeOffset,x
   lda #$0000
   sta @l aActiveSpriteFrameOffset,x
@@ -698,7 +698,7 @@ rlCreateActiveSpriteMain ; 81/82CF
 
   lda $0000,b,y
   clc
-  adc lR43
+  adc lR44
   sta @l lActiveSpriteCodePointer
   bpl +
 

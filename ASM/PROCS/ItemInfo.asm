@@ -35,9 +35,9 @@ rlDrawItemInfo ; 81/F590
 
   phx
   lda #(`procItemInfo)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procItemInfo
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -58,9 +58,9 @@ rlUnknown81F5B4 ; 81/F5B4
   sta wProcInput1,b
 
   lda #(`procItemInfo)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procItemInfo
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   jsl rlProcItemInfoInit._F5EC
   rtl
@@ -599,9 +599,9 @@ rlCloseItemInfo ; 81/F873
   .databank `wInfoWindowTarget
 
   lda #(`procItemInfo)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procItemInfo
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   stz wInfoWindowTarget
   jsr rsProcItemInfoClearIcons

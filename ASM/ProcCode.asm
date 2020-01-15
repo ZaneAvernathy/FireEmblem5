@@ -200,12 +200,12 @@ rsProcCodeUnknown829E5B ; 82/9E5B
 
   phy
 
-  ; write pointer to lR43
+  ; write pointer to lR44
 
   lda $0000,b,y
-  sta lR43
+  sta lR44
   lda $0001,b,y
-  sta lR43+1
+  sta lR44+1
 
   lda $0003,b,y ; arg1
   pha
@@ -307,9 +307,9 @@ rsProcCodeCreateProc ; 82/9EBF
   .databank ?
 
   lda $0000,b,y
-  sta lR43
+  sta lR44
   lda $0001,b,y
-  sta lR43+1
+  sta lR44+1
   phy
   phx
   jsl rlProcEngineCreateProc
@@ -328,9 +328,9 @@ rsProcCodeDeleteProc ; 82/9ED5
   .databank ?
 
   lda $0000,b,y
-  sta lR43
+  sta lR44
   lda $0001,b,y
-  sta lR43+1
+  sta lR44+1
   phx
   phy
   jsl rlProcEngineFindProc
@@ -354,9 +354,9 @@ rsProcCodeDeleteHDMAArrayEntry ; 82/9EF1
   .databank ?
 
   lda $0000,b,y
-  sta lR43
+  sta lR44
   lda $0001,b,y
-  sta lR43+1
+  sta lR44+1
   phx
   phy
   jsl rlHDMAArrayEngineFindEntry
@@ -380,9 +380,9 @@ rsProcCodeHaltWhile ; 82/9F0D
   .databank ?
 
   lda $0000,b,y
-  sta lR43
+  sta lR44
   lda $0001,b,y
-  sta lR43+1
+  sta lR44+1
   phx
   phy
   jsl rlProcEngineFindProc
@@ -413,9 +413,9 @@ rsProcCodeCreateHDMAArrayEntry ; 82/9F33
   .databank ?
 
   lda $0000,b,y
-  sta lR43
+  sta lR44
   lda $0001,b,y
-  sta lR43+1
+  sta lR44+1
   phy
   phx
   jsl rlHDMAArrayEngineCreateEntry
@@ -434,9 +434,9 @@ rsProcCodeHaltWhileActiveSprite ; 82/9F49
   .databank ?
 
   lda $0000,b,y
-  sta lR43
+  sta lR44
   lda $0001,b,y
-  sta lR43+1
+  sta lR44+1
   phx
   phy
   jsl rlActiveSpriteEngineFindEntry

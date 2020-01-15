@@ -820,9 +820,9 @@ rlEventEngineCancelFadeIns ; 8C/846F
 
   -
   lda #(`procFadeIn1)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn1
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc _8488
 
@@ -833,9 +833,9 @@ rlEventEngineCancelFadeIns ; 8C/846F
 
   _8488
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc _84A0
 
@@ -846,9 +846,9 @@ rlEventEngineCancelFadeIns ; 8C/846F
 
   _84A0
   lda #(`procEventFadeIn)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procEventFadeIn
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -874,9 +874,9 @@ rlEventEngineCancelFadeOuts ; 8C/84C0
 
   -
   lda #(`procFadeOut1)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeOut1
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc _84D9
 
@@ -887,9 +887,9 @@ rlEventEngineCancelFadeOuts ; 8C/84C0
 
   _84D9
   lda #(`procFadeOut2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeOut2
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc _84F1
 
@@ -900,9 +900,9 @@ rlEventEngineCancelFadeOuts ; 8C/84C0
 
   _84F1
   lda #(`procEventFadeOut)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procEventFadeOut
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -926,9 +926,9 @@ rlEventEngineCancelFadeInClearJoypad ; 8C/8511
 
   php
   lda #(`procFadeInClearJoypad)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeInClearJoypad
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -1893,9 +1893,9 @@ rsEventCodeHandler_UNK_28 ; 8C/88A6
 
   phx
   lda #(`procUnknown828F09)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown828F09
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -1978,9 +1978,9 @@ rsEventCodeHandler_DIALOGUE ; 8C/88FE
 
   phx
   lda #(`procDialogue)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procDialogue
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -2030,9 +2030,9 @@ rsEventCodeHandler_DIALOGUE_ARRAY ; 8C/892F
 
   phx
   lda #(`procDialogue)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procDialogue
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
 
   plx
@@ -2066,9 +2066,9 @@ rsEventCodeHandler_UNK_2D ; 8C/897E
 
   phx
   lda #(`procDialogueUnknown828A38)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procDialogueUnknown828A38
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -2107,9 +2107,9 @@ rsEventCodeHandler_SET_MUSIC ; 8C/89A4
 
   phx
   lda #(`procMusicEvent)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procMusicEvent
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -2254,9 +2254,9 @@ rsEventCodeHandler_RESET_PHASE_MUSIC ; 8C/8A4B
 
   phx
   lda #(`procMusicEvent)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procMusicEvent
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -2690,9 +2690,9 @@ rsUnknown8C8C20 ; 8C/8C20
 
   phx
   lda #(`procMapScroll)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procMapScroll
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -2717,9 +2717,9 @@ rsEventCodeHandler_FADE_IN ; 8C/8C52
 
   phx
   lda #(`procEventFadeIn)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procEventFadeIn
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -2752,9 +2752,9 @@ rsEventCodeHandler_FADE_OUT ; 8C/8C7C
 
   phx
   lda #(`procEventFadeOut)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procEventFadeOut
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -2785,9 +2785,9 @@ rsEventCodeHandler_PAUSE_SKIPPABLE ; 8C/8CA6
 
   phx
   lda #(`procEventPause)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procEventPause
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -2813,9 +2813,9 @@ rsEventCodeHandler_PAUSE ; 8C/8CCC
   phy
   phx
   lda #(`procEventPause)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procEventPause
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
   pla
@@ -2849,9 +2849,9 @@ rsEventCodeHandler_UNK_20 ; 8C/8CEA
 
   phx
   lda #(`procEventPauseUntilButton)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procEventPauseUntilButton
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -2883,9 +2883,9 @@ rsEventCodeHandler_UNK_21 ; 8C/8D19
   rep #$30
   phx
   lda #(`procEventPauseUntilTimeOrButton)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procEventPauseUntilTimeOrButton
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -3677,9 +3677,9 @@ rsEventCodeHandler_SCROLL_CAMERA_ADDRESS ; 8C/908E
 
   phx
   lda #(`procMapScroll)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procMapScroll
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -4476,9 +4476,9 @@ rsEventCodeHandler_WAIT_MOVE ; 8C/9530
   bne +
 
   lda #(`procUnitAction)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnitAction
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcs +
 
@@ -9060,9 +9060,9 @@ rlASMCWaitWhileGiveToConvoyIfInventoryFull ; 8C/A96D
 
   phx
   lda #(`$86E475)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$86E475
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   plx
   rtl
@@ -9095,9 +9095,9 @@ rlASMCSetupGiveItemPopup ; 8C/A97E
 
   phx
   lda #(`$84E5A5)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$84E5A5
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
 
@@ -9114,9 +9114,9 @@ rlASMCWaitWhileGiveItemPopup ; 8C/A9B4
 
   phx
   lda #(`$84E5A5)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$84E5A5
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   plx
   rtl
@@ -9512,9 +9512,9 @@ rlChapterEndPrepareNextChapterWithWMEvents ; 8C/AB9B
   phx
 
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
 
   plx
@@ -9618,9 +9618,9 @@ rlUnknownChapterEnd8CAC00 ; 8C/AC00
   phx
 
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   bra ++
@@ -9681,9 +9681,9 @@ rlUnknown8CAC3A ; 8C/AC3A
   phx
 
   lda #(`procUnknown82A272)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A272
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -12844,9 +12844,9 @@ rlUnknown8CBB8A ; 8C/BB8A
 
   phx
   lda #(`$8EB441)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8EB441
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
   rtl
@@ -12860,9 +12860,9 @@ rlASMCFinalChapterMapChange ; 8C/BB9B
 
   phx
   lda #(`$949385)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$949385
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
   plx
   clc
@@ -13343,16 +13343,16 @@ rlUnknown8CBE0B ; 8C/BE0B
   sta wProcInput2,b
 
   lda #(`procPortrait4)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait4
-  sta lR43
+  sta lR44
   txa
   beq +
 
   lda #(`procPortrait5)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait5
-  sta lR43
+  sta lR44
 
   +
   jsl rlProcEngineFindProc
@@ -13621,9 +13621,9 @@ rlUnknown8CBF2A ; 8C/BF2A
   asl a
   tax
   lda #(`procPortrait0)<<8
-  sta lR43+1
+  sta lR44+1
   lda @l _ProcTable,x
-  sta lR43
+  sta lR44
 
   jsl rlProcEngineFindProc
   bcs +
@@ -14165,9 +14165,9 @@ rlUnknown8CC137 ; 8C/C137
   lda wR0
   sta wProcInput0,b
   lda #(`procItemSelectPortrait)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procItemSelectPortrait
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -15007,9 +15007,9 @@ rlASMCFinalChapterFadeToWhite ; 8C/C73E
   sta wProcInput0,b
   phx
   lda #(`$8EEC55)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8EEC55
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
 
   plx
@@ -15019,9 +15019,9 @@ rlASMCFinalChapterFadeToWhite ; 8C/C73E
   sta wProcInput0,b
   phx
   lda #(`$8EEC55)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8EEC55
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
 
   plx
@@ -15051,9 +15051,9 @@ rlASMCDialogueWithBGEndFadeOut ; 8C/C78C
 
   phx
   lda #(`procDialogueWithBG)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procDialogueWithBG
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -15065,9 +15065,9 @@ rlASMCDialogueWithBGEndFadeOut ; 8C/C78C
   plx
   phx
   lda #(`aDialogueBoxHDMAInfo)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aDialogueBoxHDMAInfo
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -15079,9 +15079,9 @@ rlASMCDialogueWithBGEndFadeOut ; 8C/C78C
   plx
   phx
   lda #(`procPortrait0)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait0
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -15093,9 +15093,9 @@ rlASMCDialogueWithBGEndFadeOut ; 8C/C78C
   plx
   phx
   lda #(`procPortrait1)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait1
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -15438,9 +15438,9 @@ rlUpdateDialogueArrow ; 8C/CB8B
 
   phx
   lda #(`$83CB78)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$83CB78
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   plx
   bcs ++
@@ -15451,9 +15451,9 @@ rlUpdateDialogueArrow ; 8C/CB8B
   +
   phx
   lda #(`$83CB78)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$83CB78
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   plx
   bcc +
@@ -16425,9 +16425,9 @@ rlASMCDialogueWithBGStart ; 8C/D0C3
   phx
 
   lda #(`procDialogueWithBG)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procDialogueWithBG
-  sta lR43
+  sta lR44
   jsl rlEventEngineCreateProcAndSetActive
 
   plx
@@ -16475,9 +16475,9 @@ rlASMCDialogueWithBGSetup ; 8C/D0FB
 
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 

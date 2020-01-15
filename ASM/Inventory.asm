@@ -157,9 +157,9 @@ rlBuildInventoryWindow ; 81/CE71
 
   phx
   lda #(`procInventoryScrollingArrows)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procInventoryScrollingArrows
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -1686,22 +1686,22 @@ rlInventorySetSubwindows ; 81/D7BF
   stz wUnknown7E51F3
 
   lda #<>aInventoryHDMAInfo1
-  sta lR43
+  sta lR44
   lda #>`aInventoryHDMAInfo1
-  sta lR43+1
+  sta lR44+1
 
   lda #3
-  sta wR39
+  sta wR40
 
   jsl rlHDMAArrayEngineCreateEntryByIndex
 
   lda #<>aInventoryHDMAInfo3
-  sta lR43
+  sta lR44
   lda #>`aInventoryHDMAInfo3
-  sta lR43+1
+  sta lR44+1
 
   lda #5
-  sta wR39
+  sta wR40
 
   jsl rlHDMAArrayEngineCreateEntryByIndex
 
@@ -1710,12 +1710,12 @@ rlInventorySetSubwindows ; 81/D7BF
   beq _End
 
   lda #<>aInventoryHDMAInfo2
-  sta lR43
+  sta lR44
   lda #>`aInventoryHDMAInfo2
-  sta lR43+1
+  sta lR44+1
 
   lda #4
-  sta wR39
+  sta wR40
 
   jsl rlHDMAArrayEngineCreateEntryByIndex
 
@@ -2153,9 +2153,9 @@ rsInventoryDrawRescueText ; 82/DA98
   sta wProcInput0,b
   phx
   lda #(`procInventoryRescueIcon)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procInventoryRescueIcon
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rts
@@ -2522,9 +2522,9 @@ rsInventoryHandleInput ; 81/DC27
   ; Kill running procs
 
   lda #(`procInventoryScrollingArrows)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procInventoryScrollingArrows
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2532,9 +2532,9 @@ rsInventoryHandleInput ; 81/DC27
 
   +
   lda #(`$83CB4B)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$83CB4B
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2542,9 +2542,9 @@ rsInventoryHandleInput ; 81/DC27
 
   +
   lda #(`$83CB78)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$83CB78
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2638,9 +2638,9 @@ rlInventoryActionCloseMenu ; 81/DDA1
   ; Kill running procs
 
   lda #(`procInventoryScrollingArrows)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procInventoryScrollingArrows
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2648,9 +2648,9 @@ rlInventoryActionCloseMenu ; 81/DDA1
 
   +
   lda #(`$83CB4B)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$83CB4B
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2658,9 +2658,9 @@ rlInventoryActionCloseMenu ; 81/DDA1
 
   +
   lda #(`$83CB78)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$83CB78
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2701,9 +2701,9 @@ rlInventoryActionCloseMenu ; 81/DDA1
   sta wProcInput0,b
 
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   pla
   rtl

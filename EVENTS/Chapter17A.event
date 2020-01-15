@@ -733,7 +733,7 @@ eventChapter17AEvents ; FD/BAAF
 
     STORE_LONG wProcInput1+1, dialogueChapter17ATitle
     STORE_WORD wProcInput1, <>dialogueChapter17ATitle
-    STORE_LONG lR43, $9A814C
+    STORE_LONG lR44, $9A814C
     CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
     YIELD
 

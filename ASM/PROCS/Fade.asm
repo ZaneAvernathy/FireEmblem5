@@ -82,9 +82,9 @@ rlClearFadeIns ; 82/A15D
 
   phx
   lda #(`procFadeIn1)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn1
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -94,9 +94,9 @@ rlClearFadeIns ; 82/A15D
 
   +
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -117,9 +117,9 @@ rlClearFadeOuts ; 82/A18C
 
   phx
   lda #(`procFadeOut1)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeOut1
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -129,9 +129,9 @@ rlClearFadeOuts ; 82/A18C
 
   +
   lda #(`procFadeOut2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeOut2
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -163,9 +163,9 @@ rlProcUnknown82A1BBInit ; 82/A1C3
   beq +
 
   lda #(`procFadeOut1)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeOut1
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
 
   +
@@ -324,9 +324,9 @@ rlProcUnknown82A272Init ; 82/A27A
   beq +
 
   lda #(`procFadeOut2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeOut2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
 
   +
@@ -397,10 +397,10 @@ rlProcUnknown82A2C3OnCycle ; 82/A2E4
 
   lda aProcBody3,b,x
   and #$FF00
-  sta lR43+1
+  sta lR44+1
 
   lda aProcBody2,b,x
-  sta lR43
+  sta lR44
 
   phx
   jsl rlProcEngineFindProc
@@ -414,10 +414,10 @@ rlProcUnknown82A2C3OnCycle ; 82/A2E4
   lda aProcBody3,b,x
   xba
   and #$FF00
-  sta lR43+1
+  sta lR44+1
 
   lda aProcBody1,b,x
-  sta lR43
+  sta lR44
 
   jsl rlProcEngineCreateProc
 

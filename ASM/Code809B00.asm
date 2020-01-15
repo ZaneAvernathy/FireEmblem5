@@ -271,9 +271,9 @@ rsUnknown809D0F ; 80/9D0F
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -332,9 +332,9 @@ rsUnknown809DBA ; 80/9DBA
 
   phx
   lda #(`procFadeInClearJoypad)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeInClearJoypad
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -369,9 +369,9 @@ rsUnknown809E46 ; 80/9E46
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -408,9 +408,9 @@ rsUnknown809E95 ; 80/9E95
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -509,9 +509,9 @@ rsUnknown809F74 ; 80/9F74
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -569,9 +569,9 @@ rlUnknown80A01A ; 80/A01A
   lda #<>rsUnknown809D0F
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -585,9 +585,9 @@ rlUnknown80A02F ; 80/A02F
   lda #<>rsUnknown80A059
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -601,9 +601,9 @@ rlUnknown80A044 ; 80/A044
   lda #<>rsUnknown809F74
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -636,9 +636,9 @@ rsUnknown80A059 ; 80/A059
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -690,9 +690,9 @@ rsUnknown80A0B5 ; 80/A0B5
 
   phx
   lda #(`procFadeInAfterSound)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeInAfterSound
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -765,9 +765,9 @@ rsUnknown80A161 ; 80/A161
   sta wUnknown00033F,b
 
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
 
   sep #$20
@@ -1048,9 +1048,9 @@ rlUnknown80A45E ; 80/A45E
   sta wProcInput0,b
   phx
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rtl
@@ -1253,14 +1253,14 @@ rlUnknown80A569 ; 80/A569
 
   +
   ldy #$0000
-  lda lR43+1
+  lda lR44+1
   sta aUnknown000309+1,b,x
   sta lUnknown000306+1,b
-  lda [lR43],y
+  lda [lR44],y
   sta lUnknown000306,b
   inc y
   inc y
-  lda [lR43],y
+  lda [lR44],y
   sta aUnknown000309,b,x
   jsl _Goto
 
@@ -1287,9 +1287,9 @@ rlUnknown80A5A3 ; 80/A5A3
   .databank `*
 
   ldy #$0002
-  lda lR43+1
+  lda lR44+1
   sta lUnknown000306+1,b
-  lda [lR43],y
+  lda [lR44],y
   sta lUnknown000306,b
   ldx #size(aUnknown000309) - 3
 
@@ -1314,7 +1314,7 @@ rlUnknown80A5A3 ; 80/A5A3
 
   +
   ldy #$0004
-  lda [lR43],y
+  lda [lR44],y
   sta lUnknown000306,b
   jsl _Goto
   clc
@@ -1413,33 +1413,33 @@ rsUnknown80A63B ; 80/A63B
   jsl rlUnknown80A553
 
   lda #(`aUnknown8CD529)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aUnknown8CD529
-  sta lR43
+  sta lR44
   jsl rlUnknown80A569
 
   lda #(`aProcEngineMainProcActionTable)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aProcEngineMainProcActionTable
-  sta lR43
+  sta lR44
   jsl rlUnknown80A569
 
   lda #(`aActiveSpriteEngineMainActionTable)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aActiveSpriteEngineMainActionTable
-  sta lR43
+  sta lR44
   jsl rlUnknown80A569
 
   lda #(`aHDMAArrayEngineMainActionTable)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aHDMAArrayEngineMainActionTable
-  sta lR43
+  sta lR44
   jsl rlUnknown80A569
 
   lda #(`aIRQArrayEngineMainActionTable)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aIRQArrayEngineMainActionTable
-  sta lR43
+  sta lR44
   jsl rlUnknown80A569
 
   stz wUnknown000300,b

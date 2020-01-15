@@ -66,9 +66,9 @@ rlUnknownDialogueText ; 94/CC3D
   jsl $94DD59
 
   lda #(`proclm)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>proclm
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 

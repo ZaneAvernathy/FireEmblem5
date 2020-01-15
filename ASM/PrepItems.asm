@@ -56,9 +56,9 @@ rsPrepItemsRedrawTradeDescriptionAfterClosingInventory ; 81/E1EE
 
   phx
   lda #(`procPrepItemsTradeInitiatorCursor)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPrepItemsTradeInitiatorCursor
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -185,9 +185,9 @@ rlUnknown81E25B ; 81/E25B
 
   phx
   lda #(`procUnknown81F12C)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81F12C
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   bra ++
@@ -202,9 +202,9 @@ rlUnknown81E25B ; 81/E25B
   +
   phx
   lda #(`procUnknown81E93C)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81E93C
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -294,11 +294,11 @@ rsUnknown81E35B ; 81/E35B
   .databank `wPrepItemsActionIndex
 
   lda #<>aPrepItemsHDMAInfo
-  sta lR43
+  sta lR44
   lda #>`aPrepItemsHDMAInfo
-  sta lR43+1
+  sta lR44+1
   lda #$0005
-  sta wR39
+  sta wR40
   jsl rlHDMAArrayEngineCreateEntryByIndex
   rts
 
@@ -610,9 +610,9 @@ rsPrepItemsHandleMainUnitListOtherInputs ; 81/E4DD
   sta wProcInput0,b
 
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
 
   jsl rlProcEngineCreateProc
 
@@ -683,9 +683,9 @@ rlPrepItemsDrawHoveredUnitInfo ; 81/E552
   ; Clear existing portrait
 
   lda #(`procPortrait0)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait0
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -772,9 +772,9 @@ rlPrepItemsDrawHoveredUnitInfo ; 81/E552
   ; and make a new one
 
   lda #(`procPrepItemsDrawInventory)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPrepItemsDrawInventory
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -783,9 +783,9 @@ rlPrepItemsDrawHoveredUnitInfo ; 81/E552
   +
   phx
   lda #(`procPrepItemsDrawInventory)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPrepItemsDrawInventory
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rtl
@@ -1100,12 +1100,12 @@ rsPrepItemsClearOptionsTilemap ; 81/E795
   sta (1 + (0 * $20)) * 2,b,x
 
   lda #<>$85BD96
-  sta lR43
+  sta lR44
   lda #>`$85BD96
-  sta lR43+1
+  sta lR44+1
 
   lda #$0003
-  sta wR39
+  sta wR40
   jsl rlHDMAArrayEngineCreateEntryByIndex
 
   jsl rlDMAByStruct
@@ -1398,9 +1398,9 @@ rsPrepItemsSetupSelectedUnit ; 81/EA07
 
   phx
   lda #(`procPrepItemsTradeInitiatorCursor)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPrepItemsTradeInitiatorCursor
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -1479,9 +1479,9 @@ rsPrepItemsHandleTradeUnitListOtherInputs ; 81/EA5A
   ; Kill trade initiator's cursor
 
   lda #(`procPrepItemsTradeInitiatorCursor)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPrepItemsTradeInitiatorCursor
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -1555,9 +1555,9 @@ rsPrepItemsHandleTradeUnitListOtherInputs ; 81/EA5A
   ; Kill the cursor
 
   lda #(`procPrepItemsTradeInitiatorCursor)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPrepItemsTradeInitiatorCursor
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -1865,9 +1865,9 @@ rsPrepItemsSetupList ; 81/ED34
   +
   phx
   lda #(`procUnknown81F12C)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81F12C
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   plx
   bcc +
@@ -1881,9 +1881,9 @@ rsPrepItemsSetupList ; 81/ED34
 
   phx
   lda #(`procUnknown81F12C)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81F12C
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -1920,9 +1920,9 @@ rsUnknown81EE08 ; 81/EE08
 
   phx
   lda #(`$85C8BA)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$85C8BA
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   jmp rsPrepItemsSelectNextAction
@@ -2191,9 +2191,9 @@ rsPrepItemsListHandleOtherInputs ; 81/EF68
   jsl rsPrepItemsListUpdateSortMethodNameAndOwner
   phx
   lda #(`procUnknown81F4A9)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81F4A9
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   jsl rlDMAByStruct
@@ -2358,9 +2358,9 @@ rsPrepItemsListRevertUnitListPositions ; 81/F0D1
 
   phx
   lda #(`procUnknown81F12C)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81F12C
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -2390,9 +2390,9 @@ rlUnknown81F191 ; 81/F191
   .databank ?
 
   lda #(`$83CB4B)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$83CB4B
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2400,9 +2400,9 @@ rlUnknown81F191 ; 81/F191
 
   +
   lda #(`$83CB7B)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$83CB78
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2410,9 +2410,9 @@ rlUnknown81F191 ; 81/F191
 
   +
   lda #(`procUnknown81F12C)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81F12C
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2590,9 +2590,9 @@ rsPrepItemsHandleDiscardConfirmInputs ; 81/F267
 
   phx
   lda #(`procPrepItemsDrawInventory)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPrepItemsDrawInventory
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -2820,9 +2820,9 @@ rsPrepItemsHandleArmory ; 81/F4D8
   jsl rlHDMAArrayEngineFreeEntryByIndex
 
   lda #(`procPortrait0)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait0
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2847,9 +2847,9 @@ rlUnknown81F512 ; 81/F512
   .databank ?
 
   lda #(`procItemSelectPortrait)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procItemSelectPortrait
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2857,9 +2857,9 @@ rlUnknown81F512 ; 81/F512
 
   +
   lda #(`procPortrait0)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait0
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2867,9 +2867,9 @@ rlUnknown81F512 ; 81/F512
 
   +
   lda #(`procPortrait1)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait1
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2877,9 +2877,9 @@ rlUnknown81F512 ; 81/F512
 
   +
   lda #(`procPortrait2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait2
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2887,9 +2887,9 @@ rlUnknown81F512 ; 81/F512
 
   +
   lda #(`procPortrait3)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait3
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -2897,9 +2897,9 @@ rlUnknown81F512 ; 81/F512
 
   +
   lda #(`$85F7FF)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$85F7FF
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 

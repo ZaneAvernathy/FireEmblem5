@@ -65,9 +65,9 @@ rlUnknown80B907 ; 80/B907
   lda #<>rsUnknown80B948
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   lda #$0000
   sta wMenuType,b
@@ -86,9 +86,9 @@ rlUnknown80B925 ; 80/B925
   lda #<>rsUnknown80B948
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   lda #$000D
   sta wMenuType,b
@@ -112,9 +112,9 @@ rsUnknown80B948 ; 80/B948
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -134,9 +134,9 @@ rlUnknown80B981 ; 80/B981
   lda #<>rsUnknown80B9C1
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -153,9 +153,9 @@ rlUnknown80B99E ; 80/B99E
   lda #<>rsUnknown80B9C1
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -178,9 +178,9 @@ rsUnknown80B9C1 ; 80/B9C1
   jsl $859D16
   phx
   lda #(`$859AF9)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$859AF9
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   lda #$0001
@@ -193,9 +193,9 @@ rsUnknown80B9C1 ; 80/B9C1
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
 
   +
@@ -218,9 +218,9 @@ rlUnknown80BA1F ; 80/BA1F
   lda #<>rsUnknown80BA6B
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -241,9 +241,9 @@ rlUnknown80BA41 ; 80/BA41
   lda #<>rsUnknown80BA6B
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -267,9 +267,9 @@ rsUnknown80BA6B ; 80/BA6B
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -286,9 +286,9 @@ rlUnknown80BAAC ; 80/BAAC
   lda #<>rsUnknown80BAC1
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -313,9 +313,9 @@ rsUnknown80BAC1 ; 80/BAC1
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -332,9 +332,9 @@ rlUnknown80BB04 ; 80/BB04
   lda #<>rsUnknown80BB19
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -358,9 +358,9 @@ rsUnknown80BB19 ; 80/BB19
   jsl $8AB88C
   phx
   lda #(`procFadeOut1)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeOut1
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -375,9 +375,9 @@ rsUnknown80BB19 ; 80/BB19
   +
   plx
   lda #(`$8ABAE1)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8ABAE1
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -394,9 +394,9 @@ rlUnknown80BB73 ; 80/BB73
   lda #<>rsUnknown80BB88
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -423,9 +423,9 @@ rsUnknown80BB88 ; 80/BB88
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -460,9 +460,9 @@ rlUnknown80BBE2 ; 80/BBE2
   lda #<>rsUnknown80BC0E
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   lda #INIDISP_Setting(False)
@@ -529,9 +529,9 @@ rlUnknown80BC41 ; 80/BC41
   lda #<>rsUnknown80BC0E
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   lda #INIDISP_Setting(False)
@@ -550,9 +550,9 @@ rlUnknown80BC9C ; 80/BC9C
   lda #<>rsUnknown80BC0E
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   lda #INIDISP_Setting(False)
@@ -571,9 +571,9 @@ rlUnknown80BCC7 ; 80/BCC7
   lda #<>rsUnknown80BCDC
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -601,9 +601,9 @@ rsUnknown80BCDC ; 80/BCDC
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -620,9 +620,9 @@ rlUnknown80BD28 ; 80/BD28
   lda #<>rsUnknown80BD3D
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -649,9 +649,9 @@ rsUnknown80BD3D ; 80/BD3D
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -668,9 +668,9 @@ rlUnknown80BD87 ; 80/BD87
   lda #<>rsUnknown80BDA4
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   lda #INIDISP_Setting(False)
@@ -700,9 +700,9 @@ rsUnknown80BDA4 ; 80/BDA4
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -733,9 +733,9 @@ rlUnknown80BDE7 ; 80/BDE7
   lda #<>rsUnknown80BE77
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   lda #INIDISP_Setting(False)
@@ -784,9 +784,9 @@ rlUnknown80BE27 ; 80/BE27
   lda #<>rsUnknown80BE77
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   lda #INIDISP_Setting(False)
@@ -821,9 +821,9 @@ rsUnknown80BE77 ; 80/BE77
 
   phx
   lda #(`procPrepItemsTradeInitiatorCursor)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPrepItemsTradeInitiatorCursor
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -831,9 +831,9 @@ rsUnknown80BE77 ; 80/BE77
   lda #$0001
   sta wUnknown00033F,b
   lda #(`procFadeIn2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procFadeIn2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   sep #$20
   stz bBuf_INIDISP
@@ -965,9 +965,9 @@ rsUnknown80BF58 ; 80/BF58
   sta bBuf_CGWSEL
   rep #$20
   lda #(`$9A83A1)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A83A1
-  sta lR43
+  sta lR44
   jsl rlHDMAArrayEngineCreateEntry
   lda #(`aBG3TilemapBuffer)<<8
   sta lR18+1
@@ -987,11 +987,11 @@ rsUnknown80BF58 ; 80/BF58
   ldx #$0000
   jsl $94DA2A
   lda #(`$9A83B8)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A83B8
-  sta lR43
+  sta lR44
   lda #$0005
-  sta wR39
+  sta wR40
   jsl rlHDMAArrayEngineCreateEntryByIndex
   pla
   sta wCurrentChapter,b
@@ -999,14 +999,14 @@ rsUnknown80BF58 ; 80/BF58
   jsl rlUnknown8C839F
   jsl $91C9E1
   lda #(`$9A9040)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A9040
-  sta lR43
+  sta lR44
   jsl rlUnknown82A701
   lda #(`$9A9230)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A9230
-  sta lR43
+  sta lR44
   jsl rlUnknown82A701
   jsl rlUnknown82A6C8
   sep #$20
@@ -1052,9 +1052,9 @@ rlUnknown80C0BD ; 80/C0BD
   lda #<>rsUnknown80C0D2
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1077,9 +1077,9 @@ rsUnknown80C0D2 ; 80/C0D2
   jsr rsUnknown80C2F0
   phx
   lda #(`$94ADE9)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$94ADE9
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1098,9 +1098,9 @@ rlUnknown80C10B ; 80/C10B
   jsr rsUnknown80C2F0
   phx
   lda #(`$94BE5F)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$94BE5F
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rtl
@@ -1114,9 +1114,9 @@ rlUnknown80C11F ; 80/C11F
   lda #<>rsUnknown80C134
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1138,9 +1138,9 @@ rsUnknown80C134 ; 80/C134
   jsr rsUnknown80C2F0
   phx
   lda #(`$94AE11)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$94AE11
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1159,9 +1159,9 @@ rlUnknown80C16D ; 80/C16D
   lda #<>rsUnknown80C182
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1184,9 +1184,9 @@ rsUnknown80C182 ; 80/C182
   jsr rsUnknown80C2F0
   phx
   lda #(`$94AE19)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$94AE19
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1205,9 +1205,9 @@ rlUnknown80C1BB ; 80/C1BB
   lda #<>rsUnknown80C1D0
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1229,9 +1229,9 @@ rsUnknown80C1D0 ; 80/C1D0
   jsr rsUnknown80C2F0
   phx
   lda #(`$94AE21)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$94AE21
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1250,9 +1250,9 @@ rlUnknown80C209 ; 80/C209
   lda #<>rsUnknown80C21E
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1274,9 +1274,9 @@ rsUnknown80C21E ; 80/C21E
   jsr rsUnknown80C2F0
   phx
   lda #(`$94AE29)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$94AE29
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1295,9 +1295,9 @@ rlUnknown80C257 ; 80/C257
   lda #<>rsUnknown80C26C
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1317,9 +1317,9 @@ rsUnknown80C26C ; 80/C26C
   jsr rsUnknown80C2F0
   phx
   lda #(`$8EEA3D)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8EEA3D
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1342,9 +1342,9 @@ rlUnknown80C29D ; 80/C29D
   lda #<>rsUnknown80C2BF
   sta wProcInput0,b
   lda #(`procUnknown82A272)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A272
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1364,9 +1364,9 @@ rsUnknown80C2BF ; 80/C2BF
   jsr rsUnknown80C2F0
   phx
   lda #(`$8EE664)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8EE664
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1520,9 +1520,9 @@ rlUnknown80C3D6 ; 80/C3D6
   lda #<>rsUnknown80C402
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1549,9 +1549,9 @@ rsUnknown80C402 ; 80/C402
   sta wUnknown000302,b
   phx
   lda #(`$B9D634)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$B9D634
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1570,9 +1570,9 @@ rlUnknown80C44B ; 80/C44B
   lda #<>rsUnknown80C460
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1600,9 +1600,9 @@ rsUnknown80C460 ; 80/C460
   sta wUnknown000302,b
   phx
   lda #(`$B9E2E3)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$B9E2E3
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1621,9 +1621,9 @@ rlUnknown80C4AD ; 80/C4AD
   lda #<>rsUnknown80C4C2
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1649,9 +1649,9 @@ rsUnknown80C4C2 ; 80/C4C2
   sta wUnknown000302,b
   phx
   lda #(`$94DD75)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$94DD75
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1670,9 +1670,9 @@ rlUnknown80C507 ; 80/C507
   lda #<>rsUnknown80C51C
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1698,9 +1698,9 @@ rsUnknown80C51C ; 80/C51C
   sta wUnknown000302,b
   phx
   lda #(`$94E574)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$94E574
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1719,9 +1719,9 @@ rlUnknown80C561 ; 80/C561
   lda #<>rsUnknown80C576
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1747,9 +1747,9 @@ rsUnknown80C576 ; 80/C576
   sta wUnknown000302,b
   phx
   lda #(`$918012)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$918012
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -1772,9 +1772,9 @@ rlUnknown80C5BB ; 80/C5BB
   lda #<>rsUnknown80C5DE
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   rtl
 
@@ -1800,9 +1800,9 @@ rsUnknown80C5DE ; 80/C5DE
   sta wUnknown000302,b
   phx
   lda #(`$8FE5DB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8FE5DB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -2000,9 +2000,9 @@ rsUnknown80C6FC ; 80/C6FC
   sta wJoyShortTime
   rep #$20
   lda #(`$9AECCF)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9AECCF
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   lda #$0011
   sta wUnknown000302,b
@@ -2542,31 +2542,31 @@ rlUnknown80CC7D ; 80/CC7D
   .databank ?
 
   lda #(`aUnknown80CCC6)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aUnknown80CCC6
-  sta lR43
+  sta lR44
   lda #$0003
-  sta wR39
+  sta wR40
   jsl rlHDMAArrayEngineCreateEntryByIndex
   lda #(`aUnknown80CD11)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aUnknown80CD11
-  sta lR43
+  sta lR44
   lda #$0004
-  sta wR39
+  sta wR40
   jsl rlHDMAArrayEngineCreateEntryByIndex
   lda #(`aUnknown80CD5B)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aUnknown80CD5B
-  sta lR43
+  sta lR44
   lda #$0005
-  sta wR39
+  sta wR40
   lda #(`aUnknown80CE84)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aUnknown80CE84
-  sta lR43
+  sta lR44
   lda #$0006
-  sta wR39
+  sta wR40
   jsl rlHDMAArrayEngineCreateEntryByIndex
   rts
 
@@ -3484,9 +3484,9 @@ rsUnknown80D30E ; 80/D30E
   .databank ?
 
   lda #(`$9A8A2D)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A8A2D
-  sta lR43
+  sta lR44
   jsl rlHDMAArrayEngineCreateEntry
   rts
 
@@ -3503,9 +3503,9 @@ rlUnknown80D31D ; 80/D31D
   lda #<>rsUnknown80D369
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   jsr rsUnknown80D461
   rtl
@@ -3523,9 +3523,9 @@ rlUnknown80D343 ; 80/D343
   lda #<>rsUnknown80D369
   sta wProcInput0,b
   lda #(`procUnknown82A1BB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A1BB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   jsr rsUnknown80D461
   rtl
@@ -3565,29 +3565,29 @@ rsUnknown80D369 ; 80/D369
   rep #$20
   jsl $9B8000
   lda #(`$9C8095)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9C8095
-  sta lR43
+  sta lR44
   jsl rlUnknown82A701
   lda #(`$9C8000)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9C8000
-  sta lR43
+  sta lR44
   jsl rlUnknown82A701
   lda #(`$9C800F)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9C800F
-  sta lR43
+  sta lR44
   jsl rlUnknown82A701
   lda #(`$9C8050)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9C8050
-  sta lR43
+  sta lR44
   jsl rlUnknown82A701
   lda #(`$9C8078)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9C8078
-  sta lR43
+  sta lR44
   jsl rlUnknown82A701
   jsl rlUnknown82A6C8
   lda #$000B
@@ -4737,14 +4737,14 @@ rsUnknown80DBAF ; 80/DBAF
   jsl $9BEE3B
   jsl $9BEFD1
   lda #(`$9C80A4)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9C80A4
-  sta lR43
+  sta lR44
   jsl rlUnknown82A701
   lda #(`$9C80B3)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9C80B3
-  sta lR43
+  sta lR44
   jsl rlUnknown82A701
   jsl rlUnknown82A6C8
   lda #$0000

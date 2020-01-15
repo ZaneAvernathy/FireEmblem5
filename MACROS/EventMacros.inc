@@ -84,7 +84,7 @@ macroGiveItemToActiveUnit .macro Item
 macroChapterTitlePopup .macro DialoguePointer
   STORE_LONG wProcInput1+1, \DialoguePointer
   STORE_WORD wProcInput1, <>\DialoguePointer
-  STORE_LONG lR43, $9A814C
+  STORE_LONG lR44, $9A814C
   CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
   YIELD
 .endm

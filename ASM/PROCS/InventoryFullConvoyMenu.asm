@@ -39,9 +39,9 @@ rlSetupInventoryFullConvoyMenu ; 86/E41A
 
   phx
   lda #(`procInventoryFullConvoyMenu)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procInventoryFullConvoyMenu
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   jsl $8593AD
@@ -193,9 +193,9 @@ rlProcInventoryFullConvoyMenuInit ; 86/E53D
   sta $7E4F55
   phx
   lda #(`$87A4D0)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$87A4D0
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   sep #$20
@@ -214,9 +214,9 @@ rlProcInventoryFullConvoyMenuOnCycle ; 86/E5E6
 
   phx
   lda #(`procItemSelectPortrait)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procItemSelectPortrait
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   plx
   bcc +
@@ -325,9 +325,9 @@ rlProcInventoryFullConvoyMenuMoveCursor ; 86/E671
   sta wProcInput0,b
   phx
   lda #(`$87A4F2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$87A4F2
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rtl

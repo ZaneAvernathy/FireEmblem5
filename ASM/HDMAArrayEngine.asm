@@ -106,7 +106,7 @@ rlHDMAArrayEngineCreateEntry ; 82/A3ED
   php
   phb
   sep #$20
-  lda lR43+2
+  lda lR44+2
   pha
   rep #$20
   plb
@@ -117,19 +117,19 @@ rlHDMAArrayEngineCreateEntry ; 82/A3ED
   phy
 
   lda #$0000
-  sta wR40
+  sta wR41
 
-  ldy lR43
+  ldy lR44
   ldx #$0000
 
   -
   lda aHDMAArrayTypeOffset,b,x
   beq _AddEntry
 
-  lda wR40
+  lda wR41
   clc
   adc #$0010
-  sta wR40
+  sta wR41
   inc x
   inc x
   cpx #size(aHDMAArrayTypeOffset)
@@ -145,7 +145,7 @@ rlHDMAArrayEngineCreateEntry ; 82/A3ED
   _AddEntry
   tya
   sta aHDMAArrayTypeOffset,b,x
-  lda lR43+1
+  lda lR44+1
   and #$FF00
   sta lHDMAArrayCodePointer+1,b
   xba
@@ -200,7 +200,7 @@ rlHDMAArrayEngineCreateEntryByIndex ; 82/A470
   phb
 
   sep #$20
-  lda lR43+2
+  lda lR44+2
   pha
   rep #$20
   plb
@@ -209,14 +209,14 @@ rlHDMAArrayEngineCreateEntryByIndex ; 82/A470
 
   phx
   phy
-  ldy lR43
-  lda wR39
+  ldy lR44
+  lda wR40
   asl a
   tax
   asl a
   asl a
   asl a
-  sta wR40
+  sta wR41
   lda aHDMAArrayTypeOffset,b,x
   bne +
 
@@ -440,12 +440,12 @@ rlHDMAArrayEngineFindEntry ; 82/A586
   rep #$20
 
   lda aHDMAArrayTypeOffset,b,x
-  cmp lR43
+  cmp lR44
   bne +
 
   sep #$20
   lda aHDMAArrayTypeBank,b,x
-  cmp lR43+2
+  cmp lR44+2
   rep #$20
   beq ++
 

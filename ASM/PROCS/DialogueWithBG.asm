@@ -47,12 +47,12 @@ rlProcDialogueWithBGOnCycle ; 82/8D6B
   sta aProcHeaderOnCycle,b,x
 
   lda #(`aDialogueBoxHDMAInfo)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>aDialogueBoxHDMAInfo
-  sta lR43
+  sta lR44
 
   lda #$0006
-  sta wR39
+  sta wR40
 
   jsl rlHDMAArrayEngineCreateEntryByIndex
   rtl
@@ -170,9 +170,9 @@ rlProcDialogueWithBGOnCycle5 ; 82/8E0B
   phx
 
   lda #(`procUnknown82A272)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown82A272
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 

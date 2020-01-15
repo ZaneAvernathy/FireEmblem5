@@ -424,7 +424,7 @@ eventChapterFinalEvents ; B9/BA0E
 
     STORE_LONG wProcInput1+1, dialogueChapterFinalTitle
     STORE_WORD wProcInput1, <>dialogueChapterFinalTitle
-    STORE_LONG lR43, $9A814C
+    STORE_LONG lR44, $9A814C
     CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
     YIELD
 

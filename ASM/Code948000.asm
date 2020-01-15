@@ -35,15 +35,15 @@ rlDrawMapSpellAnimation ; 94/8000
   adc wUnknown0015A5,b
   tax
   lda $9098FF,x
-  sta lR43
+  sta lR44
   lda $9098FF+1,x
-  sta lR43+1
+  sta lR44+1
   jsl rlProcEngineCreateProc
 
   lda #(`$84CFF8)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$84CFF8
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -51,31 +51,31 @@ rlDrawMapSpellAnimation ; 94/8000
   sta wR0
 
   lda #(`$8E925A)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8E925A
-  sta lR43
+  sta lR44
   jsl rlHDMAArrayEngineCreateEntry
 
   +
   lda #(`$97D9B2)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$97D9B2
-  sta lR43
+  sta lR44
   jsl rlHDMAArrayEngineCreateEntry
 
   lda #(`$97D9EB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$97D9EB
-  sta lR43
+  sta lR44
   jsl rlHDMAArrayEngineCreateEntry
 
   lda wUnknown001594,b
   sta wR0
 
   lda #(`$8E9350)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8E9350
-  sta lR43
+  sta lR44
   jsl rlHDMAArrayEngineCreateEntry
 
   lda wHDMAArrayIndex,b

@@ -1189,21 +1189,21 @@ rsUnknown82AEDF ; 82/AEDF
   _AF23
   lda wUnknown000DAA
   pha
-  lda lR37
+  lda lR38
   pha
-  lda lR37+1
+  lda lR38+1
   pha
   phx
   lda aUnknown000DA0
-  sta lR37
+  sta lR38
   lda aUnknown000DA0+1
-  sta lR37+1
+  sta lR38+1
   sep #$20
   tyx
   ldy #$0000
 
   -
-  lda [lR37],y
+  lda [lR38],y
   sta $0004,b,x
   inc y
   inc x
@@ -1215,9 +1215,9 @@ rsUnknown82AEDF ; 82/AEDF
   rep #$20
   plx
   pla
-  sta lR37+1
+  sta lR38+1
   pla
-  sta lR37
+  sta lR38
   pla
   sta wUnknown000DAA
 
@@ -1271,21 +1271,21 @@ rsUnknown82AF64 ; 82/AF64
   _AFA9
   lda wUnknown000DAA
   pha
-  lda lR37
+  lda lR38
   pha
-  lda lR37+1
+  lda lR38+1
   pha
   lda aUnknown000DA0
-  sta lR37
+  sta lR38
   lda aUnknown000DA0+1
-  sta lR37+1
+  sta lR38+1
   sep #$20
   tyx
   ldy #$0000
 
   -
   lda $0004,b,x
-  sta [lR37],y
+  sta [lR38],y
   inc x
   inc y
   lda wUnknown000DAA
@@ -1295,9 +1295,9 @@ rsUnknown82AF64 ; 82/AF64
 
   rep #$20
   pla
-  sta lR37+1
+  sta lR38+1
   pla
-  sta lR37
+  sta lR38
   pla
   sta wUnknown000DAA
 
@@ -1351,21 +1351,21 @@ rsUnknown82AFE9 ; 82/AFE9
   phy
   lda wUnknown000DAA
   pha
-  lda lR37
+  lda lR38
   pha
-  lda lR37+1
+  lda lR38+1
   pha
   lda aUnknown000DA0
-  sta lR37
+  sta lR38
   lda aUnknown000DA0+1
-  sta lR37+1
+  sta lR38+1
   sep #$20
   tyx
   ldy #$0000
 
   -
   lda $0004,b,x
-  cmp [lR37],y
+  cmp [lR38],y
   bne _B06D
 
   inc x
@@ -1377,9 +1377,9 @@ rsUnknown82AFE9 ; 82/AFE9
 
   rep #$20
   pla
-  sta lR37+1
+  sta lR38+1
   pla
-  sta lR37
+  sta lR38
   pla
   sta wUnknown000DAA
 
@@ -1390,9 +1390,9 @@ rsUnknown82AFE9 ; 82/AFE9
   _B06D
   rep #$20
   pla
-  sta lR37+1
+  sta lR38+1
   pla
-  sta lR37
+  sta lR38
   pla
   sta wUnknown000DAA
   ply

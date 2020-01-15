@@ -556,9 +556,9 @@ rlProcEventTestHandleAction ; 82/84FD
   sta wCurrentChapter,b
   phx
   lda #(`procMapSwitch)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procMapSwitch
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
 
   plx

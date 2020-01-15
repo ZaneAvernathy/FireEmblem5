@@ -543,7 +543,7 @@ eventChapter14xEvents ; FD/A1BC
 
     STORE_LONG wProcInput1+1, dialogueChapter14xTitle
     STORE_WORD wProcInput1, <>dialogueChapter14xTitle
-    STORE_LONG lR43, $9A814C
+    STORE_LONG lR44, $9A814C
     CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
     YIELD
 

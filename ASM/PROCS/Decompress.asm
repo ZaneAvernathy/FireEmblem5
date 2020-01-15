@@ -8,9 +8,9 @@ rlProcDecompressInit ; 82/A31A
   .autsiz
   .databank ?
 
-  lda lR43
+  lda lR44
   sta lR18
-  lda lR43+1
+  lda lR44+1
   sta lR18+1
   lda #(`$7FB0F5)<<8
   sta lR19+1

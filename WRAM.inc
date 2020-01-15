@@ -98,17 +98,17 @@
       wR37 .word ? ; $00005D
     .ends
   .endu
-  lR37 .long ? ; $00005F
-  lR38 .long ? ; $000062
-  wR39 .word ? ; $000065
-  wR40 .word ? ; $000067
-  wR41 .word ? ; $000069
-  wR42 .word ? ; $00006B
-  lR43 .long ? ; $00006D
-  lR44 .long ? ; $000070
-  wR45 .word ? ; $000073
-  lR46 .long ? ; $000075
-  lR47 .long ? ; $000078
+  lR38 .long ? ; $00005F
+  lR39 .long ? ; $000062
+  wR40 .word ? ; $000065
+  wR41 .word ? ; $000067
+  wR42 .word ? ; $000069
+  wR43 .word ? ; $00006B
+  lR44 .long ? ; $00006D
+  lR45 .long ? ; $000070
+  wR46 .word ? ; $000073
+  lR47 .long ? ; $000075
+  lR48 .long ? ; $000078
 
   bBuf_INIDISP   .byte ? ; $00007B
   bBuf_OBSEL     .byte ? ; $00007C

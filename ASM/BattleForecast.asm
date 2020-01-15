@@ -78,9 +78,9 @@ rlBuildBattleForecastWindow ; 81/BF33
   sta wProcInput0,b
   phx
   lda #(`procBattleForecastCenterShadingHBounds)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procBattleForecastCenterShadingHBounds
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   jsl rlEnableBG1Sync

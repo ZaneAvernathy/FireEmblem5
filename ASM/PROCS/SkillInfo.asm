@@ -26,9 +26,9 @@ rlDrawSkillInfo ; 81/F898
   sta wProcInput1,b ; Y
   phx
   lda #(`procSkillInfo)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procSkillInfo
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   plp

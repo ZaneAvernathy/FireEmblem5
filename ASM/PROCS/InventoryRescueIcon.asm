@@ -49,9 +49,9 @@ rlProcInventoryRescueIconOnCycle ; 81/E0D9
 
   phx
   lda #(`procSkillInfo)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procSkillInfo
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   plx
   bcc +

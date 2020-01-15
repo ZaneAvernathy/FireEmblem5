@@ -129,25 +129,25 @@ rlUnknown81B5D9 ; 81/B5D9
 
   phx
   lda #(`procUnknown81BDA3)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81BDA3
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
   phx
   lda #(`procUnknown81BE18)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81BE18
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
   phx
   lda #(`procPhaseGraphicSprites)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPhaseGraphicSprites
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 

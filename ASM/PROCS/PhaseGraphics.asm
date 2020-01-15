@@ -65,9 +65,9 @@ rlProcPhaseGraphicSpritesOnCycle ; 81/B6C1
   +
   phx
   lda #(`procPhaseGraphicColor)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPhaseGraphicColor
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
 
@@ -191,9 +191,9 @@ rlProcPhaseGraphicColorOnCycle ; 81/B81D
   lda #<>rlProcPhaseGraphicColorOnCycle2
   sta aProcHeaderOnCycle,b,x
   lda #(`procPhaseGraphicSprites)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPhaseGraphicSprites
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -202,9 +202,9 @@ rlProcPhaseGraphicColorOnCycle ; 81/B81D
   +
   phx
   lda #(`procUnknown81BDA9)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81BDA9
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   bra rlProcPhaseGraphicColorOnCycle2
@@ -290,9 +290,9 @@ rlProcPhaseGraphicColorOnCycle2 ; 81/B8CE
   lda #$0003
   sta wUnknown000302,b
   lda #(`procUnknown81BE18)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81BE18
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 

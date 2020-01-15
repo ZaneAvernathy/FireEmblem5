@@ -416,9 +416,9 @@ rlClearInventorySkillInfoWindow ; 81/FCE8
   .databank `wInfoWindowTarget
 
   lda #(`procSkillInfo)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procSkillInfo
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   stz wInfoWindowTarget
   jsr rsProcItemInfoClearIcons

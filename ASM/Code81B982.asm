@@ -193,9 +193,9 @@ rlUnknown81BA36 ; 81/BA36
   sty wProcInput0,b
   phx
   lda #(`procUnknown81BAC5)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81BAC5
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   jsl $84A125
@@ -210,9 +210,9 @@ rlUnknown81BA36 ; 81/BA36
   sta wUnknown000E25,b
   phx
   lda #(`$8A82DF)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$8A82DF
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   plb

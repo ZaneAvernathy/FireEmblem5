@@ -24,13 +24,13 @@ rlSoundSystemSetup ; 80/8BD0
   phx
   phy
 
-  lda lR37
-  pha
-  lda lR37+1
-  pha
   lda lR38
   pha
   lda lR38+1
+  pha
+  lda lR39
+  pha
+  lda lR39+1
   pha
 
   ; Clear area used by sound system
@@ -55,15 +55,15 @@ rlSoundSystemSetup ; 80/8BD0
   ; The adc thing ahead gets undone
   ; by the stz, so really we're just
   ; storing the bank byte to the uppermost
-  ; byte of lR37
+  ; byte of lR38
 
   lda $DB8000
   tay
   lda $DB8000+1
   clc
   adc wSoundSystemBank,b
-  sta lR37+1
-  stz lR37
+  sta lR38+1
+  stz lR38
 
   sep #$20
   lda #$FE
@@ -78,22 +78,22 @@ rlSoundSystemSetup ; 80/8BD0
   sta wUnknown0004F4,b
   rep #$20
   lda wSoundSystemBank,b
-  sta lR38+1
+  sta lR39+1
   lda $DB800E
-  sta lR38
-  lda [lR38]
-  sta lR38
+  sta lR39
+  lda [lR39]
+  sta lR39
 
   jsl rlUnknown808ED7
 
   pla
+  sta lR39+1
+  pla
+  sta lR39
+  pla
   sta lR38+1
   pla
   sta lR38
-  pla
-  sta lR37+1
-  pla
-  sta lR37
   ply
   plx
   plb
@@ -569,14 +569,14 @@ rsGetSoundSystemByte ; 80/8E50
 
   ; Get sound system byte
 
-  lda [lR37],y
+  lda [lR38],y
   inc y
 
   ; Increment bank and reset offset
   ; if we reach a bank boundary
 
   bne +
-  inc lR37+2
+  inc lR38+2
   ldy #$8000
 
   +
@@ -733,16 +733,16 @@ rlUnknown808ED7 ; 80/8ED7
   inc y
 
   _8F02
-  lda [lR37]
-  inc lR37
-  inc lR37
+  lda [lR38]
+  inc lR38
+  inc lR38
   bne +
 
   pha
   lda #$8000
-  sta lR37
+  sta lR38
   pla
-  inc lR37+2
+  inc lR38+2
 
   +
   rts
@@ -768,7 +768,7 @@ rlUnknown808ED7 ; 80/8ED7
   phx
 
   _8F2F
-  lda [lR38]
+  lda [lR39]
   beq _8FB2
 
   cmp #$0064
@@ -779,8 +779,8 @@ rlUnknown808ED7 ; 80/8ED7
   bne ++
 
   +
-  inc lR38
-  inc lR38
+  inc lR39
+  inc lR39
 
   +
   sta wUnknown0004F0,b
@@ -825,9 +825,9 @@ rlUnknown808ED7 ; 80/8ED7
   xba
   clc
   adc @l wSoundSystemBank
-  sta lR37+1
+  sta lR38+1
   lda $0000,b,x
-  sta lR37
+  sta lR38
   ldy $0005,b,x
   bne _8F99
   lda @l wUnknown0004F2
@@ -957,10 +957,10 @@ rsUnknown80904E ; 80/904E
   .databank `rlUnknown808ED7
 
   rep #$20
-  lda [lR38]
+  lda [lR39]
   sta wUnknown0004F2,b
-  inc lR38
-  inc lR38
+  inc lR39
+  inc lR39
   stz wUnknown0004F0,b
   rts
 
@@ -980,8 +980,8 @@ rsUnknown80905E ; 80/905E
 
   rep #$20
   lda wUnknown0004F0,b
-  dec lR38
-  dec lR38
+  dec lR39
+  dec lR39
   asl a
   and #$1FFF
   cmp #$1000
@@ -991,8 +991,8 @@ rsUnknown80905E ; 80/905E
 
   +
   clc
-  adc lR38
-  sta lR38
+  adc lR39
+  sta lR39
   stz wUnknown0004F0,b
   rts
 
@@ -1037,10 +1037,10 @@ rsUnknown809092 ; 80/9092
 
   lda #(`$7E3000)<<8
   sta lDecompDest+1
-  sta lR37+1
+  sta lR38+1
   lda #<>$7E3000
   sta lDecompDest
-  sta lR37
+  sta lR38
   txa
   cmp @l wUnknown000504
   beq _90FD
@@ -1051,10 +1051,10 @@ rsUnknown809092 ; 80/9092
   +
   lda #(`$7E2000)<<8
   sta lDecompDest+1
-  sta lR37+1
+  sta lR38+1
   lda #<>$7E2000
   sta lDecompDest
-  sta lR37
+  sta lR38
   txa
   cmp @l wUnknown000502
   beq _90FD
@@ -1135,10 +1135,10 @@ rsUnknown809115 ; 80/9115
   asl a
   clc
   adc $DB8008
-  sta lR37
+  sta lR38
   ldy wSoundSystemBank+1,b
-  sty lR37+2
-  lda [lR37]
+  sty lR38+2
+  lda [lR38]
 
   -
   dec x
@@ -1148,15 +1148,15 @@ rsUnknown809115 ; 80/9115
   bra -
 
   +
-  sta lR37
+  sta lR38
   plx
   ldy #$02
-  lda [lR37],y
+  lda [lR38],y
   bne +
   ldx #$00
 
   +
-  lda [lR37]
+  lda [lR38]
   stx bUnknown0004FD,b
   rts
 
@@ -1165,7 +1165,7 @@ rsUnknown809115 ; 80/9115
   bcs _91C7
 
   ldx wSoundSystemBank+1,b
-  stx lR37+2
+  stx lR38+2
   rep #$10
   dec a
   asl a
@@ -1185,8 +1185,8 @@ rsUnknown809115 ; 80/9115
   and #$00FF
   clc
   adc $DB8012
-  sta lR37
-  lda [lR37],y
+  sta lR38
+  lda [lR38],y
 
   +
   sep #$10
@@ -1201,24 +1201,24 @@ rsUnknown809115 ; 80/9115
   asl a
   clc
   adc $DB8008
-  sta lR37
-  lda [lR37]
-  sta lR37
+  sta lR38
+  lda [lR38]
+  sta lR38
   lda bUnknown0004FD,b
   ldx bUnknown0004FD,b
   inc x
   and #$000F
   asl a
   clc
-  adc lR37
-  sta lR37
+  adc lR38
+  sta lR38
   ldy #$02
-  lda [lR37],y
+  lda [lR38],y
   bne +
   ldx #$00
 
   +
-  lda [lR37]
+  lda [lR38]
 
   _91C3
   stx bUnknown0004FD,b
@@ -1226,7 +1226,7 @@ rsUnknown809115 ; 80/9115
 
   _91C7
   ldx wSoundSystemBank+1,b
-  stx lR37+2
+  stx lR38+2
   pha
   rep #$10
   cmp #$0004
@@ -1251,8 +1251,8 @@ rsUnknown809115 ; 80/9115
   and #$007F
   clc
   adc $DB8012
-  sta lR37
-  lda [lR37],y
+  sta lR38
+  lda [lR38],y
   sep #$10
   and #$00FF
   bne +
@@ -1265,25 +1265,25 @@ rsUnknown809115 ; 80/9115
   clc
   adc $DB8014
   adc wUnknown0004F0,b
-  sta lR37
-  lda [lR37]
-  sta lR37
+  sta lR38
+  lda [lR38]
+  sta lR38
   lda bUnknown0004FD,b
   ldx bUnknown0004FD,b
   inc x
   and #$000F
   asl a
   clc
-  adc lR37
-  sta lR37
+  adc lR38
+  sta lR38
   ldy #$02
-  lda [lR37],y
+  lda [lR38],y
   bne +
 
   ldx #$00
 
   +
-  lda [lR37]
+  lda [lR38]
 
   _922E
   stx bUnknown0004FD,b
@@ -1584,12 +1584,12 @@ rsUnknown809400 ; 80/9400
   .autsiz
   .databank ?
 
-  ldy lR37
+  ldy lR38
   phy
-  ldy lR37+1
+  ldy lR38+1
   phy
   ldy wSoundSystemBank,b
-  sty lR37+1
+  sty lR38+1
   stx wUnknown0004EE,b
   cmp aUnknown0004C6,b,x
   beq _942E
@@ -1602,8 +1602,8 @@ rsUnknown809400 ; 80/9400
   lda #$0001
   sta aUnknown0004C2,b,x
   lda $DB8004
-  sta lR37
-  lda [lR37],y
+  sta lR38
+  lda [lR38],y
   beq _947B
   bra +
 
@@ -1621,10 +1621,10 @@ rsUnknown809400 ; 80/9400
   dec aUnknown0004C2,b,x
   bne _9474
 
-  stz lR37
+  stz lR38
 
   _9447
-  lda [lR37],y
+  lda [lR38],y
   beq _947B
 
   inc y
@@ -1639,7 +1639,7 @@ rsUnknown809400 ; 80/9400
   dec a
   asl a
   tax
-  lda [lR37],y
+  lda [lR38],y
   inc y
   inc y
   jsr (aUnknown80948E,x)
@@ -1656,9 +1656,9 @@ rsUnknown809400 ; 80/9400
 
   _9474
   pla
-  sta lR37+1
+  sta lR38+1
   pla
-  sta lR37
+  sta lR38
   rts
 
   _947B
@@ -1858,26 +1858,26 @@ rsUnknown809544 ; 80/9544
 
   txa
   phy
+  ldy lR39
+  phy
+  ldy lR39+1
+  phy
   ldy lR38
   phy
   ldy lR38+1
   phy
-  ldy lR37
-  phy
-  ldy lR37+1
-  phy
   ldy wSoundSystemBank,b
-  sty lR38+1
-  sta lR38
+  sty lR39+1
+  sta lR39
   jsl rlUnknown808ED7
-  ply
-  sty lR37+1
-  ply
-  sty lR37
   ply
   sty lR38+1
   ply
   sty lR38
+  ply
+  sty lR39+1
+  ply
+  sty lR39
   ply
   rts
 
@@ -2175,8 +2175,8 @@ rlUnknown8096B3 ; 80/96B3
   stx wUnknown0004F4,b
   rep #$10
   ldx wSoundSystemBank,b
-  stx lR38+1
-  sta lR38
+  stx lR39+1
+  sta lR39
   jsl rlUnknown808ED7
   stz wUnknown0004FA,b
 

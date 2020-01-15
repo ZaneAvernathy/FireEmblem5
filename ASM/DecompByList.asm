@@ -8,25 +8,25 @@ rlDecompressSingle ; 80/AF93
   ; Decompresses a single thing.
 
   ; Inputs:
-  ; lR44: Source pointer
-  ; lR46: Destination pointer
+  ; lR45: Source pointer
+  ; lR47: Destination pointer
 
   ; Outputs:
   ; None
 
   ; Copy offsets
 
-  lda lR44
+  lda lR45
   sta lDecompSource
-  lda lR46
+  lda lR47
   sta lDecompDest
 
   ; Copy banks
 
   sep #$20
-  lda lR44+2
+  lda lR45+2
   sta lDecompSource+2
-  lda lR46+2
+  lda lR47+2
   sta lDecompDest+2
   rep #$20
 

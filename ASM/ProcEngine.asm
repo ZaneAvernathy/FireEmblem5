@@ -56,7 +56,7 @@ rlProcEngineCreateProc ; 82/9BF1
   ; Creates a new proc
 
   ; Inputs:
-  ; lR43: Long pointer to proc info
+  ; lR44: Long pointer to proc info
 
   ; Outputs:
   ; Carry set if unsuccessful
@@ -69,14 +69,14 @@ rlProcEngineCreateProc ; 82/9BF1
 
   sep #$20
 
-  lda lR43+2
+  lda lR44+2
   pha
   rep #$20
   plb
 
   .databank ?
 
-  ldy lR43
+  ldy lR44
 
   ; Find first free proc slot
 
@@ -115,7 +115,7 @@ rlProcEngineCreateProc ; 82/9BF1
   tya
   sta aProcHeaderTypeOffset,b,x
 
-  lda lR43+1
+  lda lR44+1
   and #$FF00
   sta lProcCodePointer + 1,b
 
@@ -213,7 +213,7 @@ rlProcEngineCreateProcByIndex ; 82/9C99
 
   ; Inputs:
   ; A: Index in proc array
-  ; lR43: long pointer to proc info
+  ; lR44: long pointer to proc info
 
   ; Outputs:
   ; Carry set if unsuccessful
@@ -225,11 +225,11 @@ rlProcEngineCreateProcByIndex ; 82/9C99
 
   asl a
   tax
-  lda lR43
+  lda lR44
   tay
 
   sep #$20
-  lda lR43+2
+  lda lR44+2
   pha
   rep #$20
   plb
@@ -343,7 +343,7 @@ rlProcEngineFindProc ; 82/9CEC
   ; offset in the proc array of the proc
 
   ; Inputs:
-  ; lR43: long pointer to proc code
+  ; lR44: long pointer to proc code
 
   ; Outputs:
   ; X: Offset of proc in array
@@ -362,12 +362,12 @@ rlProcEngineFindProc ; 82/9CEC
   -
   rep #$20
   lda aProcHeaderTypeOffset,b,x
-  cmp lR43
+  cmp lR44
   bne +
 
   sep #$20
   lda aProcHeaderTypeBank,b,x
-  cmp lR43+2
+  cmp lR44+2
   beq ++
 
   +

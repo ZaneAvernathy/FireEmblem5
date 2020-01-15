@@ -227,10 +227,10 @@ rlUnknown82A701 ; 82/A701
   .databank `*
 
   phx
-  lda lR43
+  lda lR44
   tay
   sep #$20
-  lda lR43+2
+  lda lR44+2
   pha
   rep #$20
   plb
@@ -250,7 +250,7 @@ rlUnknown82A701 ; 82/A701
   tax
   tya
   sta aIRQArrayTypeOffset,b,x
-  lda lR43+1
+  lda lR44+1
   and #$FF00
   xba
   sta aIRQArrayTypeBank,b,x

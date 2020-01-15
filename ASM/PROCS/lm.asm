@@ -42,9 +42,9 @@ rlProclmInit ; 94/CCE7
   phy
 
   lda #(`$94EA21)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$94EA21
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
 
   ply

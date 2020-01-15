@@ -88,15 +88,15 @@ rlDemoRain ; 9A/E53D
   sta wProcInput0,b
 
   lda #(`$949F97)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$949F97
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
 
   lda #(`procDemoRain)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procDemoRain
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
 
   sep #$20

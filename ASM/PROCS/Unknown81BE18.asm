@@ -22,9 +22,9 @@ rlProcUnknown81BE18OnCycle ; 81/BE21
 
   phx
   lda #(`procPhaseGraphicSprites)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPhaseGraphicSprites
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   plx
   bcc +
@@ -40,9 +40,9 @@ rlProcUnknown81BE18OnCycle ; 81/BE21
   phx
   jsl rlProcEngineFreeProc
   lda #(`$87C4EF)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$87C4EF
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -50,9 +50,9 @@ rlProcUnknown81BE18OnCycle ; 81/BE21
 
   +
   lda #(`procUnknown81BDA3)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81BDA3
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -60,9 +60,9 @@ rlProcUnknown81BE18OnCycle ; 81/BE21
 
   +
   lda #(`procUnknown81BDA9)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procUnknown81BDA9
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -70,9 +70,9 @@ rlProcUnknown81BE18OnCycle ; 81/BE21
 
   +
   lda #(`procPhaseGraphicSprites)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPhaseGraphicSprites
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -80,9 +80,9 @@ rlProcUnknown81BE18OnCycle ; 81/BE21
 
   +
   lda #(`procPhaseGraphicColor)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPhaseGraphicColor
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 

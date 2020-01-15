@@ -830,9 +830,9 @@ rlUnknown829389 ; 82/9389
   asl a
   tax
   lda #(`procPortrait0)<<8
-  sta lR43+1
+  sta lR44+1
   lda @l aPortraitProcTable8293AB,x
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcc +
 
@@ -1162,9 +1162,9 @@ rlUnknown829684 ; 82/9684
   +
   phx
   lda #(`$9A94AB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A94AB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rtl
@@ -1195,9 +1195,9 @@ rlUnknown8296B3 ; 82/96B3
   +
   phx
   lda #(`$9A94AB)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A94AB
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rtl
@@ -1292,16 +1292,16 @@ rlUnknown829758 ; 82/9758
   .databank ?
 
   lda #(`$9A87BF)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A87BF
-  sta lR43
+  sta lR44
   jsl rlHDMAArrayEngineFindEntry
   bcs +
 
   lda #(`$9A87BF)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A87BF
-  sta lR43
+  sta lR44
   jsl rlHDMAArrayEngineCreateEntry
 
   +
@@ -1319,23 +1319,23 @@ rlUnknown829777 ; 82/9777
   jsl rlProcEngineFreeProc
 
   lda #(`procPortrait4)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait4
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcs +
 
   lda #(`procPortrait5)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait5
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   bcs +
 
   lda #(`$9A87BF)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A87BF
-  sta lR43
+  sta lR44
   jsl rlHDMAArrayEngineFindEntry
   bcc +
 
@@ -1355,9 +1355,9 @@ rlUnknown8297B3 ; 82/97B3
   sta wProcInput0,b
   phx
   lda #(`$9A8814)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A8814
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rtl
@@ -1373,9 +1373,9 @@ rlUnknown8297CA ; 82/97CA
   sta wProcInput0,b
   phx
   lda #(`$9A88C3)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>$9A88C3
-  sta lR43
+  sta lR44
   jsl rlProcEngineCreateProc
   plx
   rtl
@@ -2081,16 +2081,16 @@ rlCheckPortrait4Or5Active ; 82/9BA8
   phy
   tax
   lda #(`procPortrait4)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait4
-  sta lR43
+  sta lR44
   txa
   beq +
 
   lda #(`procPortrait5)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procPortrait5
-  sta lR43
+  sta lR44
 
   +
   jsl rlProcEngineFindProc

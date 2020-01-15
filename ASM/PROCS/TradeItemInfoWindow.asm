@@ -191,9 +191,9 @@ rlProcTradeItemInfoWindowOnCycle ; 81/FD16
 
   +
   lda #(`procItemInfo)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procItemInfo
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
 
   lda #<>rlProcTradeItemInfoWindowOnCycle2._FEDC
@@ -223,9 +223,9 @@ rlProcTradeItemInfoWindowOnCycle2 ; 81/FEA0
 
   phx
   lda #(`procItemInfo)<<8
-  sta lR43+1
+  sta lR44+1
   lda #<>procItemInfo
-  sta lR43
+  sta lR44
   jsl rlProcEngineFindProc
   jsl rlProcItemInfoOnCycle
   plx
