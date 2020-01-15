@@ -1,7 +1,7 @@
 dialogueSarahReleaseQuote ; 98/CAFE
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "つまんない･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "つまんない･･･"
 DIALOGUE_END_SCENE

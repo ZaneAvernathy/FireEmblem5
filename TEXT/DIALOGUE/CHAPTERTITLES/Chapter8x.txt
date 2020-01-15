@@ -1,20 +1,20 @@
 dialogueChapter8xTitle ; 9A/B91C
-	DIALOGUE_FONT_1
-	.text "⅛½⅛½"
-	DIALOGUE_FONT_2
-	.text "第"
-	DIALOGUE_FONT_0
-	.text "８"
-	DIALOGUE_FONT_2
-	.text "章"
-	DIALOGUE_FONT_3
-	.text "外"
-	DIALOGUE_FONT_2
-	.text "伝"
-	DIALOGUE_FONT_0
-	.text "　　ダグダの"
-	DIALOGUE_FONT_5
-	.text "館"
-	DIALOGUE_FONT_1
-	.text "⅛½⅛½"
+  DIALOGUE_FONT_1
+  .text "⅛½⅛½"
+  DIALOGUE_FONT_2
+  .text "第"
+  DIALOGUE_FONT_0
+  .text "８"
+  DIALOGUE_FONT_2
+  .text "章"
+  DIALOGUE_FONT_3
+  .text "外"
+  DIALOGUE_FONT_2
+  .text "伝"
+  DIALOGUE_FONT_0
+  .text "　　ダグダの"
+  DIALOGUE_FONT_5
+  .text "館"
+  DIALOGUE_FONT_1
+  .text "⅛½⅛½"
 DIALOGUE_EOF

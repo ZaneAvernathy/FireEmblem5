@@ -1,4 +1,4 @@
 
 menutextKillerBowName ; B0/9465
-	.enc "MenuText"
-	.text "キラーボウ\n"
+  .enc "MenuText"
+  .text "キラーボウ\n"

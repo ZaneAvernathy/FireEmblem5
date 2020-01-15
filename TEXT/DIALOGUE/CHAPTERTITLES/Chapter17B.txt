@@ -1,18 +1,18 @@
 dialogueChapter17BTitle ; 9A/BA6D
-	DIALOGUE_FONT_2
-	.text "第"
-	DIALOGUE_FONT_0
-	.text "１７"
-	DIALOGUE_FONT_2
-	.text "章"
-	DIALOGUE_FONT_1
-	.text "⅛"
-	DIALOGUE_FONT_0
-	.text "　　　　　５"
-	DIALOGUE_FONT_1
-	.text "月"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_5
-	.text "雨"
+  DIALOGUE_FONT_2
+  .text "第"
+  DIALOGUE_FONT_0
+  .text "１７"
+  DIALOGUE_FONT_2
+  .text "章"
+  DIALOGUE_FONT_1
+  .text "⅛"
+  DIALOGUE_FONT_0
+  .text "　　　　　５"
+  DIALOGUE_FONT_1
+  .text "月"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_5
+  .text "雨"
 DIALOGUE_EOF

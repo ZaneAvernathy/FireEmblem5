@@ -1,16 +1,16 @@
 dialogueChapter1Title ; 9A/B7EF
-	DIALOGUE_FONT_1
-	.text "⅛½⅛½"
-	DIALOGUE_FONT_2
-	.text "第"
-	DIALOGUE_FONT_0
-	.text "１"
-	DIALOGUE_FONT_2
-	.text "章"
-	DIALOGUE_FONT_1
-	.text "⅛"
-	DIALOGUE_FONT_0
-	.text "　　　　　フィアナの"
-	DIALOGUE_FONT_1
-	.text "戦士⅛½⅛½"
+  DIALOGUE_FONT_1
+  .text "⅛½⅛½"
+  DIALOGUE_FONT_2
+  .text "第"
+  DIALOGUE_FONT_0
+  .text "１"
+  DIALOGUE_FONT_2
+  .text "章"
+  DIALOGUE_FONT_1
+  .text "⅛"
+  DIALOGUE_FONT_0
+  .text "　　　　　フィアナの"
+  DIALOGUE_FONT_1
+  .text "戦士⅛½⅛½"
 DIALOGUE_EOF

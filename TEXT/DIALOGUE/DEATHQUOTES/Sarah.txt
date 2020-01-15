@@ -1,6 +1,6 @@
 dialogueSarahDeathQuote ; 82/BF8B
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "さみしい･･･"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "さみしい･･･"
 DIALOGUE_END_SCENE

@@ -1,33 +1,33 @@
 dialogueRumaighReleaseQuote ; 93/C3E2
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "すまねぇ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "恩"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "着"
-	DIALOGUE_FONT_0
-	.text "るぜ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "もうこんなことはこりごりだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $40
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_3
-	.text "供"
-	DIALOGUE_FONT_0
-	.text "たちのために"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "まじめに"
-	DIALOGUE_FONT_4
-	.text "働"
-	DIALOGUE_FONT_0
-	.text "くよ･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "すまねぇ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "恩"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "着"
+  DIALOGUE_FONT_0
+  .text "るぜ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "もうこんなことはこりごりだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $40
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_3
+  .text "供"
+  DIALOGUE_FONT_0
+  .text "たちのために"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "まじめに"
+  DIALOGUE_FONT_4
+  .text "働"
+  DIALOGUE_FONT_0
+  .text "くよ･･･"
 DIALOGUE_END_SCENE

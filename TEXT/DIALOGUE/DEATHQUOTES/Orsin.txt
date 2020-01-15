@@ -1,12 +1,12 @@
 dialogueOrsinDeathQuote ; 82/B8F1
-	DIALOGUE_FONT_0
-	.text "く､"
-	DIALOGUE_PAUSE $08
-	.text "くそっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "としたことが･･･"
+  DIALOGUE_FONT_0
+  .text "く､"
+  DIALOGUE_PAUSE $08
+  .text "くそっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "としたことが･･･"
 DIALOGUE_END_SCENE

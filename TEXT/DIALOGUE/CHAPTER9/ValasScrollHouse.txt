@@ -1,61 +1,61 @@
 dialogueChapter9ValasScrollHouse ; 93/E894
-		DIALOGUE_RIGHT
-		DIALOGUE_LOAD NPCWoman1Portrait
-		DIALOGUE_FONT_0
-		.text "あなたたち"
-		DIALOGUE_NL
-		DIALOGUE_PAUSE $08
-		DIALOGUE_FONT_1
-		.text "山"
-		DIALOGUE_FONT_5
-		.text "荘"
-		DIALOGUE_FONT_0
-		.text "に"
-		DIALOGUE_FONT_4
-		.text "住"
-		DIALOGUE_FONT_0
-		.text "んでる"
-		DIALOGUE_FONT_1
-		.text "人"
-		DIALOGUE_FONT_0
-		.text "たちと"
-		DIALOGUE_NL
-		DIALOGUE_PAUSE $08
-		.text "お"
-		DIALOGUE_FONT_1
-		.text "知"
-		DIALOGUE_FONT_0
-		.text "り"
-		DIALOGUE_FONT_1
-		.text "合"
-		DIALOGUE_FONT_0
-		.text "いなんですか？"
-		DIALOGUE_WAIT_PRESS
-		DIALOGUE_SCROLL
-		.text "これ､"
-		DIALOGUE_PAUSE $08
-		DIALOGUE_FONT_4
-		.text "裹"
-		DIALOGUE_FONT_1
-		.text "山"
-		DIALOGUE_FONT_0
-		.text "で"
-		DIALOGUE_FONT_1
-		.text "見"
-		DIALOGUE_FONT_0
-		.text "つけたんですけど"
-		DIALOGUE_NL
-		DIALOGUE_PAUSE $10
-		.text "あの"
-		DIALOGUE_FONT_1
-		.text "人"
-		DIALOGUE_FONT_0
-		.text "たちのモノじゃないかしら"
-		DIALOGUE_NL
-		DIALOGUE_PAUSE $08
-		DIALOGUE_FONT_1
-		.text "持"
-		DIALOGUE_FONT_0
-		.text "っていってあげてくださいな"
-		DIALOGUE_WAIT_PRESS
+    DIALOGUE_RIGHT
+    DIALOGUE_LOAD NPCWoman1Portrait
+    DIALOGUE_FONT_0
+    .text "あなたたち"
+    DIALOGUE_NL
+    DIALOGUE_PAUSE $08
+    DIALOGUE_FONT_1
+    .text "山"
+    DIALOGUE_FONT_5
+    .text "荘"
+    DIALOGUE_FONT_0
+    .text "に"
+    DIALOGUE_FONT_4
+    .text "住"
+    DIALOGUE_FONT_0
+    .text "んでる"
+    DIALOGUE_FONT_1
+    .text "人"
+    DIALOGUE_FONT_0
+    .text "たちと"
+    DIALOGUE_NL
+    DIALOGUE_PAUSE $08
+    .text "お"
+    DIALOGUE_FONT_1
+    .text "知"
+    DIALOGUE_FONT_0
+    .text "り"
+    DIALOGUE_FONT_1
+    .text "合"
+    DIALOGUE_FONT_0
+    .text "いなんですか？"
+    DIALOGUE_WAIT_PRESS
+    DIALOGUE_SCROLL
+    .text "これ､"
+    DIALOGUE_PAUSE $08
+    DIALOGUE_FONT_4
+    .text "裹"
+    DIALOGUE_FONT_1
+    .text "山"
+    DIALOGUE_FONT_0
+    .text "で"
+    DIALOGUE_FONT_1
+    .text "見"
+    DIALOGUE_FONT_0
+    .text "つけたんですけど"
+    DIALOGUE_NL
+    DIALOGUE_PAUSE $10
+    .text "あの"
+    DIALOGUE_FONT_1
+    .text "人"
+    DIALOGUE_FONT_0
+    .text "たちのモノじゃないかしら"
+    DIALOGUE_NL
+    DIALOGUE_PAUSE $08
+    DIALOGUE_FONT_1
+    .text "持"
+    DIALOGUE_FONT_0
+    .text "っていってあげてくださいな"
+    DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

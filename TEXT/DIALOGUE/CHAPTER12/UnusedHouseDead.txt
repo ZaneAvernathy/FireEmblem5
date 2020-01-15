@@ -1,35 +1,35 @@
 dialogueChapter12UnusedHouseDead ; 92/A325
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan2Portrait
-	DIALOGUE_FONT_0
-	.text "なにか"
-	DIALOGUE_FONT_1
-	.text "用"
-	DIALOGUE_FONT_0
-	.text "か？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "用"
-	DIALOGUE_FONT_0
-	.text "がなけりゃ"
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "ってくれ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_4
-	.text "誰"
-	DIALOGUE_FONT_0
-	.text "とも"
-	DIALOGUE_FONT_3
-	.text "口"
-	DIALOGUE_FONT_0
-	.text "をききたくねえ･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan2Portrait
+  DIALOGUE_FONT_0
+  .text "なにか"
+  DIALOGUE_FONT_1
+  .text "用"
+  DIALOGUE_FONT_0
+  .text "か？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "用"
+  DIALOGUE_FONT_0
+  .text "がなけりゃ"
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "ってくれ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_4
+  .text "誰"
+  DIALOGUE_FONT_0
+  .text "とも"
+  DIALOGUE_FONT_3
+  .text "口"
+  DIALOGUE_FONT_0
+  .text "をききたくねえ･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

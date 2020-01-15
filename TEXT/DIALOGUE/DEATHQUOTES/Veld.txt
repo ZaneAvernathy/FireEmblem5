@@ -1,70 +1,70 @@
 dialogueVeldDeathQuote ; E7/DF16
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ぐ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "このわしが･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "バカな･･･"
-	DIALOGUE_PAUSE $40
-	DIALOGUE_SCROLL
-	.text "だが･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "まだ"
-	DIALOGUE_FONT_2
-	.text "終"
-	DIALOGUE_FONT_0
-	.text "わりではないぞ･･･"
-	DIALOGUE_PAUSE $40
-	DIALOGUE_SCROLL
-	.text "わしが"
-	DIALOGUE_FONT_2
-	.text "死"
-	DIALOGUE_FONT_0
-	.text "んでも･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ロプトは"
-	DIALOGUE_FONT_2
-	.text "滅"
-	DIALOGUE_FONT_0
-	.text "びぬ･･･"
-	DIALOGUE_PAUSE $40
-	DIALOGUE_SCROLL
-	.text "ロプト"
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "復活"
-	DIALOGUE_FONT_0
-	.text "は･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "目"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "前"
-	DIALOGUE_FONT_0
-	.text "に･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "せまっておるのだ･･･"
-	DIALOGUE_PAUSE $40
-	DIALOGUE_SCROLL
-	.text "せいぜいそれまで"
-	DIALOGUE_NL
-	.text "あがくのだな･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "フフフ･･･"
-	DIALOGUE_PAUSE $10
-	.text "ハハハハハ･･･"
-	DIALOGUE_PAUSE $20
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ぐ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "このわしが･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "バカな･･･"
+  DIALOGUE_PAUSE $40
+  DIALOGUE_SCROLL
+  .text "だが･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "まだ"
+  DIALOGUE_FONT_2
+  .text "終"
+  DIALOGUE_FONT_0
+  .text "わりではないぞ･･･"
+  DIALOGUE_PAUSE $40
+  DIALOGUE_SCROLL
+  .text "わしが"
+  DIALOGUE_FONT_2
+  .text "死"
+  DIALOGUE_FONT_0
+  .text "んでも･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ロプトは"
+  DIALOGUE_FONT_2
+  .text "滅"
+  DIALOGUE_FONT_0
+  .text "びぬ･･･"
+  DIALOGUE_PAUSE $40
+  DIALOGUE_SCROLL
+  .text "ロプト"
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "復活"
+  DIALOGUE_FONT_0
+  .text "は･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "目"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "前"
+  DIALOGUE_FONT_0
+  .text "に･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "せまっておるのだ･･･"
+  DIALOGUE_PAUSE $40
+  DIALOGUE_SCROLL
+  .text "せいぜいそれまで"
+  DIALOGUE_NL
+  .text "あがくのだな･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "フフフ･･･"
+  DIALOGUE_PAUSE $10
+  .text "ハハハハハ･･･"
+  DIALOGUE_PAUSE $20
 DIALOGUE_END_SCENE

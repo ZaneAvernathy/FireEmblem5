@@ -1,19 +1,19 @@
 dialogueChapter11TrapSprung ; 95/F6FF
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD KempfPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "くっくっくっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ひっかかりおったわ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "バカなやつめ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "よし､"
-	DIALOGUE_PAUSE $08
-	.text "やれっ！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD KempfPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "くっくっくっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ひっかかりおったわ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "バカなやつめ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "よし､"
+  DIALOGUE_PAUSE $08
+  .text "やれっ！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

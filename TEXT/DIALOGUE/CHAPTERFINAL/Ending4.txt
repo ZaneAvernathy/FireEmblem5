@@ -1,349 +1,349 @@
 dialogueChapterFinalEnding4 ; E7/D4A2
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD MirandaPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_0
-	.text "しいいかしら"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ミランダ"
-	DIALOGUE_FONT_1
-	.text "王女"
-	DIALOGUE_FONT_0
-	.text "？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "どうしたんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あなたに"
-	DIALOGUE_FONT_4
-	.text "謝"
-	DIALOGUE_FONT_0
-	.text "らなければ"
-	DIALOGUE_NL
-	.text "ならないことがあるわ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ドリアスのことならもういいよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あれはぼくの"
-	DIALOGUE_FONT_4
-	.text "責"
-	DIALOGUE_FONT_3
-	.text "任"
-	DIALOGUE_FONT_0
-	.text "だし"
-	DIALOGUE_NL
-	.text "ミランダが"
-	DIALOGUE_FONT_1
-	.text "気"
-	DIALOGUE_FONT_0
-	.text "にすることじゃない"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "それにアルスターは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "セリス"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "によって"
-	DIALOGUE_FONT_1
-	.text "解放"
-	DIALOGUE_FONT_0
-	.text "されたし"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ミランダ"
-	DIALOGUE_FONT_1
-	.text "王女"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_FONT_1
-	.text "無事"
-	DIALOGUE_FONT_0
-	.text "だと"
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "って"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "国"
-	DIALOGUE_FONT_2
-	.text "民"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_FONT_1
-	.text "喜"
-	DIALOGUE_FONT_0
-	.text "んでいるだろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "え､"
-	DIALOGUE_PAUSE $08
-	.text "それはね･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "だけど"
-	DIALOGUE_FONT_1
-	.text "国"
-	DIALOGUE_FONT_2
-	.text "民"
-	DIALOGUE_FONT_0
-	.text "はレンスターとの"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "統合"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "望"
-	DIALOGUE_FONT_0
-	.text "んでいるし"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_2
-	.text "重臣"
-	DIALOGUE_FONT_1
-	.text "達"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "妃"
-	DIALOGUE_FONT_0
-	.text "になれってうるさいの"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "女"
-	DIALOGUE_FONT_0
-	.text "だと"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "ってバカにしてるわ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "４"
-	DIALOGUE_FONT_1
-	.text "王家"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "中"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_0
-	.text "き"
-	DIALOGUE_FONT_2
-	.text "残"
-	DIALOGUE_FONT_0
-	.text "ったのは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ぼくとミランダだけだから"
-	DIALOGUE_NL
-	.text "そう"
-	DIALOGUE_FONT_5
-	.text "考"
-	DIALOGUE_FONT_0
-	.text "える"
-	DIALOGUE_FONT_1
-	.text "者"
-	DIALOGUE_FONT_0
-	.text "がいてもしかたないよ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "でも､"
-	DIALOGUE_PAUSE $08
-	.text "ぼくはまだ･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "がきらいなの？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "それならそれで"
-	DIALOGUE_FONT_3
-	.text "別"
-	DIALOGUE_FONT_0
-	.text "にいいけど･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ちがうんだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ぼくにはまだ"
-	DIALOGUE_NL
-	.text "やらなければならないことがある"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "トラキアとの"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いや"
-	DIALOGUE_FONT_1
-	.text "暗黒"
-	DIALOGUE_FONT_3
-	.text "教"
-	DIALOGUE_FONT_1
-	.text "団"
-	DIALOGUE_FONT_0
-	.text "のこと"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "それにグランベル"
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_FONT_1
-	.text "健"
-	DIALOGUE_FONT_3
-	.text "在"
-	DIALOGUE_FONT_0
-	.text "だし"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "北"
-	DIALOGUE_FONT_0
-	.text "トラキアも"
-	DIALOGUE_FONT_1
-	.text "守"
-	DIALOGUE_FONT_0
-	.text "らなければならない"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "はまだ､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "誰"
-	DIALOGUE_FONT_0
-	.text "かが"
-	DIALOGUE_FONT_1
-	.text "好"
-	DIALOGUE_FONT_0
-	.text "きとかきらいとか"
-	DIALOGUE_NL
-	.text "そんなことを"
-	DIALOGUE_FONT_5
-	.text "考"
-	DIALOGUE_FONT_0
-	.text "えるよゆうはないんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･････"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "いいわ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "それなら､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "はアルスターで"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "りを"
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "っています"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "でも､"
-	DIALOGUE_PAUSE $08
-	.text "トラキア一つ"
-	DIALOGUE_FONT_2
-	.text "倒"
-	DIALOGUE_FONT_0
-	.text "せないような"
-	DIALOGUE_FONT_1
-	.text "男"
-	DIALOGUE_FONT_0
-	.text "なら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "から"
-	DIALOGUE_FONT_1
-	.text "願"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_1
-	.text "下"
-	DIALOGUE_FONT_0
-	.text "げよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "いいわね､"
-	DIALOGUE_PAUSE $08
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD MirandaPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_0
+  .text "しいいかしら"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ミランダ"
+  DIALOGUE_FONT_1
+  .text "王女"
+  DIALOGUE_FONT_0
+  .text "？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "どうしたんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あなたに"
+  DIALOGUE_FONT_4
+  .text "謝"
+  DIALOGUE_FONT_0
+  .text "らなければ"
+  DIALOGUE_NL
+  .text "ならないことがあるわ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ドリアスのことならもういいよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あれはぼくの"
+  DIALOGUE_FONT_4
+  .text "責"
+  DIALOGUE_FONT_3
+  .text "任"
+  DIALOGUE_FONT_0
+  .text "だし"
+  DIALOGUE_NL
+  .text "ミランダが"
+  DIALOGUE_FONT_1
+  .text "気"
+  DIALOGUE_FONT_0
+  .text "にすることじゃない"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "それにアルスターは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "セリス"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "によって"
+  DIALOGUE_FONT_1
+  .text "解放"
+  DIALOGUE_FONT_0
+  .text "されたし"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ミランダ"
+  DIALOGUE_FONT_1
+  .text "王女"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_FONT_1
+  .text "無事"
+  DIALOGUE_FONT_0
+  .text "だと"
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "って"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "国"
+  DIALOGUE_FONT_2
+  .text "民"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_FONT_1
+  .text "喜"
+  DIALOGUE_FONT_0
+  .text "んでいるだろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "え､"
+  DIALOGUE_PAUSE $08
+  .text "それはね･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "だけど"
+  DIALOGUE_FONT_1
+  .text "国"
+  DIALOGUE_FONT_2
+  .text "民"
+  DIALOGUE_FONT_0
+  .text "はレンスターとの"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "統合"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "望"
+  DIALOGUE_FONT_0
+  .text "んでいるし"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_2
+  .text "重臣"
+  DIALOGUE_FONT_1
+  .text "達"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "妃"
+  DIALOGUE_FONT_0
+  .text "になれってうるさいの"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "女"
+  DIALOGUE_FONT_0
+  .text "だと"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "ってバカにしてるわ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "４"
+  DIALOGUE_FONT_1
+  .text "王家"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "中"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_0
+  .text "き"
+  DIALOGUE_FONT_2
+  .text "残"
+  DIALOGUE_FONT_0
+  .text "ったのは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ぼくとミランダだけだから"
+  DIALOGUE_NL
+  .text "そう"
+  DIALOGUE_FONT_5
+  .text "考"
+  DIALOGUE_FONT_0
+  .text "える"
+  DIALOGUE_FONT_1
+  .text "者"
+  DIALOGUE_FONT_0
+  .text "がいてもしかたないよ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "でも､"
+  DIALOGUE_PAUSE $08
+  .text "ぼくはまだ･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "がきらいなの？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "それならそれで"
+  DIALOGUE_FONT_3
+  .text "別"
+  DIALOGUE_FONT_0
+  .text "にいいけど･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ちがうんだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ぼくにはまだ"
+  DIALOGUE_NL
+  .text "やらなければならないことがある"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "トラキアとの"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いや"
+  DIALOGUE_FONT_1
+  .text "暗黒"
+  DIALOGUE_FONT_3
+  .text "教"
+  DIALOGUE_FONT_1
+  .text "団"
+  DIALOGUE_FONT_0
+  .text "のこと"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "それにグランベル"
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_FONT_1
+  .text "健"
+  DIALOGUE_FONT_3
+  .text "在"
+  DIALOGUE_FONT_0
+  .text "だし"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "北"
+  DIALOGUE_FONT_0
+  .text "トラキアも"
+  DIALOGUE_FONT_1
+  .text "守"
+  DIALOGUE_FONT_0
+  .text "らなければならない"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "はまだ､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "誰"
+  DIALOGUE_FONT_0
+  .text "かが"
+  DIALOGUE_FONT_1
+  .text "好"
+  DIALOGUE_FONT_0
+  .text "きとかきらいとか"
+  DIALOGUE_NL
+  .text "そんなことを"
+  DIALOGUE_FONT_5
+  .text "考"
+  DIALOGUE_FONT_0
+  .text "えるよゆうはないんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･････"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "いいわ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "それなら､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "はアルスターで"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "りを"
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "っています"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "でも､"
+  DIALOGUE_PAUSE $08
+  .text "トラキア一つ"
+  DIALOGUE_FONT_2
+  .text "倒"
+  DIALOGUE_FONT_0
+  .text "せないような"
+  DIALOGUE_FONT_1
+  .text "男"
+  DIALOGUE_FONT_0
+  .text "なら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "から"
+  DIALOGUE_FONT_1
+  .text "願"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_1
+  .text "下"
+  DIALOGUE_FONT_0
+  .text "げよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "いいわね､"
+  DIALOGUE_PAUSE $08
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

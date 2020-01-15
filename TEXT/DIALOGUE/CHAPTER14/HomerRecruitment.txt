@@ -1,217 +1,217 @@
 dialogueChapter14HomerRecruitment ; 92/D1F9
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD HomerPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NannaPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "おっ･･･"
-	DIALOGUE_PAUSE $10
-	.text "いいねえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あんたのためなら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "先"
-	DIALOGUE_FONT_3
-	.text "約"
-	DIALOGUE_FONT_0
-	.text "だってキャンセルしちゃうぜ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "えっ？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "･･･なんのことですか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "だからさ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_5
-	.text "夜"
-	DIALOGUE_FONT_3
-	.text "限"
-	DIALOGUE_FONT_0
-	.text "りで"
-	DIALOGUE_FONT_1
-	.text "街"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "るんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "みんなを"
-	DIALOGUE_FONT_1
-	.text "愛"
-	DIALOGUE_FONT_0
-	.text "したいけど"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "体"
-	DIALOGUE_FONT_0
-	.text "は一つだからな･･･"
-	DIALOGUE_PAUSE $20
-	.text "って､"
-	DIALOGUE_PAUSE $08
-	.text "おい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "いきなりビンタはねえだろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "か"
-	DIALOGUE_FONT_1
-	.text "悪"
-	DIALOGUE_FONT_0
-	.text "いこといったかよ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "あなたは"
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_5
-	.text "考"
-	DIALOGUE_FONT_0
-	.text "えているの！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "街"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "守"
-	DIALOGUE_FONT_0
-	.text "ろうと"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "お"
-	DIALOGUE_FONT_1
-	.text "年"
-	DIALOGUE_FONT_4
-	.text "寄"
-	DIALOGUE_FONT_0
-	.text "りや"
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_0
-	.text "どもたちまで"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "必"
-	DIALOGUE_FONT_2
-	.text "死"
-	DIALOGUE_FONT_0
-	.text "になって"
-	DIALOGUE_FONT_4
-	.text "働"
-	DIALOGUE_FONT_0
-	.text "いているのに"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "あなたは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "昼"
-	DIALOGUE_FONT_2
-	.text "間"
-	DIALOGUE_FONT_0
-	.text "っからおさけをのんで･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "恥"
-	DIALOGUE_FONT_0
-	.text "ずかしいとは"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "わないのですか！！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "おい､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_FONT_4
-	.text "泣"
-	DIALOGUE_FONT_0
-	.text "くことはねえだろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "わかった､"
-	DIALOGUE_PAUSE $08
-	.text "わかったよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_2
-	.text "伝"
-	DIALOGUE_FONT_0
-	.text "えばいいんだろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "だけど"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_2
-	.text "体"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "弱"
-	DIALOGUE_FONT_0
-	.text "いから"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "力"
-	DIALOGUE_FONT_3
-	.text "仕"
-	DIALOGUE_FONT_1
-	.text "事"
-	DIALOGUE_FONT_0
-	.text "はカンベンしてくれよな"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD HomerPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NannaPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "おっ･･･"
+  DIALOGUE_PAUSE $10
+  .text "いいねえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あんたのためなら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "先"
+  DIALOGUE_FONT_3
+  .text "約"
+  DIALOGUE_FONT_0
+  .text "だってキャンセルしちゃうぜ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "えっ？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "･･･なんのことですか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "だからさ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_5
+  .text "夜"
+  DIALOGUE_FONT_3
+  .text "限"
+  DIALOGUE_FONT_0
+  .text "りで"
+  DIALOGUE_FONT_1
+  .text "街"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "るんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "みんなを"
+  DIALOGUE_FONT_1
+  .text "愛"
+  DIALOGUE_FONT_0
+  .text "したいけど"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "体"
+  DIALOGUE_FONT_0
+  .text "は一つだからな･･･"
+  DIALOGUE_PAUSE $20
+  .text "って､"
+  DIALOGUE_PAUSE $08
+  .text "おい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "いきなりビンタはねえだろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "か"
+  DIALOGUE_FONT_1
+  .text "悪"
+  DIALOGUE_FONT_0
+  .text "いこといったかよ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "あなたは"
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_5
+  .text "考"
+  DIALOGUE_FONT_0
+  .text "えているの！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "街"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "守"
+  DIALOGUE_FONT_0
+  .text "ろうと"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "お"
+  DIALOGUE_FONT_1
+  .text "年"
+  DIALOGUE_FONT_4
+  .text "寄"
+  DIALOGUE_FONT_0
+  .text "りや"
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_0
+  .text "どもたちまで"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "必"
+  DIALOGUE_FONT_2
+  .text "死"
+  DIALOGUE_FONT_0
+  .text "になって"
+  DIALOGUE_FONT_4
+  .text "働"
+  DIALOGUE_FONT_0
+  .text "いているのに"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "あなたは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "昼"
+  DIALOGUE_FONT_2
+  .text "間"
+  DIALOGUE_FONT_0
+  .text "っからおさけをのんで･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "恥"
+  DIALOGUE_FONT_0
+  .text "ずかしいとは"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "わないのですか！！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "おい､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_FONT_4
+  .text "泣"
+  DIALOGUE_FONT_0
+  .text "くことはねえだろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "わかった､"
+  DIALOGUE_PAUSE $08
+  .text "わかったよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_2
+  .text "伝"
+  DIALOGUE_FONT_0
+  .text "えばいいんだろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "だけど"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_2
+  .text "体"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "弱"
+  DIALOGUE_FONT_0
+  .text "いから"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "力"
+  DIALOGUE_FONT_3
+  .text "仕"
+  DIALOGUE_FONT_1
+  .text "事"
+  DIALOGUE_FONT_0
+  .text "はカンベンしてくれよな"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

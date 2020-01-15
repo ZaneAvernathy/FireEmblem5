@@ -1,38 +1,38 @@
 dialogueChapter1WorldMap1 ; 82/C82F
-	DIALOGUE_FONT_3
-	.text "燎"
-	DIALOGUE_FONT_0
-	.text "け"
-	DIALOGUE_FONT_2
-	.text "落"
-	DIALOGUE_FONT_0
-	.text "ちるレンスター"
-	DIALOGUE_FONT_1
-	.text "城"
-	DIALOGUE_FONT_0
-	.text "から"
-	DIALOGUE_FONT_2
-	.text "脱"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "し"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "からくも"
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_0
-	.text "き"
-	DIALOGUE_FONT_2
-	.text "残"
-	DIALOGUE_FONT_0
-	.text "った"
-	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, LeifPortrait | (0 << 8), 6 | (4 << 8)
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "リーフは"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_FONT_3
+  .text "燎"
+  DIALOGUE_FONT_0
+  .text "け"
+  DIALOGUE_FONT_2
+  .text "落"
+  DIALOGUE_FONT_0
+  .text "ちるレンスター"
+  DIALOGUE_FONT_1
+  .text "城"
+  DIALOGUE_FONT_0
+  .text "から"
+  DIALOGUE_FONT_2
+  .text "脱"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "し"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "からくも"
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_0
+  .text "き"
+  DIALOGUE_FONT_2
+  .text "残"
+  DIALOGUE_FONT_0
+  .text "った"
+  DIALOGUE_ASMC_2 rlDialogueLoadPortrait, LeifPortrait | (0 << 8), 6 | (4 << 8)
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "リーフは"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

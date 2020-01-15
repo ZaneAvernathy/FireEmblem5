@@ -6,21 +6,21 @@ procUnknown958000 .dstruct structProcInfo, "MM", rlProcUnknown958000Init, rlProc
 
 rlProcUnknown958000Init ; 95/8008
 
-	.autsiz
-	.databank ?
+  .autsiz
+  .databank ?
 
-	rtl
+  rtl
 
 rlProcUnknown958000OnCycle ; 95/8009
 
-	.autsiz
-	.databank ?
+  .autsiz
+  .databank ?
 
-	rtl
+  rtl
 
 rlProcUnknown958000Code ; 95/800A
 
-	.autsiz
-	.databank ?
+  .autsiz
+  .databank ?
 
-	rtl
+  rtl

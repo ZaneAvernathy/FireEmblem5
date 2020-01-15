@@ -1,15 +1,15 @@
 dialogueChapter4WorldMap1 ; 82/CB9B
-	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, LeifPortrait | (1 << 8), 5 | (6 << 8)
-	DIALOGUE_FONT_0
-	.text "レイドリックの"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "落"
-	DIALOGUE_FONT_0
-	.text "ちたリーフは"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_ASMC_2 rlDialogueLoadPortrait, LeifPortrait | (1 << 8), 5 | (6 << 8)
+  DIALOGUE_FONT_0
+  .text "レイドリックの"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "落"
+  DIALOGUE_FONT_0
+  .text "ちたリーフは"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

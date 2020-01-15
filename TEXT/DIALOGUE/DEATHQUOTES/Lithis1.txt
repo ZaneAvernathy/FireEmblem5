@@ -1,10 +1,10 @@
 dialogueLithis1DeathQuote ; 82/BD23
-	DIALOGUE_FONT_0
-	.text "うう･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "いてえよ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "サフィ･･･"
+  DIALOGUE_FONT_0
+  .text "うう･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "いてえよ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "サフィ･･･"
 DIALOGUE_END_SCENE

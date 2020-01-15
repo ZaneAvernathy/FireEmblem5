@@ -1,8 +1,8 @@
 dialogueBrooksReleaseQuote ; 98/B452
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "このわしも"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "なめられたものだ･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "このわしも"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "なめられたものだ･･･"
 DIALOGUE_END_SCENE

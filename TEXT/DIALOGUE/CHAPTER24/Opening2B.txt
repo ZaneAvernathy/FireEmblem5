@@ -1,394 +1,394 @@
 dialogueChapter24Opening2B ; B0/E3CA
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD Leif2Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD SaiasPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "油"
-	DIALOGUE_FONT_2
-	.text "斯"
-	DIALOGUE_FONT_0
-	.text "されぬように"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "レイドリックの"
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "もうほとんどおりませんが"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "王宮内"
-	DIALOGUE_FONT_0
-	.text "には"
-	DIALOGUE_FONT_1
-	.text "傭兵"
-	DIALOGUE_FONT_0
-	.text "たちが"
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "ち"
-	DIALOGUE_FONT_2
-	.text "受"
-	DIALOGUE_FONT_0
-	.text "けております"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "特"
-	DIALOGUE_FONT_0
-	.text "にガルザスという"
-	DIALOGUE_FONT_1
-	.text "剣士"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "相"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "にしてはいけません"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ガルザス･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "では･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "どうすればよいのですか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_4
-	.text "確"
-	DIALOGUE_FONT_3
-	.text "実"
-	DIALOGUE_FONT_0
-	.text "なことは"
-	DIALOGUE_FONT_3
-	.text "申"
-	DIALOGUE_FONT_0
-	.text "し"
-	DIALOGUE_FONT_1
-	.text "上"
-	DIALOGUE_FONT_0
-	.text "げられませんが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "マリータという"
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_1
-	.text "女"
-	DIALOGUE_FONT_0
-	.text "がいれば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "なんとかなるかも"
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "れません"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ガルザスはその"
-	DIALOGUE_FONT_3
-	.text "娘"
-	DIALOGUE_FONT_0
-	.text "と"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "か"
-	DIALOGUE_FONT_4
-	.text "深"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_2
-	.text "関"
-	DIALOGUE_FONT_0
-	.text "わりがあるようです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "マリータが･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "アウグスト！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "を３"
-	DIALOGUE_FONT_2
-	.text "ヶ所"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "分"
-	DIALOGUE_FONT_0
-	.text "けたのはどうしてだ？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "一"
-	DIALOGUE_FONT_2
-	.text "隊"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_3
-	.text "供"
-	DIALOGUE_FONT_1
-	.text "達"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "取"
-	DIALOGUE_FONT_0
-	.text "り"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "すため"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "一"
-	DIALOGUE_FONT_2
-	.text "隊"
-	DIALOGUE_FONT_0
-	.text "はロプトの"
-	DIALOGUE_FONT_2
-	.text "司祭"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "捕"
-	DIALOGUE_FONT_0
-	.text "えるためです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "いずれも一"
-	DIALOGUE_FONT_4
-	.text "刻"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "争"
-	DIALOGUE_FONT_0
-	.text "うゆえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "わけて"
-	DIALOGUE_FONT_2
-	.text "突"
-	DIALOGUE_FONT_1
-	.text "入"
-	DIALOGUE_FONT_0
-	.text "させました"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_3
-	.text "供"
-	DIALOGUE_FONT_1
-	.text "達"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "救出"
-	DIALOGUE_FONT_0
-	.text "はわかるが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ロプトの"
-	DIALOGUE_FONT_2
-	.text "司祭"
-	DIALOGUE_FONT_0
-	.text "とはなんだ？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "東"
-	DIALOGUE_FONT_0
-	.text "の一"
-	DIALOGUE_FONT_4
-	.text "舌"
-	DIALOGUE_FONT_0
-	.text "にロプトの"
-	DIALOGUE_FONT_2
-	.text "礼"
-	DIALOGUE_FONT_3
-	.text "拝室"
-	DIALOGUE_FONT_0
-	.text "があり"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "そこには"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "多"
-	DIALOGUE_FONT_0
-	.text "くの"
-	DIALOGUE_FONT_2
-	.text "司祭"
-	DIALOGUE_FONT_0
-	.text "がつめております"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "彼"
-	DIALOGUE_FONT_0
-	.text "らは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "バサークやスリープの"
-	DIALOGUE_FONT_1
-	.text "杖"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "使"
-	DIALOGUE_FONT_0
-	.text "うため"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "放"
-	DIALOGUE_FONT_0
-	.text "っておいては"
-	DIALOGUE_FONT_4
-	.text "危険"
-	DIALOGUE_FONT_0
-	.text "なのです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なるほど･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "だが､"
-	DIALOGUE_PAUSE $08
-	.text "それではわれらだけで"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "レイドリックと"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "えと？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "さよう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "他"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "者達"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "合"
-	DIALOGUE_FONT_3
-	.text "流"
-	DIALOGUE_FONT_0
-	.text "するよゆうはありません"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD SaiasPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "確"
-	DIALOGUE_FONT_0
-	.text "かに"
-	DIALOGUE_FONT_1
-	.text "苦"
-	DIALOGUE_FONT_0
-	.text "しい"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いですが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "やむをえぬこと"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "もできるだけのことはします"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "はレイドリックを"
-	DIALOGUE_FONT_2
-	.text "倒"
-	DIALOGUE_FONT_0
-	.text "すことだけ"
-	DIALOGUE_NL
-	DIALOGUE_FONT_5
-	.text "考"
-	DIALOGUE_FONT_0
-	.text "えてください！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ええ！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "レイドリックは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ぼくが"
-	DIALOGUE_FONT_1
-	.text "必"
-	DIALOGUE_FONT_0
-	.text "ず"
-	DIALOGUE_FONT_2
-	.text "倒"
-	DIALOGUE_FONT_0
-	.text "してみせます！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD Leif2Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD SaiasPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "油"
+  DIALOGUE_FONT_2
+  .text "斯"
+  DIALOGUE_FONT_0
+  .text "されぬように"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "レイドリックの"
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "もうほとんどおりませんが"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "王宮内"
+  DIALOGUE_FONT_0
+  .text "には"
+  DIALOGUE_FONT_1
+  .text "傭兵"
+  DIALOGUE_FONT_0
+  .text "たちが"
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "ち"
+  DIALOGUE_FONT_2
+  .text "受"
+  DIALOGUE_FONT_0
+  .text "けております"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "特"
+  DIALOGUE_FONT_0
+  .text "にガルザスという"
+  DIALOGUE_FONT_1
+  .text "剣士"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "相"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "にしてはいけません"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ガルザス･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "では･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "どうすればよいのですか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_4
+  .text "確"
+  DIALOGUE_FONT_3
+  .text "実"
+  DIALOGUE_FONT_0
+  .text "なことは"
+  DIALOGUE_FONT_3
+  .text "申"
+  DIALOGUE_FONT_0
+  .text "し"
+  DIALOGUE_FONT_1
+  .text "上"
+  DIALOGUE_FONT_0
+  .text "げられませんが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "マリータという"
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_1
+  .text "女"
+  DIALOGUE_FONT_0
+  .text "がいれば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "なんとかなるかも"
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "れません"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ガルザスはその"
+  DIALOGUE_FONT_3
+  .text "娘"
+  DIALOGUE_FONT_0
+  .text "と"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "か"
+  DIALOGUE_FONT_4
+  .text "深"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_2
+  .text "関"
+  DIALOGUE_FONT_0
+  .text "わりがあるようです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "マリータが･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "アウグスト！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "を３"
+  DIALOGUE_FONT_2
+  .text "ヶ所"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "分"
+  DIALOGUE_FONT_0
+  .text "けたのはどうしてだ？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "一"
+  DIALOGUE_FONT_2
+  .text "隊"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_3
+  .text "供"
+  DIALOGUE_FONT_1
+  .text "達"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "取"
+  DIALOGUE_FONT_0
+  .text "り"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "すため"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "一"
+  DIALOGUE_FONT_2
+  .text "隊"
+  DIALOGUE_FONT_0
+  .text "はロプトの"
+  DIALOGUE_FONT_2
+  .text "司祭"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "捕"
+  DIALOGUE_FONT_0
+  .text "えるためです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "いずれも一"
+  DIALOGUE_FONT_4
+  .text "刻"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "争"
+  DIALOGUE_FONT_0
+  .text "うゆえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "わけて"
+  DIALOGUE_FONT_2
+  .text "突"
+  DIALOGUE_FONT_1
+  .text "入"
+  DIALOGUE_FONT_0
+  .text "させました"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_3
+  .text "供"
+  DIALOGUE_FONT_1
+  .text "達"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "救出"
+  DIALOGUE_FONT_0
+  .text "はわかるが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ロプトの"
+  DIALOGUE_FONT_2
+  .text "司祭"
+  DIALOGUE_FONT_0
+  .text "とはなんだ？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "東"
+  DIALOGUE_FONT_0
+  .text "の一"
+  DIALOGUE_FONT_4
+  .text "舌"
+  DIALOGUE_FONT_0
+  .text "にロプトの"
+  DIALOGUE_FONT_2
+  .text "礼"
+  DIALOGUE_FONT_3
+  .text "拝室"
+  DIALOGUE_FONT_0
+  .text "があり"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "そこには"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "多"
+  DIALOGUE_FONT_0
+  .text "くの"
+  DIALOGUE_FONT_2
+  .text "司祭"
+  DIALOGUE_FONT_0
+  .text "がつめております"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "彼"
+  DIALOGUE_FONT_0
+  .text "らは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "バサークやスリープの"
+  DIALOGUE_FONT_1
+  .text "杖"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "使"
+  DIALOGUE_FONT_0
+  .text "うため"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "放"
+  DIALOGUE_FONT_0
+  .text "っておいては"
+  DIALOGUE_FONT_4
+  .text "危険"
+  DIALOGUE_FONT_0
+  .text "なのです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なるほど･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "だが､"
+  DIALOGUE_PAUSE $08
+  .text "それではわれらだけで"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "レイドリックと"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "えと？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "さよう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "他"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "者達"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "合"
+  DIALOGUE_FONT_3
+  .text "流"
+  DIALOGUE_FONT_0
+  .text "するよゆうはありません"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD SaiasPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "確"
+  DIALOGUE_FONT_0
+  .text "かに"
+  DIALOGUE_FONT_1
+  .text "苦"
+  DIALOGUE_FONT_0
+  .text "しい"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いですが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "やむをえぬこと"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "もできるだけのことはします"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "はレイドリックを"
+  DIALOGUE_FONT_2
+  .text "倒"
+  DIALOGUE_FONT_0
+  .text "すことだけ"
+  DIALOGUE_NL
+  DIALOGUE_FONT_5
+  .text "考"
+  DIALOGUE_FONT_0
+  .text "えてください！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ええ！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "レイドリックは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ぼくが"
+  DIALOGUE_FONT_1
+  .text "必"
+  DIALOGUE_FONT_0
+  .text "ず"
+  DIALOGUE_FONT_2
+  .text "倒"
+  DIALOGUE_FONT_0
+  .text "してみせます！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

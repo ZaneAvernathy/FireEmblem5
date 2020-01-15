@@ -1,5 +1,5 @@
 
 structPortraitEntry .struct GraphicsPointer, PalIndex
-	.long \GraphicsPointer
-	.byte \PalIndex
-	.ends
+  .long \GraphicsPointer
+  .byte \PalIndex
+.ends

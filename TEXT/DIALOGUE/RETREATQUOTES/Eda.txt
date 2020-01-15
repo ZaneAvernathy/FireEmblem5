@@ -1,31 +1,31 @@
 dialogueEdaRetreatQuote ; 82/C263
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD EdaPortrait
-	DIALOGUE_FONT_4
-	.text "次"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いでは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "もっともっと"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "お"
-	DIALOGUE_FONT_3
-	.text "役"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "立"
-	DIALOGUE_FONT_0
-	.text "って"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "せますね！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD EdaPortrait
+  DIALOGUE_FONT_4
+  .text "次"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いでは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "もっともっと"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "お"
+  DIALOGUE_FONT_3
+  .text "役"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "立"
+  DIALOGUE_FONT_0
+  .text "って"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "せますね！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

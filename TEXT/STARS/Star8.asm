@@ -1,4 +1,4 @@
 
 menutextStar8 ; 81/DBC3
-	.enc "MenuText"
-	.text "　★８\n"
+  .enc "MenuText"
+  .text "　★８\n"

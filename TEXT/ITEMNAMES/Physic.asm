@@ -1,4 +1,4 @@
 
 menutextPhysicName ; B0/965F
-	.enc "MenuText"
-	.text "リブロー\n"
+  .enc "MenuText"
+  .text "リブロー\n"

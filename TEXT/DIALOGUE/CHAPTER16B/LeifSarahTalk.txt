@@ -1,298 +1,298 @@
 dialogueChapter16BLeifSarahTalk ; DA/DB07
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD LeifPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD SarahPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "え？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "こんな"
-	DIALOGUE_FONT_3
-	.text "森"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "女"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_0
-	.text "が？･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･････"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "きみはだれ？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "一"
-	DIALOGUE_FONT_1
-	.text "人"
-	DIALOGUE_FONT_0
-	.text "なのか？･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ふーん･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あなたなの･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "えっ？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なんのことだ？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ふふっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "やっぱりそうだわ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "いいよ､"
-	DIALOGUE_PAUSE $08
-	.text "あたしが"
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "けてあげる"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_4
-	.text "困"
-	DIALOGUE_FONT_0
-	.text "ったな･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "はアウグストもドリアスもいないし"
-	DIALOGUE_NL
-	.text "どうしたらいんだろう･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "あたしはサラっていうの"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あなたのことはなんでも"
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "ってるわ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_1
-	.text "名前"
-	DIALOGUE_FONT_0
-	.text "はリーフ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "レンスターの"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "でしょ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "それで､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "父親"
-	DIALOGUE_FONT_0
-	.text "はキュアンっていうのね"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "母親"
-	DIALOGUE_FONT_0
-	.text "はエスリンっていう"
-	DIALOGUE_NL
-	DIALOGUE_FONT_3
-	.text "可"
-	DIALOGUE_FONT_1
-	.text "愛"
-	DIALOGUE_FONT_0
-	.text "いひとだったけど"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "しんじゃったのよね"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "！････"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "そんなに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "恐"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_4
-	.text "顔"
-	DIALOGUE_FONT_0
-	.text "をしなくてもいいでしょ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "あたしだって"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "パパもママもしんじゃったわ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ママはあたしが"
-	DIALOGUE_FONT_1
-	.text "小"
-	DIALOGUE_FONT_0
-	.text "さいときにね"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "パパは･･･"
-	DIALOGUE_PAUSE $10
-	.text "ママを"
-	DIALOGUE_FONT_1
-	.text "愛"
-	DIALOGUE_FONT_0
-	.text "したことが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "おじいさまの"
-	DIALOGUE_FONT_3
-	.text "怒"
-	DIALOGUE_FONT_0
-	.text "りにふれて"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "殺"
-	DIALOGUE_FONT_0
-	.text "されたんだって"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "あたしが"
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_0
-	.text "まれる"
-	DIALOGUE_FONT_1
-	.text "前"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "話"
-	DIALOGUE_FONT_0
-	.text "よ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･･････"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "あたしを"
-	DIALOGUE_FONT_4
-	.text "呼"
-	DIALOGUE_FONT_0
-	.text "んでいたのはあなたなのよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "だから､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "けてあげようと"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "ったのに･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "じゃまにするのならもういいわ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "まってくれ！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "よくわからないけど"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "とても"
-	DIALOGUE_FONT_1
-	.text "大事"
-	DIALOGUE_FONT_0
-	.text "なことのような"
-	DIALOGUE_FONT_1
-	.text "気"
-	DIALOGUE_FONT_0
-	.text "がするんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "もっときみのことが"
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "りたい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "一"
-	DIALOGUE_FONT_2
-	.text "緒"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "てくれるか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "うん､"
-	DIALOGUE_PAUSE $08
-	.text "いいよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "だって"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "あたし､"
-	DIALOGUE_PAUSE $08
-	.text "あなたの"
-	DIALOGUE_FONT_3
-	.text "声"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "好"
-	DIALOGUE_FONT_0
-	.text "きだもの"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ありがとう･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "サラ･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD LeifPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD SarahPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "え？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "こんな"
+  DIALOGUE_FONT_3
+  .text "森"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "女"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_0
+  .text "が？･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･････"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "きみはだれ？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "一"
+  DIALOGUE_FONT_1
+  .text "人"
+  DIALOGUE_FONT_0
+  .text "なのか？･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ふーん･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あなたなの･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "えっ？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なんのことだ？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ふふっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "やっぱりそうだわ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "いいよ､"
+  DIALOGUE_PAUSE $08
+  .text "あたしが"
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "けてあげる"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_4
+  .text "困"
+  DIALOGUE_FONT_0
+  .text "ったな･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "はアウグストもドリアスもいないし"
+  DIALOGUE_NL
+  .text "どうしたらいんだろう･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "あたしはサラっていうの"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あなたのことはなんでも"
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "ってるわ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_1
+  .text "名前"
+  DIALOGUE_FONT_0
+  .text "はリーフ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "レンスターの"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "でしょ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "それで､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "父親"
+  DIALOGUE_FONT_0
+  .text "はキュアンっていうのね"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "母親"
+  DIALOGUE_FONT_0
+  .text "はエスリンっていう"
+  DIALOGUE_NL
+  DIALOGUE_FONT_3
+  .text "可"
+  DIALOGUE_FONT_1
+  .text "愛"
+  DIALOGUE_FONT_0
+  .text "いひとだったけど"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "しんじゃったのよね"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "！････"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "そんなに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "恐"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_4
+  .text "顔"
+  DIALOGUE_FONT_0
+  .text "をしなくてもいいでしょ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "あたしだって"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "パパもママもしんじゃったわ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ママはあたしが"
+  DIALOGUE_FONT_1
+  .text "小"
+  DIALOGUE_FONT_0
+  .text "さいときにね"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "パパは･･･"
+  DIALOGUE_PAUSE $10
+  .text "ママを"
+  DIALOGUE_FONT_1
+  .text "愛"
+  DIALOGUE_FONT_0
+  .text "したことが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "おじいさまの"
+  DIALOGUE_FONT_3
+  .text "怒"
+  DIALOGUE_FONT_0
+  .text "りにふれて"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "殺"
+  DIALOGUE_FONT_0
+  .text "されたんだって"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "あたしが"
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_0
+  .text "まれる"
+  DIALOGUE_FONT_1
+  .text "前"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "話"
+  DIALOGUE_FONT_0
+  .text "よ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･･････"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "あたしを"
+  DIALOGUE_FONT_4
+  .text "呼"
+  DIALOGUE_FONT_0
+  .text "んでいたのはあなたなのよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "だから､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "けてあげようと"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "ったのに･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "じゃまにするのならもういいわ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "まってくれ！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "よくわからないけど"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "とても"
+  DIALOGUE_FONT_1
+  .text "大事"
+  DIALOGUE_FONT_0
+  .text "なことのような"
+  DIALOGUE_FONT_1
+  .text "気"
+  DIALOGUE_FONT_0
+  .text "がするんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "もっときみのことが"
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "りたい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "一"
+  DIALOGUE_FONT_2
+  .text "緒"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "てくれるか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "うん､"
+  DIALOGUE_PAUSE $08
+  .text "いいよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "だって"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "あたし､"
+  DIALOGUE_PAUSE $08
+  .text "あなたの"
+  DIALOGUE_FONT_3
+  .text "声"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "好"
+  DIALOGUE_FONT_0
+  .text "きだもの"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ありがとう･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "サラ･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

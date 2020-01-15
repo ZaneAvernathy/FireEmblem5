@@ -1,24 +1,24 @@
 dialogueFE4Demo10 ; 9C/FE52
-	DIALOGUE_RIGHT
-	DIALOGUE_OPEN
-	DIALOGUE_LOAD KanePortrait
-	DIALOGUE_FONT_0
-	.text "ふう･･･"
-	DIALOGUE_NL
-	.text "そのていどの"
-	DIALOGUE_FONT_3
-	.text "腕"
-	DIALOGUE_FONT_0
-	.text "では､まだまだ"
-	DIALOGUE_NL
-	DIALOGUE_FONT_3
-	.text "実"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "には"
-	DIALOGUE_FONT_1
-	.text "加"
-	DIALOGUE_FONT_0
-	.text "えられないな"
+  DIALOGUE_RIGHT
+  DIALOGUE_OPEN
+  DIALOGUE_LOAD KanePortrait
+  DIALOGUE_FONT_0
+  .text "ふう･･･"
+  DIALOGUE_NL
+  .text "そのていどの"
+  DIALOGUE_FONT_3
+  .text "腕"
+  DIALOGUE_FONT_0
+  .text "では､まだまだ"
+  DIALOGUE_NL
+  DIALOGUE_FONT_3
+  .text "実"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "には"
+  DIALOGUE_FONT_1
+  .text "加"
+  DIALOGUE_FONT_0
+  .text "えられないな"
 DIALOGUE_EOF

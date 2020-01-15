@@ -1,18 +1,18 @@
 dialogueChapter14HomerHouseWoman; 92/D3E3
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD HomerPortrait
-	DIALOGUE_FONT_0
-	.text "うーん･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "すまねえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_5
-	.text "夜"
-	DIALOGUE_FONT_0
-	.text "はもういっぱいなんだ"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD HomerPortrait
+  DIALOGUE_FONT_0
+  .text "うーん･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "すまねえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_5
+  .text "夜"
+  DIALOGUE_FONT_0
+  .text "はもういっぱいなんだ"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

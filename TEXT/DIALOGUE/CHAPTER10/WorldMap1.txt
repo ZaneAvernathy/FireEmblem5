@@ -1,87 +1,87 @@
 dialogueChapter10WorldMap1 ; 82/CEEA
-	DIALOGUE_FONT_0
-	.text "フィアナ"
-	DIALOGUE_FONT_2
-	.text "義"
-	DIALOGUE_FONT_1
-	.text "勇軍"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $10
-	.text "マギ"
-	DIALOGUE_FONT_1
-	.text "団"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "レンスター"
-	DIALOGUE_FONT_1
-	.text "王国"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "遺"
-	DIALOGUE_FONT_2
-	.text "臣"
-	DIALOGUE_FONT_0
-	.text "たちを"
-	DIALOGUE_FONT_1
-	.text "加"
-	DIALOGUE_FONT_0
-	.text "え"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "一"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "としての"
-	DIALOGUE_FONT_3
-	.text "陣"
-	DIALOGUE_FONT_4
-	.text "容"
-	DIALOGUE_FONT_0
-	.text "を､"
-	DIALOGUE_PAUSE $10
-	.text "まがりなりにも"
-	DIALOGUE_NL
-	.text "ととのえたリーフたち"
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_1
-	.text "解放軍"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "いよいよターラ"
-	DIALOGUE_FONT_1
-	.text "救援"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "向"
-	DIALOGUE_FONT_0
-	.text "かうべく"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_2
-	.text "再"
-	DIALOGUE_FONT_0
-	.text "び"
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "ートラキア"
-	DIALOGUE_FONT_1
-	.text "国境"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_NL
-	.text "こえようとしていた｡"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_FONT_0
+  .text "フィアナ"
+  DIALOGUE_FONT_2
+  .text "義"
+  DIALOGUE_FONT_1
+  .text "勇軍"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $10
+  .text "マギ"
+  DIALOGUE_FONT_1
+  .text "団"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "レンスター"
+  DIALOGUE_FONT_1
+  .text "王国"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "遺"
+  DIALOGUE_FONT_2
+  .text "臣"
+  DIALOGUE_FONT_0
+  .text "たちを"
+  DIALOGUE_FONT_1
+  .text "加"
+  DIALOGUE_FONT_0
+  .text "え"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "一"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "としての"
+  DIALOGUE_FONT_3
+  .text "陣"
+  DIALOGUE_FONT_4
+  .text "容"
+  DIALOGUE_FONT_0
+  .text "を､"
+  DIALOGUE_PAUSE $10
+  .text "まがりなりにも"
+  DIALOGUE_NL
+  .text "ととのえたリーフたち"
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_1
+  .text "解放軍"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "いよいよターラ"
+  DIALOGUE_FONT_1
+  .text "救援"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "向"
+  DIALOGUE_FONT_0
+  .text "かうべく"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_2
+  .text "再"
+  DIALOGUE_FONT_0
+  .text "び"
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "ートラキア"
+  DIALOGUE_FONT_1
+  .text "国境"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_NL
+  .text "こえようとしていた｡"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

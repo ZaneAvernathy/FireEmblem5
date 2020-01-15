@@ -1,4 +1,4 @@
 dialogueMareetaChapter5DeathQuote ; 93/9B5F
-	DIALOGUE_FONT_0
-	.text "･･････"
+  DIALOGUE_FONT_0
+  .text "･･････"
 DIALOGUE_END_SCENE

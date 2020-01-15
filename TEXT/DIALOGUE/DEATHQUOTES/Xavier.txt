@@ -1,23 +1,23 @@
 dialogueXavierDeathQuote ; DA/F89C
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "お"
-	DIALOGUE_FONT_3
-	.text "許"
-	DIALOGUE_FONT_0
-	.text "しください･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "わがレンスターに"
-	DIALOGUE_FONT_2
-	.text "栄光"
-	DIALOGUE_FONT_0
-	.text "あれ！！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "お"
+  DIALOGUE_FONT_3
+  .text "許"
+  DIALOGUE_FONT_0
+  .text "しください･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "わがレンスターに"
+  DIALOGUE_FONT_2
+  .text "栄光"
+  DIALOGUE_FONT_0
+  .text "あれ！！"
 DIALOGUE_END_SCENE

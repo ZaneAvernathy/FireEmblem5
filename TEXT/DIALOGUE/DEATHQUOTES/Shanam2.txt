@@ -1,13 +1,13 @@
 dialogueShanam2DeathQuote ; 82/BD82
-	DIALOGUE_FONT_0
-	.text "くっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "リーフよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "許"
-	DIALOGUE_FONT_0
-	.text "せ･･･"
+  DIALOGUE_FONT_0
+  .text "くっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "リーフよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "許"
+  DIALOGUE_FONT_0
+  .text "せ･･･"
 DIALOGUE_END_SCENE

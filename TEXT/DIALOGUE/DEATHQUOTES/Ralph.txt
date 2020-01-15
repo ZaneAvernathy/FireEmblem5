@@ -1,12 +1,12 @@
 dialogueRalphDeathQuote ; 82/B98B
-	DIALOGUE_FONT_0
-	.text "ちっ､"
-	DIALOGUE_PAUSE $08
-	.text "これまでか･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "後"
-	DIALOGUE_FONT_0
-	.text "はたのんだぜ･･･"
+  DIALOGUE_FONT_0
+  .text "ちっ､"
+  DIALOGUE_PAUSE $08
+  .text "これまでか･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "後"
+  DIALOGUE_FONT_0
+  .text "はたのんだぜ･･･"
 DIALOGUE_END_SCENE

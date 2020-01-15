@@ -1,4 +1,4 @@
 
 menutextDancerEnemyName ; 86/E141
-	.enc "MenuText"
-	.text "おどりこ\n"
+  .enc "MenuText"
+  .text "おどりこ\n"

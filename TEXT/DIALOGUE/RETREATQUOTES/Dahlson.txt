@@ -1,24 +1,24 @@
 dialogueDahlsonRetreatQuote ; 82/C340
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD DahlsonPortrait
-	DIALOGUE_FONT_0
-	.text "ディアナ､"
-	DIALOGUE_PAUSE $08
-	.text "ユベル･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "っていろ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "もうすぐ､"
-	DIALOGUE_PAUSE $08
-	.text "もうすぐ"
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "るからな･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD DahlsonPortrait
+  DIALOGUE_FONT_0
+  .text "ディアナ､"
+  DIALOGUE_PAUSE $08
+  .text "ユベル･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "っていろ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "もうすぐ､"
+  DIALOGUE_PAUSE $08
+  .text "もうすぐ"
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "るからな･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

@@ -1,4 +1,4 @@
 
 menutextCharacterEffectTorch ; 90/87AE
-	.enc "MenuText"
-	.text "たいまつ\n"
+  .enc "MenuText"
+  .text "たいまつ\n"

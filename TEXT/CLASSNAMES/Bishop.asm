@@ -1,4 +1,4 @@
 
 menutextBishopName ; 89/8486
-	.enc "MenuText"
-	.text "ビショップ　　　\n"
+  .enc "MenuText"
+  .text "ビショップ　　　\n"

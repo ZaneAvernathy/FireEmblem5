@@ -1,15 +1,15 @@
 dialogueCoulterDeathQuote ; 98/EB65
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･トラキアに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "･･･"
-	DIALOGUE_FONT_2
-	.text "栄光"
-	DIALOGUE_FONT_0
-	.text "あれ！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "･･･ぐふっ"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･トラキアに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "･･･"
+  DIALOGUE_FONT_2
+  .text "栄光"
+  DIALOGUE_FONT_0
+  .text "あれ！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "･･･ぐふっ"
 DIALOGUE_END_SCENE

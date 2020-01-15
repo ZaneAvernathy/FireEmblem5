@@ -1,17 +1,17 @@
 dialogueKarinDeathQuote ; 82/BD3D
-	DIALOGUE_FONT_0
-	.text "･･･フュリー"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ごめんなさい･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "王子様"
-	DIALOGUE_FONT_0
-	.text "･･･"
+  DIALOGUE_FONT_0
+  .text "･･･フュリー"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ごめんなさい･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "王子様"
+  DIALOGUE_FONT_0
+  .text "･･･"
 DIALOGUE_END_SCENE

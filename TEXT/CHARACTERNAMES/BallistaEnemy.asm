@@ -1,4 +1,4 @@
 
 menutextBallistaEnemyName ; 86/E25B
-	.enc "MenuText"
-	.text "アイアンアーチ\n"
+  .enc "MenuText"
+  .text "アイアンアーチ\n"

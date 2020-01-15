@@ -1,4 +1,4 @@
 
 menutextTorchStaffName ; B0/96A3
-	.enc "MenuText"
-	.text "トーチ\n"
+  .enc "MenuText"
+  .text "トーチ\n"

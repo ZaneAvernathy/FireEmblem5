@@ -2,14 +2,14 @@
 procNP .dstruct structProcInfo, "NP", rlProcNPStub, rlProcNPStub, aProcNPCode ; 82/8665
 
 aUnknown82866D ; 82/866D
-	.word $0000
+  .word $0000
 
 rlProcNPStub ; 82/866F
 
-	.autsiz
+  .autsiz
 
-	rtl
+  rtl
 
 aProcNPCode ; 82/8670
 
-	PROC_END
+  PROC_END

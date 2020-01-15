@@ -1,4 +1,4 @@
 
 menutextGreatKnightDismountedName ; 89/866C
-	.enc "MenuText"
-	.text "グレートナイト　\n"
+  .enc "MenuText"
+  .text "グレートナイト　\n"

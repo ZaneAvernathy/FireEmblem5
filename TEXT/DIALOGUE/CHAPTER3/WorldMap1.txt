@@ -1,29 +1,29 @@
 dialogueChapter3WorldMap1 ; 82/CB22
-	DIALOGUE_FONT_0
-	.text "イスであばれていた"
-	DIALOGUE_FONT_1
-	.text "海賊"
-	DIALOGUE_FONT_0
-	.text "を一"
-	DIALOGUE_FONT_3
-	.text "掃"
-	DIALOGUE_FONT_0
-	.text "した"
-	DIALOGUE_NL
-	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, LeifPortrait | (1 << 8), 6 | (8 << 8)
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "リーフたちは､"
-	DIALOGUE_PAUSE $10
-	.text "マンスターへと"
-	DIALOGUE_FONT_2
-	.text "先"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "急"
-	DIALOGUE_FONT_0
-	.text "ぐ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_FONT_0
+  .text "イスであばれていた"
+  DIALOGUE_FONT_1
+  .text "海賊"
+  DIALOGUE_FONT_0
+  .text "を一"
+  DIALOGUE_FONT_3
+  .text "掃"
+  DIALOGUE_FONT_0
+  .text "した"
+  DIALOGUE_NL
+  DIALOGUE_ASMC_2 rlDialogueLoadPortrait, LeifPortrait | (1 << 8), 6 | (8 << 8)
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "リーフたちは､"
+  DIALOGUE_PAUSE $10
+  .text "マンスターへと"
+  DIALOGUE_FONT_2
+  .text "先"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "急"
+  DIALOGUE_FONT_0
+  .text "ぐ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

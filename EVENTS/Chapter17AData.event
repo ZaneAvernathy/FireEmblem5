@@ -1,136 +1,136 @@
 
 eventChapter17AData ; B1/A909
 
-	_PrepGroup ; B1/A909
-		.byte 23, 7
+  _PrepGroup ; B1/A909
+    .byte 23, 7
 
-		UNIT FriegeBallista1, Enemy, [21, 4], [21, 4], Nicolov, [Ballista], 10, False, [$01, $03, $00, $00]
-		UNIT FriegeArmoredAxe1, Enemy, [27, 6], [27, 6], Nicolov, [KillerAxe, Vulnerary], 15, False, [$00, $03, $00, $00]
-		UNIT FriegeBallista1, Enemy, [22, 5], [22, 5], Nicolov, [Ballista], 10, False, [$01, $03, $00, $00]
-		UNIT FriegeBallista1, Enemy, [25, 7], [25, 7], Nicolov, [Ballista], 10, False, [$01, $03, $00, $00]
-		UNIT FriegeArmoredAxe1, Enemy, [29, 6], [29, 6], Nicolov, [KillerAxe, Vulnerary], 15, False, [$00, $03, $00, $00]
-		UNIT Nicolov, Enemy, [28, 1], [28, 1], Nicolov, [MasterAxe, KillerAxe, Vulnerary], 20, True, [$01, $03, $00, $80]
-		UNIT SilessiaPegasusRider3, NPC, [1, 2], [1, 2], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
-		UNIT SilessiaPegasusRider3, NPC, [2, 3], [2, 3], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
-		UNIT SilessiaPegasusRider3, NPC, [3, 4], [3, 4], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
-		UNIT SilessiaPegasusRider3, NPC, [4, 5], [4, 5], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
-		UNIT SilessiaPegasusRider3, NPC, [5, 4], [5, 4], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
-		UNIT SilessiaPegasusRider3, NPC, [6, 3], [6, 3], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
-		UNIT SilessiaPegasusRider3, NPC, [7, 2], [7, 2], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
-		UNIT Mischa, NPC, [4, 3], [28, 2], Mischa, [Horseslayer, WindSword, Vulnerary], 4, False, [$00, $0C, $00, $40]
-		UNIT FriegeBishop2, Enemy, [30, 2], [30, 2], Nicolov, [Physic, Elfire, Meteor], 6, False, [$01, $03, $00, $00]
-		UNIT FriegeBishop2, Enemy, [26, 2], [26, 2], Nicolov, [Physic, Thoron, Bolting], 6, False, [$01, $03, $00, $00]
-		UNIT FriegeArmoredSword1, Enemy, [26, 17], [26, 17], Nicolov, [Longsword, Vulnerary], 16, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredSword1, Enemy, [26, 18], [26, 18], Nicolov, [Longsword, Vulnerary], 16, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredSword1, Enemy, [26, 19], [26, 19], Nicolov, [Longsword, Vulnerary], 16, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredSword1, Enemy, [26, 20], [26, 20], Nicolov, [Longsword, Vulnerary], 16, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredSword1, Enemy, [26, 21], [26, 21], Nicolov, [Longsword, Vulnerary], 16, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredAxe3, Enemy, [28, 18], [28, 18], Nicolov, [BattleAxe, Vulnerary], 14, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredLance3, Enemy, [30, 17], [30, 17], Nicolov, [Javelin, Vulnerary], 12, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredAxe3, Enemy, [28, 17], [28, 17], Nicolov, [BattleAxe, Vulnerary], 14, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredAxe3, Enemy, [28, 19], [28, 19], Nicolov, [BattleAxe, Vulnerary], 14, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredAxe3, Enemy, [28, 20], [28, 20], Nicolov, [BattleAxe, Vulnerary], 14, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredAxe3, Enemy, [28, 21], [28, 21], Nicolov, [BattleAxe, Vulnerary], 14, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredLance3, Enemy, [30, 18], [30, 18], Nicolov, [Javelin, Vulnerary], 12, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredLance3, Enemy, [30, 19], [30, 19], Nicolov, [Javelin, Vulnerary], 12, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredLance3, Enemy, [30, 20], [30, 20], Nicolov, [Javelin, Vulnerary], 12, False, [$00, $03, $00, $00]
-		UNIT FriegeArmoredLance3, Enemy, [30, 21], [30, 21], Nicolov, [Javelin, Vulnerary], 12, False, [$00, $03, $00, $00]
-		UNIT Moore, Enemy, [4, 10], [4, 10], Moore, [Jormungand, Fenrir, Fortify, Warp], 12, False, [$00, $00, $00, $00]
-		UNIT LoptyrianDarkMage1, Enemy, [4, 9], [4, 9], Moore, [Jormungand], 10, False, [$00, $00, $00, $00]
-		UNIT LoptyrianDarkMage1, Enemy, [4, 8], [4, 8], Moore, [Jormungand], 10, False, [$00, $00, $00, $00]
-		UNIT LoptyrianDarkMage1, Enemy, [3, 7], [3, 7], Moore, [Jormungand], 10, False, [$00, $00, $00, $00]
-		UNIT LoptyrianDarkMage1, Enemy, [4, 7], [4, 7], Moore, [Jormungand], 10, False, [$00, $00, $00, $00]
-		UNIT LoptyrianDarkMage1, Enemy, [3, 8], [3, 8], Moore, [Jormungand], 10, False, [$00, $00, $00, $00]
-		UNIT FriegeArmoredSword3, Enemy, [17, 15], [17, 15], Nicolov, [Greatsword], 15, False, [$00, $10, $00, $00]
-		UNIT FriegeArmoredSword3, Enemy, [16, 18], [16, 18], Nicolov, [Greatsword], 15, False, [$00, $10, $00, $00]
-		UNIT FriegeArmoredSword3, Enemy, [12, 15], [12, 15], Nicolov, [Greatsword], 15, False, [$00, $10, $00, $00]
-		UNIT FriegeArmoredSword3, Enemy, [12, 11], [12, 11], Nicolov, [Greatsword], 15, False, [$00, $10, $00, $00]
-		UNIT FriegeSoldier1, Enemy, [13, 16], [13, 16], Nicolov, [Javelin], 10, False, [$00, $03, $00, $00]
-		UNIT FriegeSoldier1, Enemy, [10, 17], [10, 17], Nicolov, [Javelin], 10, False, [$00, $03, $00, $00]
-		UNIT FriegeSoldier1, Enemy, [13, 13], [13, 13], Nicolov, [Javelin], 10, False, [$00, $03, $00, $00]
-		UNIT FriegeSoldier1, Enemy, [15, 16], [15, 16], Nicolov, [Javelin], 10, False, [$00, $03, $00, $00]
-		UNIT FriegeSoldier1, Enemy, [17, 19], [17, 19], Nicolov, [Javelin], 10, False, [$00, $03, $00, $00]
-	UNIT
+    UNIT FriegeBallista1, Enemy, [21, 4], [21, 4], Nicolov, [Ballista], 10, False, [$01, $03, $00, $00]
+    UNIT FriegeArmoredAxe1, Enemy, [27, 6], [27, 6], Nicolov, [KillerAxe, Vulnerary], 15, False, [$00, $03, $00, $00]
+    UNIT FriegeBallista1, Enemy, [22, 5], [22, 5], Nicolov, [Ballista], 10, False, [$01, $03, $00, $00]
+    UNIT FriegeBallista1, Enemy, [25, 7], [25, 7], Nicolov, [Ballista], 10, False, [$01, $03, $00, $00]
+    UNIT FriegeArmoredAxe1, Enemy, [29, 6], [29, 6], Nicolov, [KillerAxe, Vulnerary], 15, False, [$00, $03, $00, $00]
+    UNIT Nicolov, Enemy, [28, 1], [28, 1], Nicolov, [MasterAxe, KillerAxe, Vulnerary], 20, True, [$01, $03, $00, $80]
+    UNIT SilessiaPegasusRider3, NPC, [1, 2], [1, 2], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
+    UNIT SilessiaPegasusRider3, NPC, [2, 3], [2, 3], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
+    UNIT SilessiaPegasusRider3, NPC, [3, 4], [3, 4], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
+    UNIT SilessiaPegasusRider3, NPC, [4, 5], [4, 5], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
+    UNIT SilessiaPegasusRider3, NPC, [5, 4], [5, 4], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
+    UNIT SilessiaPegasusRider3, NPC, [6, 3], [6, 3], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
+    UNIT SilessiaPegasusRider3, NPC, [7, 2], [7, 2], Mischa, [Horseslayer, Javelin, Vulnerary], 8, False, [$00, $0C, $00, $40]
+    UNIT Mischa, NPC, [4, 3], [28, 2], Mischa, [Horseslayer, WindSword, Vulnerary], 4, False, [$00, $0C, $00, $40]
+    UNIT FriegeBishop2, Enemy, [30, 2], [30, 2], Nicolov, [Physic, Elfire, Meteor], 6, False, [$01, $03, $00, $00]
+    UNIT FriegeBishop2, Enemy, [26, 2], [26, 2], Nicolov, [Physic, Thoron, Bolting], 6, False, [$01, $03, $00, $00]
+    UNIT FriegeArmoredSword1, Enemy, [26, 17], [26, 17], Nicolov, [Longsword, Vulnerary], 16, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredSword1, Enemy, [26, 18], [26, 18], Nicolov, [Longsword, Vulnerary], 16, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredSword1, Enemy, [26, 19], [26, 19], Nicolov, [Longsword, Vulnerary], 16, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredSword1, Enemy, [26, 20], [26, 20], Nicolov, [Longsword, Vulnerary], 16, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredSword1, Enemy, [26, 21], [26, 21], Nicolov, [Longsword, Vulnerary], 16, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredAxe3, Enemy, [28, 18], [28, 18], Nicolov, [BattleAxe, Vulnerary], 14, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredLance3, Enemy, [30, 17], [30, 17], Nicolov, [Javelin, Vulnerary], 12, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredAxe3, Enemy, [28, 17], [28, 17], Nicolov, [BattleAxe, Vulnerary], 14, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredAxe3, Enemy, [28, 19], [28, 19], Nicolov, [BattleAxe, Vulnerary], 14, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredAxe3, Enemy, [28, 20], [28, 20], Nicolov, [BattleAxe, Vulnerary], 14, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredAxe3, Enemy, [28, 21], [28, 21], Nicolov, [BattleAxe, Vulnerary], 14, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredLance3, Enemy, [30, 18], [30, 18], Nicolov, [Javelin, Vulnerary], 12, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredLance3, Enemy, [30, 19], [30, 19], Nicolov, [Javelin, Vulnerary], 12, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredLance3, Enemy, [30, 20], [30, 20], Nicolov, [Javelin, Vulnerary], 12, False, [$00, $03, $00, $00]
+    UNIT FriegeArmoredLance3, Enemy, [30, 21], [30, 21], Nicolov, [Javelin, Vulnerary], 12, False, [$00, $03, $00, $00]
+    UNIT Moore, Enemy, [4, 10], [4, 10], Moore, [Jormungand, Fenrir, Fortify, Warp], 12, False, [$00, $00, $00, $00]
+    UNIT LoptyrianDarkMage1, Enemy, [4, 9], [4, 9], Moore, [Jormungand], 10, False, [$00, $00, $00, $00]
+    UNIT LoptyrianDarkMage1, Enemy, [4, 8], [4, 8], Moore, [Jormungand], 10, False, [$00, $00, $00, $00]
+    UNIT LoptyrianDarkMage1, Enemy, [3, 7], [3, 7], Moore, [Jormungand], 10, False, [$00, $00, $00, $00]
+    UNIT LoptyrianDarkMage1, Enemy, [4, 7], [4, 7], Moore, [Jormungand], 10, False, [$00, $00, $00, $00]
+    UNIT LoptyrianDarkMage1, Enemy, [3, 8], [3, 8], Moore, [Jormungand], 10, False, [$00, $00, $00, $00]
+    UNIT FriegeArmoredSword3, Enemy, [17, 15], [17, 15], Nicolov, [Greatsword], 15, False, [$00, $10, $00, $00]
+    UNIT FriegeArmoredSword3, Enemy, [16, 18], [16, 18], Nicolov, [Greatsword], 15, False, [$00, $10, $00, $00]
+    UNIT FriegeArmoredSword3, Enemy, [12, 15], [12, 15], Nicolov, [Greatsword], 15, False, [$00, $10, $00, $00]
+    UNIT FriegeArmoredSword3, Enemy, [12, 11], [12, 11], Nicolov, [Greatsword], 15, False, [$00, $10, $00, $00]
+    UNIT FriegeSoldier1, Enemy, [13, 16], [13, 16], Nicolov, [Javelin], 10, False, [$00, $03, $00, $00]
+    UNIT FriegeSoldier1, Enemy, [10, 17], [10, 17], Nicolov, [Javelin], 10, False, [$00, $03, $00, $00]
+    UNIT FriegeSoldier1, Enemy, [13, 13], [13, 13], Nicolov, [Javelin], 10, False, [$00, $03, $00, $00]
+    UNIT FriegeSoldier1, Enemy, [15, 16], [15, 16], Nicolov, [Javelin], 10, False, [$00, $03, $00, $00]
+    UNIT FriegeSoldier1, Enemy, [17, 19], [17, 19], Nicolov, [Javelin], 10, False, [$00, $03, $00, $00]
+  UNIT
 
-	_MuellerCameraCoordinates ; B1/ACA5
-		.byte 9, 20
+  _MuellerCameraCoordinates ; B1/ACA5
+    .byte 9, 20
 
-	_MuellerGroup ; B1/ACA7
-		UNIT Mueller, Enemy, [1, 26], [1, 26], Mueller, [MasterSword, Thoron, Vulnerary], 14, False, [$00, $00, $00, $00]
-		UNIT FriegeMageKnight1, Enemy, [2, 26], [2, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-		UNIT FriegeMageKnight1, Enemy, [3, 26], [3, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-		UNIT FriegeMageKnight1, Enemy, [4, 26], [4, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-		UNIT FriegeMageKnight1, Enemy, [5, 26], [5, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-		UNIT FriegeMageKnight1, Enemy, [6, 26], [6, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-		UNIT FriegeMageKnight1, Enemy, [7, 26], [7, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-		UNIT FriegeMageKnight1, Enemy, [8, 26], [8, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-		UNIT FriegeMageKnight1, Enemy, [9, 26], [9, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-		UNIT FriegeMageKnight1, Enemy, [10, 26], [10, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-	UNIT
+  _MuellerGroup ; B1/ACA7
+    UNIT Mueller, Enemy, [1, 26], [1, 26], Mueller, [MasterSword, Thoron, Vulnerary], 14, False, [$00, $00, $00, $00]
+    UNIT FriegeMageKnight1, Enemy, [2, 26], [2, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+    UNIT FriegeMageKnight1, Enemy, [3, 26], [3, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+    UNIT FriegeMageKnight1, Enemy, [4, 26], [4, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+    UNIT FriegeMageKnight1, Enemy, [5, 26], [5, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+    UNIT FriegeMageKnight1, Enemy, [6, 26], [6, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+    UNIT FriegeMageKnight1, Enemy, [7, 26], [7, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+    UNIT FriegeMageKnight1, Enemy, [8, 26], [8, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+    UNIT FriegeMageKnight1, Enemy, [9, 26], [9, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+    UNIT FriegeMageKnight1, Enemy, [10, 26], [10, 26], Mueller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+  UNIT
 
-	_SaiasCameraCoordinates ; B1/AD71
-		.byte 22, 8
+  _SaiasCameraCoordinates ; B1/AD71
+    .byte 22, 8
 
-	_SaiasGroup ; B1/AD73
-		UNIT Saias, Enemy, [23, 0], [23, 0], Nicolov, [Sleep, Fortify], 12, False, [$01, $03, $00, $00]
-	UNIT
+  _SaiasGroup ; B1/AD73
+    UNIT Saias, Enemy, [23, 0], [23, 0], Nicolov, [Sleep, Fortify], 12, False, [$01, $03, $00, $00]
+  UNIT
 
-	_PirateReinforcementsCameraCoordinates ; B1/AD89
-		.byte 8, 8
+  _PirateReinforcementsCameraCoordinates ; B1/AD89
+    .byte 8, 8
 
-	_PirateReinforcementsGroup ; B1/AD8B
-		UNIT PirateEnemy, NPC, [1, 0], [1, 1], Raydrik, [IronAxe], 4, False, [$02, $09, $00, $00]
-	UNIT
+  _PirateReinforcementsGroup ; B1/AD8B
+    UNIT PirateEnemy, NPC, [1, 0], [1, 1], Raydrik, [IronAxe], 4, False, [$02, $09, $00, $00]
+  UNIT
 
-	_DarkMageReinforcementsCameraCoordinates ; B1/ADA1
-		.byte 20, 8
+  _DarkMageReinforcementsCameraCoordinates ; B1/ADA1
+    .byte 20, 8
 
-	_DarkMageReinforcementsGroup ; B1/ADA3
-		UNIT LoptyrianDarkMage1, Enemy, [20, 1], [20, 1], Moore, [Jormungand, Rewarp], 5, False, [$00, $00, $00, $00]
-	UNIT
+  _DarkMageReinforcementsGroup ; B1/ADA3
+    UNIT LoptyrianDarkMage1, Enemy, [20, 1], [20, 1], Moore, [Jormungand, Rewarp], 5, False, [$00, $00, $00, $00]
+  UNIT
 
-	_SarahCameraCoordinates ; B1/ADB9
-		.byte 8, 8
+  _SarahCameraCoordinates ; B1/ADB9
+    .byte 8, 8
 
-	_SarahGroup ; B1/ADBB
-		UNIT Sarah, Player, [1, 7], [1, 7], Leif, [SilenceStaff], 7, False, [$00, $00, $00, $00]
-	UNIT
+  _SarahGroup ; B1/ADBB
+    UNIT Sarah, Player, [1, 7], [1, 7], Leif, [SilenceStaff], 7, False, [$00, $00, $00, $00]
+  UNIT
 
-	_ReinhardtCameraCoordinates ; B1/ADD1
-		.byte 22, 8
+  _ReinhardtCameraCoordinates ; B1/ADD1
+    .byte 22, 8
 
-	_ReinhardtGroup ; B1/ADD3
-		UNIT Reinhardt, Enemy, [22, 0], [22, 0], Reinhardt, [], 2, False, [$00, $00, $00, $00]
-	UNIT
+  _ReinhardtGroup ; B1/ADD3
+    UNIT Reinhardt, Enemy, [22, 0], [22, 0], Reinhardt, [], 2, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates1 ; B1/ADE9
-		.byte 22, 8
+  _UnusedCoordinates1 ; B1/ADE9
+    .byte 22, 8
 
-	_IshtarGroup ; B1/ADEB
-		UNIT Ishtar, Enemy, [22, 0], [22, 1], Ishtar, [], 2, False, [$00, $00, $00, $00]
-	UNIT
+  _IshtarGroup ; B1/ADEB
+    UNIT Ishtar, Enemy, [22, 0], [22, 1], Ishtar, [], 2, False, [$00, $00, $00, $00]
+  UNIT
 
-	_StartingPositions ; B1/AE01
-		.byte 4, 25
-		.byte 10, 25
-		.byte 9, 25
-		.byte 8, 25
-		.byte 7, 25
-		.byte 7, 26
-		.byte 6, 25
-		.byte 6, 26
-		.byte 5, 25
-		.byte 5, 26
-		.byte 4, 26
-		.byte 3, 25
-		.byte 3, 26
-		.byte 2, 25
-		.byte 2, 26
-		.byte 1, 25
-	.byte $FF
+  _StartingPositions ; B1/AE01
+    .byte 4, 25
+    .byte 10, 25
+    .byte 9, 25
+    .byte 8, 25
+    .byte 7, 25
+    .byte 7, 26
+    .byte 6, 25
+    .byte 6, 26
+    .byte 5, 25
+    .byte 5, 26
+    .byte 4, 26
+    .byte 3, 25
+    .byte 3, 26
+    .byte 2, 25
+    .byte 2, 26
+    .byte 1, 25
+  .byte $FF
 
-	_Vendor ; B1/AE22
-		SHOP [23, 23], [Vulnerary, Antidote, Heal, Mend]
+  _Vendor ; B1/AE22
+    SHOP [23, 23], [Vulnerary, Antidote, Heal, Mend]
 
-	_Armory ; B1/AE34
-		SHOP [23, 25], [IronLance, SteelLance, SlimLance, SilverLance]
+  _Armory ; B1/AE34
+    SHOP [23, 25], [IronLance, SteelLance, SlimLance, SilverLance]

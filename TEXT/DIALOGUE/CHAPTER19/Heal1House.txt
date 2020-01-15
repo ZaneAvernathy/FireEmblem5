@@ -1,45 +1,45 @@
 dialogueChapter19Heal1House ; B0/BA7A
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCGirl5Portrait
-	DIALOGUE_FONT_1
-	.text "帝国軍"
-	DIALOGUE_FONT_0
-	.text "はすごい"
-	DIALOGUE_FONT_4
-	.text "勢"
-	DIALOGUE_FONT_0
-	.text "いで"
-	DIALOGUE_NL
-	.text "せまってきてるんですって？"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ケガしている"
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_2
-	.text "隊"
-	DIALOGUE_FONT_0
-	.text "さんも"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "多"
-	DIALOGUE_FONT_0
-	.text "いんじゃないですか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "これ､"
-	DIALOGUE_PAUSE $08
-	.text "ライブの"
-	DIALOGUE_FONT_1
-	.text "杖"
-	DIALOGUE_FONT_0
-	.text "です"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "使"
-	DIALOGUE_FONT_0
-	.text "ってください"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCGirl5Portrait
+  DIALOGUE_FONT_1
+  .text "帝国軍"
+  DIALOGUE_FONT_0
+  .text "はすごい"
+  DIALOGUE_FONT_4
+  .text "勢"
+  DIALOGUE_FONT_0
+  .text "いで"
+  DIALOGUE_NL
+  .text "せまってきてるんですって？"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ケガしている"
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_2
+  .text "隊"
+  DIALOGUE_FONT_0
+  .text "さんも"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "多"
+  DIALOGUE_FONT_0
+  .text "いんじゃないですか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "これ､"
+  DIALOGUE_PAUSE $08
+  .text "ライブの"
+  DIALOGUE_FONT_1
+  .text "杖"
+  DIALOGUE_FONT_0
+  .text "です"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "使"
+  DIALOGUE_FONT_0
+  .text "ってください"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

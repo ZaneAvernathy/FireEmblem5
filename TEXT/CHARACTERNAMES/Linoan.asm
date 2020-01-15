@@ -1,4 +1,4 @@
 
 menutextLinoanName ; 86/DE55
-	.enc "MenuText"
-	.text "リノアン\n"
+  .enc "MenuText"
+  .text "リノアン\n"

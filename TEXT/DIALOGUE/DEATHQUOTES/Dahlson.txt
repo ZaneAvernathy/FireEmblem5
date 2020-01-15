@@ -1,18 +1,18 @@
 dialogueDahlsonDeathQuote ; 82/BB7B
-	DIALOGUE_FONT_0
-	.text "ぐっ､"
-	DIALOGUE_PAUSE $08
-	.text "ユベル･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "姉"
-	DIALOGUE_FONT_0
-	.text "さんと･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "仲良"
-	DIALOGUE_FONT_0
-	.text "く･･･"
+  DIALOGUE_FONT_0
+  .text "ぐっ､"
+  DIALOGUE_PAUSE $08
+  .text "ユベル･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "姉"
+  DIALOGUE_FONT_0
+  .text "さんと･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "仲良"
+  DIALOGUE_FONT_0
+  .text "く･･･"
 DIALOGUE_END_SCENE

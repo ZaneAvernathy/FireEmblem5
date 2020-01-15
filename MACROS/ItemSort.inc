@@ -1,4 +1,4 @@
 
 structKanaSortEntry .struct Position
-	Position .byte \Position
-	.ends
+  Position .byte \Position
+.ends

@@ -1,13 +1,13 @@
 dialogueMischaBattleQuote ; 98/CAA5
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "邪"
-	DIALOGUE_FONT_1
-	.text "魔"
-	DIALOGUE_FONT_0
-	.text "をするのか！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "邪"
+  DIALOGUE_FONT_1
+  .text "魔"
+  DIALOGUE_FONT_0
+  .text "をするのか！"
 DIALOGUE_END_SCENE

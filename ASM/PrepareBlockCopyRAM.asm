@@ -1,65 +1,65 @@
 
 rsPrepareBlockCopyRAM ; 80/B208
 
-	.xl
-	.autsiz
-	.databank ?
+  .xl
+  .autsiz
+  .databank ?
 
-	; Copies two block memory move routines to RAM.
-	; Their source and destination values are modified
-	; by rlBlockCopyMVNByRAM and rlBlockCopyMVPByRAM.
+  ; Copies two block memory move routines to RAM.
+  ; Their source and destination values are modified
+  ; by rlBlockCopyMVNByRAM and rlBlockCopyMVPByRAM.
 
-	; Inputs:
-	; None
+  ; Inputs:
+  ; None
 
-	; Outputs:
-	; None
+  ; Outputs:
+  ; None
 
-	phb
-	php
-	phk
-	plb
+  phb
+  php
+  phk
+  plb
 
-	.databank `*
+  .databank `*
 
-	sep #$20
+  sep #$20
 
-	ldx #size(rsBlockCopyMVNRoutine) - 1
+  ldx #size(rsBlockCopyMVNRoutine) - 1
 
-	-
-	lda <>rsBlockCopyMVNRoutine,b,x
-	sta aBlockCopyMVNRoutineSpace,b,x
-	dec x
-	bpl -
+  -
+  lda <>rsBlockCopyMVNRoutine,b,x
+  sta aBlockCopyMVNRoutineSpace,b,x
+  dec x
+  bpl -
 
-	ldx #size(rsBlockCopyMVPRoutine)
+  ldx #size(rsBlockCopyMVPRoutine)
 
-	-
-	lda <>rsBlockCopyMVPRoutine,b,x
-	sta aBlockCopyMVPRoutineSpace,b,x
-	dec x
-	bpl -
+  -
+  lda <>rsBlockCopyMVPRoutine,b,x
+  sta aBlockCopyMVPRoutineSpace,b,x
+  dec x
+  bpl -
 
-	plp
-	plb
-	rts
+  plp
+  plb
+  rts
 
 rsBlockCopyMVNRoutine .block ; 80/B229
 
-	.autsiz
-	.databank ?
+  .autsiz
+  .databank ?
 
-	mvn $00,$00
-	rts
+  mvn $00,$00
+  rts
 
 .bend
 
 rsBlockCopyMVPRoutine .block; 80/B22D
 
-	.autsiz
-	.databank ?
+  .autsiz
+  .databank ?
 
-	mvp $00,$00
-	rts
+  mvp $00,$00
+  rts
 
 .bend

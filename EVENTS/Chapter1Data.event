@@ -1,73 +1,73 @@
 
 eventChapter1Data ; B1/FB37
 
-	_LeifArriveCameraCoordinates ; B1/FB37
-		.byte 8, 15
+  _LeifArriveCameraCoordinates ; B1/FB37
+    .byte 8, 15
 
-	_LeifUnitGroup ; B1/FB39
-		UNIT Leif, Player, [1, 20], [3, 19], Leif, [LightBrand, IronSword], 1, False, [$00, $00, $00, $00]
-		UNIT Finn, Player, [1, 20], [2, 19], Leif, [BraveLance, IronSword], 7, False, [$00, $00, $00, $00]
-		UNIT Eyvel, Player, [1, 20], [3, 18], Leif, [IronBlade, FireBrand, DoorKey], 12, False, [$00, $00, $00, $00]
-		UNIT Orsin, Player, [1, 20], [4, 18], Leif, [IronAxe], 1, False, [$00, $00, $00, $00]
-		UNIT Halvan, Player, [1, 20], [2, 18], Leif, [IronAxe], 2, False, [$00, $00, $00, $00]
-	UNIT
+  _LeifUnitGroup ; B1/FB39
+    UNIT Leif, Player, [1, 20], [3, 19], Leif, [LightBrand, IronSword], 1, False, [$00, $00, $00, $00]
+    UNIT Finn, Player, [1, 20], [2, 19], Leif, [BraveLance, IronSword], 7, False, [$00, $00, $00, $00]
+    UNIT Eyvel, Player, [1, 20], [3, 18], Leif, [IronBlade, FireBrand, DoorKey], 12, False, [$00, $00, $00, $00]
+    UNIT Orsin, Player, [1, 20], [4, 18], Leif, [IronAxe], 1, False, [$00, $00, $00, $00]
+    UNIT Halvan, Player, [1, 20], [2, 18], Leif, [IronAxe], 2, False, [$00, $00, $00, $00]
+  UNIT
 
-	_DagdarArriveCameraCoordinates ; B1/FB9F
-		.byte 10, 9
+  _DagdarArriveCameraCoordinates ; B1/FB9F
+    .byte 10, 9
 
-	_DagdarUnitGroup ; B1/FBA1
-		UNIT Marty, Player, [1, 7], [1, 7], Leif, [SteelAxe], 1, False, [$00, $00, $00, $00]
-		UNIT Dagdar, Player, [1, 6], [1, 6], Leif, [Hammer, HandAxe], 6, False, [$00, $00, $00, $00]
-		UNIT Tanya, Player, [1, 5], [1, 5], Leif, [IronBow, DoorKey], 1, False, [$00, $00, $00, $00]
-	UNIT
+  _DagdarUnitGroup ; B1/FBA1
+    UNIT Marty, Player, [1, 7], [1, 7], Leif, [SteelAxe], 1, False, [$00, $00, $00, $00]
+    UNIT Dagdar, Player, [1, 6], [1, 6], Leif, [Hammer, HandAxe], 6, False, [$00, $00, $00, $00]
+    UNIT Tanya, Player, [1, 5], [1, 5], Leif, [IronBow, DoorKey], 1, False, [$00, $00, $00, $00]
+  UNIT
 
-	_Opening1CameraCoordinates ; B1/FBDF
-		.byte 12, 7
+  _Opening1CameraCoordinates ; B1/FBDF
+    .byte 12, 7
 
-	_RaydrikUnitGroup ; B1/FBE1
-		UNIT Weissmann, Enemy, [17, 5], [17, 6], Raydrik, [Longsword], 5, True, [$01, $03, $00, $80]
-		UNIT Raydrik, Enemy, [17, 5], [17, 5], Raydrik, [], 1, False, [$00, $00, $00, $00]
-	UNIT
+  _RaydrikUnitGroup ; B1/FBE1
+    UNIT Weissmann, Enemy, [17, 5], [17, 6], Raydrik, [Longsword], 5, True, [$01, $03, $00, $80]
+    UNIT Raydrik, Enemy, [17, 5], [17, 5], Raydrik, [], 1, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates1 ; B1/FC0B
-		.byte 15, 14
+  _UnusedCoordinates1 ; B1/FC0B
+    .byte 15, 14
 
-	_EnemyGroup1 ; B1/FC0D
-		UNIT MansterSoldier2, Enemy, [13, 12], [15, 12], Raydrik, [ShortLance], 1, False, [$02, $08, $00, $00]
-	UNIT
+  _EnemyGroup1 ; B1/FC0D
+    UNIT MansterSoldier2, Enemy, [13, 12], [15, 12], Raydrik, [ShortLance], 1, False, [$02, $08, $00, $00]
+  UNIT
 
-	_Opening3CameraCoordinates ; B1/FC23
-		.byte 14, 9
+  _Opening3CameraCoordinates ; B1/FC23
+    .byte 14, 9
 
-	_EnemyGroup2 ; B1/FC25
-		UNIT MansterSoldier2, Enemy, [13, 10], [13, 10], Raydrik, [Javelin], 1, False, [$06, $03, $00, $10]
-		UNIT MansterArcher, Enemy, [9, 10], [9, 10], Raydrik, [Shortbow, Vulnerary], 3 , False, [$01, $03, $00, $00]
-		UNIT MansterSoldier2, Enemy, [13, 16], [13, 16], Raydrik, [Javelin], 10, False, [$01, $03, $03, $00]
-		UNIT MansterSoldier2, Enemy, [11, 2], [10, 8], Raydrik, [ShortLance], 5, False, [$02, $08, $00, $00]
-		UNIT MansterSoldier2, Enemy, [18, 13], [18, 13], Raydrik, [Javelin], 1, False, [$02, $08, $03, $00]
-		UNIT MansterSoldier2, Enemy, [8, 12], [10, 12], Raydrik, [Javelin, Vulnerary], 5, False, [$02, $08, $00, $00]
-		UNIT MansterSoldier2, Enemy, [18, 10], [18, 10], Raydrik, [ShortLance], 1, False, [$01, $03, $03, $00]
-		UNIT MansterSoldier2, Enemy, [8, 5], [8, 5], Raydrik, [ShortLance], 1, False, [$01, $03, $03, $00]
-		UNIT MansterSoldier2, Enemy, [8, 14], [8, 14], Raydrik, [ShortLance], 1, False, [$02, $08, $00, $00]
-		UNIT MansterArcher, Enemy, [11, 12], [11, 12], Raydrik, [Shortbow], 1, False, [$02, $08, $00, $05]
-		UNIT MansterSoldier2, Enemy, [12, 6], [12, 6], Raydrik, [ShortLance], 1, False, [$06, $03, $03, $00]
-	UNIT
+  _EnemyGroup2 ; B1/FC25
+    UNIT MansterSoldier2, Enemy, [13, 10], [13, 10], Raydrik, [Javelin], 1, False, [$06, $03, $00, $10]
+    UNIT MansterArcher, Enemy, [9, 10], [9, 10], Raydrik, [Shortbow, Vulnerary], 3 , False, [$01, $03, $00, $00]
+    UNIT MansterSoldier2, Enemy, [13, 16], [13, 16], Raydrik, [Javelin], 10, False, [$01, $03, $03, $00]
+    UNIT MansterSoldier2, Enemy, [11, 2], [10, 8], Raydrik, [ShortLance], 5, False, [$02, $08, $00, $00]
+    UNIT MansterSoldier2, Enemy, [18, 13], [18, 13], Raydrik, [Javelin], 1, False, [$02, $08, $03, $00]
+    UNIT MansterSoldier2, Enemy, [8, 12], [10, 12], Raydrik, [Javelin, Vulnerary], 5, False, [$02, $08, $00, $00]
+    UNIT MansterSoldier2, Enemy, [18, 10], [18, 10], Raydrik, [ShortLance], 1, False, [$01, $03, $03, $00]
+    UNIT MansterSoldier2, Enemy, [8, 5], [8, 5], Raydrik, [ShortLance], 1, False, [$01, $03, $03, $00]
+    UNIT MansterSoldier2, Enemy, [8, 14], [8, 14], Raydrik, [ShortLance], 1, False, [$02, $08, $00, $00]
+    UNIT MansterArcher, Enemy, [11, 12], [11, 12], Raydrik, [Shortbow], 1, False, [$02, $08, $00, $05]
+    UNIT MansterSoldier2, Enemy, [12, 6], [12, 6], Raydrik, [ShortLance], 1, False, [$06, $03, $03, $00]
+  UNIT
 
-	_Opening2CameraCoordinates ; B1/FD03
-		.byte 12, 7
+  _Opening2CameraCoordinates ; B1/FD03
+    .byte 12, 7
 
-	_PrisonerGuardsGroup ; B1/FD05
-		UNIT MansterSoldier2, Enemy, [18, 14], [17, 8], Raydrik, [ShortLance], 1, False, [$02, $08, $03, $00]
-		UNIT MansterArcher, Enemy, [17, 14], [16, 8], Raydrik, [Shortbow], 1, False, [$02, $08, $00, $05]
-	UNIT
+  _PrisonerGuardsGroup ; B1/FD05
+    UNIT MansterSoldier2, Enemy, [18, 14], [17, 8], Raydrik, [ShortLance], 1, False, [$02, $08, $03, $00]
+    UNIT MansterArcher, Enemy, [17, 14], [16, 8], Raydrik, [Shortbow], 1, False, [$02, $08, $00, $05]
+  UNIT
 
-	_UnusedCoordinates2 ; B1/FD2F
-		.byte 8, 7
+  _UnusedCoordinates2 ; B1/FD2F
+    .byte 8, 7
 
-	_PrisonerGroup ; B1/FD31
-		UNIT Mareeta, Player, [16, 7], [16, 7], Leif, [], 1, False, [$00, $00, $00, $00]
-		UNIT Nanna, Player, [17, 7], [17, 7], Leif, [], 1, False, [$00, $00, $00, $00]
-	UNIT
+  _PrisonerGroup ; B1/FD31
+    UNIT Mareeta, Player, [16, 7], [16, 7], Leif, [], 1, False, [$00, $00, $00, $00]
+    UNIT Nanna, Player, [17, 7], [17, 7], Leif, [], 1, False, [$00, $00, $00, $00]
+  UNIT
 
-	_Vendor ; B1/FD5B
-		SHOP [12, 6], [Vulnerary]
+  _Vendor ; B1/FD5B
+    SHOP [12, 6], [Vulnerary]

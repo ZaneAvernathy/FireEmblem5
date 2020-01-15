@@ -1,42 +1,42 @@
 dialogueChapter19SilverSwordHouse ; B0/B8D2
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCWoman1Portrait
-	DIALOGUE_FONT_0
-	.text "このあたりも"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "また､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "戦場"
-	DIALOGUE_FONT_0
-	.text "になるのかねえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おお､"
-	DIALOGUE_PAUSE $08
-	.text "いやだいやだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "あんたたちレンスター"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "人"
-	DIALOGUE_FONT_0
-	.text "だろ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "このぎんの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "あげるからさ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なんとかしておくれよ"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCWoman1Portrait
+  DIALOGUE_FONT_0
+  .text "このあたりも"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "また､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "戦場"
+  DIALOGUE_FONT_0
+  .text "になるのかねえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おお､"
+  DIALOGUE_PAUSE $08
+  .text "いやだいやだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "あんたたちレンスター"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "人"
+  DIALOGUE_FONT_0
+  .text "だろ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "このぎんの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "あげるからさ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なんとかしておくれよ"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

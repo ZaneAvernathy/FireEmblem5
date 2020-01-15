@@ -1,12 +1,12 @@
 dialogueChapter15RightPathConfirm ; 92/E868
-	DIALOGUE_ASMC_0 rlBeginDialoguePrompt
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_FONT_0
-	.text "それでもよろしいですか？"
-	DIALOGUE_NL
-	.text "　　　はい"
-	DIALOGUE_NL
-	.text "　　　いいえ"
-	DIALOGUE_ASMC_0 rlDialoguePromptSelector
+  DIALOGUE_ASMC_0 rlBeginDialoguePrompt
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_FONT_0
+  .text "それでもよろしいですか？"
+  DIALOGUE_NL
+  .text "　　　はい"
+  DIALOGUE_NL
+  .text "　　　いいえ"
+  DIALOGUE_ASMC_0 rlDialoguePromptSelector
 DIALOGUE_END_SCENE

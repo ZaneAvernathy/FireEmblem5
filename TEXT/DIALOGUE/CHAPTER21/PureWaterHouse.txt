@@ -1,80 +1,80 @@
 dialogueChapter21PureWaterHouse ; B0/CBAD
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCGirl4Portrait
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "支配"
-	DIALOGUE_FONT_0
-	.text "されてからというもの"
-	DIALOGUE_NL
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "辺"
-	DIALOGUE_FONT_0
-	.text "りも"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "すっかりさびれてしまって･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "また､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "昔"
-	DIALOGUE_FONT_0
-	.text "のように"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "れればよいのだけれど･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "そのためにも､"
-	DIALOGUE_PAUSE $08
-	.text "ぜひ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "をこのあたりから"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "追"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_3
-	.text "払"
-	DIALOGUE_FONT_0
-	.text "ってください"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "これ､"
-	DIALOGUE_PAUSE $08
-	.text "つまらぬものですけど"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "もっていってください"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "きっとお"
-	DIALOGUE_FONT_3
-	.text "役"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "立"
-	DIALOGUE_FONT_0
-	.text "つと"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "います"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCGirl4Portrait
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "支配"
+  DIALOGUE_FONT_0
+  .text "されてからというもの"
+  DIALOGUE_NL
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "辺"
+  DIALOGUE_FONT_0
+  .text "りも"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "すっかりさびれてしまって･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "また､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "昔"
+  DIALOGUE_FONT_0
+  .text "のように"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "れればよいのだけれど･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "そのためにも､"
+  DIALOGUE_PAUSE $08
+  .text "ぜひ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "をこのあたりから"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "追"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_3
+  .text "払"
+  DIALOGUE_FONT_0
+  .text "ってください"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "これ､"
+  DIALOGUE_PAUSE $08
+  .text "つまらぬものですけど"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "もっていってください"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "きっとお"
+  DIALOGUE_FONT_3
+  .text "役"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "立"
+  DIALOGUE_FONT_0
+  .text "つと"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "います"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

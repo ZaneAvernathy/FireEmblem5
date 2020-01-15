@@ -1,100 +1,100 @@
 
 eventChapter22Data ; B1/8425
 
-	_PrepGroup ; B1/8425
-		.byte 24, 23
+  _PrepGroup ; B1/8425
+    .byte 24, 23
 
-		UNIT FriegeArmoredSword3, Enemy, [18, 17], [18, 17], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
-		UNIT FriegeArmoredSword3, Enemy, [19, 17], [19, 17], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
-		UNIT FriegeArmoredSword3, Enemy, [20, 17], [20, 17], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
-		UNIT FriegeArmoredSword3, Enemy, [22, 22], [22, 22], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
-		UNIT FriegeArmoredSword3, Enemy, [22, 23], [22, 23], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
-		UNIT FriegeArmoredAxe2, Enemy, [18, 15], [18, 15], Cohen, [Hammer, Halberd], 20, False, [$02, $15, $00, $00]
-		UNIT FriegeArmoredAxe2, Enemy, [19, 15], [19, 15], Cohen, [Hammer, Halberd], 20, False, [$02, $15, $00, $00]
-		UNIT FriegeArmoredAxe2, Enemy, [20, 15], [20, 15], Cohen, [Hammer, Halberd], 20, False, [$02, $15, $00, $00]
-		UNIT FriegeArchKnight2, Enemy, [18, 13], [18, 13], Cohen, [Greatbow, KillerBow], 16, False, [$02, $15, $00, $00]
-		UNIT FriegeArchKnight2, Enemy, [19, 13], [19, 13], Cohen, [Greatbow, KillerBow], 16, False, [$02, $15, $00, $00]
-		UNIT FriegeArchKnight2, Enemy, [20, 13], [20, 13], Cohen, [Greatbow, KillerBow], 16, False, [$02, $15, $00, $00]
-		UNIT FriegeBallista5, Enemy, [4, 27], [4, 27], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
-		UNIT FriegeBallista5, Enemy, [25, 26], [25, 26], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
-		UNIT FriegeBallista5, Enemy, [22, 6], [22, 6], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
-		UNIT FriegeBallista5, Enemy, [28, 15], [28, 15], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
-		UNIT FriegeBallista1, Enemy, [7, 26], [7, 26], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
-		UNIT FriegeBallista1, Enemy, [8, 26], [8, 26], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
-		UNIT FriegeBallista1, Enemy, [7, 27], [7, 27], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
-		UNIT FriegeBallista1, Enemy, [8, 27], [8, 27], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
-		UNIT FriegeGeneral1, Enemy, [8, 25], [8, 25], Cohen, [Hammer, Horseslayer], 10, False, [$00, $00, $00, $00]
-		UNIT FriegeBishop2, Enemy, [7, 28], [7, 28], Cohen, [Bolting, Thoron, Physic], 10, False, [$00, $07, $00, $00]
-		UNIT FriegeBishop2, Enemy, [8, 28], [8, 28], Cohen, [Bolting, Thoron, Physic], 10, False, [$00, $07, $00, $00]
-		UNIT FriegePriest1, Enemy, [9, 24], [9, 24], Cohen, [Physic, SilenceStaff, Heal], 16, False, [$00, $07, $00, $00]
-		UNIT FriegeMyrmidon, Enemy, [6, 23], [6, 23], Cohen, [ParagonSword, Vulnerary], 16, False, [$00, $03, $00, $00]
-		UNIT FriegeSniper, Enemy, [4, 23], [4, 23], Cohen, [MasterBow], 17, False, [$00, $03, $00, $00]
-		UNIT FriegeSoldier2, Enemy, [5, 15], [5, 15], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
-		UNIT FriegeSoldier2, Enemy, [7, 18], [7, 18], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
-		UNIT FriegeSoldier2, Enemy, [2, 19], [2, 19], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
-		UNIT FriegeSoldier2, Enemy, [7, 15], [7, 15], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
-		UNIT FriegePaladin2, Enemy, [27, 4], [27, 4], Cohen, [Horseslayer, Armorslayer], 20, False, [$00, $03, $00, $00]
-		UNIT FriegePaladin2, Enemy, [28, 5], [28, 5], Cohen, [Horseslayer, Armorslayer], 20, False, [$00, $03, $00, $00]
-		UNIT FriegePaladin2, Enemy, [29, 4], [29, 4], Cohen, [Horseslayer, Armorslayer], 20, False, [$00, $03, $00, $00]
-		UNIT Reinhardt, Enemy, [28, 7], [28, 7], Cohen, [Dimevolt, MasterSword, Vulnerary], 20, False, [$18, $03, $00, $00]
-		UNIT Gelbenritter, Enemy, [28, 10], [28, 10], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
-		UNIT Gelbenritter, Enemy, [28, 9], [28, 9], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
-		UNIT Gelbenritter, Enemy, [28, 8], [28, 8], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
-		UNIT Gelbenritter, Enemy, [27, 9], [27, 9], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
-		UNIT Gelbenritter, Enemy, [29, 9], [29, 9], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
-		UNIT Gelbenritter, Enemy, [29, 8], [29, 8], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
-		UNIT Gelbenritter, Enemy, [27, 7], [27, 7], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
-		UNIT Gelbenritter, Enemy, [29, 7], [29, 7], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
-		UNIT Gelbenritter, Enemy, [27, 6], [27, 6], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
-		UNIT Gelbenritter, Enemy, [29, 6], [29, 6], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
-		UNIT Gelbenritter, Enemy, [27, 8], [27, 8], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
-	UNIT
+    UNIT FriegeArmoredSword3, Enemy, [18, 17], [18, 17], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
+    UNIT FriegeArmoredSword3, Enemy, [19, 17], [19, 17], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
+    UNIT FriegeArmoredSword3, Enemy, [20, 17], [20, 17], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
+    UNIT FriegeArmoredSword3, Enemy, [22, 22], [22, 22], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
+    UNIT FriegeArmoredSword3, Enemy, [22, 23], [22, 23], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
+    UNIT FriegeArmoredAxe2, Enemy, [18, 15], [18, 15], Cohen, [Hammer, Halberd], 20, False, [$02, $15, $00, $00]
+    UNIT FriegeArmoredAxe2, Enemy, [19, 15], [19, 15], Cohen, [Hammer, Halberd], 20, False, [$02, $15, $00, $00]
+    UNIT FriegeArmoredAxe2, Enemy, [20, 15], [20, 15], Cohen, [Hammer, Halberd], 20, False, [$02, $15, $00, $00]
+    UNIT FriegeArchKnight2, Enemy, [18, 13], [18, 13], Cohen, [Greatbow, KillerBow], 16, False, [$02, $15, $00, $00]
+    UNIT FriegeArchKnight2, Enemy, [19, 13], [19, 13], Cohen, [Greatbow, KillerBow], 16, False, [$02, $15, $00, $00]
+    UNIT FriegeArchKnight2, Enemy, [20, 13], [20, 13], Cohen, [Greatbow, KillerBow], 16, False, [$02, $15, $00, $00]
+    UNIT FriegeBallista5, Enemy, [4, 27], [4, 27], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
+    UNIT FriegeBallista5, Enemy, [25, 26], [25, 26], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
+    UNIT FriegeBallista5, Enemy, [22, 6], [22, 6], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
+    UNIT FriegeBallista5, Enemy, [28, 15], [28, 15], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
+    UNIT FriegeBallista1, Enemy, [7, 26], [7, 26], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
+    UNIT FriegeBallista1, Enemy, [8, 26], [8, 26], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
+    UNIT FriegeBallista1, Enemy, [7, 27], [7, 27], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
+    UNIT FriegeBallista1, Enemy, [8, 27], [8, 27], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
+    UNIT FriegeGeneral1, Enemy, [8, 25], [8, 25], Cohen, [Hammer, Horseslayer], 10, False, [$00, $00, $00, $00]
+    UNIT FriegeBishop2, Enemy, [7, 28], [7, 28], Cohen, [Bolting, Thoron, Physic], 10, False, [$00, $07, $00, $00]
+    UNIT FriegeBishop2, Enemy, [8, 28], [8, 28], Cohen, [Bolting, Thoron, Physic], 10, False, [$00, $07, $00, $00]
+    UNIT FriegePriest1, Enemy, [9, 24], [9, 24], Cohen, [Physic, SilenceStaff, Heal], 16, False, [$00, $07, $00, $00]
+    UNIT FriegeMyrmidon, Enemy, [6, 23], [6, 23], Cohen, [ParagonSword, Vulnerary], 16, False, [$00, $03, $00, $00]
+    UNIT FriegeSniper, Enemy, [4, 23], [4, 23], Cohen, [MasterBow], 17, False, [$00, $03, $00, $00]
+    UNIT FriegeSoldier2, Enemy, [5, 15], [5, 15], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
+    UNIT FriegeSoldier2, Enemy, [7, 18], [7, 18], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
+    UNIT FriegeSoldier2, Enemy, [2, 19], [2, 19], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
+    UNIT FriegeSoldier2, Enemy, [7, 15], [7, 15], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
+    UNIT FriegePaladin2, Enemy, [27, 4], [27, 4], Cohen, [Horseslayer, Armorslayer], 20, False, [$00, $03, $00, $00]
+    UNIT FriegePaladin2, Enemy, [28, 5], [28, 5], Cohen, [Horseslayer, Armorslayer], 20, False, [$00, $03, $00, $00]
+    UNIT FriegePaladin2, Enemy, [29, 4], [29, 4], Cohen, [Horseslayer, Armorslayer], 20, False, [$00, $03, $00, $00]
+    UNIT Reinhardt, Enemy, [28, 7], [28, 7], Cohen, [Dimevolt, MasterSword, Vulnerary], 20, False, [$18, $03, $00, $00]
+    UNIT Gelbenritter, Enemy, [28, 10], [28, 10], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+    UNIT Gelbenritter, Enemy, [28, 9], [28, 9], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+    UNIT Gelbenritter, Enemy, [28, 8], [28, 8], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+    UNIT Gelbenritter, Enemy, [27, 9], [27, 9], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+    UNIT Gelbenritter, Enemy, [29, 9], [29, 9], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+    UNIT Gelbenritter, Enemy, [29, 8], [29, 8], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+    UNIT Gelbenritter, Enemy, [27, 7], [27, 7], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+    UNIT Gelbenritter, Enemy, [29, 7], [29, 7], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+    UNIT Gelbenritter, Enemy, [27, 6], [27, 6], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+    UNIT Gelbenritter, Enemy, [29, 6], [29, 6], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+    UNIT Gelbenritter, Enemy, [27, 8], [27, 8], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+  UNIT
 
-	_ReinforcementsCameraCoordinates ; B1/8799
-		.byte 23, 19
+  _ReinforcementsCameraCoordinates ; B1/8799
+    .byte 23, 19
 
-	_ReinforcementsGroup ; B1/879B
-		UNIT FriegeBowKnight2, Enemy, [30, 18], [30, 18], Cohen, [Greatbow], 17, False, [$00, $00, $00, $00]
-		UNIT FriegeLanceKnight2, Enemy, [30, 19], [30, 19], Cohen, [Greatlance], 18, False, [$00, $00, $00, $00]
-		UNIT FriegeArmoredAxe4, Enemy, [30, 20], [30, 20], Cohen, [BattleAxe], 15, False, [$00, $00, $00, $00]
-		UNIT FriegeArmoredAxe1, Enemy, [19, 16], [19, 16], Cohen, [BattleAxe], 19, False, [$00, $00, $00, $00]
-	UNIT
+  _ReinforcementsGroup ; B1/879B
+    UNIT FriegeBowKnight2, Enemy, [30, 18], [30, 18], Cohen, [Greatbow], 17, False, [$00, $00, $00, $00]
+    UNIT FriegeLanceKnight2, Enemy, [30, 19], [30, 19], Cohen, [Greatlance], 18, False, [$00, $00, $00, $00]
+    UNIT FriegeArmoredAxe4, Enemy, [30, 20], [30, 20], Cohen, [BattleAxe], 15, False, [$00, $00, $00, $00]
+    UNIT FriegeArmoredAxe1, Enemy, [19, 16], [19, 16], Cohen, [BattleAxe], 19, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates1 ; B1/87ED
-		.byte 8, 7
+  _UnusedCoordinates1 ; B1/87ED
+    .byte 8, 7
 
-	_SaiasGroup ; B1/87EF
-		UNIT Saias, Enemy, [28, 3], [28, 4], Cohen, [Sleep, Fortify, SilenceStaff, Light], 12, False, [$01, $03, $00, $00]
-	UNIT
+  _SaiasGroup ; B1/87EF
+    UNIT Saias, Enemy, [28, 3], [28, 4], Cohen, [Sleep, Fortify, SilenceStaff, Light], 12, False, [$01, $03, $00, $00]
+  UNIT
 
-	_UnusedCoordinates2 ; B1/8805
-		.byte 8, 7
+  _UnusedCoordinates2 ; B1/8805
+    .byte 8, 7
 
-	_CohenGroup ; B1/8807
-		UNIT Cohen, Enemy, [28, 3], [28, 3], Cohen, [Blizzard, Berserk, Restore, MasterLance], 20, True, [$01, $03, $00, $80]
-	UNIT
+  _CohenGroup ; B1/8807
+    UNIT Cohen, Enemy, [28, 3], [28, 3], Cohen, [Blizzard, Berserk, Restore, MasterLance], 20, True, [$01, $03, $00, $80]
+  UNIT
 
-	_StartingPositions ; B1/881D
-		.byte 2, 3
-		.byte 5, 5
-		.byte 5, 4
-		.byte 4, 5
-		.byte 4, 4
-		.byte 4, 3
-		.byte 4, 2
-		.byte 3, 4
-		.byte 3, 3
-		.byte 3, 2
-		.byte 2, 4
-		.byte 2, 5
-		.byte 2, 1
-		.byte 1, 4
-		.byte 1, 3
-		.byte 1, 2
-	.byte $FF
+  _StartingPositions ; B1/881D
+    .byte 2, 3
+    .byte 5, 5
+    .byte 5, 4
+    .byte 4, 5
+    .byte 4, 4
+    .byte 4, 3
+    .byte 4, 2
+    .byte 3, 4
+    .byte 3, 3
+    .byte 3, 2
+    .byte 2, 4
+    .byte 2, 5
+    .byte 2, 1
+    .byte 1, 4
+    .byte 1, 3
+    .byte 1, 2
+  .byte $FF
 
-	_Armory ; B1/883E
-		SHOP [5, 28], [KillingEdge, KillerLance, KillerAxe, KillerBow]
+  _Armory ; B1/883E
+    SHOP [5, 28], [KillingEdge, KillerLance, KillerAxe, KillerBow]
 
-	_Vendor ; B1/8850
-		SHOP [3, 27], [Mend, Elfire, Light, DoorKey, KnightCrest]
+  _Vendor ; B1/8850
+    SHOP [3, 27], [Mend, Elfire, Light, DoorKey, KnightCrest]

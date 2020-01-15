@@ -1,10 +1,10 @@
 dialogueFardenReleaseQuote ; 98/EC4E
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "すまん､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "恩"
-	DIALOGUE_FONT_0
-	.text "にきる･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "すまん､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "恩"
+  DIALOGUE_FONT_0
+  .text "にきる･･･"
 DIALOGUE_END_SCENE

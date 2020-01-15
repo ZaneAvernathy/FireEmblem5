@@ -1,8 +1,8 @@
 dialoguePaulusBattleQuote ; 92/D11D
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "そうか･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そういうことなのか･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "そうか･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そういうことなのか･･･"
 DIALOGUE_END_SCENE

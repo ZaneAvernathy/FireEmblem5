@@ -1,4 +1,4 @@
 
 menutextTroubadourName ; 89/814A
-	.enc "MenuText"
-	.text "トルバドール　　\n"
+  .enc "MenuText"
+  .text "トルバドール　　\n"

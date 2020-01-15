@@ -1,16 +1,16 @@
 dialogueBrightonRetreatQuote ; 82/C21B
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD BrightonPortrait
-	DIALOGUE_FONT_0
-	.text "すまん､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "先"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "かせてもらう！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD BrightonPortrait
+  DIALOGUE_FONT_0
+  .text "すまん､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "先"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "かせてもらう！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

@@ -1,4 +1,4 @@
 
 menutextDoorKeyName ; B0/97BD
-	.enc "MenuText"
-	.text "とびらのかぎ\n"
+  .enc "MenuText"
+  .text "とびらのかぎ\n"

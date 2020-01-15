@@ -1,131 +1,131 @@
 dialogueChapter12xTrudeRecruitment ; 92/B4F4
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD TrudePortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD PanPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "おい､"
-	DIALOGUE_PAUSE $08
-	.text "トルード"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "もういいんだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "をひけ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ん？"
-	DIALOGUE_PAUSE $10
-	.text "　･･･どういうことだ？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "解放軍"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "参"
-	DIALOGUE_FONT_1
-	.text "加"
-	DIALOGUE_FONT_0
-	.text "する"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おまえも"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_2
-	.text "伝"
-	DIALOGUE_FONT_0
-	.text "え"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なるほど･･･"
-	DIALOGUE_PAUSE $10
-	.text "こいつらが"
-	DIALOGUE_FONT_1
-	.text "解放軍"
-	DIALOGUE_FONT_0
-	.text "か･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "帝国軍"
-	DIALOGUE_FONT_0
-	.text "にしては"
-	DIALOGUE_FONT_1
-	.text "士気"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "高"
-	DIALOGUE_FONT_0
-	.text "すぎると"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "ったが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "そういうことならうなずける"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "まあ､"
-	DIALOGUE_PAUSE $08
-	.text "いいだろう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おもしろそうだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "そうか､"
-	DIALOGUE_PAUSE $08
-	.text "よかった"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "おまえとは"
-	DIALOGUE_FONT_2
-	.text "長"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_4
-	.text "付"
-	DIALOGUE_FONT_0
-	.text "き"
-	DIALOGUE_FONT_1
-	.text "合"
-	DIALOGUE_FONT_0
-	.text "いだからな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "事"
-	DIALOGUE_FONT_0
-	.text "はかまえたくなかったんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ま､"
-	DIALOGUE_PAUSE $08
-	.text "これからもよろしくたのむぜ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "フッ､"
-	DIALOGUE_PAUSE $08
-	.text "まかせておけ"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD TrudePortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD PanPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "おい､"
+  DIALOGUE_PAUSE $08
+  .text "トルード"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "もういいんだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "をひけ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ん？"
+  DIALOGUE_PAUSE $10
+  .text "　･･･どういうことだ？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "解放軍"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "参"
+  DIALOGUE_FONT_1
+  .text "加"
+  DIALOGUE_FONT_0
+  .text "する"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おまえも"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_2
+  .text "伝"
+  DIALOGUE_FONT_0
+  .text "え"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なるほど･･･"
+  DIALOGUE_PAUSE $10
+  .text "こいつらが"
+  DIALOGUE_FONT_1
+  .text "解放軍"
+  DIALOGUE_FONT_0
+  .text "か･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "帝国軍"
+  DIALOGUE_FONT_0
+  .text "にしては"
+  DIALOGUE_FONT_1
+  .text "士気"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "高"
+  DIALOGUE_FONT_0
+  .text "すぎると"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "ったが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "そういうことならうなずける"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "まあ､"
+  DIALOGUE_PAUSE $08
+  .text "いいだろう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おもしろそうだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "そうか､"
+  DIALOGUE_PAUSE $08
+  .text "よかった"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "おまえとは"
+  DIALOGUE_FONT_2
+  .text "長"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_4
+  .text "付"
+  DIALOGUE_FONT_0
+  .text "き"
+  DIALOGUE_FONT_1
+  .text "合"
+  DIALOGUE_FONT_0
+  .text "いだからな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "事"
+  DIALOGUE_FONT_0
+  .text "はかまえたくなかったんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ま､"
+  DIALOGUE_PAUSE $08
+  .text "これからもよろしくたのむぜ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "フッ､"
+  DIALOGUE_PAUSE $08
+  .text "まかせておけ"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

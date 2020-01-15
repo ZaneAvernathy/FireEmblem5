@@ -1,22 +1,22 @@
 dialogueWeissmannBattleQuote ; 95/A8E2
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "わしを"
-	DIALOGUE_FONT_1
-	.text "殺"
-	DIALOGUE_FONT_0
-	.text "せば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "人質"
-	DIALOGUE_FONT_0
-	.text "たちの"
-	DIALOGUE_FONT_2
-	.text "命"
-	DIALOGUE_FONT_0
-	.text "はないぞ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "わかっているのか！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "わしを"
+  DIALOGUE_FONT_1
+  .text "殺"
+  DIALOGUE_FONT_0
+  .text "せば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "人質"
+  DIALOGUE_FONT_0
+  .text "たちの"
+  DIALOGUE_FONT_2
+  .text "命"
+  DIALOGUE_FONT_0
+  .text "はないぞ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "わかっているのか！"
 DIALOGUE_END_SCENE

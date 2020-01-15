@@ -1,36 +1,36 @@
 dialogueChapter18XavierArmor7 ; DA/FB13
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD Leonsterite4Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD NPCWoman1Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･････"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	.text "いいんだよ､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "母"
-	DIALOGUE_FONT_0
-	.text "さん"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "わなくてもいいんだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "さあ､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "ろう･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD Leonsterite4Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD NPCWoman1Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･････"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  .text "いいんだよ､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "母"
+  DIALOGUE_FONT_0
+  .text "さん"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "わなくてもいいんだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "さあ､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "ろう･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

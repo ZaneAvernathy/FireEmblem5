@@ -1,28 +1,28 @@
 dialogueWolfeChapter19ReleaseQuote ; B0/C362
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "ける？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "･･･"
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "完"
-	DIALOGUE_FONT_1
-	.text "敗"
-	DIALOGUE_FONT_0
-	.text "のようだな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "だが､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "次"
-	DIALOGUE_FONT_0
-	.text "はこうはいかん！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "ける？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "･･･"
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "完"
+  DIALOGUE_FONT_1
+  .text "敗"
+  DIALOGUE_FONT_0
+  .text "のようだな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "だが､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "次"
+  DIALOGUE_FONT_0
+  .text "はこうはいかん！"
 DIALOGUE_END_SCENE

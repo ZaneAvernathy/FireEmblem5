@@ -1,641 +1,641 @@
 
 eventChapter4Events ; 99/8778
 
-	_OpeningEventDefinitions ; 99/8778
-		EVENT FlagAlwaysZero, _OpeningEvent
-			CMP_WORD wCurrentTurn, 0
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TurnEventDefinitions ; 99/8785
-		EVENT FlagAlwaysZero, _DetectedCheck
-			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_UNSET $07
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _LeftSoldierReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_SET $07
-			CMP_WORD_RANGE wCurrentTurn, 7, 20
-			ROLL_RNG 40
-			CHECK_NUM_UNITS_LTE MansterSoldier2, 12
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _MiddleLeftSoldierReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_SET $07
-			CMP_WORD_RANGE wCurrentTurn, 8, 60
-			ROLL_RNG 40
-			CHECK_NUM_UNITS_LTE MansterSoldier2, 12
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _MiddleRightSoldierReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_SET $07
-			CMP_WORD_RANGE wCurrentTurn, 12, 24
-			ROLL_RNG 40
-			CHECK_NUM_UNITS_LTE MansterSoldier2, 12
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _RightSoldierReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_SET $07
-			CMP_WORD_RANGE wCurrentTurn, 10, 24
-			ROLL_RNG 40
-			CHECK_NUM_UNITS_LTE MansterSoldier2, 12
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _LithisDialogue
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD wCurrentTurn, 1
-			TEST_FLAG_UNSET $2C
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _LeifDialogue
-			CMP_WORD wCurrentPhase, Player
-			CMP_WORD wCurrentTurn, 2
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _NPCDialogue
-			CMP_WORD wCurrentPhase, NPC
-			CMP_WORD wCurrentTurn, 2
-			TEST_FLAG_UNSET $23
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _BrigandFlee
-			CMP_WORD wCurrentPhase, NPC
-			CMP_WORD wCurrentTurn, 15
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TalkEventDefinitions ; 99/8848
-		EVENT $06, _DahlsonRecruitment
-			TEST_FLAG_SET FlagHubertSaved
-			CHECK_CHARS2 Leif, Dahlson
-		END_DEFINITION
-		EVENT $06, _DahlsonRecruitment
-			TEST_FLAG_SET FlagHubertSaved
-			CHECK_CHARS2 Lithis, Dahlson
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_LocationEventDefinitions ; 99/8862
-		macroDoorDefinition $23, [7, 11], eventChapter4Events._Door1
-		macroDoorDefinition $24, [11, 6], eventChapter4Events._Door2
-		macroDoorDefinition $24, [12, 6], eventChapter4Events._Door2
-		macroDoorDefinition $25, [16, 11], eventChapter4Events._Door3
-		macroDoorDefinition $26, [5, 13], eventChapter4Events._Door4
-		macroDoorDefinition $27, [18, 13], eventChapter4Events._Door5
-		macroDoorDefinition $28, [5, 21], eventChapter4Events._Door6
-		macroDoorDefinition $29, [11, 21], eventChapter4Events._Door7
-		macroDoorDefinition $29, [12, 21], eventChapter4Events._Door7
-		macroDoorDefinition $2A, [18, 21], eventChapter4Events._Door8
-		macroDoorDefinition $2B, [7, 24], eventChapter4Events._Door9
-		macroDoorDefinition $2C, [16, 24], eventChapter4Events._Door10
-		EVENT FlagAlwaysZero, _RandomChest
-			CHECK_IF_RANDOM_CHEST
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_BeforeActionEventDefinitions ; 99/891E
-		macroPlayerRetreatDefinition $08, eventChapter4Events._PlayerRetreat
-		EVENT FlagAlwaysZero, _NPCRetreat
-			CMP_WORD wCurrentPhase, NPC
-			TEST_FLAG_UNSET $08
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_AfterActionEventDefinitions ; 99/896B
-		EVENT FlagAlwaysZero, _EndingEvent
-			TEST_FLAG_SET $08
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_BattleEventDefinitions ; 99/8974
-		macroBossQuoteDefinition $09, Dahlson
-	END_DEFINITION_ARRAY
-
-	_ShopEventDefinitions ; 99/897E
-	END_DEFINITION_ARRAY
-
-	_LeftSoldierReinforcements ; 99/8980
-		SCROLL_CAMERA_ADDRESS eventChapter4Data._LeftSoldierReinforcementsCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter4Data._LeftSoldierReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-		YIELD_UNK
-	END2
-
-	_MiddleLeftSoldierReinforcements ; 99/898D
-		SCROLL_CAMERA_ADDRESS eventChapter4Data._MiddleLeftSoldierReinforcementsCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter4Data._MiddleLeftSoldierReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-		YIELD_UNK
-	END2
-
-	_MiddleRightSoldierReinforcements ; 99/899A
-		SCROLL_CAMERA_ADDRESS eventChapter4Data._MiddleRightSoldierReinforcementsCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter4Data._MiddleRightSoldierReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-		YIELD_UNK
-	END2
-
-	_RightSoldierReinforcements ; 99/89A7
-		SCROLL_CAMERA_ADDRESS eventChapter4Data._RightSoldierReinforcementsCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter4Data._RightSoldierReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-		YIELD_UNK
-	END2
-
-	_DetectedCheck ; 99/89B4
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $0A
-		CALL_ASM_LOOP rlASMCCountAllUnitsWithCharacterDataByte, $0000
-
-		EVENT_CMP_BYTE_AT_EQ wEventEngineParameter1, 0
-		JUMP_FALSE +
-
-		SET_FLAG $07
-
-		+
-	END2
-
-	_BrigandFlee ; 99/89D1
-		macroSetCharacterByte BanditBrigand1, structCharacterDataRAM.AI1, $02
-		macroSetCharacterByte BanditBrigand1, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte BanditBrigand1, structCharacterDataRAM.AI2, $0B
-		macroSetCharacterByte BanditBrigand1, structCharacterDataRAM.Unknown3E, $00
-	END2
+  _OpeningEventDefinitions ; 99/8778
+    EVENT FlagAlwaysZero, _OpeningEvent
+      CMP_WORD wCurrentTurn, 0
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TurnEventDefinitions ; 99/8785
+    EVENT FlagAlwaysZero, _DetectedCheck
+      CMP_WORD wCurrentPhase, Enemy
+      TEST_FLAG_UNSET $07
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _LeftSoldierReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      TEST_FLAG_SET $07
+      CMP_WORD_RANGE wCurrentTurn, 7, 20
+      ROLL_RNG 40
+      CHECK_NUM_UNITS_LTE MansterSoldier2, 12
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _MiddleLeftSoldierReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      TEST_FLAG_SET $07
+      CMP_WORD_RANGE wCurrentTurn, 8, 60
+      ROLL_RNG 40
+      CHECK_NUM_UNITS_LTE MansterSoldier2, 12
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _MiddleRightSoldierReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      TEST_FLAG_SET $07
+      CMP_WORD_RANGE wCurrentTurn, 12, 24
+      ROLL_RNG 40
+      CHECK_NUM_UNITS_LTE MansterSoldier2, 12
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _RightSoldierReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      TEST_FLAG_SET $07
+      CMP_WORD_RANGE wCurrentTurn, 10, 24
+      ROLL_RNG 40
+      CHECK_NUM_UNITS_LTE MansterSoldier2, 12
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _LithisDialogue
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD wCurrentTurn, 1
+      TEST_FLAG_UNSET $2C
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _LeifDialogue
+      CMP_WORD wCurrentPhase, Player
+      CMP_WORD wCurrentTurn, 2
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _NPCDialogue
+      CMP_WORD wCurrentPhase, NPC
+      CMP_WORD wCurrentTurn, 2
+      TEST_FLAG_UNSET $23
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _BrigandFlee
+      CMP_WORD wCurrentPhase, NPC
+      CMP_WORD wCurrentTurn, 15
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TalkEventDefinitions ; 99/8848
+    EVENT $06, _DahlsonRecruitment
+      TEST_FLAG_SET FlagHubertSaved
+      CHECK_CHARS2 Leif, Dahlson
+    END_DEFINITION
+    EVENT $06, _DahlsonRecruitment
+      TEST_FLAG_SET FlagHubertSaved
+      CHECK_CHARS2 Lithis, Dahlson
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _LocationEventDefinitions ; 99/8862
+    macroDoorDefinition $23, [7, 11], eventChapter4Events._Door1
+    macroDoorDefinition $24, [11, 6], eventChapter4Events._Door2
+    macroDoorDefinition $24, [12, 6], eventChapter4Events._Door2
+    macroDoorDefinition $25, [16, 11], eventChapter4Events._Door3
+    macroDoorDefinition $26, [5, 13], eventChapter4Events._Door4
+    macroDoorDefinition $27, [18, 13], eventChapter4Events._Door5
+    macroDoorDefinition $28, [5, 21], eventChapter4Events._Door6
+    macroDoorDefinition $29, [11, 21], eventChapter4Events._Door7
+    macroDoorDefinition $29, [12, 21], eventChapter4Events._Door7
+    macroDoorDefinition $2A, [18, 21], eventChapter4Events._Door8
+    macroDoorDefinition $2B, [7, 24], eventChapter4Events._Door9
+    macroDoorDefinition $2C, [16, 24], eventChapter4Events._Door10
+    EVENT FlagAlwaysZero, _RandomChest
+      CHECK_IF_RANDOM_CHEST
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _BeforeActionEventDefinitions ; 99/891E
+    macroPlayerRetreatDefinition $08, eventChapter4Events._PlayerRetreat
+    EVENT FlagAlwaysZero, _NPCRetreat
+      CMP_WORD wCurrentPhase, NPC
+      TEST_FLAG_UNSET $08
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _AfterActionEventDefinitions ; 99/896B
+    EVENT FlagAlwaysZero, _EndingEvent
+      TEST_FLAG_SET $08
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _BattleEventDefinitions ; 99/8974
+    macroBossQuoteDefinition $09, Dahlson
+  END_DEFINITION_ARRAY
+
+  _ShopEventDefinitions ; 99/897E
+  END_DEFINITION_ARRAY
+
+  _LeftSoldierReinforcements ; 99/8980
+    SCROLL_CAMERA_ADDRESS eventChapter4Data._LeftSoldierReinforcementsCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter4Data._LeftSoldierReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+    YIELD_UNK
+  END2
+
+  _MiddleLeftSoldierReinforcements ; 99/898D
+    SCROLL_CAMERA_ADDRESS eventChapter4Data._MiddleLeftSoldierReinforcementsCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter4Data._MiddleLeftSoldierReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+    YIELD_UNK
+  END2
+
+  _MiddleRightSoldierReinforcements ; 99/899A
+    SCROLL_CAMERA_ADDRESS eventChapter4Data._MiddleRightSoldierReinforcementsCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter4Data._MiddleRightSoldierReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+    YIELD_UNK
+  END2
+
+  _RightSoldierReinforcements ; 99/89A7
+    SCROLL_CAMERA_ADDRESS eventChapter4Data._RightSoldierReinforcementsCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter4Data._RightSoldierReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+    YIELD_UNK
+  END2
+
+  _DetectedCheck ; 99/89B4
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+    STORE_WORD wEventEngineParameter2, $0A
+    CALL_ASM_LOOP rlASMCCountAllUnitsWithCharacterDataByte, $0000
+
+    EVENT_CMP_BYTE_AT_EQ wEventEngineParameter1, 0
+    JUMP_FALSE +
+
+    SET_FLAG $07
+
+    +
+  END2
+
+  _BrigandFlee ; 99/89D1
+    macroSetCharacterByte BanditBrigand1, structCharacterDataRAM.AI1, $02
+    macroSetCharacterByte BanditBrigand1, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte BanditBrigand1, structCharacterDataRAM.AI2, $0B
+    macroSetCharacterByte BanditBrigand1, structCharacterDataRAM.Unknown3E, $00
+  END2
 
-	_Door1 ; 99/8A32
-		macroOpenDoorByTileChangeID 2
+  _Door1 ; 99/8A32
+    macroOpenDoorByTileChangeID 2
 
-		EVENT_CMP_BYTE_AT_EQ wUnknown001730, 0
-		JUMP_FALSE +
+    EVENT_CMP_BYTE_AT_EQ wUnknown001730, 0
+    JUMP_FALSE +
 
-		PLAY_SOUND_WORD $00F7
-		DIALOGUE dialogueChapter4LeftCellUnlock
-		YIELD
+    PLAY_SOUND_WORD $00F7
+    DIALOGUE dialogueChapter4LeftCellUnlock
+    YIELD
 
-		PLAY_SOUND_WORD $00E8
-	END2
+    PLAY_SOUND_WORD $00E8
+  END2
 
-		+
-	END1
+    +
+  END1
 
-	_Door2 ; 99/8A71
-		macroOpenDoorByTileChangeID 3, $6A
+  _Door2 ; 99/8A71
+    macroOpenDoorByTileChangeID 3, $6A
 
-		macroSetCharacterByte MansterArmoredAxe, structCharacterDataRAM.AI1, $00
-		macroSetCharacterByte MansterArmoredAxe, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte MansterArmoredAxe, structCharacterDataRAM.AI2, $00
-		macroSetCharacterByte MansterArmoredAxe, structCharacterDataRAM.Unknown3E, $00
+    macroSetCharacterByte MansterArmoredAxe, structCharacterDataRAM.AI1, $00
+    macroSetCharacterByte MansterArmoredAxe, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte MansterArmoredAxe, structCharacterDataRAM.AI2, $00
+    macroSetCharacterByte MansterArmoredAxe, structCharacterDataRAM.Unknown3E, $00
 
-		macroSetCharacterByte MansterArmoredBow, structCharacterDataRAM.AI1, $00
-		macroSetCharacterByte MansterArmoredBow, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte MansterArmoredBow, structCharacterDataRAM.AI2, $00
-		macroSetCharacterByte MansterArmoredBow, structCharacterDataRAM.Unknown3E, $00
+    macroSetCharacterByte MansterArmoredBow, structCharacterDataRAM.AI1, $00
+    macroSetCharacterByte MansterArmoredBow, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte MansterArmoredBow, structCharacterDataRAM.AI2, $00
+    macroSetCharacterByte MansterArmoredBow, structCharacterDataRAM.Unknown3E, $00
 
-		macroSetCharacterByte MansterArmoredLance, structCharacterDataRAM.AI1, $00
-		macroSetCharacterByte MansterArmoredLance, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte MansterArmoredLance, structCharacterDataRAM.AI2, $00
-		macroSetCharacterByte MansterArmoredLance, structCharacterDataRAM.Unknown3E, $00
+    macroSetCharacterByte MansterArmoredLance, structCharacterDataRAM.AI1, $00
+    macroSetCharacterByte MansterArmoredLance, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte MansterArmoredLance, structCharacterDataRAM.AI2, $00
+    macroSetCharacterByte MansterArmoredLance, structCharacterDataRAM.Unknown3E, $00
 
-		macroSetCharacterByte MansterMage1, structCharacterDataRAM.AI1, $00
-		macroSetCharacterByte MansterMage1, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte MansterMage1, structCharacterDataRAM.AI2, $00
-		macroSetCharacterByte MansterMage1, structCharacterDataRAM.Unknown3E, $00
+    macroSetCharacterByte MansterMage1, structCharacterDataRAM.AI1, $00
+    macroSetCharacterByte MansterMage1, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte MansterMage1, structCharacterDataRAM.AI2, $00
+    macroSetCharacterByte MansterMage1, structCharacterDataRAM.Unknown3E, $00
 
-		macroSetCharacterByte MansterPriest1, structCharacterDataRAM.AI1, $00
-		macroSetCharacterByte MansterPriest1, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte MansterPriest1, structCharacterDataRAM.AI2, $07
-		macroSetCharacterByte MansterPriest1, structCharacterDataRAM.Unknown3E, $00
+    macroSetCharacterByte MansterPriest1, structCharacterDataRAM.AI1, $00
+    macroSetCharacterByte MansterPriest1, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte MansterPriest1, structCharacterDataRAM.AI2, $07
+    macroSetCharacterByte MansterPriest1, structCharacterDataRAM.Unknown3E, $00
 
-		macroSetCharacterByte Dahlson, structCharacterDataRAM.AI1, $00
-		macroSetCharacterByte Dahlson, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte Dahlson, structCharacterDataRAM.AI2, $00
-		macroSetCharacterByte Dahlson, structCharacterDataRAM.Unknown3E, $00
-	END1
+    macroSetCharacterByte Dahlson, structCharacterDataRAM.AI1, $00
+    macroSetCharacterByte Dahlson, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte Dahlson, structCharacterDataRAM.AI2, $00
+    macroSetCharacterByte Dahlson, structCharacterDataRAM.Unknown3E, $00
+  END1
 
-	_Door3 ; 99/8CDC
-		macroOpenDoorByTileChangeID 4
+  _Door3 ; 99/8CDC
+    macroOpenDoorByTileChangeID 4
 
-		EVENT_CMP_BYTE_AT_EQ wUnknown001730, 0
-		JUMP_FALSE +
+    EVENT_CMP_BYTE_AT_EQ wUnknown001730, 0
+    JUMP_FALSE +
 
-		PLAY_SOUND_WORD $00F7
-		DIALOGUE dialogueChapter4RightCellUnlock
-		YIELD
+    PLAY_SOUND_WORD $00F7
+    DIALOGUE dialogueChapter4RightCellUnlock
+    YIELD
 
-		PLAY_SOUND_WORD $00E8
+    PLAY_SOUND_WORD $00E8
 
-		+
-	END1
+    +
+  END1
 
-	_Door4 ; 99/8D1A
-		macroOpenDoorByTileChangeID 5
-	END1
+  _Door4 ; 99/8D1A
+    macroOpenDoorByTileChangeID 5
+  END1
 
-	_Door5 ; 99/8D45
-		macroOpenDoorByTileChangeID 6
-	END1
+  _Door5 ; 99/8D45
+    macroOpenDoorByTileChangeID 6
+  END1
 
-	_Door6 ; 99/8D70
-		macroOpenDoorByTileChangeID 7
-	END1
+  _Door6 ; 99/8D70
+    macroOpenDoorByTileChangeID 7
+  END1
 
-	_Door7 ; 99/88CB
-		macroOpenDoorByTileChangeID 8
-	END1
+  _Door7 ; 99/88CB
+    macroOpenDoorByTileChangeID 8
+  END1
 
-	_Door8 ; 99/8DC6
-		macroOpenDoorByTileChangeID 9
-	END1
+  _Door8 ; 99/8DC6
+    macroOpenDoorByTileChangeID 9
+  END1
 
-	_Door9 ; 99/8DF1
-		macroOpenDoorByTileChangeID 10
+  _Door9 ; 99/8DF1
+    macroOpenDoorByTileChangeID 10
 
-		EVENT_CMP_BYTE_AT_EQ wUnknown001730, 0
-		JUMP_FALSE +
+    EVENT_CMP_BYTE_AT_EQ wUnknown001730, 0
+    JUMP_FALSE +
 
-		macroCheckIfRescuedByAllyOrNPC Karin
-		JUMP_FALSE +
+    macroCheckIfRescuedByAllyOrNPC Karin
+    JUMP_FALSE +
 
-		macroCheckIfRescuedByAllyOrNPC Fergus
-		JUMP_FALSE +
+    macroCheckIfRescuedByAllyOrNPC Fergus
+    JUMP_FALSE +
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $31
-		YIELD
+    SET_MUSIC $31
+    YIELD
 
-		DIALOGUE dialogueChapter4LeifCellUnlock
-		YIELD
-	END2
+    DIALOGUE dialogueChapter4LeifCellUnlock
+    YIELD
+  END2
 
-		+
-	END1
+    +
+  END1
 
-	_Door10 ; 99/8E52
-		macroOpenDoorByTileChangeID 11
+  _Door10 ; 99/8E52
+    macroOpenDoorByTileChangeID 11
 
-		EVENT_CMP_BYTE_AT_EQ wUnknown001730, 0
-		JUMP_FALSE +
+    EVENT_CMP_BYTE_AT_EQ wUnknown001730, 0
+    JUMP_FALSE +
 
-		STORE_WORD wEventEngineCharacterTarget, Lithis
-		CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
-		JUMP_FALSE +
+    STORE_WORD wEventEngineCharacterTarget, Lithis
+    CALL_ASM_LOOP rlASMCCheckUnitRescuedByPlayerOrNPC, $0000
+    JUMP_FALSE +
 
-		PLAY_SOUND_WORD $00F7
-		DIALOGUE dialogueChapter4LithisCellUnlock
-		YIELD
+    PLAY_SOUND_WORD $00F7
+    DIALOGUE dialogueChapter4LithisCellUnlock
+    YIELD
 
-		PLAY_SOUND_WORD $00E8
-	END2
+    PLAY_SOUND_WORD $00E8
+  END2
 
-		+
-	END1
+    +
+  END1
 
-	_RandomChest ; 99/8EA0
-		STORE_WORD $7FAA14, $0001
+  _RandomChest ; 99/8EA0
+    STORE_WORD $7FAA14, $0001
 
-		CALL_ASM_LOOP rlASMCGetRandomChestItem, $0000
-		YIELD_UNK
-		YIELD_UNK
+    CALL_ASM_LOOP rlASMCGetRandomChestItem, $0000
+    YIELD_UNK
+    YIELD_UNK
 
-		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+    CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+    CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+    CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+    CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
 
-		STORE_WORD $7FAA14, $0000
-	END1
+    STORE_WORD $7FAA14, $0000
+  END1
 
-	_DahlsonRecruitment ; 99/8ECD
-		PAUSE_SKIPPABLE 64
-		YIELD
+  _DahlsonRecruitment ; 99/8ECD
+    PAUSE_SKIPPABLE 64
+    YIELD
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $4A
-		YIELD
+    SET_MUSIC $4A
+    YIELD
 
-		DIALOGUE dialogueChapter4DahlsonRecruitment
-		YIELD
+    DIALOGUE dialogueChapter4DahlsonRecruitment
+    YIELD
 
-		macroConvertToPlayerAllegiance Dahlson
-		macroSetCharacterWord Dahlson, structCharacterDataRAM.Leader, Leif
+    macroConvertToPlayerAllegiance Dahlson
+    macroSetCharacterWord Dahlson, structCharacterDataRAM.Leader, Leif
 
-		SET_FLAG $09
-	END2
+    SET_FLAG $09
+  END2
 
-	_LithisDialogue ; 99/8F07
-		macroCheckIfRescuedByAllyOrNPC Lithis
-		JUMP_FALSE +
+  _LithisDialogue ; 99/8F07
+    macroCheckIfRescuedByAllyOrNPC Lithis
+    JUMP_FALSE +
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $3A
-		YIELD
+    SET_MUSIC $3A
+    YIELD
 
-		SCROLL_CAMERA_CHAR Lithis
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Lithis
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter4LithisDialogue
-		YIELD
+    DIALOGUE dialogueChapter4LithisDialogue
+    YIELD
 
-		+
-	END2
+    +
+  END2
 
-	_LeifDialogue ; 99/8F2B
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+  _LeifDialogue ; 99/8F2B
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $4A
-		YIELD
+    SET_MUSIC $4A
+    YIELD
 
-		SCROLL_CAMERA_CHAR Leif
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Leif
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter4LeifDialogue
-		YIELD
-	END2
+    DIALOGUE dialogueChapter4LeifDialogue
+    YIELD
+  END2
 
-	_NPCDialogue ; 99/8F40
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+  _NPCDialogue ; 99/8F40
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $07
-		YIELD
+    SET_MUSIC $07
+    YIELD
 
-		PLAY_SOUND_WORD $00F7
+    PLAY_SOUND_WORD $00F7
 
-		SCROLL_CAMERA_CHAR Civilian2
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Civilian2
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter4NPCDialogue
-		YIELD
+    DIALOGUE dialogueChapter4NPCDialogue
+    YIELD
 
-		PLAY_SOUND_WORD $00E8
-	END2
+    PLAY_SOUND_WORD $00E8
+  END2
 
-	_PlayerRetreat ; 99/8F5B
-		STORE_LONG lEventEngineLongParameter, _RetreatingNPCTable
-		CALL_ASM_LOOP rlASMCSetFlagIfRetreatingUnitByTable, $0000
-		PAUSE_SKIPPABLE 15
-		YIELD
+  _PlayerRetreat ; 99/8F5B
+    STORE_LONG lEventEngineLongParameter, _RetreatingNPCTable
+    CALL_ASM_LOOP rlASMCSetFlagIfRetreatingUnitByTable, $0000
+    PAUSE_SKIPPABLE 15
+    YIELD
 
-		macroHaveActiveUnitRetreat eventChapter4Events._RetreatMovestring
-	END2
+    macroHaveActiveUnitRetreat eventChapter4Events._RetreatMovestring
+  END2
 
-	_NPCRetreat ; 99/8FA5
-		EVENT_CMP_BYTE_AT_EQ $7E402E, $05
-		JUMP_FALSE +
+  _NPCRetreat ; 99/8FA5
+    EVENT_CMP_BYTE_AT_EQ $7E402E, $05
+    JUMP_FALSE +
 
-		STORE_LONG lEventEngineLongParameter, _RetreatingNPCTable
-		CALL_ASM_LOOP rlASMCSetFlagIfRetreatingUnitByTable, $0000
+    STORE_LONG lEventEngineLongParameter, _RetreatingNPCTable
+    CALL_ASM_LOOP rlASMCSetFlagIfRetreatingUnitByTable, $0000
 
-		+
-	END1
+    +
+  END1
 
-	_RetreatingNPCTable ; 99/8FBB
-		.word Civilian2
-		.byte FlagChp4Civilian2Saved
+  _RetreatingNPCTable ; 99/8FBB
+    .word Civilian2
+    .byte FlagChp4Civilian2Saved
 
-		.word Civilian3
-		.byte FlagChp4Civilian3Saved
+    .word Civilian3
+    .byte FlagChp4Civilian3Saved
 
-		.word Civilian4
-		.byte FlagChp4Civilian4Saved
+    .word Civilian4
+    .byte FlagChp4Civilian4Saved
 
-		.word Civilian5
-		.byte FlagChp4Civilian5Saved
+    .word Civilian5
+    .byte FlagChp4Civilian5Saved
 
-		.word Civilian6
-		.byte FlagChp4Civilian6Saved
+    .word Civilian6
+    .byte FlagChp4Civilian6Saved
 
-		.word Civilian7
-		.byte FlagChp4Civilian7Saved
+    .word Civilian7
+    .byte FlagChp4Civilian7Saved
 
-	.word $0000
-	.word $0000
+  .word $0000
+  .word $0000
 
-	_RetreatMovestring ; 99/8FD1
-		MS_MOVE_UP
-		MS_MOVE_UP
-	MS_END
+  _RetreatMovestring ; 99/8FD1
+    MS_MOVE_UP
+    MS_MOVE_UP
+  MS_END
 
-	_OpeningEvent ; 99/8FD4
-		CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
+  _OpeningEvent ; 99/8FD4
+    CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
 
-		macroSetAllCharacterByte structCharacterDataRAM.Fatigue, 0
+    macroSetAllCharacterByte structCharacterDataRAM.Fatigue, 0
 
-		CALL_ASM_LOOP $83ACEA, $0000
+    CALL_ASM_LOOP $83ACEA, $0000
 
-		macroSetAllCharacterTurnStatus (TurnStatusUnknown1 | TurnStatusActing)
+    macroSetAllCharacterTurnStatus (TurnStatusUnknown1 | TurnStatusActing)
 
-		macroUnsetAllCharacterTurnStatus (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved)
+    macroUnsetAllCharacterTurnStatus (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved)
 
-		SCROLL_CAMERA_ADDRESS eventChapter4Data._PlayerGroup2CameraCoordinates
-		YIELD
+    SCROLL_CAMERA_ADDRESS eventChapter4Data._PlayerGroup2CameraCoordinates
+    YIELD
 
-		LOAD1 eventChapter4Data._PlayerGroup2
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter4Data._PlayerGroup2
+    WAIT_MOVE
+    YIELD
 
-		macroSetUnitPosition Leif, [7, 26]
-		macroSetUnitPosition Lithis, [19, 26]
+    macroSetUnitPosition Leif, [7, 26]
+    macroSetUnitPosition Lithis, [19, 26]
 
-		CALL_ASM_LOOP rlASMCCreateRandomChestItemArrayFromUnitInventories, $0000
-		CALL_ASM_LOOP rlASMCAddFixedItemsToRandomChestArray, $0000
-		CALL_ASM_LOOP rlASMCCreateRandomChestTiles, $0000
+    CALL_ASM_LOOP rlASMCCreateRandomChestItemArrayFromUnitInventories, $0000
+    CALL_ASM_LOOP rlASMCAddFixedItemsToRandomChestArray, $0000
+    CALL_ASM_LOOP rlASMCCreateRandomChestTiles, $0000
 
-		STORE_LONG lEventEngineUnitGroupPointer, eventChapter4Data._EnemyGroup1
-		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
-		YIELD_UNK
+    STORE_LONG lEventEngineUnitGroupPointer, eventChapter4Data._EnemyGroup1
+    CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+    YIELD_UNK
 
-		STORE_LONG lEventEngineUnitGroupPointer, eventChapter4Data._EnemyGroup2
-		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
-		YIELD_UNK
+    STORE_LONG lEventEngineUnitGroupPointer, eventChapter4Data._EnemyGroup2
+    CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+    YIELD_UNK
 
-		STORE_LONG lEventEngineUnitGroupPointer, eventChapter4Data._EnemyGroup3
-		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
-		YIELD_UNK
+    STORE_LONG lEventEngineUnitGroupPointer, eventChapter4Data._EnemyGroup3
+    CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+    YIELD_UNK
 
-		LOAD1 eventChapter4Data._LithisBrigands
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter4Data._LithisBrigands
+    WAIT_MOVE
+    YIELD
 
-		LOAD1 eventChapter4Data._RightCivilianGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter4Data._RightCivilianGroup
+    WAIT_MOVE
+    YIELD
 
-		LOAD1 eventChapter4Data._LeftCivilianGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter4Data._LeftCivilianGroup
+    WAIT_MOVE
+    YIELD
 
-		FADE_IN $02
+    FADE_IN $02
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $39
-		YIELD
+    SET_MUSIC $39
+    YIELD
 
-		macroChapterTitlePopup dialogueChapter4Title
+    macroChapterTitlePopup dialogueChapter4Title
 
-		macroDialogueWithBackground dialogueChapter4Opening1, 1
+    macroDialogueWithBackground dialogueChapter4Opening1, 1
 
-		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
-		YIELD
+    CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+    YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		SCROLL_CAMERA_ADDRESS eventChapter4Data._PlayerGroup1CameraCoordinates
-		YIELD
+    SCROLL_CAMERA_ADDRESS eventChapter4Data._PlayerGroup1CameraCoordinates
+    YIELD
 
-		LOAD1 eventChapter4Data._PlayerGroup1
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter4Data._PlayerGroup1
+    WAIT_MOVE
+    YIELD
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $32
-		YIELD
+    SET_MUSIC $32
+    YIELD
 
-		SCROLL_CAMERA_CHAR CedChp4x
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR CedChp4x
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter4Opening2
-		YIELD
+    DIALOGUE dialogueChapter4Opening2
+    YIELD
 
-		MOVE_UNIT CedChp4x, [0, 0], [0, 0], 1, _CedAsvelMovestring
-		YIELD_UNK
+    MOVE_UNIT CedChp4x, [0, 0], [0, 0], 1, _CedAsvelMovestring
+    YIELD_UNK
 
-		MOVE_UNIT Asvel, [0, 0], [0, 0], 1, _CedAsvelMovestring
-		YIELD_UNK
+    MOVE_UNIT Asvel, [0, 0], [0, 0], 1, _CedAsvelMovestring
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		macroRemoveUnit CedChp4x
+    macroRemoveUnit CedChp4x
 
-		macroRemoveUnit Asvel
+    macroRemoveUnit Asvel
 
-		DIALOGUE dialogueChapter4Opening3
-		YIELD
-	END2
+    DIALOGUE dialogueChapter4Opening3
+    YIELD
+  END2
 
-	_CedAsvelMovestring ; 99/913E
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-	MS_END
+  _CedAsvelMovestring ; 99/913E
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+  MS_END
 
-	_ChestPositionTable ; 99/9147
-		.byte 2, 13
-		.byte 3, 13
-		.byte 2, 14
-		.byte 3, 14
-		.byte 2, 21
-		.byte 3, 21
-		.byte 2, 22
-		.byte 3, 22
-		.byte 20, 13
-		.byte 21, 13
-		.byte 20, 14
-		.byte 21, 14
-		.byte 20, 21
-		.byte 21, 21
-		.byte 20, 22
-		.byte 21, 22
+  _ChestPositionTable ; 99/9147
+    .byte 2, 13
+    .byte 3, 13
+    .byte 2, 14
+    .byte 3, 14
+    .byte 2, 21
+    .byte 3, 21
+    .byte 2, 22
+    .byte 3, 22
+    .byte 20, 13
+    .byte 21, 13
+    .byte 20, 14
+    .byte 21, 14
+    .byte 20, 21
+    .byte 21, 21
+    .byte 20, 22
+    .byte 21, 22
 
-	_EndingEvent ; 99/9167
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 16
-		YIELD
+  _EndingEvent ; 99/9167
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 16
+    YIELD
 
-		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+    CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $3C
-		YIELD
+    SET_MUSIC $3C
+    YIELD
 
-		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+    CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
 
-		STORE_LONG lEventEngineUnitGroupPointer, eventChapter4Data._EndingGroup
-		CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
-		YIELD_UNK
+    STORE_LONG lEventEngineUnitGroupPointer, eventChapter4Data._EndingGroup
+    CALL_ASM_LOOP rlASMCLoadUnitGroup, $0000
+    YIELD_UNK
 
-		SCROLL_CAMERA_SPEED [11, 17], 4
-		YIELD
+    SCROLL_CAMERA_SPEED [11, 17], 4
+    YIELD
 
-		macroOpenDoorByTileChangeID 8, $6A
+    macroOpenDoorByTileChangeID 8, $6A
 
-		DIALOGUE dialogueChapter4Ending1
-		YIELD
+    DIALOGUE dialogueChapter4Ending1
+    YIELD
 
-		macroSetCharacterWord Matria, structCharacterDataRAM.Leader, Leif
-		macroSetCharacterWord Lara, structCharacterDataRAM.Leader, Leif
-		macroSetCharacterWord Brighton, structCharacterDataRAM.Leader, Leif
+    macroSetCharacterWord Matria, structCharacterDataRAM.Leader, Leif
+    macroSetCharacterWord Lara, structCharacterDataRAM.Leader, Leif
+    macroSetCharacterWord Brighton, structCharacterDataRAM.Leader, Leif
 
-		EVENT_TEST_FLAG_SET FlagChp4Civilian2Saved
-		JUMP_FALSE +
+    EVENT_TEST_FLAG_SET FlagChp4Civilian2Saved
+    JUMP_FALSE +
 
-		EVENT_TEST_FLAG_SET FlagChp4Civilian3Saved
-		JUMP_FALSE +
+    EVENT_TEST_FLAG_SET FlagChp4Civilian3Saved
+    JUMP_FALSE +
 
-		EVENT_TEST_FLAG_SET FlagChp4Civilian4Saved
-		JUMP_FALSE +
+    EVENT_TEST_FLAG_SET FlagChp4Civilian4Saved
+    JUMP_FALSE +
 
-		EVENT_TEST_FLAG_SET FlagChp4Civilian5Saved
-		JUMP_FALSE +
+    EVENT_TEST_FLAG_SET FlagChp4Civilian5Saved
+    JUMP_FALSE +
 
-		EVENT_TEST_FLAG_SET FlagChp4Civilian6Saved
-		JUMP_FALSE +
+    EVENT_TEST_FLAG_SET FlagChp4Civilian6Saved
+    JUMP_FALSE +
 
-		EVENT_TEST_FLAG_SET FlagChp4Civilian7Saved
-		JUMP_FALSE +
+    EVENT_TEST_FLAG_SET FlagChp4Civilian7Saved
+    JUMP_FALSE +
 
-		JUMP ++
+    JUMP ++
 
-		+
-		ADD_WORD wCurrentChapter, Chapter5 - Chapter4 - 1
-		YIELD_UNK
+    +
+    ADD_WORD wCurrentChapter, Chapter5 - Chapter4 - 1
+    YIELD_UNK
 
-		+
-		CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured, $0000
-		FADE_OUT $01
-		YIELD
+    +
+    CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured, $0000
+    FADE_OUT $01
+    YIELD
 
-		CALL_ASM_LOOP rlASMCChapterEnd, $0000
-	END1
+    CALL_ASM_LOOP rlASMCChapterEnd, $0000
+  END1
 

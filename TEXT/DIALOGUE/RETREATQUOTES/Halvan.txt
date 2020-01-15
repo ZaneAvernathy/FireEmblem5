@@ -1,13 +1,13 @@
 dialogueHalvanRetreatQuote ; 82/C0F0
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD HalvanPortrait
-	DIALOGUE_FONT_2
-	.text "本当"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いはこれからだ･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD HalvanPortrait
+  DIALOGUE_FONT_2
+  .text "本当"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いはこれからだ･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

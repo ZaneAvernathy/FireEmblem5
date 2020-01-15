@@ -1,186 +1,186 @@
 dialogueChapter24xEnding2 ; E7/BB13
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD NannaPortrait
-	DIALOGUE_FONT_0
-	.text "エーヴェル･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "はマリータがうらやましかった"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "にもお"
-	DIALOGUE_FONT_1
-	.text "母様"
-	DIALOGUE_FONT_0
-	.text "がいらっしゃれば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "マリータのように"
-	DIALOGUE_FONT_5
-	.text "甘"
-	DIALOGUE_FONT_0
-	.text "えられるのに･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そう"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "って"
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_2
-	.text "度"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_FONT_4
-	.text "泣"
-	DIALOGUE_FONT_0
-	.text "きました"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "でもあなたは､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "たちを"
-	DIALOGUE_FONT_1
-	.text "分"
-	DIALOGUE_FONT_0
-	.text "けへだてなく"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "愛"
-	DIALOGUE_FONT_0
-	.text "してくださいました"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "本当"
-	DIALOGUE_FONT_0
-	.text "に､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "感"
-	DIALOGUE_FONT_4
-	.text "謝"
-	DIALOGUE_FONT_0
-	.text "しています"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ナンナ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あなたは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "名門"
-	DIALOGUE_FONT_0
-	.text "ノディオン"
-	DIALOGUE_FONT_1
-	.text "国"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "姫様"
-	DIALOGUE_FONT_0
-	.text "です"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_1
-	.text "聖騎士"
-	DIALOGUE_FONT_0
-	.text "ヘズルの"
-	DIALOGUE_FONT_2
-	.text "雄雄"
-	DIALOGUE_FONT_0
-	.text "しい"
-	DIALOGUE_FONT_1
-	.text "血"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "あなたの"
-	DIALOGUE_FONT_2
-	.text "体"
-	DIALOGUE_FONT_0
-	.text "にも"
-	DIALOGUE_FONT_3
-	.text "流"
-	DIALOGUE_FONT_0
-	.text "れています"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "どうぞ"
-	DIALOGUE_FONT_1
-	.text "勇気"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "持"
-	DIALOGUE_FONT_0
-	.text "って"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "とともに"
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_0
-	.text "きてください"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "あなたのお"
-	DIALOGUE_FONT_1
-	.text "母様"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "きっと"
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_0
-	.text "きていらっしゃいます"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "でさえこのように"
-	DIALOGUE_FONT_2
-	.text "再"
-	DIALOGUE_FONT_1
-	.text "会"
-	DIALOGUE_FONT_0
-	.text "できたのです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "あきらめないで"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "きっと"
-	DIALOGUE_FONT_1
-	.text "会"
-	DIALOGUE_FONT_0
-	.text "えますから･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD NannaPortrait
+  DIALOGUE_FONT_0
+  .text "エーヴェル･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "はマリータがうらやましかった"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "にもお"
+  DIALOGUE_FONT_1
+  .text "母様"
+  DIALOGUE_FONT_0
+  .text "がいらっしゃれば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "マリータのように"
+  DIALOGUE_FONT_5
+  .text "甘"
+  DIALOGUE_FONT_0
+  .text "えられるのに･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そう"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "って"
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_2
+  .text "度"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_FONT_4
+  .text "泣"
+  DIALOGUE_FONT_0
+  .text "きました"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "でもあなたは､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "たちを"
+  DIALOGUE_FONT_1
+  .text "分"
+  DIALOGUE_FONT_0
+  .text "けへだてなく"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "愛"
+  DIALOGUE_FONT_0
+  .text "してくださいました"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "本当"
+  DIALOGUE_FONT_0
+  .text "に､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "感"
+  DIALOGUE_FONT_4
+  .text "謝"
+  DIALOGUE_FONT_0
+  .text "しています"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ナンナ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あなたは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "名門"
+  DIALOGUE_FONT_0
+  .text "ノディオン"
+  DIALOGUE_FONT_1
+  .text "国"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "姫様"
+  DIALOGUE_FONT_0
+  .text "です"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_1
+  .text "聖騎士"
+  DIALOGUE_FONT_0
+  .text "ヘズルの"
+  DIALOGUE_FONT_2
+  .text "雄雄"
+  DIALOGUE_FONT_0
+  .text "しい"
+  DIALOGUE_FONT_1
+  .text "血"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "あなたの"
+  DIALOGUE_FONT_2
+  .text "体"
+  DIALOGUE_FONT_0
+  .text "にも"
+  DIALOGUE_FONT_3
+  .text "流"
+  DIALOGUE_FONT_0
+  .text "れています"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "どうぞ"
+  DIALOGUE_FONT_1
+  .text "勇気"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "持"
+  DIALOGUE_FONT_0
+  .text "って"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "とともに"
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_0
+  .text "きてください"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "あなたのお"
+  DIALOGUE_FONT_1
+  .text "母様"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "きっと"
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_0
+  .text "きていらっしゃいます"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "でさえこのように"
+  DIALOGUE_FONT_2
+  .text "再"
+  DIALOGUE_FONT_1
+  .text "会"
+  DIALOGUE_FONT_0
+  .text "できたのです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "あきらめないで"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "きっと"
+  DIALOGUE_FONT_1
+  .text "会"
+  DIALOGUE_FONT_0
+  .text "えますから･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

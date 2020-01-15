@@ -1,20 +1,20 @@
 dialogueChapter19Title ; 9A/BA99
-	DIALOGUE_FONT_2
-	.text "第"
-	DIALOGUE_FONT_0
-	.text "１９"
-	DIALOGUE_FONT_2
-	.text "章"
-	DIALOGUE_FONT_1
-	.text "⅛"
-	DIALOGUE_FONT_0
-	.text "　　　　　"
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "反"
-	DIALOGUE_FONT_1
-	.text "撃"
+  DIALOGUE_FONT_2
+  .text "第"
+  DIALOGUE_FONT_0
+  .text "１９"
+  DIALOGUE_FONT_2
+  .text "章"
+  DIALOGUE_FONT_1
+  .text "⅛"
+  DIALOGUE_FONT_0
+  .text "　　　　　"
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "反"
+  DIALOGUE_FONT_1
+  .text "撃"
 DIALOGUE_EOF

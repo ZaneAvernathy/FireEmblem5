@@ -1,38 +1,38 @@
 dialogueChapter12WorldMap2 ; 82/D070
-	DIALOGUE_FONT_0
-	.text "ターラ"
-	DIALOGUE_FONT_4
-	.text "総"
-	DIALOGUE_FONT_1
-	.text "攻撃近"
-	DIALOGUE_FONT_0
-	.text "しの"
-	DIALOGUE_FONT_3
-	.text "情報"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "受"
-	DIALOGUE_FONT_0
-	.text "け"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_5
-	.text "夜"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "日"
-	DIALOGUE_FONT_0
-	.text "についでターラヘの"
-	DIALOGUE_FONT_1
-	.text "道"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "急"
-	DIALOGUE_FONT_0
-	.text "ぐ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_FONT_0
+  .text "ターラ"
+  DIALOGUE_FONT_4
+  .text "総"
+  DIALOGUE_FONT_1
+  .text "攻撃近"
+  DIALOGUE_FONT_0
+  .text "しの"
+  DIALOGUE_FONT_3
+  .text "情報"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "受"
+  DIALOGUE_FONT_0
+  .text "け"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_5
+  .text "夜"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "日"
+  DIALOGUE_FONT_0
+  .text "についでターラヘの"
+  DIALOGUE_FONT_1
+  .text "道"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "急"
+  DIALOGUE_FONT_0
+  .text "ぐ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

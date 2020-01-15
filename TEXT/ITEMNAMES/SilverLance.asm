@@ -1,4 +1,4 @@
 
 menutextSilverLanceName ; B0/92AB
-	.enc "MenuText"
-	.text "ぎんのやり\n"
+  .enc "MenuText"
+  .text "ぎんのやり\n"

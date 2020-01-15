@@ -1,62 +1,62 @@
 dialogueChapter12HeimsScrollHouseSaylaAlive ; 92/A163
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan8Portrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なんじゃと！？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "孫"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "けてくれたのは"
-	DIALOGUE_NL
-	.text "あんたたちなのか！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "おおっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ありがたいことじゃ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "すまぬのぉ･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "これはわが"
-	DIALOGUE_FONT_1
-	.text "家"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "家宝"
-	DIALOGUE_FONT_0
-	.text "じゃ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "お"
-	DIALOGUE_FONT_2
-	.text "礼"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_4
-	.text "差"
-	DIALOGUE_FONT_0
-	.text "し"
-	DIALOGUE_FONT_1
-	.text "上"
-	DIALOGUE_FONT_0
-	.text "げよう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "どうぞ"
-	DIALOGUE_FONT_1
-	.text "使"
-	DIALOGUE_FONT_0
-	.text "ってくだされ"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan8Portrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なんじゃと！？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "孫"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "けてくれたのは"
+  DIALOGUE_NL
+  .text "あんたたちなのか！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "おおっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ありがたいことじゃ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "すまぬのぉ･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "これはわが"
+  DIALOGUE_FONT_1
+  .text "家"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "家宝"
+  DIALOGUE_FONT_0
+  .text "じゃ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "お"
+  DIALOGUE_FONT_2
+  .text "礼"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_4
+  .text "差"
+  DIALOGUE_FONT_0
+  .text "し"
+  DIALOGUE_FONT_1
+  .text "上"
+  DIALOGUE_FONT_0
+  .text "げよう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "どうぞ"
+  DIALOGUE_FONT_1
+  .text "使"
+  DIALOGUE_FONT_0
+  .text "ってくだされ"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

@@ -1,4 +1,4 @@
 
 menutextArmoredAxeName ; 89/82FA
-	.enc "MenuText"
-	.text "アクスアーマー　\n"
+  .enc "MenuText"
+  .text "アクスアーマー　\n"

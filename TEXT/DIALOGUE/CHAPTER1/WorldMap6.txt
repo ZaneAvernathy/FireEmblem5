@@ -1,16 +1,16 @@
 dialogueChapter1WorldMap6 ; 82/CA43
-	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 1
-	DIALOGUE_FONT_0
-	.text "そして､"
-	DIALOGUE_PAUSE $20
-	.text "グラン"
-	DIALOGUE_FONT_4
-	.text "暦"
-	DIALOGUE_FONT_0
-	.text "７７６"
-	DIALOGUE_FONT_1
-	.text "年"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $60
+  DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 1
+  DIALOGUE_FONT_0
+  .text "そして､"
+  DIALOGUE_PAUSE $20
+  .text "グラン"
+  DIALOGUE_FONT_4
+  .text "暦"
+  DIALOGUE_FONT_0
+  .text "７７６"
+  DIALOGUE_FONT_1
+  .text "年"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $60
 DIALOGUE_END_SCENE

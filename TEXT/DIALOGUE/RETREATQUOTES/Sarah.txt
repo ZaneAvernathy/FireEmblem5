@@ -1,7 +1,7 @@
 dialogueSarahRetreatQuote ; 82/C748
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD SarahPortrait
-	DIALOGUE_FONT_0
-	.text "･･････"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD SarahPortrait
+  DIALOGUE_FONT_0
+  .text "･･････"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

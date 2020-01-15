@@ -1,4 +1,4 @@
 
 menutextRonanName ; 86/DD47
-	.enc "MenuText"
-	.text "ロナン\n"
+  .enc "MenuText"
+  .text "ロナン\n"

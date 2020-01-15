@@ -1,182 +1,182 @@
 
 eventChapter3Data ; B1F318
 
-	_UnusedCoordinates1 ; B1/F318
-		.byte 11, 11
+  _UnusedCoordinates1 ; B1/F318
+    .byte 11, 11
 
-	_BossesGroup ; B1/F31A
-		UNIT Lobos, Enemy, [12, 4], [12, 4], Lobos, [Longbow, ShortLance], 1, True, [$01, $03, $00, $80]
-		UNIT Raydrik, Enemy, [14, 19], [14, 19], Raydrik, [], 1, False, [$00, $00, $00, $00]
-	UNIT
+  _BossesGroup ; B1/F31A
+    UNIT Lobos, Enemy, [12, 4], [12, 4], Lobos, [Longbow, ShortLance], 1, True, [$01, $03, $00, $80]
+    UNIT Raydrik, Enemy, [14, 19], [14, 19], Raydrik, [], 1, False, [$00, $00, $00, $00]
+  UNIT
 
-	_EnemyGroup1CameraCoordinates ; B1/F344
-		.byte 13, 8
+  _EnemyGroup1CameraCoordinates ; B1/F344
+    .byte 13, 8
 
-	_EnemyGroup1 ; B1/F346
-		UNIT MansterArmoredSword, Enemy, [7, 6], [7, 6], Lobos, [Shortsword, Vulnerary], 8, False, [$19, $03, $00, $00]
-		UNIT MansterArmoredSword, Enemy, [15, 10], [15, 10], Lobos, [Shortsword, DoorKey, Vulnerary], 8, False, [$19, $03, $00, $00]
-		UNIT MansterSoldier2, Enemy, [9, 5], [9, 5], Lobos, [ShortLance], 12, False, [$19, $03, $00, $00]
-		UNIT MansterSoldier2, Enemy, [9, 10], [9, 10], Lobos, [ShortLance], 9, False, [$19, $29, $00, $00]
-		UNIT MansterSoldier2, Enemy, [18, 7], [18, 7], Lobos, [ShortLance], 10, False, [$19, $29, $00, $00]
-		UNIT MansterSoldier2, Enemy, [3, 5], [3, 5], Lobos, [ShortLance], 8, False, [$19, $29, $00, $00]
-		UNIT MansterBishop2, Enemy, [15, 3], [15, 3], Lobos, [Elfire, Heal, DoorKey, ChestKey], 10, False, [$08, $03, $00, $00]
-	UNIT
+  _EnemyGroup1 ; B1/F346
+    UNIT MansterArmoredSword, Enemy, [7, 6], [7, 6], Lobos, [Shortsword, Vulnerary], 8, False, [$19, $03, $00, $00]
+    UNIT MansterArmoredSword, Enemy, [15, 10], [15, 10], Lobos, [Shortsword, DoorKey, Vulnerary], 8, False, [$19, $03, $00, $00]
+    UNIT MansterSoldier2, Enemy, [9, 5], [9, 5], Lobos, [ShortLance], 12, False, [$19, $03, $00, $00]
+    UNIT MansterSoldier2, Enemy, [9, 10], [9, 10], Lobos, [ShortLance], 9, False, [$19, $29, $00, $00]
+    UNIT MansterSoldier2, Enemy, [18, 7], [18, 7], Lobos, [ShortLance], 10, False, [$19, $29, $00, $00]
+    UNIT MansterSoldier2, Enemy, [3, 5], [3, 5], Lobos, [ShortLance], 8, False, [$19, $29, $00, $00]
+    UNIT MansterBishop2, Enemy, [15, 3], [15, 3], Lobos, [Elfire, Heal, DoorKey, ChestKey], 10, False, [$08, $03, $00, $00]
+  UNIT
 
-	_EnemyGroup2CameraCoordinates ; B1/F3D4
-		.byte 17, 14
+  _EnemyGroup2CameraCoordinates ; B1/F3D4
+    .byte 17, 14
 
-	_EnemyGroup2 ; B1/F3D6
-		UNIT MansterArmoredBow, Enemy, [18, 13], [18, 13], Lobos, [Shortbow, Vulnerary], 7, False, [$19, $03, $00, $00]
-		UNIT MansterSoldier2, Enemy, [23, 15], [23, 15], Lobos, [ShortLance, Vulnerary], 13, False, [$19, $29, $00, $00]
-		UNIT MansterSoldier2, Enemy, [21, 12], [21, 12], Lobos, [ShortLance], 13, False, [$19, $29, $00, $00]
-	UNIT
+  _EnemyGroup2 ; B1/F3D6
+    UNIT MansterArmoredBow, Enemy, [18, 13], [18, 13], Lobos, [Shortbow, Vulnerary], 7, False, [$19, $03, $00, $00]
+    UNIT MansterSoldier2, Enemy, [23, 15], [23, 15], Lobos, [ShortLance, Vulnerary], 13, False, [$19, $29, $00, $00]
+    UNIT MansterSoldier2, Enemy, [21, 12], [21, 12], Lobos, [ShortLance], 13, False, [$19, $29, $00, $00]
+  UNIT
 
-	_EnemyGroup3CameraCoordinates ; B1/F414
-		.byte 8, 10
+  _EnemyGroup3CameraCoordinates ; B1/F414
+    .byte 8, 10
 
-	_EnemyGroup3 ; B1/F416
-		UNIT MansterThunderMage, Enemy, [1, 11], [1, 11], Lobos, [Fire], 6, False, [$19, $29, $00, $00]
-		UNIT MansterSoldier2, Enemy, [4, 11], [4, 11], Lobos, [ShortLance], 11, False, [$19, $29, $00, $00]
-	UNIT
+  _EnemyGroup3 ; B1/F416
+    UNIT MansterThunderMage, Enemy, [1, 11], [1, 11], Lobos, [Fire], 6, False, [$19, $29, $00, $00]
+    UNIT MansterSoldier2, Enemy, [4, 11], [4, 11], Lobos, [ShortLance], 11, False, [$19, $29, $00, $00]
+  UNIT
 
-	_EnemyGroup4CameraCoordinates ; B1/F440
-		.byte 13, 16
+  _EnemyGroup4CameraCoordinates ; B1/F440
+    .byte 13, 16
 
-	_EnemyGroup4 ; B1/F442
-		UNIT MansterSoldier2, Enemy, [12, 15], [12, 15], Lobos, [ShortLance, DoorKey], 10, False, [$19, $03, $00, $00]
-		UNIT MansterArcher, Enemy, [13, 14], [13, 14], Lobos, [Shortbow], 10, False, [$19, $03, $00, $00]
-		UNIT MansterArcher, Enemy, [10, 13], [11, 14], Lobos, [Shortbow], 10, False, [$19, $03, $00, $00]
-	UNIT
+  _EnemyGroup4 ; B1/F442
+    UNIT MansterSoldier2, Enemy, [12, 15], [12, 15], Lobos, [ShortLance, DoorKey], 10, False, [$19, $03, $00, $00]
+    UNIT MansterArcher, Enemy, [13, 14], [13, 14], Lobos, [Shortbow], 10, False, [$19, $03, $00, $00]
+    UNIT MansterArcher, Enemy, [10, 13], [11, 14], Lobos, [Shortbow], 10, False, [$19, $03, $00, $00]
+  UNIT
 
-	_EnemyGroup5CameraCoordinates ; B1/F480
-		.byte 8, 23
+  _EnemyGroup5CameraCoordinates ; B1/F480
+    .byte 8, 23
 
-	_EnemyGroup5 ; B1/F482
-		UNIT MansterArcher, Enemy, [6, 23], [6, 23], Lobos, [Shortbow], 10, False, [$19, $29, $00, $00]
-		UNIT MansterSoldier2, Enemy, [4, 23], [4, 23], Lobos, [ShortLance, Vulnerary], 11, False, [$19, $29, $00, $00]
-		UNIT MansterSoldier2, Enemy, [5, 29], [5, 25], Lobos, [ShortLance], 12, False, [$19, $29, $00, $00]
-	UNIT
+  _EnemyGroup5 ; B1/F482
+    UNIT MansterArcher, Enemy, [6, 23], [6, 23], Lobos, [Shortbow], 10, False, [$19, $29, $00, $00]
+    UNIT MansterSoldier2, Enemy, [4, 23], [4, 23], Lobos, [ShortLance, Vulnerary], 11, False, [$19, $29, $00, $00]
+    UNIT MansterSoldier2, Enemy, [5, 29], [5, 25], Lobos, [ShortLance], 12, False, [$19, $29, $00, $00]
+  UNIT
 
-	_SoldierReinforcementsCameraCoordinates ; B1/F4C0
-		.byte 8, 8
+  _SoldierReinforcementsCameraCoordinates ; B1/F4C0
+    .byte 8, 8
 
-	_SoldierReinforcementsGroup ; B1/F4C2
-		UNIT MansterSoldier2, Enemy, [8, 1], [8, 1], Lobos, [ShortLance], 7, False, [$00, $00, $00, $00]
-	UNIT
+  _SoldierReinforcementsGroup ; B1/F4C2
+    UNIT MansterSoldier2, Enemy, [8, 1], [8, 1], Lobos, [ShortLance], 7, False, [$00, $00, $00, $00]
+  UNIT
 
-	_ArmorReinforcementsCameraCoordinates ; B1/F4D8
-		.byte 17, 8
+  _ArmorReinforcementsCameraCoordinates ; B1/F4D8
+    .byte 17, 8
 
-	_ArmorReinforcementsGroup ; B1/F4DA
-		UNIT MansterArmoredSword, Enemy, [16, 1], [16, 1], Lobos, [Shortsword], 8, False, [$00, $00, $00, $00]
-	UNIT
+  _ArmorReinforcementsGroup ; B1/F4DA
+    UNIT MansterArmoredSword, Enemy, [16, 1], [16, 1], Lobos, [Shortsword], 8, False, [$00, $00, $00, $00]
+  UNIT
 
-	_Brigand1ReinforcementsCameraCoordinates ; B1/F4F0
-		.byte 8, 21
+  _Brigand1ReinforcementsCameraCoordinates ; B1/F4F0
+    .byte 8, 21
 
-	_Brigand1ReinforcementsGroup1 ; B1/F4F2
-		UNIT BanditBrigand1, Enemy, [0, 21], [1, 21], Raydrik, [IronAxe], 5, False, [$19, $09, $00, $00]
-	UNIT
+  _Brigand1ReinforcementsGroup1 ; B1/F4F2
+    UNIT BanditBrigand1, Enemy, [0, 21], [1, 21], Raydrik, [IronAxe], 5, False, [$19, $09, $00, $00]
+  UNIT
 
-	_Brigand2ReinforcementsCameraCoordinates ; B1/F508
-		.byte 8, 21
+  _Brigand2ReinforcementsCameraCoordinates ; B1/F508
+    .byte 8, 21
 
-	_Brigand2ReinforcementsGroup1 ; B1/F50A
-		UNIT BanditBrigand1, Enemy, [0, 21], [1, 21], Raydrik, [IronAxe], 5, False, [$02, $09, $00, $00]
-	UNIT
+  _Brigand2ReinforcementsGroup1 ; B1/F50A
+    UNIT BanditBrigand1, Enemy, [0, 21], [1, 21], Raydrik, [IronAxe], 5, False, [$02, $09, $00, $00]
+  UNIT
 
-	_UnusedCoordinates2 ; B1/F520
-		.byte 13, 8
+  _UnusedCoordinates2 ; B1/F520
+    .byte 13, 8
 
-	_NPCGroup ; B1/F522
-		UNIT Romeo, NPC, [12, 8], [12, 8], Raydrik, [], 1, False, [$02, $03, $00, $00]
-		UNIT Lucia, NPC, [14, 8], [14, 8], Raydrik, [], 1, False, [$02, $03, $00, $00]
-		UNIT Cairpre, NPC, [13, 7], [13, 7], Raydrik, [], 1, False, [$02, $03, $00, $00]
-		UNIT Hubert, NPC, [11, 7], [11, 7], Raydrik, [], 1, False, [$02, $03, $00, $00]
-	UNIT
+  _NPCGroup ; B1/F522
+    UNIT Romeo, NPC, [12, 8], [12, 8], Raydrik, [], 1, False, [$02, $03, $00, $00]
+    UNIT Lucia, NPC, [14, 8], [14, 8], Raydrik, [], 1, False, [$02, $03, $00, $00]
+    UNIT Cairpre, NPC, [13, 7], [13, 7], Raydrik, [], 1, False, [$02, $03, $00, $00]
+    UNIT Hubert, NPC, [11, 7], [11, 7], Raydrik, [], 1, False, [$02, $03, $00, $00]
+  UNIT
 
-	_UnusedCoordinates3 ; B1/F574
-		.byte 13, 8
+  _UnusedCoordinates3 ; B1/F574
+    .byte 13, 8
 
-	_BishopGroup ; B1/F576
-		UNIT ThracianBishop, Player, [11, 28], [11, 28], Leif, [], 1, False, [$00, $00, $00, $00]
-	UNIT
+  _BishopGroup ; B1/F576
+    UNIT ThracianBishop, Player, [11, 28], [11, 28], Leif, [], 1, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates4 ; B1/F58C
-		.byte 8, 7
+  _UnusedCoordinates4 ; B1/F58C
+    .byte 8, 7
 
-	_Brigand2ReinforcementsGroup2 ; B1/F58E
-		UNIT BanditBrigand1, Enemy, [0, 22], [1, 22], Raydrik, [IronAxe], 5, False, [$02, $09, $00, $00]
-	UNIT
+  _Brigand2ReinforcementsGroup2 ; B1/F58E
+    UNIT BanditBrigand1, Enemy, [0, 22], [1, 22], Raydrik, [IronAxe], 5, False, [$02, $09, $00, $00]
+  UNIT
 
-	_UnusedCoordinates5 ; B1/F5A4
-		.byte 8, 26
+  _UnusedCoordinates5 ; B1/F5A4
+    .byte 8, 26
 
-	_Brigand1ReinforcementsGroup2 ; B1/F5A6
-		UNIT BanditBrigand1, Enemy, [0, 22], [1, 22], Raydrik, [IronAxe], 5, False, [$02, $09, $00, $00]
-	UNIT
+  _Brigand1ReinforcementsGroup2 ; B1/F5A6
+    UNIT BanditBrigand1, Enemy, [0, 22], [1, 22], Raydrik, [IronAxe], 5, False, [$02, $09, $00, $00]
+  UNIT
 
-	_StartingPositions ; B1/F5BC
-		.byte 11, 27
-		.byte 12, 29
-		.byte 10, 26
-		.byte 9, 29
-		.byte 15, 27
-		.byte 13, 28
-		.byte 13, 26
-		.byte 15, 29
-		.byte 14, 25
-		.byte 10, 30
-		.byte 14, 30
-	.byte $FF
+  _StartingPositions ; B1/F5BC
+    .byte 11, 27
+    .byte 12, 29
+    .byte 10, 26
+    .byte 9, 29
+    .byte 15, 27
+    .byte 13, 28
+    .byte 13, 26
+    .byte 15, 29
+    .byte 14, 25
+    .byte 10, 30
+    .byte 14, 30
+  .byte $FF
 
-	_Chest1Coordinates ; B1/F5D3
-		.byte 11, 1
+  _Chest1Coordinates ; B1/F5D3
+    .byte 11, 1
 
-	_Chest1Item ; B1/F5D5
-		.word Armorslayer
+  _Chest1Item ; B1/F5D5
+    .word Armorslayer
 
-	_Chest1Events ; B1/F5D7
-		STORE_WORD wEventEngineXCoordinate, 11
-		STORE_WORD wEventEngineYCoordinate, 1
-		STORE_WORD wEventEngineParameter1, $0026
+  _Chest1Events ; B1/F5D7
+    STORE_WORD wEventEngineXCoordinate, 11
+    STORE_WORD wEventEngineYCoordinate, 1
+    STORE_WORD wEventEngineParameter1, $0026
 
-		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
-		YIELD_UNK
+    CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+    YIELD_UNK
 
-		STORE_WORD_FROM wEventEngineParameter1, _Chest1Item
-		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
-		YIELD_UNK
+    STORE_WORD_FROM wEventEngineParameter1, _Chest1Item
+    CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+    YIELD_UNK
 
-		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
-	END2
+    CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+    CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+    CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+    CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+  END2
 
-	_Chest2Coordinates ; B1/F5D3
-		.byte 13, 1
+  _Chest2Coordinates ; B1/F5D3
+    .byte 13, 1
 
-	_Chest2Item ; B1/F5D5
-		.word Meteor
+  _Chest2Item ; B1/F5D5
+    .word Meteor
 
-	_Chest2Events ; B1/F5D7
-		STORE_WORD wEventEngineXCoordinate, 13
-		STORE_WORD wEventEngineYCoordinate, 1
-		STORE_WORD wEventEngineParameter1, $0026
+  _Chest2Events ; B1/F5D7
+    STORE_WORD wEventEngineXCoordinate, 13
+    STORE_WORD wEventEngineYCoordinate, 1
+    STORE_WORD wEventEngineParameter1, $0026
 
-		CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
-		YIELD_UNK
+    CALL_ASM_LOOP rlASMCSingleTileChangeByCoords, $0000
+    YIELD_UNK
 
-		STORE_WORD_FROM wEventEngineParameter1, _Chest2Item
-		CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
-		YIELD_UNK
+    STORE_WORD_FROM wEventEngineParameter1, _Chest2Item
+    CALL_ASM_LOOP rlASMCSetPopupGivenItemWithMaxDurability, $0000
+    YIELD_UNK
 
-		CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
-		CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
-		CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
-	END2
+    CALL_ASM_LOOP rlASMCSetupGiveItemPopup, $0000
+    CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup, $0000
+    CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull, $0000
+    CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull, $0000
+  END2
 
-	_Vendor ; B1/F65B
-		SHOP [2, 1], [Vulnerary, DoorKey]
+  _Vendor ; B1/F65B
+    SHOP [2, 1], [Vulnerary, DoorKey]

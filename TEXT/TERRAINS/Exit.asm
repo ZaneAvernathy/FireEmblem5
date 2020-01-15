@@ -1,4 +1,4 @@
 
 menutextExitTerrainName ; 86/99E9
-	.enc "MenuText"
-	.text "でぐち\n"
+  .enc "MenuText"
+  .text "でぐち\n"

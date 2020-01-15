@@ -1,42 +1,42 @@
 dialogueChapter16AWorldMap1 ; 82/D3C1
-	DIALOGUE_FONT_0
-	.text "ドリアスの"
-	DIALOGUE_FONT_1
-	.text "進言"
-	DIALOGUE_FONT_0
-	.text "をいれ､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "海岸"
-	DIALOGUE_FONT_0
-	.text "ぞいに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "レンスターを"
-	DIALOGUE_FONT_1
-	.text "目指"
-	DIALOGUE_FONT_0
-	.text "すリーフたち"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "しかし､"
-	DIALOGUE_PAUSE $08
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "公路"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_3
-	.text "通"
-	DIALOGUE_FONT_0
-	.text "って"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "レンスターにたどり"
-	DIALOGUE_FONT_2
-	.text "着"
-	DIALOGUE_FONT_0
-	.text "くためには"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_FONT_0
+  .text "ドリアスの"
+  DIALOGUE_FONT_1
+  .text "進言"
+  DIALOGUE_FONT_0
+  .text "をいれ､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "海岸"
+  DIALOGUE_FONT_0
+  .text "ぞいに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "レンスターを"
+  DIALOGUE_FONT_1
+  .text "目指"
+  DIALOGUE_FONT_0
+  .text "すリーフたち"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "しかし､"
+  DIALOGUE_PAUSE $08
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "公路"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_3
+  .text "通"
+  DIALOGUE_FONT_0
+  .text "って"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "レンスターにたどり"
+  DIALOGUE_FONT_2
+  .text "着"
+  DIALOGUE_FONT_0
+  .text "くためには"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

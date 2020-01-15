@@ -1,4 +1,4 @@
 
 menutextRankA ; 83/93CC
-	.enc "MenuText"
-	.text "Ａ\n"
+  .enc "MenuText"
+  .text "Ａ\n"

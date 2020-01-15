@@ -1,239 +1,239 @@
 dialogueChapter13Opening4 ; B9/C364
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD DoriasPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_NL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD Leif2Portrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "あの"
-	DIALOGUE_FONT_1
-	.text "山向"
-	DIALOGUE_FONT_0
-	.text "こうにみえるのが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "城塞都市"
-	DIALOGUE_FONT_0
-	.text "ターラです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "･･･むっ､"
-	DIALOGUE_PAUSE $08
-	.text "これはいかん"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	.text "すでに"
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_4
-	.text "総"
-	DIALOGUE_FONT_1
-	.text "攻撃"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "始"
-	DIALOGUE_FONT_0
-	.text "まっているようです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ターラの"
-	DIALOGUE_FONT_1
-	.text "者"
-	DIALOGUE_FONT_0
-	.text "たちを"
-	DIALOGUE_FONT_1
-	.text "見殺"
-	DIALOGUE_FONT_0
-	.text "しにはできない"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "すぐにターラに"
-	DIALOGUE_FONT_2
-	.text "突"
-	DIALOGUE_FONT_1
-	.text "入"
-	DIALOGUE_FONT_0
-	.text "しよう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ですが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "われらの"
-	DIALOGUE_FONT_1
-	.text "兵力"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "まだ一"
-	DIALOGUE_FONT_2
-	.text "部"
-	DIALOGUE_FONT_0
-	.text "しか"
-	DIALOGUE_FONT_3
-	.text "到"
-	DIALOGUE_FONT_2
-	.text "着"
-	DIALOGUE_FONT_0
-	.text "していません"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "その"
-	DIALOGUE_FONT_1
-	.text "上"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "包囲"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "には"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "多数"
-	DIALOGUE_FONT_0
-	.text "のロングアーチが"
-	DIALOGUE_FONT_2
-	.text "配"
-	DIALOGUE_FONT_4
-	.text "置"
-	DIALOGUE_FONT_0
-	.text "されております"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_0
-	.text "し"
-	DIALOGUE_FONT_4
-	.text "危険"
-	DIALOGUE_FONT_0
-	.text "では？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_4
-	.text "危険"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_3
-	.text "承"
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "上"
-	DIALOGUE_FONT_0
-	.text "だが､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "他"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "方法"
-	DIALOGUE_FONT_0
-	.text "はない"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ターラの"
-	DIALOGUE_FONT_2
-	.text "滅亡"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_3
-	.text "許"
-	DIALOGUE_FONT_0
-	.text "せば"
-	DIALOGUE_NL
-	.text "ぼくたちの"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いもここで"
-	DIALOGUE_FONT_2
-	.text "終"
-	DIALOGUE_FONT_0
-	.text "わる"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "そうだろ､"
-	DIALOGUE_PAUSE $08
-	.text "アウグスト？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "さよう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "われらは"
-	DIALOGUE_FONT_2
-	.text "完全"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "民"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "支"
-	DIALOGUE_FONT_1
-	.text "持"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "失"
-	DIALOGUE_FONT_0
-	.text "います"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "戦力"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_FONT_2
-	.text "民"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "支"
-	DIALOGUE_FONT_1
-	.text "持"
-	DIALOGUE_FONT_0
-	.text "まで"
-	DIALOGUE_FONT_2
-	.text "失"
-	DIALOGUE_FONT_0
-	.text "えば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "あとは"
-	DIALOGUE_FONT_2
-	.text "消滅"
-	DIALOGUE_FONT_0
-	.text "するしかありませんな"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD DoriasPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_NL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD Leif2Portrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "あの"
+  DIALOGUE_FONT_1
+  .text "山向"
+  DIALOGUE_FONT_0
+  .text "こうにみえるのが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "城塞都市"
+  DIALOGUE_FONT_0
+  .text "ターラです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "･･･むっ､"
+  DIALOGUE_PAUSE $08
+  .text "これはいかん"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  .text "すでに"
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_4
+  .text "総"
+  DIALOGUE_FONT_1
+  .text "攻撃"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "始"
+  DIALOGUE_FONT_0
+  .text "まっているようです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ターラの"
+  DIALOGUE_FONT_1
+  .text "者"
+  DIALOGUE_FONT_0
+  .text "たちを"
+  DIALOGUE_FONT_1
+  .text "見殺"
+  DIALOGUE_FONT_0
+  .text "しにはできない"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "すぐにターラに"
+  DIALOGUE_FONT_2
+  .text "突"
+  DIALOGUE_FONT_1
+  .text "入"
+  DIALOGUE_FONT_0
+  .text "しよう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ですが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "われらの"
+  DIALOGUE_FONT_1
+  .text "兵力"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "まだ一"
+  DIALOGUE_FONT_2
+  .text "部"
+  DIALOGUE_FONT_0
+  .text "しか"
+  DIALOGUE_FONT_3
+  .text "到"
+  DIALOGUE_FONT_2
+  .text "着"
+  DIALOGUE_FONT_0
+  .text "していません"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "その"
+  DIALOGUE_FONT_1
+  .text "上"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "包囲"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "には"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "多数"
+  DIALOGUE_FONT_0
+  .text "のロングアーチが"
+  DIALOGUE_FONT_2
+  .text "配"
+  DIALOGUE_FONT_4
+  .text "置"
+  DIALOGUE_FONT_0
+  .text "されております"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_0
+  .text "し"
+  DIALOGUE_FONT_4
+  .text "危険"
+  DIALOGUE_FONT_0
+  .text "では？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_4
+  .text "危険"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_3
+  .text "承"
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "上"
+  DIALOGUE_FONT_0
+  .text "だが､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "他"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "方法"
+  DIALOGUE_FONT_0
+  .text "はない"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ターラの"
+  DIALOGUE_FONT_2
+  .text "滅亡"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_3
+  .text "許"
+  DIALOGUE_FONT_0
+  .text "せば"
+  DIALOGUE_NL
+  .text "ぼくたちの"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いもここで"
+  DIALOGUE_FONT_2
+  .text "終"
+  DIALOGUE_FONT_0
+  .text "わる"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "そうだろ､"
+  DIALOGUE_PAUSE $08
+  .text "アウグスト？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "さよう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "われらは"
+  DIALOGUE_FONT_2
+  .text "完全"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "民"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "支"
+  DIALOGUE_FONT_1
+  .text "持"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "失"
+  DIALOGUE_FONT_0
+  .text "います"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "戦力"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_FONT_2
+  .text "民"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "支"
+  DIALOGUE_FONT_1
+  .text "持"
+  DIALOGUE_FONT_0
+  .text "まで"
+  DIALOGUE_FONT_2
+  .text "失"
+  DIALOGUE_FONT_0
+  .text "えば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "あとは"
+  DIALOGUE_FONT_2
+  .text "消滅"
+  DIALOGUE_FONT_0
+  .text "するしかありませんな"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

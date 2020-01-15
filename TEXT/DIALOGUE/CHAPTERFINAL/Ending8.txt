@@ -1,178 +1,178 @@
 dialogueChapterFinalEnding8 ; E7/DA79
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "リーフさま･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ナンナ､"
-	DIALOGUE_PAUSE $08
-	.text "ありがとう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ぼくがここまで"
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "れたのは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ナンナのおかげだよ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "そんな､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "なんて"
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "も･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "いや"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ナンナとは"
-	DIALOGUE_FONT_2
-	.text "兄妹"
-	DIALOGUE_FONT_0
-	.text "みたいにして"
-	DIALOGUE_FONT_4
-	.text "育"
-	DIALOGUE_FONT_0
-	.text "ったけど"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "けてもらったのはいつも"
-	DIALOGUE_NL
-	.text "ぼくの"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "だった"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ナンナがぼくを"
-	DIALOGUE_FONT_2
-	.text "支"
-	DIALOGUE_FONT_0
-	.text "えてくれたから"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "いつも"
-	DIALOGUE_FONT_1
-	.text "勇気"
-	DIALOGUE_FONT_0
-	.text "づけてくれたから"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ここまでがんばれたのだと"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "う"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ナンナ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いが"
-	DIALOGUE_FONT_2
-	.text "終"
-	DIALOGUE_FONT_0
-	.text "わったら"
-	DIALOGUE_NL
-	.text "ぼくもラケシスを"
-	DIALOGUE_FONT_4
-	.text "探"
-	DIALOGUE_FONT_0
-	.text "しに"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "く"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "そして､"
-	DIALOGUE_PAUSE $08
-	.text "もし"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ラケシスに"
-	DIALOGUE_FONT_1
-	.text "会"
-	DIALOGUE_FONT_0
-	.text "えたら"
-	DIALOGUE_NL
-	.text "ぼくははっきりと"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "うつもりだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "大好"
-	DIALOGUE_FONT_0
-	.text "きな"
-	DIALOGUE_NL
-	.text "ナンナを･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ぼくにくださいって･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "！･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "リーフさま･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ぼくたちの"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いは"
-	DIALOGUE_NL
-	.text "まだまだ"
-	DIALOGUE_FONT_2
-	.text "終"
-	DIALOGUE_FONT_0
-	.text "わらないけど"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ナンナ､一"
-	DIALOGUE_FONT_2
-	.text "緒"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "てくれるね"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "はい､"
-	DIALOGUE_PAUSE $08
-	.text "リーフさま･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "リーフさま･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ナンナ､"
+  DIALOGUE_PAUSE $08
+  .text "ありがとう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ぼくがここまで"
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "れたのは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ナンナのおかげだよ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "そんな､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "なんて"
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "も･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "いや"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ナンナとは"
+  DIALOGUE_FONT_2
+  .text "兄妹"
+  DIALOGUE_FONT_0
+  .text "みたいにして"
+  DIALOGUE_FONT_4
+  .text "育"
+  DIALOGUE_FONT_0
+  .text "ったけど"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "けてもらったのはいつも"
+  DIALOGUE_NL
+  .text "ぼくの"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "だった"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ナンナがぼくを"
+  DIALOGUE_FONT_2
+  .text "支"
+  DIALOGUE_FONT_0
+  .text "えてくれたから"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "いつも"
+  DIALOGUE_FONT_1
+  .text "勇気"
+  DIALOGUE_FONT_0
+  .text "づけてくれたから"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ここまでがんばれたのだと"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "う"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ナンナ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いが"
+  DIALOGUE_FONT_2
+  .text "終"
+  DIALOGUE_FONT_0
+  .text "わったら"
+  DIALOGUE_NL
+  .text "ぼくもラケシスを"
+  DIALOGUE_FONT_4
+  .text "探"
+  DIALOGUE_FONT_0
+  .text "しに"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "く"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "そして､"
+  DIALOGUE_PAUSE $08
+  .text "もし"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ラケシスに"
+  DIALOGUE_FONT_1
+  .text "会"
+  DIALOGUE_FONT_0
+  .text "えたら"
+  DIALOGUE_NL
+  .text "ぼくははっきりと"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "うつもりだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "大好"
+  DIALOGUE_FONT_0
+  .text "きな"
+  DIALOGUE_NL
+  .text "ナンナを･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ぼくにくださいって･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "！･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "リーフさま･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ぼくたちの"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いは"
+  DIALOGUE_NL
+  .text "まだまだ"
+  DIALOGUE_FONT_2
+  .text "終"
+  DIALOGUE_FONT_0
+  .text "わらないけど"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ナンナ､一"
+  DIALOGUE_FONT_2
+  .text "緒"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "てくれるね"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "はい､"
+  DIALOGUE_PAUSE $08
+  .text "リーフさま･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
 DIALOGUE_END_SCENE

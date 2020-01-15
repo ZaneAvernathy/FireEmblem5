@@ -1,20 +1,20 @@
 dialogueDagdarDeathQuote ; 82/B964
-	DIALOGUE_FONT_0
-	.text "さして"
-	DIALOGUE_FONT_3
-	.text "面"
-	DIALOGUE_FONT_1
-	.text "白"
-	DIALOGUE_FONT_0
-	.text "くもねえが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "くだらなくもねえ"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "人"
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_0
-	.text "だったな･･･"
+  DIALOGUE_FONT_0
+  .text "さして"
+  DIALOGUE_FONT_3
+  .text "面"
+  DIALOGUE_FONT_1
+  .text "白"
+  DIALOGUE_FONT_0
+  .text "くもねえが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "くだらなくもねえ"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "人"
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_0
+  .text "だったな･･･"
 DIALOGUE_END_SCENE

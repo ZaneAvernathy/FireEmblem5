@@ -1,8 +1,8 @@
 dialogueBaldachChapter13DeathQuote ; B9/D4AD
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ばかな･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なぜこんなことに･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ばかな･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なぜこんなことに･･･"
 DIALOGUE_END_SCENE

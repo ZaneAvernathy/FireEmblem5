@@ -1,117 +1,117 @@
 dialogueChapter6HicksHouseMuffyAlive ; 92/8DEE
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD HicksPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "おおっ､"
-	DIALOGUE_PAUSE $08
-	.text "あんたら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "っていたんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "息"
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "マフィーを"
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "け"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "してくれたんだってな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "おかげで"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "安全"
-	DIALOGUE_FONT_0
-	.text "な"
-	DIALOGUE_FONT_1
-	.text "場"
-	DIALOGUE_FONT_2
-	.text "所"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_4
-	.text "隠"
-	DIALOGUE_FONT_0
-	.text "すことができた"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "もちろん"
-	DIALOGUE_FONT_1
-	.text "他"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_0
-	.text "どもたちも一"
-	DIALOGUE_FONT_2
-	.text "緒"
-	DIALOGUE_FONT_0
-	.text "だ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "マンスターの"
-	DIALOGUE_FONT_2
-	.text "斧"
-	DIALOGUE_FONT_1
-	.text "騎士"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "ヒックスってんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "レイドリックのヤロウには"
-	DIALOGUE_NL
-	.text "ほとほと"
-	DIALOGUE_FONT_1
-	.text "愛"
-	DIALOGUE_FONT_3
-	.text "想"
-	DIALOGUE_FONT_0
-	.text "がつきた"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "もあんたらと"
-	DIALOGUE_FONT_2
-	.text "共"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "うぜ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "よろしくな！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD HicksPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "おおっ､"
+  DIALOGUE_PAUSE $08
+  .text "あんたら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "っていたんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "息"
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "マフィーを"
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "け"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "してくれたんだってな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "おかげで"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "安全"
+  DIALOGUE_FONT_0
+  .text "な"
+  DIALOGUE_FONT_1
+  .text "場"
+  DIALOGUE_FONT_2
+  .text "所"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_4
+  .text "隠"
+  DIALOGUE_FONT_0
+  .text "すことができた"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "もちろん"
+  DIALOGUE_FONT_1
+  .text "他"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_0
+  .text "どもたちも一"
+  DIALOGUE_FONT_2
+  .text "緒"
+  DIALOGUE_FONT_0
+  .text "だ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "マンスターの"
+  DIALOGUE_FONT_2
+  .text "斧"
+  DIALOGUE_FONT_1
+  .text "騎士"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "ヒックスってんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "レイドリックのヤロウには"
+  DIALOGUE_NL
+  .text "ほとほと"
+  DIALOGUE_FONT_1
+  .text "愛"
+  DIALOGUE_FONT_3
+  .text "想"
+  DIALOGUE_FONT_0
+  .text "がつきた"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "もあんたらと"
+  DIALOGUE_FONT_2
+  .text "共"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "うぜ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "よろしくな！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

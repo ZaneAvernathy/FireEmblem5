@@ -1,4 +1,4 @@
 
 menutextLongbowName ; B0/948D
-	.enc "MenuText"
-	.text "ロングボウ\n"
+  .enc "MenuText"
+  .text "ロングボウ\n"

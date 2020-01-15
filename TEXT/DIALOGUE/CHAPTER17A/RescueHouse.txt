@@ -1,38 +1,38 @@
 dialogueChapter17ARescueHouse ; 98/CB0E
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan8Portrait
-	DIALOGUE_FONT_0
-	.text "よくこられたの"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "レンスター"
-	DIALOGUE_FONT_1
-	.text "城内"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_4
-	.text "広"
-	DIALOGUE_FONT_0
-	.text "いゆえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ばらばらになってしまい"
-	DIALOGUE_FONT_4
-	.text "困"
-	DIALOGUE_FONT_0
-	.text "るじゃろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "このレスキューの"
-	DIALOGUE_FONT_1
-	.text "杖"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "持"
-	DIALOGUE_FONT_0
-	.text "ってゆきなされ"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan8Portrait
+  DIALOGUE_FONT_0
+  .text "よくこられたの"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "レンスター"
+  DIALOGUE_FONT_1
+  .text "城内"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_4
+  .text "広"
+  DIALOGUE_FONT_0
+  .text "いゆえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ばらばらになってしまい"
+  DIALOGUE_FONT_4
+  .text "困"
+  DIALOGUE_FONT_0
+  .text "るじゃろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "このレスキューの"
+  DIALOGUE_FONT_1
+  .text "杖"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "持"
+  DIALOGUE_FONT_0
+  .text "ってゆきなされ"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

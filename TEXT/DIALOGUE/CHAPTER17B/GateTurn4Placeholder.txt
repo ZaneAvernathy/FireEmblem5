@@ -1,24 +1,24 @@
 dialogueChapter17BGateTurn4Placeholder ; E7/A377
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AnnaPortrait
-	DIALOGUE_FONT_1
-	.text "元"
-	DIALOGUE_FONT_0
-	.text "メッセージ｢"
-	DIALOGUE_FONT_3
-	.text "扉"
-	DIALOGUE_FONT_2
-	.text "開"
-	DIALOGUE_FONT_0
-	.text "く～４ターン"
-	DIALOGUE_FONT_1
-	.text "目"
-	DIALOGUE_FONT_0
-	.text "｣です"
-	DIALOGUE_NL
-	.text "このめっせーじは"
-	DIALOGUE_NL
-	.text "こめんとあうとしています"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AnnaPortrait
+  DIALOGUE_FONT_1
+  .text "元"
+  DIALOGUE_FONT_0
+  .text "メッセージ｢"
+  DIALOGUE_FONT_3
+  .text "扉"
+  DIALOGUE_FONT_2
+  .text "開"
+  DIALOGUE_FONT_0
+  .text "く～４ターン"
+  DIALOGUE_FONT_1
+  .text "目"
+  DIALOGUE_FONT_0
+  .text "｣です"
+  DIALOGUE_NL
+  .text "このめっせーじは"
+  DIALOGUE_NL
+  .text "こめんとあうとしています"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

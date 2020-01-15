@@ -1,24 +1,24 @@
 dialogueGladeDeathQuote ; 82/BC0C
-	DIALOGUE_FONT_0
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "身"
-	DIALOGUE_FONT_0
-	.text "が･･･"
-	DIALOGUE_PAUSE $10
-	.text "くちようと･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "レンスターは･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $20
-	DIALOGUE_FONT_2
-	.text "再"
-	DIALOGUE_FONT_0
-	.text "び･･･"
-	DIALOGUE_PAUSE $20
-	DIALOGUE_FONT_1
-	.text "必"
-	DIALOGUE_FONT_0
-	.text "ず･･･"
+  DIALOGUE_FONT_0
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "身"
+  DIALOGUE_FONT_0
+  .text "が･･･"
+  DIALOGUE_PAUSE $10
+  .text "くちようと･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "レンスターは･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $20
+  DIALOGUE_FONT_2
+  .text "再"
+  DIALOGUE_FONT_0
+  .text "び･･･"
+  DIALOGUE_PAUSE $20
+  DIALOGUE_FONT_1
+  .text "必"
+  DIALOGUE_FONT_0
+  .text "ず･･･"
 DIALOGUE_END_SCENE

@@ -1,39 +1,39 @@
 dialogueChapter6DoorOpenDialogue2 ; 92/984C
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "もう"
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_0
-	.text "ししたら､"
-	DIALOGUE_PAUSE $08
-	.text "セティ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "たちが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "けに"
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "てくださるはずだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そうすりゃ､"
-	DIALOGUE_PAUSE $08
-	.text "もう"
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_0
-	.text "しは"
-	DIALOGUE_FONT_4
-	.text "楽"
-	DIALOGUE_FONT_0
-	.text "になるんだが"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "もう"
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_0
+  .text "ししたら､"
+  DIALOGUE_PAUSE $08
+  .text "セティ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "たちが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "けに"
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "てくださるはずだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そうすりゃ､"
+  DIALOGUE_PAUSE $08
+  .text "もう"
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_0
+  .text "しは"
+  DIALOGUE_FONT_4
+  .text "楽"
+  DIALOGUE_FONT_0
+  .text "になるんだが"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

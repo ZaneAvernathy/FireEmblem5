@@ -1,409 +1,409 @@
 dialogueChapter21xEnding1 ; 95/F959
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD IshtarPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD JuliusPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "フッ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ここも"
-	DIALOGUE_FONT_2
-	.text "落"
-	DIALOGUE_FONT_0
-	.text "とされたか"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "コノートではブルームも"
-	DIALOGUE_FONT_1
-	.text "苦戦"
-	DIALOGUE_FONT_0
-	.text "らしいが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "フリージ"
-	DIALOGUE_FONT_1
-	.text "家"
-	DIALOGUE_FONT_0
-	.text "もしょせんはこのていどか"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "笑"
-	DIALOGUE_FONT_2
-	.text "止"
-	DIALOGUE_FONT_0
-	.text "なことだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_3
-	.text "申"
-	DIALOGUE_FONT_0
-	.text "し"
-	DIALOGUE_FONT_4
-	.text "訳"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "ありません･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "フンッ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "イシュタルがあやまることはない"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "だが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "コノートへ"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "くことは"
-	DIALOGUE_FONT_3
-	.text "許"
-	DIALOGUE_FONT_0
-	.text "さない"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "にはおまえが"
-	DIALOGUE_FONT_1
-	.text "必要"
-	DIALOGUE_FONT_0
-	.text "だ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "はい･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "でも､"
-	DIALOGUE_PAUSE $08
-	.text "これからどちらへ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ミレトスへ"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "く"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ヒルダが"
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "てくれとうるさいんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "母上"
-	DIALOGUE_FONT_0
-	.text "が？･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "のためにですか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_3
-	.text "供"
-	DIALOGUE_FONT_4
-	.text "狩"
-	DIALOGUE_FONT_0
-	.text "りの"
-	DIALOGUE_FONT_2
-	.text "成"
-	DIALOGUE_FONT_3
-	.text "果"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "てほしいそうだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ミレトスの"
-	DIALOGUE_FONT_2
-	.text "支配"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_3
-	.text "任"
-	DIALOGUE_FONT_0
-	.text "せたことが"
-	DIALOGUE_NL
-	.text "よほどうれしかったようだな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "母"
-	DIALOGUE_FONT_0
-	.text "が･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そんなことを･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ミレトスはきこうもいいし"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "二"
-	DIALOGUE_FONT_1
-	.text "人"
-	DIALOGUE_FONT_0
-	.text "ですごすにはいいと"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "うぞ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "そうだな･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "イシュタルにシルクのドレスを"
-	DIALOGUE_NL
-	DIALOGUE_FONT_3
-	.text "買"
-	DIALOGUE_FONT_0
-	.text "ってやろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "それににあう･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そうだな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ルヴィのティアラがいいかな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ヒルダのことだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "きっとごうかなパーティを"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "用意"
-	DIALOGUE_FONT_0
-	.text "してるだろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "美"
-	DIALOGUE_FONT_0
-	.text "しくきかざったイシュタルを"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "せて"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "みんなを"
-	DIALOGUE_FONT_5
-	.text "驚"
-	DIALOGUE_FONT_0
-	.text "かせてやるんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "フフッ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "楽"
-	DIALOGUE_FONT_0
-	.text "しみだな･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ぼくもきみと一"
-	DIALOGUE_FONT_2
-	.text "緒"
-	DIALOGUE_FONT_0
-	.text "でうれしいし･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ユリウス"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "イシュタル"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "あのラインハルトという"
-	DIALOGUE_FONT_1
-	.text "男"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	.text "もう"
-	DIALOGUE_FONT_1
-	.text "近"
-	DIALOGUE_FONT_0
-	.text "づけるな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ラインハルト！？･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "彼"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_4
-	.text "幼"
-	DIALOGUE_FONT_0
-	.text "いときから"
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "守"
-	DIALOGUE_FONT_3
-	.text "役"
-	DIALOGUE_FONT_0
-	.text "なのです"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "には"
-	DIALOGUE_FONT_1
-	.text "必要"
-	DIALOGUE_FONT_0
-	.text "な"
-	DIALOGUE_FONT_1
-	.text "人"
-	DIALOGUE_FONT_2
-	.text "間"
-	DIALOGUE_FONT_0
-	.text "です"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "そんなことはどうでもいい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "はやつがきらいだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "やつがおまえを"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "る"
-	DIALOGUE_FONT_1
-	.text "目"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "気"
-	DIALOGUE_FONT_0
-	.text "にくわん"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "もし"
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_2
-	.text "度"
-	DIALOGUE_FONT_1
-	.text "目"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "前"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "現"
-	DIALOGUE_FONT_0
-	.text "れたら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "はやつを"
-	DIALOGUE_FONT_1
-	.text "殺"
-	DIALOGUE_FONT_0
-	.text "す！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "！･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "わかりました･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ラインハルトは"
-	DIALOGUE_FONT_1
-	.text "国"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "します"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "どうかお"
-	DIALOGUE_FONT_3
-	.text "許"
-	DIALOGUE_FONT_0
-	.text "しください"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "フンッ､"
-	DIALOGUE_PAUSE $08
-	.text "わかればいいんだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "じゃあ"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "くぞイシュタル"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "についてこい！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD IshtarPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD JuliusPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "フッ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ここも"
+  DIALOGUE_FONT_2
+  .text "落"
+  DIALOGUE_FONT_0
+  .text "とされたか"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "コノートではブルームも"
+  DIALOGUE_FONT_1
+  .text "苦戦"
+  DIALOGUE_FONT_0
+  .text "らしいが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "フリージ"
+  DIALOGUE_FONT_1
+  .text "家"
+  DIALOGUE_FONT_0
+  .text "もしょせんはこのていどか"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "笑"
+  DIALOGUE_FONT_2
+  .text "止"
+  DIALOGUE_FONT_0
+  .text "なことだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_3
+  .text "申"
+  DIALOGUE_FONT_0
+  .text "し"
+  DIALOGUE_FONT_4
+  .text "訳"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "ありません･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "フンッ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "イシュタルがあやまることはない"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "だが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "コノートへ"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "くことは"
+  DIALOGUE_FONT_3
+  .text "許"
+  DIALOGUE_FONT_0
+  .text "さない"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "にはおまえが"
+  DIALOGUE_FONT_1
+  .text "必要"
+  DIALOGUE_FONT_0
+  .text "だ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "はい･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "でも､"
+  DIALOGUE_PAUSE $08
+  .text "これからどちらへ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ミレトスへ"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "く"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ヒルダが"
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "てくれとうるさいんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "母上"
+  DIALOGUE_FONT_0
+  .text "が？･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "のためにですか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_3
+  .text "供"
+  DIALOGUE_FONT_4
+  .text "狩"
+  DIALOGUE_FONT_0
+  .text "りの"
+  DIALOGUE_FONT_2
+  .text "成"
+  DIALOGUE_FONT_3
+  .text "果"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "てほしいそうだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ミレトスの"
+  DIALOGUE_FONT_2
+  .text "支配"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_3
+  .text "任"
+  DIALOGUE_FONT_0
+  .text "せたことが"
+  DIALOGUE_NL
+  .text "よほどうれしかったようだな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "母"
+  DIALOGUE_FONT_0
+  .text "が･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そんなことを･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ミレトスはきこうもいいし"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "二"
+  DIALOGUE_FONT_1
+  .text "人"
+  DIALOGUE_FONT_0
+  .text "ですごすにはいいと"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "うぞ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "そうだな･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "イシュタルにシルクのドレスを"
+  DIALOGUE_NL
+  DIALOGUE_FONT_3
+  .text "買"
+  DIALOGUE_FONT_0
+  .text "ってやろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "それににあう･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そうだな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ルヴィのティアラがいいかな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ヒルダのことだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "きっとごうかなパーティを"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "用意"
+  DIALOGUE_FONT_0
+  .text "してるだろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "美"
+  DIALOGUE_FONT_0
+  .text "しくきかざったイシュタルを"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "せて"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "みんなを"
+  DIALOGUE_FONT_5
+  .text "驚"
+  DIALOGUE_FONT_0
+  .text "かせてやるんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "フフッ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "楽"
+  DIALOGUE_FONT_0
+  .text "しみだな･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ぼくもきみと一"
+  DIALOGUE_FONT_2
+  .text "緒"
+  DIALOGUE_FONT_0
+  .text "でうれしいし･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ユリウス"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "イシュタル"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "あのラインハルトという"
+  DIALOGUE_FONT_1
+  .text "男"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  .text "もう"
+  DIALOGUE_FONT_1
+  .text "近"
+  DIALOGUE_FONT_0
+  .text "づけるな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ラインハルト！？･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "彼"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_4
+  .text "幼"
+  DIALOGUE_FONT_0
+  .text "いときから"
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "守"
+  DIALOGUE_FONT_3
+  .text "役"
+  DIALOGUE_FONT_0
+  .text "なのです"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "には"
+  DIALOGUE_FONT_1
+  .text "必要"
+  DIALOGUE_FONT_0
+  .text "な"
+  DIALOGUE_FONT_1
+  .text "人"
+  DIALOGUE_FONT_2
+  .text "間"
+  DIALOGUE_FONT_0
+  .text "です"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "そんなことはどうでもいい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "はやつがきらいだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "やつがおまえを"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "る"
+  DIALOGUE_FONT_1
+  .text "目"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "気"
+  DIALOGUE_FONT_0
+  .text "にくわん"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "もし"
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_2
+  .text "度"
+  DIALOGUE_FONT_1
+  .text "目"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "前"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "現"
+  DIALOGUE_FONT_0
+  .text "れたら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "はやつを"
+  DIALOGUE_FONT_1
+  .text "殺"
+  DIALOGUE_FONT_0
+  .text "す！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "！･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "わかりました･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ラインハルトは"
+  DIALOGUE_FONT_1
+  .text "国"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "します"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "どうかお"
+  DIALOGUE_FONT_3
+  .text "許"
+  DIALOGUE_FONT_0
+  .text "しください"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "フンッ､"
+  DIALOGUE_PAUSE $08
+  .text "わかればいいんだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "じゃあ"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "くぞイシュタル"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "についてこい！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

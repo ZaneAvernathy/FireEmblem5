@@ -1,317 +1,317 @@
 dialogueChapter19Opening1 ; B0/AEBC
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD Leif2Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "アウグスト､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "全"
-	DIALOGUE_FONT_3
-	.text "員"
-	DIALOGUE_FONT_0
-	.text "そろったようだな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ではアルスターに"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_3
-	.text "陣"
-	DIALOGUE_FONT_0
-	.text "するぞ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "城"
-	DIALOGUE_FONT_0
-	.text "へ"
-	DIALOGUE_FONT_1
-	.text "何者"
-	DIALOGUE_FONT_0
-	.text "かがまいりました"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おそらく"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ドリアス"
-	DIALOGUE_FONT_2
-	.text "卿"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "のものかと･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD Leonsterite2Portrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "無"
-	DIALOGUE_FONT_3
-	.text "念"
-	DIALOGUE_FONT_0
-	.text "です･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "どうしたんだ？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なにがあった？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "帝国軍"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "反"
-	DIALOGUE_FONT_1
-	.text "撃"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "受"
-	DIALOGUE_FONT_0
-	.text "け"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "わが"
-	DIALOGUE_FONT_2
-	.text "部隊"
-	DIALOGUE_FONT_0
-	.text "は･･･"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "全滅"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "なんだと！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ドリアスはどこだ？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "卿"
-	DIALOGUE_FONT_0
-	.text "はどこにいる？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ドリアス"
-	DIALOGUE_FONT_2
-	.text "卿"
-	DIALOGUE_FONT_0
-	.text "は･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "われらの"
-	DIALOGUE_FONT_1
-	.text "退"
-	DIALOGUE_FONT_3
-	.text "却"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "けるため･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_1
-	.text "自"
-	DIALOGUE_FONT_0
-	.text "ら"
-	DIALOGUE_FONT_1
-	.text "敵軍"
-	DIALOGUE_FONT_0
-	.text "にきりこまれて･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "む､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "無"
-	DIALOGUE_FONT_3
-	.text "念"
-	DIALOGUE_FONT_0
-	.text "の･･･"
-	DIALOGUE_PAUSE $10
-	.text "ご"
-	DIALOGUE_FONT_1
-	.text "最"
-	DIALOGUE_FONT_3
-	.text "期"
-	DIALOGUE_FONT_0
-	.text "を･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "！！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "･･････"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "われらの"
-	DIALOGUE_FONT_1
-	.text "力"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "足"
-	DIALOGUE_FONT_0
-	.text "りないばかりに･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "申"
-	DIALOGUE_FONT_0
-	.text "し"
-	DIALOGUE_FONT_4
-	.text "訳"
-	DIALOGUE_FONT_0
-	.text "ございません！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ばかな･･･"
-	DIALOGUE_PAUSE $10
-	.text "そんなことが･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "味"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "退"
-	DIALOGUE_FONT_3
-	.text "却"
-	DIALOGUE_FONT_0
-	.text "してきますぞ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "急"
-	DIALOGUE_FONT_0
-	.text "がねば"
-	DIALOGUE_FONT_2
-	.text "全滅"
-	DIALOGUE_FONT_0
-	.text "をまぬがれません"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "彼"
-	DIALOGUE_FONT_0
-	.text "らを"
-	DIALOGUE_FONT_1
-	.text "援"
-	DIALOGUE_FONT_2
-	.text "護"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "ばかな･･･"
-	DIALOGUE_PAUSE $10
-	.text "そんな･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "！"
-	DIALOGUE_PAUSE $10
-	.text "　しっかりなされい！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "このまま"
-	DIALOGUE_FONT_2
-	.text "味"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "全滅"
-	DIALOGUE_FONT_0
-	.text "させては"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ドリアス"
-	DIALOGUE_FONT_2
-	.text "卿"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_4
-	.text "犠牲"
-	DIALOGUE_FONT_0
-	.text "がムダになりますぞ！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "可"
-	DIALOGUE_FONT_2
-	.text "能"
-	DIALOGUE_FONT_0
-	.text "な"
-	DIALOGUE_FONT_3
-	.text "限"
-	DIALOGUE_FONT_0
-	.text "り､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "救出"
-	DIALOGUE_FONT_0
-	.text "するのです！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD Leif2Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "アウグスト､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "全"
+  DIALOGUE_FONT_3
+  .text "員"
+  DIALOGUE_FONT_0
+  .text "そろったようだな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ではアルスターに"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_3
+  .text "陣"
+  DIALOGUE_FONT_0
+  .text "するぞ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "城"
+  DIALOGUE_FONT_0
+  .text "へ"
+  DIALOGUE_FONT_1
+  .text "何者"
+  DIALOGUE_FONT_0
+  .text "かがまいりました"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おそらく"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ドリアス"
+  DIALOGUE_FONT_2
+  .text "卿"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "のものかと･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD Leonsterite2Portrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "無"
+  DIALOGUE_FONT_3
+  .text "念"
+  DIALOGUE_FONT_0
+  .text "です･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "どうしたんだ？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なにがあった？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "帝国軍"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "反"
+  DIALOGUE_FONT_1
+  .text "撃"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "受"
+  DIALOGUE_FONT_0
+  .text "け"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "わが"
+  DIALOGUE_FONT_2
+  .text "部隊"
+  DIALOGUE_FONT_0
+  .text "は･･･"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "全滅"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "なんだと！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ドリアスはどこだ？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "卿"
+  DIALOGUE_FONT_0
+  .text "はどこにいる？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ドリアス"
+  DIALOGUE_FONT_2
+  .text "卿"
+  DIALOGUE_FONT_0
+  .text "は･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "われらの"
+  DIALOGUE_FONT_1
+  .text "退"
+  DIALOGUE_FONT_3
+  .text "却"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "けるため･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_1
+  .text "自"
+  DIALOGUE_FONT_0
+  .text "ら"
+  DIALOGUE_FONT_1
+  .text "敵軍"
+  DIALOGUE_FONT_0
+  .text "にきりこまれて･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "む､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "無"
+  DIALOGUE_FONT_3
+  .text "念"
+  DIALOGUE_FONT_0
+  .text "の･･･"
+  DIALOGUE_PAUSE $10
+  .text "ご"
+  DIALOGUE_FONT_1
+  .text "最"
+  DIALOGUE_FONT_3
+  .text "期"
+  DIALOGUE_FONT_0
+  .text "を･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "！！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "･･････"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "われらの"
+  DIALOGUE_FONT_1
+  .text "力"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "足"
+  DIALOGUE_FONT_0
+  .text "りないばかりに･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "申"
+  DIALOGUE_FONT_0
+  .text "し"
+  DIALOGUE_FONT_4
+  .text "訳"
+  DIALOGUE_FONT_0
+  .text "ございません！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ばかな･･･"
+  DIALOGUE_PAUSE $10
+  .text "そんなことが･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "味"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "退"
+  DIALOGUE_FONT_3
+  .text "却"
+  DIALOGUE_FONT_0
+  .text "してきますぞ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "急"
+  DIALOGUE_FONT_0
+  .text "がねば"
+  DIALOGUE_FONT_2
+  .text "全滅"
+  DIALOGUE_FONT_0
+  .text "をまぬがれません"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "彼"
+  DIALOGUE_FONT_0
+  .text "らを"
+  DIALOGUE_FONT_1
+  .text "援"
+  DIALOGUE_FONT_2
+  .text "護"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "ばかな･･･"
+  DIALOGUE_PAUSE $10
+  .text "そんな･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "！"
+  DIALOGUE_PAUSE $10
+  .text "　しっかりなされい！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "このまま"
+  DIALOGUE_FONT_2
+  .text "味"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "全滅"
+  DIALOGUE_FONT_0
+  .text "させては"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ドリアス"
+  DIALOGUE_FONT_2
+  .text "卿"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_4
+  .text "犠牲"
+  DIALOGUE_FONT_0
+  .text "がムダになりますぞ！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "可"
+  DIALOGUE_FONT_2
+  .text "能"
+  DIALOGUE_FONT_0
+  .text "な"
+  DIALOGUE_FONT_3
+  .text "限"
+  DIALOGUE_FONT_0
+  .text "り､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "救出"
+  DIALOGUE_FONT_0
+  .text "するのです！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

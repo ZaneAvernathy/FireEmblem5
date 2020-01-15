@@ -1,39 +1,39 @@
 dialogueChapter8MartyCaptured ; 93/C44B
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD MartyPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "わ､"
-	DIALOGUE_PAUSE $08
-	.text "わるかったよぉ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "仕"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "がなかったんだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $40
-	.text "オレはもともと"
-	DIALOGUE_NL
-	.text "あんたたちと"
-	DIALOGUE_NL
-	.text "一"
-	DIALOGUE_FONT_2
-	.text "緒"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いたかったんだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $40
-	DIALOGUE_FONT_3
-	.text "許"
-	DIALOGUE_FONT_0
-	.text "してくれよ･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD MartyPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "わ､"
+  DIALOGUE_PAUSE $08
+  .text "わるかったよぉ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "仕"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "がなかったんだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $40
+  .text "オレはもともと"
+  DIALOGUE_NL
+  .text "あんたたちと"
+  DIALOGUE_NL
+  .text "一"
+  DIALOGUE_FONT_2
+  .text "緒"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いたかったんだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $40
+  DIALOGUE_FONT_3
+  .text "許"
+  DIALOGUE_FONT_0
+  .text "してくれよ･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

@@ -1,108 +1,108 @@
 dialogueChapter12Ending1A ; 92/9EE4
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD Leif2Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD DoriasPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "ここは"
-	DIALOGUE_FONT_2
-	.text "盗"
-	DIALOGUE_FONT_1
-	.text "賊団"
-	DIALOGUE_FONT_0
-	.text "のアジトのようです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "まだ"
-	DIALOGUE_FONT_5
-	.text "夜"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_FONT_2
-	.text "明"
-	DIALOGUE_FONT_0
-	.text "けぬゆえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "乗"
-	DIALOGUE_FONT_0
-	.text "り"
-	DIALOGUE_FONT_2
-	.text "込"
-	DIALOGUE_FONT_0
-	.text "んで"
-	DIALOGUE_FONT_3
-	.text "掃"
-	DIALOGUE_FONT_1
-	.text "討"
-	DIALOGUE_FONT_0
-	.text "すべきかと･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "そうだな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "しかし"
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "はつかれてないか？"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "元気"
-	DIALOGUE_FONT_0
-	.text "なものだけ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "･･･そうですな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "５"
-	DIALOGUE_FONT_1
-	.text "名"
-	DIALOGUE_FONT_0
-	.text "ていどなら"
-	DIALOGUE_FONT_1
-	.text "大"
-	DIALOGUE_FONT_4
-	.text "丈"
-	DIALOGUE_FONT_2
-	.text "夫"
-	DIALOGUE_FONT_0
-	.text "です"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "うん､"
-	DIALOGUE_PAUSE $08
-	.text "では"
-	DIALOGUE_FONT_1
-	.text "討"
-	DIALOGUE_FONT_3
-	.text "伐"
-	DIALOGUE_FONT_0
-	.text "しよう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "村人"
-	DIALOGUE_FONT_0
-	.text "たちも"
-	DIALOGUE_FONT_1
-	.text "喜"
-	DIALOGUE_FONT_0
-	.text "ぶだろう"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD Leif2Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD DoriasPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "ここは"
+  DIALOGUE_FONT_2
+  .text "盗"
+  DIALOGUE_FONT_1
+  .text "賊団"
+  DIALOGUE_FONT_0
+  .text "のアジトのようです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "まだ"
+  DIALOGUE_FONT_5
+  .text "夜"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_FONT_2
+  .text "明"
+  DIALOGUE_FONT_0
+  .text "けぬゆえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "乗"
+  DIALOGUE_FONT_0
+  .text "り"
+  DIALOGUE_FONT_2
+  .text "込"
+  DIALOGUE_FONT_0
+  .text "んで"
+  DIALOGUE_FONT_3
+  .text "掃"
+  DIALOGUE_FONT_1
+  .text "討"
+  DIALOGUE_FONT_0
+  .text "すべきかと･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "そうだな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "しかし"
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "はつかれてないか？"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "元気"
+  DIALOGUE_FONT_0
+  .text "なものだけ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "･･･そうですな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "５"
+  DIALOGUE_FONT_1
+  .text "名"
+  DIALOGUE_FONT_0
+  .text "ていどなら"
+  DIALOGUE_FONT_1
+  .text "大"
+  DIALOGUE_FONT_4
+  .text "丈"
+  DIALOGUE_FONT_2
+  .text "夫"
+  DIALOGUE_FONT_0
+  .text "です"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "うん､"
+  DIALOGUE_PAUSE $08
+  .text "では"
+  DIALOGUE_FONT_1
+  .text "討"
+  DIALOGUE_FONT_3
+  .text "伐"
+  DIALOGUE_FONT_0
+  .text "しよう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "村人"
+  DIALOGUE_FONT_0
+  .text "たちも"
+  DIALOGUE_FONT_1
+  .text "喜"
+  DIALOGUE_FONT_0
+  .text "ぶだろう"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

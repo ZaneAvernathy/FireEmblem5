@@ -1,19 +1,19 @@
 dialogueChapter15ChurchLeif3 ; 92/E532
-	DIALOGUE_ASMC_0 rlBeginDialoguePrompt
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD LeifPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD GunterPortrait
-	DIALOGUE_FONT_0
-	.text "どちらになさいますか？"
-	DIALOGUE_NL
-	.text "　　　ノルデン"
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_NL
-	DIALOGUE_FONT_0
-	.text "　　　メルフィーユの"
-	DIALOGUE_FONT_3
-	.text "森"
-	DIALOGUE_ASMC_0 rlDialoguePromptSelector
+  DIALOGUE_ASMC_0 rlBeginDialoguePrompt
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD LeifPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD GunterPortrait
+  DIALOGUE_FONT_0
+  .text "どちらになさいますか？"
+  DIALOGUE_NL
+  .text "　　　ノルデン"
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_NL
+  DIALOGUE_FONT_0
+  .text "　　　メルフィーユの"
+  DIALOGUE_FONT_3
+  .text "森"
+  DIALOGUE_ASMC_0 rlDialoguePromptSelector
 DIALOGUE_END_SCENE

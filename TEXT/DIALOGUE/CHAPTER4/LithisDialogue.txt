@@ -1,330 +1,330 @@
 dialogueChapter4LithisDialogue ; 95/DEDB
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD LithisPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ちくしょう･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ついてねえなあ･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD KolkhoPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "あのう･･･"
-	DIALOGUE_PAUSE $10
-	.text "ひょっとして･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "リフィス"
-	DIALOGUE_FONT_1
-	.text "海賊団"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "リフィス"
-	DIALOGUE_FONT_1
-	.text "親分"
-	DIALOGUE_FONT_0
-	.text "さんじゃないですかい？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "あ､"
-	DIALOGUE_PAUSE $08
-	.text "ああ､"
-	DIALOGUE_PAUSE $08
-	.text "そうだけど･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "やっぱり！"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	.text "いや､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "賞"
-	DIALOGUE_FONT_1
-	.text "金"
-	DIALOGUE_FONT_4
-	.text "首"
-	DIALOGUE_FONT_0
-	.text "のはり"
-	DIALOGUE_FONT_3
-	.text "紙"
-	DIALOGUE_FONT_0
-	.text "にそっくりなんで"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "もしやと"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "ったんですが･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_UNLOAD
-	DIALOGUE_CLOSE
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "へへ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "オレもけっこう"
-	DIALOGUE_FONT_3
-	.text "有"
-	DIALOGUE_FONT_1
-	.text "名"
-	DIALOGUE_FONT_0
-	.text "じゃねえか･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "まてよ･･･こいつを"
-	DIALOGUE_FONT_2
-	.text "利"
-	DIALOGUE_FONT_1
-	.text "用"
-	DIALOGUE_FONT_0
-	.text "して･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD KolkhoPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "あれ､"
-	DIALOGUE_PAUSE $08
-	.text "どうしたんです？"
-	DIALOGUE_PAUSE $10
-	.text "　リフィスさん"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "えれえ"
-	DIALOGUE_FONT_2
-	.text "難"
-	DIALOGUE_FONT_0
-	.text "しそうな"
-	DIALOGUE_FONT_4
-	.text "顔"
-	DIALOGUE_FONT_0
-	.text "をなさって･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_FONT_3
-	.text "実"
-	DIALOGUE_FONT_0
-	.text "はな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "この"
-	DIALOGUE_FONT_3
-	.text "牢"
-	DIALOGUE_FONT_0
-	.text "から"
-	DIALOGUE_FONT_2
-	.text "逃"
-	DIALOGUE_FONT_0
-	.text "げ"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "す"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "はずを"
-	DIALOGUE_FONT_5
-	.text "考"
-	DIALOGUE_FONT_0
-	.text "えてたんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ええっ！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そんなことできるんですかい？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "バカ､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_5
-	.text "考"
-	DIALOGUE_FONT_0
-	.text "えてもみろ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "このオレさまがこうして"
-	DIALOGUE_FONT_1
-	.text "捕"
-	DIALOGUE_FONT_0
-	.text "まってるんだぜ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "オレのかわいい"
-	DIALOGUE_FONT_1
-	.text "子分"
-	DIALOGUE_FONT_0
-	.text "どもが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "それを"
-	DIALOGUE_FONT_1
-	.text "黙"
-	DIALOGUE_FONT_0
-	.text "って"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "てるわきゃねえだろうが"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "だから"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "オレは"
-	DIALOGUE_FONT_1
-	.text "近々"
-	DIALOGUE_FONT_0
-	.text "おさらばすることになる"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "短"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_2
-	.text "間"
-	DIALOGUE_FONT_0
-	.text "だがよろしくな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "そ､"
-	DIALOGUE_PAUSE $08
-	.text "そういうことなら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "リフィスさん"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "いっしょに"
-	DIALOGUE_FONT_2
-	.text "連"
-	DIALOGUE_FONT_0
-	.text "れていってくださいよ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "うーん"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "まあ､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "働"
-	DIALOGUE_FONT_0
-	.text "きしだいによっちゃ"
-	DIALOGUE_NL
-	DIALOGUE_FONT_5
-	.text "考"
-	DIALOGUE_FONT_0
-	.text "えてやらなくもないが"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ホ､"
-	DIALOGUE_PAUSE $08
-	.text "ホントっすか！！！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "まかしてください"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "うでっぷしにゃ"
-	DIALOGUE_FONT_1
-	.text "自"
-	DIALOGUE_FONT_2
-	.text "信"
-	DIALOGUE_FONT_0
-	.text "があるんです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "あんな"
-	DIALOGUE_FONT_3
-	.text "牢"
-	DIALOGUE_FONT_4
-	.text "番"
-	DIALOGUE_FONT_0
-	.text "くらいなら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "一"
-	DIALOGUE_FONT_2
-	.text "発"
-	DIALOGUE_FONT_0
-	.text "でのしてみせますぜ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD GomerPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "リフィスさん"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "その"
-	DIALOGUE_FONT_1
-	.text "話"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "オレにも一"
-	DIALOGUE_FONT_3
-	.text "口"
-	DIALOGUE_FONT_0
-	.text "かませてくださいよ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD BakstPortrait
-	DIALOGUE_FONT_0
-	.text "おれもおれも"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_UNLOAD
-	DIALOGUE_CLOSE
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "へへ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "バカはあつかいやすくて"
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "かる"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あとはチャンスをどうやって"
-	DIALOGUE_FONT_2
-	.text "作"
-	DIALOGUE_FONT_0
-	.text "るか､"
-	DIALOGUE_PAUSE $08
-	.text "だな"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD LithisPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ちくしょう･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ついてねえなあ･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD KolkhoPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "あのう･･･"
+  DIALOGUE_PAUSE $10
+  .text "ひょっとして･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "リフィス"
+  DIALOGUE_FONT_1
+  .text "海賊団"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "リフィス"
+  DIALOGUE_FONT_1
+  .text "親分"
+  DIALOGUE_FONT_0
+  .text "さんじゃないですかい？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "あ､"
+  DIALOGUE_PAUSE $08
+  .text "ああ､"
+  DIALOGUE_PAUSE $08
+  .text "そうだけど･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "やっぱり！"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  .text "いや､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "賞"
+  DIALOGUE_FONT_1
+  .text "金"
+  DIALOGUE_FONT_4
+  .text "首"
+  DIALOGUE_FONT_0
+  .text "のはり"
+  DIALOGUE_FONT_3
+  .text "紙"
+  DIALOGUE_FONT_0
+  .text "にそっくりなんで"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "もしやと"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "ったんですが･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_UNLOAD
+  DIALOGUE_CLOSE
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "へへ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "オレもけっこう"
+  DIALOGUE_FONT_3
+  .text "有"
+  DIALOGUE_FONT_1
+  .text "名"
+  DIALOGUE_FONT_0
+  .text "じゃねえか･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "まてよ･･･こいつを"
+  DIALOGUE_FONT_2
+  .text "利"
+  DIALOGUE_FONT_1
+  .text "用"
+  DIALOGUE_FONT_0
+  .text "して･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD KolkhoPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "あれ､"
+  DIALOGUE_PAUSE $08
+  .text "どうしたんです？"
+  DIALOGUE_PAUSE $10
+  .text "　リフィスさん"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "えれえ"
+  DIALOGUE_FONT_2
+  .text "難"
+  DIALOGUE_FONT_0
+  .text "しそうな"
+  DIALOGUE_FONT_4
+  .text "顔"
+  DIALOGUE_FONT_0
+  .text "をなさって･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_FONT_3
+  .text "実"
+  DIALOGUE_FONT_0
+  .text "はな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "この"
+  DIALOGUE_FONT_3
+  .text "牢"
+  DIALOGUE_FONT_0
+  .text "から"
+  DIALOGUE_FONT_2
+  .text "逃"
+  DIALOGUE_FONT_0
+  .text "げ"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "す"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "はずを"
+  DIALOGUE_FONT_5
+  .text "考"
+  DIALOGUE_FONT_0
+  .text "えてたんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ええっ！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そんなことできるんですかい？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "バカ､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_5
+  .text "考"
+  DIALOGUE_FONT_0
+  .text "えてもみろ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "このオレさまがこうして"
+  DIALOGUE_FONT_1
+  .text "捕"
+  DIALOGUE_FONT_0
+  .text "まってるんだぜ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "オレのかわいい"
+  DIALOGUE_FONT_1
+  .text "子分"
+  DIALOGUE_FONT_0
+  .text "どもが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "それを"
+  DIALOGUE_FONT_1
+  .text "黙"
+  DIALOGUE_FONT_0
+  .text "って"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "てるわきゃねえだろうが"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "だから"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "オレは"
+  DIALOGUE_FONT_1
+  .text "近々"
+  DIALOGUE_FONT_0
+  .text "おさらばすることになる"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "短"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_2
+  .text "間"
+  DIALOGUE_FONT_0
+  .text "だがよろしくな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "そ､"
+  DIALOGUE_PAUSE $08
+  .text "そういうことなら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "リフィスさん"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "いっしょに"
+  DIALOGUE_FONT_2
+  .text "連"
+  DIALOGUE_FONT_0
+  .text "れていってくださいよ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "うーん"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "まあ､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "働"
+  DIALOGUE_FONT_0
+  .text "きしだいによっちゃ"
+  DIALOGUE_NL
+  DIALOGUE_FONT_5
+  .text "考"
+  DIALOGUE_FONT_0
+  .text "えてやらなくもないが"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ホ､"
+  DIALOGUE_PAUSE $08
+  .text "ホントっすか！！！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "まかしてください"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "うでっぷしにゃ"
+  DIALOGUE_FONT_1
+  .text "自"
+  DIALOGUE_FONT_2
+  .text "信"
+  DIALOGUE_FONT_0
+  .text "があるんです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "あんな"
+  DIALOGUE_FONT_3
+  .text "牢"
+  DIALOGUE_FONT_4
+  .text "番"
+  DIALOGUE_FONT_0
+  .text "くらいなら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "一"
+  DIALOGUE_FONT_2
+  .text "発"
+  DIALOGUE_FONT_0
+  .text "でのしてみせますぜ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD GomerPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "リフィスさん"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "その"
+  DIALOGUE_FONT_1
+  .text "話"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "オレにも一"
+  DIALOGUE_FONT_3
+  .text "口"
+  DIALOGUE_FONT_0
+  .text "かませてくださいよ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD BakstPortrait
+  DIALOGUE_FONT_0
+  .text "おれもおれも"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_UNLOAD
+  DIALOGUE_CLOSE
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "へへ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "バカはあつかいやすくて"
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "かる"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あとはチャンスをどうやって"
+  DIALOGUE_FONT_2
+  .text "作"
+  DIALOGUE_FONT_0
+  .text "るか､"
+  DIALOGUE_PAUSE $08
+  .text "だな"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

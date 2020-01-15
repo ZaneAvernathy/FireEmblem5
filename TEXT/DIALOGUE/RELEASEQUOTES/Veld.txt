@@ -1,13 +1,13 @@
 dialogueVeldReleaseQuote ; E7/DFC2
-	DIALOGUE_FONT_0
-	.text "マンフロイ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "おゆるしを･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "グフッ･･･"
+  DIALOGUE_FONT_0
+  .text "マンフロイ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "おゆるしを･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "グフッ･･･"
 DIALOGUE_END_SCENE

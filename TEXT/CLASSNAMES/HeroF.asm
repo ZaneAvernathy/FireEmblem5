@@ -1,4 +1,4 @@
 
 menutextHeroFName ; 89/893C
-	.enc "MenuText"
-	.text "マーシナリー　　\n"
+  .enc "MenuText"
+  .text "マーシナリー　　\n"

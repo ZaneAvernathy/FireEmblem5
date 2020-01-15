@@ -1,201 +1,201 @@
 dialogueChapter1Ending1B ; 95/B775
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD Leif2Portrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ナンナ！　"
-	DIALOGUE_PAUSE $10
-	.text "マリータ！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "どこにいる！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "返"
-	DIALOGUE_FONT_1
-	.text "事"
-	DIALOGUE_FONT_0
-	.text "をしてくれ！！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD NPCMan9Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "おお､"
-	DIALOGUE_PAUSE $10
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "ご"
-	DIALOGUE_FONT_1
-	.text "無事"
-	DIALOGUE_FONT_0
-	.text "でしたか"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_3
-	.text "申"
-	DIALOGUE_FONT_0
-	.text "し"
-	DIALOGUE_FONT_4
-	.text "訳"
-	DIALOGUE_FONT_0
-	.text "ない"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "わしらがついとりながら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ナンナ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "を･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ナンナ？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ナンナがどうしたんです？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "帝国兵"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "連"
-	DIALOGUE_FONT_0
-	.text "れ"
-	DIALOGUE_FONT_2
-	.text "去"
-	DIALOGUE_FONT_0
-	.text "ってしまったのです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "マリータ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ナンナ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "だけでも"
-	DIALOGUE_FONT_2
-	.text "逃"
-	DIALOGUE_FONT_0
-	.text "がそうと"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "がんばったのじゃが"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ついにはマリータ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "まで"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "つかまってしもうて･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "それで"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "どこに"
-	DIALOGUE_FONT_2
-	.text "連"
-	DIALOGUE_FONT_0
-	.text "れていかれたのです？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "と､"
-	DIALOGUE_PAUSE $08
-	.text "いわれましても･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "おおっ､"
-	DIALOGUE_PAUSE $08
-	.text "そういえば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "外"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "兵士"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_0
-	.text "マンスターに"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "る"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "とか"
-	DIALOGUE_NL
-	.text "なんとかいっとりました"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "マンスターですね"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "わかりました"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "大"
-	DIALOGUE_FONT_4
-	.text "丈"
-	DIALOGUE_FONT_2
-	.text "夫"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "安心"
-	DIALOGUE_FONT_0
-	.text "してください"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "ナンナもマリータも､"
-	DIALOGUE_PAUSE $08
-	.text "そしてエーヴェルも"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "みんな､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "取"
-	DIALOGUE_FONT_0
-	.text "り"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "してみせます！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD Leif2Portrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ナンナ！　"
+  DIALOGUE_PAUSE $10
+  .text "マリータ！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "どこにいる！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "返"
+  DIALOGUE_FONT_1
+  .text "事"
+  DIALOGUE_FONT_0
+  .text "をしてくれ！！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD NPCMan9Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "おお､"
+  DIALOGUE_PAUSE $10
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "ご"
+  DIALOGUE_FONT_1
+  .text "無事"
+  DIALOGUE_FONT_0
+  .text "でしたか"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_3
+  .text "申"
+  DIALOGUE_FONT_0
+  .text "し"
+  DIALOGUE_FONT_4
+  .text "訳"
+  DIALOGUE_FONT_0
+  .text "ない"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "わしらがついとりながら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ナンナ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "を･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ナンナ？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ナンナがどうしたんです？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "帝国兵"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "連"
+  DIALOGUE_FONT_0
+  .text "れ"
+  DIALOGUE_FONT_2
+  .text "去"
+  DIALOGUE_FONT_0
+  .text "ってしまったのです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "マリータ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ナンナ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "だけでも"
+  DIALOGUE_FONT_2
+  .text "逃"
+  DIALOGUE_FONT_0
+  .text "がそうと"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "がんばったのじゃが"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ついにはマリータ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "まで"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "つかまってしもうて･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "それで"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "どこに"
+  DIALOGUE_FONT_2
+  .text "連"
+  DIALOGUE_FONT_0
+  .text "れていかれたのです？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "と､"
+  DIALOGUE_PAUSE $08
+  .text "いわれましても･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "おおっ､"
+  DIALOGUE_PAUSE $08
+  .text "そういえば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "外"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "兵士"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_0
+  .text "マンスターに"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "る"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "とか"
+  DIALOGUE_NL
+  .text "なんとかいっとりました"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "マンスターですね"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "わかりました"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "大"
+  DIALOGUE_FONT_4
+  .text "丈"
+  DIALOGUE_FONT_2
+  .text "夫"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "安心"
+  DIALOGUE_FONT_0
+  .text "してください"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "ナンナもマリータも､"
+  DIALOGUE_PAUSE $08
+  .text "そしてエーヴェルも"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "みんな､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "取"
+  DIALOGUE_FONT_0
+  .text "り"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "してみせます！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

@@ -1,4 +1,4 @@
 
 menutextReinkochName ; 86/E117
-	.enc "MenuText"
-	.text "ラインコック\n"
+  .enc "MenuText"
+  .text "ラインコック\n"

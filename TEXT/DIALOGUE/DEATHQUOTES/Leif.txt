@@ -1,7 +1,7 @@
 dialogueLeifDeathQuote ; 82/B8B8
-	DIALOGUE_FONT_0
-	.text "･･･みんな･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "すまない･･･"
+  DIALOGUE_FONT_0
+  .text "･･･みんな･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "すまない･･･"
 DIALOGUE_END_SCENE

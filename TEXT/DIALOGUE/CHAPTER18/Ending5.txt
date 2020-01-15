@@ -1,112 +1,112 @@
 dialogueChapter18Ending5 ; DA/F7AC
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD LeifPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "目"
-	DIALOGUE_FONT_3
-	.text "通"
-	DIALOGUE_FONT_0
-	.text "りを"
-	DIALOGUE_FONT_1
-	.text "願"
-	DIALOGUE_FONT_0
-	.text "っているものが"
-	DIALOGUE_NL
-	.text "おるのですが･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "なんでも"
-	DIALOGUE_FONT_1
-	.text "無"
-	DIALOGUE_FONT_2
-	.text "理"
-	DIALOGUE_FONT_0
-	.text "やり"
-	DIALOGUE_NL
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "城"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_FONT_4
-	.text "働"
-	DIALOGUE_FONT_0
-	.text "かされていたのを"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "われらに"
-	DIALOGUE_FONT_1
-	.text "救"
-	DIALOGUE_FONT_0
-	.text "ってもらったとかで･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "よし､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "会"
-	DIALOGUE_FONT_0
-	.text "おう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "つれてきてくれ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD Leonsterite2Portrait
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "レンスター"
-	DIALOGUE_FONT_2
-	.text "奪還"
-	DIALOGUE_FONT_0
-	.text "おめでとうございます"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "われわれも"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "のおかげで"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "救"
-	DIALOGUE_FONT_0
-	.text "われました"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "これはほんのお"
-	DIALOGUE_FONT_2
-	.text "礼"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "気持"
-	DIALOGUE_FONT_0
-	.text "ちです"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "お"
-	DIALOGUE_FONT_2
-	.text "受"
-	DIALOGUE_FONT_0
-	.text "け"
-	DIALOGUE_FONT_2
-	.text "取"
-	DIALOGUE_FONT_0
-	.text "りください"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD LeifPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "目"
+  DIALOGUE_FONT_3
+  .text "通"
+  DIALOGUE_FONT_0
+  .text "りを"
+  DIALOGUE_FONT_1
+  .text "願"
+  DIALOGUE_FONT_0
+  .text "っているものが"
+  DIALOGUE_NL
+  .text "おるのですが･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "なんでも"
+  DIALOGUE_FONT_1
+  .text "無"
+  DIALOGUE_FONT_2
+  .text "理"
+  DIALOGUE_FONT_0
+  .text "やり"
+  DIALOGUE_NL
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "城"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_FONT_4
+  .text "働"
+  DIALOGUE_FONT_0
+  .text "かされていたのを"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "われらに"
+  DIALOGUE_FONT_1
+  .text "救"
+  DIALOGUE_FONT_0
+  .text "ってもらったとかで･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "よし､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "会"
+  DIALOGUE_FONT_0
+  .text "おう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "つれてきてくれ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD Leonsterite2Portrait
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "レンスター"
+  DIALOGUE_FONT_2
+  .text "奪還"
+  DIALOGUE_FONT_0
+  .text "おめでとうございます"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "われわれも"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "のおかげで"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "救"
+  DIALOGUE_FONT_0
+  .text "われました"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "これはほんのお"
+  DIALOGUE_FONT_2
+  .text "礼"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "気持"
+  DIALOGUE_FONT_0
+  .text "ちです"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "お"
+  DIALOGUE_FONT_2
+  .text "受"
+  DIALOGUE_FONT_0
+  .text "け"
+  DIALOGUE_FONT_2
+  .text "取"
+  DIALOGUE_FONT_0
+  .text "りください"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

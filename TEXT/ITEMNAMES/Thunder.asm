@@ -1,4 +1,4 @@
 
 menutextThunderName ; B0/9537
-	.enc "MenuText"
-	.text "サンダー\n"
+  .enc "MenuText"
+  .text "サンダー\n"

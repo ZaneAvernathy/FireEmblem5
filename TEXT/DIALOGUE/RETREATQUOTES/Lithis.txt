@@ -1,15 +1,15 @@
 dialogueLithisRetreatQuote ; 82/C4C7
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD LithisPortrait
-	DIALOGUE_FONT_0
-	.text "へへへ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "あぶねえあぶねえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "じゃ､"
-	DIALOGUE_PAUSE $08
-	.text "あとはよろしく"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD LithisPortrait
+  DIALOGUE_FONT_0
+  .text "へへへ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "あぶねえあぶねえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "じゃ､"
+  DIALOGUE_PAUSE $08
+  .text "あとはよろしく"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

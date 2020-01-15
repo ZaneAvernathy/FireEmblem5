@@ -1,11 +1,11 @@
 dialogueChapter8UnusedDagdarPlaceholder ; 93/C49D
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AnnaPortrait
-	DIALOGUE_FONT_1
-	.text "元"
-	DIALOGUE_FONT_0
-	.text "メッセージ｢ダグダいない｣です"
-	DIALOGUE_NL
-	.text "このメッセージはさくじょされました"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AnnaPortrait
+  DIALOGUE_FONT_1
+  .text "元"
+  DIALOGUE_FONT_0
+  .text "メッセージ｢ダグダいない｣です"
+  DIALOGUE_NL
+  .text "このメッセージはさくじょされました"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

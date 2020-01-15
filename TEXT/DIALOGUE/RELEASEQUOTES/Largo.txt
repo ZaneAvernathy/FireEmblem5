@@ -1,14 +1,14 @@
 dialogueLargoReleaseQuote ; E7/9639
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_3
-	.text "情"
-	DIALOGUE_FONT_0
-	.text "けなどいらぬ！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "わが"
-	DIALOGUE_FONT_4
-	.text "首"
-	DIALOGUE_FONT_0
-	.text "をはねよ！！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_3
+  .text "情"
+  DIALOGUE_FONT_0
+  .text "けなどいらぬ！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "わが"
+  DIALOGUE_FONT_4
+  .text "首"
+  DIALOGUE_FONT_0
+  .text "をはねよ！！"
 DIALOGUE_END_SCENE

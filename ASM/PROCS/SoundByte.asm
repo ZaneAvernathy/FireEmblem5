@@ -3,77 +3,77 @@ procSoundByte .dstruct structProcInfo, "SB", rlProcSoundByteInit, rlProcSoundByt
 
 rlProcSoundByteInit ; 82/A350
 
-	.al
-	.xl
-	.autsiz
-	.databank ?
+  .al
+  .xl
+  .autsiz
+  .databank ?
 
-	lda wProcInput0,b
-	sta aProcBody0,b,x
+  lda wProcInput0,b
+  sta aProcBody0,b,x
 
-	lda wProcInput1,b
+  lda wProcInput1,b
 
-	jsl rlUnknown808C7D
-	rtl
+  jsl rlUnknown808C7D
+  rtl
 
 rlProcSoundByteOnCycle ; 82/A35E
 
-	.al
-	.xl
-	.autsiz
-	.databank ?
+  .al
+  .xl
+  .autsiz
+  .databank ?
 
-	rtl
+  rtl
 
 rlProcSoundByteOnCycle2 ; 81/A35F
 
-	.al
-	.xl
-	.autsiz
-	.databank ?
+  .al
+  .xl
+  .autsiz
+  .databank ?
 
-	lda aUnknown0004BA,b
-	bne ++
+  lda aUnknown0004BA,b
+  bne ++
 
-	lda wUnknown0004F6,b
-	bit #$0030
-	bne ++
+  lda wUnknown0004F6,b
+  bit #$0030
+  bne ++
 
-	lda aProcBody0,b,x
-	cmp wUnknown000510,b
-	beq +
+  lda aProcBody0,b,x
+  cmp wUnknown000510,b
+  beq +
 
-	sta aUnknown0004BA,b
+  sta aUnknown0004BA,b
 
-	lda #<>rlProcSoundByteOnCycle3
-	sta aProcHeaderOnCycle,b,x
-	bra ++
+  lda #<>rlProcSoundByteOnCycle3
+  sta aProcHeaderOnCycle,b,x
+  bra ++
 
-	+
-	jsl rlProcEngineFreeProc
+  +
+  jsl rlProcEngineFreeProc
 
-	+
-	rtl
+  +
+  rtl
 
 rlProcSoundByteOnCycle3 ; 81/A384
 
-	.al
-	.xl
-	.autsiz
-	.databank ?
+  .al
+  .xl
+  .autsiz
+  .databank ?
 
-	lda aUnknown0004BA,b
-	bne +
+  lda aUnknown0004BA,b
+  bne +
 
-	jsl rlProcEngineFreeProc
+  jsl rlProcEngineFreeProc
 
-	+
-	rtl
+  +
+  rtl
 
 aProcSoundByteCode ; 82/A38E
 
-	PROC_YIELD 3
+  PROC_YIELD 3
 
-	PROC_SET_ONCYCLE rlProcSoundByteOnCycle2
+  PROC_SET_ONCYCLE rlProcSoundByteOnCycle2
 
-	PROC_HALT
+  PROC_HALT

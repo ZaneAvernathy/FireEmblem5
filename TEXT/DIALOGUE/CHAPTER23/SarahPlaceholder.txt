@@ -1,14 +1,14 @@
 dialogueChapter23SarahPlaceholder ; 98/E7FE
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AnnaPortrait
-	DIALOGUE_FONT_1
-	.text "元"
-	DIALOGUE_FONT_0
-	.text "メッセージ｢サラの"
-	DIALOGUE_FONT_1
-	.text "力"
-	DIALOGUE_FONT_0
-	.text "｣です"
-	DIALOGUE_NL
-	.text "このめっせーじはさくじょしました"
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AnnaPortrait
+  DIALOGUE_FONT_1
+  .text "元"
+  DIALOGUE_FONT_0
+  .text "メッセージ｢サラの"
+  DIALOGUE_FONT_1
+  .text "力"
+  DIALOGUE_FONT_0
+  .text "｣です"
+  DIALOGUE_NL
+  .text "このめっせーじはさくじょしました"
 DIALOGUE_END_SCENE

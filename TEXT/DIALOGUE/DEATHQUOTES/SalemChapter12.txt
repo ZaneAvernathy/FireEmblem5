@@ -1,8 +1,8 @@
 dialogueSalemChapter12DeathQuote ; 92/A389
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "パーン･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "これでよかったのだ･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "パーン･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "これでよかったのだ･･･"
 DIALOGUE_END_SCENE

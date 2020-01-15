@@ -1,206 +1,206 @@
 dialogueChapter24xLeifEyvelTalk ; E7/B33C
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD LeifPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD EyvelPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･････"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "エーヴェル､"
-	DIALOGUE_PAUSE $08
-	.text "しっかりしろ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "エーヴェル！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･････"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "エーヴェル､"
-	DIALOGUE_PAUSE $08
-	.text "ぼくだ､"
-	DIALOGUE_PAUSE $08
-	.text "リーフだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "分"
-	DIALOGUE_FONT_0
-	.text "からないのか！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "りーふ･･･"
-	DIALOGUE_PAUSE $10
-	.text "さま･･･"
-	DIALOGUE_PAUSE $10
-	.text "りーふ･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "はっ！"
-	DIALOGUE_PAUSE $10
-	.text "　リーフさま！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なぜここに？"
-	DIALOGUE_PAUSE $10
-	.text "　"
-	DIALOGUE_FONT_4
-	.text "早"
-	DIALOGUE_FONT_0
-	.text "く"
-	DIALOGUE_FONT_2
-	.text "脱"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "を･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "エーヴェル､"
-	DIALOGUE_PAUSE $08
-	.text "ちがうんだ､"
-	DIALOGUE_PAUSE $08
-	.text "エーヴェル･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ちがう？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "でもこの"
-	DIALOGUE_FONT_1
-	.text "剣閾場"
-	DIALOGUE_FONT_0
-	.text "は･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "え？"
-	DIALOGUE_PAUSE $10
-	.text "　ここは･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "エーヴェル､"
-	DIALOGUE_PAUSE $08
-	.text "よかった､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "元"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "って･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "はいったい･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ごめん"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "今話"
-	DIALOGUE_FONT_0
-	.text "しているひまはないんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "ぼくたちは､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "マンスターを"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "いや､"
-	DIALOGUE_PAUSE $08
-	.text "トラキアを"
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "から"
-	DIALOGUE_FONT_1
-	.text "解放"
-	DIALOGUE_FONT_0
-	.text "するために"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "っている"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "エーヴェル､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "力"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_4
-	.text "貸"
-	DIALOGUE_FONT_0
-	.text "してほしい！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "それはもちろんですが･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いが"
-	DIALOGUE_FONT_2
-	.text "終"
-	DIALOGUE_FONT_0
-	.text "われば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "教"
-	DIALOGUE_FONT_0
-	.text "えていただけますか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "もちろんさ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "エーヴェル"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "話"
-	DIALOGUE_FONT_0
-	.text "したいことがいっぱいあるんだ･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD LeifPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD EyvelPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･････"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "エーヴェル､"
+  DIALOGUE_PAUSE $08
+  .text "しっかりしろ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "エーヴェル！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･････"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "エーヴェル､"
+  DIALOGUE_PAUSE $08
+  .text "ぼくだ､"
+  DIALOGUE_PAUSE $08
+  .text "リーフだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "分"
+  DIALOGUE_FONT_0
+  .text "からないのか！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "りーふ･･･"
+  DIALOGUE_PAUSE $10
+  .text "さま･･･"
+  DIALOGUE_PAUSE $10
+  .text "りーふ･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "はっ！"
+  DIALOGUE_PAUSE $10
+  .text "　リーフさま！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なぜここに？"
+  DIALOGUE_PAUSE $10
+  .text "　"
+  DIALOGUE_FONT_4
+  .text "早"
+  DIALOGUE_FONT_0
+  .text "く"
+  DIALOGUE_FONT_2
+  .text "脱"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "を･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "エーヴェル､"
+  DIALOGUE_PAUSE $08
+  .text "ちがうんだ､"
+  DIALOGUE_PAUSE $08
+  .text "エーヴェル･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ちがう？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "でもこの"
+  DIALOGUE_FONT_1
+  .text "剣閾場"
+  DIALOGUE_FONT_0
+  .text "は･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "え？"
+  DIALOGUE_PAUSE $10
+  .text "　ここは･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "エーヴェル､"
+  DIALOGUE_PAUSE $08
+  .text "よかった､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "元"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "って･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "はいったい･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ごめん"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "今話"
+  DIALOGUE_FONT_0
+  .text "しているひまはないんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "ぼくたちは､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "マンスターを"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "いや､"
+  DIALOGUE_PAUSE $08
+  .text "トラキアを"
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "から"
+  DIALOGUE_FONT_1
+  .text "解放"
+  DIALOGUE_FONT_0
+  .text "するために"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "っている"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "エーヴェル､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "力"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_4
+  .text "貸"
+  DIALOGUE_FONT_0
+  .text "してほしい！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "それはもちろんですが･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いが"
+  DIALOGUE_FONT_2
+  .text "終"
+  DIALOGUE_FONT_0
+  .text "われば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "教"
+  DIALOGUE_FONT_0
+  .text "えていただけますか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "もちろんさ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "エーヴェル"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "話"
+  DIALOGUE_FONT_0
+  .text "したいことがいっぱいあるんだ･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

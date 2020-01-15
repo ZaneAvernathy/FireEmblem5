@@ -1,4 +1,4 @@
 
 menutextLanceKnightDismountedName ; 89/8594
-	.enc "MenuText"
-	.text "ランスナイト　　\n"
+  .enc "MenuText"
+  .text "ランスナイト　　\n"

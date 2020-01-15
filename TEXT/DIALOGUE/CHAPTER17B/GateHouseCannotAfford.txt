@@ -1,28 +1,28 @@
 dialogueChapter17BGateHouseCannotAfford ; E7/AAB6
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD KolkhoPortrait
-	DIALOGUE_FONT_0
-	.text "なんだなんだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "金"
-	DIALOGUE_FONT_0
-	.text "のねえヤツにゃ"
-	DIALOGUE_FONT_1
-	.text "用"
-	DIALOGUE_FONT_0
-	.text "はねえよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "さっさと"
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "った"
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "った"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD KolkhoPortrait
+  DIALOGUE_FONT_0
+  .text "なんだなんだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "金"
+  DIALOGUE_FONT_0
+  .text "のねえヤツにゃ"
+  DIALOGUE_FONT_1
+  .text "用"
+  DIALOGUE_FONT_0
+  .text "はねえよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "さっさと"
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "った"
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "った"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

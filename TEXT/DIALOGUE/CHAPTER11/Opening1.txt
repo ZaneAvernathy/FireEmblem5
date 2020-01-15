@@ -1,741 +1,741 @@
 dialogueChapter11Opening1 ; 95/E929
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD KempfPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD OlwenPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ですから"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_2
-	.text "度"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "っているように"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ノエル"
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "現"
-	DIALOGUE_FONT_0
-	.text "れたのです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_4
-	.text "早"
-	DIALOGUE_FONT_2
-	.text "急"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "援軍"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_3
-	.text "送"
-	DIALOGUE_FONT_0
-	.text "らないと"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ラルゴ"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_4
-	.text "危険"
-	DIALOGUE_FONT_0
-	.text "なのです！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "お"
-	DIALOGUE_FONT_1
-	.text "願"
-	DIALOGUE_FONT_0
-	.text "いします､"
-	DIALOGUE_PAUSE $08
-	.text "ケンプフ"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_FONT_0
-	.text "！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "わが"
-	DIALOGUE_FONT_1
-	.text "軍団"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "出撃"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_3
-	.text "許可"
-	DIALOGUE_FONT_0
-	.text "してください！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "貴様"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "があらわれたと"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "うが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "いったい"
-	DIALOGUE_FONT_1
-	.text "何者"
-	DIALOGUE_FONT_0
-	.text "なのだ？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_1
-	.text "貴様"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "任務"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "だ？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ていさつであろう？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "そんなこともつかめぬまま"
-	DIALOGUE_NL
-	.text "のこのこ"
-	DIALOGUE_FONT_4
-	.text "舞"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "ってきて"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "それで"
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "せとはどういうことだ？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "状"
-	DIALOGUE_FONT_4
-	.text "況"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "切"
-	DIALOGUE_FONT_3
-	.text "迫"
-	DIALOGUE_FONT_0
-	.text "していたのです"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "事"
-	DIALOGUE_FONT_0
-	.text "は一"
-	DIALOGUE_FONT_4
-	.text "刻"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "争"
-	DIALOGUE_FONT_0
-	.text "います！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ですから､"
-	DIALOGUE_PAUSE $08
-	.text "まずご"
-	DIALOGUE_FONT_3
-	.text "報告"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "ったのです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "しかし､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "貴様"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "う"
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_FONT_0
-	.text "とやらが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "われらをおびき"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "すオトリだとしたら"
-	DIALOGUE_NL
-	.text "いったい"
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "とする？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "このダンドラム"
-	DIALOGUE_FONT_1
-	.text "要塞"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_FONT_2
-	.text "難"
-	DIALOGUE_FONT_1
-	.text "攻"
-	DIALOGUE_FONT_2
-	.text "不落"
-	DIALOGUE_FONT_0
-	.text "と"
-	DIALOGUE_FONT_4
-	.text "呼"
-	DIALOGUE_FONT_0
-	.text "ばれるのは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "わが１２"
-	DIALOGUE_FONT_1
-	.text "軍団"
-	DIALOGUE_FONT_0
-	.text "があればこそ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "実情"
-	DIALOGUE_FONT_0
-	.text "もわからぬのに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "軽"
-	DIALOGUE_FONT_1
-	.text "々"
-	DIALOGUE_FONT_0
-	.text "しく"
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "など"
-	DIALOGUE_FONT_2
-	.text "動"
-	DIALOGUE_FONT_0
-	.text "かせるものか"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "では､"
-	DIALOGUE_PAUSE $08
-	.text "ラルゴ"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_FONT_0
-	.text "はどうなるのです！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "こうしているあいだにも"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ラルゴ"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "身"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_4
-	.text "危"
-	DIALOGUE_FONT_0
-	.text "ないというのに･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "あんな"
-	DIALOGUE_FONT_1
-	.text "老人"
-	DIALOGUE_FONT_0
-	.text "の一"
-	DIALOGUE_FONT_1
-	.text "人"
-	DIALOGUE_FONT_0
-	.text "や二"
-	DIALOGUE_FONT_1
-	.text "人"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "わが"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "にとって"
-	DIALOGUE_FONT_1
-	.text "大"
-	DIALOGUE_FONT_0
-	.text "した"
-	DIALOGUE_FONT_4
-	.text "問題"
-	DIALOGUE_FONT_0
-	.text "ではない"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "ほうっておいてもいずれはくたばる"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_2
-	.text "間"
-	DIALOGUE_FONT_0
-	.text "がはぶけてよいというものだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "な､"
-	DIALOGUE_PAUSE $08
-	.text "なんということを･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ケンプフ"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_FONT_0
-	.text "！！　"
-	DIALOGUE_PAUSE $08
-	.text "あなたはそれでも･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なんだ､"
-	DIALOGUE_PAUSE $08
-	.text "その"
-	DIALOGUE_FONT_4
-	.text "顔"
-	DIALOGUE_FONT_0
-	.text "は？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "反"
-	DIALOGUE_FONT_3
-	.text "逆"
-	DIALOGUE_FONT_0
-	.text "するとでもいうのか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "おもしろい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "上"
-	DIALOGUE_FONT_2
-	.text "官"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "反"
-	DIALOGUE_FONT_3
-	.text "逆"
-	DIALOGUE_FONT_0
-	.text "すればどうなるか"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "らぬわけでもあるまい"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "それでも"
-	DIALOGUE_FONT_1
-	.text "貴様"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "反"
-	DIALOGUE_FONT_3
-	.text "逆"
-	DIALOGUE_FONT_0
-	.text "できるのか､"
-	DIALOGUE_PAUSE $08
-	.text "ああ？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "くっ･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "どうした？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "口"
-	DIALOGUE_FONT_0
-	.text "ではえらそうなことを"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "いながら"
-	DIALOGUE_NL
-	DIALOGUE_FONT_3
-	.text "結局"
-	DIALOGUE_FONT_0
-	.text "はなにもできんのか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･････"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "まあ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "士"
-	DIALOGUE_FONT_2
-	.text "官"
-	DIALOGUE_FONT_3
-	.text "学"
-	DIALOGUE_FONT_5
-	.text "校"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "たばかりの"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "世"
-	DIALOGUE_FONT_2
-	.text "間"
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "らずなお"
-	DIALOGUE_FONT_5
-	.text "孃"
-	DIALOGUE_FONT_0
-	.text "さんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "できることといえば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "大好"
-	DIALOGUE_FONT_0
-	.text "きなラインハルト"
-	DIALOGUE_FONT_2
-	.text "兄"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_FONT_4
-	.text "泣"
-	DIALOGUE_FONT_0
-	.text "きつくくらいか"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "なにっ！　"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "なんと！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ん？　"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "聞"
-	DIALOGUE_FONT_0
-	.text "こえなかったのか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "できることといえば"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "大好"
-	DIALOGUE_FONT_0
-	.text "きなラインハルト"
-	DIALOGUE_FONT_2
-	.text "兄"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_FONT_4
-	.text "泣"
-	DIALOGUE_FONT_0
-	.text "きつくくらいか､"
-	DIALOGUE_PAUSE $08
-	.text "と"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "ったのだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･･おのれ･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "そうだなあ､"
-	DIALOGUE_PAUSE $08
-	.text "ヤツなら"
-	DIALOGUE_FONT_3
-	.text "可"
-	DIALOGUE_FONT_1
-	.text "愛"
-	DIALOGUE_FONT_0
-	.text "がってくれるぞ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なにせ､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "女"
-	DIALOGUE_FONT_0
-	.text "をたぶらかすのは"
-	DIALOGUE_NL
-	.text "あの"
-	DIALOGUE_FONT_1
-	.text "男"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "得"
-	DIALOGUE_FONT_1
-	.text "意技"
-	DIALOGUE_FONT_0
-	.text "だからなぁ､"
-	DIALOGUE_PAUSE $10
-	.text "わっ"
-	DIALOGUE_PAUSE $08
-	.text "はっ"
-	DIALOGUE_PAUSE $08
-	.text "はっ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "おのれ､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "兄"
-	DIALOGUE_FONT_1
-	.text "上"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_3
-	.text "侮"
-	DIALOGUE_FONT_0
-	.text "るかっ！　"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "許"
-	DIALOGUE_FONT_0
-	.text "せんっ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ほう､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_4
-	.text "抜"
-	DIALOGUE_FONT_0
-	.text "いたか？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "それでどうする､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "殺"
-	DIALOGUE_FONT_0
-	.text "すか？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "フッ､"
-	DIALOGUE_PAUSE $08
-	.text "おろかなやつだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_3
-	.text "衛"
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "！"
-	DIALOGUE_NL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD DvorakPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "オルエン"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_4
-	.text "投"
-	DIALOGUE_FONT_3
-	.text "獄"
-	DIALOGUE_FONT_0
-	.text "せよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "上"
-	DIALOGUE_FONT_2
-	.text "官"
-	DIALOGUE_FONT_0
-	.text "にたいする"
-	DIALOGUE_FONT_2
-	.text "反"
-	DIALOGUE_FONT_3
-	.text "抗"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	.text "ならびに"
-	DIALOGUE_FONT_2
-	.text "反乱罪"
-	DIALOGUE_FONT_0
-	.text "だ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "はっ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD OlwenPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_PAUSE $08
-	.text "オルエン"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	.text "ご"
-	DIALOGUE_FONT_1
-	.text "同行願"
-	DIALOGUE_FONT_0
-	.text "います"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "くっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "･･･ケンプフ"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "･･･なんと"
-	DIALOGUE_FONT_3
-	.text "卑劣"
-	DIALOGUE_FONT_0
-	.text "な･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD KempfPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD OlwenPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ですから"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_2
+  .text "度"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "っているように"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ノエル"
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "現"
+  DIALOGUE_FONT_0
+  .text "れたのです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_4
+  .text "早"
+  DIALOGUE_FONT_2
+  .text "急"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "援軍"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_3
+  .text "送"
+  DIALOGUE_FONT_0
+  .text "らないと"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ラルゴ"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_4
+  .text "危険"
+  DIALOGUE_FONT_0
+  .text "なのです！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "お"
+  DIALOGUE_FONT_1
+  .text "願"
+  DIALOGUE_FONT_0
+  .text "いします､"
+  DIALOGUE_PAUSE $08
+  .text "ケンプフ"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_FONT_0
+  .text "！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "わが"
+  DIALOGUE_FONT_1
+  .text "軍団"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "出撃"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_3
+  .text "許可"
+  DIALOGUE_FONT_0
+  .text "してください！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "貴様"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "があらわれたと"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "うが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "いったい"
+  DIALOGUE_FONT_1
+  .text "何者"
+  DIALOGUE_FONT_0
+  .text "なのだ？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_1
+  .text "貴様"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "任務"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "だ？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ていさつであろう？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "そんなこともつかめぬまま"
+  DIALOGUE_NL
+  .text "のこのこ"
+  DIALOGUE_FONT_4
+  .text "舞"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "ってきて"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "それで"
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "せとはどういうことだ？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "状"
+  DIALOGUE_FONT_4
+  .text "況"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "切"
+  DIALOGUE_FONT_3
+  .text "迫"
+  DIALOGUE_FONT_0
+  .text "していたのです"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "事"
+  DIALOGUE_FONT_0
+  .text "は一"
+  DIALOGUE_FONT_4
+  .text "刻"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "争"
+  DIALOGUE_FONT_0
+  .text "います！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ですから､"
+  DIALOGUE_PAUSE $08
+  .text "まずご"
+  DIALOGUE_FONT_3
+  .text "報告"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "ったのです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "しかし､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "貴様"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "う"
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_FONT_0
+  .text "とやらが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "われらをおびき"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "すオトリだとしたら"
+  DIALOGUE_NL
+  .text "いったい"
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "とする？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "このダンドラム"
+  DIALOGUE_FONT_1
+  .text "要塞"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_FONT_2
+  .text "難"
+  DIALOGUE_FONT_1
+  .text "攻"
+  DIALOGUE_FONT_2
+  .text "不落"
+  DIALOGUE_FONT_0
+  .text "と"
+  DIALOGUE_FONT_4
+  .text "呼"
+  DIALOGUE_FONT_0
+  .text "ばれるのは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "わが１２"
+  DIALOGUE_FONT_1
+  .text "軍団"
+  DIALOGUE_FONT_0
+  .text "があればこそ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "実情"
+  DIALOGUE_FONT_0
+  .text "もわからぬのに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "軽"
+  DIALOGUE_FONT_1
+  .text "々"
+  DIALOGUE_FONT_0
+  .text "しく"
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "など"
+  DIALOGUE_FONT_2
+  .text "動"
+  DIALOGUE_FONT_0
+  .text "かせるものか"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "では､"
+  DIALOGUE_PAUSE $08
+  .text "ラルゴ"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_FONT_0
+  .text "はどうなるのです！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "こうしているあいだにも"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ラルゴ"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "身"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_4
+  .text "危"
+  DIALOGUE_FONT_0
+  .text "ないというのに･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "あんな"
+  DIALOGUE_FONT_1
+  .text "老人"
+  DIALOGUE_FONT_0
+  .text "の一"
+  DIALOGUE_FONT_1
+  .text "人"
+  DIALOGUE_FONT_0
+  .text "や二"
+  DIALOGUE_FONT_1
+  .text "人"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "わが"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "にとって"
+  DIALOGUE_FONT_1
+  .text "大"
+  DIALOGUE_FONT_0
+  .text "した"
+  DIALOGUE_FONT_4
+  .text "問題"
+  DIALOGUE_FONT_0
+  .text "ではない"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "ほうっておいてもいずれはくたばる"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_2
+  .text "間"
+  DIALOGUE_FONT_0
+  .text "がはぶけてよいというものだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "な､"
+  DIALOGUE_PAUSE $08
+  .text "なんということを･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ケンプフ"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_FONT_0
+  .text "！！　"
+  DIALOGUE_PAUSE $08
+  .text "あなたはそれでも･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なんだ､"
+  DIALOGUE_PAUSE $08
+  .text "その"
+  DIALOGUE_FONT_4
+  .text "顔"
+  DIALOGUE_FONT_0
+  .text "は？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "反"
+  DIALOGUE_FONT_3
+  .text "逆"
+  DIALOGUE_FONT_0
+  .text "するとでもいうのか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "おもしろい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "上"
+  DIALOGUE_FONT_2
+  .text "官"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "反"
+  DIALOGUE_FONT_3
+  .text "逆"
+  DIALOGUE_FONT_0
+  .text "すればどうなるか"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "らぬわけでもあるまい"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "それでも"
+  DIALOGUE_FONT_1
+  .text "貴様"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "反"
+  DIALOGUE_FONT_3
+  .text "逆"
+  DIALOGUE_FONT_0
+  .text "できるのか､"
+  DIALOGUE_PAUSE $08
+  .text "ああ？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "くっ･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "どうした？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "口"
+  DIALOGUE_FONT_0
+  .text "ではえらそうなことを"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "いながら"
+  DIALOGUE_NL
+  DIALOGUE_FONT_3
+  .text "結局"
+  DIALOGUE_FONT_0
+  .text "はなにもできんのか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･････"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "まあ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "士"
+  DIALOGUE_FONT_2
+  .text "官"
+  DIALOGUE_FONT_3
+  .text "学"
+  DIALOGUE_FONT_5
+  .text "校"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "たばかりの"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "世"
+  DIALOGUE_FONT_2
+  .text "間"
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "らずなお"
+  DIALOGUE_FONT_5
+  .text "孃"
+  DIALOGUE_FONT_0
+  .text "さんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "できることといえば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "大好"
+  DIALOGUE_FONT_0
+  .text "きなラインハルト"
+  DIALOGUE_FONT_2
+  .text "兄"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_FONT_4
+  .text "泣"
+  DIALOGUE_FONT_0
+  .text "きつくくらいか"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "なにっ！　"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "なんと！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ん？　"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "聞"
+  DIALOGUE_FONT_0
+  .text "こえなかったのか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "できることといえば"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "大好"
+  DIALOGUE_FONT_0
+  .text "きなラインハルト"
+  DIALOGUE_FONT_2
+  .text "兄"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_FONT_4
+  .text "泣"
+  DIALOGUE_FONT_0
+  .text "きつくくらいか､"
+  DIALOGUE_PAUSE $08
+  .text "と"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "ったのだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･･おのれ･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "そうだなあ､"
+  DIALOGUE_PAUSE $08
+  .text "ヤツなら"
+  DIALOGUE_FONT_3
+  .text "可"
+  DIALOGUE_FONT_1
+  .text "愛"
+  DIALOGUE_FONT_0
+  .text "がってくれるぞ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なにせ､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "女"
+  DIALOGUE_FONT_0
+  .text "をたぶらかすのは"
+  DIALOGUE_NL
+  .text "あの"
+  DIALOGUE_FONT_1
+  .text "男"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "得"
+  DIALOGUE_FONT_1
+  .text "意技"
+  DIALOGUE_FONT_0
+  .text "だからなぁ､"
+  DIALOGUE_PAUSE $10
+  .text "わっ"
+  DIALOGUE_PAUSE $08
+  .text "はっ"
+  DIALOGUE_PAUSE $08
+  .text "はっ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "おのれ､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "兄"
+  DIALOGUE_FONT_1
+  .text "上"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_3
+  .text "侮"
+  DIALOGUE_FONT_0
+  .text "るかっ！　"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "許"
+  DIALOGUE_FONT_0
+  .text "せんっ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ほう､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_4
+  .text "抜"
+  DIALOGUE_FONT_0
+  .text "いたか？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "それでどうする､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "殺"
+  DIALOGUE_FONT_0
+  .text "すか？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "フッ､"
+  DIALOGUE_PAUSE $08
+  .text "おろかなやつだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_3
+  .text "衛"
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "！"
+  DIALOGUE_NL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD DvorakPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "オルエン"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_4
+  .text "投"
+  DIALOGUE_FONT_3
+  .text "獄"
+  DIALOGUE_FONT_0
+  .text "せよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "上"
+  DIALOGUE_FONT_2
+  .text "官"
+  DIALOGUE_FONT_0
+  .text "にたいする"
+  DIALOGUE_FONT_2
+  .text "反"
+  DIALOGUE_FONT_3
+  .text "抗"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  .text "ならびに"
+  DIALOGUE_FONT_2
+  .text "反乱罪"
+  DIALOGUE_FONT_0
+  .text "だ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "はっ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD OlwenPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_PAUSE $08
+  .text "オルエン"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  .text "ご"
+  DIALOGUE_FONT_1
+  .text "同行願"
+  DIALOGUE_FONT_0
+  .text "います"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "くっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "･･･ケンプフ"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "･･･なんと"
+  DIALOGUE_FONT_3
+  .text "卑劣"
+  DIALOGUE_FONT_0
+  .text "な･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

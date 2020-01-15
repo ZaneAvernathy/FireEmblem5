@@ -1,13 +1,13 @@
 dialogueFE4Demo5 ; 9C/FD82
-	DIALOGUE_RIGHT
-	DIALOGUE_OPEN
-	DIALOGUE_LOAD CallionPortrait
-	DIALOGUE_FONT_0
-	.text "レヴィンのばか！"
-	DIALOGUE_NL
-	.text "なによ､あんな"
-	DIALOGUE_FONT_1
-	.text "女"
-	DIALOGUE_FONT_0
-	.text "！"
+  DIALOGUE_RIGHT
+  DIALOGUE_OPEN
+  DIALOGUE_LOAD CallionPortrait
+  DIALOGUE_FONT_0
+  .text "レヴィンのばか！"
+  DIALOGUE_NL
+  .text "なによ､あんな"
+  DIALOGUE_FONT_1
+  .text "女"
+  DIALOGUE_FONT_0
+  .text "！"
 DIALOGUE_EOF

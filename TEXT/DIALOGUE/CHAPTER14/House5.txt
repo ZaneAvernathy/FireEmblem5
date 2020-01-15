@@ -1,23 +1,23 @@
 dialogueChapter14House5 ; 92/D502
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan7Portrait
-	DIALOGUE_FONT_0
-	.text "こんなゴタゴタの"
-	DIALOGUE_FONT_1
-	.text "多"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_2
-	.text "町"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "用"
-	DIALOGUE_FONT_0
-	.text "はねえ！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "とっととおさらばしてえよ！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan7Portrait
+  DIALOGUE_FONT_0
+  .text "こんなゴタゴタの"
+  DIALOGUE_FONT_1
+  .text "多"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_2
+  .text "町"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "用"
+  DIALOGUE_FONT_0
+  .text "はねえ！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "とっととおさらばしてえよ！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

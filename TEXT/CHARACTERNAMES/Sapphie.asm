@@ -1,4 +1,4 @@
 
 menutextSapphieName ; 86/DD59
-	.enc "MenuText"
-	.text "サフィ\n"
+  .enc "MenuText"
+  .text "サフィ\n"

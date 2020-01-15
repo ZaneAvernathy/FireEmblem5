@@ -1,23 +1,23 @@
 dialogueChapter1UnusedHouseGirlSecond ; 95/B55C
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AnnaPortrait
-	DIALOGUE_FONT_1
-	.text "元"
-	DIALOGUE_FONT_0
-	.text "メッセージ｢"
-	DIALOGUE_FONT_1
-	.text "村女"
-	DIALOGUE_FONT_0
-	.text "（２"
-	DIALOGUE_FONT_2
-	.text "回"
-	DIALOGUE_FONT_1
-	.text "目以"
-	DIALOGUE_FONT_3
-	.text "降"
-	DIALOGUE_FONT_0
-	.text "）｣です"
-	DIALOGUE_NL
-	.text "このメッセージはさくじょされました"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AnnaPortrait
+  DIALOGUE_FONT_1
+  .text "元"
+  DIALOGUE_FONT_0
+  .text "メッセージ｢"
+  DIALOGUE_FONT_1
+  .text "村女"
+  DIALOGUE_FONT_0
+  .text "（２"
+  DIALOGUE_FONT_2
+  .text "回"
+  DIALOGUE_FONT_1
+  .text "目以"
+  DIALOGUE_FONT_3
+  .text "降"
+  DIALOGUE_FONT_0
+  .text "）｣です"
+  DIALOGUE_NL
+  .text "このメッセージはさくじょされました"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

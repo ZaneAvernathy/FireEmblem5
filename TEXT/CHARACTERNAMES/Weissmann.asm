@@ -1,4 +1,4 @@
 
 menutextWeissmannName ; 86/DEF5
-	.enc "MenuText"
-	.text "ワイズマン\n"
+  .enc "MenuText"
+  .text "ワイズマン\n"

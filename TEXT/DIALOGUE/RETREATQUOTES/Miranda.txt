@@ -1,15 +1,15 @@
 dialogueMirandaRetreatQuote ; 82/C1B3
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD MirandaPortrait
-	DIALOGUE_FONT_0
-	.text "やっと"
-	DIALOGUE_FONT_4
-	.text "抜"
-	DIALOGUE_FONT_0
-	.text "け"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "したのね･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD MirandaPortrait
+  DIALOGUE_FONT_0
+  .text "やっと"
+  DIALOGUE_FONT_4
+  .text "抜"
+  DIALOGUE_FONT_0
+  .text "け"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "したのね･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

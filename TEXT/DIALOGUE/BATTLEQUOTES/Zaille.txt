@@ -1,21 +1,21 @@
 dialogueZailleBattleQuote ; 92/E892
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "けっけっけっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $40
-	DIALOGUE_SCROLL
-	.text "このオレさまに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ケンカうろうなんて"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "十"
-	DIALOGUE_FONT_1
-	.text "年"
-	DIALOGUE_FONT_4
-	.text "早"
-	DIALOGUE_FONT_0
-	.text "いぜ"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "けっけっけっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $40
+  DIALOGUE_SCROLL
+  .text "このオレさまに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ケンカうろうなんて"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "十"
+  DIALOGUE_FONT_1
+  .text "年"
+  DIALOGUE_FONT_4
+  .text "早"
+  DIALOGUE_FONT_0
+  .text "いぜ"
 DIALOGUE_END_SCENE

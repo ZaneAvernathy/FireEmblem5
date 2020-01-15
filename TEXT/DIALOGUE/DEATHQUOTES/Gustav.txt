@@ -1,16 +1,16 @@
 dialogueGustavDeathQuote ; 92/FC19
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ぐう･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "こんなやつらに･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "不"
-	DIALOGUE_FONT_4
-	.text "覚"
-	DIALOGUE_FONT_0
-	.text "･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ぐう･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "こんなやつらに･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "不"
+  DIALOGUE_FONT_4
+  .text "覚"
+  DIALOGUE_FONT_0
+  .text "･･･"
 DIALOGUE_END_SCENE

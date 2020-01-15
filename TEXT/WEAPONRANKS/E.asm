@@ -1,4 +1,4 @@
 
 menutextRankE ; 83/93BC
-	.enc "MenuText"
-	.text "Ｅ\n"
+  .enc "MenuText"
+  .text "Ｅ\n"

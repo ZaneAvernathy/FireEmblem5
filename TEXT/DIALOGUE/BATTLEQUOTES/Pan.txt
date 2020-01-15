@@ -1,22 +1,22 @@
 dialoguePanBattleQuote ; 92/BDD6
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ふん､"
-	DIALOGUE_PAUSE $08
-	.text "バカなやつらめ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "このパーンさまを"
-	DIALOGUE_NL
-	.text "ただの"
-	DIALOGUE_FONT_2
-	.text "盗"
-	DIALOGUE_FONT_1
-	.text "賊"
-	DIALOGUE_FONT_0
-	.text "だと"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "うなよ！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ふん､"
+  DIALOGUE_PAUSE $08
+  .text "バカなやつらめ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "このパーンさまを"
+  DIALOGUE_NL
+  .text "ただの"
+  DIALOGUE_FONT_2
+  .text "盗"
+  DIALOGUE_FONT_1
+  .text "賊"
+  DIALOGUE_FONT_0
+  .text "だと"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "うなよ！"
 DIALOGUE_END_SCENE

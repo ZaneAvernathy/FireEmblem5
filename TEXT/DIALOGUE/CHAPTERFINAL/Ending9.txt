@@ -1,436 +1,436 @@
 dialogueChapterFinalEnding9 ; E7/DBFE
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "セリス"
-	DIALOGUE_FONT_1
-	.text "公子"
-	DIALOGUE_FONT_0
-	.text "がお"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "えになりました"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD SeliphPortrait
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "応"
-	DIALOGUE_FONT_1
-	.text "援"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "たのだけど"
-	DIALOGUE_NL
-	.text "その"
-	DIALOGUE_FONT_1
-	.text "必要"
-	DIALOGUE_FONT_0
-	.text "はなかったみたいだね"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_1
-	.text "無事"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_FONT_2
-	.text "安心"
-	DIALOGUE_FONT_0
-	.text "したよ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "セリス"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "これもみんなセリス"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "のおかげです"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "本当"
-	DIALOGUE_FONT_0
-	.text "にありがとうございました"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "いや､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "北"
-	DIALOGUE_FONT_0
-	.text "トラキアの"
-	DIALOGUE_FONT_1
-	.text "解放"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "自分"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "力"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_FONT_2
-	.text "成"
-	DIALOGUE_FONT_0
-	.text "しとげたのだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "もしていない"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_1
-	.text "北"
-	DIALOGUE_FONT_0
-	.text "トラキアは"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "下"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	.text "一つの"
-	DIALOGUE_FONT_1
-	.text "国"
-	DIALOGUE_FONT_0
-	.text "としてまとまるだろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "その"
-	DIALOGUE_FONT_1
-	.text "豊"
-	DIALOGUE_FONT_0
-	.text "かで"
-	DIALOGUE_FONT_1
-	.text "大"
-	DIALOGUE_FONT_0
-	.text "きな"
-	DIALOGUE_FONT_1
-	.text "国"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "相"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "ってくれるとしたら"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "たち"
-	DIALOGUE_FONT_1
-	.text "解放軍"
-	DIALOGUE_FONT_0
-	.text "にとって"
-	DIALOGUE_NL
-	.text "これほど"
-	DIALOGUE_FONT_2
-	.text "心強"
-	DIALOGUE_FONT_0
-	.text "いことはない"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "これからも"
-	DIALOGUE_FONT_2
-	.text "共"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "進"
-	DIALOGUE_FONT_0
-	.text "んでもらえるだろうか"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "たちのなすべきことはまだまだ"
-	DIALOGUE_FONT_1
-	.text "多"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "きっと"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "多"
-	DIALOGUE_FONT_0
-	.text "くの"
-	DIALOGUE_FONT_4
-	.text "困"
-	DIALOGUE_FONT_2
-	.text "難"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "ち"
-	DIALOGUE_FONT_2
-	.text "受"
-	DIALOGUE_FONT_0
-	.text "けているだろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "でも"
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "と二"
-	DIALOGUE_FONT_1
-	.text "人"
-	DIALOGUE_FONT_0
-	.text "なら"
-	DIALOGUE_NL
-	DIALOGUE_FONT_3
-	.text "乗"
-	DIALOGUE_FONT_0
-	.text "りこえて"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "けると"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "う"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "かつて"
-	DIALOGUE_FONT_1
-	.text "父上"
-	DIALOGUE_FONT_0
-	.text "たちがそうであったように"
-	DIALOGUE_NL
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "たちも"
-	DIALOGUE_FONT_2
-	.text "生死"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "分"
-	DIALOGUE_FONT_0
-	.text "かち"
-	DIALOGUE_FONT_1
-	.text "合"
-	DIALOGUE_FONT_0
-	.text "える"
-	DIALOGUE_FONT_3
-	.text "友"
-	DIALOGUE_FONT_0
-	.text "として"
-	DIALOGUE_NL
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_3
-	.text "涯変"
-	DIALOGUE_FONT_0
-	.text "わらぬ"
-	DIALOGUE_FONT_3
-	.text "友情"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_4
-	.text "誓"
-	DIALOGUE_FONT_0
-	.text "いたいんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "はい！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "はセリス"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "兄"
-	DIALOGUE_FONT_0
-	.text "とも"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "っています"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "セリス"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "のお"
-	DIALOGUE_FONT_1
-	.text "力"
-	DIALOGUE_FONT_0
-	.text "になれるのなら"
-	DIALOGUE_NL
-	.text "これほどうれしいことはありません"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ではこの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_4
-	.text "誓"
-	DIALOGUE_FONT_0
-	.text "おう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "たちは"
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_0
-	.text "まれたときこそちがうが"
-	DIALOGUE_NL
-	DIALOGUE_FONT_2
-	.text "死"
-	DIALOGUE_FONT_0
-	.text "ぬときは一"
-	DIALOGUE_FONT_2
-	.text "緒"
-	DIALOGUE_FONT_0
-	.text "だ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_3
-	.text "友"
-	DIALOGUE_FONT_0
-	.text "として､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "兄"
-	DIALOGUE_FONT_1
-	.text "弟"
-	DIALOGUE_FONT_0
-	.text "として"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ともに"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "取"
-	DIALOGUE_FONT_0
-	.text "り"
-	DIALOGUE_FONT_1
-	.text "合"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_NL
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "世"
-	DIALOGUE_FONT_2
-	.text "界"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "救"
-	DIALOGUE_FONT_0
-	.text "うと"
-	DIALOGUE_FONT_4
-	.text "誓"
-	DIALOGUE_FONT_0
-	.text "おう！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "はい！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "セリス"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "！！･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "セリス"
+  DIALOGUE_FONT_1
+  .text "公子"
+  DIALOGUE_FONT_0
+  .text "がお"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "えになりました"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD SeliphPortrait
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "応"
+  DIALOGUE_FONT_1
+  .text "援"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "たのだけど"
+  DIALOGUE_NL
+  .text "その"
+  DIALOGUE_FONT_1
+  .text "必要"
+  DIALOGUE_FONT_0
+  .text "はなかったみたいだね"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_1
+  .text "無事"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_FONT_2
+  .text "安心"
+  DIALOGUE_FONT_0
+  .text "したよ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "セリス"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "これもみんなセリス"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "のおかげです"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "本当"
+  DIALOGUE_FONT_0
+  .text "にありがとうございました"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "いや､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "北"
+  DIALOGUE_FONT_0
+  .text "トラキアの"
+  DIALOGUE_FONT_1
+  .text "解放"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "自分"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "力"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_FONT_2
+  .text "成"
+  DIALOGUE_FONT_0
+  .text "しとげたのだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "もしていない"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_1
+  .text "北"
+  DIALOGUE_FONT_0
+  .text "トラキアは"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "下"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  .text "一つの"
+  DIALOGUE_FONT_1
+  .text "国"
+  DIALOGUE_FONT_0
+  .text "としてまとまるだろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "その"
+  DIALOGUE_FONT_1
+  .text "豊"
+  DIALOGUE_FONT_0
+  .text "かで"
+  DIALOGUE_FONT_1
+  .text "大"
+  DIALOGUE_FONT_0
+  .text "きな"
+  DIALOGUE_FONT_1
+  .text "国"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "相"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "ってくれるとしたら"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "たち"
+  DIALOGUE_FONT_1
+  .text "解放軍"
+  DIALOGUE_FONT_0
+  .text "にとって"
+  DIALOGUE_NL
+  .text "これほど"
+  DIALOGUE_FONT_2
+  .text "心強"
+  DIALOGUE_FONT_0
+  .text "いことはない"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "これからも"
+  DIALOGUE_FONT_2
+  .text "共"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "進"
+  DIALOGUE_FONT_0
+  .text "んでもらえるだろうか"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "たちのなすべきことはまだまだ"
+  DIALOGUE_FONT_1
+  .text "多"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "きっと"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "多"
+  DIALOGUE_FONT_0
+  .text "くの"
+  DIALOGUE_FONT_4
+  .text "困"
+  DIALOGUE_FONT_2
+  .text "難"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "ち"
+  DIALOGUE_FONT_2
+  .text "受"
+  DIALOGUE_FONT_0
+  .text "けているだろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "でも"
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "と二"
+  DIALOGUE_FONT_1
+  .text "人"
+  DIALOGUE_FONT_0
+  .text "なら"
+  DIALOGUE_NL
+  DIALOGUE_FONT_3
+  .text "乗"
+  DIALOGUE_FONT_0
+  .text "りこえて"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "けると"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "う"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "かつて"
+  DIALOGUE_FONT_1
+  .text "父上"
+  DIALOGUE_FONT_0
+  .text "たちがそうであったように"
+  DIALOGUE_NL
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "たちも"
+  DIALOGUE_FONT_2
+  .text "生死"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "分"
+  DIALOGUE_FONT_0
+  .text "かち"
+  DIALOGUE_FONT_1
+  .text "合"
+  DIALOGUE_FONT_0
+  .text "える"
+  DIALOGUE_FONT_3
+  .text "友"
+  DIALOGUE_FONT_0
+  .text "として"
+  DIALOGUE_NL
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_3
+  .text "涯変"
+  DIALOGUE_FONT_0
+  .text "わらぬ"
+  DIALOGUE_FONT_3
+  .text "友情"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_4
+  .text "誓"
+  DIALOGUE_FONT_0
+  .text "いたいんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "はい！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "はセリス"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "兄"
+  DIALOGUE_FONT_0
+  .text "とも"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "っています"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "セリス"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "のお"
+  DIALOGUE_FONT_1
+  .text "力"
+  DIALOGUE_FONT_0
+  .text "になれるのなら"
+  DIALOGUE_NL
+  .text "これほどうれしいことはありません"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ではこの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_4
+  .text "誓"
+  DIALOGUE_FONT_0
+  .text "おう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "たちは"
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_0
+  .text "まれたときこそちがうが"
+  DIALOGUE_NL
+  DIALOGUE_FONT_2
+  .text "死"
+  DIALOGUE_FONT_0
+  .text "ぬときは一"
+  DIALOGUE_FONT_2
+  .text "緒"
+  DIALOGUE_FONT_0
+  .text "だ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_3
+  .text "友"
+  DIALOGUE_FONT_0
+  .text "として､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "兄"
+  DIALOGUE_FONT_1
+  .text "弟"
+  DIALOGUE_FONT_0
+  .text "として"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ともに"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "取"
+  DIALOGUE_FONT_0
+  .text "り"
+  DIALOGUE_FONT_1
+  .text "合"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_NL
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "世"
+  DIALOGUE_FONT_2
+  .text "界"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "救"
+  DIALOGUE_FONT_0
+  .text "うと"
+  DIALOGUE_FONT_4
+  .text "誓"
+  DIALOGUE_FONT_0
+  .text "おう！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "はい！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "セリス"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "！！･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

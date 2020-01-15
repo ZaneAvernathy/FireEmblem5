@@ -1,21 +1,21 @@
 dialogueChapter2UnusedJabalPlaceholder ; 95/BB97
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AnnaPortrait
-	DIALOGUE_FONT_1
-	.text "元"
-	DIALOGUE_FONT_0
-	.text "メッセージ｢ジャバルＮ"
-	DIALOGUE_FONT_1
-	.text "場"
-	DIALOGUE_FONT_0
-	.text "｣です"
-	DIALOGUE_NL
-	.text "このメッセージは"
-	DIALOGUE_FONT_1
-	.text "使用"
-	DIALOGUE_FONT_0
-	.text "しないことに"
-	DIALOGUE_NL
-	.text "なりました"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AnnaPortrait
+  DIALOGUE_FONT_1
+  .text "元"
+  DIALOGUE_FONT_0
+  .text "メッセージ｢ジャバルＮ"
+  DIALOGUE_FONT_1
+  .text "場"
+  DIALOGUE_FONT_0
+  .text "｣です"
+  DIALOGUE_NL
+  .text "このメッセージは"
+  DIALOGUE_FONT_1
+  .text "使用"
+  DIALOGUE_FONT_0
+  .text "しないことに"
+  DIALOGUE_NL
+  .text "なりました"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

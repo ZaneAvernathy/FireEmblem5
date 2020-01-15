@@ -1,76 +1,76 @@
 dialogueChapter5Opening2 ; 93/8D9C
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD EyvelPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD RaydrikPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "もっとも"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ワシの"
-	DIALOGUE_FONT_1
-	.text "剣閾士"
-	DIALOGUE_FONT_0
-	.text "たちを"
-	DIALOGUE_FONT_2
-	.text "倒"
-	DIALOGUE_FONT_0
-	.text "せたらの"
-	DIALOGUE_FONT_1
-	.text "話"
-	DIALOGUE_FONT_0
-	.text "だがな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･････"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "どうした､"
-	DIALOGUE_PAUSE $08
-	.text "ほれ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "剣閾士"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_3
-	.text "迫"
-	DIALOGUE_FONT_0
-	.text "ってきておるぞ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD NannaPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "エーヴェル･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "ナンナ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "下"
-	DIALOGUE_FONT_0
-	.text "がってください"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "危険"
-	DIALOGUE_FONT_0
-	.text "です！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD EyvelPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD RaydrikPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "もっとも"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ワシの"
+  DIALOGUE_FONT_1
+  .text "剣閾士"
+  DIALOGUE_FONT_0
+  .text "たちを"
+  DIALOGUE_FONT_2
+  .text "倒"
+  DIALOGUE_FONT_0
+  .text "せたらの"
+  DIALOGUE_FONT_1
+  .text "話"
+  DIALOGUE_FONT_0
+  .text "だがな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･････"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "どうした､"
+  DIALOGUE_PAUSE $08
+  .text "ほれ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "剣閾士"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_3
+  .text "迫"
+  DIALOGUE_FONT_0
+  .text "ってきておるぞ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD NannaPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "エーヴェル･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "ナンナ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "下"
+  DIALOGUE_FONT_0
+  .text "がってください"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "危険"
+  DIALOGUE_FONT_0
+  .text "です！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

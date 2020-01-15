@@ -1,67 +1,67 @@
 dialogueChapter20PlayerLoss ; 92/FB2E
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "玉座"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "フリージの"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "落"
-	DIALOGUE_FONT_0
-	.text "ちましたぞ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "これを"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "た"
-	DIALOGUE_FONT_2
-	.text "味"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_FONT_4
-	.text "次"
-	DIALOGUE_FONT_1
-	.text "々"
-	DIALOGUE_FONT_0
-	.text "と"
-	DIALOGUE_FONT_2
-	.text "逃"
-	DIALOGUE_FONT_0
-	.text "げ"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "しています！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "われらの"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いもここまでですな･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "玉座"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "フリージの"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "落"
+  DIALOGUE_FONT_0
+  .text "ちましたぞ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "これを"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "た"
+  DIALOGUE_FONT_2
+  .text "味"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_FONT_4
+  .text "次"
+  DIALOGUE_FONT_1
+  .text "々"
+  DIALOGUE_FONT_0
+  .text "と"
+  DIALOGUE_FONT_2
+  .text "逃"
+  DIALOGUE_FONT_0
+  .text "げ"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "しています！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "われらの"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いもここまでですな･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

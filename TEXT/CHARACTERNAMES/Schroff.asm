@@ -1,4 +1,4 @@
 
 menutextSchroffName ; 86/DE73
-	.enc "MenuText"
-	.text "スルーフ\n"
+  .enc "MenuText"
+  .text "スルーフ\n"

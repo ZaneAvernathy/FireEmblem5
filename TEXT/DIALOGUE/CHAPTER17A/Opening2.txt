@@ -1,172 +1,172 @@
 dialogueChapter17AOpening2 ; 98/B868
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD Leif2Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	.text "これはいけませんな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "陣形"
-	DIALOGUE_FONT_0
-	.text "には一"
-	DIALOGUE_FONT_1
-	.text "分"
-	DIALOGUE_FONT_0
-	.text "のスキもありません"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "どういうことだ？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_4
-	.text "問題"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "北西"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_3
-	.text "陣"
-	DIALOGUE_FONT_0
-	.text "をしくシレジアの"
-	DIALOGUE_FONT_1
-	.text "傭兵軍"
-	DIALOGUE_FONT_0
-	.text "です"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "もしわれらが"
-	DIALOGUE_FONT_1
-	.text "城"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "向"
-	DIALOGUE_FONT_0
-	.text "かうとすれば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "背"
-	DIALOGUE_FONT_1
-	.text "後"
-	DIALOGUE_FONT_0
-	.text "からおそわれることになります"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "分"
-	DIALOGUE_FONT_0
-	.text "けて"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "彼"
-	DIALOGUE_FONT_0
-	.text "らに"
-	DIALOGUE_FONT_2
-	.text "当"
-	DIALOGUE_FONT_0
-	.text "たらせてはどうなんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "すでに､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "半数"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "後方"
-	DIALOGUE_FONT_0
-	.text "にいるラインハルト"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "対"
-	DIALOGUE_FONT_0
-	.text "する"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "守"
-	DIALOGUE_FONT_0
-	.text "りとしておいてきました"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "これ"
-	DIALOGUE_FONT_1
-	.text "以上兵"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "分"
-	DIALOGUE_FONT_0
-	.text "けるのは"
-	DIALOGUE_NL
-	DIALOGUE_FONT_3
-	.text "得"
-	DIALOGUE_FONT_5
-	.text "笨"
-	DIALOGUE_FONT_0
-	.text "ではありません"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "では､"
-	DIALOGUE_PAUSE $08
-	.text "どうする？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "シレジアの"
-	DIALOGUE_FONT_1
-	.text "傭兵軍"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "どのていどの"
-	DIALOGUE_FONT_1
-	.text "戦意"
-	DIALOGUE_FONT_0
-	.text "があるのか･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "それが"
-	DIALOGUE_FONT_4
-	.text "問題"
-	DIALOGUE_FONT_0
-	.text "ですな･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD Leif2Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  .text "これはいけませんな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "陣形"
+  DIALOGUE_FONT_0
+  .text "には一"
+  DIALOGUE_FONT_1
+  .text "分"
+  DIALOGUE_FONT_0
+  .text "のスキもありません"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "どういうことだ？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_4
+  .text "問題"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "北西"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_3
+  .text "陣"
+  DIALOGUE_FONT_0
+  .text "をしくシレジアの"
+  DIALOGUE_FONT_1
+  .text "傭兵軍"
+  DIALOGUE_FONT_0
+  .text "です"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "もしわれらが"
+  DIALOGUE_FONT_1
+  .text "城"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "向"
+  DIALOGUE_FONT_0
+  .text "かうとすれば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "背"
+  DIALOGUE_FONT_1
+  .text "後"
+  DIALOGUE_FONT_0
+  .text "からおそわれることになります"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "分"
+  DIALOGUE_FONT_0
+  .text "けて"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "彼"
+  DIALOGUE_FONT_0
+  .text "らに"
+  DIALOGUE_FONT_2
+  .text "当"
+  DIALOGUE_FONT_0
+  .text "たらせてはどうなんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "すでに､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "半数"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "後方"
+  DIALOGUE_FONT_0
+  .text "にいるラインハルト"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "対"
+  DIALOGUE_FONT_0
+  .text "する"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "守"
+  DIALOGUE_FONT_0
+  .text "りとしておいてきました"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "これ"
+  DIALOGUE_FONT_1
+  .text "以上兵"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "分"
+  DIALOGUE_FONT_0
+  .text "けるのは"
+  DIALOGUE_NL
+  DIALOGUE_FONT_3
+  .text "得"
+  DIALOGUE_FONT_5
+  .text "笨"
+  DIALOGUE_FONT_0
+  .text "ではありません"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "では､"
+  DIALOGUE_PAUSE $08
+  .text "どうする？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "シレジアの"
+  DIALOGUE_FONT_1
+  .text "傭兵軍"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "どのていどの"
+  DIALOGUE_FONT_1
+  .text "戦意"
+  DIALOGUE_FONT_0
+  .text "があるのか･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "それが"
+  DIALOGUE_FONT_4
+  .text "問題"
+  DIALOGUE_FONT_0
+  .text "ですな･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

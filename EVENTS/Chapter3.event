@@ -1,732 +1,732 @@
 
 eventChapter3Events ; 8C/E435
 
-	_OpeningEventDefinitions ; 8C/E435
-		EVENT FlagAlwaysZero, _OpeningEvent
-			CMP_WORD wCurrentTurn, 0
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TurnEventDefinitions ; 8C/E442
-		EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
-			CHECK_DEAD Lobos
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _Brigand1Reinforcements
-			CMP_WORD_RANGE wCurrentTurn, 10, 16
-			CMP_WORD wCurrentPhase, Enemy
-			ROLL_RNG 60
-			TEST_FLAG_UNSET FlagBossDeath
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _Brigand2Reinforcements
-			CMP_WORD_RANGE wCurrentTurn, 10, 16
-			CMP_WORD wCurrentPhase, Enemy
-			ROLL_RNG 60
-			TEST_FLAG_UNSET FlagBossDeath
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _SoldierReinforcements
-			CMP_WORD_RANGE wCurrentTurn, 14, 16
-			CMP_WORD wCurrentPhase, Enemy
-			ROLL_RNG 75
-			TEST_FLAG_UNSET FlagBossDeath
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _ArmorReinforcements
-			CMP_WORD_RANGE wCurrentTurn, 11, 17
-			CMP_WORD wCurrentPhase, Enemy
-			ROLL_RNG 50
-			TEST_FLAG_UNSET $02
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TalkEventDefinitions ; 8C/E4AE
-	END_DEFINITION_ARRAY
-
-	_LocationEventDefinitions ; 8C/E4B0
-		EVENT $2B, _CairpreHouseDestroy
-			macroEventConditionCheckCoords [23, 22]
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT $2E, _CairpreHouseCairpre
-			CMP_WORD wCurrentPhase, Player
-			CHECK_CARRYING Cairpre
-			macroEventConditionCheckCoords [23, 22]
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _CairpreHouseOther
-			CMP_WORD wCurrentPhase, Player
-			TEST_FLAG_UNSET $2E
-			macroEventConditionCheckCoords [23, 22]
-		END_DEFINITION
-		EVENT $2C, _LuciaHouseDestroy
-			macroEventConditionCheckCoords [20, 27]
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT $2F, _LuciaHouseLucia
-			CMP_WORD wCurrentPhase, Player
-			CHECK_CARRYING Lucia
-			macroEventConditionCheckCoords [20, 27]
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _LuciaHouseOther
-			CMP_WORD wCurrentPhase, Player
-			TEST_FLAG_UNSET $2F
-			macroEventConditionCheckCoords [20, 27]
-		END_DEFINITION
-		EVENT $2A, _RomeoHouseDestroy
-			macroEventConditionCheckCoords [20, 22]
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT $30, _RomeoHouseRomeo
-			CMP_WORD wCurrentPhase, Player
-			CHECK_CARRYING Romeo
-			macroEventConditionCheckCoords [20, 22]
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _RomeoHouseOther
-			CMP_WORD wCurrentPhase, Player
-			TEST_FLAG_UNSET $30
-			macroEventConditionCheckCoords [20, 22]
-		END_DEFINITION
-		EVENT $2D, _HubertHouseDestroy
-			macroEventConditionCheckCoords [23, 27]
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT $31, _HubertHouseHubert
-			CMP_WORD wCurrentPhase, Player
-			CHECK_CARRYING Hubert
-			macroEventConditionCheckCoords [23, 27]
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _HubertHouseOther
-			CMP_WORD wCurrentPhase, Player
-			TEST_FLAG_UNSET $31
-			macroEventConditionCheckCoords [23, 27]
-		END_DEFINITION
-		macroDoorDefinition $21, [12, 11], eventChapter3Events._Door1
-		macroDoorDefinition $22, [13, 9], eventChapter3Events._Door2
-		macroDoorDefinition $23, [16, 8], eventChapter3Events._Door3
-		macroDoorDefinition $24, [22, 8], eventChapter3Events._Door4
-		macroDoorDefinition $25, [22, 4], eventChapter3Events._Door5
-		macroDoorDefinition $26, [2, 4], eventChapter3Events._Door6
-		macroDoorDefinition $27, [2, 8], eventChapter3Events._Door7
-		macroDoorDefinition $32, [9, 1], eventChapter3Events._Door8
-		macroDoorDefinition $33, [15, 1], eventChapter3Events._Door9
-		macroChestDefinition $28, eventChapter3Data._Chest1Events, eventChapter3Data._Chest1Coordinates
-		macroChestDefinition $29, eventChapter3Data._Chest2Events, eventChapter3Data._Chest2Coordinates
-		EVENT FlagAlwaysZero, _EndingEvent
-			macroEventConditionCheckCoords [12, 4]
-			CMP_WORD wCurrentPhase, Player
-			CMP_WORD aSelectedCharacterBuffer.Character, Leif
-		END_DEFINITION
-	END_DEFINITION_ARRAY
+  _OpeningEventDefinitions ; 8C/E435
+    EVENT FlagAlwaysZero, _OpeningEvent
+      CMP_WORD wCurrentTurn, 0
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TurnEventDefinitions ; 8C/E442
+    EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+      CHECK_DEAD Lobos
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _Brigand1Reinforcements
+      CMP_WORD_RANGE wCurrentTurn, 10, 16
+      CMP_WORD wCurrentPhase, Enemy
+      ROLL_RNG 60
+      TEST_FLAG_UNSET FlagBossDeath
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _Brigand2Reinforcements
+      CMP_WORD_RANGE wCurrentTurn, 10, 16
+      CMP_WORD wCurrentPhase, Enemy
+      ROLL_RNG 60
+      TEST_FLAG_UNSET FlagBossDeath
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _SoldierReinforcements
+      CMP_WORD_RANGE wCurrentTurn, 14, 16
+      CMP_WORD wCurrentPhase, Enemy
+      ROLL_RNG 75
+      TEST_FLAG_UNSET FlagBossDeath
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _ArmorReinforcements
+      CMP_WORD_RANGE wCurrentTurn, 11, 17
+      CMP_WORD wCurrentPhase, Enemy
+      ROLL_RNG 50
+      TEST_FLAG_UNSET $02
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TalkEventDefinitions ; 8C/E4AE
+  END_DEFINITION_ARRAY
+
+  _LocationEventDefinitions ; 8C/E4B0
+    EVENT $2B, _CairpreHouseDestroy
+      macroEventConditionCheckCoords [23, 22]
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT $2E, _CairpreHouseCairpre
+      CMP_WORD wCurrentPhase, Player
+      CHECK_CARRYING Cairpre
+      macroEventConditionCheckCoords [23, 22]
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _CairpreHouseOther
+      CMP_WORD wCurrentPhase, Player
+      TEST_FLAG_UNSET $2E
+      macroEventConditionCheckCoords [23, 22]
+    END_DEFINITION
+    EVENT $2C, _LuciaHouseDestroy
+      macroEventConditionCheckCoords [20, 27]
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT $2F, _LuciaHouseLucia
+      CMP_WORD wCurrentPhase, Player
+      CHECK_CARRYING Lucia
+      macroEventConditionCheckCoords [20, 27]
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _LuciaHouseOther
+      CMP_WORD wCurrentPhase, Player
+      TEST_FLAG_UNSET $2F
+      macroEventConditionCheckCoords [20, 27]
+    END_DEFINITION
+    EVENT $2A, _RomeoHouseDestroy
+      macroEventConditionCheckCoords [20, 22]
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT $30, _RomeoHouseRomeo
+      CMP_WORD wCurrentPhase, Player
+      CHECK_CARRYING Romeo
+      macroEventConditionCheckCoords [20, 22]
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _RomeoHouseOther
+      CMP_WORD wCurrentPhase, Player
+      TEST_FLAG_UNSET $30
+      macroEventConditionCheckCoords [20, 22]
+    END_DEFINITION
+    EVENT $2D, _HubertHouseDestroy
+      macroEventConditionCheckCoords [23, 27]
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT $31, _HubertHouseHubert
+      CMP_WORD wCurrentPhase, Player
+      CHECK_CARRYING Hubert
+      macroEventConditionCheckCoords [23, 27]
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _HubertHouseOther
+      CMP_WORD wCurrentPhase, Player
+      TEST_FLAG_UNSET $31
+      macroEventConditionCheckCoords [23, 27]
+    END_DEFINITION
+    macroDoorDefinition $21, [12, 11], eventChapter3Events._Door1
+    macroDoorDefinition $22, [13, 9], eventChapter3Events._Door2
+    macroDoorDefinition $23, [16, 8], eventChapter3Events._Door3
+    macroDoorDefinition $24, [22, 8], eventChapter3Events._Door4
+    macroDoorDefinition $25, [22, 4], eventChapter3Events._Door5
+    macroDoorDefinition $26, [2, 4], eventChapter3Events._Door6
+    macroDoorDefinition $27, [2, 8], eventChapter3Events._Door7
+    macroDoorDefinition $32, [9, 1], eventChapter3Events._Door8
+    macroDoorDefinition $33, [15, 1], eventChapter3Events._Door9
+    macroChestDefinition $28, eventChapter3Data._Chest1Events, eventChapter3Data._Chest1Coordinates
+    macroChestDefinition $29, eventChapter3Data._Chest2Events, eventChapter3Data._Chest2Coordinates
+    EVENT FlagAlwaysZero, _EndingEvent
+      macroEventConditionCheckCoords [12, 4]
+      CMP_WORD wCurrentPhase, Player
+      CMP_WORD aSelectedCharacterBuffer.Character, Leif
+    END_DEFINITION
+  END_DEFINITION_ARRAY
 
-	_BeforeActionEventDefinitions ; 8C/E68A
-	END_DEFINITION_ARRAY
+  _BeforeActionEventDefinitions ; 8C/E68A
+  END_DEFINITION_ARRAY
 
-	_AfterActionEventDefinitions ; 8C/E68C
-	END_DEFINITION_ARRAY
+  _AfterActionEventDefinitions ; 8C/E68C
+  END_DEFINITION_ARRAY
 
-	_BattleEventDefinitions ; 8C/E68E
-		macroBossQuoteDefinition $06, Lobos
-	END_DEFINITION_ARRAY
+  _BattleEventDefinitions ; 8C/E68E
+    macroBossQuoteDefinition $06, Lobos
+  END_DEFINITION_ARRAY
 
-	_ShopEventDefinitions ; 8C/E698
-		macroShopDefinition eventChapter3Data._Vendor
-	END_DEFINITION_ARRAY
+  _ShopEventDefinitions ; 8C/E698
+    macroShopDefinition eventChapter3Data._Vendor
+  END_DEFINITION_ARRAY
 
-	_Brigand1Reinforcements ; 8C/E6AD
-		SCROLL_CAMERA_ADDRESS eventChapter3Data._Brigand1ReinforcementsCameraCoordinates
-		YIELD
+  _Brigand1Reinforcements ; 8C/E6AD
+    SCROLL_CAMERA_ADDRESS eventChapter3Data._Brigand1ReinforcementsCameraCoordinates
+    YIELD
 
-		LOAD2 eventChapter3Data._Brigand1ReinforcementsGroup1
-		WAIT_MOVE
-		YIELD
+    LOAD2 eventChapter3Data._Brigand1ReinforcementsGroup1
+    WAIT_MOVE
+    YIELD
 
-		YIELD_UNK
+    YIELD_UNK
 
-		LOAD2 eventChapter3Data._Brigand1ReinforcementsGroup2
-		WAIT_MOVE
-		YIELD
-	END2
+    LOAD2 eventChapter3Data._Brigand1ReinforcementsGroup2
+    WAIT_MOVE
+    YIELD
+  END2
 
-	_Brigand2Reinforcements ; 8C/E6C0
-		SCROLL_CAMERA_ADDRESS eventChapter3Data._Brigand2ReinforcementsCameraCoordinates
-		YIELD
+  _Brigand2Reinforcements ; 8C/E6C0
+    SCROLL_CAMERA_ADDRESS eventChapter3Data._Brigand2ReinforcementsCameraCoordinates
+    YIELD
 
-		LOAD2 eventChapter3Data._Brigand2ReinforcementsGroup1
-		WAIT_MOVE
-		YIELD
+    LOAD2 eventChapter3Data._Brigand2ReinforcementsGroup1
+    WAIT_MOVE
+    YIELD
 
-		YIELD_UNK
+    YIELD_UNK
 
-		LOAD2 eventChapter3Data._Brigand2ReinforcementsGroup2
-		WAIT_MOVE
-		YIELD
-	END2
+    LOAD2 eventChapter3Data._Brigand2ReinforcementsGroup2
+    WAIT_MOVE
+    YIELD
+  END2
 
-	_SoldierReinforcements ; 8C/E6D3
-		SCROLL_CAMERA_ADDRESS eventChapter3Data._SoldierReinforcementsCameraCoordinates
-		YIELD
+  _SoldierReinforcements ; 8C/E6D3
+    SCROLL_CAMERA_ADDRESS eventChapter3Data._SoldierReinforcementsCameraCoordinates
+    YIELD
 
-		LOAD2 eventChapter3Data._SoldierReinforcementsGroup
-		WAIT_MOVE
-		YIELD
+    LOAD2 eventChapter3Data._SoldierReinforcementsGroup
+    WAIT_MOVE
+    YIELD
 
-		YIELD_UNK
-	END2
+    YIELD_UNK
+  END2
 
-	_ArmorReinforcements ; 8C/E6E0
-		SCROLL_CAMERA_ADDRESS eventChapter3Data._ArmorReinforcementsCameraCoordinates
-		YIELD
+  _ArmorReinforcements ; 8C/E6E0
+    SCROLL_CAMERA_ADDRESS eventChapter3Data._ArmorReinforcementsCameraCoordinates
+    YIELD
 
-		LOAD2 eventChapter3Data._ArmorReinforcementsGroup
-		WAIT_MOVE
-		YIELD
+    LOAD2 eventChapter3Data._ArmorReinforcementsGroup
+    WAIT_MOVE
+    YIELD
 
-		YIELD_UNK
-	END2
+    YIELD_UNK
+  END2
 
-	_CairpreHouseOther ; 8C/E6ED
-		macroDialogueHouse dialogueChapter3CairpreHouseOther
-	END2
+  _CairpreHouseOther ; 8C/E6ED
+    macroDialogueHouse dialogueChapter3CairpreHouseOther
+  END2
 
-	_CairpreHouseCairpre ; 8C/E6F6
-		PLAY_SOUND_WORD $00F7
+  _CairpreHouseCairpre ; 8C/E6F6
+    PLAY_SOUND_WORD $00F7
 
-		CALL_ASM_SKIPPABLE rlASMCClearActiveUnitRescue, $0000
+    CALL_ASM_SKIPPABLE rlASMCClearActiveUnitRescue, $0000
 
-		macroRemoveUnit Cairpre
+    macroRemoveUnit Cairpre
 
-		ADD_BYTE $7E4976, 1
-		YIELD_UNK
-		YIELD_UNK
+    ADD_BYTE $7E4976, 1
+    YIELD_UNK
+    YIELD_UNK
 
-		DIALOGUE dialogueChapter3CairpreHouseCairpre
-		YIELD
+    DIALOGUE dialogueChapter3CairpreHouseCairpre
+    YIELD
 
-		macroSingleTileChangeByCoordinates [23, 22], $03F0
+    macroSingleTileChangeByCoordinates [23, 22], $03F0
 
-		SET_FLAG FlagCairpreSaved
-	END2
+    SET_FLAG FlagCairpreSaved
+  END2
 
-	_LuciaHouseOther ; 8C/E733
-		macroDialogueHouse dialogueChapter3LuciaHouseOther
-	END2
+  _LuciaHouseOther ; 8C/E733
+    macroDialogueHouse dialogueChapter3LuciaHouseOther
+  END2
 
-	_LuciaHouseLucia ; 8C/E73C
-		PLAY_SOUND_WORD $00F7
+  _LuciaHouseLucia ; 8C/E73C
+    PLAY_SOUND_WORD $00F7
 
-		CALL_ASM_LOOP rlASMCClearActiveUnitRescue, $0000
+    CALL_ASM_LOOP rlASMCClearActiveUnitRescue, $0000
 
-		macroRemoveUnit Lucia
+    macroRemoveUnit Lucia
 
-		ADD_BYTE $7E4976, 1
-		YIELD_UNK
-		YIELD_UNK
+    ADD_BYTE $7E4976, 1
+    YIELD_UNK
+    YIELD_UNK
 
-		DIALOGUE dialogueChapter3LuciaHouseLucia
-		YIELD
+    DIALOGUE dialogueChapter3LuciaHouseLucia
+    YIELD
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
 
-		macroGiveItemToActiveUnit BaldursScroll
+    macroGiveItemToActiveUnit BaldursScroll
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
 
-		macroSingleTileChangeByCoordinates [20, 27], $03F0
-	END2
+    macroSingleTileChangeByCoordinates [20, 27], $03F0
+  END2
 
-	_RomeoHouseOther ; 8C/E7B8
-		macroDialogueHouse dialogueChapter3RomeoHouseOther
-	END2
+  _RomeoHouseOther ; 8C/E7B8
+    macroDialogueHouse dialogueChapter3RomeoHouseOther
+  END2
 
-	_RomeoHouseRomeo ; 8C/E7C1
-		PLAY_SOUND_WORD $00F7
+  _RomeoHouseRomeo ; 8C/E7C1
+    PLAY_SOUND_WORD $00F7
 
-		CALL_ASM_LOOP rlASMCClearActiveUnitRescue, $0000
+    CALL_ASM_LOOP rlASMCClearActiveUnitRescue, $0000
 
-		macroRemoveUnit Romeo
+    macroRemoveUnit Romeo
 
-		ADD_BYTE $7E4976, 1
-		YIELD_UNK
-		YIELD_UNK
+    ADD_BYTE $7E4976, 1
+    YIELD_UNK
+    YIELD_UNK
 
-		DIALOGUE dialogueChapter3RomeoHouseRomeo
-		YIELD
+    DIALOGUE dialogueChapter3RomeoHouseRomeo
+    YIELD
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
 
-		macroGiveItemToActiveUnit ShieldRing
+    macroGiveItemToActiveUnit ShieldRing
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
 
-		macroSingleTileChangeByCoordinates [20, 22], $03F0
-	END2
+    macroSingleTileChangeByCoordinates [20, 22], $03F0
+  END2
 
-	_HubertHouseOther ; 8C/E83D
-		macroDialogueHouse dialogueChapter3HubertHouseOther
-	END2
+  _HubertHouseOther ; 8C/E83D
+    macroDialogueHouse dialogueChapter3HubertHouseOther
+  END2
 
-	_HubertHouseHubert ; 8C/E846
-		PLAY_SOUND_WORD $00F7
+  _HubertHouseHubert ; 8C/E846
+    PLAY_SOUND_WORD $00F7
 
-		CALL_ASM_LOOP rlASMCClearActiveUnitRescue, $0000
+    CALL_ASM_LOOP rlASMCClearActiveUnitRescue, $0000
 
-		macroRemoveUnit Hubert
+    macroRemoveUnit Hubert
 
-		ADD_BYTE $7E4976, 1
-		YIELD_UNK
-		YIELD_UNK
+    ADD_BYTE $7E4976, 1
+    YIELD_UNK
+    YIELD_UNK
 
-		DIALOGUE dialogueChapter3HubertHouseHubert
-		YIELD
+    DIALOGUE dialogueChapter3HubertHouseHubert
+    YIELD
 
-		SET_FLAG FlagHubertSaved
+    SET_FLAG FlagHubertSaved
 
-		macroSingleTileChangeByCoordinates [23, 27], $03F0
-	END2
+    macroSingleTileChangeByCoordinates [23, 27], $03F0
+  END2
 
-	_Door1 ; 8C/E883
-		macroOpenDoorByTileChangeID 0
-	END1
+  _Door1 ; 8C/E883
+    macroOpenDoorByTileChangeID 0
+  END1
 
-	_Door2 ; 8C/E8AE
-		macroOpenDoorByTileChangeID 1
-	END1
+  _Door2 ; 8C/E8AE
+    macroOpenDoorByTileChangeID 1
+  END1
 
-	_Door3 ; 8C/E8D9
-		macroOpenDoorByTileChangeID 2
-	END1
+  _Door3 ; 8C/E8D9
+    macroOpenDoorByTileChangeID 2
+  END1
 
-	_Door4 ; 8C/E904
-		macroOpenDoorByTileChangeID 3
-	END1
+  _Door4 ; 8C/E904
+    macroOpenDoorByTileChangeID 3
+  END1
 
-	_Door5 ; 8C/E92F
-		macroOpenDoorByTileChangeID 4
-	END1
+  _Door5 ; 8C/E92F
+    macroOpenDoorByTileChangeID 4
+  END1
 
-	_Door6 ; 8C/E95A
-		macroOpenDoorByTileChangeID 5
-	END1
+  _Door6 ; 8C/E95A
+    macroOpenDoorByTileChangeID 5
+  END1
 
-	_Door7 ; 8C/E985
-		macroOpenDoorByTileChangeID 6
-	END1
+  _Door7 ; 8C/E985
+    macroOpenDoorByTileChangeID 6
+  END1
 
-	_Door8 ; 8C/E9B0
-		macroOpenDoorByTileChangeID 13
-	END1
+  _Door8 ; 8C/E9B0
+    macroOpenDoorByTileChangeID 13
+  END1
 
-	_Door9 ; 8C/E9DB
-		macroOpenDoorByTileChangeID 14
-	END1
+  _Door9 ; 8C/E9DB
+    macroOpenDoorByTileChangeID 14
+  END1
 
-	_RomeoHouseDestroy ; 8C/EA06
-		macroDestroyHouseByTileChangeID 9
-	END1
+  _RomeoHouseDestroy ; 8C/EA06
+    macroDestroyHouseByTileChangeID 9
+  END1
 
-	_CairpreHouseDestroy ; 8C/EA35
-		macroDestroyHouseByTileChangeID 10
-	END1
+  _CairpreHouseDestroy ; 8C/EA35
+    macroDestroyHouseByTileChangeID 10
+  END1
 
-	_LuciaHouseDestroy ; 8C/EA64
-		macroDestroyHouseByTileChangeID 11
-	END1
+  _LuciaHouseDestroy ; 8C/EA64
+    macroDestroyHouseByTileChangeID 11
+  END1
 
-	_HubertHouseDestroy ; 8C/EA93
-		macroDestroyHouseByTileChangeID 12
-	END1
+  _HubertHouseDestroy ; 8C/EA93
+    macroDestroyHouseByTileChangeID 12
+  END1
 
-	_PrepGroups ; 8C/EAC2
-	.word $0000
+  _PrepGroups ; 8C/EAC2
+  .word $0000
 
-	_OpeningEvent ; 8C/EAC4
-		CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
+  _OpeningEvent ; 8C/EAC4
+    CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
 
-		STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
+    STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
 
-		SET_CAMERA [13, 8]
-		YIELD
+    SET_CAMERA [13, 8]
+    YIELD
 
-		macroSetAllCharacterTurnStatus (TurnStatusUnknown1 | TurnStatusActing)
+    macroSetAllCharacterTurnStatus (TurnStatusUnknown1 | TurnStatusActing)
 
-		macroUnsetAllCharacterTurnStatus (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved)
+    macroUnsetAllCharacterTurnStatus (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved)
 
-		STORE_WORD lEventEngineUnitGroupPointer, $000002
-		CALL_ASM_LOOP rlASMCGetStartingPositionsArrayPointerAndLength, $0000
+    STORE_WORD lEventEngineUnitGroupPointer, $000002
+    CALL_ASM_LOOP rlASMCGetStartingPositionsArrayPointerAndLength, $0000
 
-		CALL_ASM_LOOP rlASMCLoadPlayerUnitsByStartingPositions, $0000
+    CALL_ASM_LOOP rlASMCLoadPlayerUnitsByStartingPositions, $0000
 
-		LOAD1 eventChapter3Data._NPCGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter3Data._NPCGroup
+    WAIT_MOVE
+    YIELD
 
-		LOAD1 eventChapter3Data._BossesGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter3Data._BossesGroup
+    WAIT_MOVE
+    YIELD
 
-		LOAD1 eventChapter3Data._BishopGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter3Data._BishopGroup
+    WAIT_MOVE
+    YIELD
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		FADE_IN $02
+    FADE_IN $02
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $39
-		YIELD
+    SET_MUSIC $39
+    YIELD
 
-		macroChapterTitlePopup dialogueChapter3Title
+    macroChapterTitlePopup dialogueChapter3Title
 
-		SCROLL_CAMERA_SPEED [8, 7], 4
-		YIELD
+    SCROLL_CAMERA_SPEED [8, 7], 4
+    YIELD
 
-		MOVE_UNIT Raydrik, [0, 0], [12, 12], 1, None
-		YIELD_UNK
+    MOVE_UNIT Raydrik, [0, 0], [12, 12], 1, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		SCROLL_CAMERA_SPEED [12, 9], 4
+    SCROLL_CAMERA_SPEED [12, 9], 4
 
-		macroOpenDoorByTileChangeID 0
+    macroOpenDoorByTileChangeID 0
 
-		MOVE_UNIT Raydrik, [0, 0], [11, 11], 1, _RaydrikMovestring1
-		YIELD_UNK
+    MOVE_UNIT Raydrik, [0, 0], [11, 11], 1, _RaydrikMovestring1
+    YIELD_UNK
 
-		MOVE_UNIT Lobos, [0, 0], [13, 5], 1, None
-		YIELD_UNK
+    MOVE_UNIT Lobos, [0, 0], [13, 5], 1, None
+    YIELD_UNK
 
-		PAUSE_SKIPPABLE 64
-		YIELD
+    PAUSE_SKIPPABLE 64
+    YIELD
 
-		macroSingleTileChangeByCoordinates [12, 11], $03A5
+    macroSingleTileChangeByCoordinates [12, 11], $03A5
 
-		PLAY_SOUND_BYTE $6C
-		WAIT_MOVE
-		YIELD
+    PLAY_SOUND_BYTE $6C
+    WAIT_MOVE
+    YIELD
 
-		MOVE_UNIT Lobos, [0, 0], [12, 5], 1, None
-		YIELD_UNK
+    MOVE_UNIT Lobos, [0, 0], [12, 5], 1, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		DIALOGUE dialogueChapter3Opening1
-		YIELD
+    DIALOGUE dialogueChapter3Opening1
+    YIELD
 
-		MOVE_UNIT Raydrik, [0, 0], [15, 1], 1, _RaydrikMovestring2
-		YIELD_UNK
+    MOVE_UNIT Raydrik, [0, 0], [15, 1], 1, _RaydrikMovestring2
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		macroRemoveUnit Raydrik
+    macroRemoveUnit Raydrik
 
-		MOVE_UNIT Lobos, [0, 0], [12, 4], 1, None
-		YIELD_UNK
+    MOVE_UNIT Lobos, [0, 0], [12, 4], 1, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		SCROLL_CAMERA_ADDRESS eventChapter3Data._EnemyGroup1CameraCoordinates
-		YIELD
+    SCROLL_CAMERA_ADDRESS eventChapter3Data._EnemyGroup1CameraCoordinates
+    YIELD
 
-		LOAD1 eventChapter3Data._EnemyGroup1
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter3Data._EnemyGroup1
+    WAIT_MOVE
+    YIELD
 
-		SCROLL_CAMERA_ADDRESS eventChapter3Data._EnemyGroup3CameraCoordinates
-		YIELD
+    SCROLL_CAMERA_ADDRESS eventChapter3Data._EnemyGroup3CameraCoordinates
+    YIELD
 
-		LOAD1 eventChapter3Data._EnemyGroup3
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter3Data._EnemyGroup3
+    WAIT_MOVE
+    YIELD
 
-		SCROLL_CAMERA_ADDRESS eventChapter3Data._EnemyGroup2CameraCoordinates
-		YIELD
+    SCROLL_CAMERA_ADDRESS eventChapter3Data._EnemyGroup2CameraCoordinates
+    YIELD
 
-		LOAD1 eventChapter3Data._EnemyGroup2
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter3Data._EnemyGroup2
+    WAIT_MOVE
+    YIELD
 
-		SCROLL_CAMERA_ADDRESS eventChapter3Data._EnemyGroup4CameraCoordinates
-		YIELD
+    SCROLL_CAMERA_ADDRESS eventChapter3Data._EnemyGroup4CameraCoordinates
+    YIELD
 
-		LOAD1 eventChapter3Data._EnemyGroup4
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter3Data._EnemyGroup4
+    WAIT_MOVE
+    YIELD
 
-		SCROLL_CAMERA_ADDRESS eventChapter3Data._EnemyGroup5CameraCoordinates
-		YIELD
+    SCROLL_CAMERA_ADDRESS eventChapter3Data._EnemyGroup5CameraCoordinates
+    YIELD
 
-		LOAD1 eventChapter3Data._EnemyGroup5
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter3Data._EnemyGroup5
+    WAIT_MOVE
+    YIELD
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $32
-		YIELD
+    SET_MUSIC $32
+    YIELD
 
-		SCROLL_CAMERA_CHAR Leif
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Leif
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter3Opening2
-		YIELD
+    DIALOGUE dialogueChapter3Opening2
+    YIELD
 
-		MOVE_UNIT ThracianBishop, [11, 28], [1, 27], 1, None
-		YIELD_UNK
+    MOVE_UNIT ThracianBishop, [11, 28], [1, 27], 1, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		macroRemoveUnit ThracianBishop
+    macroRemoveUnit ThracianBishop
 
-		MOVE_UNIT ThracianBishop, [11, 28], [11, 27], 1, _BishopMovestring
-		YIELD_UNK
+    MOVE_UNIT ThracianBishop, [11, 28], [11, 27], 1, _BishopMovestring
+    YIELD_UNK
 
-		macroRemoveUnit ThracianBishop
-	END2
+    macroRemoveUnit ThracianBishop
+  END2
 
-	_BishopMovestring ; 8C/EC70
-		MS_MOVE_UP
-	MS_END
+  _BishopMovestring ; 8C/EC70
+    MS_MOVE_UP
+  MS_END
 
-	_RaydrikMovestring1 ; 8C/EC72
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_UP
-	MS_END
+  _RaydrikMovestring1 ; 8C/EC72
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_UP
+  MS_END
 
-	_RaydrikMovestring2 ; 8C/EC85
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-	MS_END
+  _RaydrikMovestring2 ; 8C/EC85
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+  MS_END
 
-	_EndingEvent ; 8C/EC8D
-		STORE_WORD wCurrentMapMusic, $00
+  _EndingEvent ; 8C/EC8D
+    STORE_WORD wCurrentMapMusic, $00
 
-		PAUSE_SKIPPABLE 16
-		YIELD
+    PAUSE_SKIPPABLE 16
+    YIELD
 
-		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
-		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+    CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+    CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
 
-		macroSetCharacterTurnStatus Leif, TurnStatusActing
+    macroSetCharacterTurnStatus Leif, TurnStatusActing
 
-		macroDialogueWithBackground dialogueChapter3Ending1, 1
+    macroDialogueWithBackground dialogueChapter3Ending1, 1
 
-		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
-		YIELD
+    CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+    YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $42
-		YIELD
+    SET_MUSIC $42
+    YIELD
 
-		macroCheckIfRescuedByAllyOrNPC Eyvel
-		JUMP_FALSE +
+    macroCheckIfRescuedByAllyOrNPC Eyvel
+    JUMP_FALSE +
 
-		SCROLL_CAMERA_CHAR Eyvel
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Eyvel
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter3Ending2
-		YIELD
+    DIALOGUE dialogueChapter3Ending2
+    YIELD
 
-		+
-		macroCheckIfRescuedByAllyOrNPC Finn
-		JUMP_FALSE +
+    +
+    macroCheckIfRescuedByAllyOrNPC Finn
+    JUMP_FALSE +
 
-		SCROLL_CAMERA_CHAR Finn
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Finn
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter3Ending3
-		YIELD
+    DIALOGUE dialogueChapter3Ending3
+    YIELD
 
-		+
-		macroCheckIfRescuedByAllyOrNPC Orsin
-		JUMP_FALSE +
+    +
+    macroCheckIfRescuedByAllyOrNPC Orsin
+    JUMP_FALSE +
 
-		SCROLL_CAMERA_CHAR Orsin
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Orsin
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter3Ending4
-		YIELD
+    DIALOGUE dialogueChapter3Ending4
+    YIELD
 
-		+
-		macroCheckIfRescuedByAllyOrNPC Halvan
-		JUMP_FALSE +
+    +
+    macroCheckIfRescuedByAllyOrNPC Halvan
+    JUMP_FALSE +
 
-		SCROLL_CAMERA_CHAR Halvan
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Halvan
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter3Ending5
-		YIELD
+    DIALOGUE dialogueChapter3Ending5
+    YIELD
 
-		+
-		macroCheckIfRescuedByAllyOrNPC Sapphie
-		JUMP_FALSE +
+    +
+    macroCheckIfRescuedByAllyOrNPC Sapphie
+    JUMP_FALSE +
 
-		SCROLL_CAMERA_CHAR Sapphie
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Sapphie
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter3Ending6
-		YIELD
+    DIALOGUE dialogueChapter3Ending6
+    YIELD
 
-		+
-		macroCheckIfRescuedByAllyOrNPC Dagdar
-		JUMP_FALSE +
+    +
+    macroCheckIfRescuedByAllyOrNPC Dagdar
+    JUMP_FALSE +
 
-		SCROLL_CAMERA_CHAR Dagdar
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Dagdar
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter3Ending7
-		YIELD
+    DIALOGUE dialogueChapter3Ending7
+    YIELD
 
-		+
-		PLAY_SOUND_WORD $00E7
+    +
+    PLAY_SOUND_WORD $00E7
 
-		FADE_OUT $01
-		YIELD
+    FADE_OUT $01
+    YIELD
 
-		STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
+    STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
 
-		macroUnsetCharacterTurnStatus Eyvel, TurnStatusCaptured
+    macroUnsetCharacterTurnStatus Eyvel, TurnStatusCaptured
 
-		macroCheckTurnStatusSet Eyvel, TurnStatusCaptured
-		JUMP_TRUE +
+    macroCheckTurnStatusSet Eyvel, TurnStatusCaptured
+    JUMP_TRUE +
 
-		macroClearRescue Eyvel
+    macroClearRescue Eyvel
 
-		macroUnsetCharacterTurnStatus Eyvel, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+    macroUnsetCharacterTurnStatus Eyvel, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Eyvel, (TurnStatusActing | TurnStatusInvisible)
+    macroSetCharacterTurnStatus Eyvel, (TurnStatusActing | TurnStatusInvisible)
 
-		+
-		macroCheckTurnStatusSet Finn, TurnStatusCaptured
-		JUMP_TRUE +
+    +
+    macroCheckTurnStatusSet Finn, TurnStatusCaptured
+    JUMP_TRUE +
 
-		macroClearRescue Finn
+    macroClearRescue Finn
 
-		macroUnsetCharacterTurnStatus Finn, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+    macroUnsetCharacterTurnStatus Finn, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Finn, (TurnStatusActing | TurnStatusInvisible)
+    macroSetCharacterTurnStatus Finn, (TurnStatusActing | TurnStatusInvisible)
 
-		+
-		macroCheckTurnStatusSet Orsin, TurnStatusCaptured
-		JUMP_TRUE +
+    +
+    macroCheckTurnStatusSet Orsin, TurnStatusCaptured
+    JUMP_TRUE +
 
-		macroClearRescue Orsin
+    macroClearRescue Orsin
 
-		macroUnsetCharacterTurnStatus Orsin, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+    macroUnsetCharacterTurnStatus Orsin, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Orsin, (TurnStatusActing | TurnStatusInvisible)
+    macroSetCharacterTurnStatus Orsin, (TurnStatusActing | TurnStatusInvisible)
 
-		+
-		macroCheckTurnStatusSet Halvan, TurnStatusCaptured
-		JUMP_TRUE +
+    +
+    macroCheckTurnStatusSet Halvan, TurnStatusCaptured
+    JUMP_TRUE +
 
-		macroClearRescue Halvan
+    macroClearRescue Halvan
 
-		macroUnsetCharacterTurnStatus Halvan, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+    macroUnsetCharacterTurnStatus Halvan, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Halvan, (TurnStatusActing | TurnStatusInvisible)
+    macroSetCharacterTurnStatus Halvan, (TurnStatusActing | TurnStatusInvisible)
 
-		+
-		macroCheckTurnStatusSet Dagdar, TurnStatusCaptured
-		JUMP_TRUE +
+    +
+    macroCheckTurnStatusSet Dagdar, TurnStatusCaptured
+    JUMP_TRUE +
 
-		macroClearRescue Dagdar
+    macroClearRescue Dagdar
 
-		macroUnsetCharacterTurnStatus Dagdar, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+    macroUnsetCharacterTurnStatus Dagdar, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Dagdar, (TurnStatusActing | TurnStatusInvisible)
+    macroSetCharacterTurnStatus Dagdar, (TurnStatusActing | TurnStatusInvisible)
 
-		+
-		macroCheckTurnStatusSet Marty, TurnStatusCaptured
-		JUMP_TRUE +
+    +
+    macroCheckTurnStatusSet Marty, TurnStatusCaptured
+    JUMP_TRUE +
 
-		macroClearRescue Marty
+    macroClearRescue Marty
 
-		macroUnsetCharacterTurnStatus Marty, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+    macroUnsetCharacterTurnStatus Marty, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Marty, (TurnStatusActing | TurnStatusInvisible)
+    macroSetCharacterTurnStatus Marty, (TurnStatusActing | TurnStatusInvisible)
 
-		+
-		macroCheckTurnStatusSet Ronan, TurnStatusCaptured
-		JUMP_TRUE +
+    +
+    macroCheckTurnStatusSet Ronan, TurnStatusCaptured
+    JUMP_TRUE +
 
-		macroClearRescue Ronan
+    macroClearRescue Ronan
 
-		macroUnsetCharacterTurnStatus Ronan, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+    macroUnsetCharacterTurnStatus Ronan, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Ronan, (TurnStatusActing | TurnStatusInvisible)
+    macroSetCharacterTurnStatus Ronan, (TurnStatusActing | TurnStatusInvisible)
 
-		+
-		macroCheckTurnStatusSet Sapphie, TurnStatusCaptured
-		JUMP_TRUE +
+    +
+    macroCheckTurnStatusSet Sapphie, TurnStatusCaptured
+    JUMP_TRUE +
 
-		macroClearRescue Sapphie
+    macroClearRescue Sapphie
 
-		macroUnsetCharacterTurnStatus Sapphie, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+    macroUnsetCharacterTurnStatus Sapphie, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Sapphie, (TurnStatusActing | TurnStatusInvisible)
+    macroSetCharacterTurnStatus Sapphie, (TurnStatusActing | TurnStatusInvisible)
 
-		+
-		macroCheckTurnStatusSet Tanya, TurnStatusCaptured
-		JUMP_TRUE +
+    +
+    macroCheckTurnStatusSet Tanya, TurnStatusCaptured
+    JUMP_TRUE +
 
-		macroClearRescue Tanya
+    macroClearRescue Tanya
 
-		macroUnsetCharacterTurnStatus Tanya, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+    macroUnsetCharacterTurnStatus Tanya, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
 
-		macroSetCharacterTurnStatus Tanya, (TurnStatusActing | TurnStatusInvisible)
+    macroSetCharacterTurnStatus Tanya, (TurnStatusActing | TurnStatusInvisible)
 
-		+
-		FADE_OUT $01
-		YIELD
+    +
+    FADE_OUT $01
+    YIELD
 
-		CALL_ASM_LOOP rlASMCChapterEnd, $0000
-	END1
+    CALL_ASM_LOOP rlASMCChapterEnd, $0000
+  END1

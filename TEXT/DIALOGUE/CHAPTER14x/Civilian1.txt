@@ -1,16 +1,16 @@
 dialogueChapter14xCivilian1 ; E7/9B84
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan1Portrait
-	DIALOGUE_FONT_0
-	.text "ありがとうよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "このＳドリンクをおいていくから"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "使"
-	DIALOGUE_FONT_0
-	.text "ってやってくれ"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan1Portrait
+  DIALOGUE_FONT_0
+  .text "ありがとうよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "このＳドリンクをおいていくから"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "使"
+  DIALOGUE_FONT_0
+  .text "ってやってくれ"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

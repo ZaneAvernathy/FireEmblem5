@@ -1,4 +1,4 @@
 
 menutextHorseslayerName ; B0/9347
-	.enc "MenuText"
-	.text "ナイトキラー\n"
+  .enc "MenuText"
+  .text "ナイトキラー\n"

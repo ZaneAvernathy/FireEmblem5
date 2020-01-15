@@ -1,74 +1,74 @@
 
 rlGetLeaderString ; 81/E115
 
-	.al
-	.xl
-	.autsiz
-	.databank ?
+  .al
+  .xl
+  .autsiz
+  .databank ?
 
-	; Given a leader in A, return
-	; a pointer to the faction's menutext
-	; in lR18
+  ; Given a leader in A, return
+  ; a pointer to the faction's menutext
+  ; in lR18
 
-	; Inputs:
-	; A: Leader word
+  ; Inputs:
+  ; A: Leader word
 
-	; Outputs:
-	; lR18: pointer to faction text
+  ; Outputs:
+  ; lR18: pointer to faction text
 
-	php
-	phb
+  php
+  phb
 
-	tax
+  tax
 
-	sep #$20
-	lda #$7E
-	pha
-	rep #$20
-	plb
+  sep #$20
+  lda #$7E
+  pha
+  rep #$20
+  plb
 
-	.databank $7E
+  .databank $7E
 
-	; Leader table
+  ; Leader table
 
-	lda #<>$89894E
-	sta lR18
-	lda #>`$89894E
-	sta lR18+1
+  lda #<>$89894E
+  sta lR18
+  lda #>`$89894E
+  sta lR18+1
 
-	txa
+  txa
 
-	sta wR0
-	ldy #$0000
+  sta wR0
+  ldy #$0000
 
-	_Loop
+  _Loop
 
-	; Go through table until the end or leader is found
+  ; Go through table until the end or leader is found
 
-	lda [lR18],y
-	beq _End
+  lda [lR18],y
+  beq _End
 
-	cmp wR0
-	beq _End
+  cmp wR0
+  beq _End
 
-	inc y
-	inc y
-	inc y
-	inc y
-	bra _Loop
+  inc y
+  inc y
+  inc y
+  inc y
+  bra _Loop
 
-	_End
+  _End
 
-	tya
-	clc
-	adc lR18
-	inc a
-	inc a
-	sta lR18
+  tya
+  clc
+  adc lR18
+  inc a
+  inc a
+  sta lR18
 
-	lda [lR18]
-	sta lR18
+  lda [lR18]
+  sta lR18
 
-	plb
-	plp
-	rtl
+  plb
+  plp
+  rtl

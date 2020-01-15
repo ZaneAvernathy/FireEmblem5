@@ -1,26 +1,26 @@
 dialogueMischaReleaseQuote ; 98/CAB6
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "けてくれたことには"
-	DIALOGUE_FONT_2
-	.text "感"
-	DIALOGUE_FONT_4
-	.text "謝"
-	DIALOGUE_FONT_0
-	.text "する"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "だが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "わなければならないのだ"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "けてくれたことには"
+  DIALOGUE_FONT_2
+  .text "感"
+  DIALOGUE_FONT_4
+  .text "謝"
+  DIALOGUE_FONT_0
+  .text "する"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "だが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "わなければならないのだ"
 DIALOGUE_END_SCENE

@@ -1,4 +1,4 @@
 
 menutextSarahName ; 86/DEC3
-	.enc "MenuText"
-	.text "サラ\n"
+  .enc "MenuText"
+  .text "サラ\n"

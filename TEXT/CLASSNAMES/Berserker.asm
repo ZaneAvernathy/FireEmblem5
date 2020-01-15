@@ -1,4 +1,4 @@
 
 menutextBerserkerName ; 89/8330
-	.enc "MenuText"
-	.text "バーサーカー　　\n"
+  .enc "MenuText"
+  .text "バーサーカー　　\n"

@@ -1,5 +1,5 @@
 
 structDecompListEntry .struct
-	Source	.long ?
-	Dest	.long ?
-	.ends
+  Source .long ?
+  Dest   .long ?
+.ends

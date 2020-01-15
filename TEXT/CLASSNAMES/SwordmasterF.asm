@@ -1,4 +1,4 @@
 
 menutextSwordmasterFName ; 89/8876
-	.enc "MenuText"
-	.text "ソードマスター　\n"
+  .enc "MenuText"
+  .text "ソードマスター　\n"

@@ -1,83 +1,83 @@
 dialogueChapter23AlphanTome ; 98/E23E
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD EichmannPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "アルファン"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "つかりましたぞ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD AlphanPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_2
-	.text "本当"
-	DIALOGUE_FONT_0
-	.text "か！"
-	DIALOGUE_PAUSE $10
-	.text "　でかした！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_RIGHT
-	DIALOGUE_UNLOAD
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "ておれ"
-	DIALOGUE_FONT_2
-	.text "反乱"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "め"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "魔法"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "恐"
-	DIALOGUE_FONT_0
-	.text "ろしさを"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "らしてやる！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_UNLOAD
-	DIALOGUE_CLOSE
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD EichmannPortrait
-	DIALOGUE_FONT_0
-	.text "その"
-	DIALOGUE_FONT_1
-	.text "前"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "魔道書"
-	DIALOGUE_FONT_0
-	.text "くらい"
-	DIALOGUE_NL
-	.text "ちゃんと"
-	DIALOGUE_FONT_4
-	.text "片付"
-	DIALOGUE_FONT_0
-	.text "けとけってんだ･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD EichmannPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "アルファン"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "つかりましたぞ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD AlphanPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_2
+  .text "本当"
+  DIALOGUE_FONT_0
+  .text "か！"
+  DIALOGUE_PAUSE $10
+  .text "　でかした！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_RIGHT
+  DIALOGUE_UNLOAD
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "ておれ"
+  DIALOGUE_FONT_2
+  .text "反乱"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "め"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "魔法"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "恐"
+  DIALOGUE_FONT_0
+  .text "ろしさを"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "らしてやる！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_UNLOAD
+  DIALOGUE_CLOSE
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD EichmannPortrait
+  DIALOGUE_FONT_0
+  .text "その"
+  DIALOGUE_FONT_1
+  .text "前"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "魔道書"
+  DIALOGUE_FONT_0
+  .text "くらい"
+  DIALOGUE_NL
+  .text "ちゃんと"
+  DIALOGUE_FONT_4
+  .text "片付"
+  DIALOGUE_FONT_0
+  .text "けとけってんだ･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

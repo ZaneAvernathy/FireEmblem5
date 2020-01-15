@@ -1,13 +1,13 @@
 
 riBRK ; 80/8000
 
-	.autsiz
-	.databank ?
+  .autsiz
+  .databank ?
 
-	; Inputs:
-	; None
+  ; Inputs:
+  ; None
 
-	; Outputs:
-	; None
+  ; Outputs:
+  ; None
 
-	bra riBRK
+  bra riBRK

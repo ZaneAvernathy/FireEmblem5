@@ -1,87 +1,87 @@
 dialogueChapter21xOpening1 ; 95/F72E
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD DvorakPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD ZaummPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_FONT_0
-	.text "もいよいよあぶないか･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･すでに"
-	DIALOGUE_FONT_2
-	.text "反乱"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "制圧"
-	DIALOGUE_FONT_0
-	.text "された"
-	DIALOGUE_NL
-	.text "との"
-	DIALOGUE_FONT_3
-	.text "情報"
-	DIALOGUE_FONT_0
-	.text "もあります"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "うーむ､"
-	DIALOGUE_PAUSE $08
-	.text "となれば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "捕"
-	DIALOGUE_FONT_3
-	.text "虜"
-	DIALOGUE_FONT_5
-	.text "収"
-	DIALOGUE_FONT_4
-	.text "容"
-	DIALOGUE_FONT_2
-	.text "所"
-	DIALOGUE_FONT_0
-	.text "をおそってくるのも"
-	DIALOGUE_NL
-	DIALOGUE_FONT_2
-	.text "時間"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_4
-	.text "問題"
-	DIALOGUE_FONT_0
-	.text "か･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "いざというときは"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "はず"
-	DIALOGUE_FONT_3
-	.text "通"
-	DIALOGUE_FONT_0
-	.text "り･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "分"
-	DIALOGUE_FONT_0
-	.text "かっておるな？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "はっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おまかせください"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD DvorakPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD ZaummPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_FONT_0
+  .text "もいよいよあぶないか･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･すでに"
+  DIALOGUE_FONT_2
+  .text "反乱"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "制圧"
+  DIALOGUE_FONT_0
+  .text "された"
+  DIALOGUE_NL
+  .text "との"
+  DIALOGUE_FONT_3
+  .text "情報"
+  DIALOGUE_FONT_0
+  .text "もあります"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "うーむ､"
+  DIALOGUE_PAUSE $08
+  .text "となれば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "捕"
+  DIALOGUE_FONT_3
+  .text "虜"
+  DIALOGUE_FONT_5
+  .text "収"
+  DIALOGUE_FONT_4
+  .text "容"
+  DIALOGUE_FONT_2
+  .text "所"
+  DIALOGUE_FONT_0
+  .text "をおそってくるのも"
+  DIALOGUE_NL
+  DIALOGUE_FONT_2
+  .text "時間"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_4
+  .text "問題"
+  DIALOGUE_FONT_0
+  .text "か･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "いざというときは"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "はず"
+  DIALOGUE_FONT_3
+  .text "通"
+  DIALOGUE_FONT_0
+  .text "り･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "分"
+  DIALOGUE_FONT_0
+  .text "かっておるな？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "はっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おまかせください"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

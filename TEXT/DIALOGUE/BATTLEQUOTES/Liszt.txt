@@ -1,7 +1,7 @@
 dialogueLisztBattleQuote ; B9/D437
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "くそうっ､"
-	DIALOGUE_PAUSE $10
-	.text "なんということだ！！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "くそうっ､"
+  DIALOGUE_PAUSE $10
+  .text "なんということだ！！"
 DIALOGUE_END_SCENE

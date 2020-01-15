@@ -1,273 +1,273 @@
 dialogueChapter3Opening1 ; 93/8000
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD LobosPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD RaydrikPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ロボス"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_3
-	.text "供"
-	DIALOGUE_FONT_4
-	.text "狩"
-	DIALOGUE_FONT_0
-	.text "りはすすんでおるか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "はっ､"
-	DIALOGUE_PAUSE $08
-	.text "レイドリック"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "このあたりの"
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_0
-	.text "どもたちは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "全"
-	DIALOGUE_FONT_3
-	.text "員"
-	DIALOGUE_FONT_1
-	.text "集"
-	DIALOGUE_FONT_0
-	.text "めおわりました"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "とりあえず"
-	DIALOGUE_FONT_3
-	.text "牢"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "入"
-	DIALOGUE_FONT_0
-	.text "れておりますが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "いかがいたしましょう？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ご"
-	DIALOGUE_FONT_1
-	.text "苦"
-	DIALOGUE_FONT_4
-	.text "労"
-	DIALOGUE_FONT_0
-	.text "だった"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $20
-	.text "ロプト"
-	DIALOGUE_FONT_3
-	.text "教"
-	DIALOGUE_FONT_1
-	.text "団"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_3
-	.text "引"
-	DIALOGUE_FONT_0
-	.text "き"
-	DIALOGUE_FONT_2
-	.text "取"
-	DIALOGUE_FONT_0
-	.text "りにくるまで"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そのままにしておけ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "マギ"
-	DIALOGUE_FONT_1
-	.text "団"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "連"
-	DIALOGUE_FONT_1
-	.text "中"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "取"
-	DIALOGUE_FONT_0
-	.text "り"
-	DIALOGUE_FONT_4
-	.text "返"
-	DIALOGUE_FONT_0
-	.text "しにくるかもしれぬから"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_5
-	.text "警"
-	DIALOGUE_FONT_1
-	.text "備"
-	DIALOGUE_FONT_0
-	.text "はおこたるなよ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "マギ"
-	DIALOGUE_FONT_1
-	.text "団"
-	DIALOGUE_FONT_0
-	.text "？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $20
-	.text "ああ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "マンスターの"
-	DIALOGUE_FONT_2
-	.text "反乱"
-	DIALOGUE_FONT_0
-	.text "グループですな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "やつら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "まだ"
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_0
-	.text "き"
-	DIALOGUE_FONT_2
-	.text "残"
-	DIALOGUE_FONT_0
-	.text "っておるのですか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "一"
-	DIALOGUE_FONT_2
-	.text "度"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_2
-	.text "壊滅"
-	DIALOGUE_FONT_0
-	.text "させたと"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "ったのだが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "最近"
-	DIALOGUE_FONT_0
-	.text "また"
-	DIALOGUE_FONT_1
-	.text "力"
-	DIALOGUE_FONT_0
-	.text "をつけてきた"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "どうやら"
-	DIALOGUE_NL
-	DIALOGUE_FONT_2
-	.text "新"
-	DIALOGUE_FONT_0
-	.text "しいリーダーがあらわれたらしい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $20
-	.text "まったく､"
-	DIALOGUE_PAUSE $08
-	.text "うるさいハエどもだ･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "まったくですな"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	.text "これから"
-	DIALOGUE_NL
-	.text "マンスターに"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "られるのですか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "いや"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "長"
-	DIALOGUE_FONT_1
-	.text "旅"
-	DIALOGUE_FONT_0
-	.text "でつかれたゆえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_0
-	.text "し"
-	DIALOGUE_FONT_1
-	.text "休"
-	DIALOGUE_FONT_0
-	.text "んでいく"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "この"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "難"
-	DIALOGUE_FONT_1
-	.text "攻"
-	DIALOGUE_FONT_2
-	.text "不落"
-	DIALOGUE_FONT_0
-	.text "のケルベス"
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_FONT_0
-	.text "なら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "落"
-	DIALOGUE_FONT_0
-	.text "ち"
-	DIALOGUE_FONT_2
-	.text "着"
-	DIALOGUE_FONT_0
-	.text "いてねむれるというものだ"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	.text "ロボス､"
-	DIALOGUE_PAUSE $08
-	.text "あとはたのんだぞ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "はっ､"
-	DIALOGUE_PAUSE $10
-	.text "おまかせを！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD LobosPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD RaydrikPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ロボス"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_3
+  .text "供"
+  DIALOGUE_FONT_4
+  .text "狩"
+  DIALOGUE_FONT_0
+  .text "りはすすんでおるか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "はっ､"
+  DIALOGUE_PAUSE $08
+  .text "レイドリック"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "このあたりの"
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_0
+  .text "どもたちは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "全"
+  DIALOGUE_FONT_3
+  .text "員"
+  DIALOGUE_FONT_1
+  .text "集"
+  DIALOGUE_FONT_0
+  .text "めおわりました"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "とりあえず"
+  DIALOGUE_FONT_3
+  .text "牢"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "入"
+  DIALOGUE_FONT_0
+  .text "れておりますが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "いかがいたしましょう？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ご"
+  DIALOGUE_FONT_1
+  .text "苦"
+  DIALOGUE_FONT_4
+  .text "労"
+  DIALOGUE_FONT_0
+  .text "だった"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $20
+  .text "ロプト"
+  DIALOGUE_FONT_3
+  .text "教"
+  DIALOGUE_FONT_1
+  .text "団"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_3
+  .text "引"
+  DIALOGUE_FONT_0
+  .text "き"
+  DIALOGUE_FONT_2
+  .text "取"
+  DIALOGUE_FONT_0
+  .text "りにくるまで"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そのままにしておけ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "マギ"
+  DIALOGUE_FONT_1
+  .text "団"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "連"
+  DIALOGUE_FONT_1
+  .text "中"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "取"
+  DIALOGUE_FONT_0
+  .text "り"
+  DIALOGUE_FONT_4
+  .text "返"
+  DIALOGUE_FONT_0
+  .text "しにくるかもしれぬから"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_5
+  .text "警"
+  DIALOGUE_FONT_1
+  .text "備"
+  DIALOGUE_FONT_0
+  .text "はおこたるなよ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "マギ"
+  DIALOGUE_FONT_1
+  .text "団"
+  DIALOGUE_FONT_0
+  .text "？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $20
+  .text "ああ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "マンスターの"
+  DIALOGUE_FONT_2
+  .text "反乱"
+  DIALOGUE_FONT_0
+  .text "グループですな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "やつら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "まだ"
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_0
+  .text "き"
+  DIALOGUE_FONT_2
+  .text "残"
+  DIALOGUE_FONT_0
+  .text "っておるのですか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "一"
+  DIALOGUE_FONT_2
+  .text "度"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_2
+  .text "壊滅"
+  DIALOGUE_FONT_0
+  .text "させたと"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "ったのだが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "最近"
+  DIALOGUE_FONT_0
+  .text "また"
+  DIALOGUE_FONT_1
+  .text "力"
+  DIALOGUE_FONT_0
+  .text "をつけてきた"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "どうやら"
+  DIALOGUE_NL
+  DIALOGUE_FONT_2
+  .text "新"
+  DIALOGUE_FONT_0
+  .text "しいリーダーがあらわれたらしい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $20
+  .text "まったく､"
+  DIALOGUE_PAUSE $08
+  .text "うるさいハエどもだ･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "まったくですな"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  .text "これから"
+  DIALOGUE_NL
+  .text "マンスターに"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "られるのですか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "いや"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "長"
+  DIALOGUE_FONT_1
+  .text "旅"
+  DIALOGUE_FONT_0
+  .text "でつかれたゆえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_0
+  .text "し"
+  DIALOGUE_FONT_1
+  .text "休"
+  DIALOGUE_FONT_0
+  .text "んでいく"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "この"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "難"
+  DIALOGUE_FONT_1
+  .text "攻"
+  DIALOGUE_FONT_2
+  .text "不落"
+  DIALOGUE_FONT_0
+  .text "のケルベス"
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_FONT_0
+  .text "なら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "落"
+  DIALOGUE_FONT_0
+  .text "ち"
+  DIALOGUE_FONT_2
+  .text "着"
+  DIALOGUE_FONT_0
+  .text "いてねむれるというものだ"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  .text "ロボス､"
+  DIALOGUE_PAUSE $08
+  .text "あとはたのんだぞ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "はっ､"
+  DIALOGUE_PAUSE $10
+  .text "おまかせを！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

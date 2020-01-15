@@ -1,9 +1,9 @@
 dialogueReinhardtReleaseQuote ; B0/DF7C
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･また"
-	DIALOGUE_FONT_1
-	.text "会"
-	DIALOGUE_FONT_0
-	.text "おう･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･また"
+  DIALOGUE_FONT_1
+  .text "会"
+  DIALOGUE_FONT_0
+  .text "おう･･･"
 DIALOGUE_END_SCENE

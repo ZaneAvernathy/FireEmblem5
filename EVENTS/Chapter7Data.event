@@ -1,121 +1,121 @@
 
 eventChapter7Data ; B1/DE9B
 
-	_EisenhoweCameraCoordinates ; B1/DE9B
-		.byte 8, 8
+  _EisenhoweCameraCoordinates ; B1/DE9B
+    .byte 8, 8
 
-	_EisenhoweGroup ; B1/DE9D
-		UNIT Eisenhowe, Enemy, [8, 5], [8, 5], Eisenhowe, [Greatlance, Javelin, Vulnerary], 6, True, [$01, $03, $02, $00]
-	UNIT
+  _EisenhoweGroup ; B1/DE9D
+    UNIT Eisenhowe, Enemy, [8, 5], [8, 5], Eisenhowe, [Greatlance, Javelin, Vulnerary], 6, True, [$01, $03, $02, $00]
+  UNIT
 
-	_CavalierReinforcementsCameraCoordinates ; B1/DEB3
-		.byte 8, 8
+  _CavalierReinforcementsCameraCoordinates ; B1/DEB3
+    .byte 8, 8
 
-	_CavalierReinforcementsGroup ; B1/DEB5
-		UNIT MansterCavalier, Enemy, [10, 1], [10, 1], Eisenhowe, [Javelin, Rapier], 6, False, [$00, $00, $00, $00]
-		UNIT MansterCavalier, Enemy, [9, 1], [9, 1], Eisenhowe, [LongLance, Rapier], 10, False, [$00, $00, $00, $00]
-		UNIT MansterCavalier, Enemy, [8, 1], [8, 1], Eisenhowe, [Javelin, Rapier], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _CavalierReinforcementsGroup ; B1/DEB5
+    UNIT MansterCavalier, Enemy, [10, 1], [10, 1], Eisenhowe, [Javelin, Rapier], 6, False, [$00, $00, $00, $00]
+    UNIT MansterCavalier, Enemy, [9, 1], [9, 1], Eisenhowe, [LongLance, Rapier], 10, False, [$00, $00, $00, $00]
+    UNIT MansterCavalier, Enemy, [8, 1], [8, 1], Eisenhowe, [Javelin, Rapier], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_MageBishopReinforcementsCameraCoordinates ; B1/DEF3
-		.byte 8, 8
+  _MageBishopReinforcementsCameraCoordinates ; B1/DEF3
+    .byte 8, 8
 
-	_MageBishopReinforcementsGroup ; B1/DEF5
-		UNIT MansterThunderMage, Enemy, [8, 1], [8, 1], Eisenhowe, [Fire], 7, False, [$00, $00, $00, $00]
-		UNIT MansterThunderMage, Enemy, [10, 1], [10, 1], Eisenhowe, [Fire], 7, False, [$00, $00, $00, $00]
-		UNIT MansterBishop1, Enemy, [9, 1], [9, 1], Eisenhowe, [Meteor, Heal], 3, False, [$00, $00, $00, $00]
-	UNIT
+  _MageBishopReinforcementsGroup ; B1/DEF5
+    UNIT MansterThunderMage, Enemy, [8, 1], [8, 1], Eisenhowe, [Fire], 7, False, [$00, $00, $00, $00]
+    UNIT MansterThunderMage, Enemy, [10, 1], [10, 1], Eisenhowe, [Fire], 7, False, [$00, $00, $00, $00]
+    UNIT MansterBishop1, Enemy, [9, 1], [9, 1], Eisenhowe, [Meteor, Heal], 3, False, [$00, $00, $00, $00]
+  UNIT
 
-	_SoldierArmorReinforcementsCameraCoordinates ; B1/DF33
-		.byte 8, 8
+  _SoldierArmorReinforcementsCameraCoordinates ; B1/DF33
+    .byte 8, 8
 
-	_SoldierArmorReinforcementsGroup ; B1/DF35
-		UNIT MansterSoldier2, Enemy, [8, 1], [8, 1], Eisenhowe, [Javelin], 10, False, [$00, $00, $00, $00]
-		UNIT MansterSoldier2, Enemy, [10, 1], [10, 1], Eisenhowe, [Javelin], 10, False, [$00, $00, $00, $00]
-		UNIT MansterArmoredSword, Enemy, [9, 1], [9, 1], Eisenhowe, [Longsword], 8, False, [$00, $00, $00, $00]
-	UNIT
+  _SoldierArmorReinforcementsGroup ; B1/DF35
+    UNIT MansterSoldier2, Enemy, [8, 1], [8, 1], Eisenhowe, [Javelin], 10, False, [$00, $00, $00, $00]
+    UNIT MansterSoldier2, Enemy, [10, 1], [10, 1], Eisenhowe, [Javelin], 10, False, [$00, $00, $00, $00]
+    UNIT MansterArmoredSword, Enemy, [9, 1], [9, 1], Eisenhowe, [Longsword], 8, False, [$00, $00, $00, $00]
+  UNIT
 
-	_HannibalCameraCoordinates ; B1/DF73
-		.byte 8, 45
+  _HannibalCameraCoordinates ; B1/DF73
+    .byte 8, 45
 
-	_HannibalGroup ; B1/DF75
-		UNIT Hannibal, NPC, [10, 44], [10, 45], Hannibal, [SilverLance, SilverBow], 20, False, [$00, $03, $00, $00]
-	UNIT
+  _HannibalGroup ; B1/DF75
+    UNIT Hannibal, NPC, [10, 44], [10, 45], Hannibal, [SilverLance, SilverBow], 20, False, [$00, $03, $00, $00]
+  UNIT
 
-	_HannibalArmorCameraCoordinates ; B1/DF8B
-		.byte 8, 46
+  _HannibalArmorCameraCoordinates ; B1/DF8B
+    .byte 8, 46
 
-	_HannibalArmorGroup ; B1/DF8D
-		UNIT ThracianArmoredLance, NPC, [8, 45], [8, 45], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
-		UNIT ThracianArmoredSword, NPC, [9, 45], [9, 45], Hannibal, [SilverSword], 15, False, [$00, $01, $00, $00]
-		UNIT ThracianArmoredSword, NPC, [11, 45], [11, 45], Hannibal, [SilverSword], 15, False, [$00, $01, $00, $00]
-		UNIT ThracianArmoredLance, NPC, [12, 45], [12, 45], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
-		UNIT ThracianArmoredLance, NPC, [12, 46], [12, 46], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
-		UNIT ThracianArmoredSword, NPC, [11, 46], [11, 46], Hannibal, [Armorslayer], 15, False, [$00, $01, $00, $00]
-		UNIT ThracianArmoredSword, NPC, [10, 46], [10, 46], Hannibal, [SteelSword], 15, False, [$00, $01, $00, $00]
-		UNIT ThracianArmoredSword, NPC, [9, 46], [9, 46], Hannibal, [Armorslayer], 15, False, [$00, $01, $00, $00]
-		UNIT ThracianArmoredLance, NPC, [8, 46], [8, 46], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
-	UNIT
+  _HannibalArmorGroup ; B1/DF8D
+    UNIT ThracianArmoredLance, NPC, [8, 45], [8, 45], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
+    UNIT ThracianArmoredSword, NPC, [9, 45], [9, 45], Hannibal, [SilverSword], 15, False, [$00, $01, $00, $00]
+    UNIT ThracianArmoredSword, NPC, [11, 45], [11, 45], Hannibal, [SilverSword], 15, False, [$00, $01, $00, $00]
+    UNIT ThracianArmoredLance, NPC, [12, 45], [12, 45], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
+    UNIT ThracianArmoredLance, NPC, [12, 46], [12, 46], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
+    UNIT ThracianArmoredSword, NPC, [11, 46], [11, 46], Hannibal, [Armorslayer], 15, False, [$00, $01, $00, $00]
+    UNIT ThracianArmoredSword, NPC, [10, 46], [10, 46], Hannibal, [SteelSword], 15, False, [$00, $01, $00, $00]
+    UNIT ThracianArmoredSword, NPC, [9, 46], [9, 46], Hannibal, [Armorslayer], 15, False, [$00, $01, $00, $00]
+    UNIT ThracianArmoredLance, NPC, [8, 46], [8, 46], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
+  UNIT
 
-	_RaydrikCameraCoordinates ; B1/E043
-		.byte 8, 8
+  _RaydrikCameraCoordinates ; B1/E043
+    .byte 8, 8
 
-	_RaydrikGroup ; B1/E045
-		UNIT Raydrik, Enemy, [11, 2], [11, 2], Raydrik, [LoptyrsBlade], 1, False, [$02, $03, $00, $00]
-	UNIT
+  _RaydrikGroup ; B1/E045
+    UNIT Raydrik, Enemy, [11, 2], [11, 2], Raydrik, [LoptyrsBlade], 1, False, [$02, $03, $00, $00]
+  UNIT
 
-	_BanditCameraCoordinates ; B1/E05B
-		.byte 8, 7
+  _BanditCameraCoordinates ; B1/E05B
+    .byte 8, 7
 
-	_BanditGroup ; B1/E05D
-		UNIT BanditWarrior, Enemy, [1, 20], [1, 20], Gomer, [IronBow, Hammer, HandAxe, Vulnerary], 8, False, [$01, $03, $02, $00]
-		UNIT BanditHunter, Enemy, [2, 20], [2, 20], Gomer, [IronBow, PureWater], 12, False, [$01, $03, $00, $00]
-		UNIT BanditHunter, Enemy, [1, 21], [1, 21], Gomer, [IronBow, PureWater], 12, False, [$01, $03, $00, $00]
-		UNIT BanditHunter, Enemy, [1, 23], [1, 23], Gomer, [IronBow], 12, False, [$00, $03, $00, $00]
-		UNIT ThiefEnemy1, Enemy, [2, 21], [2, 21], Gomer, [Lockpick, IronSword], 3, False, [$01, $03, $00, $00]
-		UNIT BanditBrigand1, Enemy, [1, 22], [1, 22], Gomer, [HandAxe], 7, False, [$00, $03, $00, $00]
-		UNIT BanditBrigand1, Enemy, [1, 27], [1, 27], Gomer, [HandAxe], 7, False, [$00, $03, $00, $00]
-		UNIT BanditBrigand1, Enemy, [1, 25], [1, 25], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
-		UNIT BanditBrigand1, Enemy, [2, 25], [2, 25], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
-		UNIT BanditBrigand1, Enemy, [2, 26], [2, 26], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
-		UNIT BanditBrigand1, Enemy, [1, 26], [1, 26], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
-		UNIT BanditBerserker, Enemy, [1, 29], [1, 29], Gomer, [PoisonAxe, Vulnerary, Antidote], 5, False, [$00, $03, $02, $00]
-	UNIT
+  _BanditGroup ; B1/E05D
+    UNIT BanditWarrior, Enemy, [1, 20], [1, 20], Gomer, [IronBow, Hammer, HandAxe, Vulnerary], 8, False, [$01, $03, $02, $00]
+    UNIT BanditHunter, Enemy, [2, 20], [2, 20], Gomer, [IronBow, PureWater], 12, False, [$01, $03, $00, $00]
+    UNIT BanditHunter, Enemy, [1, 21], [1, 21], Gomer, [IronBow, PureWater], 12, False, [$01, $03, $00, $00]
+    UNIT BanditHunter, Enemy, [1, 23], [1, 23], Gomer, [IronBow], 12, False, [$00, $03, $00, $00]
+    UNIT ThiefEnemy1, Enemy, [2, 21], [2, 21], Gomer, [Lockpick, IronSword], 3, False, [$01, $03, $00, $00]
+    UNIT BanditBrigand1, Enemy, [1, 22], [1, 22], Gomer, [HandAxe], 7, False, [$00, $03, $00, $00]
+    UNIT BanditBrigand1, Enemy, [1, 27], [1, 27], Gomer, [HandAxe], 7, False, [$00, $03, $00, $00]
+    UNIT BanditBrigand1, Enemy, [1, 25], [1, 25], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
+    UNIT BanditBrigand1, Enemy, [2, 25], [2, 25], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
+    UNIT BanditBrigand1, Enemy, [2, 26], [2, 26], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
+    UNIT BanditBrigand1, Enemy, [1, 26], [1, 26], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
+    UNIT BanditBerserker, Enemy, [1, 29], [1, 29], Gomer, [PoisonAxe, Vulnerary, Antidote], 5, False, [$00, $03, $02, $00]
+  UNIT
 
-	_ShivaCameraCoordinates ; B1/E14F
-		.byte 8, 7
+  _ShivaCameraCoordinates ; B1/E14F
+    .byte 8, 7
 
-	_ShivaGroup ; B1/E14F
-		UNIT MercenaryMyrmidon3, Enemy, [9, 36], [9, 36], Shiva, [IronSword], 4, False, [$00, $00, $00, $00]
-		UNIT MercenaryMyrmidon3, Enemy, [10, 36], [10, 36], Shiva, [IronBlade], 6, False, [$00, $00, $00, $00]
-		UNIT MercenaryMyrmidon3, Enemy, [8, 36], [8, 36], Shiva, [IronBlade, Vulnerary], 8, False, [$00, $00, $00, $00]
-		UNIT MercenaryMyrmidon3, Enemy, [9, 37], [9, 37], Shiva, [KillingEdge], 7, False, [$00, $00, $00, $00]
-		UNIT MercenaryMyrmidon3, Enemy, [8, 37], [8, 37], Shiva, [SilverSword, Vulnerary], 10, False, [$00, $00, $00, $00]
-		UNIT Shiva, Enemy, [9, 38], [9, 38], Shiva, [KillingEdge], 4, False, [$0F, $00, $00, $00]
-		UNIT MercenaryMyrmidon3, Enemy, [10, 38], [10, 38], Shiva, [IronSword], 4, False, [$00, $00, $00, $00]
-		UNIT MercenaryMyrmidon3, Enemy, [11, 38], [11, 38], Shiva, [IronBlade], 5, False, [$00, $00, $00, $00]
-	UNIT
+  _ShivaGroup ; B1/E14F
+    UNIT MercenaryMyrmidon3, Enemy, [9, 36], [9, 36], Shiva, [IronSword], 4, False, [$00, $00, $00, $00]
+    UNIT MercenaryMyrmidon3, Enemy, [10, 36], [10, 36], Shiva, [IronBlade], 6, False, [$00, $00, $00, $00]
+    UNIT MercenaryMyrmidon3, Enemy, [8, 36], [8, 36], Shiva, [IronBlade, Vulnerary], 8, False, [$00, $00, $00, $00]
+    UNIT MercenaryMyrmidon3, Enemy, [9, 37], [9, 37], Shiva, [KillingEdge], 7, False, [$00, $00, $00, $00]
+    UNIT MercenaryMyrmidon3, Enemy, [8, 37], [8, 37], Shiva, [SilverSword, Vulnerary], 10, False, [$00, $00, $00, $00]
+    UNIT Shiva, Enemy, [9, 38], [9, 38], Shiva, [KillingEdge], 4, False, [$0F, $00, $00, $00]
+    UNIT MercenaryMyrmidon3, Enemy, [10, 38], [10, 38], Shiva, [IronSword], 4, False, [$00, $00, $00, $00]
+    UNIT MercenaryMyrmidon3, Enemy, [11, 38], [11, 38], Shiva, [IronBlade], 5, False, [$00, $00, $00, $00]
+  UNIT
 
-	_StartingPositions ; B1/E1F3
-		.byte 9, 15
-		.byte 10, 14
-		.byte 9, 13
-		.byte 8, 10
-		.byte 10, 10
-		.byte 10, 16
-		.byte 9, 11
-		.byte 12, 16
-		.byte 8, 12
-		.byte 10, 13
-		.byte 7, 13
-		.byte 8, 14
-		.byte 6, 12
-		.byte 11, 15
-		.byte 4, 13
-		.byte 5, 12
-		.byte 7, 11
-		.byte 8, 11
-	.byte $FF
+  _StartingPositions ; B1/E1F3
+    .byte 9, 15
+    .byte 10, 14
+    .byte 9, 13
+    .byte 8, 10
+    .byte 10, 10
+    .byte 10, 16
+    .byte 9, 11
+    .byte 12, 16
+    .byte 8, 12
+    .byte 10, 13
+    .byte 7, 13
+    .byte 8, 14
+    .byte 6, 12
+    .byte 11, 15
+    .byte 4, 13
+    .byte 5, 12
+    .byte 7, 11
+    .byte 8, 11
+  .byte $FF
 
-	_Vendor ; B1/E218
-		SHOP [6, 48], [Vulnerary, Heal]
+  _Vendor ; B1/E218
+    SHOP [6, 48], [Vulnerary, Heal]

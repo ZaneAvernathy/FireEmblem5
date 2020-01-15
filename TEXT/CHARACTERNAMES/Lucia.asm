@@ -1,4 +1,4 @@
 
 menutextLuciaName ; 86/DF3D
-	.enc "MenuText"
-	.text "ルチア\n"
+  .enc "MenuText"
+  .text "ルチア\n"

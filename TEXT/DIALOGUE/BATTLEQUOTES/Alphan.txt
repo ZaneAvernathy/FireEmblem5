@@ -1,12 +1,12 @@
 dialogueAlphanBattleQuote ; 98/EBB3
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "な､"
-	DIALOGUE_PAUSE $08
-	.text "なんと"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "このような"
-	DIALOGUE_NL
-	.text "ところにまで･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "な､"
+  DIALOGUE_PAUSE $08
+  .text "なんと"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "このような"
+  DIALOGUE_NL
+  .text "ところにまで･･･"
 DIALOGUE_END_SCENE

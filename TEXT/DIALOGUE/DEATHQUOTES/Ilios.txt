@@ -1,17 +1,17 @@
 dialogueIliosDeathQuote ; 98/B4A1
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "はけっきょく"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "平民"
-	DIALOGUE_FONT_0
-	.text "のままで"
-	DIALOGUE_FONT_2
-	.text "終"
-	DIALOGUE_FONT_0
-	.text "わるのか･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "はけっきょく"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "平民"
+  DIALOGUE_FONT_0
+  .text "のままで"
+  DIALOGUE_FONT_2
+  .text "終"
+  DIALOGUE_FONT_0
+  .text "わるのか･･･"
 DIALOGUE_END_SCENE

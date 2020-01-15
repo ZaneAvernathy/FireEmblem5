@@ -1,4 +1,4 @@
 
 menutextZailleName ; 86/E277
-	.enc "MenuText"
-	.text "ザイル\n"
+  .enc "MenuText"
+  .text "ザイル\n"

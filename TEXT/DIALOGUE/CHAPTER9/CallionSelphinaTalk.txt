@@ -1,288 +1,288 @@
 dialogueChapter9CallionSelphinaTalk ; 93/EAA9
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD CallionPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "セルフィナ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "ただいま"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "りました"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD SelphinaPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "カリオン"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "大"
-	DIALOGUE_FONT_2
-	.text "切"
-	DIALOGUE_FONT_0
-	.text "なお"
-	DIALOGUE_FONT_3
-	.text "役"
-	DIALOGUE_FONT_0
-	.text "め､"
-	DIALOGUE_PAUSE $08
-	.text "ご"
-	DIALOGUE_FONT_1
-	.text "苦"
-	DIALOGUE_FONT_4
-	.text "労"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "でした"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "いえ､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "などがお"
-	DIALOGUE_FONT_3
-	.text "役"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "立"
-	DIALOGUE_FONT_0
-	.text "てるのは"
-	DIALOGUE_NL
-	.text "これくらいですから"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "もはやくグレイド"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "のような"
-	DIALOGUE_NL
-	.text "りっぱな"
-	DIALOGUE_FONT_1
-	.text "騎士"
-	DIALOGUE_FONT_0
-	.text "になって"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "のお"
-	DIALOGUE_FONT_3
-	.text "役"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "立"
-	DIALOGUE_FONT_0
-	.text "ちたいと"
-	DIALOGUE_FONT_1
-	.text "願"
-	DIALOGUE_FONT_0
-	.text "って"
-	DIALOGUE_NL
-	.text "いるのですが･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "非"
-	DIALOGUE_FONT_1
-	.text "力"
-	DIALOGUE_FONT_0
-	.text "な"
-	DIALOGUE_FONT_1
-	.text "自分"
-	DIALOGUE_FONT_0
-	.text "がはがゆくてなりません"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "カリオン､"
-	DIALOGUE_PAUSE $08
-	.text "あせってはだめです"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "それでは"
-	DIALOGUE_FONT_2
-	.text "命"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "失"
-	DIALOGUE_FONT_0
-	.text "うことになりますよ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "でも､"
-	DIALOGUE_PAUSE $08
-	.text "もうそろそろ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "これを"
-	DIALOGUE_FONT_5
-	.text "渡"
-	DIALOGUE_FONT_0
-	.text "すときなのかもしれませんね"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "これは？･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ずいぶんりっぱな"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "ですが･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "これはエリートの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "とよばれるもの"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あなたのお"
-	DIALOGUE_FONT_1
-	.text "母様"
-	DIALOGUE_FONT_0
-	.text "から"
-	DIALOGUE_FONT_4
-	.text "預"
-	DIALOGUE_FONT_0
-	.text "っていました"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "カリオンがりっぱな"
-	DIALOGUE_FONT_1
-	.text "騎士"
-	DIALOGUE_FONT_0
-	.text "になったら"
-	DIALOGUE_NL
-	DIALOGUE_FONT_5
-	.text "渡"
-	DIALOGUE_FONT_0
-	.text "すようにと"
-	DIALOGUE_FONT_3
-	.text "頼"
-	DIALOGUE_FONT_0
-	.text "まれて･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "母上"
-	DIALOGUE_FONT_0
-	.text "が！？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ええ､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "病"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_FONT_2
-	.text "亡"
-	DIALOGUE_FONT_0
-	.text "くなられたときは"
-	DIALOGUE_NL
-	.text "あなたはまだ"
-	DIALOGUE_FONT_4
-	.text "幼"
-	DIALOGUE_FONT_0
-	.text "くて･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_2
-	.text "死"
-	DIALOGUE_FONT_0
-	.text "されたあなたの"
-	DIALOGUE_FONT_1
-	.text "父上"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "愛用"
-	DIALOGUE_FONT_0
-	.text "されていたそうですよ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "父上"
-	DIALOGUE_FONT_0
-	.text "の･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "レンスターの"
-	DIALOGUE_FONT_1
-	.text "聖騎士"
-	DIALOGUE_FONT_0
-	.text "だった"
-	DIALOGUE_FONT_1
-	.text "父上"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "そうです"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "大"
-	DIALOGUE_FONT_2
-	.text "切"
-	DIALOGUE_FONT_0
-	.text "にしなければならないわ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "はい！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "セルフィナ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "ありがとうございます！！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD CallionPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "セルフィナ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "ただいま"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "りました"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD SelphinaPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "カリオン"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "大"
+  DIALOGUE_FONT_2
+  .text "切"
+  DIALOGUE_FONT_0
+  .text "なお"
+  DIALOGUE_FONT_3
+  .text "役"
+  DIALOGUE_FONT_0
+  .text "め､"
+  DIALOGUE_PAUSE $08
+  .text "ご"
+  DIALOGUE_FONT_1
+  .text "苦"
+  DIALOGUE_FONT_4
+  .text "労"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "でした"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "いえ､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "などがお"
+  DIALOGUE_FONT_3
+  .text "役"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "立"
+  DIALOGUE_FONT_0
+  .text "てるのは"
+  DIALOGUE_NL
+  .text "これくらいですから"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "もはやくグレイド"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "のような"
+  DIALOGUE_NL
+  .text "りっぱな"
+  DIALOGUE_FONT_1
+  .text "騎士"
+  DIALOGUE_FONT_0
+  .text "になって"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "のお"
+  DIALOGUE_FONT_3
+  .text "役"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "立"
+  DIALOGUE_FONT_0
+  .text "ちたいと"
+  DIALOGUE_FONT_1
+  .text "願"
+  DIALOGUE_FONT_0
+  .text "って"
+  DIALOGUE_NL
+  .text "いるのですが･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "非"
+  DIALOGUE_FONT_1
+  .text "力"
+  DIALOGUE_FONT_0
+  .text "な"
+  DIALOGUE_FONT_1
+  .text "自分"
+  DIALOGUE_FONT_0
+  .text "がはがゆくてなりません"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "カリオン､"
+  DIALOGUE_PAUSE $08
+  .text "あせってはだめです"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "それでは"
+  DIALOGUE_FONT_2
+  .text "命"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "失"
+  DIALOGUE_FONT_0
+  .text "うことになりますよ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "でも､"
+  DIALOGUE_PAUSE $08
+  .text "もうそろそろ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "これを"
+  DIALOGUE_FONT_5
+  .text "渡"
+  DIALOGUE_FONT_0
+  .text "すときなのかもしれませんね"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "これは？･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ずいぶんりっぱな"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "ですが･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "これはエリートの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "とよばれるもの"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あなたのお"
+  DIALOGUE_FONT_1
+  .text "母様"
+  DIALOGUE_FONT_0
+  .text "から"
+  DIALOGUE_FONT_4
+  .text "預"
+  DIALOGUE_FONT_0
+  .text "っていました"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "カリオンがりっぱな"
+  DIALOGUE_FONT_1
+  .text "騎士"
+  DIALOGUE_FONT_0
+  .text "になったら"
+  DIALOGUE_NL
+  DIALOGUE_FONT_5
+  .text "渡"
+  DIALOGUE_FONT_0
+  .text "すようにと"
+  DIALOGUE_FONT_3
+  .text "頼"
+  DIALOGUE_FONT_0
+  .text "まれて･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "母上"
+  DIALOGUE_FONT_0
+  .text "が！？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ええ､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "病"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_FONT_2
+  .text "亡"
+  DIALOGUE_FONT_0
+  .text "くなられたときは"
+  DIALOGUE_NL
+  .text "あなたはまだ"
+  DIALOGUE_FONT_4
+  .text "幼"
+  DIALOGUE_FONT_0
+  .text "くて･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_2
+  .text "死"
+  DIALOGUE_FONT_0
+  .text "されたあなたの"
+  DIALOGUE_FONT_1
+  .text "父上"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "愛用"
+  DIALOGUE_FONT_0
+  .text "されていたそうですよ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "父上"
+  DIALOGUE_FONT_0
+  .text "の･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "レンスターの"
+  DIALOGUE_FONT_1
+  .text "聖騎士"
+  DIALOGUE_FONT_0
+  .text "だった"
+  DIALOGUE_FONT_1
+  .text "父上"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "そうです"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "大"
+  DIALOGUE_FONT_2
+  .text "切"
+  DIALOGUE_FONT_0
+  .text "にしなければならないわ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "はい！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "セルフィナ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "ありがとうございます！！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

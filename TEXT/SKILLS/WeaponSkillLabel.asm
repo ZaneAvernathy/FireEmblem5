@@ -1,4 +1,4 @@
 
 menutextWeaponSkillLabel ; 81/FA16
-	.enc "MenuText"
-	.text "　武器スキル\n"
+  .enc "MenuText"
+  .text "　武器スキル\n"

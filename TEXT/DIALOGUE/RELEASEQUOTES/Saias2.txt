@@ -1,15 +1,15 @@
 dialogueSaias2ReleaseQuote ; B0/DF3A
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なぜ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "殺"
-	DIALOGUE_FONT_0
-	.text "さないのですか･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なぜ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "殺"
+  DIALOGUE_FONT_0
+  .text "さないのですか･･･"
 DIALOGUE_END_SCENE

@@ -1,21 +1,21 @@
 dialogueTrudeReleaseQuote ; 92/BE6F
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_2
-	.text "礼"
-	DIALOGUE_FONT_0
-	.text "はいわん"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "次"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "会"
-	DIALOGUE_FONT_0
-	.text "うときはきさまを"
-	DIALOGUE_FONT_1
-	.text "殺"
-	DIALOGUE_FONT_0
-	.text "す！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_2
+  .text "礼"
+  DIALOGUE_FONT_0
+  .text "はいわん"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "次"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "会"
+  DIALOGUE_FONT_0
+  .text "うときはきさまを"
+  DIALOGUE_FONT_1
+  .text "殺"
+  DIALOGUE_FONT_0
+  .text "す！"
 DIALOGUE_END_SCENE

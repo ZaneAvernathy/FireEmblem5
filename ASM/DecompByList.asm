@@ -1,193 +1,193 @@
 
 rlDecompressSingle ; 80/AF93
 
-	.al
-	.autsiz
-	.databank ?
+  .al
+  .autsiz
+  .databank ?
 
-	; Decompresses a single thing.
+  ; Decompresses a single thing.
 
-	; Inputs:
-	; lR44: Source pointer
-	; lR46: Destination pointer
+  ; Inputs:
+  ; lR44: Source pointer
+  ; lR46: Destination pointer
 
-	; Outputs:
-	; None
+  ; Outputs:
+  ; None
 
-	; Copy offsets
+  ; Copy offsets
 
-	lda lR44
-	sta lDecompSource
-	lda lR46
-	sta lDecompDest
+  lda lR44
+  sta lDecompSource
+  lda lR46
+  sta lDecompDest
 
-	; Copy banks
+  ; Copy banks
 
-	sep #$20
-	lda lR44+2
-	sta lDecompSource+2
-	lda lR46+2
-	sta lDecompDest+2
-	rep #$20
+  sep #$20
+  lda lR44+2
+  sta lDecompSource+2
+  lda lR46+2
+  sta lDecompDest+2
+  rep #$20
 
-	; Decompress
+  ; Decompress
 
-	jsl rlDecompressor
-	rtl
+  jsl rlDecompressor
+  rtl
 
 rlClearDecompList ; 80/AFAC
 
-	.autsiz
-	.databank ?
+  .autsiz
+  .databank ?
 
-	; Clears all pending decompresses.
+  ; Clears all pending decompresses.
 
-	; Inputs:
-	; None
+  ; Inputs:
+  ; None
 
-	; Outputs:
-	; None
+  ; Outputs:
+  ; None
 
-	php
-	rep #$20
-	stz aDecompList,b
-	stz wDecompListPosition,b
-	sep #$20
-	stz bDecompListFlag,b
-	plp
-	rtl
+  php
+  rep #$20
+  stz aDecompList,b
+  stz wDecompListPosition,b
+  sep #$20
+  stz bDecompListFlag,b
+  plp
+  rtl
 
 rlDecompressByList ; 80/AFBC
 
-	.autsiz
-	.databank ?
+  .autsiz
+  .databank ?
 
-	; Tries to decompress all pending requests.
+  ; Tries to decompress all pending requests.
 
-	; Inputs:
-	; None
+  ; Inputs:
+  ; None
 
-	; Outputs:
-	; None
+  ; Outputs:
+  ; None
 
-	phb
-	php
-	phk
-	plb
+  phb
+  php
+  phk
+  plb
 
-	.databank `*
+  .databank `*
 
-	sep #$20
-	rep #$10
+  sep #$20
+  rep #$10
 
-	; Check if there's anything to decompress
+  ; Check if there's anything to decompress
 
-	lda bDecompListFlag,b
-	beq _End
+  lda bDecompListFlag,b
+  beq _End
 
-	rep #$20
-	stz wDecompListPosition,b
+  rep #$20
+  stz wDecompListPosition,b
 
-	; Loop counter
+  ; Loop counter
 
-	ldy #$0000
+  ldy #$0000
 
-	_Loop
-	cpy #size(aDecompList)
-	blt _DoNotHang
+  _Loop
+  cpy #size(aDecompList)
+  blt _DoNotHang
 
-	; Hang if too many things to decompress?
+  ; Hang if too many things to decompress?
 
-	_Hang
-	bra _Hang
+  _Hang
+  bra _Hang
 
-	_DoNotHang
+  _DoNotHang
 
-	; Check for end of list
+  ; Check for end of list
 
-	lda aDecompList+structDecompListEntry.Source,b,y
-	ora aDecompList+structDecompListEntry.Source+1,b,y
-	beq _ListEnd
+  lda aDecompList+structDecompListEntry.Source,b,y
+  ora aDecompList+structDecompListEntry.Source+1,b,y
+  beq _ListEnd
 
-	; Else decompress
+  ; Else decompress
 
-	lda aDecompList+structDecompListEntry.Source,b,y
-	sta lDecompSource
-	lda aDecompList+structDecompListEntry.Source+1,b,y
-	sta lDecompSource+1
+  lda aDecompList+structDecompListEntry.Source,b,y
+  sta lDecompSource
+  lda aDecompList+structDecompListEntry.Source+1,b,y
+  sta lDecompSource+1
 
-	lda aDecompList+structDecompListEntry.Dest,b,y
-	sta lDecompDest
-	lda aDecompList+structDecompListEntry.Dest+1,b,y
-	sta lDecompDest+1
+  lda aDecompList+structDecompListEntry.Dest,b,y
+  sta lDecompDest
+  lda aDecompList+structDecompListEntry.Dest+1,b,y
+  sta lDecompDest+1
 
-	phy
-	jsl rlDecompressor
-	pla
-	clc
-	adc #size(structDecompListEntry)
-	tay
-	bra _Loop
+  phy
+  jsl rlDecompressor
+  pla
+  clc
+  adc #size(structDecompListEntry)
+  tay
+  bra _Loop
 
-	_ListEnd
-	stz bDecompListFlag,b
-	stz aDecompList,b
+  _ListEnd
+  stz bDecompListFlag,b
+  stz aDecompList,b
 
-	_End
-	plp
-	plb
-	rtl
+  _End
+  plp
+  plb
+  rtl
 
 rlAppendDecompList ; 80/B00A
 
-	.al
-	.autsiz
-	.databank ?
+  .al
+  .autsiz
+  .databank ?
 
-	php
-	phx
+  php
+  phx
 
-	ldx wDecompListPosition,b
+  ldx wDecompListPosition,b
 
-	lda lR18
-	sta aDecompList+structDecompListEntry.Source,b,x
-	lda lR18+1
-	sta aDecompList+structDecompListEntry.Source+1,b,x
+  lda lR18
+  sta aDecompList+structDecompListEntry.Source,b,x
+  lda lR18+1
+  sta aDecompList+structDecompListEntry.Source+1,b,x
 
-	lda lR19
-	sta aDecompList+structDecompListEntry.Dest,b,x
-	lda lR19+1
-	sta aDecompList+structDecompListEntry.Dest+1,b,x
+  lda lR19
+  sta aDecompList+structDecompListEntry.Dest,b,x
+  lda lR19+1
+  sta aDecompList+structDecompListEntry.Dest+1,b,x
 
-	; Clear the slot after that
+  ; Clear the slot after that
 
-	lda #$0000
-	sta aDecompList+size(structDecompListEntry)+structDecompListEntry.Source,b,x
-	sta aDecompList+size(structDecompListEntry)+structDecompListEntry.Source+1,b,x
-	sta aDecompList+size(structDecompListEntry)+structDecompListEntry.Source+2,b,x
+  lda #$0000
+  sta aDecompList+size(structDecompListEntry)+structDecompListEntry.Source,b,x
+  sta aDecompList+size(structDecompListEntry)+structDecompListEntry.Source+1,b,x
+  sta aDecompList+size(structDecompListEntry)+structDecompListEntry.Source+2,b,x
 
-	; Advance a slot
+  ; Advance a slot
 
-	txa
-	clc
-	adc #size(structDecompListEntry)
-	sta wDecompListPosition,b
+  txa
+  clc
+  adc #size(structDecompListEntry)
+  sta wDecompListPosition,b
 
-	; Set flag for pending decompression
+  ; Set flag for pending decompression
 
-	sep #$20
-	lda #$01
-	sta bDecompListFlag,b
+  sep #$20
+  lda #$01
+  sta bDecompListFlag,b
 
-	; Decompress if forced blank enabled
+  ; Decompress if forced blank enabled
 
-	lda bBuf_INIDISP
-	bpl +
+  lda bBuf_INIDISP
+  bpl +
 
-	jsl rlDecompressByList
+  jsl rlDecompressByList
 
-	+
-	rep #$20
-	plx
-	plp
-	rtl
+  +
+  rep #$20
+  plx
+  plp
+  rtl

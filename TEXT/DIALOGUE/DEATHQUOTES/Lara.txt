@@ -1,17 +1,17 @@
 dialogueLaraDeathQuote ; 82/BA1B
-	DIALOGUE_FONT_0
-	.text "ああっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "次"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_0
-	.text "まれるときは･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "もっと･･･"
+  DIALOGUE_FONT_0
+  .text "ああっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "次"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_0
+  .text "まれるときは･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "もっと･･･"
 DIALOGUE_END_SCENE

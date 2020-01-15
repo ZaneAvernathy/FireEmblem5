@@ -1,35 +1,35 @@
 dialogueChapter22Approach1A ; B0/DBA8
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD SaiasPortrait
-	DIALOGUE_FONT_0
-	.text "･･･よし､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "です！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "橋"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "落"
-	DIALOGUE_FONT_0
-	.text "としなさい！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ゲルプリッターに"
-	DIALOGUE_FONT_1
-	.text "攻撃"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "指"
-	DIALOGUE_FONT_2
-	.text "示"
-	DIALOGUE_FONT_0
-	.text "を！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD SaiasPortrait
+  DIALOGUE_FONT_0
+  .text "･･･よし､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "です！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "橋"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "落"
+  DIALOGUE_FONT_0
+  .text "としなさい！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ゲルプリッターに"
+  DIALOGUE_FONT_1
+  .text "攻撃"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "指"
+  DIALOGUE_FONT_2
+  .text "示"
+  DIALOGUE_FONT_0
+  .text "を！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

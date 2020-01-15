@@ -1,7 +1,7 @@
 dialogueUnknownUnusedDeathQuote ; 82/BFC9
-	DIALOGUE_FONT_0
-	.text "うぬ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "これまでか･･･"
+  DIALOGUE_FONT_0
+  .text "うぬ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "これまでか･･･"
 DIALOGUE_END_SCENE

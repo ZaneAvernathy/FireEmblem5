@@ -1,127 +1,127 @@
 dialogueChapter23Ending2B ; 98/E44A
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "そのことなら"
-	DIALOGUE_FONT_1
-	.text "大"
-	DIALOGUE_FONT_4
-	.text "丈"
-	DIALOGUE_FONT_2
-	.text "夫"
-	DIALOGUE_FONT_0
-	.text "だ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "城内"
-	DIALOGUE_FONT_0
-	.text "から"
-	DIALOGUE_FONT_2
-	.text "逃"
-	DIALOGUE_FONT_0
-	.text "げのびてきた"
-	DIALOGUE_FONT_2
-	.text "司祭"
-	DIALOGUE_FONT_0
-	.text "から"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "をあずかった"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_0
-	.text "ロプトの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_FONT_0
-	.text "と"
-	DIALOGUE_FONT_1
-	.text "対"
-	DIALOGUE_FONT_0
-	.text "をなす"
-	DIALOGUE_NL
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_0
-	.text "ブラギの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_FONT_0
-	.text "とよばれるものらしい"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "その"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "ならばロプトの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "とも"
-	DIALOGUE_NL
-	.text "ごかくに"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "えると"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "っていた"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ふむ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "それはよかったですな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "では"
-	DIALOGUE_FONT_4
-	.text "次"
-	DIALOGUE_FONT_0
-	.text "なる"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いにおいては"
-	DIALOGUE_NL
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_0
-	.text "ブラギの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "必"
-	DIALOGUE_FONT_0
-	.text "ず"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "装"
-	DIALOGUE_FONT_1
-	.text "備"
-	DIALOGUE_FONT_0
-	.text "なさいますように！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "そのことなら"
+  DIALOGUE_FONT_1
+  .text "大"
+  DIALOGUE_FONT_4
+  .text "丈"
+  DIALOGUE_FONT_2
+  .text "夫"
+  DIALOGUE_FONT_0
+  .text "だ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "城内"
+  DIALOGUE_FONT_0
+  .text "から"
+  DIALOGUE_FONT_2
+  .text "逃"
+  DIALOGUE_FONT_0
+  .text "げのびてきた"
+  DIALOGUE_FONT_2
+  .text "司祭"
+  DIALOGUE_FONT_0
+  .text "から"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "をあずかった"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_0
+  .text "ロプトの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_FONT_0
+  .text "と"
+  DIALOGUE_FONT_1
+  .text "対"
+  DIALOGUE_FONT_0
+  .text "をなす"
+  DIALOGUE_NL
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_0
+  .text "ブラギの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_FONT_0
+  .text "とよばれるものらしい"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "その"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "ならばロプトの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "とも"
+  DIALOGUE_NL
+  .text "ごかくに"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "えると"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "っていた"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ふむ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "それはよかったですな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "では"
+  DIALOGUE_FONT_4
+  .text "次"
+  DIALOGUE_FONT_0
+  .text "なる"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いにおいては"
+  DIALOGUE_NL
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_0
+  .text "ブラギの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "必"
+  DIALOGUE_FONT_0
+  .text "ず"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "装"
+  DIALOGUE_FONT_1
+  .text "備"
+  DIALOGUE_FONT_0
+  .text "なさいますように！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

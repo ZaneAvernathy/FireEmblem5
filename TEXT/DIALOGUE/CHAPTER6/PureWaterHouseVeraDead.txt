@@ -1,25 +1,25 @@
 dialogueChapter6PureWaterHouseVeraDead ; 92/8F8C
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCGirl2Portrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ベラは･･･"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "ってこないわ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "もういい･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あなたたちには"
-	DIALOGUE_FONT_3
-	.text "期"
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "しないから･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCGirl2Portrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ベラは･･･"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "ってこないわ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "もういい･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あなたたちには"
+  DIALOGUE_FONT_3
+  .text "期"
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "しないから･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

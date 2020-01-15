@@ -1,68 +1,68 @@
 dialogueChapter16AWorldMap2 ; 82/D416
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_0
-	.text "ノルデン"
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_FONT_0
-	.text "と"
-	DIALOGUE_FONT_4
-	.text "呼"
-	DIALOGUE_FONT_0
-	.text "ばれる"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "突"
-	DIALOGUE_FONT_1
-	.text "破"
-	DIALOGUE_FONT_0
-	.text "しなければならない"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "そこには､"
-	DIALOGUE_PAUSE $08
-	.text "フリージの"
-	DIALOGUE_FONT_2
-	.text "精鋭"
-	DIALOGUE_FONT_1
-	.text "軍団"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "配"
-	DIALOGUE_FONT_1
-	.text "備"
-	DIALOGUE_FONT_0
-	.text "され"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_1
-	.text "解放軍"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "進撃"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "阻"
-	DIALOGUE_FONT_0
-	.text "もうとしていた"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_0
+  .text "ノルデン"
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_FONT_0
+  .text "と"
+  DIALOGUE_FONT_4
+  .text "呼"
+  DIALOGUE_FONT_0
+  .text "ばれる"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "突"
+  DIALOGUE_FONT_1
+  .text "破"
+  DIALOGUE_FONT_0
+  .text "しなければならない"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "そこには､"
+  DIALOGUE_PAUSE $08
+  .text "フリージの"
+  DIALOGUE_FONT_2
+  .text "精鋭"
+  DIALOGUE_FONT_1
+  .text "軍団"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "配"
+  DIALOGUE_FONT_1
+  .text "備"
+  DIALOGUE_FONT_0
+  .text "され"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_1
+  .text "解放軍"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "進撃"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "阻"
+  DIALOGUE_FONT_0
+  .text "もうとしていた"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

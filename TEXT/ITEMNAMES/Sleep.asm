@@ -1,4 +1,4 @@
 
 menutextSleepName ; B0/9699
-	.enc "MenuText"
-	.text "スリープ\n"
+  .enc "MenuText"
+  .text "スリープ\n"

@@ -1,4 +1,4 @@
 
 menutextLeifName ; 86/DCFB
-	.enc "MenuText"
-	.text "リーフ\n"
+  .enc "MenuText"
+  .text "リーフ\n"

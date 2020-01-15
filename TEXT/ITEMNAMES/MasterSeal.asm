@@ -1,4 +1,4 @@
 
 menutextMasterSealName ; B0/979F
-	.enc "MenuText"
-	.text "マスタープルフ\n"
+  .enc "MenuText"
+  .text "マスタープルフ\n"

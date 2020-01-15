@@ -1,4 +1,4 @@
 
 menutextBowKnightName ; 89/8114
-	.enc "MenuText"
-	.text "アーチナイト　　\n"
+  .enc "MenuText"
+  .text "アーチナイト　　\n"

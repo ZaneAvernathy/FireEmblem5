@@ -1,4 +1,4 @@
 
 menutextPaulusName ; 86/E069
-	.enc "MenuText"
-	.text "パウルス\n"
+  .enc "MenuText"
+  .text "パウルス\n"

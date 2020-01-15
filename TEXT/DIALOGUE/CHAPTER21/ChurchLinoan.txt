@@ -1,266 +1,266 @@
 dialogueChapter21ChurchLinoan ; B0/C94F
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD LinoanPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD GunterPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ほう･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そなたはターラのリノアン"
-	DIALOGUE_FONT_1
-	.text "公女"
-	DIALOGUE_FONT_0
-	.text "じゃな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "え？"
-	DIALOGUE_PAUSE $10
-	.text "　どうして"
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "のことを？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "そなたの"
-	DIALOGUE_FONT_1
-	.text "父上"
-	DIALOGUE_FONT_0
-	.text "とは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "まんざら"
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "らぬ"
-	DIALOGUE_FONT_3
-	.text "仲"
-	DIALOGUE_FONT_0
-	.text "でもなくての"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_2
-	.text "亡"
-	DIALOGUE_FONT_0
-	.text "き"
-	DIALOGUE_FONT_1
-	.text "母上"
-	DIALOGUE_FONT_0
-	.text "のこともよく"
-	DIALOGUE_FONT_3
-	.text "存"
-	DIALOGUE_FONT_0
-	.text "じあげておるよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そなたは"
-	DIALOGUE_FONT_1
-	.text "母上"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_0
-	.text "き"
-	DIALOGUE_FONT_2
-	.text "写"
-	DIALOGUE_FONT_0
-	.text "しじゃからの"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "そうでしたか･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_4
-	.text "聞"
-	DIALOGUE_FONT_0
-	.text "けば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "とともに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "っておられるそうじゃの"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "はい"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ふむ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "やはり"
-	DIALOGUE_FONT_1
-	.text "聖戦士"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "血"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "争"
-	DIALOGUE_FONT_0
-	.text "えぬか･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "聖戦士"
-	DIALOGUE_FONT_0
-	.text "？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "が･･･"
-	DIALOGUE_PAUSE $10
-	.text "ですか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ん？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そなたの"
-	DIALOGUE_FONT_1
-	.text "父"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "わなかったのか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ターラ"
-	DIALOGUE_FONT_1
-	.text "公"
-	DIALOGUE_FONT_2
-	.text "爵"
-	DIALOGUE_FONT_1
-	.text "家"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "グランベル"
-	DIALOGUE_FONT_1
-	.text "王家"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "連"
-	DIALOGUE_FONT_0
-	.text "なる"
-	DIALOGUE_FONT_1
-	.text "血筋"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "聖戦士"
-	DIALOGUE_FONT_0
-	.text "ヘイムの"
-	DIALOGUE_FONT_1
-	.text "血"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_3
-	.text "継"
-	DIALOGUE_FONT_0
-	.text "ぐ一"
-	DIALOGUE_FONT_2
-	.text "族"
-	DIALOGUE_FONT_0
-	.text "なのじゃぞ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "が･･･"
-	DIALOGUE_PAUSE $10
-	.text "ヘイムの"
-	DIALOGUE_FONT_1
-	.text "血"
-	DIALOGUE_FONT_0
-	.text "を･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "その"
-	DIALOGUE_FONT_1
-	.text "様子"
-	DIALOGUE_FONT_0
-	.text "では"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "まだそなたの"
-	DIALOGUE_FONT_1
-	.text "持"
-	DIALOGUE_FONT_0
-	.text "つナーガの"
-	DIALOGUE_FONT_1
-	.text "力"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "気"
-	DIALOGUE_FONT_0
-	.text "づいておらぬようじゃの･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "わしとともに"
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "なさい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そなたの"
-	DIALOGUE_FONT_2
-	.text "体"
-	DIALOGUE_FONT_0
-	.text "にねむる"
-	DIALOGUE_NL
-	.text "ナーガの"
-	DIALOGUE_FONT_1
-	.text "血"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "目"
-	DIALOGUE_FONT_4
-	.text "覚"
-	DIALOGUE_FONT_0
-	.text "めさせてやろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "はい･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD LinoanPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD GunterPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ほう･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そなたはターラのリノアン"
+  DIALOGUE_FONT_1
+  .text "公女"
+  DIALOGUE_FONT_0
+  .text "じゃな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "え？"
+  DIALOGUE_PAUSE $10
+  .text "　どうして"
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "のことを？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "そなたの"
+  DIALOGUE_FONT_1
+  .text "父上"
+  DIALOGUE_FONT_0
+  .text "とは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "まんざら"
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "らぬ"
+  DIALOGUE_FONT_3
+  .text "仲"
+  DIALOGUE_FONT_0
+  .text "でもなくての"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_2
+  .text "亡"
+  DIALOGUE_FONT_0
+  .text "き"
+  DIALOGUE_FONT_1
+  .text "母上"
+  DIALOGUE_FONT_0
+  .text "のこともよく"
+  DIALOGUE_FONT_3
+  .text "存"
+  DIALOGUE_FONT_0
+  .text "じあげておるよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そなたは"
+  DIALOGUE_FONT_1
+  .text "母上"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_0
+  .text "き"
+  DIALOGUE_FONT_2
+  .text "写"
+  DIALOGUE_FONT_0
+  .text "しじゃからの"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "そうでしたか･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_4
+  .text "聞"
+  DIALOGUE_FONT_0
+  .text "けば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "とともに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "っておられるそうじゃの"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "はい"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ふむ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "やはり"
+  DIALOGUE_FONT_1
+  .text "聖戦士"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "血"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "争"
+  DIALOGUE_FONT_0
+  .text "えぬか･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "聖戦士"
+  DIALOGUE_FONT_0
+  .text "？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "が･･･"
+  DIALOGUE_PAUSE $10
+  .text "ですか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ん？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そなたの"
+  DIALOGUE_FONT_1
+  .text "父"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "わなかったのか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ターラ"
+  DIALOGUE_FONT_1
+  .text "公"
+  DIALOGUE_FONT_2
+  .text "爵"
+  DIALOGUE_FONT_1
+  .text "家"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "グランベル"
+  DIALOGUE_FONT_1
+  .text "王家"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "連"
+  DIALOGUE_FONT_0
+  .text "なる"
+  DIALOGUE_FONT_1
+  .text "血筋"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "聖戦士"
+  DIALOGUE_FONT_0
+  .text "ヘイムの"
+  DIALOGUE_FONT_1
+  .text "血"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_3
+  .text "継"
+  DIALOGUE_FONT_0
+  .text "ぐ一"
+  DIALOGUE_FONT_2
+  .text "族"
+  DIALOGUE_FONT_0
+  .text "なのじゃぞ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "が･･･"
+  DIALOGUE_PAUSE $10
+  .text "ヘイムの"
+  DIALOGUE_FONT_1
+  .text "血"
+  DIALOGUE_FONT_0
+  .text "を･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "その"
+  DIALOGUE_FONT_1
+  .text "様子"
+  DIALOGUE_FONT_0
+  .text "では"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "まだそなたの"
+  DIALOGUE_FONT_1
+  .text "持"
+  DIALOGUE_FONT_0
+  .text "つナーガの"
+  DIALOGUE_FONT_1
+  .text "力"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "気"
+  DIALOGUE_FONT_0
+  .text "づいておらぬようじゃの･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "わしとともに"
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "なさい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そなたの"
+  DIALOGUE_FONT_2
+  .text "体"
+  DIALOGUE_FONT_0
+  .text "にねむる"
+  DIALOGUE_NL
+  .text "ナーガの"
+  DIALOGUE_FONT_1
+  .text "血"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "目"
+  DIALOGUE_FONT_4
+  .text "覚"
+  DIALOGUE_FONT_0
+  .text "めさせてやろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "はい･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

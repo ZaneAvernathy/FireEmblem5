@@ -1,64 +1,64 @@
 dialogueChapter21ChurchOther ; B0/CB39
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD GunterPortrait
-	DIALOGUE_FONT_1
-	.text "解放軍"
-	DIALOGUE_FONT_0
-	.text "のかたがたか"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "これから"
-	DIALOGUE_FONT_1
-	.text "東"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "帝国軍"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "拠"
-	DIALOGUE_FONT_5
-	.text "点"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "近"
-	DIALOGUE_FONT_0
-	.text "づくゆえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いもいっそう"
-	DIALOGUE_FONT_4
-	.text "困"
-	DIALOGUE_FONT_2
-	.text "難"
-	DIALOGUE_FONT_0
-	.text "なものとなろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "このせいすいを"
-	DIALOGUE_FONT_1
-	.text "持"
-	DIALOGUE_FONT_0
-	.text "ってゆきなされ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なんらかの"
-	DIALOGUE_FONT_2
-	.text "時"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_3
-	.text "役"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "立"
-	DIALOGUE_FONT_0
-	.text "つじゃろうて"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD GunterPortrait
+  DIALOGUE_FONT_1
+  .text "解放軍"
+  DIALOGUE_FONT_0
+  .text "のかたがたか"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "これから"
+  DIALOGUE_FONT_1
+  .text "東"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "帝国軍"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "拠"
+  DIALOGUE_FONT_5
+  .text "点"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "近"
+  DIALOGUE_FONT_0
+  .text "づくゆえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いもいっそう"
+  DIALOGUE_FONT_4
+  .text "困"
+  DIALOGUE_FONT_2
+  .text "難"
+  DIALOGUE_FONT_0
+  .text "なものとなろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "このせいすいを"
+  DIALOGUE_FONT_1
+  .text "持"
+  DIALOGUE_FONT_0
+  .text "ってゆきなされ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なんらかの"
+  DIALOGUE_FONT_2
+  .text "時"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_3
+  .text "役"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "立"
+  DIALOGUE_FONT_0
+  .text "つじゃろうて"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

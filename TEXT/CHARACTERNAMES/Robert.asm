@@ -1,4 +1,4 @@
 
 menutextRobertName ; 86/DDF7
-	.enc "MenuText"
-	.text "ロベルト\n"
+  .enc "MenuText"
+  .text "ロベルト\n"

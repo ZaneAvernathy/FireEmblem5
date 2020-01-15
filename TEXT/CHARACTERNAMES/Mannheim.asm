@@ -1,4 +1,4 @@
 
 menutextMannheimName ; 86/E155
-	.enc "MenuText"
-	.text "マンハイム\n"
+  .enc "MenuText"
+  .text "マンハイム\n"

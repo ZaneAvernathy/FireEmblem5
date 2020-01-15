@@ -1,7 +1,7 @@
 dialogueLinoanDeathQuote ; 82/BDD9
-	DIALOGUE_FONT_0
-	.text "ああ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ディーン･･･"
+  DIALOGUE_FONT_0
+  .text "ああ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ディーン･･･"
 DIALOGUE_END_SCENE

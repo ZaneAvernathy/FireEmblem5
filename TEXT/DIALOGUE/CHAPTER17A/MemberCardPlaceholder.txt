@@ -1,22 +1,22 @@
 dialogueChapter17AMemberCardPlaceholder ; 98/C3D3
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AnnaPortrait
-	DIALOGUE_FONT_0
-	.text "Ｍ𝑨Ｐ１７𝑨　"
-	DIALOGUE_FONT_1
-	.text "村"
-	DIALOGUE_FONT_0
-	.text "～メンバーズカード𝐆ＥＴ"
-	DIALOGUE_NL
-	DIALOGUE_FONT_2
-	.text "現"
-	DIALOGUE_FONT_3
-	.text "在"
-	DIALOGUE_FONT_5
-	.text "工"
-	DIALOGUE_FONT_1
-	.text "事中"
-	DIALOGUE_FONT_0
-	.text "です"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AnnaPortrait
+  DIALOGUE_FONT_0
+  .text "Ｍ𝑨Ｐ１７𝑨　"
+  DIALOGUE_FONT_1
+  .text "村"
+  DIALOGUE_FONT_0
+  .text "～メンバーズカード𝐆ＥＴ"
+  DIALOGUE_NL
+  DIALOGUE_FONT_2
+  .text "現"
+  DIALOGUE_FONT_3
+  .text "在"
+  DIALOGUE_FONT_5
+  .text "工"
+  DIALOGUE_FONT_1
+  .text "事中"
+  DIALOGUE_FONT_0
+  .text "です"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

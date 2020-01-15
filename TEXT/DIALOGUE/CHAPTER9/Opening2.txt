@@ -1,240 +1,240 @@
 dialogueChapter9Opening2 ; 93/DA02
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD SelphinaPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "父上"
-	DIALOGUE_FONT_0
-	.text "！　"
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD DoriasPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "トラキア"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "です！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "南方"
-	DIALOGUE_FONT_0
-	.text "一"
-	DIALOGUE_FONT_2
-	.text "帯"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_FONT_1
-	.text "攻"
-	DIALOGUE_FONT_0
-	.text "めあがってきます！！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "トラバントめ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "われらのことに"
-	DIALOGUE_FONT_1
-	.text "気"
-	DIALOGUE_FONT_0
-	.text "づきおったか！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "しかしまずいな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "グレイドはターラに"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "っている"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "山"
-	DIALOGUE_FONT_5
-	.text "荘"
-	DIALOGUE_FONT_0
-	.text "にいるのは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "実"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "らない"
-	DIALOGUE_FONT_3
-	.text "若"
-	DIALOGUE_FONT_1
-	.text "者"
-	DIALOGUE_FONT_0
-	.text "たちばかりだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "をひきつけます"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "父上"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "彼"
-	DIALOGUE_FONT_0
-	.text "らを"
-	DIALOGUE_FONT_2
-	.text "連"
-	DIALOGUE_FONT_0
-	.text "れて"
-	DIALOGUE_FONT_2
-	.text "脱"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "してください"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "そうもいかぬ"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	.text "ハンニバル"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "らせによると"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "フィアナとマンスターの"
-	DIALOGUE_FONT_1
-	.text "戦士団"
-	DIALOGUE_FONT_0
-	.text "をひきいて"
-	DIALOGUE_NL
-	.text "こちらにむかっておられるそうだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "わしは"
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "をお"
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "ちせねばならぬ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "わかりました"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	.text "では"
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "防"
-	DIALOGUE_FONT_3
-	.text "衛"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "指揮"
-	DIALOGUE_FONT_0
-	.text "をとりましょう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "られるまで"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "きっと"
-	DIALOGUE_FONT_1
-	.text "守"
-	DIALOGUE_FONT_0
-	.text "りきって"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "せます"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ケイン！"
-	DIALOGUE_NL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD KanePortrait
-	DIALOGUE_PAUSE $10
-	DIALOGUE_RIGHT
-	.text "アルバ！"
-	DIALOGUE_NL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD AlbaPortrait
-	DIALOGUE_PAUSE $10
-	DIALOGUE_RIGHT
-	.text "ロベルト！"
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD RobertPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_LEFT
-	DIALOGUE_UNLOAD
-	DIALOGUE_RIGHT
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_3
-	.text "陣"
-	DIALOGUE_FONT_0
-	.text "よ！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "続"
-	DIALOGUE_FONT_0
-	.text "いて！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD SelphinaPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "父上"
+  DIALOGUE_FONT_0
+  .text "！　"
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD DoriasPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "トラキア"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "です！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "南方"
+  DIALOGUE_FONT_0
+  .text "一"
+  DIALOGUE_FONT_2
+  .text "帯"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_FONT_1
+  .text "攻"
+  DIALOGUE_FONT_0
+  .text "めあがってきます！！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "トラバントめ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "われらのことに"
+  DIALOGUE_FONT_1
+  .text "気"
+  DIALOGUE_FONT_0
+  .text "づきおったか！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "しかしまずいな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "グレイドはターラに"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "っている"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "山"
+  DIALOGUE_FONT_5
+  .text "荘"
+  DIALOGUE_FONT_0
+  .text "にいるのは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "実"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "らない"
+  DIALOGUE_FONT_3
+  .text "若"
+  DIALOGUE_FONT_1
+  .text "者"
+  DIALOGUE_FONT_0
+  .text "たちばかりだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "をひきつけます"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "父上"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "彼"
+  DIALOGUE_FONT_0
+  .text "らを"
+  DIALOGUE_FONT_2
+  .text "連"
+  DIALOGUE_FONT_0
+  .text "れて"
+  DIALOGUE_FONT_2
+  .text "脱"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "してください"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "そうもいかぬ"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  .text "ハンニバル"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "らせによると"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "フィアナとマンスターの"
+  DIALOGUE_FONT_1
+  .text "戦士団"
+  DIALOGUE_FONT_0
+  .text "をひきいて"
+  DIALOGUE_NL
+  .text "こちらにむかっておられるそうだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "わしは"
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "をお"
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "ちせねばならぬ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "わかりました"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  .text "では"
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "防"
+  DIALOGUE_FONT_3
+  .text "衛"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "指揮"
+  DIALOGUE_FONT_0
+  .text "をとりましょう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "られるまで"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "きっと"
+  DIALOGUE_FONT_1
+  .text "守"
+  DIALOGUE_FONT_0
+  .text "りきって"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "せます"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ケイン！"
+  DIALOGUE_NL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD KanePortrait
+  DIALOGUE_PAUSE $10
+  DIALOGUE_RIGHT
+  .text "アルバ！"
+  DIALOGUE_NL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD AlbaPortrait
+  DIALOGUE_PAUSE $10
+  DIALOGUE_RIGHT
+  .text "ロベルト！"
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD RobertPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_LEFT
+  DIALOGUE_UNLOAD
+  DIALOGUE_RIGHT
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_3
+  .text "陣"
+  DIALOGUE_FONT_0
+  .text "よ！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "続"
+  DIALOGUE_FONT_0
+  .text "いて！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

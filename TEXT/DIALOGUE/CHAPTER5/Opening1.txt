@@ -1,154 +1,154 @@
 dialogueChapter5Opening1 ; 93/8C49
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD EyvelPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ナンナ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD NannaPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "エーヴェル･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "よかった･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ご"
-	DIALOGUE_FONT_1
-	.text "無事"
-	DIALOGUE_FONT_0
-	.text "でしたのね･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おけがはありませんか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ええ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "大"
-	DIALOGUE_FONT_4
-	.text "丈"
-	DIALOGUE_FONT_2
-	.text "夫"
-	DIALOGUE_FONT_0
-	.text "だけど･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "マリータが･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "マリータ！？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "マリータはどうなったのです？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "にもわからないの"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "城"
-	DIALOGUE_FONT_0
-	.text "につくなり"
-	DIALOGUE_FONT_3
-	.text "引"
-	DIALOGUE_FONT_0
-	.text "き"
-	DIALOGUE_FONT_3
-	.text "離"
-	DIALOGUE_FONT_0
-	.text "されて･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_ASMC_0 rlDialogueSilenceMusic
-	DIALOGUE_PAUSE $10
-	DIALOGUE_UNK $13
-	.text "わ"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･レイドリック！"
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD RaydrikPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "　どういうこと？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "娘"
-	DIALOGUE_FONT_0
-	.text "にも"
-	DIALOGUE_FONT_1
-	.text "会"
-	DIALOGUE_FONT_0
-	.text "わせてくれると･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "だましたのですか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "だましてなどおらんさ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "お"
-	DIALOGUE_FONT_1
-	.text "前"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "娘"
-	DIALOGUE_FONT_0
-	.text "ともすぐに"
-	DIALOGUE_FONT_1
-	.text "会"
-	DIALOGUE_FONT_0
-	.text "わせてやる"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "もっとも･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD NannaPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "エーヴェル！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "むこうに"
-	DIALOGUE_FONT_1
-	.text "剣士"
-	DIALOGUE_FONT_0
-	.text "が！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "えっ！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD EyvelPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ナンナ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD NannaPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "エーヴェル･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "よかった･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ご"
+  DIALOGUE_FONT_1
+  .text "無事"
+  DIALOGUE_FONT_0
+  .text "でしたのね･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おけがはありませんか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ええ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "大"
+  DIALOGUE_FONT_4
+  .text "丈"
+  DIALOGUE_FONT_2
+  .text "夫"
+  DIALOGUE_FONT_0
+  .text "だけど･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "マリータが･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "マリータ！？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "マリータはどうなったのです？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "にもわからないの"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "城"
+  DIALOGUE_FONT_0
+  .text "につくなり"
+  DIALOGUE_FONT_3
+  .text "引"
+  DIALOGUE_FONT_0
+  .text "き"
+  DIALOGUE_FONT_3
+  .text "離"
+  DIALOGUE_FONT_0
+  .text "されて･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_ASMC_0 rlDialogueSilenceMusic
+  DIALOGUE_PAUSE $10
+  DIALOGUE_UNK $13
+  .text "わ"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･レイドリック！"
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD RaydrikPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "　どういうこと？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "娘"
+  DIALOGUE_FONT_0
+  .text "にも"
+  DIALOGUE_FONT_1
+  .text "会"
+  DIALOGUE_FONT_0
+  .text "わせてくれると･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "だましたのですか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "だましてなどおらんさ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "お"
+  DIALOGUE_FONT_1
+  .text "前"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "娘"
+  DIALOGUE_FONT_0
+  .text "ともすぐに"
+  DIALOGUE_FONT_1
+  .text "会"
+  DIALOGUE_FONT_0
+  .text "わせてやる"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "もっとも･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD NannaPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "エーヴェル！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "むこうに"
+  DIALOGUE_FONT_1
+  .text "剣士"
+  DIALOGUE_FONT_0
+  .text "が！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "えっ！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

@@ -1,4 +1,4 @@
 
 menutextStatusTextNormal ; 81/DA52
-	.enc "MenuText"
-	.text "ーーーー　\n"
+  .enc "MenuText"
+  .text "ーーーー　\n"

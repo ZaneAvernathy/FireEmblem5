@@ -1,51 +1,51 @@
 dialogueChapter15AmaldaFlee ; 92/EB2A
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AmaldaPortrait
-	DIALOGUE_FONT_0
-	.text "どうやら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "あの"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_2
-	.text "隊"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "村"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "救"
-	DIALOGUE_FONT_0
-	.text "ってくれるようね"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "これで一"
-	DIALOGUE_FONT_2
-	.text "安心"
-	DIALOGUE_FONT_0
-	.text "だわ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "そろそろ"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "らなくては"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AmaldaPortrait
+  DIALOGUE_FONT_0
+  .text "どうやら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "あの"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_2
+  .text "隊"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "村"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "救"
+  DIALOGUE_FONT_0
+  .text "ってくれるようね"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "これで一"
+  DIALOGUE_FONT_2
+  .text "安心"
+  DIALOGUE_FONT_0
+  .text "だわ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "そろそろ"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "らなくては"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

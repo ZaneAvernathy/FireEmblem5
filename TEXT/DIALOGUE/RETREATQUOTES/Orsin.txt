@@ -1,17 +1,17 @@
 dialogueOrsinRetreatQuote ; 82/C0D3
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD OrsinPortrait
-	DIALOGUE_FONT_0
-	.text "へっ､"
-	DIALOGUE_PAUSE $08
-	.text "たわいのねえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "楽"
-	DIALOGUE_FONT_2
-	.text "勝"
-	DIALOGUE_FONT_0
-	.text "だぜ"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD OrsinPortrait
+  DIALOGUE_FONT_0
+  .text "へっ､"
+  DIALOGUE_PAUSE $08
+  .text "たわいのねえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "楽"
+  DIALOGUE_FONT_2
+  .text "勝"
+  DIALOGUE_FONT_0
+  .text "だぜ"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

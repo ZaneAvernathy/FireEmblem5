@@ -1,11 +1,11 @@
 dialogueWolfeChapter19DeathQuote ; B0/C347
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ぐわっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そんな･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ばかな･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ぐわっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そんな･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ばかな･･･"
 DIALOGUE_END_SCENE

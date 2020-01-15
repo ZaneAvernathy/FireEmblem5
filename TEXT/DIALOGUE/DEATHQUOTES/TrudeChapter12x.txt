@@ -1,8 +1,8 @@
 dialogueTrudeChapter12xDeathQuote ; 92/BE59
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "くっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おれとしたことが･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "くっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おれとしたことが･･･"
 DIALOGUE_END_SCENE

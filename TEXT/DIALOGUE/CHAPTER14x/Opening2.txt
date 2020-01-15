@@ -1,163 +1,163 @@
 dialogueChapter14xOpening2 ; E7/9A69
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD MischaPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD CodhaPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ミーシャ"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "ペガサス"
-	DIALOGUE_FONT_2
-	.text "部隊"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_2
-	.text "配"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "できておるのだろうな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ええ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "傭兵団"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "半数"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_2
-	.text "連"
-	DIALOGUE_FONT_0
-	.text "れてきました"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "まもなく"
-	DIALOGUE_FONT_2
-	.text "配"
-	DIALOGUE_FONT_1
-	.text "備"
-	DIALOGUE_FONT_0
-	.text "はおわります"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "では"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "そなたはレンスターに"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "れ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "もう"
-	DIALOGUE_FONT_1
-	.text "用"
-	DIALOGUE_FONT_0
-	.text "はない"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_2
-	.text "部隊"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "指揮"
-	DIALOGUE_FONT_0
-	.text "をとらねばなりません"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_2
-	.text "回"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "任務"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "敗"
-	DIALOGUE_FONT_2
-	.text "残"
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "掃"
-	DIALOGUE_FONT_1
-	.text "討"
-	DIALOGUE_FONT_0
-	.text "だ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そなたが"
-	DIALOGUE_FONT_2
-	.text "望"
-	DIALOGUE_FONT_0
-	.text "むところではあるまい"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ですが､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "部"
-	DIALOGUE_FONT_1
-	.text "下"
-	DIALOGUE_FONT_0
-	.text "たちは･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ミーシャ"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	.text "これは"
-	DIALOGUE_FONT_2
-	.text "命令"
-	DIALOGUE_FONT_0
-	.text "だ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "レンスターへ"
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "れ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "わかりました"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "では･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD MischaPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD CodhaPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ミーシャ"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "ペガサス"
+  DIALOGUE_FONT_2
+  .text "部隊"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_2
+  .text "配"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "できておるのだろうな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ええ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "傭兵団"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "半数"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_2
+  .text "連"
+  DIALOGUE_FONT_0
+  .text "れてきました"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "まもなく"
+  DIALOGUE_FONT_2
+  .text "配"
+  DIALOGUE_FONT_1
+  .text "備"
+  DIALOGUE_FONT_0
+  .text "はおわります"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "では"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "そなたはレンスターに"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "れ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "もう"
+  DIALOGUE_FONT_1
+  .text "用"
+  DIALOGUE_FONT_0
+  .text "はない"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_2
+  .text "部隊"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "指揮"
+  DIALOGUE_FONT_0
+  .text "をとらねばなりません"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_2
+  .text "回"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "任務"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "敗"
+  DIALOGUE_FONT_2
+  .text "残"
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "掃"
+  DIALOGUE_FONT_1
+  .text "討"
+  DIALOGUE_FONT_0
+  .text "だ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そなたが"
+  DIALOGUE_FONT_2
+  .text "望"
+  DIALOGUE_FONT_0
+  .text "むところではあるまい"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ですが､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "部"
+  DIALOGUE_FONT_1
+  .text "下"
+  DIALOGUE_FONT_0
+  .text "たちは･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ミーシャ"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  .text "これは"
+  DIALOGUE_FONT_2
+  .text "命令"
+  DIALOGUE_FONT_0
+  .text "だ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "レンスターへ"
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "れ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "わかりました"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "では･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

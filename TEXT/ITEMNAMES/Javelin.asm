@@ -1,4 +1,4 @@
 
 menutextJavelinName ; B0/932F
-	.enc "MenuText"
-	.text "てやり\n"
+  .enc "MenuText"
+  .text "てやり\n"

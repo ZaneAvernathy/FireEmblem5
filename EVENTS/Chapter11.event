@@ -1,602 +1,602 @@
 
 eventChapter11Events ; 99/CB04
 
-	_OpeningEventDefinitions ; 99/CB04
-		EVENT FlagAlwaysZero, _OpeningEvent
-			CMP_WORD wCurrentTurn, 0
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TurnEventDefinitions ; 99/CB11
-		EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
-			CHECK_DEAD Kempf
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
-			CMP_WORD wCurrentTurn, 30
-			CMP_WORD wCurrentPhase, Player
-		END_DEFINITION
-		EVENT $0A, _KempfLeave
-			TEST_FLAG_SET $09
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _KempfDialogue
-			CMP_WORD wCurrentTurn, 1
-			CHECK_NUM_UNITS_GTE Kempf, 1
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-	END_DEFINITION ; Missing a byte?
-
-	_TalkEventDefinitions ; 99/CB53
-	END_DEFINITION_ARRAY
-
-	_LocationEventDefinitions ; 99/CB55
-		macroDoorDefinition $21, [9, 1], eventChapter11Events._Door1
-		macroDoorDefinition $22, [3, 2], eventChapter11Events._Door2
-		macroDoorDefinition $23, [8, 2], eventChapter11Events._Door3
-		macroDoorDefinition $24, [5, 4], eventChapter11Events._Door4
-		macroDoorDefinition $25, [8, 4], eventChapter11Events._Door5
-		macroDoorDefinition $26, [11, 4], eventChapter11Events._Door6
-		macroDoorDefinition $27, [8, 6], eventChapter11Events._Door7
-		macroDoorDefinition $28, [8, 12], eventChapter11Events._Door8
-		macroDoorDefinition $29, [8, 14], eventChapter11Events._Door9
-		macroDoorDefinition $2A, [8, 16], eventChapter11Events._Door10
-		macroChestDefinition $2B, eventChapter11Data._Chest1Events, eventChapter11Data._Chest1Coordinates
-		EVENT FlagAlwaysZero, _EndingEvent
-			macroEventConditionCheckCoords [13, 1]
-			CMP_WORD wCurrentPhase, Player
-			CMP_WORD aSelectedCharacterBuffer.Character, Leif
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_BeforeActionEventDefinitions ; 99/CC28
-		EVENT FlagAlwaysZero, _NPCRetreat
-			CMP_WORD wCurrentPhase, NPC
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_AfterActionEventDefinitions ; 99/CC28
-		EVENT $06, _FredChange
-			CMP_WORD aSelectedCharacterBuffer.Character, Leif
-			macroEventConditionCheckCoordRanges [5, 8], [11, 11]
-		END_DEFINITION
-		EVENT $06, _FredChange
-			macroEventConditionCheckCoordRanges [5, 8], [11, 11]
-			CHECK_CARRYING Leif
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_BattleEventDefinitions ; 99/CC55
-		macroBossQuoteDefinition $08, Kempf
-		macroBossQuoteDefinition $05, Fred
-	END_DEFINITION_ARRAY
-
-	_ShopEventDefinitions ; 99/CC67
-	END_DEFINITION_ARRAY
-
-	_KempfLeave ; 99/CC69
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $0A
-		YIELD
-
-		PLAY_SOUND_WORD $00F7
-
-		DIALOGUE dialogueChapter11KempfLeave
-		YIELD
-
-		macroScriptedRewarpStaff Kempf, [-1, -1]
-
-		macroRemoveUnit Kempf
-
-		CALL_ASM_SKIPPABLE rlUpdateUnitMaps, $0000
-	END2
-
-	_KempfDialogue ; 99/CCE1
-		macroCountAllUncapturedAliveUnits Kempf
-		JUMP_FALSE +
-
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $39
-		YIELD
+  _OpeningEventDefinitions ; 99/CB04
+    EVENT FlagAlwaysZero, _OpeningEvent
+      CMP_WORD wCurrentTurn, 0
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TurnEventDefinitions ; 99/CB11
+    EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+      CHECK_DEAD Kempf
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+      CMP_WORD wCurrentTurn, 30
+      CMP_WORD wCurrentPhase, Player
+    END_DEFINITION
+    EVENT $0A, _KempfLeave
+      TEST_FLAG_SET $09
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _KempfDialogue
+      CMP_WORD wCurrentTurn, 1
+      CHECK_NUM_UNITS_GTE Kempf, 1
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+  END_DEFINITION ; Missing a byte?
+
+  _TalkEventDefinitions ; 99/CB53
+  END_DEFINITION_ARRAY
+
+  _LocationEventDefinitions ; 99/CB55
+    macroDoorDefinition $21, [9, 1], eventChapter11Events._Door1
+    macroDoorDefinition $22, [3, 2], eventChapter11Events._Door2
+    macroDoorDefinition $23, [8, 2], eventChapter11Events._Door3
+    macroDoorDefinition $24, [5, 4], eventChapter11Events._Door4
+    macroDoorDefinition $25, [8, 4], eventChapter11Events._Door5
+    macroDoorDefinition $26, [11, 4], eventChapter11Events._Door6
+    macroDoorDefinition $27, [8, 6], eventChapter11Events._Door7
+    macroDoorDefinition $28, [8, 12], eventChapter11Events._Door8
+    macroDoorDefinition $29, [8, 14], eventChapter11Events._Door9
+    macroDoorDefinition $2A, [8, 16], eventChapter11Events._Door10
+    macroChestDefinition $2B, eventChapter11Data._Chest1Events, eventChapter11Data._Chest1Coordinates
+    EVENT FlagAlwaysZero, _EndingEvent
+      macroEventConditionCheckCoords [13, 1]
+      CMP_WORD wCurrentPhase, Player
+      CMP_WORD aSelectedCharacterBuffer.Character, Leif
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _BeforeActionEventDefinitions ; 99/CC28
+    EVENT FlagAlwaysZero, _NPCRetreat
+      CMP_WORD wCurrentPhase, NPC
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _AfterActionEventDefinitions ; 99/CC28
+    EVENT $06, _FredChange
+      CMP_WORD aSelectedCharacterBuffer.Character, Leif
+      macroEventConditionCheckCoordRanges [5, 8], [11, 11]
+    END_DEFINITION
+    EVENT $06, _FredChange
+      macroEventConditionCheckCoordRanges [5, 8], [11, 11]
+      CHECK_CARRYING Leif
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _BattleEventDefinitions ; 99/CC55
+    macroBossQuoteDefinition $08, Kempf
+    macroBossQuoteDefinition $05, Fred
+  END_DEFINITION_ARRAY
+
+  _ShopEventDefinitions ; 99/CC67
+  END_DEFINITION_ARRAY
+
+  _KempfLeave ; 99/CC69
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $0A
+    YIELD
+
+    PLAY_SOUND_WORD $00F7
+
+    DIALOGUE dialogueChapter11KempfLeave
+    YIELD
+
+    macroScriptedRewarpStaff Kempf, [-1, -1]
+
+    macroRemoveUnit Kempf
+
+    CALL_ASM_SKIPPABLE rlUpdateUnitMaps, $0000
+  END2
+
+  _KempfDialogue ; 99/CCE1
+    macroCountAllUncapturedAliveUnits Kempf
+    JUMP_FALSE +
+
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $39
+    YIELD
 
-		SCROLL_CAMERA_CHAR Kempf
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Kempf
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter11KempfDialogue
-		YIELD
+    DIALOGUE dialogueChapter11KempfDialogue
+    YIELD
 
-		+
-	END2
+    +
+  END2
 
-	_Unknown ; 99/CD05
-	END2
+  _Unknown ; 99/CD05
+  END2
 
-	_Door1 ; 99/CD06
-		macroOpenDoorByTileChangeID 0
-	END1
+  _Door1 ; 99/CD06
+    macroOpenDoorByTileChangeID 0
+  END1
 
-	_Door2 ; 99/CD31
-		macroOpenDoorByTileChangeID 1
-	END1
+  _Door2 ; 99/CD31
+    macroOpenDoorByTileChangeID 1
+  END1
 
-	_Door4 ; 99/CD5C
-		macroOpenDoorByTileChangeID 3
-	END1
+  _Door4 ; 99/CD5C
+    macroOpenDoorByTileChangeID 3
+  END1
 
-	_Door6 ; 99/CD87
-		macroOpenDoorByTileChangeID 5
-	END1
+  _Door6 ; 99/CD87
+    macroOpenDoorByTileChangeID 5
+  END1
 
-	_Door3 ; 99/CDB2
-		macroOpenDoorByTileChangeID 2
-	END1
+  _Door3 ; 99/CDB2
+    macroOpenDoorByTileChangeID 2
+  END1
 
-	_Door5 ; 99/CDDD
-		macroOpenDoorByTileChangeID 4
-	END1
+  _Door5 ; 99/CDDD
+    macroOpenDoorByTileChangeID 4
+  END1
 
-	_Door7 ; 99/CE08
-		macroOpenDoorByTileChangeID 6
-	END1
+  _Door7 ; 99/CE08
+    macroOpenDoorByTileChangeID 6
+  END1
 
-	_Door8 ; 99/CE33
-		macroOpenDoorByTileChangeID 7
-	END1
+  _Door8 ; 99/CE33
+    macroOpenDoorByTileChangeID 7
+  END1
 
-	_Door9 ; 99/CE5E
-		macroOpenDoorByTileChangeID 8
-	END1
+  _Door9 ; 99/CE5E
+    macroOpenDoorByTileChangeID 8
+  END1
 
-	_Door10 ; 99/CE89
-		macroOpenDoorByTileChangeID 9
-	END1
+  _Door10 ; 99/CE89
+    macroOpenDoorByTileChangeID 9
+  END1
 
-	_FredChange ; 99/CEB4
-		macroCountAllUncapturedAliveUnits Kempf
-		JUMP_FALSE _EndChange
+  _FredChange ; 99/CEB4
+    macroCountAllUncapturedAliveUnits Kempf
+    JUMP_FALSE _EndChange
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $39
-		YIELD
+    SET_MUSIC $39
+    YIELD
 
-		SCROLL_CAMERA_CHAR Kempf
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Kempf
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter11TrapSprung
-		YIELD
+    DIALOGUE dialogueChapter11TrapSprung
+    YIELD
 
-		SCROLL_CAMERA_CHAR Leif
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Leif
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		LOAD2 eventChapter11Data._BallistaGroup
-		WAIT_MOVE
-		YIELD
+    LOAD2 eventChapter11Data._BallistaGroup
+    WAIT_MOVE
+    YIELD
 
-		PLAY_SOUND_BYTE $6C
+    PLAY_SOUND_BYTE $6C
 
-		macroSingleTileChangeByCoordinates [8, 2], $03A5
+    macroSingleTileChangeByCoordinates [8, 2], $03A5
 
-		STORE_WORD wEventEngineXCoordinate, 8
-		STORE_WORD wEventEngineYCoordinate, 2
-		CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
-		JUMP_FALSE +
+    STORE_WORD wEventEngineXCoordinate, 8
+    STORE_WORD wEventEngineYCoordinate, 2
+    CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
+    JUMP_FALSE +
 
-		STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
+    STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
 
-		MOVE_UNIT None, [8, 2], [8, 2], 1, None
-		YIELD_UNK
+    MOVE_UNIT None, [8, 2], [8, 2], 1, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
-		STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
-		CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
+    STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
+    STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
+    CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
 
-		+
-		UNSET_FLAG $23
+    +
+    UNSET_FLAG $23
 
-		macroSingleTileChangeByCoordinates [8, 4], $03A5
+    macroSingleTileChangeByCoordinates [8, 4], $03A5
 
-		STORE_WORD wEventEngineXCoordinate, 8
-		STORE_WORD wEventEngineYCoordinate, 4
-		CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
-		JUMP_FALSE +
+    STORE_WORD wEventEngineXCoordinate, 8
+    STORE_WORD wEventEngineYCoordinate, 4
+    CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
+    JUMP_FALSE +
 
-		STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
+    STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
 
-		MOVE_UNIT None, [8, 4], [8, 4], 1, None
-		YIELD_UNK
+    MOVE_UNIT None, [8, 4], [8, 4], 1, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
-		STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
-		CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
+    STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
+    STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
+    CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
 
-		+
-		UNSET_FLAG $25
+    +
+    UNSET_FLAG $25
 
-		macroSingleTileChangeByCoordinates [8, 6], $03A5
+    macroSingleTileChangeByCoordinates [8, 6], $03A5
 
-		STORE_WORD wEventEngineXCoordinate, 8
-		STORE_WORD wEventEngineYCoordinate, 6
-		CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
-		JUMP_FALSE +
+    STORE_WORD wEventEngineXCoordinate, 8
+    STORE_WORD wEventEngineYCoordinate, 6
+    CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
+    JUMP_FALSE +
 
-		STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
+    STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
 
-		MOVE_UNIT None, [8, 6], [8, 6], 1, None
-		YIELD_UNK
+    MOVE_UNIT None, [8, 6], [8, 6], 1, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
-		STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
-		CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
+    STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
+    STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
+    CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
 
-		+
-		UNSET_FLAG $27
+    +
+    UNSET_FLAG $27
 
-		macroSingleTileChangeByCoordinates [8, 12], $03A5
+    macroSingleTileChangeByCoordinates [8, 12], $03A5
 
-		STORE_WORD wEventEngineXCoordinate, 8
-		STORE_WORD wEventEngineYCoordinate, 12
-		CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
-		JUMP_FALSE +
+    STORE_WORD wEventEngineXCoordinate, 8
+    STORE_WORD wEventEngineYCoordinate, 12
+    CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
+    JUMP_FALSE +
 
-		STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
+    STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
 
-		MOVE_UNIT None, [8, 12], [8, 12], 1, None
-		YIELD_UNK
+    MOVE_UNIT None, [8, 12], [8, 12], 1, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
-		STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
-		CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
+    STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
+    STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
+    CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
 
-		+
-		UNSET_FLAG $28
+    +
+    UNSET_FLAG $28
 
-		macroSingleTileChangeByCoordinates [8, 14], $03A5
+    macroSingleTileChangeByCoordinates [8, 14], $03A5
 
-		STORE_WORD wEventEngineXCoordinate, 8
-		STORE_WORD wEventEngineYCoordinate, 14
-		CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
-		JUMP_FALSE +
+    STORE_WORD wEventEngineXCoordinate, 8
+    STORE_WORD wEventEngineYCoordinate, 14
+    CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
+    JUMP_FALSE +
 
-		STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
+    STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
 
-		MOVE_UNIT None, [8, 14], [8, 14], 1, None
-		YIELD_UNK
+    MOVE_UNIT None, [8, 14], [8, 14], 1, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
-		STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
-		CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
+    STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
+    STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
+    CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
 
-		+
-		UNSET_FLAG $29
+    +
+    UNSET_FLAG $29
 
-		macroSingleTileChangeByCoordinates [8, 16], $03A5
+    macroSingleTileChangeByCoordinates [8, 16], $03A5
 
-		STORE_WORD wEventEngineXCoordinate, 8
-		STORE_WORD wEventEngineYCoordinate, 16
-		CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
-		JUMP_FALSE +
+    STORE_WORD wEventEngineXCoordinate, 8
+    STORE_WORD wEventEngineYCoordinate, 16
+    CALL_ASM_LOOP rlASMCWriteUnitAtTileToBuffer, $0000
+    JUMP_FALSE +
 
-		STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
+    STORE_WORD_FROM wEventEngineParameter3, aBurstWindowCharacterBuffer.TurnStatus
 
-		MOVE_UNIT None, [8, 16], [8, 16], 1, None
-		YIELD_UNK
+    MOVE_UNIT None, [8, 16], [8, 16], 1, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
-		STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
-		CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
+    STORE_WORD_FROM wEventEngineCharacterTarget, aBurstWindowCharacterBuffer.Character
+    STORE_WORD_FROM wEventEngineParameter1, wEventEngineParameter3
+    CALL_ASM_LOOP rlASMCSetUnitTurnStatus, $0000
 
-		+
-		UNSET_FLAG $2A
-		CALL_ASM_SKIPPABLE rlASMCUnknown8CA0C0, $0000
+    +
+    UNSET_FLAG $2A
+    CALL_ASM_SKIPPABLE rlASMCUnknown8CA0C0, $0000
 
-		macroCountAllUncapturedAliveUnits Fred
-		JUMP_FALSE _EndChange
+    macroCountAllUncapturedAliveUnits Fred
+    JUMP_FALSE _EndChange
 
-		SCROLL_CAMERA_CHAR Fred
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Fred
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter11FredChange
-		YIELD
+    DIALOGUE dialogueChapter11FredChange
+    YIELD
 
-		macroConvertToNPCAllegiance Fred
+    macroConvertToNPCAllegiance Fred
 
-		macroSetCharacterByte Fred, structCharacterDataRAM.AI1, $00
-		macroSetCharacterByte Fred, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte Fred, structCharacterDataRAM.AI2, $0B
-		macroSetCharacterByte Fred, structCharacterDataRAM.Unknown3E, $00
-		macroSetCharacterByte Fred, structCharacterDataRAM.AI3, $02
-		macroUnsetCharacterBitsWord Fred, structCharacterDataRAM.Unknown3F, $0080
+    macroSetCharacterByte Fred, structCharacterDataRAM.AI1, $00
+    macroSetCharacterByte Fred, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte Fred, structCharacterDataRAM.AI2, $0B
+    macroSetCharacterByte Fred, structCharacterDataRAM.Unknown3E, $00
+    macroSetCharacterByte Fred, structCharacterDataRAM.AI3, $02
+    macroUnsetCharacterBitsWord Fred, structCharacterDataRAM.Unknown3F, $0080
 
-		_EndChange
-	END2
+    _EndChange
+  END2
 
-	_NPCRetreat ; 99/D1B6
-		EVENT_CMP_BYTE_AT_EQ $7E402E, $05
-		JUMP_FALSE +
+  _NPCRetreat ; 99/D1B6
+    EVENT_CMP_BYTE_AT_EQ $7E402E, $05
+    JUMP_FALSE +
 
-		STORE_LONG lEventEngineLongParameter, _NPCTable
-		CALL_ASM_LOOP rlASMCSetFlagIfRetreatingUnitByTable, $0000
+    STORE_LONG lEventEngineLongParameter, _NPCTable
+    CALL_ASM_LOOP rlASMCSetFlagIfRetreatingUnitByTable, $0000
 
-		+
-	END1
+    +
+  END1
 
-	_NPCTable ; 99/D1CC
-		.word Fred
-		.byte FlagFredSaved
-	.word $0000, $0000
+  _NPCTable ; 99/D1CC
+    .word Fred
+    .byte FlagFredSaved
+  .word $0000, $0000
 
-	_PrepGroups ; 99/D1D3
-		.long eventChapter11Data._PrepGroup
-	.word $0000
+  _PrepGroups ; 99/D1D3
+    .long eventChapter11Data._PrepGroup
+  .word $0000
 
-	_OpeningEvent ; 99/D1D8
-		CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
+  _OpeningEvent ; 99/D1D8
+    CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
 
-		SCROLL_CAMERA_ADDRESS eventChapter11Data._OlwenCameraCoordinates
-		YIELD
+    SCROLL_CAMERA_ADDRESS eventChapter11Data._OlwenCameraCoordinates
+    YIELD
 
-		LOAD1 eventChapter11Data._OlwenGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter11Data._OlwenGroup
+    WAIT_MOVE
+    YIELD
 
-		macroDismountUnit Olwen
+    macroDismountUnit Olwen
 
-		CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog, $0000
+    CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog, $0000
 
-		macroTileChangeByID 0
-		macroTileChangeByID 2
-		macroTileChangeByID 4
-		macroTileChangeByID 6
-		macroTileChangeByID 7
-		macroTileChangeByID 8
-		macroTileChangeByID 9
+    macroTileChangeByID 0
+    macroTileChangeByID 2
+    macroTileChangeByID 4
+    macroTileChangeByID 6
+    macroTileChangeByID 7
+    macroTileChangeByID 8
+    macroTileChangeByID 9
 
-		SET_FLAG $23
-		SET_FLAG $25
-		SET_FLAG $27
-		SET_FLAG $28
-		SET_FLAG $29
-		SET_FLAG $2A
+    SET_FLAG $23
+    SET_FLAG $25
+    SET_FLAG $27
+    SET_FLAG $28
+    SET_FLAG $29
+    SET_FLAG $2A
 
-		FADE_IN $02
+    FADE_IN $02
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $39
-		YIELD
+    SET_MUSIC $39
+    YIELD
 
-		macroChapterTitlePopup dialogueChapter11Title
+    macroChapterTitlePopup dialogueChapter11Title
 
-		SCROLL_CAMERA_CHAR Olwen
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Olwen
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter11Opening1
-		YIELD
+    DIALOGUE dialogueChapter11Opening1
+    YIELD
 
-		MOVE_UNIT FriegeArmoredAxe1, [14, 3], [13, 2], 1, _OlwenPickupMovestring
-		YIELD_UNK
+    MOVE_UNIT FriegeArmoredAxe1, [14, 3], [13, 2], 1, _OlwenPickupMovestring
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		macroRemoveUnit Olwen
+    macroRemoveUnit Olwen
 
-		MOVE_UNIT FriegeArmoredAxe1, [13, 2], [5, 1], 1, _ArmorLeaveMovestring
-		YIELD_UNK
+    MOVE_UNIT FriegeArmoredAxe1, [13, 2], [5, 1], 1, _ArmorLeaveMovestring
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		macroRemoveUnit FriegeArmoredAxe1
+    macroRemoveUnit FriegeArmoredAxe1
 
-		DIALOGUE dialogueChapter11Opening2
-		YIELD
+    DIALOGUE dialogueChapter11Opening2
+    YIELD
 
-		SCROLL_CAMERA_ADDRESS eventChapter11Data._FredCameraCoordinates
-		YIELD
+    SCROLL_CAMERA_ADDRESS eventChapter11Data._FredCameraCoordinates
+    YIELD
 
-		LOAD1 eventChapter11Data._FredGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter11Data._FredGroup
+    WAIT_MOVE
+    YIELD
 
-		MOVE_UNIT Fred, [0, 0], [8, 8], 2, _FredArrive1Movestring
-		YIELD_UNK
+    MOVE_UNIT Fred, [0, 0], [8, 8], 2, _FredArrive1Movestring
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		macroDismountUnit Fred
+    macroDismountUnit Fred
 
-		MOVE_UNIT Fred, [0, 0], [8, 8], 1, _FredArrive2Movestring
-		YIELD_UNK
+    MOVE_UNIT Fred, [0, 0], [8, 8], 1, _FredArrive2Movestring
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		DIALOGUE dialogueChapter11Opening3
-		YIELD
+    DIALOGUE dialogueChapter11Opening3
+    YIELD
 
-		MOVE_UNIT Fred, [0, 0], [8, 8], 1, _FredArrive3Movestring
-		YIELD_UNK
+    MOVE_UNIT Fred, [0, 0], [8, 8], 1, _FredArrive3Movestring
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		macroMountUnit Fred
+    macroMountUnit Fred
 
-		MOVE_UNIT FriegeArmoredAxe1, [12, 3], [13, 2], 1, None
-		YIELD_UNK
+    MOVE_UNIT FriegeArmoredAxe1, [12, 3], [13, 2], 1, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		macroUnsetCharacterBitsWord Fred, structCharacterDataRAM.Skills2, (Skill2Unknown | (Skill3Immortal << 8))
+    macroUnsetCharacterBitsWord Fred, structCharacterDataRAM.Skills2, (Skill2Unknown | (Skill3Immortal << 8))
 
-		PLAY_SOUND_BYTE $6C
+    PLAY_SOUND_BYTE $6C
 
-		macroSingleTileChangeByCoordinates [9, 0], $0389
-		macroSingleTileChangeByCoordinates [9, 1], $03A9
-	END2
+    macroSingleTileChangeByCoordinates [9, 0], $0389
+    macroSingleTileChangeByCoordinates [9, 1], $03A9
+  END2
 
-	_OlwenPickupMovestring ; 99/D43B
-		MS_MOVE_UP
-		MS_MOVE_LEFT
-	MS_END
+  _OlwenPickupMovestring ; 99/D43B
+    MS_MOVE_UP
+    MS_MOVE_LEFT
+  MS_END
 
-	_ArmorLeaveMovestring ; 99/D43E
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_UP
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_UP
-	MS_END
+  _ArmorLeaveMovestring ; 99/D43E
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_UP
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_UP
+  MS_END
 
-	_FredArrive1Movestring ; 99/D449
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-	MS_END
+  _FredArrive1Movestring ; 99/D449
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+  MS_END
 
-	_FredArrive2Movestring ; 99/D455
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_UP
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-		MS_MOVE_DOWN
-		MS_MOVE_RIGHT
-		MS_MOVE_RIGHT
-	MS_END
+  _FredArrive2Movestring ; 99/D455
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_UP
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+    MS_MOVE_DOWN
+    MS_MOVE_RIGHT
+    MS_MOVE_RIGHT
+  MS_END
 
-	_FredArrive3Movestring ; 99/D463
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_UP
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_LEFT
-		MS_MOVE_DOWN
-		MS_MOVE_DOWN
-		MS_MOVE_DOWN
-		MS_MOVE_DOWN
-		MS_MOVE_DOWN
-		MS_MOVE_DOWN
-		MS_MOVE_DOWN
-	MS_END
+  _FredArrive3Movestring ; 99/D463
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_UP
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_LEFT
+    MS_MOVE_DOWN
+    MS_MOVE_DOWN
+    MS_MOVE_DOWN
+    MS_MOVE_DOWN
+    MS_MOVE_DOWN
+    MS_MOVE_DOWN
+    MS_MOVE_DOWN
+  MS_END
 
-	_EndingEvent ; 99/D471
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 16
-		YIELD
+  _EndingEvent ; 99/D471
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 16
+    YIELD
 
-		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+    CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $41
-		YIELD
+    SET_MUSIC $41
+    YIELD
 
-		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+    CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
 
-		EVENT_TEST_FLAG_SET FlagFredSaved
-		JUMP_TRUE +
+    EVENT_TEST_FLAG_SET FlagFredSaved
+    JUMP_TRUE +
 
-		macroCountNPCUncapturedAliveUnits Fred
-		JUMP_FALSE ++
+    macroCountNPCUncapturedAliveUnits Fred
+    JUMP_FALSE ++
 
-		SET_FLAG FlagFredSaved
+    SET_FLAG FlagFredSaved
 
-		+
-		EVENT_CMP_WORD_AT_LT wCurrentTurn, 30
-		JUMP_TRUE +
+    +
+    EVENT_CMP_WORD_AT_LT wCurrentTurn, 30
+    JUMP_TRUE +
 
-		macroDialogueWithBackground dialogueChapter11Ending1A, 1
-		JUMP ++
+    macroDialogueWithBackground dialogueChapter11Ending1A, 1
+    JUMP ++
 
-		+
-		macroDialogueWithBackground dialogueChapter11Ending1B, 1
+    +
+    macroDialogueWithBackground dialogueChapter11Ending1B, 1
 
-		+
-		YIELD
+    +
+    YIELD
 
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
+    HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
 
-		FADE_OUT $01
-		YIELD
+    FADE_OUT $01
+    YIELD
 
-		CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
+    CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
 
-		STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
+    STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
 
-		EVENT_TEST_FLAG_SET FlagFredSaved
-		JUMP_FALSE +
+    EVENT_TEST_FLAG_SET FlagFredSaved
+    JUMP_FALSE +
 
-		EVENT_CMP_WORD_AT_LT wCurrentTurn, 30
-		JUMP_FALSE ++
+    EVENT_CMP_WORD_AT_LT wCurrentTurn, 30
+    JUMP_FALSE ++
 
-		+
-		ADD_WORD wCurrentChapter, Chapter12 - Chapter11 - 1
-		YIELD_UNK
+    +
+    ADD_WORD wCurrentChapter, Chapter12 - Chapter11 - 1
+    YIELD_UNK
 
-		+
-		FADE_OUT $01
-		YIELD
+    +
+    FADE_OUT $01
+    YIELD
 
-		CALL_ASM_LOOP rlASMCChapterEnd, $0000
-	END1
+    CALL_ASM_LOOP rlASMCChapterEnd, $0000
+  END1

@@ -1,127 +1,127 @@
 dialogueChapter12Ending1B ; 92/9F9F
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD Leif2Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "この"
-	DIALOGUE_FONT_3
-	.text "森"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "盗"
-	DIALOGUE_FONT_1
-	.text "賊"
-	DIALOGUE_FONT_0
-	.text "たちは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "味"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "する"
-	DIALOGUE_FONT_1
-	.text "貴"
-	DIALOGUE_FONT_2
-	.text "族"
-	DIALOGUE_FONT_0
-	.text "たちの"
-	DIALOGUE_FONT_1
-	.text "金"
-	DIALOGUE_FONT_4
-	.text "品"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "奪"
-	DIALOGUE_FONT_0
-	.text "って"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_5
-	.text "貧"
-	DIALOGUE_FONT_0
-	.text "しいものたちに"
-	DIALOGUE_FONT_1
-	.text "分"
-	DIALOGUE_FONT_0
-	.text "け"
-	DIALOGUE_FONT_2
-	.text "与"
-	DIALOGUE_FONT_0
-	.text "えているそうです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "リーダーはパーンという"
-	DIALOGUE_FONT_3
-	.text "若"
-	DIALOGUE_FONT_1
-	.text "者"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "村人"
-	DIALOGUE_FONT_0
-	.text "たちは"
-	DIALOGUE_FONT_2
-	.text "義"
-	DIALOGUE_FONT_1
-	.text "賊"
-	DIALOGUE_FONT_0
-	.text "だといっています"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "そうか･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "では､"
-	DIALOGUE_PAUSE $08
-	.text "そっとしておこう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "もう"
-	DIALOGUE_FONT_5
-	.text "夜"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "明"
-	DIALOGUE_FONT_0
-	.text "けたことだし"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "それがよろしいでしょう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "では､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "先"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "急"
-	DIALOGUE_FONT_0
-	.text "ぎましょう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ターラの"
-	DIALOGUE_FONT_1
-	.text "街"
-	DIALOGUE_FONT_0
-	.text "はもうすぐです"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD Leif2Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "この"
+  DIALOGUE_FONT_3
+  .text "森"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "盗"
+  DIALOGUE_FONT_1
+  .text "賊"
+  DIALOGUE_FONT_0
+  .text "たちは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "味"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "する"
+  DIALOGUE_FONT_1
+  .text "貴"
+  DIALOGUE_FONT_2
+  .text "族"
+  DIALOGUE_FONT_0
+  .text "たちの"
+  DIALOGUE_FONT_1
+  .text "金"
+  DIALOGUE_FONT_4
+  .text "品"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "奪"
+  DIALOGUE_FONT_0
+  .text "って"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_5
+  .text "貧"
+  DIALOGUE_FONT_0
+  .text "しいものたちに"
+  DIALOGUE_FONT_1
+  .text "分"
+  DIALOGUE_FONT_0
+  .text "け"
+  DIALOGUE_FONT_2
+  .text "与"
+  DIALOGUE_FONT_0
+  .text "えているそうです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "リーダーはパーンという"
+  DIALOGUE_FONT_3
+  .text "若"
+  DIALOGUE_FONT_1
+  .text "者"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "村人"
+  DIALOGUE_FONT_0
+  .text "たちは"
+  DIALOGUE_FONT_2
+  .text "義"
+  DIALOGUE_FONT_1
+  .text "賊"
+  DIALOGUE_FONT_0
+  .text "だといっています"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "そうか･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "では､"
+  DIALOGUE_PAUSE $08
+  .text "そっとしておこう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "もう"
+  DIALOGUE_FONT_5
+  .text "夜"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "明"
+  DIALOGUE_FONT_0
+  .text "けたことだし"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "それがよろしいでしょう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "では､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "先"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "急"
+  DIALOGUE_FONT_0
+  .text "ぎましょう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ターラの"
+  DIALOGUE_FONT_1
+  .text "街"
+  DIALOGUE_FONT_0
+  .text "はもうすぐです"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

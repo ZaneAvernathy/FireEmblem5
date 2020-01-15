@@ -1,16 +1,16 @@
 dialogueWeissmannDeathQuote ; 95/A90A
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "くそう･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おまえたち､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "後"
-	DIALOGUE_FONT_3
-	.text "悔"
-	DIALOGUE_FONT_0
-	.text "するぞ･･･"
-	DIALOGUE_NL
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "くそう･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おまえたち､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "後"
+  DIALOGUE_FONT_3
+  .text "悔"
+  DIALOGUE_FONT_0
+  .text "するぞ･･･"
+  DIALOGUE_NL
 DIALOGUE_END_SCENE

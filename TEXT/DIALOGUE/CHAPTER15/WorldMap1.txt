@@ -1,41 +1,41 @@
 dialogueChapter15WorldMap1 ; 82/D269
-	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, ArionPortrait | (0 << 8), 7 | (10 << 8)
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "アリオーンと"
-	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, LinoanPortrait | (1 << 8), 21 | (10 << 8)
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "リノアンの"
-	DIALOGUE_FONT_3
-	.text "約束"
-	DIALOGUE_FONT_0
-	.text "により"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ターラからてったいした"
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_1
-	.text "解放軍"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 1
-	DIALOGUE_PAUSE $20
-	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 0
-	DIALOGUE_PAUSE $20
-	DIALOGUE_FONT_4
-	.text "次"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "目"
-	DIALOGUE_FONT_3
-	.text "標"
-	DIALOGUE_FONT_0
-	.text "については"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_ASMC_2 rlDialogueLoadPortrait, ArionPortrait | (0 << 8), 7 | (10 << 8)
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "アリオーンと"
+  DIALOGUE_ASMC_2 rlDialogueLoadPortrait, LinoanPortrait | (1 << 8), 21 | (10 << 8)
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "リノアンの"
+  DIALOGUE_FONT_3
+  .text "約束"
+  DIALOGUE_FONT_0
+  .text "により"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ターラからてったいした"
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_1
+  .text "解放軍"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 1
+  DIALOGUE_PAUSE $20
+  DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 0
+  DIALOGUE_PAUSE $20
+  DIALOGUE_FONT_4
+  .text "次"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "目"
+  DIALOGUE_FONT_3
+  .text "標"
+  DIALOGUE_FONT_0
+  .text "については"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

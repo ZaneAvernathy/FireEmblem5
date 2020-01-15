@@ -1,24 +1,24 @@
 dialogueParmannReleaseQuote ; E7/B1DD
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "もう"
-	DIALOGUE_FONT_1
-	.text "軍人"
-	DIALOGUE_FONT_0
-	.text "としては"
-	DIALOGUE_FONT_2
-	.text "生"
-	DIALOGUE_FONT_0
-	.text "きられぬ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "とりあえず"
-	DIALOGUE_FONT_1
-	.text "国"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "るか･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "もう"
+  DIALOGUE_FONT_1
+  .text "軍人"
+  DIALOGUE_FONT_0
+  .text "としては"
+  DIALOGUE_FONT_2
+  .text "生"
+  DIALOGUE_FONT_0
+  .text "きられぬ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "とりあえず"
+  DIALOGUE_FONT_1
+  .text "国"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "るか･･･"
 DIALOGUE_END_SCENE

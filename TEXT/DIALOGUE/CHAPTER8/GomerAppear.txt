@@ -1,121 +1,121 @@
 dialogueChapter8GomerAppear ; 93/BB65
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD GomerPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD Leonsterite5Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "おい､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "約束"
-	DIALOGUE_FONT_0
-	.text "どおり"
-	DIALOGUE_FONT_1
-	.text "金"
-	DIALOGUE_FONT_0
-	.text "をよこしな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おれは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "早"
-	DIALOGUE_FONT_0
-	.text "く"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "らないとやばいんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "悪"
-	DIALOGUE_FONT_0
-	.text "いが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "もう"
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_0
-	.text "しだけ"
-	DIALOGUE_FONT_4
-	.text "働"
-	DIALOGUE_FONT_0
-	.text "いてくれねぇか"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_1
-	.text "村"
-	DIALOGUE_FONT_0
-	.text "にへんなやつらが"
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "ちまった"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_0
-	.text "しの"
-	DIALOGUE_FONT_2
-	.text "間"
-	DIALOGUE_FONT_0
-	.text "でいいから"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "この"
-	DIALOGUE_FONT_5
-	.text "館"
-	DIALOGUE_FONT_0
-	.text "のみはりをたのみたいんだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "はちっとばかり"
-	DIALOGUE_FONT_3
-	.text "仕"
-	DIALOGUE_FONT_1
-	.text "事"
-	DIALOGUE_FONT_0
-	.text "があるんでな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ちっ､"
-	DIALOGUE_PAUSE $08
-	.text "アルバイトも"
-	DIALOGUE_FONT_4
-	.text "楽"
-	DIALOGUE_FONT_0
-	.text "じゃねえな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "まあいい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "さっさと"
-	DIALOGUE_FONT_4
-	.text "片"
-	DIALOGUE_FONT_0
-	.text "づけて"
-	DIALOGUE_FONT_3
-	.text "引"
-	DIALOGUE_FONT_0
-	.text "き"
-	DIALOGUE_FONT_1
-	.text "上"
-	DIALOGUE_FONT_0
-	.text "げよう"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD GomerPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD Leonsterite5Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "おい､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "約束"
+  DIALOGUE_FONT_0
+  .text "どおり"
+  DIALOGUE_FONT_1
+  .text "金"
+  DIALOGUE_FONT_0
+  .text "をよこしな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おれは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "早"
+  DIALOGUE_FONT_0
+  .text "く"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "らないとやばいんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "悪"
+  DIALOGUE_FONT_0
+  .text "いが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "もう"
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_0
+  .text "しだけ"
+  DIALOGUE_FONT_4
+  .text "働"
+  DIALOGUE_FONT_0
+  .text "いてくれねぇか"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_1
+  .text "村"
+  DIALOGUE_FONT_0
+  .text "にへんなやつらが"
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "ちまった"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_0
+  .text "しの"
+  DIALOGUE_FONT_2
+  .text "間"
+  DIALOGUE_FONT_0
+  .text "でいいから"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "この"
+  DIALOGUE_FONT_5
+  .text "館"
+  DIALOGUE_FONT_0
+  .text "のみはりをたのみたいんだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "はちっとばかり"
+  DIALOGUE_FONT_3
+  .text "仕"
+  DIALOGUE_FONT_1
+  .text "事"
+  DIALOGUE_FONT_0
+  .text "があるんでな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ちっ､"
+  DIALOGUE_PAUSE $08
+  .text "アルバイトも"
+  DIALOGUE_FONT_4
+  .text "楽"
+  DIALOGUE_FONT_0
+  .text "じゃねえな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "まあいい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "さっさと"
+  DIALOGUE_FONT_4
+  .text "片"
+  DIALOGUE_FONT_0
+  .text "づけて"
+  DIALOGUE_FONT_3
+  .text "引"
+  DIALOGUE_FONT_0
+  .text "き"
+  DIALOGUE_FONT_1
+  .text "上"
+  DIALOGUE_FONT_0
+  .text "げよう"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

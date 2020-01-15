@@ -1,44 +1,44 @@
 dialogueChapter4xUpperCellUnlock ; 98/8EF1
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCGirl1Portrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "はやくおうちに"
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "りたい･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "グスン､"
-	DIALOGUE_PAUSE $08
-	.text "グスン"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "どうすれば"
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "れるの？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "うん､"
-	DIALOGUE_PAUSE $08
-	.text "みぎの"
-	DIALOGUE_FONT_1
-	.text "道"
-	DIALOGUE_FONT_0
-	.text "から･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "じゃあ､"
-	DIALOGUE_PAUSE $08
-	.text "そうする･･･"
-	DIALOGUE_PAUSE $10
-	.text "クスン"
-	DIALOGUE_NL
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "ありがとう･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCGirl1Portrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "はやくおうちに"
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "りたい･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "グスン､"
+  DIALOGUE_PAUSE $08
+  .text "グスン"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "どうすれば"
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "れるの？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "うん､"
+  DIALOGUE_PAUSE $08
+  .text "みぎの"
+  DIALOGUE_FONT_1
+  .text "道"
+  DIALOGUE_FONT_0
+  .text "から･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "じゃあ､"
+  DIALOGUE_PAUSE $08
+  .text "そうする･･･"
+  DIALOGUE_PAUSE $10
+  .text "クスン"
+  DIALOGUE_NL
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "ありがとう･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

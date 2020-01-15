@@ -1,96 +1,96 @@
 dialogueChapter4WorldMap2 ; 82/CBBC
-	DIALOGUE_FONT_1
-	.text "帝国兵"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "によって"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "マンスターへと"
-	DIALOGUE_FONT_2
-	.text "護"
-	DIALOGUE_FONT_3
-	.text "送"
-	DIALOGUE_FONT_0
-	.text "される"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 1
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "そこは､"
-	DIALOGUE_PAUSE $10
-	.text "グランベル"
-	DIALOGUE_FONT_1
-	.text "皇帝"
-	DIALOGUE_FONT_0
-	.text "より"
-	DIALOGUE_FONT_1
-	.text "北"
-	DIALOGUE_FONT_0
-	.text "トラキアを"
-	DIALOGUE_NL
-	.text "あずかるフリージ"
-	DIALOGUE_FONT_1
-	.text "家"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "支配"
-	DIALOGUE_FONT_1
-	.text "下"
-	DIALOGUE_FONT_0
-	.text "にあり"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "元"
-	DIALOGUE_FONT_0
-	.text "コノート"
-	DIALOGUE_FONT_1
-	.text "王国"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "近"
-	DIALOGUE_FONT_3
-	.text "衛"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_FONT_0
-	.text "で､"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, RaydrikPortrait | (0 << 8), 20 | (6 << 8)
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "内"
-	DIALOGUE_FONT_3
-	.text "通"
-	DIALOGUE_FONT_0
-	.text "して"
-	DIALOGUE_FONT_4
-	.text "功"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "立"
-	DIALOGUE_FONT_0
-	.text "てたレイドリック"
-	DIALOGUE_FONT_1
-	.text "男"
-	DIALOGUE_FONT_2
-	.text "爵"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 0
-	DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "帝国兵"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "によって"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "マンスターへと"
+  DIALOGUE_FONT_2
+  .text "護"
+  DIALOGUE_FONT_3
+  .text "送"
+  DIALOGUE_FONT_0
+  .text "される"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 1
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "そこは､"
+  DIALOGUE_PAUSE $10
+  .text "グランベル"
+  DIALOGUE_FONT_1
+  .text "皇帝"
+  DIALOGUE_FONT_0
+  .text "より"
+  DIALOGUE_FONT_1
+  .text "北"
+  DIALOGUE_FONT_0
+  .text "トラキアを"
+  DIALOGUE_NL
+  .text "あずかるフリージ"
+  DIALOGUE_FONT_1
+  .text "家"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "支配"
+  DIALOGUE_FONT_1
+  .text "下"
+  DIALOGUE_FONT_0
+  .text "にあり"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "元"
+  DIALOGUE_FONT_0
+  .text "コノート"
+  DIALOGUE_FONT_1
+  .text "王国"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "近"
+  DIALOGUE_FONT_3
+  .text "衛"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_FONT_0
+  .text "で､"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_ASMC_2 rlDialogueLoadPortrait, RaydrikPortrait | (0 << 8), 20 | (6 << 8)
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "内"
+  DIALOGUE_FONT_3
+  .text "通"
+  DIALOGUE_FONT_0
+  .text "して"
+  DIALOGUE_FONT_4
+  .text "功"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "立"
+  DIALOGUE_FONT_0
+  .text "てたレイドリック"
+  DIALOGUE_FONT_1
+  .text "男"
+  DIALOGUE_FONT_2
+  .text "爵"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 0
+  DIALOGUE_PAUSE $10
 DIALOGUE_END_SCENE

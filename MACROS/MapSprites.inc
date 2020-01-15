@@ -1,5 +1,5 @@
 
 structMapSpriteIndexEntry .struct Index
-	Index .byte \Index
-	.ends
+  Index .byte \Index
+.ends
 

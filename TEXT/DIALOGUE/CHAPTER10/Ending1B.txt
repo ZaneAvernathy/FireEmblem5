@@ -1,256 +1,256 @@
 dialogueChapter10Ending1B ; E7/9435
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD Leif2Portrait
-	DIALOGUE_RIGHT
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "アウグストは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_1
-	.text "半"
-	DIALOGUE_FONT_0
-	.text "ばで"
-	DIALOGUE_FONT_3
-	.text "引"
-	DIALOGUE_FONT_0
-	.text "き"
-	DIALOGUE_FONT_1
-	.text "上"
-	DIALOGUE_FONT_0
-	.text "げた"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "魔法騎士"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "たか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_1
-	.text "女騎士"
-	DIALOGUE_FONT_0
-	.text "でしたな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なかなか"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_2
-	.text "強"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_2
-	.text "相"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "でした"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "何者"
-	DIALOGUE_FONT_0
-	.text "なのだろう？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ダンドラム"
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "きましたから"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "たぶん､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "我"
-	DIALOGUE_FONT_0
-	.text "らのことを"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "らせに"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "ったのでしょうな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ということは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "はぼくたちを"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "ち"
-	DIALOGUE_FONT_2
-	.text "受"
-	DIALOGUE_FONT_0
-	.text "けているということか"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "そういうことです"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ダンドラム"
-	DIALOGUE_FONT_1
-	.text "要塞"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ただでさえ"
-	DIALOGUE_FONT_2
-	.text "難"
-	DIALOGUE_FONT_1
-	.text "攻"
-	DIALOGUE_FONT_2
-	.text "不落"
-	DIALOGUE_FONT_0
-	.text "と"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "われる"
-	DIALOGUE_FONT_2
-	.text "強"
-	DIALOGUE_FONT_4
-	.text "固"
-	DIALOGUE_FONT_0
-	.text "な"
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_0
-	.text "その"
-	DIALOGUE_FONT_1
-	.text "上"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "防"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "準"
-	DIALOGUE_FONT_1
-	.text "備"
-	DIALOGUE_FONT_0
-	.text "をする"
-	DIALOGUE_NL
-	.text "よゆうを"
-	DIALOGUE_FONT_2
-	.text "与"
-	DIALOGUE_FONT_0
-	.text "えてしまいました"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ダンドラムの"
-	DIALOGUE_FONT_2
-	.text "司令官"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "名将"
-	DIALOGUE_FONT_0
-	.text "ならば"
-	DIALOGUE_NL
-	DIALOGUE_FONT_3
-	.text "我"
-	DIALOGUE_FONT_0
-	.text "らは"
-	DIALOGUE_FONT_1
-	.text "苦戦"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "強"
-	DIALOGUE_FONT_0
-	.text "いられましょう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "だが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "他"
-	DIALOGUE_FONT_0
-	.text "にルートはないのだろう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "さよう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ターラに"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "くためには"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ダンドラムをぬけるしかありません"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "では"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "くしかないだろう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "グズグズしていては"
-	DIALOGUE_NL
-	.text "ますます"
-	DIALOGUE_FONT_2
-	.text "不利"
-	DIALOGUE_FONT_0
-	.text "になるだけだ！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD Leif2Portrait
+  DIALOGUE_RIGHT
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "アウグストは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_1
+  .text "半"
+  DIALOGUE_FONT_0
+  .text "ばで"
+  DIALOGUE_FONT_3
+  .text "引"
+  DIALOGUE_FONT_0
+  .text "き"
+  DIALOGUE_FONT_1
+  .text "上"
+  DIALOGUE_FONT_0
+  .text "げた"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "魔法騎士"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "たか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_1
+  .text "女騎士"
+  DIALOGUE_FONT_0
+  .text "でしたな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なかなか"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_2
+  .text "強"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_2
+  .text "相"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "でした"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "何者"
+  DIALOGUE_FONT_0
+  .text "なのだろう？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ダンドラム"
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "きましたから"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "たぶん､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "我"
+  DIALOGUE_FONT_0
+  .text "らのことを"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "らせに"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "ったのでしょうな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ということは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "はぼくたちを"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "ち"
+  DIALOGUE_FONT_2
+  .text "受"
+  DIALOGUE_FONT_0
+  .text "けているということか"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "そういうことです"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ダンドラム"
+  DIALOGUE_FONT_1
+  .text "要塞"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ただでさえ"
+  DIALOGUE_FONT_2
+  .text "難"
+  DIALOGUE_FONT_1
+  .text "攻"
+  DIALOGUE_FONT_2
+  .text "不落"
+  DIALOGUE_FONT_0
+  .text "と"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "われる"
+  DIALOGUE_FONT_2
+  .text "強"
+  DIALOGUE_FONT_4
+  .text "固"
+  DIALOGUE_FONT_0
+  .text "な"
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_0
+  .text "その"
+  DIALOGUE_FONT_1
+  .text "上"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "防"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "準"
+  DIALOGUE_FONT_1
+  .text "備"
+  DIALOGUE_FONT_0
+  .text "をする"
+  DIALOGUE_NL
+  .text "よゆうを"
+  DIALOGUE_FONT_2
+  .text "与"
+  DIALOGUE_FONT_0
+  .text "えてしまいました"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ダンドラムの"
+  DIALOGUE_FONT_2
+  .text "司令官"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "名将"
+  DIALOGUE_FONT_0
+  .text "ならば"
+  DIALOGUE_NL
+  DIALOGUE_FONT_3
+  .text "我"
+  DIALOGUE_FONT_0
+  .text "らは"
+  DIALOGUE_FONT_1
+  .text "苦戦"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "強"
+  DIALOGUE_FONT_0
+  .text "いられましょう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "だが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "他"
+  DIALOGUE_FONT_0
+  .text "にルートはないのだろう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "さよう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ターラに"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "くためには"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ダンドラムをぬけるしかありません"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "では"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "くしかないだろう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "グズグズしていては"
+  DIALOGUE_NL
+  .text "ますます"
+  DIALOGUE_FONT_2
+  .text "不利"
+  DIALOGUE_FONT_0
+  .text "になるだけだ！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

@@ -1,10 +1,10 @@
 dialogueRonanDeathQuote ; 82/B9BA
-	DIALOGUE_FONT_0
-	.text "ああ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "母"
-	DIALOGUE_FONT_0
-	.text "さん･･･"
+  DIALOGUE_FONT_0
+  .text "ああ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "母"
+  DIALOGUE_FONT_0
+  .text "さん･･･"
 DIALOGUE_END_SCENE

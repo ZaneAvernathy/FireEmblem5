@@ -1,156 +1,156 @@
 dialogueChapter20UnusedDialogue ; 92/F18B
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD BarathPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD DvorakPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "バラート"
-	DIALOGUE_FONT_2
-	.text "卿"
-	DIALOGUE_FONT_0
-	.text "！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "アルスターから"
-	DIALOGUE_FONT_5
-	.text "撤"
-	DIALOGUE_FONT_1
-	.text "退"
-	DIALOGUE_FONT_0
-	.text "せよとの"
-	DIALOGUE_FONT_2
-	.text "命令"
-	DIALOGUE_FONT_0
-	.text "が！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なにっ！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "くつ･･･"
-	DIALOGUE_PAUSE $10
-	.text "ついに"
-	DIALOGUE_FONT_2
-	.text "時間切"
-	DIALOGUE_FONT_0
-	.text "れか･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "無"
-	DIALOGUE_FONT_3
-	.text "念"
-	DIALOGUE_FONT_0
-	.text "です･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "アルスターに"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "らねば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_5
-	.text "律"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_3
-	.text "逆"
-	DIALOGUE_FONT_0
-	.text "らった"
-	DIALOGUE_FONT_2
-	.text "罪"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_FONT_3
-	.text "処"
-	DIALOGUE_FONT_1
-	.text "分"
-	DIALOGUE_FONT_0
-	.text "され"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "アルスターに"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "れば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "レンスターを"
-	DIALOGUE_FONT_2
-	.text "落"
-	DIALOGUE_FONT_0
-	.text "とせなかった"
-	DIALOGUE_FONT_1
-	.text "無"
-	DIALOGUE_FONT_2
-	.text "能"
-	DIALOGUE_FONT_1
-	.text "者"
-	DIALOGUE_FONT_0
-	.text "よと"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "そしりをうける､"
-	DIALOGUE_PAUSE $08
-	.text "か･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "こうなれば､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "道"
-	DIALOGUE_FONT_0
-	.text "は一つ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "たとえさしちがえても"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "あのレンスターのこせがれの"
-	DIALOGUE_NL
-	DIALOGUE_FONT_4
-	.text "首"
-	DIALOGUE_FONT_0
-	.text "をとってやる！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "それで"
-	DIALOGUE_FONT_3
-	.text "処"
-	DIALOGUE_FONT_1
-	.text "分"
-	DIALOGUE_FONT_0
-	.text "されようと"
-	DIALOGUE_FONT_3
-	.text "悔"
-	DIALOGUE_FONT_0
-	.text "いはない"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "全"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "突"
-	DIALOGUE_FONT_1
-	.text "撃"
-	DIALOGUE_FONT_0
-	.text "せよ！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD BarathPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD DvorakPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "バラート"
+  DIALOGUE_FONT_2
+  .text "卿"
+  DIALOGUE_FONT_0
+  .text "！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "アルスターから"
+  DIALOGUE_FONT_5
+  .text "撤"
+  DIALOGUE_FONT_1
+  .text "退"
+  DIALOGUE_FONT_0
+  .text "せよとの"
+  DIALOGUE_FONT_2
+  .text "命令"
+  DIALOGUE_FONT_0
+  .text "が！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なにっ！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "くつ･･･"
+  DIALOGUE_PAUSE $10
+  .text "ついに"
+  DIALOGUE_FONT_2
+  .text "時間切"
+  DIALOGUE_FONT_0
+  .text "れか･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "無"
+  DIALOGUE_FONT_3
+  .text "念"
+  DIALOGUE_FONT_0
+  .text "です･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "アルスターに"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "らねば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_5
+  .text "律"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_3
+  .text "逆"
+  DIALOGUE_FONT_0
+  .text "らった"
+  DIALOGUE_FONT_2
+  .text "罪"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_FONT_3
+  .text "処"
+  DIALOGUE_FONT_1
+  .text "分"
+  DIALOGUE_FONT_0
+  .text "され"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "アルスターに"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "れば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "レンスターを"
+  DIALOGUE_FONT_2
+  .text "落"
+  DIALOGUE_FONT_0
+  .text "とせなかった"
+  DIALOGUE_FONT_1
+  .text "無"
+  DIALOGUE_FONT_2
+  .text "能"
+  DIALOGUE_FONT_1
+  .text "者"
+  DIALOGUE_FONT_0
+  .text "よと"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "そしりをうける､"
+  DIALOGUE_PAUSE $08
+  .text "か･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "こうなれば､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "道"
+  DIALOGUE_FONT_0
+  .text "は一つ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "たとえさしちがえても"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "あのレンスターのこせがれの"
+  DIALOGUE_NL
+  DIALOGUE_FONT_4
+  .text "首"
+  DIALOGUE_FONT_0
+  .text "をとってやる！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "それで"
+  DIALOGUE_FONT_3
+  .text "処"
+  DIALOGUE_FONT_1
+  .text "分"
+  DIALOGUE_FONT_0
+  .text "されようと"
+  DIALOGUE_FONT_3
+  .text "悔"
+  DIALOGUE_FONT_0
+  .text "いはない"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "全"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "突"
+  DIALOGUE_FONT_1
+  .text "撃"
+  DIALOGUE_FONT_0
+  .text "せよ！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

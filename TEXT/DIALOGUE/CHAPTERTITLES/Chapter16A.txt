@@ -1,12 +1,12 @@
 dialogueChapter16ATitle ; 9A/BA27
-	DIALOGUE_FONT_2
-	.text "第"
-	DIALOGUE_FONT_0
-	.text "１６"
-	DIALOGUE_FONT_2
-	.text "章"
-	DIALOGUE_FONT_1
-	.text "⅛"
-	DIALOGUE_FONT_0
-	.text "　　　　　ノルデンライン"
+  DIALOGUE_FONT_2
+  .text "第"
+  DIALOGUE_FONT_0
+  .text "１６"
+  DIALOGUE_FONT_2
+  .text "章"
+  DIALOGUE_FONT_1
+  .text "⅛"
+  DIALOGUE_FONT_0
+  .text "　　　　　ノルデンライン"
 DIALOGUE_EOF

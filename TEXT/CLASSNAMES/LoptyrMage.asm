@@ -1,4 +1,4 @@
 
 menutextLoptyrMageName ; 89/843E
-	.enc "MenuText"
-	.text "ロプトマージ　　\n"
+  .enc "MenuText"
+  .text "ロプトマージ　　\n"

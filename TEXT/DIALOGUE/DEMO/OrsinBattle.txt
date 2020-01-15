@@ -1,10 +1,10 @@
 dialogueDemoOrsinBattle ; 9A/DF29
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_2
-	.text "勝負"
-	DIALOGUE_FONT_0
-	.text "だ､"
-	DIALOGUE_PAUSE $08
-	.text "ハルヴァン！"
-	DIALOGUE_PAUSE $40
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_2
+  .text "勝負"
+  DIALOGUE_FONT_0
+  .text "だ､"
+  DIALOGUE_PAUSE $08
+  .text "ハルヴァン！"
+  DIALOGUE_PAUSE $40
 DIALOGUE_EOF

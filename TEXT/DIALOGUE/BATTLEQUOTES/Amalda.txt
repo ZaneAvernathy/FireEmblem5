@@ -1,28 +1,28 @@
 dialogueAmaldaBattleQuote ; B0/C391
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_4
-	.text "直"
-	DIALOGUE_FONT_0
-	.text "ちに"
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_3
-	.text "引"
-	DIALOGUE_FONT_0
-	.text "きなさい！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "むだに"
-	DIALOGUE_FONT_2
-	.text "命"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "落"
-	DIALOGUE_FONT_0
-	.text "とすことは"
-	DIALOGUE_NL
-	.text "ありません！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_4
+  .text "直"
+  DIALOGUE_FONT_0
+  .text "ちに"
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_3
+  .text "引"
+  DIALOGUE_FONT_0
+  .text "きなさい！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "むだに"
+  DIALOGUE_FONT_2
+  .text "命"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "落"
+  DIALOGUE_FONT_0
+  .text "とすことは"
+  DIALOGUE_NL
+  .text "ありません！"
 DIALOGUE_END_SCENE

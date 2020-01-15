@@ -1,4 +1,4 @@
 
 menutextCharacterEffectVulnerary ; 90/8784
-	.enc "MenuText"
-	.text "きずぐすり\n"
+  .enc "MenuText"
+  .text "きずぐすり\n"

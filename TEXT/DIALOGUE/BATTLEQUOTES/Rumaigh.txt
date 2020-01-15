@@ -1,22 +1,22 @@
 dialogueRumaighBattleQuote ; 93/C391
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "すまねえな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "これも"
-	DIALOGUE_FONT_1
-	.text "金"
-	DIALOGUE_FONT_0
-	.text "のためだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "悪"
-	DIALOGUE_FONT_0
-	.text "く"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "うなよ"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "すまねえな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "これも"
+  DIALOGUE_FONT_1
+  .text "金"
+  DIALOGUE_FONT_0
+  .text "のためだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "悪"
+  DIALOGUE_FONT_0
+  .text "く"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "うなよ"
 DIALOGUE_END_SCENE

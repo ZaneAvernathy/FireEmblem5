@@ -1,4 +1,4 @@
 
 menutextValflameName ; B0/9527
-	.enc "MenuText"
-	.text "ファラフレイム\n"
+  .enc "MenuText"
+  .text "ファラフレイム\n"

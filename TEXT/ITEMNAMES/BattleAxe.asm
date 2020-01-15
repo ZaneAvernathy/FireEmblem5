@@ -1,4 +1,4 @@
 
 menutextBattleAxeName ; B0/9401
-	.enc "MenuText"
-	.text "バトルアクス\n"
+  .enc "MenuText"
+  .text "バトルアクス\n"

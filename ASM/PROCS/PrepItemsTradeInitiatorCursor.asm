@@ -3,37 +3,37 @@ procPrepItemsTradeInitiatorCursor .dstruct structProcInfo, None, rlProcPrepItems
 
 rlProcPrepItemsTradeInitiatorCursorInit ; 81/F110
 
-	.al
-	.xl
-	.autsiz
-	.databank ?
+  .al
+  .xl
+  .autsiz
+  .databank ?
 
-	rtl
+  rtl
 
 rlProcPrepItemsTradeInitiatorCursorOnCycle ; 81/F111
 
-	.al
-	.xl
-	.autsiz
-	.databank ?
+  .al
+  .xl
+  .autsiz
+  .databank ?
 
-	php
-	phb
-	sep #$20
-	lda #`wPrepUnitListLastSelectedColumn
-	pha
-	rep #$20
-	plb
+  php
+  phb
+  sep #$20
+  lda #`wPrepUnitListLastSelectedColumn
+  pha
+  rep #$20
+  plb
 
-	.databank `wPrepUnitListLastSelectedColumn
+  .databank `wPrepUnitListLastSelectedColumn
 
-	lda wPrepUnitListLastSelectedColumn
-	sta wR0
+  lda wPrepUnitListLastSelectedColumn
+  sta wR0
 
-	lda wPrepUnitListLastSelectedRow
-	sta wR1
+  lda wPrepUnitListLastSelectedRow
+  sta wR1
 
-	jsl $85FB23
-	plb
-	plp
-	rtl
+  jsl $85FB23
+  plb
+  plp
+  rtl

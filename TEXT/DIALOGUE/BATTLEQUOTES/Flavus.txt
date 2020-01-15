@@ -1,26 +1,26 @@
 dialogueFlavusBattleQuote ; B0/CF64
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "わが"
-	DIALOGUE_FONT_1
-	.text "武人"
-	DIALOGUE_FONT_0
-	.text "としての"
-	DIALOGUE_FONT_1
-	.text "名"
-	DIALOGUE_FONT_4
-	.text "誉"
-	DIALOGUE_FONT_0
-	.text "にかけて"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_4
-	.text "抜"
-	DIALOGUE_FONT_0
-	.text "かせん！！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "わが"
+  DIALOGUE_FONT_1
+  .text "武人"
+  DIALOGUE_FONT_0
+  .text "としての"
+  DIALOGUE_FONT_1
+  .text "名"
+  DIALOGUE_FONT_4
+  .text "誉"
+  DIALOGUE_FONT_0
+  .text "にかけて"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_4
+  .text "抜"
+  DIALOGUE_FONT_0
+  .text "かせん！！"
 DIALOGUE_END_SCENE

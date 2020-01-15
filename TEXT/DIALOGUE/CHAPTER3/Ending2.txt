@@ -1,52 +1,52 @@
 dialogueChapter3Ending2 ; 93/8A66
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD EyvelPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "えっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "がとらえられた？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "では"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "はリーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "とともに"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "きます"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "あなたたちは"
-	DIALOGUE_FONT_2
-	.text "落"
-	DIALOGUE_FONT_0
-	.text "ちのびて"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "王子"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "救出"
-	DIALOGUE_FONT_0
-	.text "をはかってください"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "いいですね！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD EyvelPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "えっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "がとらえられた？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "では"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "はリーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "とともに"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "きます"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "あなたたちは"
+  DIALOGUE_FONT_2
+  .text "落"
+  DIALOGUE_FONT_0
+  .text "ちのびて"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "王子"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "救出"
+  DIALOGUE_FONT_0
+  .text "をはかってください"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "いいですね！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

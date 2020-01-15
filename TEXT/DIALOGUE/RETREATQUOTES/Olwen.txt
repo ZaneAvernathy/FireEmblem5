@@ -1,19 +1,19 @@
 dialogueOlwenRetreatQuote ; 82/C472
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD OlwenPortrait
-	DIALOGUE_FONT_0
-	.text "また､"
-	DIALOGUE_FONT_2
-	.text "新"
-	DIALOGUE_FONT_0
-	.text "たな"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "いが"
-	DIALOGUE_FONT_1
-	.text "始"
-	DIALOGUE_FONT_0
-	.text "まるのね･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD OlwenPortrait
+  DIALOGUE_FONT_0
+  .text "また､"
+  DIALOGUE_FONT_2
+  .text "新"
+  DIALOGUE_FONT_0
+  .text "たな"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "いが"
+  DIALOGUE_FONT_1
+  .text "始"
+  DIALOGUE_FONT_0
+  .text "まるのね･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

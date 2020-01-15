@@ -1,24 +1,24 @@
 dialogueFinnDeathQuote ; 82/B8CD
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "お"
-	DIALOGUE_FONT_1
-	.text "父上"
-	DIALOGUE_FONT_0
-	.text "の･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ご"
-	DIALOGUE_FONT_3
-	.text "遺"
-	DIALOGUE_FONT_2
-	.text "志"
-	DIALOGUE_FONT_0
-	.text "を･･･"
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "お"
+  DIALOGUE_FONT_1
+  .text "父上"
+  DIALOGUE_FONT_0
+  .text "の･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ご"
+  DIALOGUE_FONT_3
+  .text "遺"
+  DIALOGUE_FONT_2
+  .text "志"
+  DIALOGUE_FONT_0
+  .text "を･･･"
 DIALOGUE_END_SCENE

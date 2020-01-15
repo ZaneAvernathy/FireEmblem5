@@ -1,59 +1,59 @@
 dialogueChapter18Ending2 ; DA/EC1E
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD FinnPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "フィン･･･"
-	DIALOGUE_PAUSE $10
-	.text "ようやく"
-	DIALOGUE_FONT_2
-	.text "帰"
-	DIALOGUE_FONT_0
-	.text "ってきたね"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "フィンと一"
-	DIALOGUE_FONT_2
-	.text "緒"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "ることが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ぼくの"
-	DIALOGUE_FONT_5
-	.text "夢"
-	DIALOGUE_FONT_0
-	.text "だった･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "ありがとう"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "本当"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "感"
-	DIALOGUE_FONT_4
-	.text "謝"
-	DIALOGUE_FONT_0
-	.text "している･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD FinnPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "フィン･･･"
+  DIALOGUE_PAUSE $10
+  .text "ようやく"
+  DIALOGUE_FONT_2
+  .text "帰"
+  DIALOGUE_FONT_0
+  .text "ってきたね"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "フィンと一"
+  DIALOGUE_FONT_2
+  .text "緒"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "ることが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ぼくの"
+  DIALOGUE_FONT_5
+  .text "夢"
+  DIALOGUE_FONT_0
+  .text "だった･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "ありがとう"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "本当"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "感"
+  DIALOGUE_FONT_4
+  .text "謝"
+  DIALOGUE_FONT_0
+  .text "している･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

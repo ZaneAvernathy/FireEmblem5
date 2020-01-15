@@ -1,20 +1,20 @@
 dialogueFredBattleQuote ; 95/F42D
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ばかな！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "このような"
-	DIALOGUE_FONT_1
-	.text "状"
-	DIALOGUE_FONT_4
-	.text "況"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "うというのか！！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ばかな！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "このような"
+  DIALOGUE_FONT_1
+  .text "状"
+  DIALOGUE_FONT_4
+  .text "況"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "うというのか！！"
 DIALOGUE_END_SCENE

@@ -1,5 +1,5 @@
 
 structBattleBannerTableEntry .struct Character, Index
-	.word \Character
-	.byte \Index
-	.ends
+  .word \Character
+  .byte \Index
+.ends

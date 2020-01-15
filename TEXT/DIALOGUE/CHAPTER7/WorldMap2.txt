@@ -1,77 +1,77 @@
 dialogueChapter7WorldMap2 ; 82/CD27
-	DIALOGUE_FONT_0
-	.text "しかし､"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "危"
-	DIALOGUE_FONT_3
-	.text "機"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "去"
-	DIALOGUE_FONT_0
-	.text "ったわけではない"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "多"
-	DIALOGUE_FONT_0
-	.text "くの"
-	DIALOGUE_FONT_2
-	.text "賞"
-	DIALOGUE_FONT_1
-	.text "金"
-	DIALOGUE_FONT_3
-	.text "稼"
-	DIALOGUE_FONT_0
-	.text "ぎたちが"
-	DIALOGUE_NL
-	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, KolkhoPortrait | (0 << 8), 17 | (13 << 8)
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "高"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_4
-	.text "値"
-	DIALOGUE_FONT_0
-	.text "がつくリーフの"
-	DIALOGUE_FONT_4
-	.text "首"
-	DIALOGUE_FONT_0
-	.text "をねらい"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_2
-	.text "背"
-	DIALOGUE_FONT_1
-	.text "後"
-	DIALOGUE_FONT_0
-	.text "には､"
-	DIALOGUE_ASMC_2 rlDialogueLoadPortrait, RaydrikPortrait | (2 << 8), 12 | (1 << 8)
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "マンスター"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "追"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_FONT_3
-	.text "迫"
-	DIALOGUE_FONT_0
-	.text "りつつあった"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 0
-	DIALOGUE_PAUSE $20
-	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 1
-	DIALOGUE_PAUSE $20
-	DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 2
+  DIALOGUE_FONT_0
+  .text "しかし､"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "危"
+  DIALOGUE_FONT_3
+  .text "機"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "去"
+  DIALOGUE_FONT_0
+  .text "ったわけではない"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "多"
+  DIALOGUE_FONT_0
+  .text "くの"
+  DIALOGUE_FONT_2
+  .text "賞"
+  DIALOGUE_FONT_1
+  .text "金"
+  DIALOGUE_FONT_3
+  .text "稼"
+  DIALOGUE_FONT_0
+  .text "ぎたちが"
+  DIALOGUE_NL
+  DIALOGUE_ASMC_2 rlDialogueLoadPortrait, KolkhoPortrait | (0 << 8), 17 | (13 << 8)
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "高"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_4
+  .text "値"
+  DIALOGUE_FONT_0
+  .text "がつくリーフの"
+  DIALOGUE_FONT_4
+  .text "首"
+  DIALOGUE_FONT_0
+  .text "をねらい"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_2
+  .text "背"
+  DIALOGUE_FONT_1
+  .text "後"
+  DIALOGUE_FONT_0
+  .text "には､"
+  DIALOGUE_ASMC_2 rlDialogueLoadPortrait, RaydrikPortrait | (2 << 8), 12 | (1 << 8)
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "マンスター"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "追"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_FONT_3
+  .text "迫"
+  DIALOGUE_FONT_0
+  .text "りつつあった"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 0
+  DIALOGUE_PAUSE $20
+  DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 1
+  DIALOGUE_PAUSE $20
+  DIALOGUE_ASMC_1 rlClearWMPortraitByIndex, 2
 DIALOGUE_END_SCENE

@@ -1,503 +1,503 @@
 
 eventChapter12Events ; 99/DBD6
 
-	_OpeningEventDefinitions ; 99/DBD6
-		EVENT FlagAlwaysZero, _OpeningEvent
-			CMP_WORD wCurrentTurn, 0
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TurnEventDefinitions ; 99/DBE3
-		EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
-			CHECK_DEAD Kolkho
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
-			TEST_FLAG_SET FlagPlayerDeath
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _SalemCheck
-			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_UNSET FlagBossDeath
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _KolkhoDialogue
-			CMP_WORD wCurrentTurn, 1
-			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_UNSET FlagBossDeath
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _SalemDialogue
-			CMP_WORD wCurrentTurn, 5
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT $05, _GaidenFail
-			CMP_WORD wCurrentTurn, 20
-			CMP_WORD wCurrentPhase, Player
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _MareetaArrive
-			TEST_FLAG_UNSET $8F
-			CMP_WORD wCurrentPhase, Player
-			CMP_WORD wCurrentTurn, 2
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _BrigandLeftReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD_RANGE wCurrentTurn, 4, 12
-			ROLL_RNG 40
-			TEST_FLAG_UNSET FlagBossDeath
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _BrigandMiddleReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD_RANGE wCurrentTurn, 4, 12
-			ROLL_RNG 40
-			TEST_FLAG_UNSET FlagBossDeath
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _BrigandRightReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD_RANGE wCurrentTurn, 4, 12
-			ROLL_RNG 40
-			TEST_FLAG_UNSET FlagBossDeath
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TalkEventDefinitions ; 99/DC94
-	END_DEFINITION_ARRAY
-
-	_LocationEventDefinitions ; 99/DC96
-		EVENT $27, _RosaHouseDestroy
-			macroEventConditionCheckCoords [8, 16]
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT $23, _RosaHouseOlwen
-			TEST_FLAG_SET FlagRosaSaved
-			macroEventConditionCheckCoords [8, 16]
-			CMP_WORD aSelectedCharacterBuffer.Character, Olwen
-		END_DEFINITION
-		EVENT $23, _RosaHouseOther
-			macroEventConditionCheckCoords [8, 16]
-			CMP_WORD wCurrentPhase, Player
-		END_DEFINITION
-		EVENT $24, _SaylaHouseVisit
-			macroEventConditionCheckCoords [24, 17]
-			CMP_WORD wCurrentPhase, Player
-		END_DEFINITION
-		EVENT $25, _PeterHouseVisit
-			macroEventConditionCheckCoords [20, 2]
-			CMP_WORD wCurrentPhase, Player
-		END_DEFINITION
-		EVENT $28, _SaylaHouseDestroy
-			macroEventConditionCheckCoords [24, 17]
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT $29, _PeterHouseDestroy
-			macroEventConditionCheckCoords [20, 2]
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		macroDrawbridgeDefinition $21, [12, 5], eventChapter12Events._Drawbridge1
-		macroDrawbridgeDefinition $22, [11, 18], eventChapter12Events._Drawbridge2
-		EVENT FlagAlwaysZero, _EndingEvent
-			macroEventConditionCheckCoords [3, 9]
-			CMP_WORD wCurrentPhase, Player
-			CMP_WORD aSelectedCharacterBuffer.Character, Leif
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_BeforeActionEventDefinitions ; 99/DD66
-	END_DEFINITION_ARRAY
-
-	_AfterActionEventDefinitions ; 99/DD68
-	END_DEFINITION_ARRAY
+  _OpeningEventDefinitions ; 99/DBD6
+    EVENT FlagAlwaysZero, _OpeningEvent
+      CMP_WORD wCurrentTurn, 0
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TurnEventDefinitions ; 99/DBE3
+    EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+      CHECK_DEAD Kolkho
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+      TEST_FLAG_SET FlagPlayerDeath
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _SalemCheck
+      CMP_WORD wCurrentPhase, Enemy
+      TEST_FLAG_UNSET FlagBossDeath
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _KolkhoDialogue
+      CMP_WORD wCurrentTurn, 1
+      CMP_WORD wCurrentPhase, Enemy
+      TEST_FLAG_UNSET FlagBossDeath
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _SalemDialogue
+      CMP_WORD wCurrentTurn, 5
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT $05, _GaidenFail
+      CMP_WORD wCurrentTurn, 20
+      CMP_WORD wCurrentPhase, Player
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _MareetaArrive
+      TEST_FLAG_UNSET $8F
+      CMP_WORD wCurrentPhase, Player
+      CMP_WORD wCurrentTurn, 2
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _BrigandLeftReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD_RANGE wCurrentTurn, 4, 12
+      ROLL_RNG 40
+      TEST_FLAG_UNSET FlagBossDeath
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _BrigandMiddleReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD_RANGE wCurrentTurn, 4, 12
+      ROLL_RNG 40
+      TEST_FLAG_UNSET FlagBossDeath
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _BrigandRightReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD_RANGE wCurrentTurn, 4, 12
+      ROLL_RNG 40
+      TEST_FLAG_UNSET FlagBossDeath
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TalkEventDefinitions ; 99/DC94
+  END_DEFINITION_ARRAY
+
+  _LocationEventDefinitions ; 99/DC96
+    EVENT $27, _RosaHouseDestroy
+      macroEventConditionCheckCoords [8, 16]
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT $23, _RosaHouseOlwen
+      TEST_FLAG_SET FlagRosaSaved
+      macroEventConditionCheckCoords [8, 16]
+      CMP_WORD aSelectedCharacterBuffer.Character, Olwen
+    END_DEFINITION
+    EVENT $23, _RosaHouseOther
+      macroEventConditionCheckCoords [8, 16]
+      CMP_WORD wCurrentPhase, Player
+    END_DEFINITION
+    EVENT $24, _SaylaHouseVisit
+      macroEventConditionCheckCoords [24, 17]
+      CMP_WORD wCurrentPhase, Player
+    END_DEFINITION
+    EVENT $25, _PeterHouseVisit
+      macroEventConditionCheckCoords [20, 2]
+      CMP_WORD wCurrentPhase, Player
+    END_DEFINITION
+    EVENT $28, _SaylaHouseDestroy
+      macroEventConditionCheckCoords [24, 17]
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT $29, _PeterHouseDestroy
+      macroEventConditionCheckCoords [20, 2]
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    macroDrawbridgeDefinition $21, [12, 5], eventChapter12Events._Drawbridge1
+    macroDrawbridgeDefinition $22, [11, 18], eventChapter12Events._Drawbridge2
+    EVENT FlagAlwaysZero, _EndingEvent
+      macroEventConditionCheckCoords [3, 9]
+      CMP_WORD wCurrentPhase, Player
+      CMP_WORD aSelectedCharacterBuffer.Character, Leif
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _BeforeActionEventDefinitions ; 99/DD66
+  END_DEFINITION_ARRAY
+
+  _AfterActionEventDefinitions ; 99/DD68
+  END_DEFINITION_ARRAY
 
-	_BattleEventDefinitions ; 99/DD6A
-		macroBossQuoteDefinition $06, Kolkho
-		macroBossQuoteDefinition $07, Salem
-	END_DEFINITION_ARRAY
+  _BattleEventDefinitions ; 99/DD6A
+    macroBossQuoteDefinition $06, Kolkho
+    macroBossQuoteDefinition $07, Salem
+  END_DEFINITION_ARRAY
 
-	_ShopEventDefinitions ; 99/DD7C
-		macroShopDefinition eventChapter12Data._Vendor
-	END_DEFINITION_ARRAY
+  _ShopEventDefinitions ; 99/DD7C
+    macroShopDefinition eventChapter12Data._Vendor
+  END_DEFINITION_ARRAY
 
-	_Drawbridge1 ; 99/DD91
-		macroOpenDrawbridgeByTileChangeID 0
-	END1
+  _Drawbridge1 ; 99/DD91
+    macroOpenDrawbridgeByTileChangeID 0
+  END1
 
-	_Drawbridge2 ; 99/DDBC
-		macroOpenDrawbridgeByTileChangeID 1
-	END1
+  _Drawbridge2 ; 99/DDBC
+    macroOpenDrawbridgeByTileChangeID 1
+  END1
 
-	_RosaHouseDestroy ; 99/DDE7
-		macroDestroyHouseByTileChangeID 3
-	END1
+  _RosaHouseDestroy ; 99/DDE7
+    macroDestroyHouseByTileChangeID 3
+  END1
 
-	_SaylaHouseDestroy ; 99/DE16
-		macroDestroyHouseByTileChangeID 4
-	END1
+  _SaylaHouseDestroy ; 99/DE16
+    macroDestroyHouseByTileChangeID 4
+  END1
 
-	_PeterHouseDestroy ; 99/DE45
-		macroDestroyHouseByTileChangeID 2
-	END1
+  _PeterHouseDestroy ; 99/DE45
+    macroDestroyHouseByTileChangeID 2
+  END1
 
-	_RosaHouseOlwen ; 99/DE74
-		macroItemHouse dialogueChapter12RosaHouseOlwen, MagicRing, [8, 16], $0021
-	END2
+  _RosaHouseOlwen ; 99/DE74
+    macroItemHouse dialogueChapter12RosaHouseOlwen, MagicRing, [8, 16], $0021
+  END2
 
-	_RosaHouseOther ; 99/DED7
-		macroItemHouse dialogueChapter12RosaHouseRosaAlive, Vulnerary, [8, 16], $0021
-	END2
+  _RosaHouseOther ; 99/DED7
+    macroItemHouse dialogueChapter12RosaHouseRosaAlive, Vulnerary, [8, 16], $0021
+  END2
 
-	_Unused ; 99/DF3A
-		PLAY_SOUND_WORD $00F7
+  _Unused ; 99/DF3A
+    PLAY_SOUND_WORD $00F7
 
-		EVENT_TEST_FLAG_SET FlagRosaSaved
-		JUMP_TRUE +
+    EVENT_TEST_FLAG_SET FlagRosaSaved
+    JUMP_TRUE +
 
-		DIALOGUE dialogueChapter12RosaHouseRosaDead
-		YIELD
+    DIALOGUE dialogueChapter12RosaHouseRosaDead
+    YIELD
 
-		JUMP +++
+    JUMP +++
 
-		+
-		EVENT_CMP_WORD_AT_EQ aSelectedCharacterBuffer.Character, Olwen
-		JUMP_TRUE +
+    +
+    EVENT_CMP_WORD_AT_EQ aSelectedCharacterBuffer.Character, Olwen
+    JUMP_TRUE +
 
-		DIALOGUE dialogueChapter12RosaHouseRosaAlive
-		YIELD
+    DIALOGUE dialogueChapter12RosaHouseRosaAlive
+    YIELD
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
 
-		macroGiveItemToActiveUnit Vulnerary
+    macroGiveItemToActiveUnit Vulnerary
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
 
-		JUMP ++
+    JUMP ++
 
-		+
-		DIALOGUE dialogueChapter12RosaHouseOlwen
-		YIELD
+    +
+    DIALOGUE dialogueChapter12RosaHouseOlwen
+    YIELD
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
 
-		macroGiveItemToActiveUnit MagicRing
+    macroGiveItemToActiveUnit MagicRing
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
 
-		+
+    +
 
-		macroSingleTileChangeByCoordinates [8, 16], $0021
-	END2
+    macroSingleTileChangeByCoordinates [8, 16], $0021
+  END2
 
-	_SaylaHouseVisit ; 99/DFFC
-		PLAY_SOUND_WORD $00F7
+  _SaylaHouseVisit ; 99/DFFC
+    PLAY_SOUND_WORD $00F7
 
-		EVENT_TEST_FLAG_SET FlagSaylaSaved
-		JUMP_TRUE +
+    EVENT_TEST_FLAG_SET FlagSaylaSaved
+    JUMP_TRUE +
 
-		DIALOGUE dialogueChapter12HeimsScrollHouseSaylaDead
-		YIELD
+    DIALOGUE dialogueChapter12HeimsScrollHouseSaylaDead
+    YIELD
 
-		JUMP ++
+    JUMP ++
 
-		+
-		DIALOGUE dialogueChapter12HeimsScrollHouseSaylaAlive
-		YIELD
+    +
+    DIALOGUE dialogueChapter12HeimsScrollHouseSaylaAlive
+    YIELD
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
 
-		macroGiveItemToActiveUnit HeimsScroll
+    macroGiveItemToActiveUnit HeimsScroll
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
 
-		+
-		macroSingleTileChangeByCoordinates [24, 17], $0021
-	END2
+    +
+    macroSingleTileChangeByCoordinates [24, 17], $0021
+  END2
 
-	_PeterHouseVisit ; 99/E06C
-		PLAY_SOUND_WORD $00F7
+  _PeterHouseVisit ; 99/E06C
+    PLAY_SOUND_WORD $00F7
 
-		EVENT_TEST_FLAG_SET FlagPeterSaved
-		JUMP_TRUE +
+    EVENT_TEST_FLAG_SET FlagPeterSaved
+    JUMP_TRUE +
 
-		DIALOGUE dialogueChapter12SilenceHousePeterDead
-		YIELD
+    DIALOGUE dialogueChapter12SilenceHousePeterDead
+    YIELD
 
-		JUMP ++
+    JUMP ++
 
-		+
-		DIALOGUE dialogueChapter12SilenceHousePeterAlive
-		YIELD
+    +
+    DIALOGUE dialogueChapter12SilenceHousePeterAlive
+    YIELD
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
 
-		macroGiveItemToActiveUnit SilenceStaff
+    macroGiveItemToActiveUnit SilenceStaff
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
 
-		+
-		macroSingleTileChangeByCoordinates [20, 2], $0021
-	END2
+    +
+    macroSingleTileChangeByCoordinates [20, 2], $0021
+  END2
 
-	_BrigandLeftReinforcements ; 99/E0DC
-		LOAD2 eventChapter12Data._BrigandLeftReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-	END2
+  _BrigandLeftReinforcements ; 99/E0DC
+    LOAD2 eventChapter12Data._BrigandLeftReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+  END2
 
-	_BrigandMiddleReinforcements ; 99/E0E3
-		LOAD2 eventChapter12Data._BrigandMiddleReinforcements
-		WAIT_MOVE
-		YIELD
-	END2
+  _BrigandMiddleReinforcements ; 99/E0E3
+    LOAD2 eventChapter12Data._BrigandMiddleReinforcements
+    WAIT_MOVE
+    YIELD
+  END2
 
-	_BrigandRightReinforcements ; 99/E0EA
-		LOAD2 eventChapter12Data._BrigandRightReinforcements
-		WAIT_MOVE
-		YIELD
-	END2
+  _BrigandRightReinforcements ; 99/E0EA
+    LOAD2 eventChapter12Data._BrigandRightReinforcements
+    WAIT_MOVE
+    YIELD
+  END2
 
-	_GaidenFail ; 99/E0F1
-		SET_FLAG $01
+  _GaidenFail ; 99/E0F1
+    SET_FLAG $01
 
-		DIALOGUE dialogueChapter12GaidenFailDialogue
-		YIELD
+    DIALOGUE dialogueChapter12GaidenFailDialogue
+    YIELD
 
-		FADE_OUT $02
+    FADE_OUT $02
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(True, 0)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(True, 0)
 
-		STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
+    STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
 
-		PAUSE_SKIPPABLE 64
-		YIELD
+    PAUSE_SKIPPABLE 64
+    YIELD
 
-		STORE_WORD wDefaultVisibilityFill, $0101
+    STORE_WORD wDefaultVisibilityFill, $0101
 
-		CALL_ASM_LOOP rlUpdateVisibilityMap, $0000
-		CALL_ASM_LOOP rlUpdateUnitMapsAndFog, $0000
+    CALL_ASM_LOOP rlUpdateVisibilityMap, $0000
+    CALL_ASM_LOOP rlUpdateUnitMapsAndFog, $0000
 
-		FADE_IN $02
+    FADE_IN $02
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
-	END2
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+  END2
 
-	_SalemDialogue ; 99/E122
-		macroCountAllUncapturedAliveUnits Salem
-		JUMP_FALSE +
+  _SalemDialogue ; 99/E122
+    macroCountAllUncapturedAliveUnits Salem
+    JUMP_FALSE +
 
-		macroCheckIfRescued Salem
-		JUMP_TRUE +
+    macroCheckIfRescued Salem
+    JUMP_TRUE +
 
-		PLAY_SOUND_WORD $00F7
-		SCROLL_CAMERA_CHAR Salem
-		SET_CAMERA_SPEED 4
-		YIELD
+    PLAY_SOUND_WORD $00F7
+    SCROLL_CAMERA_CHAR Salem
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter12SalemDialogue
-		YIELD
+    DIALOGUE dialogueChapter12SalemDialogue
+    YIELD
 
-		+
-	END2
+    +
+  END2
 
-	_KolkhoDialogue ; 99/E14E
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+  _KolkhoDialogue ; 99/E14E
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $3A
-		YIELD
+    SET_MUSIC $3A
+    YIELD
 
-		SCROLL_CAMERA_CHAR Kolkho
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Kolkho
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter12KolkhoDialogue
-		YIELD
-	END2
+    DIALOGUE dialogueChapter12KolkhoDialogue
+    YIELD
+  END2
 
-	_MareetaArrive ; 99/E163
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+  _MareetaArrive ; 99/E163
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $4A
-		YIELD
+    SET_MUSIC $4A
+    YIELD
 
-		SCROLL_CAMERA_SPEED [8, 16], 4
-		YIELD
+    SCROLL_CAMERA_SPEED [8, 16], 4
+    YIELD
 
-		macroDialogueWithBackground dialogueChapter12MareetaDialogue, 4
+    macroDialogueWithBackground dialogueChapter12MareetaDialogue, 4
 
-		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
-		YIELD
+    CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+    YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		SCROLL_CAMERA_ADDRESS eventChapter12Data._MareetaCameraCoordinates
-		YIELD
+    SCROLL_CAMERA_ADDRESS eventChapter12Data._MareetaCameraCoordinates
+    YIELD
 
-		LOAD1 eventChapter12Data._MareetaGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter12Data._MareetaGroup
+    WAIT_MOVE
+    YIELD
 
-		macroUnsetCharacterTurnStatus Mareeta, TurnStatusActing
+    macroUnsetCharacterTurnStatus Mareeta, TurnStatusActing
 
-		SCROLL_CAMERA_CHAR Mareeta
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Mareeta
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		PAUSE_SKIPPABLE 32
-		YIELD
-	END2
+    PAUSE_SKIPPABLE 32
+    YIELD
+  END2
 
-	_SalemCheck ; 99/E1C1
-		macroCheckIfRescued Salem
-		JUMP_FALSE +
+  _SalemCheck ; 99/E1C1
+    macroCheckIfRescued Salem
+    JUMP_FALSE +
 
-		SET_FLAG FlagSalemCaptured
+    SET_FLAG FlagSalemCaptured
 
-		+
-	END1
+    +
+  END1
 
-	_PrepGroups ; 99/E1D3
-		.long eventChapter12Data._PrepGroup
-	.word $0000
+  _PrepGroups ; 99/E1D3
+    .long eventChapter12Data._PrepGroup
+  .word $0000
 
-	_OpeningEvent ; 99/E1D8
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+  _OpeningEvent ; 99/E1D8
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $3A
-		YIELD
+    SET_MUSIC $3A
+    YIELD
 
-		macroChapterTitlePopup dialogueChapter12Title
+    macroChapterTitlePopup dialogueChapter12Title
 
-		SCROLL_CAMERA_CHAR Salem
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Salem
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter12Opening1
-		YIELD
+    DIALOGUE dialogueChapter12Opening1
+    YIELD
 
-		EVENT_TEST_FLAG_SET FlagMareetaDiedInChp5
-		JUMP_TRUE +
+    EVENT_TEST_FLAG_SET FlagMareetaDiedInChp5
+    JUMP_TRUE +
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $33
-		YIELD
+    SET_MUSIC $33
+    YIELD
 
-		macroDialogueWithBackground dialogueChapter12Opening2, 4
+    macroDialogueWithBackground dialogueChapter12Opening2, 4
 
-		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
-		YIELD
+    CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+    YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		+
-	END2
+    +
+  END2
 
-	_EndingEvent ; 99/E244
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 16
-		YIELD
+  _EndingEvent ; 99/E244
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 16
+    YIELD
 
-		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+    CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $41
-		YIELD
+    SET_MUSIC $41
+    YIELD
 
-		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+    CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
 
-		macroConvertToPlayerAllegianceIfCaptured Salem
+    macroConvertToPlayerAllegianceIfCaptured Salem
 
-		macroCheckIfRescued Salem
-		JUMP_FALSE +
+    macroCheckIfRescued Salem
+    JUMP_FALSE +
 
-		macroClearRescue Salem
+    macroClearRescue Salem
 
-		+
-		macroCheckTurnStatusSet Salem, TurnStatusCaptured
-		JUMP_TRUE +
+    +
+    macroCheckTurnStatusSet Salem, TurnStatusCaptured
+    JUMP_TRUE +
 
-		macroClearRescue Salem
-		macroUnsetCharacterTurnStatus Salem, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
-		macroSetCharacterTurnStatus Salem, (TurnStatusActing | TurnStatusInvisible)
+    macroClearRescue Salem
+    macroUnsetCharacterTurnStatus Salem, (TurnStatusGrayed | TurnStatusMovementStar | TurnStatusMoved | TurnStatusUnknown2)
+    macroSetCharacterTurnStatus Salem, (TurnStatusActing | TurnStatusInvisible)
 
-		+
-		EVENT_TEST_FLAG_SET $05
-		JUMP_FALSE +
+    +
+    EVENT_TEST_FLAG_SET $05
+    JUMP_FALSE +
 
-		macroDialogueWithBackground dialogueChapter12Ending1B, 4
+    macroDialogueWithBackground dialogueChapter12Ending1B, 4
 
-		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
-		YIELD
+    CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+    YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		JUMP ++
+    JUMP ++
 
-		+
-		macroDialogueWithBackground dialogueChapter12Ending1A, 4
+    +
+    macroDialogueWithBackground dialogueChapter12Ending1A, 4
 
-		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
-		YIELD
+    CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+    YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		+
-		macroCheckIfRescuedByAllyOrNPC Mareeta
-		JUMP_FALSE +
+    +
+    macroCheckIfRescuedByAllyOrNPC Mareeta
+    JUMP_FALSE +
 
-		PLAY_SOUND_WORD $00E0
+    PLAY_SOUND_WORD $00E0
 
-		STORE_WORD wCurrentMapMusic, $00
+    STORE_WORD wCurrentMapMusic, $00
 
-		PAUSE_SKIPPABLE 10
-		YIELD
+    PAUSE_SKIPPABLE 10
+    YIELD
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $4B
-		YIELD
+    SET_MUSIC $4B
+    YIELD
 
-		macroDialogueWithBackground dialogueChapter12Ending2, 3
+    macroDialogueWithBackground dialogueChapter12Ending2, 3
 
-		YIELD
+    YIELD
 
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
+    HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
 
-		FADE_OUT $01
-		YIELD
+    FADE_OUT $01
+    YIELD
 
-		CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
+    CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
 
-		STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
+    STORE_BYTE bBuf_INIDISP, INIDISP_Setting(False, 0)
 
-		+
-		EVENT_TEST_FLAG_SET $05
-		JUMP_FALSE +
+    +
+    EVENT_TEST_FLAG_SET $05
+    JUMP_FALSE +
 
-		ADD_WORD wCurrentChapter, Chapter13 - Chapter12 - 1
-		YIELD_UNK
+    ADD_WORD wCurrentChapter, Chapter13 - Chapter12 - 1
+    YIELD_UNK
 
-		+
-		FADE_OUT $01
-		YIELD
+    +
+    FADE_OUT $01
+    YIELD
 
-		CALL_ASM_LOOP rlASMCChapterEnd, $0000
-	END1
+    CALL_ASM_LOOP rlASMCChapterEnd, $0000
+  END1

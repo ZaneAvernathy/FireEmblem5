@@ -1,4 +1,4 @@
 
 menutextHalberdName ; B0/940F
-	.enc "MenuText"
-	.text "ポールアクス\n"
+  .enc "MenuText"
+  .text "ポールアクス\n"

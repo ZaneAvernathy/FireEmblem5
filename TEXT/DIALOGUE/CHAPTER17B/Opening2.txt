@@ -1,280 +1,280 @@
 dialogueChapter17BOpening2 ; E7/A0C7
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AmaldaPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD ParmannPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "アマルダ"
-	DIALOGUE_FONT_1
-	.text "将軍"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "貴女"
-	DIALOGUE_FONT_0
-	.text "ほどの"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_FONT_4
-	.text "裹"
-	DIALOGUE_FONT_1
-	.text "門"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_5
-	.text "警"
-	DIALOGUE_FONT_1
-	.text "備"
-	DIALOGUE_FONT_0
-	.text "にまわされるとは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "いったい"
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "があったのです？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "どうやら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "意見"
-	DIALOGUE_FONT_0
-	.text "がグスタフ"
-	DIALOGUE_FONT_2
-	.text "侯"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_NL
-	.text "お"
-	DIALOGUE_FONT_1
-	.text "気"
-	DIALOGUE_FONT_0
-	.text "にさわったようです･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_3
-	.text "供"
-	DIALOGUE_FONT_4
-	.text "狩"
-	DIALOGUE_FONT_0
-	.text "りの一"
-	DIALOGUE_FONT_5
-	.text "件"
-	DIALOGUE_FONT_0
-	.text "ですな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "また"
-	DIALOGUE_FONT_3
-	.text "口"
-	DIALOGUE_FONT_5
-	.text "論"
-	DIALOGUE_FONT_0
-	.text "なされたのか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "グスタフ"
-	DIALOGUE_FONT_2
-	.text "侯"
-	DIALOGUE_FONT_0
-	.text "は､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "国王"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "命令"
-	DIALOGUE_FONT_0
-	.text "もないのに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "辺"
-	DIALOGUE_FONT_0
-	.text "りの"
-	DIALOGUE_FONT_1
-	.text "村々"
-	DIALOGUE_FONT_0
-	.text "から"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_3
-	.text "供"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "奪"
-	DIALOGUE_FONT_0
-	.text "っています"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "ロプト"
-	DIALOGUE_FONT_3
-	.text "教"
-	DIALOGUE_FONT_1
-	.text "団"
-	DIALOGUE_FONT_0
-	.text "への"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ささげものにしようとしているのです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "そのようなことが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "許"
-	DIALOGUE_FONT_0
-	.text "されてよいと"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "いますか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "まあまあ､"
-	DIALOGUE_PAUSE $08
-	.text "アマルダどの"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "貴女"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "気持"
-	DIALOGUE_FONT_0
-	.text "ちもわかるが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_3
-	.text "供"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "集"
-	DIALOGUE_FONT_0
-	.text "めることはアルヴィス"
-	DIALOGUE_FONT_1
-	.text "皇帝"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_NL
-	DIALOGUE_FONT_3
-	.text "承"
-	DIALOGUE_FONT_1
-	.text "知"
-	DIALOGUE_FONT_0
-	.text "されていることだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "おそかれ"
-	DIALOGUE_FONT_4
-	.text "早"
-	DIALOGUE_FONT_0
-	.text "かれ"
-	DIALOGUE_PAUSE $08
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "辺"
-	DIALOGUE_FONT_0
-	.text "りの"
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_3
-	.text "供"
-	DIALOGUE_FONT_0
-	.text "たちは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "みな､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "帝都"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "連"
-	DIALOGUE_FONT_0
-	.text "れ"
-	DIALOGUE_FONT_2
-	.text "去"
-	DIALOGUE_FONT_0
-	.text "られてしまうのだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "貴女"
-	DIALOGUE_FONT_0
-	.text "一"
-	DIALOGUE_FONT_1
-	.text "人"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "反"
-	DIALOGUE_FONT_1
-	.text "対"
-	DIALOGUE_FONT_0
-	.text "してもどうにもならん"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "くっ､"
-	DIALOGUE_PAUSE $08
-	.text "どうしてこんなことに！！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "はアルヴィス"
-	DIALOGUE_FONT_1
-	.text "皇帝"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "信"
-	DIALOGUE_FONT_0
-	.text "じていた"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あの"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "にあこがれて"
-	DIALOGUE_FONT_1
-	.text "軍人"
-	DIALOGUE_FONT_0
-	.text "になったのに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "いったいどうなされてしまったというの？"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AmaldaPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD ParmannPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "アマルダ"
+  DIALOGUE_FONT_1
+  .text "将軍"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "貴女"
+  DIALOGUE_FONT_0
+  .text "ほどの"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_FONT_4
+  .text "裹"
+  DIALOGUE_FONT_1
+  .text "門"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_5
+  .text "警"
+  DIALOGUE_FONT_1
+  .text "備"
+  DIALOGUE_FONT_0
+  .text "にまわされるとは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "いったい"
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "があったのです？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "どうやら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "意見"
+  DIALOGUE_FONT_0
+  .text "がグスタフ"
+  DIALOGUE_FONT_2
+  .text "侯"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_NL
+  .text "お"
+  DIALOGUE_FONT_1
+  .text "気"
+  DIALOGUE_FONT_0
+  .text "にさわったようです･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_3
+  .text "供"
+  DIALOGUE_FONT_4
+  .text "狩"
+  DIALOGUE_FONT_0
+  .text "りの一"
+  DIALOGUE_FONT_5
+  .text "件"
+  DIALOGUE_FONT_0
+  .text "ですな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "また"
+  DIALOGUE_FONT_3
+  .text "口"
+  DIALOGUE_FONT_5
+  .text "論"
+  DIALOGUE_FONT_0
+  .text "なされたのか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "グスタフ"
+  DIALOGUE_FONT_2
+  .text "侯"
+  DIALOGUE_FONT_0
+  .text "は､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "国王"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "命令"
+  DIALOGUE_FONT_0
+  .text "もないのに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "辺"
+  DIALOGUE_FONT_0
+  .text "りの"
+  DIALOGUE_FONT_1
+  .text "村々"
+  DIALOGUE_FONT_0
+  .text "から"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_3
+  .text "供"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "奪"
+  DIALOGUE_FONT_0
+  .text "っています"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "ロプト"
+  DIALOGUE_FONT_3
+  .text "教"
+  DIALOGUE_FONT_1
+  .text "団"
+  DIALOGUE_FONT_0
+  .text "への"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ささげものにしようとしているのです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "そのようなことが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "許"
+  DIALOGUE_FONT_0
+  .text "されてよいと"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "いますか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "まあまあ､"
+  DIALOGUE_PAUSE $08
+  .text "アマルダどの"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "貴女"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "気持"
+  DIALOGUE_FONT_0
+  .text "ちもわかるが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_3
+  .text "供"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "集"
+  DIALOGUE_FONT_0
+  .text "めることはアルヴィス"
+  DIALOGUE_FONT_1
+  .text "皇帝"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_NL
+  DIALOGUE_FONT_3
+  .text "承"
+  DIALOGUE_FONT_1
+  .text "知"
+  DIALOGUE_FONT_0
+  .text "されていることだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "おそかれ"
+  DIALOGUE_FONT_4
+  .text "早"
+  DIALOGUE_FONT_0
+  .text "かれ"
+  DIALOGUE_PAUSE $08
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "辺"
+  DIALOGUE_FONT_0
+  .text "りの"
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_3
+  .text "供"
+  DIALOGUE_FONT_0
+  .text "たちは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "みな､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "帝都"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "連"
+  DIALOGUE_FONT_0
+  .text "れ"
+  DIALOGUE_FONT_2
+  .text "去"
+  DIALOGUE_FONT_0
+  .text "られてしまうのだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "貴女"
+  DIALOGUE_FONT_0
+  .text "一"
+  DIALOGUE_FONT_1
+  .text "人"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "反"
+  DIALOGUE_FONT_1
+  .text "対"
+  DIALOGUE_FONT_0
+  .text "してもどうにもならん"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "くっ､"
+  DIALOGUE_PAUSE $08
+  .text "どうしてこんなことに！！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "はアルヴィス"
+  DIALOGUE_FONT_1
+  .text "皇帝"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "信"
+  DIALOGUE_FONT_0
+  .text "じていた"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あの"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "にあこがれて"
+  DIALOGUE_FONT_1
+  .text "軍人"
+  DIALOGUE_FONT_0
+  .text "になったのに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "いったいどうなされてしまったというの？"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

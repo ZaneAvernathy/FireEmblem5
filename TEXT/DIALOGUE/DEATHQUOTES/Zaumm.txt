@@ -1,13 +1,13 @@
 dialogueZaummDeathQuote ; 95/FD19
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "くうっ！"
-	DIALOGUE_PAUSE $10
-	.text "　"
-	DIALOGUE_FONT_1
-	.text "無"
-	DIALOGUE_FONT_3
-	.text "念"
-	DIALOGUE_FONT_0
-	.text "･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "くうっ！"
+  DIALOGUE_PAUSE $10
+  .text "　"
+  DIALOGUE_FONT_1
+  .text "無"
+  DIALOGUE_FONT_3
+  .text "念"
+  DIALOGUE_FONT_0
+  .text "･･･"
 DIALOGUE_END_SCENE

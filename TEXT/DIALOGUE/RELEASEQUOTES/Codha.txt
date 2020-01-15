@@ -1,16 +1,16 @@
 dialogueCodhaReleaseQuote ; E7/9F19
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･われらは"
-	DIALOGUE_FONT_2
-	.text "死"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "恐"
-	DIALOGUE_FONT_0
-	.text "れぬ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ぐふっ"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･われらは"
+  DIALOGUE_FONT_2
+  .text "死"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "恐"
+  DIALOGUE_FONT_0
+  .text "れぬ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ぐふっ"
 DIALOGUE_END_SCENE

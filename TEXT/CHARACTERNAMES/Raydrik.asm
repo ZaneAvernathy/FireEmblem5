@@ -1,4 +1,4 @@
 
 menutextRaydrikName ; 86/DED3
-	.enc "MenuText"
-	.text "レイドリック\n"
+  .enc "MenuText"
+  .text "レイドリック\n"

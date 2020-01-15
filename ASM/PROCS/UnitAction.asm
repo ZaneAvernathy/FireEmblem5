@@ -3,64 +3,64 @@ procUnitAction .dstruct structProcInfo, "UA", rlProcUnitActionInit, rlProcUnitAc
 
 rlProcUnitActionInit ; 82/8FF6
 
-	.al
-	.xl
-	.autsiz
-	.databank ?
+  .al
+  .xl
+  .autsiz
+  .databank ?
 
-	rtl
+  rtl
 
 rlProcUnitActionOnCycle ; 82/8FF7
 
-	.al
-	.xl
-	.autsiz
-	.databank ?
+  .al
+  .xl
+  .autsiz
+  .databank ?
 
-	lda #<>rlProcUnitActionOnCycle2
-	sta aProcHeaderOnCycle,b,x
-	rtl
+  lda #<>rlProcUnitActionOnCycle2
+  sta aProcHeaderOnCycle,b,x
+  rtl
 
 rlProcUnitActionOnCycle2 ; 82/8FFE
 
-	.al
-	.xl
-	.autsiz
-	.databank ?
+  .al
+  .xl
+  .autsiz
+  .databank ?
 
-	jsl $84EA72
-	bcs _End
+  jsl $84EA72
+  bcs _End
 
-	phx
-	ldx #size(aUnknown0017BF) - 2
+  phx
+  ldx #size(aUnknown0017BF) - 2
 
-	-
-	lda @l aUnknown0017BF,x
-	beq +
+  -
+  lda @l aUnknown0017BF,x
+  beq +
 
-	bit #$1000
-	bne ++
+  bit #$1000
+  bne ++
 
-	lda $7FAA1A,x
-	cmp #$FFFF
-	bne ++
+  lda $7FAA1A,x
+  cmp #$FFFF
+  bne ++
 
-	+
-	dec x
-	dec x
-	bpl -
+  +
+  dec x
+  dec x
+  bpl -
 
-	plx
+  plx
 
-	jsl rlEventEngineDeleteProcAndClearActive
+  jsl rlEventEngineDeleteProcAndClearActive
 
-	_End
-	rtl
+  _End
+  rtl
 
-	+
-	plx
-	bra _End
+  +
+  plx
+  bra _End
 
 aProcUnitActionCode ; 82/9029
 
-	PROC_HALT
+  PROC_HALT

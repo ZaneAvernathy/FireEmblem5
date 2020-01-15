@@ -1,72 +1,72 @@
 dialogueChapter6KnightCrestHouseEmilyAlive ; 92/8D4A
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCWoman2Portrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_3
-	.text "娘"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "エミリを"
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "けてくださったのは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "あなたたちですね"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ああっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "とお"
-	DIALOGUE_FONT_2
-	.text "礼"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_3
-	.text "申"
-	DIALOGUE_FONT_0
-	.text "せばよいのでしょう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "これは"
-	DIALOGUE_FONT_3
-	.text "我"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "家"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "家宝"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "騎士"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_5
-	.text "勲"
-	DIALOGUE_FONT_2
-	.text "章"
-	DIALOGUE_FONT_0
-	.text "です"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "きっとお"
-	DIALOGUE_FONT_3
-	.text "役"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "立"
-	DIALOGUE_FONT_0
-	.text "つでしょう"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCWoman2Portrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_3
+  .text "娘"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "エミリを"
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "けてくださったのは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "あなたたちですね"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ああっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "とお"
+  DIALOGUE_FONT_2
+  .text "礼"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_3
+  .text "申"
+  DIALOGUE_FONT_0
+  .text "せばよいのでしょう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "これは"
+  DIALOGUE_FONT_3
+  .text "我"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "家"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "家宝"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "騎士"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_5
+  .text "勲"
+  DIALOGUE_FONT_2
+  .text "章"
+  DIALOGUE_FONT_0
+  .text "です"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "きっとお"
+  DIALOGUE_FONT_3
+  .text "役"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "立"
+  DIALOGUE_FONT_0
+  .text "つでしょう"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

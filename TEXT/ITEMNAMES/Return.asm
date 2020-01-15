@@ -1,4 +1,4 @@
 
 menutextReturnName ; B0/96AB
-	.enc "MenuText"
-	.text "リターン\n"
+  .enc "MenuText"
+  .text "リターン\n"

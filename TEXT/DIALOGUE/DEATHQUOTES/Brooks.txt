@@ -1,16 +1,16 @@
 dialogueBrooksDeathQuote ; 98/B42E
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ぐぐ･･･"
-	DIALOGUE_PAUSE $10
-	.text "これで"
-	DIALOGUE_FONT_2
-	.text "終"
-	DIALOGUE_FONT_0
-	.text "わりでは･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ない･･･"
-	DIALOGUE_PAUSE $08
-	.text "ぞ･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ぐぐ･･･"
+  DIALOGUE_PAUSE $10
+  .text "これで"
+  DIALOGUE_FONT_2
+  .text "終"
+  DIALOGUE_FONT_0
+  .text "わりでは･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ない･･･"
+  DIALOGUE_PAUSE $08
+  .text "ぞ･･"
 DIALOGUE_END_SCENE

@@ -1,15 +1,15 @@
 dialogueEisenhoweReleaseQuote ; 93/A927
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "くっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "この"
-	DIALOGUE_FONT_2
-	.text "礼"
-	DIALOGUE_FONT_0
-	.text "はいずれしてやる"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おぼえておけよ"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "くっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "この"
+  DIALOGUE_FONT_2
+  .text "礼"
+  DIALOGUE_FONT_0
+  .text "はいずれしてやる"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おぼえておけよ"
 DIALOGUE_END_SCENE

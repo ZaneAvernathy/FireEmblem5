@@ -1,4 +1,4 @@
 
 menutextForsetiInfiniteName ; B0/9623
-	.enc "MenuText"
-	.text "フォルセティ\n"
+  .enc "MenuText"
+  .text "フォルセティ\n"

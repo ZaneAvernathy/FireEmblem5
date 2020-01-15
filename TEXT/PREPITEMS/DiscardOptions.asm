@@ -1,4 +1,4 @@
 
 menutextPrepItemsDiscardOptions
-	.enc "MenuText"
-	.text "はい　　　いいえ\n"
+  .enc "MenuText"
+  .text "はい　　　いいえ\n"

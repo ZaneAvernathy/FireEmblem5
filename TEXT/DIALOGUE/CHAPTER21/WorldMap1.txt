@@ -1,26 +1,26 @@
 dialogueChapter21WorldMap1 ; 82/D810
-	DIALOGUE_FONT_0
-	.text "レンスターでの"
-	DIALOGUE_FONT_1
-	.text "戦後"
-	DIALOGUE_FONT_3
-	.text "処"
-	DIALOGUE_FONT_2
-	.text "理"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "終"
-	DIALOGUE_FONT_0
-	.text "えた"
-	DIALOGUE_NL
-	.text "リーフたちがアルスターに"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_2
-	.text "発"
-	DIALOGUE_FONT_0
-	.text "したころ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_FONT_0
+  .text "レンスターでの"
+  DIALOGUE_FONT_1
+  .text "戦後"
+  DIALOGUE_FONT_3
+  .text "処"
+  DIALOGUE_FONT_2
+  .text "理"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "終"
+  DIALOGUE_FONT_0
+  .text "えた"
+  DIALOGUE_NL
+  .text "リーフたちがアルスターに"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_2
+  .text "発"
+  DIALOGUE_FONT_0
+  .text "したころ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

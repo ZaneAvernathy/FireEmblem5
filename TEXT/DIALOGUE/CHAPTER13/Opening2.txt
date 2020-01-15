@@ -1,56 +1,56 @@
 dialogueChapter13Opening2 ; B9/C07B
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD LisztPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ふんっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "バルダックにてがらを"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "よこどりされてたまるか"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_2
-	.text "全"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	.text "これより"
-	DIALOGUE_FONT_4
-	.text "総"
-	DIALOGUE_FONT_1
-	.text "攻撃"
-	DIALOGUE_FONT_0
-	.text "をかける！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "退"
-	DIALOGUE_FONT_3
-	.text "却"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_3
-	.text "許"
-	DIALOGUE_FONT_0
-	.text "さん！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "攻"
-	DIALOGUE_FONT_0
-	.text "めて"
-	DIALOGUE_FONT_1
-	.text "攻"
-	DIALOGUE_FONT_0
-	.text "めて"
-	DIALOGUE_FONT_1
-	.text "攻"
-	DIALOGUE_FONT_0
-	.text "めまくれ！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD LisztPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ふんっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "バルダックにてがらを"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "よこどりされてたまるか"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_2
+  .text "全"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  .text "これより"
+  DIALOGUE_FONT_4
+  .text "総"
+  DIALOGUE_FONT_1
+  .text "攻撃"
+  DIALOGUE_FONT_0
+  .text "をかける！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "退"
+  DIALOGUE_FONT_3
+  .text "却"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_3
+  .text "許"
+  DIALOGUE_FONT_0
+  .text "さん！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "攻"
+  DIALOGUE_FONT_0
+  .text "めて"
+  DIALOGUE_FONT_1
+  .text "攻"
+  DIALOGUE_FONT_0
+  .text "めて"
+  DIALOGUE_FONT_1
+  .text "攻"
+  DIALOGUE_FONT_0
+  .text "めまくれ！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

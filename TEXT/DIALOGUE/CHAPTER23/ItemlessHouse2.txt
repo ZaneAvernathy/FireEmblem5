@@ -1,125 +1,125 @@
 dialogueChapter23ItemlessHouse2 ; 98/E9DA
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan8Portrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "レイドリックを"
-	DIALOGUE_FONT_3
-	.text "侮"
-	DIALOGUE_FONT_0
-	.text "ってはならぬぞ"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "あの"
-	DIALOGUE_FONT_1
-	.text "男"
-	DIALOGUE_FONT_0
-	.text "はロプト"
-	DIALOGUE_FONT_3
-	.text "教"
-	DIALOGUE_FONT_1
-	.text "団"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "味"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "につけ"
-	DIALOGUE_NL
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_0
-	.text "ロプトの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_FONT_0
-	.text "といわれる"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "恐"
-	DIALOGUE_FONT_0
-	.text "ろしい"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "持"
-	DIALOGUE_FONT_0
-	.text "っておる"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "あの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "相"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "にして"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "まともに"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "っては"
-	DIALOGUE_FONT_2
-	.text "勝"
-	DIALOGUE_FONT_0
-	.text "ち"
-	DIALOGUE_FONT_1
-	.text "目"
-	DIALOGUE_FONT_0
-	.text "はないぞ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "以前"
-	DIALOGUE_FONT_0
-	.text "なら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "それに"
-	DIALOGUE_FONT_1
-	.text "対"
-	DIALOGUE_FONT_3
-	.text "抗"
-	DIALOGUE_FONT_0
-	.text "できる"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "城"
-	DIALOGUE_FONT_0
-	.text "にあったのじゃが･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "それも"
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_NL
-	.text "どこぞに"
-	DIALOGUE_FONT_2
-	.text "失"
-	DIALOGUE_FONT_0
-	.text "われたという"
-	DIALOGUE_FONT_1
-	.text "話"
-	DIALOGUE_FONT_0
-	.text "じゃ"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan8Portrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "レイドリックを"
+  DIALOGUE_FONT_3
+  .text "侮"
+  DIALOGUE_FONT_0
+  .text "ってはならぬぞ"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "あの"
+  DIALOGUE_FONT_1
+  .text "男"
+  DIALOGUE_FONT_0
+  .text "はロプト"
+  DIALOGUE_FONT_3
+  .text "教"
+  DIALOGUE_FONT_1
+  .text "団"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "味"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "につけ"
+  DIALOGUE_NL
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_0
+  .text "ロプトの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_FONT_0
+  .text "といわれる"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "恐"
+  DIALOGUE_FONT_0
+  .text "ろしい"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "持"
+  DIALOGUE_FONT_0
+  .text "っておる"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "あの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "相"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "にして"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "まともに"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "っては"
+  DIALOGUE_FONT_2
+  .text "勝"
+  DIALOGUE_FONT_0
+  .text "ち"
+  DIALOGUE_FONT_1
+  .text "目"
+  DIALOGUE_FONT_0
+  .text "はないぞ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "以前"
+  DIALOGUE_FONT_0
+  .text "なら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "それに"
+  DIALOGUE_FONT_1
+  .text "対"
+  DIALOGUE_FONT_3
+  .text "抗"
+  DIALOGUE_FONT_0
+  .text "できる"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "城"
+  DIALOGUE_FONT_0
+  .text "にあったのじゃが･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "それも"
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_NL
+  .text "どこぞに"
+  DIALOGUE_FONT_2
+  .text "失"
+  DIALOGUE_FONT_0
+  .text "われたという"
+  DIALOGUE_FONT_1
+  .text "話"
+  DIALOGUE_FONT_0
+  .text "じゃ"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

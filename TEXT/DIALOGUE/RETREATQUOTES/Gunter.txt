@@ -1,28 +1,28 @@
 dialogueGunterRetreatQuote ; 82/C68B
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD GunterPortrait
-	DIALOGUE_FONT_0
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "老"
-	DIALOGUE_FONT_0
-	.text "いぼれは"
-	DIALOGUE_FONT_2
-	.text "足"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "まといですな･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "もお"
-	DIALOGUE_FONT_4
-	.text "早"
-	DIALOGUE_FONT_0
-	.text "くおいでください"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD GunterPortrait
+  DIALOGUE_FONT_0
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "老"
+  DIALOGUE_FONT_0
+  .text "いぼれは"
+  DIALOGUE_FONT_2
+  .text "足"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "まといですな･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "もお"
+  DIALOGUE_FONT_4
+  .text "早"
+  DIALOGUE_FONT_0
+  .text "くおいでください"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

@@ -1,21 +1,21 @@
 dialogueSalemBattleQuote ; 92/A360
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "われらの"
-	DIALOGUE_FONT_3
-	.text "森"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "侵"
-	DIALOGUE_FONT_0
-	.text "すものよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ここより"
-	DIALOGUE_FONT_2
-	.text "去"
-	DIALOGUE_FONT_0
-	.text "れ！"
-	DIALOGUE_NL
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "われらの"
+  DIALOGUE_FONT_3
+  .text "森"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "侵"
+  DIALOGUE_FONT_0
+  .text "すものよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ここより"
+  DIALOGUE_FONT_2
+  .text "去"
+  DIALOGUE_FONT_0
+  .text "れ！"
+  DIALOGUE_NL
 DIALOGUE_END_SCENE

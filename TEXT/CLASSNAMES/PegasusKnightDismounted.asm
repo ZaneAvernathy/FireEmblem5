@@ -1,4 +1,4 @@
 
 menutextPegasusKnightDismountedName ; 89/867E
-	.enc "MenuText"
-	.text "ペガサスナイト　\n"
+  .enc "MenuText"
+  .text "ペガサスナイト　\n"

@@ -1,4 +1,4 @@
 
 menutextPaviseSkillName ; 81/CD79
-	.enc "MenuText"
-	.text "おおたて\n"
+  .enc "MenuText"
+  .text "おおたて\n"

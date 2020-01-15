@@ -1,53 +1,53 @@
 dialogueChapter8UnusedHouse2 ; 93/C515
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCGirl3Portrait
-	DIALOGUE_FONT_0
-	.text "あーあ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "こんなイナカ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ほんと､"
-	DIALOGUE_PAUSE $08
-	.text "イヤになっちゃう！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "もっと"
-	DIALOGUE_FONT_1
-	.text "都会"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_FONT_3
-	.text "暮"
-	DIALOGUE_FONT_0
-	.text "らしてみたいなあ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "きれいなドレスとか"
-	DIALOGUE_FONT_2
-	.text "着"
-	DIALOGUE_FONT_0
-	.text "て"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "カッコいい"
-	DIALOGUE_FONT_1
-	.text "人"
-	DIALOGUE_FONT_0
-	.text "と"
-	DIALOGUE_FONT_3
-	.text "恋"
-	DIALOGUE_FONT_0
-	.text "をして･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ねえ､"
-	DIALOGUE_PAUSE $08
-	.text "そう"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "わない？"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCGirl3Portrait
+  DIALOGUE_FONT_0
+  .text "あーあ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "こんなイナカ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ほんと､"
+  DIALOGUE_PAUSE $08
+  .text "イヤになっちゃう！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "もっと"
+  DIALOGUE_FONT_1
+  .text "都会"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_FONT_3
+  .text "暮"
+  DIALOGUE_FONT_0
+  .text "らしてみたいなあ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "きれいなドレスとか"
+  DIALOGUE_FONT_2
+  .text "着"
+  DIALOGUE_FONT_0
+  .text "て"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "カッコいい"
+  DIALOGUE_FONT_1
+  .text "人"
+  DIALOGUE_FONT_0
+  .text "と"
+  DIALOGUE_FONT_3
+  .text "恋"
+  DIALOGUE_FONT_0
+  .text "をして･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ねえ､"
+  DIALOGUE_PAUSE $08
+  .text "そう"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "わない？"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

@@ -1,21 +1,21 @@
 dialogueGalzusReleaseQuote ; B0/F530
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "フッ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "もおちたものだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_3
-	.text "情"
-	DIALOGUE_FONT_0
-	.text "けをかけられるとはな･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "フッ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "もおちたものだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_3
+  .text "情"
+  DIALOGUE_FONT_0
+  .text "けをかけられるとはな･･･"
 DIALOGUE_END_SCENE

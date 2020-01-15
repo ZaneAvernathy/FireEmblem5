@@ -1,4 +1,4 @@
 
 menutextEyvelName ; 86/DD21
-	.enc "MenuText"
-	.text "エーヴェル\n"
+  .enc "MenuText"
+  .text "エーヴェル\n"

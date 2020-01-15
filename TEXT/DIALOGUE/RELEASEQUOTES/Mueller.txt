@@ -1,10 +1,10 @@
 dialogueMuellerReleaseQuote ; 98/CA53
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_5
-	.text "甘"
-	DIALOGUE_FONT_0
-	.text "いな･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_5
+  .text "甘"
+  DIALOGUE_FONT_0
+  .text "いな･･･"
 DIALOGUE_END_SCENE

@@ -1,139 +1,139 @@
 dialogueChapter6UnusedCodhaRaydrik ; 92/8C3E
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD CodhaPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD RaydrikPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "レイドリック"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "お"
-	DIALOGUE_FONT_4
-	.text "呼"
-	DIALOGUE_FONT_0
-	.text "びでしょうか"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "おお､"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "たか"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_3
-	.text "牢"
-	DIALOGUE_FONT_0
-	.text "から"
-	DIALOGUE_FONT_4
-	.text "抜"
-	DIALOGUE_FONT_0
-	.text "け"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "した"
-	DIALOGUE_FONT_4
-	.text "囚"
-	DIALOGUE_FONT_1
-	.text "人"
-	DIALOGUE_FONT_0
-	.text "たちを"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "追"
-	DIALOGUE_FONT_0
-	.text "わせておるのだが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "どうもらちがあかん"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "すまんが"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_4
-	.text "貸"
-	DIALOGUE_FONT_0
-	.text "してもらえんか"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "魔法"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "大"
-	DIALOGUE_FONT_0
-	.text "がかりなものゆえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "町"
-	DIALOGUE_FONT_0
-	.text "にも"
-	DIALOGUE_FONT_3
-	.text "被害"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_5
-	.text "及"
-	DIALOGUE_FONT_0
-	.text "ぶかもしれませんが･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "うーむ･･･"
-	DIALOGUE_PAUSE $10
-	.text "やむをえんな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "また､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "平民"
-	DIALOGUE_FONT_0
-	.text "どもを"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "かりだして"
-	DIALOGUE_FONT_2
-	.text "作"
-	DIALOGUE_FONT_0
-	.text "りなおせばよい"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $08
-	.text "わかりました"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "では､"
-	DIALOGUE_PAUSE $08
-	.text "さっそく･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD CodhaPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD RaydrikPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "レイドリック"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "お"
+  DIALOGUE_FONT_4
+  .text "呼"
+  DIALOGUE_FONT_0
+  .text "びでしょうか"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "おお､"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "たか"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_3
+  .text "牢"
+  DIALOGUE_FONT_0
+  .text "から"
+  DIALOGUE_FONT_4
+  .text "抜"
+  DIALOGUE_FONT_0
+  .text "け"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "した"
+  DIALOGUE_FONT_4
+  .text "囚"
+  DIALOGUE_FONT_1
+  .text "人"
+  DIALOGUE_FONT_0
+  .text "たちを"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "追"
+  DIALOGUE_FONT_0
+  .text "わせておるのだが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "どうもらちがあかん"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "すまんが"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_4
+  .text "貸"
+  DIALOGUE_FONT_0
+  .text "してもらえんか"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "魔法"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "大"
+  DIALOGUE_FONT_0
+  .text "がかりなものゆえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "町"
+  DIALOGUE_FONT_0
+  .text "にも"
+  DIALOGUE_FONT_3
+  .text "被害"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_5
+  .text "及"
+  DIALOGUE_FONT_0
+  .text "ぶかもしれませんが･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "うーむ･･･"
+  DIALOGUE_PAUSE $10
+  .text "やむをえんな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "また､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "平民"
+  DIALOGUE_FONT_0
+  .text "どもを"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "かりだして"
+  DIALOGUE_FONT_2
+  .text "作"
+  DIALOGUE_FONT_0
+  .text "りなおせばよい"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $08
+  .text "わかりました"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "では､"
+  DIALOGUE_PAUSE $08
+  .text "さっそく･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

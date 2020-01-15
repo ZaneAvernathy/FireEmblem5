@@ -25,24 +25,24 @@ CartridgeChecksum    = $E390
 
 .if CartridgeNew == True
 
-	.text format("%02X", MakerCode)
-	.text GameCode
+  .text format("%02X", MakerCode)
+  .text GameCode
 
-	.if (len(GameCode) == 4)
-		.if (GameCode[0] != "T") && (GameCode[0] != "Z") && !(GameCode in ["042J", "MENU", "XBND"]) && (CartridgeDestination[1] != None)
-			.cwarn GameCode[3] != CartridgeDestination[1], "Game code and destination mismatch."
-		.endif
-	.endif
+  .if (len(GameCode) == 4)
+    .if (GameCode[0] != "T") && (GameCode[0] != "Z") && !(GameCode in ["042J", "MENU", "XBND"]) && (CartridgeDestination[1] != None)
+      .cwarn GameCode[3] != CartridgeDestination[1], "Game code and destination mismatch."
+    .endif
+  .endif
 
-	.fill 6, 0
+  .fill 6, 0
 
-	.byte GetShiftAmount(ExpansionFLASHSize / 1024)
-	.byte GetShiftAmount(ExpansionRAMSize / 1024)
-	.byte SpecialVersion
+  .byte GetShiftAmount(ExpansionFLASHSize / 1024)
+  .byte GetShiftAmount(ExpansionRAMSize / 1024)
+  .byte SpecialVersion
 
 .else
 
-	.fill 15, 0
+  .fill 15, 0
 
 .endif
 
@@ -51,8 +51,8 @@ CartridgeChecksum    = $E390
 .cerror len(CartridgeTitle) > 21, "Cartridge title too long."
 
 .union
-	.fill 21, " "
-	.text CartridgeTitle
+  .fill 21, " "
+  .text CartridgeTitle
 .endu
 
 .byte (CartridgeSpeed << 4) | CartridgeMode
@@ -63,11 +63,11 @@ CartridgeChecksum    = $E390
 
 .if CartridgeNew == True
 
-	.byte $33
+  .byte $33
 
 .else
 
-	.byte MakerCode
+  .byte MakerCode
 
 .endif
 

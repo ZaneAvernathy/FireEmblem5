@@ -1,4 +1,4 @@
 
 menutextLongLanceName ; B0/9311
-	.enc "MenuText"
-	.text "ロングランス\n"
+  .enc "MenuText"
+  .text "ロングランス\n"

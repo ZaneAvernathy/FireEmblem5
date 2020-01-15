@@ -1,4 +1,4 @@
 
 menutextMasterKnightName ; 89/8180
-	.enc "MenuText"
-	.text "マスターナイト　\n"
+  .enc "MenuText"
+  .text "マスターナイト　\n"

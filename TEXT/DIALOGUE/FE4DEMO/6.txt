@@ -1,23 +1,23 @@
 dialogueFE4Demo6 ; 9C/FD9F
-	DIALOGUE_RIGHT
-	DIALOGUE_OPEN
-	DIALOGUE_LOAD MartyPortrait
-	DIALOGUE_FONT_0
-	.text "わっ､"
-	DIALOGUE_FONT_2
-	.text "落"
-	DIALOGUE_FONT_0
-	.text "ち"
-	DIALOGUE_FONT_2
-	.text "着"
-	DIALOGUE_FONT_0
-	.text "けシルヴィア！"
-	DIALOGUE_NL
-	.text "そんな"
-	DIALOGUE_FONT_1
-	.text "物"
-	DIALOGUE_FONT_0
-	.text "ふりまわしたら"
-	DIALOGUE_NL
-	.text "あぶないだろ！"
+  DIALOGUE_RIGHT
+  DIALOGUE_OPEN
+  DIALOGUE_LOAD MartyPortrait
+  DIALOGUE_FONT_0
+  .text "わっ､"
+  DIALOGUE_FONT_2
+  .text "落"
+  DIALOGUE_FONT_0
+  .text "ち"
+  DIALOGUE_FONT_2
+  .text "着"
+  DIALOGUE_FONT_0
+  .text "けシルヴィア！"
+  DIALOGUE_NL
+  .text "そんな"
+  DIALOGUE_FONT_1
+  .text "物"
+  DIALOGUE_FONT_0
+  .text "ふりまわしたら"
+  DIALOGUE_NL
+  .text "あぶないだろ！"
 DIALOGUE_EOF

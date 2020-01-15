@@ -1,38 +1,38 @@
 dialogueRaydrikChapter24DeathQuote ; B0/F4AD
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ううっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "バカな･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なぜこんなことに･･･"
-	DIALOGUE_PAUSE $40
-	DIALOGUE_SCROLL
-	.text "ベルド"
-	DIALOGUE_FONT_2
-	.text "司"
-	DIALOGUE_FONT_3
-	.text "教"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "たのむ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ワシはまだ"
-	DIALOGUE_FONT_2
-	.text "死"
-	DIALOGUE_FONT_0
-	.text "にたくない･･･"
-	DIALOGUE_PAUSE $40
-	DIALOGUE_SCROLL
-	.text "･･･たすけて･･･"
-	DIALOGUE_PAUSE $10
-	.text "くれ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "グワッ･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ううっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "バカな･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なぜこんなことに･･･"
+  DIALOGUE_PAUSE $40
+  DIALOGUE_SCROLL
+  .text "ベルド"
+  DIALOGUE_FONT_2
+  .text "司"
+  DIALOGUE_FONT_3
+  .text "教"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "たのむ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ワシはまだ"
+  DIALOGUE_FONT_2
+  .text "死"
+  DIALOGUE_FONT_0
+  .text "にたくない･･･"
+  DIALOGUE_PAUSE $40
+  DIALOGUE_SCROLL
+  .text "･･･たすけて･･･"
+  DIALOGUE_PAUSE $10
+  .text "くれ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "グワッ･･･"
 DIALOGUE_END_SCENE

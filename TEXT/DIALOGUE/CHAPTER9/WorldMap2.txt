@@ -1,27 +1,27 @@
 dialogueChapter9WorldMap2 ; 82/CEC0
-	DIALOGUE_FONT_1
-	.text "彼"
-	DIALOGUE_FONT_0
-	.text "らの"
-	DIALOGUE_FONT_4
-	.text "隠"
-	DIALOGUE_FONT_0
-	.text "れ"
-	DIALOGUE_FONT_4
-	.text "住"
-	DIALOGUE_FONT_0
-	.text "んでいるという"
-	DIALOGUE_NL
-	.text "ハンニバルの"
-	DIALOGUE_FONT_1
-	.text "山"
-	DIALOGUE_FONT_5
-	.text "荘"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "目指"
-	DIALOGUE_FONT_0
-	.text "す･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_FONT_1
+  .text "彼"
+  DIALOGUE_FONT_0
+  .text "らの"
+  DIALOGUE_FONT_4
+  .text "隠"
+  DIALOGUE_FONT_0
+  .text "れ"
+  DIALOGUE_FONT_4
+  .text "住"
+  DIALOGUE_FONT_0
+  .text "んでいるという"
+  DIALOGUE_NL
+  .text "ハンニバルの"
+  DIALOGUE_FONT_1
+  .text "山"
+  DIALOGUE_FONT_5
+  .text "荘"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "目指"
+  DIALOGUE_FONT_0
+  .text "す･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

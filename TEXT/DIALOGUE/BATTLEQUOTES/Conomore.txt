@@ -1,11 +1,11 @@
 dialogueConomoreBattleQuote ; B0/C3D9
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "これもアルスターのため"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "許"
-	DIALOGUE_FONT_0
-	.text "せ！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "これもアルスターのため"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "許"
+  DIALOGUE_FONT_0
+  .text "せ！"
 DIALOGUE_END_SCENE

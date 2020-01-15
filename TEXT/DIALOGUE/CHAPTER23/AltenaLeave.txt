@@ -1,256 +1,256 @@
 dialogueChapter23AltenaLeave ; 98/D628
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD CoulterPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "むっ！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "どうやらマンスターで"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "大"
-	DIALOGUE_FONT_0
-	.text "きな"
-	DIALOGUE_FONT_2
-	.text "動"
-	DIALOGUE_FONT_0
-	.text "きがあったようだ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD AltenaPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "チャンスです！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "われらは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "これよりマンスターへ"
-	DIALOGUE_FONT_1
-	.text "攻"
-	DIALOGUE_FONT_0
-	.text "めこみます"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "て！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	.text "マンスターに"
-	DIALOGUE_FONT_1
-	.text "攻"
-	DIALOGUE_FONT_0
-	.text "めこめば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "市"
-	DIALOGUE_FONT_2
-	.text "民"
-	DIALOGUE_FONT_0
-	.text "までまきこむことになる"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "がなんとか"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "降伏"
-	DIALOGUE_FONT_0
-	.text "するよう"
-	DIALOGUE_FONT_2
-	.text "説"
-	DIALOGUE_FONT_3
-	.text "得"
-	DIALOGUE_FONT_0
-	.text "を･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "これは"
-	DIALOGUE_FONT_1
-	.text "国王"
-	DIALOGUE_FONT_3
-	.text "陛"
-	DIALOGUE_FONT_1
-	.text "下"
-	DIALOGUE_FONT_0
-	.text "のご"
-	DIALOGUE_FONT_2
-	.text "命令"
-	DIALOGUE_FONT_0
-	.text "です！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "王女"
-	DIALOGUE_FONT_2
-	.text "殿"
-	DIALOGUE_FONT_1
-	.text "下"
-	DIALOGUE_FONT_0
-	.text "といえど"
-	DIALOGUE_FONT_3
-	.text "口"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "しご"
-	DIALOGUE_FONT_1
-	.text "無用"
-	DIALOGUE_FONT_0
-	.text "！"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "指揮"
-	DIALOGUE_FONT_2
-	.text "官"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "だ！"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "この"
-	DIALOGUE_FONT_2
-	.text "部隊"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_2
-	.text "部隊"
-	DIALOGUE_FONT_0
-	.text "です！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "それにアルテナ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "がどう"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "おうと"
-	DIALOGUE_FONT_1
-	.text "攻撃"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_NL
-	.text "ゆるめてはならぬと"
-	DIALOGUE_FONT_3
-	.text "陛"
-	DIALOGUE_FONT_1
-	.text "下"
-	DIALOGUE_FONT_0
-	.text "のご"
-	DIALOGUE_FONT_2
-	.text "命令"
-	DIALOGUE_FONT_0
-	.text "です！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "なっ･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･おいやなら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ここに"
-	DIALOGUE_FONT_2
-	.text "残"
-	DIALOGUE_FONT_0
-	.text "って"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "ておられればよい"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_UNLOAD
-	DIALOGUE_RIGHT
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "全"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "くぞ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD AltenaPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "コルータ！"
-	DIALOGUE_PAUSE $10
-	.text "　"
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "て！"
-	DIALOGUE_PAUSE $10
-	.text "　コルータ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_RIGHT
-	DIALOGUE_UNLOAD
-	DIALOGUE_CLOSE
-	DIALOGUE_LEFT
-	.text "なんとか"
-	DIALOGUE_FONT_1
-	.text "父上"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "説"
-	DIALOGUE_FONT_3
-	.text "得"
-	DIALOGUE_FONT_0
-	.text "して"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "攻撃"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "中"
-	DIALOGUE_FONT_2
-	.text "止"
-	DIALOGUE_FONT_0
-	.text "させねば･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD CoulterPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "むっ！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "どうやらマンスターで"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "大"
+  DIALOGUE_FONT_0
+  .text "きな"
+  DIALOGUE_FONT_2
+  .text "動"
+  DIALOGUE_FONT_0
+  .text "きがあったようだ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD AltenaPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "チャンスです！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "われらは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "これよりマンスターへ"
+  DIALOGUE_FONT_1
+  .text "攻"
+  DIALOGUE_FONT_0
+  .text "めこみます"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "て！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  .text "マンスターに"
+  DIALOGUE_FONT_1
+  .text "攻"
+  DIALOGUE_FONT_0
+  .text "めこめば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "市"
+  DIALOGUE_FONT_2
+  .text "民"
+  DIALOGUE_FONT_0
+  .text "までまきこむことになる"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "がなんとか"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "降伏"
+  DIALOGUE_FONT_0
+  .text "するよう"
+  DIALOGUE_FONT_2
+  .text "説"
+  DIALOGUE_FONT_3
+  .text "得"
+  DIALOGUE_FONT_0
+  .text "を･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "これは"
+  DIALOGUE_FONT_1
+  .text "国王"
+  DIALOGUE_FONT_3
+  .text "陛"
+  DIALOGUE_FONT_1
+  .text "下"
+  DIALOGUE_FONT_0
+  .text "のご"
+  DIALOGUE_FONT_2
+  .text "命令"
+  DIALOGUE_FONT_0
+  .text "です！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "王女"
+  DIALOGUE_FONT_2
+  .text "殿"
+  DIALOGUE_FONT_1
+  .text "下"
+  DIALOGUE_FONT_0
+  .text "といえど"
+  DIALOGUE_FONT_3
+  .text "口"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "しご"
+  DIALOGUE_FONT_1
+  .text "無用"
+  DIALOGUE_FONT_0
+  .text "！"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "指揮"
+  DIALOGUE_FONT_2
+  .text "官"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "だ！"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "この"
+  DIALOGUE_FONT_2
+  .text "部隊"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_2
+  .text "部隊"
+  DIALOGUE_FONT_0
+  .text "です！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "それにアルテナ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "がどう"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "おうと"
+  DIALOGUE_FONT_1
+  .text "攻撃"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_NL
+  .text "ゆるめてはならぬと"
+  DIALOGUE_FONT_3
+  .text "陛"
+  DIALOGUE_FONT_1
+  .text "下"
+  DIALOGUE_FONT_0
+  .text "のご"
+  DIALOGUE_FONT_2
+  .text "命令"
+  DIALOGUE_FONT_0
+  .text "です！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "なっ･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･おいやなら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ここに"
+  DIALOGUE_FONT_2
+  .text "残"
+  DIALOGUE_FONT_0
+  .text "って"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "ておられればよい"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_UNLOAD
+  DIALOGUE_RIGHT
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "全"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "くぞ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD AltenaPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "コルータ！"
+  DIALOGUE_PAUSE $10
+  .text "　"
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "て！"
+  DIALOGUE_PAUSE $10
+  .text "　コルータ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_RIGHT
+  DIALOGUE_UNLOAD
+  DIALOGUE_CLOSE
+  DIALOGUE_LEFT
+  .text "なんとか"
+  DIALOGUE_FONT_1
+  .text "父上"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "説"
+  DIALOGUE_FONT_3
+  .text "得"
+  DIALOGUE_FONT_0
+  .text "して"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "攻撃"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "中"
+  DIALOGUE_FONT_2
+  .text "止"
+  DIALOGUE_FONT_0
+  .text "させねば･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

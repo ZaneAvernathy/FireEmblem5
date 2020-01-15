@@ -1,82 +1,82 @@
 dialogueChapter15RightPath ; 92/E7F6
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_FONT_0
-	.text "ここから"
-	DIALOGUE_FONT_1
-	.text "北"
-	DIALOGUE_FONT_0
-	.text "へ"
-	DIALOGUE_FONT_1
-	.text "向"
-	DIALOGUE_FONT_0
-	.text "かえば"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_3
-	.text "迷"
-	DIALOGUE_FONT_0
-	.text "いの"
-	DIALOGUE_FONT_3
-	.text "森"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_FONT_0
-	.text "と"
-	DIALOGUE_FONT_4
-	.text "呼"
-	DIALOGUE_FONT_0
-	.text "ばれる"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_4
-	.text "深"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_3
-	.text "森林"
-	DIALOGUE_FONT_1
-	.text "地"
-	DIALOGUE_FONT_2
-	.text "帯"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "ます"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_1
-	.text "数"
-	DIALOGUE_FONT_0
-	.text "でしょうが"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "予期"
-	DIALOGUE_FONT_0
-	.text "せぬ"
-	DIALOGUE_FONT_4
-	.text "困"
-	DIALOGUE_FONT_2
-	.text "難"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "ちうけて"
-	DIALOGUE_NL
-	.text "いるかもしれません"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_FONT_0
+  .text "ここから"
+  DIALOGUE_FONT_1
+  .text "北"
+  DIALOGUE_FONT_0
+  .text "へ"
+  DIALOGUE_FONT_1
+  .text "向"
+  DIALOGUE_FONT_0
+  .text "かえば"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_3
+  .text "迷"
+  DIALOGUE_FONT_0
+  .text "いの"
+  DIALOGUE_FONT_3
+  .text "森"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_FONT_0
+  .text "と"
+  DIALOGUE_FONT_4
+  .text "呼"
+  DIALOGUE_FONT_0
+  .text "ばれる"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_4
+  .text "深"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_3
+  .text "森林"
+  DIALOGUE_FONT_1
+  .text "地"
+  DIALOGUE_FONT_2
+  .text "帯"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "ます"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_1
+  .text "数"
+  DIALOGUE_FONT_0
+  .text "でしょうが"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "予期"
+  DIALOGUE_FONT_0
+  .text "せぬ"
+  DIALOGUE_FONT_4
+  .text "困"
+  DIALOGUE_FONT_2
+  .text "難"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "ちうけて"
+  DIALOGUE_NL
+  .text "いるかもしれません"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

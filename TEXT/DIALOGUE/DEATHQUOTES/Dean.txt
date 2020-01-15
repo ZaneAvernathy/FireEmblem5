@@ -1,14 +1,14 @@
 dialogueDeanDeathQuote ; 82/BD63
-	DIALOGUE_FONT_0
-	.text "リノアン･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "すまない･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "もう"
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "は･･･"
+  DIALOGUE_FONT_0
+  .text "リノアン･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "すまない･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "もう"
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "は･･･"
 DIALOGUE_END_SCENE

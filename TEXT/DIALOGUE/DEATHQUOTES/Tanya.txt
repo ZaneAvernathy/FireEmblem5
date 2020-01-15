@@ -1,13 +1,13 @@
 dialogueTanyaDeathQuote ; 82/BDBD
-	DIALOGUE_FONT_0
-	.text "そんな･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "けて･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "オーシ･･･"
+  DIALOGUE_FONT_0
+  .text "そんな･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "けて･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "オーシ･･･"
 DIALOGUE_END_SCENE

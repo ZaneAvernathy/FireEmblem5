@@ -1,139 +1,139 @@
 dialogueChapter5MareetaDialogue ; 93/927F
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD RaydrikPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "どういうことだ？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あの"
-	DIALOGUE_FONT_3
-	.text "娘"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $10
-	.text "あんこくの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "持"
-	DIALOGUE_FONT_0
-	.text "たせたのに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なぜ､"
-	DIALOGUE_PAUSE $10
-	.text "このように"
-	DIALOGUE_FONT_1
-	.text "苦戦"
-	DIALOGUE_FONT_0
-	.text "する？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD VeldPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "フム･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あんこくの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_0
-	.text "は､"
-	DIALOGUE_PAUSE $10
-	.text "あの"
-	DIALOGUE_FONT_3
-	.text "娘"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_NL
-	DIALOGUE_FONT_2
-	.text "完全"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "支配"
-	DIALOGUE_FONT_0
-	.text "してはおらぬようじゃな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なんですと！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "バカな！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あんな"
-	DIALOGUE_FONT_1
-	.text "小"
-	DIALOGUE_FONT_3
-	.text "娘"
-	DIALOGUE_FONT_0
-	.text "ごときに･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "母親"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "思"
-	DIALOGUE_FONT_0
-	.text "う"
-	DIALOGUE_FONT_2
-	.text "心"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_FONT_2
-	.text "先"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_4
-	.text "鈍"
-	DIALOGUE_FONT_0
-	.text "らせておるのであろうな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "魔剣"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "力"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "必"
-	DIALOGUE_FONT_2
-	.text "死"
-	DIALOGUE_FONT_0
-	.text "でたえておる･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ほれ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "貴公"
-	DIALOGUE_FONT_0
-	.text "にはあの"
-	DIALOGUE_FONT_3
-	.text "涙"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "えぬか？"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD RaydrikPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "どういうことだ？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あの"
+  DIALOGUE_FONT_3
+  .text "娘"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $10
+  .text "あんこくの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "持"
+  DIALOGUE_FONT_0
+  .text "たせたのに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なぜ､"
+  DIALOGUE_PAUSE $10
+  .text "このように"
+  DIALOGUE_FONT_1
+  .text "苦戦"
+  DIALOGUE_FONT_0
+  .text "する？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD VeldPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "フム･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あんこくの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_0
+  .text "は､"
+  DIALOGUE_PAUSE $10
+  .text "あの"
+  DIALOGUE_FONT_3
+  .text "娘"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_NL
+  DIALOGUE_FONT_2
+  .text "完全"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "支配"
+  DIALOGUE_FONT_0
+  .text "してはおらぬようじゃな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なんですと！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "バカな！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あんな"
+  DIALOGUE_FONT_1
+  .text "小"
+  DIALOGUE_FONT_3
+  .text "娘"
+  DIALOGUE_FONT_0
+  .text "ごときに･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "母親"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "思"
+  DIALOGUE_FONT_0
+  .text "う"
+  DIALOGUE_FONT_2
+  .text "心"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_FONT_2
+  .text "先"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_4
+  .text "鈍"
+  DIALOGUE_FONT_0
+  .text "らせておるのであろうな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "魔剣"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "力"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "必"
+  DIALOGUE_FONT_2
+  .text "死"
+  DIALOGUE_FONT_0
+  .text "でたえておる･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ほれ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "貴公"
+  DIALOGUE_FONT_0
+  .text "にはあの"
+  DIALOGUE_FONT_3
+  .text "涙"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "えぬか？"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

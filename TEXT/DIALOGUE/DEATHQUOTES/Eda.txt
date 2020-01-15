@@ -1,16 +1,16 @@
 dialogueEdaDeathQuote ; 82/BA7D
-	DIALOGUE_FONT_0
-	.text "ケイト･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ずっと･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ありがとう･･･"
-	DIALOGUE_PAUSE $40
-	DIALOGUE_SCROLL
-	.text "もういいよ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "トラキアへおかえり･･･"
+  DIALOGUE_FONT_0
+  .text "ケイト･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ずっと･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ありがとう･･･"
+  DIALOGUE_PAUSE $40
+  DIALOGUE_SCROLL
+  .text "もういいよ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "トラキアへおかえり･･･"
 DIALOGUE_END_SCENE

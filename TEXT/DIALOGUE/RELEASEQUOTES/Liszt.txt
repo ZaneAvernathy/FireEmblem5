@@ -1,16 +1,16 @@
 dialogueLisztReleaseQuote ; B9/D466
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "くっ"
-	DIALOGUE_PAUSE $08
-	.text "･･･きさまらのおかげで"
-	DIALOGUE_NL
-	.text "わしの"
-	DIALOGUE_FONT_1
-	.text "出世"
-	DIALOGUE_FONT_0
-	.text "もきえた･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おぼえておれ！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "くっ"
+  DIALOGUE_PAUSE $08
+  .text "･･･きさまらのおかげで"
+  DIALOGUE_NL
+  .text "わしの"
+  DIALOGUE_FONT_1
+  .text "出世"
+  DIALOGUE_FONT_0
+  .text "もきえた･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おぼえておれ！"
 DIALOGUE_END_SCENE

@@ -1,7 +1,7 @@
 dialogueReinhardtDeathQuote ; B0/DF6C
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "これまで･･･"
-	DIALOGUE_PAUSE $10
-	.text "か･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "これまで･･･"
+  DIALOGUE_PAUSE $10
+  .text "か･･･"
 DIALOGUE_END_SCENE

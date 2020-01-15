@@ -1,11 +1,11 @@
 dialogueDemoHalvanBattle ; 9A/DF3B
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なかなかやるな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "だが､"
-	DIALOGUE_PAUSE $08
-	.text "まだまだ！"
-	DIALOGUE_PAUSE $40
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なかなかやるな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "だが､"
+  DIALOGUE_PAUSE $08
+  .text "まだまだ！"
+  DIALOGUE_PAUSE $40
 DIALOGUE_EOF

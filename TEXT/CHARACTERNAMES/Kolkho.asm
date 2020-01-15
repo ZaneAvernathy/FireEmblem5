@@ -1,4 +1,4 @@
 
 menutextKolkhoName ; 86/E059
-	.enc "MenuText"
-	.text "コルホ\n"
+  .enc "MenuText"
+  .text "コルホ\n"

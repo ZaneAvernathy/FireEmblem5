@@ -1,356 +1,356 @@
 
 eventChapter9Events ; 8C/F011
 
-	_OpeningEventDefinitions ; 8C/F011
-		EVENT FlagAlwaysZero, _OpeningEvent
-			CMP_WORD wCurrentTurn, 0
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TurnEventDefinitions ; 8C/F01E
-		EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
-			CHECK_DEAD Merloch
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
-			TEST_FLAG_SET FlagPlayerDeath
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _EnemyAIChange1
-			CMP_WORD wCurrentTurn, 20
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _EnemyAIChange2
-			CMP_WORD wCurrentTurn, 22
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TalkEventDefinitions ; 8C/F057
-		EVENT $06, _LeifSelphinaTalk
-			CHECK_CHARS2 Leif, Selphina
-		END_DEFINITION
-		EVENT $07, _SelphinaFinnTalk
-			CHECK_CHARS2 Selphina, Finn
-		END_DEFINITION
-		EVENT $08, _CallionSelphinaTalk
-			CHECK_CHARS2 Callion, Selphina
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_LocationEventDefinitions ; 8C/F077
-		EVENT $21, _ValasScrollHouse
-			macroEventConditionCheckCoords [16, 4]
-			CMP_WORD wCurrentPhase, Player
-		END_DEFINITION
-		EVENT $22, _StaminaDrinkHouse
-			macroEventConditionCheckCoords [23, 29]
-			CMP_WORD wCurrentPhase, Player
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_BeforeActionEventDefinitions ; 8C/F0A3
-		EVENT $09, _PlayerRetreat
-			CMP_BITS $7E4F98, $0008
-			macroEventConditionCheckCoords [6, 4]
-			CMP_WORD aSelectedCharacterBuffer.Character, Leif
-		END_DEFINITION
-		EVENT $09, _PlayerRetreat
-			CMP_BITS $7E4F98, $0008
-			macroEventConditionCheckCoords [6, 4]
-			CHECK_CARRYING Leif
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _PlayerRetreat
-			CMP_BITS $7E4F98, $0008
-			TEST_FLAG_UNSET $09
-			macroEventConditionCheckCoords [6, 4]
-		END_DEFINITION
-		EVENT FlagAlwaysZero, _PlayerLoss
-			macroEventConditionCheckCoords [6, 4]
-			CMP_WORD wCurrentPhase, Enemy
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_AfterActionEventDefinitions ; 8C/F104
-		EVENT FlagAlwaysZero, _EndingEvent
-			TEST_FLAG_SET $09
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_BattleEventDefinitions ; 8C/F10D
-		macroBossQuoteDefinition $05, Merloch
-	END_DEFINITION_ARRAY
-
-	_ShopEventDefinitions ; 8C/F117
-		macroShopDefinition eventChapter9Data._Vendor
-		macroShopDefinition eventChapter9Data._Armory
-	END_DEFINITION_ARRAY
-
-	_LeifSelphinaTalk ; 8C/F13F
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $45
-		YIELD
-
-		DIALOGUE dialogueChapter9LeifSelphinaTalk
-		YIELD
-	END2
-
-	_SelphinaFinnTalk ; 8C/F14F
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $4A
-		YIELD
+  _OpeningEventDefinitions ; 8C/F011
+    EVENT FlagAlwaysZero, _OpeningEvent
+      CMP_WORD wCurrentTurn, 0
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TurnEventDefinitions ; 8C/F01E
+    EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+      CHECK_DEAD Merloch
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+      TEST_FLAG_SET FlagPlayerDeath
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _EnemyAIChange1
+      CMP_WORD wCurrentTurn, 20
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _EnemyAIChange2
+      CMP_WORD wCurrentTurn, 22
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TalkEventDefinitions ; 8C/F057
+    EVENT $06, _LeifSelphinaTalk
+      CHECK_CHARS2 Leif, Selphina
+    END_DEFINITION
+    EVENT $07, _SelphinaFinnTalk
+      CHECK_CHARS2 Selphina, Finn
+    END_DEFINITION
+    EVENT $08, _CallionSelphinaTalk
+      CHECK_CHARS2 Callion, Selphina
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _LocationEventDefinitions ; 8C/F077
+    EVENT $21, _ValasScrollHouse
+      macroEventConditionCheckCoords [16, 4]
+      CMP_WORD wCurrentPhase, Player
+    END_DEFINITION
+    EVENT $22, _StaminaDrinkHouse
+      macroEventConditionCheckCoords [23, 29]
+      CMP_WORD wCurrentPhase, Player
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _BeforeActionEventDefinitions ; 8C/F0A3
+    EVENT $09, _PlayerRetreat
+      CMP_BITS $7E4F98, $0008
+      macroEventConditionCheckCoords [6, 4]
+      CMP_WORD aSelectedCharacterBuffer.Character, Leif
+    END_DEFINITION
+    EVENT $09, _PlayerRetreat
+      CMP_BITS $7E4F98, $0008
+      macroEventConditionCheckCoords [6, 4]
+      CHECK_CARRYING Leif
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _PlayerRetreat
+      CMP_BITS $7E4F98, $0008
+      TEST_FLAG_UNSET $09
+      macroEventConditionCheckCoords [6, 4]
+    END_DEFINITION
+    EVENT FlagAlwaysZero, _PlayerLoss
+      macroEventConditionCheckCoords [6, 4]
+      CMP_WORD wCurrentPhase, Enemy
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _AfterActionEventDefinitions ; 8C/F104
+    EVENT FlagAlwaysZero, _EndingEvent
+      TEST_FLAG_SET $09
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _BattleEventDefinitions ; 8C/F10D
+    macroBossQuoteDefinition $05, Merloch
+  END_DEFINITION_ARRAY
+
+  _ShopEventDefinitions ; 8C/F117
+    macroShopDefinition eventChapter9Data._Vendor
+    macroShopDefinition eventChapter9Data._Armory
+  END_DEFINITION_ARRAY
+
+  _LeifSelphinaTalk ; 8C/F13F
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $45
+    YIELD
+
+    DIALOGUE dialogueChapter9LeifSelphinaTalk
+    YIELD
+  END2
+
+  _SelphinaFinnTalk ; 8C/F14F
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $4A
+    YIELD
 
-		DIALOGUE dialogueChapter9SelphinaFinnTalk1
+    DIALOGUE dialogueChapter9SelphinaFinnTalk1
 
-		EVENT_TEST_FLAG_SET $06
-		JUMP_FALSE +
+    EVENT_TEST_FLAG_SET $06
+    JUMP_FALSE +
 
-		STORE_LONG lEventEngineLongParameter, dialogueChapter9SelphinaFinnTalk2
-		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+    STORE_LONG lEventEngineLongParameter, dialogueChapter9SelphinaFinnTalk2
+    CALL_ASM_LOOP rlASMCDialogueContinue, $0000
 
-		+
-		YIELD
-	END2
+    +
+    YIELD
+  END2
 
-	_CallionSelphinaTalk ; 8C/F171
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+  _CallionSelphinaTalk ; 8C/F171
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $4B
-		YIELD
+    SET_MUSIC $4B
+    YIELD
 
-		DIALOGUE dialogueChapter9CallionSelphinaTalk
-		YIELD
+    DIALOGUE dialogueChapter9CallionSelphinaTalk
+    YIELD
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitSetTurnStatus, $0000
 
-		macroGiveItemToActiveUnit ParagonSword
+    macroGiveItemToActiveUnit ParagonSword
 
-		STORE_WORD wEventEngineParameter1, TurnStatusActing
-		CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
-	END2
+    STORE_WORD wEventEngineParameter1, TurnStatusActing
+    CALL_ASM_LOOP rlASMCActiveUnitUnsetTurnStatus, $0000
+  END2
 
-	_EnemyAIChange1 ; 8C/F1C2
-		macroCountAllUncapturedAliveUnits Merloch
-		JUMP_FALSE +
+  _EnemyAIChange1 ; 8C/F1C2
+    macroCountAllUncapturedAliveUnits Merloch
+    JUMP_FALSE +
 
-		SCROLL_CAMERA_CHAR Merloch
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Merloch
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		+
-		macroSetCharacterByte ThracianBishop, structCharacterDataRAM.AI1, $00
-		macroSetCharacterByte ThracianBishop, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte ThracianBishop, structCharacterDataRAM.AI2, $00
-		macroSetCharacterByte ThracianBishop, structCharacterDataRAM.Unknown3E, $00
+    +
+    macroSetCharacterByte ThracianBishop, structCharacterDataRAM.AI1, $00
+    macroSetCharacterByte ThracianBishop, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte ThracianBishop, structCharacterDataRAM.AI2, $00
+    macroSetCharacterByte ThracianBishop, structCharacterDataRAM.Unknown3E, $00
 
-		macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.AI1, $00
-		macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.AI2, $00
-		macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.Unknown3E, $00
-	END2
+    macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.AI1, $00
+    macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.AI2, $00
+    macroSetCharacterByte ThracianArmoredLance, structCharacterDataRAM.Unknown3E, $00
+  END2
 
-	_EnemyAIChange2 ; 8C/F297
-		macroCountAllUncapturedAliveUnits Merloch
-		JUMP_FALSE +
+  _EnemyAIChange2 ; 8C/F297
+    macroCountAllUncapturedAliveUnits Merloch
+    JUMP_FALSE +
 
-		SCROLL_CAMERA_CHAR Merloch
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Merloch
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		+
-		macroSetCharacterByte Merloch, structCharacterDataRAM.AI1, $00
-		macroSetCharacterByte Merloch, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte Merloch, structCharacterDataRAM.AI2, $0E
-		macroSetCharacterByte Merloch, structCharacterDataRAM.Unknown3E, $00
+    +
+    macroSetCharacterByte Merloch, structCharacterDataRAM.AI1, $00
+    macroSetCharacterByte Merloch, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte Merloch, structCharacterDataRAM.AI2, $0E
+    macroSetCharacterByte Merloch, structCharacterDataRAM.Unknown3E, $00
 
-		macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.AI1, $00
-		macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.AI4, $00
-		macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.AI2, $0E
-		macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.Unknown3E, $00
-	END2
+    macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.AI1, $00
+    macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.AI4, $00
+    macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.AI2, $0E
+    macroSetCharacterByte ThracianWyvernRider, structCharacterDataRAM.Unknown3E, $00
+  END2
 
-	_ValasScrollHouse ; 8C/F36C
-		macroItemHouse dialogueChapter9ValasScrollHouse, ValasScroll, [16, 4], $0021
-	END2
+  _ValasScrollHouse ; 8C/F36C
+    macroItemHouse dialogueChapter9ValasScrollHouse, ValasScroll, [16, 4], $0021
+  END2
 
-	_StaminaDrinkHouse ; 8C/F3CF
-		macroItemHouse dialogueChapter9StaminaDrinkHouse, StaminaDrink, [23, 29], $0021
-	END2
+  _StaminaDrinkHouse ; 8C/F3CF
+    macroItemHouse dialogueChapter9StaminaDrinkHouse, StaminaDrink, [23, 29], $0021
+  END2
 
-	_PlayerRetreat ; 8C/F432
-		PAUSE_SKIPPABLE 15
-		YIELD
+  _PlayerRetreat ; 8C/F432
+    PAUSE_SKIPPABLE 15
+    YIELD
 
-		macroHaveActiveUnitRetreat eventChapter9Events._RetreatMovestring
-	END2
+    macroHaveActiveUnitRetreat eventChapter9Events._RetreatMovestring
+  END2
 
-	_RetreatMovestring ; 8C/F46F
-	MS_END
+  _RetreatMovestring ; 8C/F46F
+  MS_END
 
-	_PrepGroups ; 8C/F470
-		.long eventChapter9Data._PrepGroup1
-		.long eventChapter9Data._PrepGroup2
-	.word $0000
+  _PrepGroups ; 8C/F470
+    .long eventChapter9Data._PrepGroup1
+    .long eventChapter9Data._PrepGroup2
+  .word $0000
 
-	_OpeningEvent ; 8C/F478
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+  _OpeningEvent ; 8C/F478
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $3D
-		YIELD
+    SET_MUSIC $3D
+    YIELD
 
-		macroChapterTitlePopup dialogueChapter9Title
+    macroChapterTitlePopup dialogueChapter9Title
 
-		SCROLL_CAMERA_SPEED [18, 20], 4
+    SCROLL_CAMERA_SPEED [18, 20], 4
 
-		LOAD1 eventChapter9Data._AltenaTravantGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter9Data._AltenaTravantGroup
+    WAIT_MOVE
+    YIELD
 
-		LOAD1 eventChapter9Data._MerlochGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter9Data._MerlochGroup
+    WAIT_MOVE
+    YIELD
 
-		DIALOGUE dialogueChapter9Opening1
-		YIELD
+    DIALOGUE dialogueChapter9Opening1
+    YIELD
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $31
-		YIELD
+    SET_MUSIC $31
+    YIELD
 
-		MOVE_UNIT Altena, [0, 0], [16, 28], 2, None
-		YIELD_UNK
+    MOVE_UNIT Altena, [0, 0], [16, 28], 2, None
+    YIELD_UNK
 
-		MOVE_UNIT Travant, [0, 0], [18, 28], 2, None
-		YIELD_UNK
+    MOVE_UNIT Travant, [0, 0], [18, 28], 2, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		macroRemoveUnit Altena
-		macroRemoveUnit Travant
+    macroRemoveUnit Altena
+    macroRemoveUnit Travant
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		MOVE_UNIT Merloch, [0, 0], [17, 28], 2, None
-		YIELD_UNK
+    MOVE_UNIT Merloch, [0, 0], [17, 28], 2, None
+    YIELD_UNK
 
-		WAIT_MOVE
-		YIELD
+    WAIT_MOVE
+    YIELD
 
-		macroSetCharacterByte FriegeBishop2, structCharacterDataRAM.LeadershipStars, 3
+    macroSetCharacterByte FriegeBishop2, structCharacterDataRAM.LeadershipStars, 3
 
-		STORE_WORD wEventEngineXCoordinate, 6
-		STORE_WORD wEventEngineYCoordinate, 4
-		SET_ACTIVE_COORDS
+    STORE_WORD wEventEngineXCoordinate, 6
+    STORE_WORD wEventEngineYCoordinate, 4
+    SET_ACTIVE_COORDS
 
-		SCROLL_CAMERA_SPEED [6, 4], 4
-		YIELD
+    SCROLL_CAMERA_SPEED [6, 4], 4
+    YIELD
 
-		macroDialogueWithBackground dialogueChapter9Opening2, 1
+    macroDialogueWithBackground dialogueChapter9Opening2, 1
 
-		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
-		YIELD
+    CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+    YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		YIELD
+    YIELD
 
-		LOAD1 eventChapter9Data._SelphinaKaneGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter9Data._SelphinaKaneGroup
+    WAIT_MOVE
+    YIELD
 
-		LOAD1 eventChapter9Data._AlbaRobertGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter9Data._AlbaRobertGroup
+    WAIT_MOVE
+    YIELD
 
-		SCROLL_CAMERA_CHAR Leif
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Leif
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter9Opening3
-		YIELD
-	END2
+    DIALOGUE dialogueChapter9Opening3
+    YIELD
+  END2
 
-	_EndingEvent ; 8C/F56D
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 16
-		YIELD
+  _EndingEvent ; 8C/F56D
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 16
+    YIELD
 
-		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+    CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
 
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $4B
-		YIELD
+    SET_MUSIC $4B
+    YIELD
 
-		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+    CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
 
-		macroDialogueWithBackground dialogueChapter9Ending1, 1
+    macroDialogueWithBackground dialogueChapter9Ending1, 1
 
-		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
-		YIELD
+    CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+    YIELD
 
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, INIDISP_Setting(False, 15)
 
-		DIALOGUE dialogueChapter9Ending2
-		YIELD
+    DIALOGUE dialogueChapter9Ending2
+    YIELD
 
-		LOAD1 eventChapter9Data._AltenaGroup
-		WAIT_MOVE
-		YIELD
+    LOAD1 eventChapter9Data._AltenaGroup
+    WAIT_MOVE
+    YIELD
 
-		SCROLL_CAMERA_CHAR Altena
-		SET_CAMERA_SPEED 4
-		YIELD
+    SCROLL_CAMERA_CHAR Altena
+    SET_CAMERA_SPEED 4
+    YIELD
 
-		DIALOGUE dialogueChapter9Ending3
-		YIELD
+    DIALOGUE dialogueChapter9Ending3
+    YIELD
 
-		macroAddCharacterByte Leif, structCharacterDataRAM.LeadershipStars, 1
+    macroAddCharacterByte Leif, structCharacterDataRAM.LeadershipStars, 1
 
-		PLAY_SOUND_WORD $00E7
+    PLAY_SOUND_WORD $00E7
 
-		FADE_OUT $01
-		YIELD
+    FADE_OUT $01
+    YIELD
 
-		CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured, $0000
+    CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured, $0000
 
-		FADE_OUT $01
-		YIELD
+    FADE_OUT $01
+    YIELD
 
-		CALL_ASM_LOOP rlASMCChapterEnd, $0000
-	END1
+    CALL_ASM_LOOP rlASMCChapterEnd, $0000
+  END1
 
-	_PlayerLoss ; 8C/F5F5
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
+  _PlayerLoss ; 8C/F5F5
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
 
-		SET_MUSIC $28
-		YIELD
+    SET_MUSIC $28
+    YIELD
 
-		DIALOGUE dialogueChapter9PlayerLoss
-		YIELD
+    DIALOGUE dialogueChapter9PlayerLoss
+    YIELD
 
-		CALL_ASM_SKIPPABLE rlUnknown80C29D, $0000
+    CALL_ASM_SKIPPABLE rlUnknown80C29D, $0000
 
-		STORE_WORD wUnknown001791, $FFFF
-	END1
+    STORE_WORD wUnknown001791, $FFFF
+  END1

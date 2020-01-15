@@ -1,54 +1,54 @@
 dialogueChapterFinalThroneOpen ; E7/CB6A
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD VeldPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なっ､"
-	DIALOGUE_PAUSE $08
-	.text "なんだと！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "封印"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "破"
-	DIALOGUE_FONT_0
-	.text "られたというのか！！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ぬぬっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "リーフめ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "こしゃくなマネを･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ならばきさまらも"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "あの"
-	DIALOGUE_FONT_1
-	.text "世"
-	DIALOGUE_FONT_0
-	.text "への"
-	DIALOGUE_FONT_1
-	.text "道"
-	DIALOGUE_FONT_2
-	.text "連"
-	DIALOGUE_FONT_0
-	.text "れにしてやるわ！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "このストーンで"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "石"
-	DIALOGUE_FONT_0
-	.text "となってねむるがよい！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD VeldPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なっ､"
+  DIALOGUE_PAUSE $08
+  .text "なんだと！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "封印"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "破"
+  DIALOGUE_FONT_0
+  .text "られたというのか！！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ぬぬっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "リーフめ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "こしゃくなマネを･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ならばきさまらも"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "あの"
+  DIALOGUE_FONT_1
+  .text "世"
+  DIALOGUE_FONT_0
+  .text "への"
+  DIALOGUE_FONT_1
+  .text "道"
+  DIALOGUE_FONT_2
+  .text "連"
+  DIALOGUE_FONT_0
+  .text "れにしてやるわ！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "このストーンで"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "石"
+  DIALOGUE_FONT_0
+  .text "となってねむるがよい！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

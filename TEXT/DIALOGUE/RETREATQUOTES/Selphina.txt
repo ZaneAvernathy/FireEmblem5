@@ -1,31 +1,31 @@
 dialogueSelphinaRetreatQuote ; 82/C311
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD SelphinaPortrait
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_0
-	.text "これ"
-	DIALOGUE_FONT_1
-	.text "以上"
-	DIALOGUE_FONT_2
-	.text "長"
-	DIALOGUE_FONT_4
-	.text "居"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "無用"
-	DIALOGUE_FONT_0
-	.text "です"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "急"
-	DIALOGUE_FONT_0
-	.text "いでください！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD SelphinaPortrait
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_0
+  .text "これ"
+  DIALOGUE_FONT_1
+  .text "以上"
+  DIALOGUE_FONT_2
+  .text "長"
+  DIALOGUE_FONT_4
+  .text "居"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "無用"
+  DIALOGUE_FONT_0
+  .text "です"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "急"
+  DIALOGUE_FONT_0
+  .text "いでください！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

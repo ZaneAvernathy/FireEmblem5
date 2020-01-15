@@ -1,19 +1,19 @@
 dialogueMareetaRetreatQuote ; 82/C641
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD MareetaPortrait
-	DIALOGUE_FONT_1
-	.text "母様"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "ていて･･･"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "必"
-	DIALOGUE_FONT_0
-	.text "ず･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD MareetaPortrait
+  DIALOGUE_FONT_1
+  .text "母様"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "ていて･･･"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "必"
+  DIALOGUE_FONT_0
+  .text "ず･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

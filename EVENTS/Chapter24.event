@@ -1,872 +1,872 @@
 
 eventChapter24Events ; B9/B000
 
-	_OpeningEventDefinitions ; B9/B000
-		EVENT $00, _OpeningEvent
-			CMP_WORD wCurrentTurn, 0
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TurnEventDefinitions ; B9/B00D
-		EVENT $01, eventMapDeathQuoteDummyEvent
-			TEST_FLAG_SET $03
-		END_DEFINITION
-		EVENT $08, _NPCAIChange
-			CMP_WORD wCurrentPhase, NPC
-			CMP_WORD wCurrentTurn, 5
-		END_DEFINITION
-		EVENT $00, _OpenedDoorReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			TEST_FLAG_SET $22
-		END_DEFINITION
-		EVENT $00, _SoldierReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD_RANGE wCurrentTurn, 2, 5
-		END_DEFINITION
-		EVENT $00, _DarkMageReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD_RANGE wCurrentTurn, 10, 20
-		END_DEFINITION
-		EVENT $00, _UnlockDarkMageReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD wCurrentTurn, 8
-		END_DEFINITION
-		EVENT $00, _ThiefReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD wCurrentTurn, 20
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TalkEventDefinitions ; B9/B07C
-		EVENT $0A, _MareetaGalzusTalk
-			CHECK_CHARS2 Mareeta, Galzus
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_LocationEventDefinitions ; B9/B088
-		EVENT $21, _Door1
-			CMP_BYTE wEventEngineUnknownXTarget, 21
-			CMP_BYTE wEventEngineUnknownYTarget, 2
-		END_DEFINITION
-		EVENT $22, _Door2
-			CMP_BYTE wCursorXCoord, 10
-			CMP_BYTE wCursorYCoord, 6
-			CMP_WORD wCurrentPhase, NPC
-		END_DEFINITION
-		EVENT $23, _Door3
-			CMP_BYTE wEventEngineUnknownXTarget, 1
-			CMP_BYTE wEventEngineUnknownYTarget, 9
-		END_DEFINITION
-		EVENT $24, _Door4
-			CMP_BYTE wEventEngineUnknownXTarget, 3
-			CMP_BYTE wEventEngineUnknownYTarget, 28
-		END_DEFINITION
-		EVENT $25, _Door5
-			CMP_BYTE wEventEngineUnknownXTarget, 21
-			CMP_BYTE wEventEngineUnknownYTarget, 28
-		END_DEFINITION
-		EVENT $26, _Door6
-			CMP_BYTE wEventEngineUnknownXTarget, 2
-			CMP_BYTE wEventEngineUnknownYTarget, 31
-		END_DEFINITION
-		EVENT $27, _Door7
-			CMP_BYTE wEventEngineUnknownXTarget, 10
-			CMP_BYTE wEventEngineUnknownYTarget, 37
-		END_DEFINITION
-		EVENT $28, eventChapter24Data._Chest1Events
-			CMP_BYTE_AT wCursorXCoord, eventChapter24Data._Chest1Coordinates
-			CMP_BYTE_AT wCursorYCoord, eventChapter24Data._Chest1Coordinates+1
-		END_DEFINITION
-		EVENT $00, _EndingEvent
-			CMP_BYTE wCursorXCoord, 10
-			CMP_BYTE wCursorYCoord, 12
-			CMP_WORD wCurrentPhase, Player
-			CMP_WORD aSelectedCharacterBuffer.Character, Leif
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_BeforeActionEventDefinitions ; B9/B127
-		EVENT $00, _Counter
-			CMP_WORD wCurrentPhase, NPC
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_AfterActionEventDefinitions ; B9/B134
-	END_DEFINITION_ARRAY
-
-	_BattleEventDefinitions ; B9/B136
-		EVENT $05, eventBattleQuoteDummyEvent
-			CHECK_SINGLE RaydrikChp24
-		END_DEFINITION
-		EVENT $06, eventBattleQuoteDummyEvent
-			CHECK_SINGLE Galzus
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_ShopEventDefinitions ; B9/B148
-		EVENT $00, eventChapter24Data._SecretShop
-			CMP_BYTE_AT wCursorXCoord, eventChapter24Data._SecretShop
-			CMP_BYTE_AT wCursorYCoord, eventChapter24Data._SecretShop+1
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_OpenedDoorReinforcements ; B9/B15D
-		SCROLL_CAMERA_ADDRESS eventChapter24Data._OpenedDoorReinforcementsCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter24Data._OpenedDoorReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-
-		YIELD_UNK
-	END2
-
-	_SoldierReinforcements ; B9/B16A
-		SCROLL_CAMERA_ADDRESS eventChapter24Data._SoldierReinforcementsCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter24Data._SoldierReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-
-		YIELD_UNK
-	END2
-
-	_DarkMageReinforcements ; B9/B177
-		SCROLL_CAMERA_ADDRESS eventChapter24Data._DarkMageReinforcementsCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter24Data._DarkMageReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-
-		YIELD_UNK
-	END2
-
-	_UnlockDarkMageReinforcements ; B9/B184
-		SCROLL_CAMERA_ADDRESS eventChapter24Data._UnlockDarkMageReinforcementsCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter24Data._UnlockDarkMageReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-
-		YIELD_UNK
-	END2
-
-	_ThiefReinforcements ; B9/B191
-		SCROLL_CAMERA_ADDRESS eventChapter24Data._ThiefReinforcementsCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter24Data._ThiefReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-
-		YIELD_UNK
-	END2
-
-	_NPCAIChange ; B9/B19E
-		STORE_WORD wEventEngineCharacterTarget, Civilian23
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $02
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian23
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian23
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $0B
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian23
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian24
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $02
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian24
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian24
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $0B
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian24
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian25
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $02
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian25
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian25
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $0B
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian25
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian26
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $02
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian26
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian26
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $0B
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian26
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian27
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $02
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian27
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian27
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $0B
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian27
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian28
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $02
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian28
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian28
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $0B
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian28
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian29
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $02
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian29
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian29
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $0B
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian29
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian30
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
-		STORE_WORD wEventEngineParameter2, $02
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian30
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian30
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
-		STORE_WORD wEventEngineParameter2, $0B
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Civilian30
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
-		STORE_WORD wEventEngineParameter2, $00
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		CALL_ASM_LOOP _rlNPCRoutine, $000
-	END2
-
-	_Door2 ; B9/B4A5
-		PLAY_SOUND_WORD $00F7
-
-		CALL_ASM_SKIPPABLE rlASMCPrepActiveUnitPortrait, $0000
-
-		DIALOGUE dialogueChapter24KiaDoor1
-		YIELD
-
-		JUMP _Door2TileChange
-
-	_rlUnknownNPCCheck ; B9/B4B4
-
-		.al
-		.xl
-		.autsiz
-		.databank ?
-
-		lda #(`_UnknownNPCTable)<<8
-		sta lEventEngineLongParameter+1,b
-		lda #<>_UnknownNPCTable
-		sta lEventEngineLongParameter,b
-
-		jsl rlASMCCountAllUnitRescuedByPlayerOrNPCByTable
-
-		lda $7E4976
-		and #$00FF
-
-		clc
-		adc wEventEngineParameter1,b
-
-		cmp #$0008
-		bne +
-
-		lda #$0001
-		sec
-		bra ++
-
-		+
-		lda #$0000
-		clc
-
-		+
-		sta wEventEngineTruthFlag,b
-		rtl
-
-	_UnknownNPCTable ; B9/B4E4
-		.word Civilian23
-		.word Civilian24
-		.word Civilian25
-		.word Civilian26
-		.word Civilian27
-		.word Civilian28
-		.word Civilian29
-		.word Civilian30
-	.word $0000
-
-	_Door1 ; B9/B4F6
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 0
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door2TileChange ; B9/B521
-		PLAY_SOUND_BYTE $6A
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 1
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-
-		CALL_ASM_SKIPPABLE rlASMCPrepActiveUnitPortrait, $0000
-
-		DIALOGUE dialogueChapter24KiaDoor2
-		YIELD
-
-		PLAY_SOUND_WORD $00E8
-		SET_FLAG $22
-	END1
-
-	_Door3 ; B9/B55C
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 2
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door4 ; B9/B587
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 4
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door5 ; B9/B5B2
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 5
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door6 ; B9/B5DD
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 6
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door7
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 8
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_MareetaGalzusTalk ; B9/B633
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $4A
-		YIELD
-
-		DIALOGUE dialogueChapter24MareetaGalzusTalk
-		YIELD
-
-		STORE_WORD wEventEngineCharacterTarget, Galzus
-		CALL_ASM_LOOP rlASMCChangeAllegianceToPlayer, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Galzus
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Leader
-		STORE_WORD wEventEngineParameter2, Leif
-		CALL_ASM_LOOP rlASMCSetCharacterDataWord, $0000
-
-		SET_FLAG $06
-	END2
-
-	_Counter ; B9/B669
-		ADD_BYTE $7E4976, 1
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_rlNPCRoutine ; B9/B671
-
-		.al
-		.xl
-		.autsiz
-		.databank ?
-
-		phx
-		phy
-
-		lda #100
-		jsl rlUnknown80B0E6
-		and #$0003
-		asl a
-		tax
-		lda _RandomNPCTable,x
-		sta wEventEngineCharacterTarget,b
-
-		lda #structCharacterDataRAM.AI2
-		sta wEventEngineParameter1,b
-
-		lda #$28
-		sta wEventEngineParameter2,b
-
-		jsl rlASMCSetCharacterDataByte
-
-		lda #structCharacterDataRAM.Unknown3E
-		sta wEventEngineParameter1,b
-
-		lda #$00
-		sta wEventEngineParameter2,b
-
-		jsl rlASMCSetCharacterDataByte
-
-		ply
-		plx
-		clc
-		rtl
-
-	_RandomNPCTable ; B9/B6AA
-		.word Civilian23
-		.word Civilian24
-		.word Civilian26
-		.word Civilian27
-
-	_PrepGroups ; B9/B6B2
-		.long eventChapter24Data._PrepGroup
-	.word $0000
-
-	_OpeningEvent ; B9/B6B7
-		CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
-
-		EVENT_TEST_FLAG_SET $A6
-		JUMP_TRUE +
-
-		LOAD1 eventChapter24Data._GalzusGroup
-		WAIT_MOVE
-		YIELD
-
-		+
-		STORE_WORD wEventEngineCharacterTarget, CedChp23
-		STORE_WORD wEventEngineParameter1, TurnStatusInvisible
-		CALL_ASM_LOOP rlASMCCheckUnitTurnStatusSet, $0000
-		JUMP_FALSE +
-
-		STORE_WORD wEventEngineCharacterTarget, CedChp23
-		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusInvisible
-		CALL_ASM_LOOP rlASMCUnsetUnitTurnStatus, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, CedChp23
-		STORE_WORD wEventEngineXCoordinate, 10
-		STORE_WORD wEventEngineYCoordinate, 39
-		CALL_ASM_LOOP rlASMCSetUnitPosition, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, CedChp23
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Fatigue
-		STORE_WORD wEventEngineParameter2, 0
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		+
-		STORE_WORD wEventEngineCharacterTarget, Saias
-		STORE_WORD wEventEngineParameter1, TurnStatusInvisible
-		CALL_ASM_LOOP rlASMCCheckUnitTurnStatusSet, $0000
-		JUMP_FALSE +
-
-		STORE_WORD wEventEngineCharacterTarget, Saias
-		STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusInvisible
-		CALL_ASM_LOOP rlASMCUnsetUnitTurnStatus, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Saias
-		STORE_WORD wEventEngineXCoordinate, 10
-		STORE_WORD wEventEngineYCoordinate, 39
-		CALL_ASM_LOOP rlASMCSetUnitPosition, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Saias
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Fatigue
-		STORE_WORD wEventEngineParameter2, 0
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		+
-		STORE_WORD wEventEngineCharacterTarget, Hero1
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.MovementStars
-		STORE_WORD wEventEngineParameter2, 3 * 5
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Hero2
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.MovementStars
-		STORE_WORD wEventEngineParameter2, 3 * 5
-		CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Galzus
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Skills2
-		STORE_WORD wEventEngineParameter2, Skill2Unknown | (Skill3Immortal << 8)
-		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, RaydrikChp24
-		STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Skills2
-		STORE_WORD wEventEngineParameter2, Skill3Immortal << 8
-		CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
-
-		FADE_IN $02
-
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
-
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $3E
-		YIELD
-
-		STORE_LONG wProcInput1+1, dialogueChapter24Title
-		STORE_WORD wProcInput1, <>dialogueChapter24Title
-		STORE_LONG lR43, $9A814C
-		CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
-		YIELD
-
-		LOAD1 eventChapter24Data._VeldGroup
-		WAIT_MOVE
-		YIELD
-
-		SCROLL_CAMERA_CHAR Veld
-		SET_CAMERA_SPEED 4
-		YIELD
-
-		DIALOGUE dialogueChapter24Opening1
-		YIELD
-
-		STORE_WORD wEventEngineParameter1, Rewarp
-		STORE_WORD wEventEngineParameter2, $0000
-		STORE_WORD wEventEngineCharacterStructParameter, Veld
-		STORE_WORD wEventEngineCharacterTarget, $0000
-		STORE_WORD wEventEngineXCoordinate, $00FF
-		STORE_WORD wEventEngineYCoordinate, $00FF
-		CALL_ASM_SKIPPABLE $9A8D4A, $0000
-
-		STORE_LONG lUnknown7EA4EC, $9A9029
-
-		CALL_ASM_SKIPPABLE $9A8F82, $0000
-		CALL_ASM_SKIPPABLE $84B719, $0000
-
-		HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
-
-		CALL_ASM_SKIPPABLE rlUpdateUnitMaps, $0000
-		CALL_ASM_SKIPPABLE rlUpdateVisibilityMap, $0000
-
-		PAUSE_SKIPPABLE 2
-		YIELD
-
-		STORE_WORD wEventEngineCharacterTarget, Veld
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
-
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $31
-		YIELD
-
-		SCROLL_CAMERA_CHAR Leif
-		SET_CAMERA_SPEED 4
-		YIELD
-
-		STORE_WORD wEventEngineCharacterTarget, Galzus
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
-		JUMP_FALSE _OpeningGalzus
-
-		STORE_WORD wEventEngineCharacterTarget, CedChp23
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
-		JUMP_FALSE +
-
-		DIALOGUE dialogueChapter24Opening2A
-		YIELD
-
-		JUMP _OpeningEnd
-
-		+
-		STORE_WORD wEventEngineCharacterTarget, Saias
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
-		JUMP_FALSE +
-
-		DIALOGUE dialogueChapter24Opening2B
-		YIELD
-
-		JUMP _OpeningEnd
-
-		+
-		DIALOGUE dialogueChapter24Opening2C
-		YIELD
-
-		JUMP _OpeningEnd
-
-		_OpeningGalzus
-		DIALOGUE dialogueChapter24Opening2D
-		YIELD
-
-		_OpeningEnd
-	END2
-
-	_EndingEvent ; B9/B8CB
-		STORE_WORD wCurrentMapMusic, $00
-
-		PAUSE_SKIPPABLE 16
-		YIELD
-
-		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
-		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
-
-		STORE_WORD wEventEngineParameter1, Kia
-
-		CALL_ASM_LOOP rlASMCCheckPartyAndConvoyForItem, $0000
-		JUMP_FALSE +
-
-		STORE_WORD wEventEngineCharacterTarget, Sarah
-		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
-		JUMP_FALSE +
-
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $3C
-		YIELD
-
-		STORE_WORD wEventEngineParameter1, 1
-		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
-
-		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter24Ending1
-		YIELD_UNK
-		YIELD_UNK
-		YIELD_UNK
-
-		STORE_LONG lEventEngineLongParameter, dialogueChapter24Ending2A
-		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
-
-		JUMP ++
-
-		+
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $43
-		YIELD
-
-		STORE_WORD wEventEngineParameter1, 1
-		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
-
-		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter24Ending1
-		YIELD_UNK
-		YIELD_UNK
-		YIELD_UNK
-
-		STORE_LONG lEventEngineLongParameter, dialogueChapter24Ending2B
-		CALL_ASM_LOOP rlASMCDialogueContinue, $0000
-
-		+
-		CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
-		YIELD
-
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
-
-		STORE_WORD wEventEngineParameter1, Kia
-
-		CALL_ASM_LOOP rlASMCCheckPartyAndConvoyForItem, $0000
-		JUMP_FALSE +
-
-		STORE_WORD wEventEngineCharacterTarget, Sarah
-		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
-		JUMP_TRUE ++
-
-		+
-		ADD_WORD wCurrentChapter, ChapterFinal - Chapter24 - 1
-		YIELD_UNK
-
-		+
-		STORE_WORD wEventEngineCharacterTarget, Dean
-		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
-		JUMP_FALSE +
-
-		STORE_WORD wEventEngineCharacterTarget, Linoan
-		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
-		JUMP_TRUE +
-
-		STORE_WORD wCurrentMapMusic, $0000
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $42
-		YIELD
-
-		STORE_WORD wEventEngineParameter1, 3
-		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
-
-		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapterEndLinoanDead
-		YIELD_UNK
-		YIELD_UNK
-		YIELD_UNK
-		YIELD
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
-
-		FADE_OUT $01
-		YIELD
-
-		CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
-
-		STORE_BYTE bBuf_INIDISP, $00
-		STORE_WORD wEventEngineCharacterTarget, Dean
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
-
-		+
-		FADE_OUT $01
-		YIELD
-
-		CALL_ASM_LOOP rlASMCChapterEnd, $0000
-	END1
+  _OpeningEventDefinitions ; B9/B000
+    EVENT $00, _OpeningEvent
+      CMP_WORD wCurrentTurn, 0
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TurnEventDefinitions ; B9/B00D
+    EVENT $01, eventMapDeathQuoteDummyEvent
+      TEST_FLAG_SET $03
+    END_DEFINITION
+    EVENT $08, _NPCAIChange
+      CMP_WORD wCurrentPhase, NPC
+      CMP_WORD wCurrentTurn, 5
+    END_DEFINITION
+    EVENT $00, _OpenedDoorReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      TEST_FLAG_SET $22
+    END_DEFINITION
+    EVENT $00, _SoldierReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD_RANGE wCurrentTurn, 2, 5
+    END_DEFINITION
+    EVENT $00, _DarkMageReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD_RANGE wCurrentTurn, 10, 20
+    END_DEFINITION
+    EVENT $00, _UnlockDarkMageReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD wCurrentTurn, 8
+    END_DEFINITION
+    EVENT $00, _ThiefReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD wCurrentTurn, 20
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TalkEventDefinitions ; B9/B07C
+    EVENT $0A, _MareetaGalzusTalk
+      CHECK_CHARS2 Mareeta, Galzus
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _LocationEventDefinitions ; B9/B088
+    EVENT $21, _Door1
+      CMP_BYTE wEventEngineUnknownXTarget, 21
+      CMP_BYTE wEventEngineUnknownYTarget, 2
+    END_DEFINITION
+    EVENT $22, _Door2
+      CMP_BYTE wCursorXCoord, 10
+      CMP_BYTE wCursorYCoord, 6
+      CMP_WORD wCurrentPhase, NPC
+    END_DEFINITION
+    EVENT $23, _Door3
+      CMP_BYTE wEventEngineUnknownXTarget, 1
+      CMP_BYTE wEventEngineUnknownYTarget, 9
+    END_DEFINITION
+    EVENT $24, _Door4
+      CMP_BYTE wEventEngineUnknownXTarget, 3
+      CMP_BYTE wEventEngineUnknownYTarget, 28
+    END_DEFINITION
+    EVENT $25, _Door5
+      CMP_BYTE wEventEngineUnknownXTarget, 21
+      CMP_BYTE wEventEngineUnknownYTarget, 28
+    END_DEFINITION
+    EVENT $26, _Door6
+      CMP_BYTE wEventEngineUnknownXTarget, 2
+      CMP_BYTE wEventEngineUnknownYTarget, 31
+    END_DEFINITION
+    EVENT $27, _Door7
+      CMP_BYTE wEventEngineUnknownXTarget, 10
+      CMP_BYTE wEventEngineUnknownYTarget, 37
+    END_DEFINITION
+    EVENT $28, eventChapter24Data._Chest1Events
+      CMP_BYTE_AT wCursorXCoord, eventChapter24Data._Chest1Coordinates
+      CMP_BYTE_AT wCursorYCoord, eventChapter24Data._Chest1Coordinates+1
+    END_DEFINITION
+    EVENT $00, _EndingEvent
+      CMP_BYTE wCursorXCoord, 10
+      CMP_BYTE wCursorYCoord, 12
+      CMP_WORD wCurrentPhase, Player
+      CMP_WORD aSelectedCharacterBuffer.Character, Leif
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _BeforeActionEventDefinitions ; B9/B127
+    EVENT $00, _Counter
+      CMP_WORD wCurrentPhase, NPC
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _AfterActionEventDefinitions ; B9/B134
+  END_DEFINITION_ARRAY
+
+  _BattleEventDefinitions ; B9/B136
+    EVENT $05, eventBattleQuoteDummyEvent
+      CHECK_SINGLE RaydrikChp24
+    END_DEFINITION
+    EVENT $06, eventBattleQuoteDummyEvent
+      CHECK_SINGLE Galzus
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _ShopEventDefinitions ; B9/B148
+    EVENT $00, eventChapter24Data._SecretShop
+      CMP_BYTE_AT wCursorXCoord, eventChapter24Data._SecretShop
+      CMP_BYTE_AT wCursorYCoord, eventChapter24Data._SecretShop+1
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _OpenedDoorReinforcements ; B9/B15D
+    SCROLL_CAMERA_ADDRESS eventChapter24Data._OpenedDoorReinforcementsCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter24Data._OpenedDoorReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+
+    YIELD_UNK
+  END2
+
+  _SoldierReinforcements ; B9/B16A
+    SCROLL_CAMERA_ADDRESS eventChapter24Data._SoldierReinforcementsCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter24Data._SoldierReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+
+    YIELD_UNK
+  END2
+
+  _DarkMageReinforcements ; B9/B177
+    SCROLL_CAMERA_ADDRESS eventChapter24Data._DarkMageReinforcementsCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter24Data._DarkMageReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+
+    YIELD_UNK
+  END2
+
+  _UnlockDarkMageReinforcements ; B9/B184
+    SCROLL_CAMERA_ADDRESS eventChapter24Data._UnlockDarkMageReinforcementsCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter24Data._UnlockDarkMageReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+
+    YIELD_UNK
+  END2
+
+  _ThiefReinforcements ; B9/B191
+    SCROLL_CAMERA_ADDRESS eventChapter24Data._ThiefReinforcementsCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter24Data._ThiefReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+
+    YIELD_UNK
+  END2
+
+  _NPCAIChange ; B9/B19E
+    STORE_WORD wEventEngineCharacterTarget, Civilian23
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+    STORE_WORD wEventEngineParameter2, $02
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian23
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian23
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+    STORE_WORD wEventEngineParameter2, $0B
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian23
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian24
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+    STORE_WORD wEventEngineParameter2, $02
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian24
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian24
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+    STORE_WORD wEventEngineParameter2, $0B
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian24
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian25
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+    STORE_WORD wEventEngineParameter2, $02
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian25
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian25
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+    STORE_WORD wEventEngineParameter2, $0B
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian25
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian26
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+    STORE_WORD wEventEngineParameter2, $02
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian26
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian26
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+    STORE_WORD wEventEngineParameter2, $0B
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian26
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian27
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+    STORE_WORD wEventEngineParameter2, $02
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian27
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian27
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+    STORE_WORD wEventEngineParameter2, $0B
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian27
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian28
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+    STORE_WORD wEventEngineParameter2, $02
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian28
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian28
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+    STORE_WORD wEventEngineParameter2, $0B
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian28
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian29
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+    STORE_WORD wEventEngineParameter2, $02
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian29
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian29
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+    STORE_WORD wEventEngineParameter2, $0B
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian29
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian30
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI1
+    STORE_WORD wEventEngineParameter2, $02
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian30
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI4
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian30
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.AI2
+    STORE_WORD wEventEngineParameter2, $0B
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Civilian30
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Unknown3E
+    STORE_WORD wEventEngineParameter2, $00
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    CALL_ASM_LOOP _rlNPCRoutine, $000
+  END2
+
+  _Door2 ; B9/B4A5
+    PLAY_SOUND_WORD $00F7
+
+    CALL_ASM_SKIPPABLE rlASMCPrepActiveUnitPortrait, $0000
+
+    DIALOGUE dialogueChapter24KiaDoor1
+    YIELD
+
+    JUMP _Door2TileChange
+
+  _rlUnknownNPCCheck ; B9/B4B4
+
+    .al
+    .xl
+    .autsiz
+    .databank ?
+
+    lda #(`_UnknownNPCTable)<<8
+    sta lEventEngineLongParameter+1,b
+    lda #<>_UnknownNPCTable
+    sta lEventEngineLongParameter,b
+
+    jsl rlASMCCountAllUnitRescuedByPlayerOrNPCByTable
+
+    lda $7E4976
+    and #$00FF
+
+    clc
+    adc wEventEngineParameter1,b
+
+    cmp #$0008
+    bne +
+
+    lda #$0001
+    sec
+    bra ++
+
+    +
+    lda #$0000
+    clc
+
+    +
+    sta wEventEngineTruthFlag,b
+    rtl
+
+  _UnknownNPCTable ; B9/B4E4
+    .word Civilian23
+    .word Civilian24
+    .word Civilian25
+    .word Civilian26
+    .word Civilian27
+    .word Civilian28
+    .word Civilian29
+    .word Civilian30
+  .word $0000
+
+  _Door1 ; B9/B4F6
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 0
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door2TileChange ; B9/B521
+    PLAY_SOUND_BYTE $6A
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 1
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+
+    CALL_ASM_SKIPPABLE rlASMCPrepActiveUnitPortrait, $0000
+
+    DIALOGUE dialogueChapter24KiaDoor2
+    YIELD
+
+    PLAY_SOUND_WORD $00E8
+    SET_FLAG $22
+  END1
+
+  _Door3 ; B9/B55C
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 2
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door4 ; B9/B587
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 4
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door5 ; B9/B5B2
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 5
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door6 ; B9/B5DD
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 6
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door7
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 8
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _MareetaGalzusTalk ; B9/B633
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $4A
+    YIELD
+
+    DIALOGUE dialogueChapter24MareetaGalzusTalk
+    YIELD
+
+    STORE_WORD wEventEngineCharacterTarget, Galzus
+    CALL_ASM_LOOP rlASMCChangeAllegianceToPlayer, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Galzus
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Leader
+    STORE_WORD wEventEngineParameter2, Leif
+    CALL_ASM_LOOP rlASMCSetCharacterDataWord, $0000
+
+    SET_FLAG $06
+  END2
+
+  _Counter ; B9/B669
+    ADD_BYTE $7E4976, 1
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _rlNPCRoutine ; B9/B671
+
+    .al
+    .xl
+    .autsiz
+    .databank ?
+
+    phx
+    phy
+
+    lda #100
+    jsl rlUnknown80B0E6
+    and #$0003
+    asl a
+    tax
+    lda _RandomNPCTable,x
+    sta wEventEngineCharacterTarget,b
+
+    lda #structCharacterDataRAM.AI2
+    sta wEventEngineParameter1,b
+
+    lda #$28
+    sta wEventEngineParameter2,b
+
+    jsl rlASMCSetCharacterDataByte
+
+    lda #structCharacterDataRAM.Unknown3E
+    sta wEventEngineParameter1,b
+
+    lda #$00
+    sta wEventEngineParameter2,b
+
+    jsl rlASMCSetCharacterDataByte
+
+    ply
+    plx
+    clc
+    rtl
+
+  _RandomNPCTable ; B9/B6AA
+    .word Civilian23
+    .word Civilian24
+    .word Civilian26
+    .word Civilian27
+
+  _PrepGroups ; B9/B6B2
+    .long eventChapter24Data._PrepGroup
+  .word $0000
+
+  _OpeningEvent ; B9/B6B7
+    CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
+
+    EVENT_TEST_FLAG_SET $A6
+    JUMP_TRUE +
+
+    LOAD1 eventChapter24Data._GalzusGroup
+    WAIT_MOVE
+    YIELD
+
+    +
+    STORE_WORD wEventEngineCharacterTarget, CedChp23
+    STORE_WORD wEventEngineParameter1, TurnStatusInvisible
+    CALL_ASM_LOOP rlASMCCheckUnitTurnStatusSet, $0000
+    JUMP_FALSE +
+
+    STORE_WORD wEventEngineCharacterTarget, CedChp23
+    STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusInvisible
+    CALL_ASM_LOOP rlASMCUnsetUnitTurnStatus, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, CedChp23
+    STORE_WORD wEventEngineXCoordinate, 10
+    STORE_WORD wEventEngineYCoordinate, 39
+    CALL_ASM_LOOP rlASMCSetUnitPosition, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, CedChp23
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Fatigue
+    STORE_WORD wEventEngineParameter2, 0
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    +
+    STORE_WORD wEventEngineCharacterTarget, Saias
+    STORE_WORD wEventEngineParameter1, TurnStatusInvisible
+    CALL_ASM_LOOP rlASMCCheckUnitTurnStatusSet, $0000
+    JUMP_FALSE +
+
+    STORE_WORD wEventEngineCharacterTarget, Saias
+    STORE_WORD wEventEngineParameter1, TurnStatusUnknown1 | TurnStatusInvisible
+    CALL_ASM_LOOP rlASMCUnsetUnitTurnStatus, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Saias
+    STORE_WORD wEventEngineXCoordinate, 10
+    STORE_WORD wEventEngineYCoordinate, 39
+    CALL_ASM_LOOP rlASMCSetUnitPosition, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Saias
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Fatigue
+    STORE_WORD wEventEngineParameter2, 0
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    +
+    STORE_WORD wEventEngineCharacterTarget, Hero1
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.MovementStars
+    STORE_WORD wEventEngineParameter2, 3 * 5
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Hero2
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.MovementStars
+    STORE_WORD wEventEngineParameter2, 3 * 5
+    CALL_ASM_LOOP rlASMCSetCharacterDataByte, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Galzus
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Skills2
+    STORE_WORD wEventEngineParameter2, Skill2Unknown | (Skill3Immortal << 8)
+    CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, RaydrikChp24
+    STORE_WORD wEventEngineParameter1, structCharacterDataRAM.Skills2
+    STORE_WORD wEventEngineParameter2, Skill3Immortal << 8
+    CALL_ASM_LOOP rlASMCUnsetBitsCharacterDataWord, $0000
+
+    FADE_IN $02
+
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $3E
+    YIELD
+
+    STORE_LONG wProcInput1+1, dialogueChapter24Title
+    STORE_WORD wProcInput1, <>dialogueChapter24Title
+    STORE_LONG lR43, $9A814C
+    CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
+    YIELD
+
+    LOAD1 eventChapter24Data._VeldGroup
+    WAIT_MOVE
+    YIELD
+
+    SCROLL_CAMERA_CHAR Veld
+    SET_CAMERA_SPEED 4
+    YIELD
+
+    DIALOGUE dialogueChapter24Opening1
+    YIELD
+
+    STORE_WORD wEventEngineParameter1, Rewarp
+    STORE_WORD wEventEngineParameter2, $0000
+    STORE_WORD wEventEngineCharacterStructParameter, Veld
+    STORE_WORD wEventEngineCharacterTarget, $0000
+    STORE_WORD wEventEngineXCoordinate, $00FF
+    STORE_WORD wEventEngineYCoordinate, $00FF
+    CALL_ASM_SKIPPABLE $9A8D4A, $0000
+
+    STORE_LONG lUnknown7EA4EC, $9A9029
+
+    CALL_ASM_SKIPPABLE $9A8F82, $0000
+    CALL_ASM_SKIPPABLE $84B719, $0000
+
+    HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
+
+    CALL_ASM_SKIPPABLE rlUpdateUnitMaps, $0000
+    CALL_ASM_SKIPPABLE rlUpdateVisibilityMap, $0000
+
+    PAUSE_SKIPPABLE 2
+    YIELD
+
+    STORE_WORD wEventEngineCharacterTarget, Veld
+    CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $31
+    YIELD
+
+    SCROLL_CAMERA_CHAR Leif
+    SET_CAMERA_SPEED 4
+    YIELD
+
+    STORE_WORD wEventEngineCharacterTarget, Galzus
+    CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+    JUMP_FALSE _OpeningGalzus
+
+    STORE_WORD wEventEngineCharacterTarget, CedChp23
+    CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+    JUMP_FALSE +
+
+    DIALOGUE dialogueChapter24Opening2A
+    YIELD
+
+    JUMP _OpeningEnd
+
+    +
+    STORE_WORD wEventEngineCharacterTarget, Saias
+    CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+    JUMP_FALSE +
+
+    DIALOGUE dialogueChapter24Opening2B
+    YIELD
+
+    JUMP _OpeningEnd
+
+    +
+    DIALOGUE dialogueChapter24Opening2C
+    YIELD
+
+    JUMP _OpeningEnd
+
+    _OpeningGalzus
+    DIALOGUE dialogueChapter24Opening2D
+    YIELD
+
+    _OpeningEnd
+  END2
+
+  _EndingEvent ; B9/B8CB
+    STORE_WORD wCurrentMapMusic, $00
+
+    PAUSE_SKIPPABLE 16
+    YIELD
+
+    CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+    CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+
+    STORE_WORD wEventEngineParameter1, Kia
+
+    CALL_ASM_LOOP rlASMCCheckPartyAndConvoyForItem, $0000
+    JUMP_FALSE +
+
+    STORE_WORD wEventEngineCharacterTarget, Sarah
+    CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+    JUMP_FALSE +
+
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $3C
+    YIELD
+
+    STORE_WORD wEventEngineParameter1, 1
+    CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+    HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+    CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter24Ending1
+    YIELD_UNK
+    YIELD_UNK
+    YIELD_UNK
+
+    STORE_LONG lEventEngineLongParameter, dialogueChapter24Ending2A
+    CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+    JUMP ++
+
+    +
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $43
+    YIELD
+
+    STORE_WORD wEventEngineParameter1, 1
+    CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+    HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+    CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapter24Ending1
+    YIELD_UNK
+    YIELD_UNK
+    YIELD_UNK
+
+    STORE_LONG lEventEngineLongParameter, dialogueChapter24Ending2B
+    CALL_ASM_LOOP rlASMCDialogueContinue, $0000
+
+    +
+    CALL_ASM_LOOP rlASMCDialogueWithBGEnd, $0000
+    YIELD
+
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+    STORE_WORD wEventEngineParameter1, Kia
+
+    CALL_ASM_LOOP rlASMCCheckPartyAndConvoyForItem, $0000
+    JUMP_FALSE +
+
+    STORE_WORD wEventEngineCharacterTarget, Sarah
+    CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+    JUMP_TRUE ++
+
+    +
+    ADD_WORD wCurrentChapter, ChapterFinal - Chapter24 - 1
+    YIELD_UNK
+
+    +
+    STORE_WORD wEventEngineCharacterTarget, Dean
+    CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+    JUMP_FALSE +
+
+    STORE_WORD wEventEngineCharacterTarget, Linoan
+    CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+    JUMP_TRUE +
+
+    STORE_WORD wCurrentMapMusic, $0000
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $42
+    YIELD
+
+    STORE_WORD wEventEngineParameter1, 3
+    CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+    HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+    CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapterEndLinoanDead
+    YIELD_UNK
+    YIELD_UNK
+    YIELD_UNK
+    YIELD
+
+    HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
+
+    FADE_OUT $01
+    YIELD
+
+    CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
+
+    STORE_BYTE bBuf_INIDISP, $00
+    STORE_WORD wEventEngineCharacterTarget, Dean
+    CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+
+    +
+    FADE_OUT $01
+    YIELD
+
+    CALL_ASM_LOOP rlASMCChapterEnd, $0000
+  END1

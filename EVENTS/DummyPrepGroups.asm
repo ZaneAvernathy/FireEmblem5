@@ -1,3 +1,3 @@
 
 DummyPrepGroups ; 8C/D999
-	.word $0000
+  .word $0000

@@ -1,20 +1,20 @@
 dialogueAlbaDeathQuote ; 82/BC60
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_0
-	.text "ノヴァの･･･"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_3
-	.text "旗"
-	DIALOGUE_FONT_0
-	.text "よ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "永遠"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "なれ･･･"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_0
+  .text "ノヴァの･･･"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_3
+  .text "旗"
+  DIALOGUE_FONT_0
+  .text "よ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "永遠"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "なれ･･･"
 DIALOGUE_END_SCENE

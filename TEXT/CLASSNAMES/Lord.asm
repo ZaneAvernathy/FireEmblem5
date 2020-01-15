@@ -1,4 +1,4 @@
 
 menutextLordName ; 89/83C0
-	.enc "MenuText"
-	.text "ロード　　　　　\n"
+  .enc "MenuText"
+  .text "ロード　　　　　\n"

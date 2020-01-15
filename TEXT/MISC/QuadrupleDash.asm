@@ -1,4 +1,4 @@
 
 menutextQuadrupleDash ; 81/D285
-	.enc "MenuText"
-	.text "ーーーー\n"
+  .enc "MenuText"
+  .text "ーーーー\n"

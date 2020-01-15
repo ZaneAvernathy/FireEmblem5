@@ -1,12 +1,12 @@
 dialogueCodhaBattleQuote ; E7/9EE0
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ふっふっふっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おろかな"
-	DIALOGUE_FONT_1
-	.text "者"
-	DIALOGUE_FONT_0
-	.text "どもよ･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ふっふっふっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おろかな"
+  DIALOGUE_FONT_1
+  .text "者"
+  DIALOGUE_FONT_0
+  .text "どもよ･･･"
 DIALOGUE_END_SCENE

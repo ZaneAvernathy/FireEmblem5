@@ -1,4 +1,4 @@
 
 menutextBridgeKeyName ; B0/97CB
-	.enc "MenuText"
-	.text "はねばしのかぎ\n"
+  .enc "MenuText"
+  .text "はねばしのかぎ\n"

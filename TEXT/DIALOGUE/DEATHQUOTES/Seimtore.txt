@@ -1,24 +1,24 @@
 dialogueSeimtoreDeathQuote ; B0/CFD9
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_FONT_3
-	.text "陛"
-	DIALOGUE_FONT_1
-	.text "下"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "申"
-	DIALOGUE_FONT_0
-	.text "し"
-	DIALOGUE_FONT_4
-	.text "訳"
-	DIALOGUE_FONT_0
-	.text "･･･あり･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ません･･･ぐふっ"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_FONT_3
+  .text "陛"
+  DIALOGUE_FONT_1
+  .text "下"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "申"
+  DIALOGUE_FONT_0
+  .text "し"
+  DIALOGUE_FONT_4
+  .text "訳"
+  DIALOGUE_FONT_0
+  .text "･･･あり･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ません･･･ぐふっ"
 DIALOGUE_END_SCENE

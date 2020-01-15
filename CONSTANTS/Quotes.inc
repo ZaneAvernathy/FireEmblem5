@@ -1,3 +1,3 @@
 
-AnyChapter = $FF
-AnyCharacter = $FFFF
+  AnyChapter   = $FF
+  AnyCharacter = $FFFF

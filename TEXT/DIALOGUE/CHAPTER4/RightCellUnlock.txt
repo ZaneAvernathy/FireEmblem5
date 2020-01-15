@@ -1,64 +1,64 @@
 dialogueChapter4RightCellUnlock ; 95/E8C1
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan8Portrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "おお､"
-	DIALOGUE_PAUSE $08
-	.text "マギ"
-	DIALOGUE_FONT_1
-	.text "団"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_0
-	.text "たちか"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ありがたい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "みなのしゅう､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "逃"
-	DIALOGUE_FONT_0
-	.text "げ"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "しましょうぞ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_4
-	.text "確"
-	DIALOGUE_FONT_0
-	.text "か､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "東"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "通"
-	DIALOGUE_FONT_1
-	.text "路"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "逃"
-	DIALOGUE_FONT_0
-	.text "げ"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "せそうな"
-	DIALOGUE_FONT_4
-	.text "階段"
-	DIALOGUE_FONT_0
-	.text "があったはずじゃ"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan8Portrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "おお､"
+  DIALOGUE_PAUSE $08
+  .text "マギ"
+  DIALOGUE_FONT_1
+  .text "団"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_0
+  .text "たちか"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ありがたい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "みなのしゅう､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "逃"
+  DIALOGUE_FONT_0
+  .text "げ"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "しましょうぞ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_4
+  .text "確"
+  DIALOGUE_FONT_0
+  .text "か､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "東"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "通"
+  DIALOGUE_FONT_1
+  .text "路"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "逃"
+  DIALOGUE_FONT_0
+  .text "げ"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "せそうな"
+  DIALOGUE_FONT_4
+  .text "階段"
+  DIALOGUE_FONT_0
+  .text "があったはずじゃ"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

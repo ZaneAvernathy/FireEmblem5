@@ -1,5 +1,5 @@
 dialogueChapter12UnusedSalemAlternate ; 92/A37F
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "おろかな･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "おろかな･･･"
 DIALOGUE_END_SCENE

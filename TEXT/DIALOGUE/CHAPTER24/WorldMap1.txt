@@ -1,117 +1,117 @@
 dialogueChapter24WorldMap1 ; 82/DACA
-	DIALOGUE_FONT_1
-	.text "数々"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_4
-	.text "障"
-	DIALOGUE_FONT_3
-	.text "害"
-	DIALOGUE_FONT_0
-	.text "をのりこえ､"
-	DIALOGUE_PAUSE $08
-	.text "マンスターへ"
-	DIALOGUE_NL
-	.text "たどり"
-	DIALOGUE_FONT_2
-	.text "着"
-	DIALOGUE_FONT_0
-	.text "いたリーフたち"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "彼"
-	DIALOGUE_FONT_0
-	.text "らの"
-	DIALOGUE_FONT_1
-	.text "前"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "立"
-	DIALOGUE_FONT_0
-	.text "ちふさがるかのように"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "マンスターの"
-	DIALOGUE_FONT_1
-	.text "城"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_2
-	.text "高"
-	DIALOGUE_FONT_0
-	.text "くそびえ"
-	DIALOGUE_FONT_1
-	.text "立"
-	DIALOGUE_FONT_0
-	.text "つ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "一"
-	DIALOGUE_FONT_2
-	.text "度"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_2
-	.text "逃"
-	DIALOGUE_FONT_0
-	.text "げ"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "したその"
-	DIALOGUE_FONT_5
-	.text "『"
-	DIALOGUE_FONT_1
-	.text "魔王"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "城"
-	DIALOGUE_FONT_5
-	.text "』"
-	DIALOGUE_FONT_0
-	.text "へ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "再"
-	DIALOGUE_FONT_0
-	.text "び"
-	DIALOGUE_FONT_2
-	.text "足"
-	DIALOGUE_FONT_0
-	.text "をふみいれるリーフたち"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_2
-	.text "失"
-	DIALOGUE_FONT_0
-	.text "われたものを"
-	DIALOGUE_FONT_2
-	.text "取"
-	DIALOGUE_FONT_0
-	.text "り"
-	DIALOGUE_FONT_3
-	.text "戻"
-	DIALOGUE_FONT_0
-	.text "すために･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "新"
-	DIALOGUE_FONT_0
-	.text "たな"
-	DIALOGUE_FONT_2
-	.text "時"
-	DIALOGUE_FONT_1
-	.text "代"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_2
-	.text "切"
-	DIALOGUE_FONT_0
-	.text "りひらくために･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_FONT_1
+  .text "数々"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_4
+  .text "障"
+  DIALOGUE_FONT_3
+  .text "害"
+  DIALOGUE_FONT_0
+  .text "をのりこえ､"
+  DIALOGUE_PAUSE $08
+  .text "マンスターへ"
+  DIALOGUE_NL
+  .text "たどり"
+  DIALOGUE_FONT_2
+  .text "着"
+  DIALOGUE_FONT_0
+  .text "いたリーフたち"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "彼"
+  DIALOGUE_FONT_0
+  .text "らの"
+  DIALOGUE_FONT_1
+  .text "前"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "立"
+  DIALOGUE_FONT_0
+  .text "ちふさがるかのように"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "マンスターの"
+  DIALOGUE_FONT_1
+  .text "城"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_2
+  .text "高"
+  DIALOGUE_FONT_0
+  .text "くそびえ"
+  DIALOGUE_FONT_1
+  .text "立"
+  DIALOGUE_FONT_0
+  .text "つ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "一"
+  DIALOGUE_FONT_2
+  .text "度"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_2
+  .text "逃"
+  DIALOGUE_FONT_0
+  .text "げ"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "したその"
+  DIALOGUE_FONT_5
+  .text "『"
+  DIALOGUE_FONT_1
+  .text "魔王"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "城"
+  DIALOGUE_FONT_5
+  .text "』"
+  DIALOGUE_FONT_0
+  .text "へ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "再"
+  DIALOGUE_FONT_0
+  .text "び"
+  DIALOGUE_FONT_2
+  .text "足"
+  DIALOGUE_FONT_0
+  .text "をふみいれるリーフたち"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_2
+  .text "失"
+  DIALOGUE_FONT_0
+  .text "われたものを"
+  DIALOGUE_FONT_2
+  .text "取"
+  DIALOGUE_FONT_0
+  .text "り"
+  DIALOGUE_FONT_3
+  .text "戻"
+  DIALOGUE_FONT_0
+  .text "すために･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "新"
+  DIALOGUE_FONT_0
+  .text "たな"
+  DIALOGUE_FONT_2
+  .text "時"
+  DIALOGUE_FONT_1
+  .text "代"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_2
+  .text "切"
+  DIALOGUE_FONT_0
+  .text "りひらくために･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

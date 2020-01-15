@@ -1,4 +1,4 @@
 
 menutextPillarTerrainName ; 86/99F1
-	.enc "MenuText"
-	.text "柱\n"
+  .enc "MenuText"
+  .text "柱\n"

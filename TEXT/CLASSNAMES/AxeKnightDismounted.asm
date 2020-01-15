@@ -1,4 +1,4 @@
 
 menutextAxeKnightDismountedName ; 89/85B8
-	.enc "MenuText"
-	.text "アクスナイト　　\n"
+  .enc "MenuText"
+  .text "アクスナイト　　\n"

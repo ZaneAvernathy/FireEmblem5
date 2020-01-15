@@ -1,69 +1,69 @@
 dialogueChapter7KnightCrestHouse ; 93/B54F
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan5Portrait
-	DIALOGUE_FONT_0
-	.text "ひ､"
-	DIALOGUE_PAUSE $08
-	.text "ひえ～"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_3
-	.text "許"
-	DIALOGUE_FONT_0
-	.text "してくだせえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ほんの"
-	DIALOGUE_FONT_1
-	.text "出来"
-	DIALOGUE_FONT_2
-	.text "心"
-	DIALOGUE_FONT_0
-	.text "だったんで･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "え？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ミーズ"
-	DIALOGUE_FONT_1
-	.text "城"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "守備"
-	DIALOGUE_FONT_2
-	.text "隊"
-	DIALOGUE_FONT_0
-	.text "じゃない？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なんでえ､"
-	DIALOGUE_PAUSE $08
-	.text "おどかしやがって"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "のことは"
-	DIALOGUE_FONT_3
-	.text "忘"
-	DIALOGUE_FONT_0
-	.text "れてくれよ､"
-	DIALOGUE_PAUSE $08
-	.text "な"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "その"
-	DIALOGUE_FONT_1
-	.text "代"
-	DIALOGUE_FONT_0
-	.text "わりに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "これ､"
-	DIALOGUE_PAUSE $08
-	.text "やるからさ"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan5Portrait
+  DIALOGUE_FONT_0
+  .text "ひ､"
+  DIALOGUE_PAUSE $08
+  .text "ひえ～"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_3
+  .text "許"
+  DIALOGUE_FONT_0
+  .text "してくだせえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ほんの"
+  DIALOGUE_FONT_1
+  .text "出来"
+  DIALOGUE_FONT_2
+  .text "心"
+  DIALOGUE_FONT_0
+  .text "だったんで･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "え？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ミーズ"
+  DIALOGUE_FONT_1
+  .text "城"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "守備"
+  DIALOGUE_FONT_2
+  .text "隊"
+  DIALOGUE_FONT_0
+  .text "じゃない？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なんでえ､"
+  DIALOGUE_PAUSE $08
+  .text "おどかしやがって"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "のことは"
+  DIALOGUE_FONT_3
+  .text "忘"
+  DIALOGUE_FONT_0
+  .text "れてくれよ､"
+  DIALOGUE_PAUSE $08
+  .text "な"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "その"
+  DIALOGUE_FONT_1
+  .text "代"
+  DIALOGUE_FONT_0
+  .text "わりに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "これ､"
+  DIALOGUE_PAUSE $08
+  .text "やるからさ"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

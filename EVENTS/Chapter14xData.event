@@ -1,208 +1,208 @@
 
 eventChapter14xData ; B1/B6FE
 
-	_PrepGroup1 ; B1/B6FE
-		.byte 8, 7
+  _PrepGroup1 ; B1/B6FE
+    .byte 8, 7
 
-		UNIT Eichmann, Enemy, [6, 1], [6, 1], Codha, [PoisonSword, KillerAxe, Vulnerary], 10, False, [$00, $03, $00, $00]
-		UNIT Codha, Enemy, [5, 2], [5, 2], Codha, [Jormungand, Fenrir], 9, True, [$01, $03, $00, $80]
-		UNIT LoptyrianDarkMage1, Enemy, [6, 2], [6, 2], Codha, [Jormungand], 5, False, [$00, $03, $00, $00]
-		UNIT LoptyrianDarkMage1, Enemy, [7, 4], [7, 4], Codha, [Jormungand], 5, False, [$00, $03, $00, $00]
-		UNIT LoptyrianDarkMage1, Enemy, [7, 5], [7, 5], Codha, [Jormungand], 5, False, [$00, $03, $00, $00]
-		UNIT LoptyrianDarkMage1, Enemy, [6, 5], [6, 5], Codha, [Jormungand, Rewarp], 5, False, [$00, $03, $00, $00]
-	UNIT
+    UNIT Eichmann, Enemy, [6, 1], [6, 1], Codha, [PoisonSword, KillerAxe, Vulnerary], 10, False, [$00, $03, $00, $00]
+    UNIT Codha, Enemy, [5, 2], [5, 2], Codha, [Jormungand, Fenrir], 9, True, [$01, $03, $00, $80]
+    UNIT LoptyrianDarkMage1, Enemy, [6, 2], [6, 2], Codha, [Jormungand], 5, False, [$00, $03, $00, $00]
+    UNIT LoptyrianDarkMage1, Enemy, [7, 4], [7, 4], Codha, [Jormungand], 5, False, [$00, $03, $00, $00]
+    UNIT LoptyrianDarkMage1, Enemy, [7, 5], [7, 5], Codha, [Jormungand], 5, False, [$00, $03, $00, $00]
+    UNIT LoptyrianDarkMage1, Enemy, [6, 5], [6, 5], Codha, [Jormungand, Rewarp], 5, False, [$00, $03, $00, $00]
+  UNIT
 
-	_PrepGroup2 ; B1/B77A
-		.byte 8, 7
+  _PrepGroup2 ; B1/B77A
+    .byte 8, 7
 
-	_PegasusLeft1Group ; B1/B77C
-		UNIT SilessiaPegasusRider1, Enemy, [1, 2], [1, 2], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusLeft1Group ; B1/B77C
+    UNIT SilessiaPegasusRider1, Enemy, [1, 2], [1, 2], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates1 ; B1/B792
-		.byte 8, 24
+  _UnusedCoordinates1 ; B1/B792
+    .byte 8, 24
 
-	_PegasusRight1Group ; B1/B794
-		UNIT SilessiaPegasusRider1, Enemy, [14, 2], [14, 2], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusRight1Group ; B1/B794
+    UNIT SilessiaPegasusRider1, Enemy, [14, 2], [14, 2], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates2 ; B1/B7AA
-		.byte 8, 24
+  _UnusedCoordinates2 ; B1/B7AA
+    .byte 8, 24
 
-	_PegasusLeft2Group ; B1/B7AC
-		UNIT SilessiaPegasusRider1, Enemy, [1, 6], [1, 6], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusLeft2Group ; B1/B7AC
+    UNIT SilessiaPegasusRider1, Enemy, [1, 6], [1, 6], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates3 ; B1/B7C2
-		.byte 8, 24
+  _UnusedCoordinates3 ; B1/B7C2
+    .byte 8, 24
 
-	_PegasusRight2Group ; B1/B7C4
-		UNIT SilessiaPegasusRider1, Enemy, [14, 6], [14, 6], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusRight2Group ; B1/B7C4
+    UNIT SilessiaPegasusRider1, Enemy, [14, 6], [14, 6], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates4 ; B1/B7DA
-		.byte 8, 7
+  _UnusedCoordinates4 ; B1/B7DA
+    .byte 8, 7
 
-	_PegasusLeft3Group ; B1/B7DC
-		UNIT SilessiaPegasusRider1, Enemy, [1, 10], [1, 10], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusLeft3Group ; B1/B7DC
+    UNIT SilessiaPegasusRider1, Enemy, [1, 10], [1, 10], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates5 ; B1/B7F2
-		.byte 8, 7
+  _UnusedCoordinates5 ; B1/B7F2
+    .byte 8, 7
 
-	_PegasusRight3Group ; B1/B7F4
-		UNIT SilessiaPegasusRider1, Enemy, [14, 10], [14, 10], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusRight3Group ; B1/B7F4
+    UNIT SilessiaPegasusRider1, Enemy, [14, 10], [14, 10], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates6 ; B1/B80A
-		.byte 8, 7
+  _UnusedCoordinates6 ; B1/B80A
+    .byte 8, 7
 
-	_PegasusLeft4Group ; B1/B80C
-		UNIT SilessiaPegasusRider1, Enemy, [1, 14], [1, 14], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusLeft4Group ; B1/B80C
+    UNIT SilessiaPegasusRider1, Enemy, [1, 14], [1, 14], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates7 ; B1/B822
-		.byte 8, 24
+  _UnusedCoordinates7 ; B1/B822
+    .byte 8, 24
 
-	_PegasusRight4Group ; B1/B824
-		UNIT SilessiaPegasusRider1, Enemy, [14, 14], [14, 14], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusRight4Group ; B1/B824
+    UNIT SilessiaPegasusRider1, Enemy, [14, 14], [14, 14], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates8 ; B1/B83A
-		.byte 8, 26
+  _UnusedCoordinates8 ; B1/B83A
+    .byte 8, 26
 
-	_PegasusLeft5Group ; B1/B83C
-		UNIT SilessiaPegasusRider1, Enemy, [1, 18], [1, 18], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusLeft5Group ; B1/B83C
+    UNIT SilessiaPegasusRider1, Enemy, [1, 18], [1, 18], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates9 ; B1/B852
-		.byte 8, 26
+  _UnusedCoordinates9 ; B1/B852
+    .byte 8, 26
 
-	_PegasusRight5Group ; B1/B854
-		UNIT SilessiaPegasusRider1, Enemy, [14, 18], [14, 18], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusRight5Group ; B1/B854
+    UNIT SilessiaPegasusRider1, Enemy, [14, 18], [14, 18], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates10 ; B1/B86A
-		.byte 8, 25
+  _UnusedCoordinates10 ; B1/B86A
+    .byte 8, 25
 
-	_PegasusLeft6Group ; B1/B86C
-		UNIT SilessiaPegasusRider1, Enemy, [1, 22], [1, 22], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusLeft6Group ; B1/B86C
+    UNIT SilessiaPegasusRider1, Enemy, [1, 22], [1, 22], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates11 ; B1/B882
-		.byte 8, 25
+  _UnusedCoordinates11 ; B1/B882
+    .byte 8, 25
 
-	_PegasusRight6Group ; B1/B884
-		UNIT SilessiaPegasusRider1, Enemy, [14, 22], [14, 22], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusRight6Group ; B1/B884
+    UNIT SilessiaPegasusRider1, Enemy, [14, 22], [14, 22], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates12 ; B1/B89A
-		.byte 8, 25
+  _UnusedCoordinates12 ; B1/B89A
+    .byte 8, 25
 
-	_PegasusLeft7Group ; B1/B89C
-		UNIT SilessiaPegasusRider1, Enemy, [1, 26], [1, 26], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusLeft7Group ; B1/B89C
+    UNIT SilessiaPegasusRider1, Enemy, [1, 26], [1, 26], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates13 ; B1/B8B2
-		.byte 8, 11
+  _UnusedCoordinates13 ; B1/B8B2
+    .byte 8, 11
 
-	_PegasusRight7Group ; B1/B8B4
-		UNIT SilessiaPegasusRider1, Enemy, [14, 26], [14, 26], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
-	UNIT
+  _PegasusRight7Group ; B1/B8B4
+    UNIT SilessiaPegasusRider1, Enemy, [14, 26], [14, 26], Civilian8, [IronLance], 6, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates14 ; B1/B8CA
-		.byte 8, 7
+  _UnusedCoordinates14 ; B1/B8CA
+    .byte 8, 7
 
-	_DarkMageLeft2Group ; B1/B8CC
-		UNIT LoptyrianDarkMage1, Enemy, [2, 11], [2, 11], Codha, [Jormungand, Rewarp], 1, False, [$00, $01, $00, $00]
-	UNIT
+  _DarkMageLeft2Group ; B1/B8CC
+    UNIT LoptyrianDarkMage1, Enemy, [2, 11], [2, 11], Codha, [Jormungand, Rewarp], 1, False, [$00, $01, $00, $00]
+  UNIT
 
-	_UnusedCoordinates15 ; B1/B8E2
-		.byte 8, 7
+  _UnusedCoordinates15 ; B1/B8E2
+    .byte 8, 7
 
-	_DarkMageLeft3Group ; B1/B8E4
-		UNIT LoptyrianDarkMage1, Enemy, [1, 20], [1, 20], Codha, [Jormungand, Rewarp], 1, False, [$00, $01, $00, $00]
-	UNIT
+  _DarkMageLeft3Group ; B1/B8E4
+    UNIT LoptyrianDarkMage1, Enemy, [1, 20], [1, 20], Codha, [Jormungand, Rewarp], 1, False, [$00, $01, $00, $00]
+  UNIT
 
-	_UnusedCoordinates16 ; B1/B8FA
-		.byte 8, 7
+  _UnusedCoordinates16 ; B1/B8FA
+    .byte 8, 7
 
-	_DarkMageRight1Group ; B1/B8FC
-		UNIT LoptyrianDarkMage1, Enemy, [12, 2], [12, 2], Codha, [Jormungand, Rewarp], 1, False, [$00, $01, $00, $00]
-	UNIT
+  _DarkMageRight1Group ; B1/B8FC
+    UNIT LoptyrianDarkMage1, Enemy, [12, 2], [12, 2], Codha, [Jormungand, Rewarp], 1, False, [$00, $01, $00, $00]
+  UNIT
 
-	_UnusedCoordinates17 ; B1/B912
-		.byte 8, 7
+  _UnusedCoordinates17 ; B1/B912
+    .byte 8, 7
 
-	_DarkMageRight2Group ; B1/B914
-		UNIT LoptyrianDarkMage1, Enemy, [11, 18], [11, 18], Codha, [Jormungand, Rewarp], 1, False, [$00, $01, $00, $00]
-	UNIT
+  _DarkMageRight2Group ; B1/B914
+    UNIT LoptyrianDarkMage1, Enemy, [11, 18], [11, 18], Codha, [Jormungand, Rewarp], 1, False, [$00, $01, $00, $00]
+  UNIT
 
-	_UnusedCoordinates18 ; B1/B92A
-		.byte 8, 7
+  _UnusedCoordinates18 ; B1/B92A
+    .byte 8, 7
 
-	_DarkMageLeft1Group ; B1/B92C
-		UNIT LoptyrianDarkMage1, Enemy, [4, 3], [4, 3], Codha, [Jormungand, Rewarp], 1, False, [$00, $01, $00, $00]
-	UNIT
+  _DarkMageLeft1Group ; B1/B92C
+    UNIT LoptyrianDarkMage1, Enemy, [4, 3], [4, 3], Codha, [Jormungand, Rewarp], 1, False, [$00, $01, $00, $00]
+  UNIT
 
-	_UnusedCoordinates19 ; B1/B942
-		.byte 8, 7
+  _UnusedCoordinates19 ; B1/B942
+    .byte 8, 7
 
-	_LinoanGroup ; B1/B944
-		UNIT Linoan, Player, [8, 24], [8, 24], Leif, [TorchStaff, Heal, Ward, Restore], 3, False, [$00, $00, $00, $00]
-	UNIT
+  _LinoanGroup ; B1/B944
+    UNIT Linoan, Player, [8, 24], [8, 24], Leif, [TorchStaff, Heal, Ward, Restore], 3, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates20 ; B1/B95A
-		.byte 8, 7
+  _UnusedCoordinates20 ; B1/B95A
+    .byte 8, 7
 
-	_NPC1Group ; B1/B95C
-		UNIT TahraCivilian1, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
-	UNIT
+  _NPC1Group ; B1/B95C
+    UNIT TahraCivilian1, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
+  UNIT
 
-	_UnusedCoordinates21 ; B1/B972
-		.byte 8, 7
+  _UnusedCoordinates21 ; B1/B972
+    .byte 8, 7
 
-	_NPC2Group ; B1/B974
-		UNIT TahraCivilian2, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
-	UNIT
+  _NPC2Group ; B1/B974
+    UNIT TahraCivilian2, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
+  UNIT
 
-	_UnusedCoordinates22 ; B1/B98A
-		.byte 8, 7
+  _UnusedCoordinates22 ; B1/B98A
+    .byte 8, 7
 
-	_NPC3Group ; B1/B98C
-		UNIT TahraCivilian3, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
-	UNIT
+  _NPC3Group ; B1/B98C
+    UNIT TahraCivilian3, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
+  UNIT
 
-	_UnusedCoordinates23 ; B1/B9A2
-		.byte 8, 7
+  _UnusedCoordinates23 ; B1/B9A2
+    .byte 8, 7
 
-	_NPC4Group ; B1/B9A4
-		UNIT TahraCivilian4, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
-	UNIT
+  _NPC4Group ; B1/B9A4
+    UNIT TahraCivilian4, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
+  UNIT
 
-	_UnusedCoordinates24 ; B1/B9BA
-		.byte 8, 7
+  _UnusedCoordinates24 ; B1/B9BA
+    .byte 8, 7
 
-	_NPC5Group ; B1/B9BC
-		UNIT TahraCivilian5, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
-	UNIT
+  _NPC5Group ; B1/B9BC
+    UNIT TahraCivilian5, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
+  UNIT
 
-	_UnusedCoordinates25 ; B1/B9D2
-		.byte 8, 7
+  _UnusedCoordinates25 ; B1/B9D2
+    .byte 8, 7
 
-	_NPC6Group ; B1/B9D4
-		UNIT TahraCivilian6, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
-	UNIT
+  _NPC6Group ; B1/B9D4
+    UNIT TahraCivilian6, NPC, [7, 30], [7, 30], Raydrik, [], 1, False, [$02, $0B, $00, $00]
+  UNIT
 
-	_StartingPositions ; B1/B9EA
-		.byte 8, 23
-		.byte 7, 24
-		.byte 8, 25
-		.byte 9, 25
-		.byte 9, 26
-		.byte 10, 26
-		.byte 8, 27
-		.byte 9, 27
-		.byte 8, 28
-		.byte 9, 28
-	.byte $FF
+  _StartingPositions ; B1/B9EA
+    .byte 8, 23
+    .byte 7, 24
+    .byte 8, 25
+    .byte 9, 25
+    .byte 9, 26
+    .byte 10, 26
+    .byte 8, 27
+    .byte 9, 27
+    .byte 8, 28
+    .byte 9, 28
+  .byte $FF

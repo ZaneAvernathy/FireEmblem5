@@ -1,140 +1,140 @@
 dialogueChapter2xReinforcementsDialogue ; 95/C6AF
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD LithisPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD ZaillePortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "おかしら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_2
-	.text "本当"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	.text "ターラに"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "くんですかい？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "わしらはイヤですぜ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "帝国"
-	DIALOGUE_FONT_0
-	.text "と"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "うなんざまっぴらだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "まだ"
-	DIALOGUE_FONT_2
-	.text "死"
-	DIALOGUE_FONT_0
-	.text "にたかねえもんな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "わかってる"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	.text "あの"
-	DIALOGUE_FONT_1
-	.text "小"
-	DIALOGUE_FONT_3
-	.text "娘"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_NL
-	.text "オレのものにするための"
-	DIALOGUE_FONT_1
-	.text "方"
-	DIALOGUE_FONT_4
-	.text "便"
-	DIALOGUE_FONT_0
-	.text "だ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_FONT_4
-	.text "誰"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ターラなんぞに"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "くものか"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "くそっ､"
-	DIALOGUE_PAUSE $08
-	.text "シヴァのやつめ"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	.text "たかが"
-	DIALOGUE_FONT_1
-	.text "傭兵"
-	DIALOGUE_FONT_0
-	.text "のくせに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "みょうな"
-	DIALOGUE_FONT_3
-	.text "情"
-	DIALOGUE_FONT_0
-	.text "けをかけやがって！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD JabalPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "おかしら､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "西"
-	DIALOGUE_FONT_0
-	.text "のほうがさわがしい"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	.text "どうやら"
-	DIALOGUE_NL
-	.text "ねずみが"
-	DIALOGUE_FONT_1
-	.text "入"
-	DIALOGUE_FONT_0
-	.text "りこんだようですぜ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なんだとっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "くそうっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なめたことしやがって！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "よし､"
-	DIALOGUE_PAUSE $08
-	.text "みんな"
-	DIALOGUE_FONT_1
-	.text "出撃"
-	DIALOGUE_FONT_0
-	.text "しろ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $20
-	.text "とっととつかまえて"
-	DIALOGUE_NL
-	.text "さかなのえさにしてやるんだ！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD LithisPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD ZaillePortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "おかしら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_2
+  .text "本当"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  .text "ターラに"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "くんですかい？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "わしらはイヤですぜ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "帝国"
+  DIALOGUE_FONT_0
+  .text "と"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "うなんざまっぴらだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "まだ"
+  DIALOGUE_FONT_2
+  .text "死"
+  DIALOGUE_FONT_0
+  .text "にたかねえもんな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "わかってる"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  .text "あの"
+  DIALOGUE_FONT_1
+  .text "小"
+  DIALOGUE_FONT_3
+  .text "娘"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_NL
+  .text "オレのものにするための"
+  DIALOGUE_FONT_1
+  .text "方"
+  DIALOGUE_FONT_4
+  .text "便"
+  DIALOGUE_FONT_0
+  .text "だ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_FONT_4
+  .text "誰"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ターラなんぞに"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "くものか"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "くそっ､"
+  DIALOGUE_PAUSE $08
+  .text "シヴァのやつめ"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  .text "たかが"
+  DIALOGUE_FONT_1
+  .text "傭兵"
+  DIALOGUE_FONT_0
+  .text "のくせに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "みょうな"
+  DIALOGUE_FONT_3
+  .text "情"
+  DIALOGUE_FONT_0
+  .text "けをかけやがって！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD JabalPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "おかしら､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "西"
+  DIALOGUE_FONT_0
+  .text "のほうがさわがしい"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  .text "どうやら"
+  DIALOGUE_NL
+  .text "ねずみが"
+  DIALOGUE_FONT_1
+  .text "入"
+  DIALOGUE_FONT_0
+  .text "りこんだようですぜ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なんだとっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "くそうっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なめたことしやがって！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "よし､"
+  DIALOGUE_PAUSE $08
+  .text "みんな"
+  DIALOGUE_FONT_1
+  .text "出撃"
+  DIALOGUE_FONT_0
+  .text "しろ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $20
+  .text "とっととつかまえて"
+  DIALOGUE_NL
+  .text "さかなのえさにしてやるんだ！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

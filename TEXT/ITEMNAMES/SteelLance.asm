@@ -1,4 +1,4 @@
 
 menutextSteelLanceName ; B0/929D
-	.enc "MenuText"
-	.text "はがねのやり\n"
+  .enc "MenuText"
+  .text "はがねのやり\n"

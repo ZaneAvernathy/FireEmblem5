@@ -1,4 +1,4 @@
 
 menutextCohenName ; 86/E17F
-	.enc "MenuText"
-	.text "コーエン\n"
+  .enc "MenuText"
+  .text "コーエン\n"

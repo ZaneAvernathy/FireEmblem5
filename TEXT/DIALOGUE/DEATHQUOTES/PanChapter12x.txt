@@ -1,8 +1,8 @@
 dialoguePanChapter12xDeathQuote ; 92/BE02
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ちぇっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なんてことだ･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ちぇっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なんてことだ･･･"
 DIALOGUE_END_SCENE

@@ -1,629 +1,629 @@
 
 eventChapter21xEvents ; FD/E9EE
 
-	_OpeningEventDefinitions ; FD/E9EE
-		EVENT $00, _OpeningEvent
-			CMP_WORD wCurrentTurn, 0
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TurnEventDefinitions ; FD/E9FB
-		EVENT $00, _MyrmidonReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD_RANGE wCurrentTurn, 5, 15
-		END_DEFINITION
-		EVENT $00, _SoldierReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD_RANGE wCurrentTurn, 1, 20
-		END_DEFINITION
-		EVENT $00, _MageReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD_RANGE wCurrentTurn, 3, 10
-		END_DEFINITION
-		EVENT $00, _DarkMageReinforcements
-			CMP_WORD wCurrentPhase, Enemy
-			CMP_WORD wCurrentTurn, 30
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_TalkEventDefinitions ; FD/EA47
-	END_DEFINITION_ARRAY
-
-	_LocationEventDefinitions ; FD/EA49
-		EVENT $21, _Door1
-			CMP_BYTE wEventEngineUnknownXTarget, 11
-			CMP_BYTE wEventEngineUnknownYTarget, 6
-		END_DEFINITION
-		EVENT $22, _Door2
-			CMP_BYTE wEventEngineUnknownXTarget, 19
-			CMP_BYTE wEventEngineUnknownYTarget, 6
-		END_DEFINITION
-		EVENT $23, _Door3
-			CMP_BYTE wEventEngineUnknownXTarget, 15
-			CMP_BYTE wEventEngineUnknownYTarget, 9
-		END_DEFINITION
-		EVENT $24, _Door4
-			CMP_BYTE wEventEngineUnknownXTarget, 6
-			CMP_BYTE wEventEngineUnknownYTarget, 12
-		END_DEFINITION
-		EVENT $25, _Door5
-			CMP_BYTE wEventEngineUnknownXTarget, 24
-			CMP_BYTE wEventEngineUnknownYTarget, 12
-		END_DEFINITION
-		EVENT $26, _Door6
-			CMP_BYTE wEventEngineUnknownXTarget, 5
-			CMP_BYTE wEventEngineUnknownYTarget, 15
-		END_DEFINITION
-		EVENT $27, _Door7
-			CMP_BYTE wEventEngineUnknownXTarget, 9
-			CMP_BYTE wEventEngineUnknownYTarget, 16
-		END_DEFINITION
-		EVENT $28, _Door8
-			CMP_BYTE wEventEngineUnknownXTarget, 25
-			CMP_BYTE wEventEngineUnknownYTarget, 15
-		END_DEFINITION
-		EVENT $29, _Door9
-			CMP_BYTE wEventEngineUnknownXTarget, 18
-			CMP_BYTE wEventEngineUnknownYTarget, 18
-		END_DEFINITION
-		EVENT $2A, _Door10
-			CMP_BYTE wEventEngineUnknownXTarget, 15
-			CMP_BYTE wEventEngineUnknownYTarget, 26
-		END_DEFINITION
-		EVENT $2B, eventChapter21xData._Chest1Events
-			CMP_BYTE_AT wCursorXCoord, eventChapter21xData._Chest1Coordinates
-			CMP_BYTE_AT wCursorYCoord, eventChapter21xData._Chest1Coordinates+1
-		END_DEFINITION
-		EVENT $2C, eventChapter21xData._Chest2Events
-			CMP_BYTE_AT wCursorXCoord, eventChapter21xData._Chest2Coordinates
-			CMP_BYTE_AT wCursorYCoord, eventChapter21xData._Chest2Coordinates+1
-		END_DEFINITION
-		EVENT $2D, eventChapter21xData._Chest3Events
-			CMP_BYTE_AT wCursorXCoord, eventChapter21xData._Chest3Coordinates
-			CMP_BYTE_AT wCursorYCoord, eventChapter21xData._Chest3Coordinates+1
-		END_DEFINITION
-		EVENT $2E, eventChapter21xData._Chest4Events
-			CMP_BYTE_AT wCursorXCoord, eventChapter21xData._Chest4Coordinates
-			CMP_BYTE_AT wCursorYCoord, eventChapter21xData._Chest4Coordinates+1
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_BeforeActionEventDefinitions ; FD/EB2D
-		EVENT $06, _PlayerRetreat
-			CMP_BITS $7E4F98, $0008
-			RUN_ASM rlEventDefinitionCheckRetreatCoordinates
-			CMP_WORD aSelectedCharacterBuffer.Character, Leif
-		END_DEFINITION
-		EVENT $06, _PlayerRetreat
-			CMP_BITS $7E4F98, $0008
-			RUN_ASM rlEventDefinitionCheckRetreatCoordinates
-			CHECK_CARRYING Leif
-		END_DEFINITION
-		EVENT $00, _PlayerRetreat
-			CMP_BITS $7E4F98, $0008
-			TEST_FLAG_UNSET $06
-			RUN_ASM rlEventDefinitionCheckRetreatCoordinates
-			CMP_WORD wCurrentPhase, Player
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_AfterActionEventDefinitions ; FD/EB6D
-		EVENT $00, _EndingEvent
-			TEST_FLAG_SET $06
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_BattleEventDefinitions ; FD/EB76
-		EVENT $05, eventBattleQuoteDummyEvent
-			CHECK_SINGLE Zaumm
-		END_DEFINITION
-	END_DEFINITION_ARRAY
-
-	_ShopEventDefinitions ; FD/EB80
-	END_DEFINITION_ARRAY
-
-	_MyrmidonReinforcements ; FD/EB82
-		SCROLL_CAMERA_ADDRESS eventChapter21xData._MyrmidonReinforcementsCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter21xData._MyrmidonReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-		YIELD_UNK
-	END2
-
-	_SoldierReinforcements ; FD/EB8F
-		SCROLL_CAMERA_ADDRESS eventChapter21xData._SoldierReinforcementsLeftCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter21xData._SoldierReinforcementsLeftGroup
-		WAIT_MOVE
-		YIELD
-		YIELD_UNK
-
-		SCROLL_CAMERA_ADDRESS eventChapter21xData._SoldierReinforcementsRightCameraGroup
-		YIELD
-
-		LOAD2 eventChapter21xData._SoldierReinforcementsRightGroup
-		WAIT_MOVE
-		YIELD
-		YIELD_UNK
-	END2
-
-	_MageReinforcements ; FD/EBA8
-		SCROLL_CAMERA_ADDRESS eventChapter21xData._MageReinforcementsCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter21xData._MageReinforcementsGroup
-		WAIT_MOVE
-		YIELD
-		YIELD_UNK
-	END2
-
-	_DarkMageReinforcements ; FD/EBB5
-		SCROLL_CAMERA_SPEED [2, 6], 4
-		YIELD
-
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $3E
-		YIELD
-
-		DIALOGUE dialogueChapter21xDarkMageReinforcements
-		YIELD
-
-		SCROLL_CAMERA_ADDRESS eventChapter21xData._DarkMageReinforcementsLeftCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter21xData._DarkMageReinforcementsLeftGroup
-		WAIT_MOVE
-		YIELD
-		YIELD_UNK
-
-		SCROLL_CAMERA_ADDRESS eventChapter21xData._DarkMageReinforcementsRightCameraCoordinates
-		YIELD
-
-		LOAD2 eventChapter21xData._DarkMageReinforcementsRightGroup
-		WAIT_MOVE
-		YIELD
-		YIELD_UNK
-	END2
-
-	_Door1 ; FD/EBE2
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 1
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door2 ; FD/EC0D
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 2
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door3 ; FD/EC38
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 3
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door4 ; FD/EC63
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 4
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door5 ; FD/EC8E
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 5
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door6 ; FD/ECB9
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 6
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door7 ; FD/ECE4
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 7
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door8 ; FD/ED0F
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 8
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door9 ; FD/ED3A
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 9
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_Door10 ; FD/ED65
-		PLAY_SOUND_BYTE $6B
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-
-		CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
-		HALT_UNTIL_BYTE bDecompListFlag, $00
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-
-		STORE_WORD wEventEngineParameter1, 10
-		CALL_ASM_LOOP rlASMCTileChangeByID, $0000
-		HALT_UNTIL_BYTE bDMAArrayFlag, $00
-		YIELD_UNK
-		YIELD_UNK
-	END1
-
-	_PlayerRetreat ; FD/ED90
-		PAUSE_SKIPPABLE 15
-		YIELD
-
-		STORE_WORD wEventEngineCharacterTarget, $0000
-		STORE_WORD_FROM wEventEngineCharacterTarget, aSelectedCharacterBuffer.Character
-		DIALOGUE_ARRAY aRetreatQuoteTable
-		YIELD
-
-		CALL_ASM_LOOP rlASMCUpdateRetreatingUnitTurnStatus, $0000
-		CALL_ASM_LOOP rlASMCCopyRetreatingUnitDataToEventBuffer, $0000
-
-		MOVE_UNIT $FFFF, [0, 0], [0, 0], 1, _RetreatMovestring
-		YIELD_UNK
-
-		CALL_ASM_LOOP rlASMCUnknown8CA097, $0000
-
-		WAIT_MOVE
-		YIELD
-
-		CALL_ASM_LOOP rlASMCCopyRetreatingUnitDataFromEventBuffer, $0000
-	END2
-
-	_RetreatMovestring ; FD/EDCD
-		MS_MOVE_DOWN
-		MS_MOVE_DOWN
-	MS_END
-
-	_PrisonerCoordinateTable ; FD/EDD0
-		.byte 10,  3
-		.byte 20,  3
-		.byte  6,  9
-		.byte 24,  9
-		.byte 11,  4
-		.byte 21,  4
-		.byte  7, 10
-		.byte 25, 10
-		.byte  9,  4
-		.byte 19,  4
-		.byte  5, 10
-		.byte 23, 10
-		.byte 11,  2
-		.byte 21,  2
-		.byte  7,  8
-		.byte 25,  8
-		.byte  9,  2
-		.byte 19,  2
-		.byte  5,  8
-		.byte 23,  8
-		.byte 12,  5
-		.byte 22,  5
-		.byte  8, 11
-		.byte 26, 11
-		.byte 10,  5
-		.byte 20,  5
-		.byte  6, 11
-		.byte 24, 11
-		.byte 12,  3
-		.byte 22,  3
-		.byte  8,  9
-		.byte 26,  9
-		.byte 10,  4
-		.byte 20,  4
-		.byte  6, 10
-		.byte 24, 10
-		.byte  9,  3
-		.byte 19,  3
-		.byte  5,  9
-		.byte 23,  9
-		.byte 11,  3
-		.byte 21,  3
-		.byte  7,  9
-		.byte 25,  9
-		.byte 10,  2
-		.byte 20,  2
-		.byte  6,  8
-		.byte 24,  8
-		.byte 11,  5
-		.byte 21,  5
-		.byte  7, 11
-		.byte 25, 11
-		.byte  9,  5
-		.byte 19,  5
-		.byte  5, 11
-		.byte 23, 11
-		.byte 12,  4
-		.byte 22,  4
-		.byte  8, 10
-		.byte 26, 10
-		.byte 12,  2
-		.byte 22,  2
-		.byte  8,  8
-		.byte 26,  8
-	.byte $00
-
-	_PrepGroups ; FD/EE51
-		.long eventChapter21xData._PrepGroup
-	.word $0000
-
-	_OpeningEvent ; FD/EE56
-		CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
-
-		STORE_LONG lEventEngineLongParameter, _PrisonerCoordinateTable
-		STORE_WORD lEventEngineUnitGroupPointer, $0002
-		CALL_ASM_LOOP rlASMCPrepareCapturedUnitsForRescue, $000
-
-		FADE_IN $02
-
-		HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
-
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $39
-		YIELD
-
-		STORE_LONG wProcInput1+1, dialogueChapter21xTitle
-		STORE_WORD wProcInput1, <>dialogueChapter21xTitle
-		STORE_LONG lR43, $9A814C
-		CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
-		YIELD
-
-		SCROLL_CAMERA_CHAR Zaumm
-		SET_CAMERA_SPEED 4
-		YIELD
-
-		DIALOGUE dialogueChapter21xOpening1
-		YIELD
-
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $31
-		YIELD
-
-		SCROLL_CAMERA_CHAR Leif
-		SET_CAMERA_SPEED 4
-		YIELD
-
-		DIALOGUE dialogueChapter21xOpening2
-		YIELD
-	END2
-
-	_EndingEvent ; FD/EEBA
-		STORE_WORD wCurrentMapMusic, $0000
-		PAUSE_SKIPPABLE 16
-		YIELD
-
-		CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
-		CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
-
-		FADE_OUT $02
-		YIELD
-
-		STORE_BYTE bBuf_INIDISP, $00
-
-		CALL_ASM_LOOP rlASMCSetUnitsLeftBehindCoordinates, $0000
-
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $3C
-		YIELD
-
-		PAUSE_SKIPPABLE 64
-		YIELD
-
-		CALL_ASM_SKIPPABLE $888550, $0000
-
-		LOAD1 eventChapter21xData._JuliusIshtarGroup
-		WAIT_MOVE
-		YIELD
-
-		SCROLL_CAMERA_CHAR JuliusJuliaPortrait
-		SET_CAMERA_SPEED 4
-		YIELD
-
-		FADE_IN $01
-		YIELD
-
-		DIALOGUE dialogueChapter21xEnding1
-		YIELD
-
-		STORE_WORD wEventEngineCharacterTarget, Ishtar
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
-		JUMP_FALSE +
-
-		STORE_WORD wEventEngineCharacterTarget, JuliusJuliaPortrait
-		CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
-		JUMP_FALSE +
-
-		STORE_WORD wEventEngineParameter1, Warp
-		STORE_WORD wEventEngineParameter2, $0000
-		STORE_WORD wEventEngineCharacterStructParameter, Ishtar
-		STORE_WORD wEventEngineCharacterTarget, JuliusJuliaPortrait
-		STORE_WORD wEventEngineXCoordinate, $00FF
-		STORE_WORD wEventEngineYCoordinate, $00FF
-		CALL_ASM_SKIPPABLE $9A8D4A, $0000
-
-		STORE_LONG lUnknown7EA4EC, $9A9029
-		CALL_ASM_SKIPPABLE $84B719, $0000
-
-		HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
-
-		CALL_ASM_SKIPPABLE rlUpdateUnitMaps, $0000
-		CALL_ASM_SKIPPABLE rlUpdateVisibilityMap, $0000
-
-		PAUSE_SKIPPABLE 2
-		YIELD
-
-		+
-		STORE_WORD wEventEngineParameter1, Rewarp
-		STORE_WORD wEventEngineParameter2, $0000
-		STORE_WORD wEventEngineCharacterStructParameter, Ishtar
-		STORE_WORD wEventEngineCharacterTarget, $0000
-		STORE_WORD wEventEngineXCoordinate, $00FF
-		STORE_WORD wEventEngineYCoordinate, $00FF
-		CALL_ASM_SKIPPABLE $9A8D4A, $0000
-
-		STORE_LONG lUnknown7EA4EC, $9A9029
-
-		CALL_ASM_SKIPPABLE $9A8F82, $0000
-		CALL_ASM_SKIPPABLE $84B719, $0000
-
-		HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
-
-		CALL_ASM_SKIPPABLE rlUpdateUnitMaps, $0000
-		CALL_ASM_SKIPPABLE rlUpdateVisibilityMap, $0000
-
-		PAUSE_SKIPPABLE 2
-		YIELD
-
-		STORE_WORD wEventEngineCharacterTarget, JuliusJuliaPortrait
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Ishtar
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
-
-		STORE_WORD wEventEngineCharacterTarget, Dean
-		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
-		JUMP_FALSE +
-
-		STORE_WORD wEventEngineCharacterTarget, Linoan
-		CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
-		JUMP_TRUE +
-
-		STORE_WORD wCurrentMapMusic, $0000
-		PLAY_SOUND_WORD $00E0
-		PAUSE_SKIPPABLE 32
-		YIELD
-
-		SET_MUSIC $42
-		YIELD
-
-		STORE_WORD wEventEngineParameter1, 3
-		CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
-
-		CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapterEndLinoanDead
-		YIELD_UNK
-		YIELD_UNK
-		YIELD_UNK
-		YIELD
-
-		HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
-		FADE_OUT $01
-		YIELD
-
-		CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
-
-		STORE_BYTE bBuf_INIDISP, $00
-		STORE_WORD wEventEngineCharacterTarget, Dean
-		CALL_ASM_LOOP rlASMCRemoveUnit, $0000
-
-		+
-		CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured, $0000
-
-		FADE_OUT $01
-		YIELD
-
-		CALL_ASM_LOOP rlASMCChapterEnd, $0000
-	END1
+  _OpeningEventDefinitions ; FD/E9EE
+    EVENT $00, _OpeningEvent
+      CMP_WORD wCurrentTurn, 0
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TurnEventDefinitions ; FD/E9FB
+    EVENT $00, _MyrmidonReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD_RANGE wCurrentTurn, 5, 15
+    END_DEFINITION
+    EVENT $00, _SoldierReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD_RANGE wCurrentTurn, 1, 20
+    END_DEFINITION
+    EVENT $00, _MageReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD_RANGE wCurrentTurn, 3, 10
+    END_DEFINITION
+    EVENT $00, _DarkMageReinforcements
+      CMP_WORD wCurrentPhase, Enemy
+      CMP_WORD wCurrentTurn, 30
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _TalkEventDefinitions ; FD/EA47
+  END_DEFINITION_ARRAY
+
+  _LocationEventDefinitions ; FD/EA49
+    EVENT $21, _Door1
+      CMP_BYTE wEventEngineUnknownXTarget, 11
+      CMP_BYTE wEventEngineUnknownYTarget, 6
+    END_DEFINITION
+    EVENT $22, _Door2
+      CMP_BYTE wEventEngineUnknownXTarget, 19
+      CMP_BYTE wEventEngineUnknownYTarget, 6
+    END_DEFINITION
+    EVENT $23, _Door3
+      CMP_BYTE wEventEngineUnknownXTarget, 15
+      CMP_BYTE wEventEngineUnknownYTarget, 9
+    END_DEFINITION
+    EVENT $24, _Door4
+      CMP_BYTE wEventEngineUnknownXTarget, 6
+      CMP_BYTE wEventEngineUnknownYTarget, 12
+    END_DEFINITION
+    EVENT $25, _Door5
+      CMP_BYTE wEventEngineUnknownXTarget, 24
+      CMP_BYTE wEventEngineUnknownYTarget, 12
+    END_DEFINITION
+    EVENT $26, _Door6
+      CMP_BYTE wEventEngineUnknownXTarget, 5
+      CMP_BYTE wEventEngineUnknownYTarget, 15
+    END_DEFINITION
+    EVENT $27, _Door7
+      CMP_BYTE wEventEngineUnknownXTarget, 9
+      CMP_BYTE wEventEngineUnknownYTarget, 16
+    END_DEFINITION
+    EVENT $28, _Door8
+      CMP_BYTE wEventEngineUnknownXTarget, 25
+      CMP_BYTE wEventEngineUnknownYTarget, 15
+    END_DEFINITION
+    EVENT $29, _Door9
+      CMP_BYTE wEventEngineUnknownXTarget, 18
+      CMP_BYTE wEventEngineUnknownYTarget, 18
+    END_DEFINITION
+    EVENT $2A, _Door10
+      CMP_BYTE wEventEngineUnknownXTarget, 15
+      CMP_BYTE wEventEngineUnknownYTarget, 26
+    END_DEFINITION
+    EVENT $2B, eventChapter21xData._Chest1Events
+      CMP_BYTE_AT wCursorXCoord, eventChapter21xData._Chest1Coordinates
+      CMP_BYTE_AT wCursorYCoord, eventChapter21xData._Chest1Coordinates+1
+    END_DEFINITION
+    EVENT $2C, eventChapter21xData._Chest2Events
+      CMP_BYTE_AT wCursorXCoord, eventChapter21xData._Chest2Coordinates
+      CMP_BYTE_AT wCursorYCoord, eventChapter21xData._Chest2Coordinates+1
+    END_DEFINITION
+    EVENT $2D, eventChapter21xData._Chest3Events
+      CMP_BYTE_AT wCursorXCoord, eventChapter21xData._Chest3Coordinates
+      CMP_BYTE_AT wCursorYCoord, eventChapter21xData._Chest3Coordinates+1
+    END_DEFINITION
+    EVENT $2E, eventChapter21xData._Chest4Events
+      CMP_BYTE_AT wCursorXCoord, eventChapter21xData._Chest4Coordinates
+      CMP_BYTE_AT wCursorYCoord, eventChapter21xData._Chest4Coordinates+1
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _BeforeActionEventDefinitions ; FD/EB2D
+    EVENT $06, _PlayerRetreat
+      CMP_BITS $7E4F98, $0008
+      RUN_ASM rlEventDefinitionCheckRetreatCoordinates
+      CMP_WORD aSelectedCharacterBuffer.Character, Leif
+    END_DEFINITION
+    EVENT $06, _PlayerRetreat
+      CMP_BITS $7E4F98, $0008
+      RUN_ASM rlEventDefinitionCheckRetreatCoordinates
+      CHECK_CARRYING Leif
+    END_DEFINITION
+    EVENT $00, _PlayerRetreat
+      CMP_BITS $7E4F98, $0008
+      TEST_FLAG_UNSET $06
+      RUN_ASM rlEventDefinitionCheckRetreatCoordinates
+      CMP_WORD wCurrentPhase, Player
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _AfterActionEventDefinitions ; FD/EB6D
+    EVENT $00, _EndingEvent
+      TEST_FLAG_SET $06
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _BattleEventDefinitions ; FD/EB76
+    EVENT $05, eventBattleQuoteDummyEvent
+      CHECK_SINGLE Zaumm
+    END_DEFINITION
+  END_DEFINITION_ARRAY
+
+  _ShopEventDefinitions ; FD/EB80
+  END_DEFINITION_ARRAY
+
+  _MyrmidonReinforcements ; FD/EB82
+    SCROLL_CAMERA_ADDRESS eventChapter21xData._MyrmidonReinforcementsCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter21xData._MyrmidonReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+    YIELD_UNK
+  END2
+
+  _SoldierReinforcements ; FD/EB8F
+    SCROLL_CAMERA_ADDRESS eventChapter21xData._SoldierReinforcementsLeftCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter21xData._SoldierReinforcementsLeftGroup
+    WAIT_MOVE
+    YIELD
+    YIELD_UNK
+
+    SCROLL_CAMERA_ADDRESS eventChapter21xData._SoldierReinforcementsRightCameraGroup
+    YIELD
+
+    LOAD2 eventChapter21xData._SoldierReinforcementsRightGroup
+    WAIT_MOVE
+    YIELD
+    YIELD_UNK
+  END2
+
+  _MageReinforcements ; FD/EBA8
+    SCROLL_CAMERA_ADDRESS eventChapter21xData._MageReinforcementsCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter21xData._MageReinforcementsGroup
+    WAIT_MOVE
+    YIELD
+    YIELD_UNK
+  END2
+
+  _DarkMageReinforcements ; FD/EBB5
+    SCROLL_CAMERA_SPEED [2, 6], 4
+    YIELD
+
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $3E
+    YIELD
+
+    DIALOGUE dialogueChapter21xDarkMageReinforcements
+    YIELD
+
+    SCROLL_CAMERA_ADDRESS eventChapter21xData._DarkMageReinforcementsLeftCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter21xData._DarkMageReinforcementsLeftGroup
+    WAIT_MOVE
+    YIELD
+    YIELD_UNK
+
+    SCROLL_CAMERA_ADDRESS eventChapter21xData._DarkMageReinforcementsRightCameraCoordinates
+    YIELD
+
+    LOAD2 eventChapter21xData._DarkMageReinforcementsRightGroup
+    WAIT_MOVE
+    YIELD
+    YIELD_UNK
+  END2
+
+  _Door1 ; FD/EBE2
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 1
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door2 ; FD/EC0D
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 2
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door3 ; FD/EC38
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 3
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door4 ; FD/EC63
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 4
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door5 ; FD/EC8E
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 5
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door6 ; FD/ECB9
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 6
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door7 ; FD/ECE4
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 7
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door8 ; FD/ED0F
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 8
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door9 ; FD/ED3A
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 9
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _Door10 ; FD/ED65
+    PLAY_SOUND_BYTE $6B
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+
+    CALL_ASM_LOOP rlASMCDecompressChapterMapChanges, $0000
+    HALT_UNTIL_BYTE bDecompListFlag, $00
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+
+    STORE_WORD wEventEngineParameter1, 10
+    CALL_ASM_LOOP rlASMCTileChangeByID, $0000
+    HALT_UNTIL_BYTE bDMAArrayFlag, $00
+    YIELD_UNK
+    YIELD_UNK
+  END1
+
+  _PlayerRetreat ; FD/ED90
+    PAUSE_SKIPPABLE 15
+    YIELD
+
+    STORE_WORD wEventEngineCharacterTarget, $0000
+    STORE_WORD_FROM wEventEngineCharacterTarget, aSelectedCharacterBuffer.Character
+    DIALOGUE_ARRAY aRetreatQuoteTable
+    YIELD
+
+    CALL_ASM_LOOP rlASMCUpdateRetreatingUnitTurnStatus, $0000
+    CALL_ASM_LOOP rlASMCCopyRetreatingUnitDataToEventBuffer, $0000
+
+    MOVE_UNIT $FFFF, [0, 0], [0, 0], 1, _RetreatMovestring
+    YIELD_UNK
+
+    CALL_ASM_LOOP rlASMCUnknown8CA097, $0000
+
+    WAIT_MOVE
+    YIELD
+
+    CALL_ASM_LOOP rlASMCCopyRetreatingUnitDataFromEventBuffer, $0000
+  END2
+
+  _RetreatMovestring ; FD/EDCD
+    MS_MOVE_DOWN
+    MS_MOVE_DOWN
+  MS_END
+
+  _PrisonerCoordinateTable ; FD/EDD0
+    .byte 10,  3
+    .byte 20,  3
+    .byte  6,  9
+    .byte 24,  9
+    .byte 11,  4
+    .byte 21,  4
+    .byte  7, 10
+    .byte 25, 10
+    .byte  9,  4
+    .byte 19,  4
+    .byte  5, 10
+    .byte 23, 10
+    .byte 11,  2
+    .byte 21,  2
+    .byte  7,  8
+    .byte 25,  8
+    .byte  9,  2
+    .byte 19,  2
+    .byte  5,  8
+    .byte 23,  8
+    .byte 12,  5
+    .byte 22,  5
+    .byte  8, 11
+    .byte 26, 11
+    .byte 10,  5
+    .byte 20,  5
+    .byte  6, 11
+    .byte 24, 11
+    .byte 12,  3
+    .byte 22,  3
+    .byte  8,  9
+    .byte 26,  9
+    .byte 10,  4
+    .byte 20,  4
+    .byte  6, 10
+    .byte 24, 10
+    .byte  9,  3
+    .byte 19,  3
+    .byte  5,  9
+    .byte 23,  9
+    .byte 11,  3
+    .byte 21,  3
+    .byte  7,  9
+    .byte 25,  9
+    .byte 10,  2
+    .byte 20,  2
+    .byte  6,  8
+    .byte 24,  8
+    .byte 11,  5
+    .byte 21,  5
+    .byte  7, 11
+    .byte 25, 11
+    .byte  9,  5
+    .byte 19,  5
+    .byte  5, 11
+    .byte 23, 11
+    .byte 12,  4
+    .byte 22,  4
+    .byte  8, 10
+    .byte 26, 10
+    .byte 12,  2
+    .byte 22,  2
+    .byte  8,  8
+    .byte 26,  8
+  .byte $00
+
+  _PrepGroups ; FD/EE51
+    .long eventChapter21xData._PrepGroup
+  .word $0000
+
+  _OpeningEvent ; FD/EE56
+    CALL_ASM_SKIPPABLE rlEventEngineCancelFading, $0000
+
+    STORE_LONG lEventEngineLongParameter, _PrisonerCoordinateTable
+    STORE_WORD lEventEngineUnitGroupPointer, $0002
+    CALL_ASM_LOOP rlASMCPrepareCapturedUnitsForRescue, $000
+
+    FADE_IN $02
+
+    HALT_UNTIL_BYTE_SKIPPABLE bBuf_INIDISP, $0F
+
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $39
+    YIELD
+
+    STORE_LONG wProcInput1+1, dialogueChapter21xTitle
+    STORE_WORD wProcInput1, <>dialogueChapter21xTitle
+    STORE_LONG lR43, $9A814C
+    CALL_ASM_SKIPPABLE rlEventEngineCreateProcAndSetActive, $0000
+    YIELD
+
+    SCROLL_CAMERA_CHAR Zaumm
+    SET_CAMERA_SPEED 4
+    YIELD
+
+    DIALOGUE dialogueChapter21xOpening1
+    YIELD
+
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $31
+    YIELD
+
+    SCROLL_CAMERA_CHAR Leif
+    SET_CAMERA_SPEED 4
+    YIELD
+
+    DIALOGUE dialogueChapter21xOpening2
+    YIELD
+  END2
+
+  _EndingEvent ; FD/EEBA
+    STORE_WORD wCurrentMapMusic, $0000
+    PAUSE_SKIPPABLE 16
+    YIELD
+
+    CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd, $0000
+    CALL_ASM_LOOP rlASMCSaveChapterAndTurncount, $0000
+
+    FADE_OUT $02
+    YIELD
+
+    STORE_BYTE bBuf_INIDISP, $00
+
+    CALL_ASM_LOOP rlASMCSetUnitsLeftBehindCoordinates, $0000
+
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $3C
+    YIELD
+
+    PAUSE_SKIPPABLE 64
+    YIELD
+
+    CALL_ASM_SKIPPABLE $888550, $0000
+
+    LOAD1 eventChapter21xData._JuliusIshtarGroup
+    WAIT_MOVE
+    YIELD
+
+    SCROLL_CAMERA_CHAR JuliusJuliaPortrait
+    SET_CAMERA_SPEED 4
+    YIELD
+
+    FADE_IN $01
+    YIELD
+
+    DIALOGUE dialogueChapter21xEnding1
+    YIELD
+
+    STORE_WORD wEventEngineCharacterTarget, Ishtar
+    CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+    JUMP_FALSE +
+
+    STORE_WORD wEventEngineCharacterTarget, JuliusJuliaPortrait
+    CALL_ASM_LOOP rlASMCCountAllUnitUncapturedAlive, $0000
+    JUMP_FALSE +
+
+    STORE_WORD wEventEngineParameter1, Warp
+    STORE_WORD wEventEngineParameter2, $0000
+    STORE_WORD wEventEngineCharacterStructParameter, Ishtar
+    STORE_WORD wEventEngineCharacterTarget, JuliusJuliaPortrait
+    STORE_WORD wEventEngineXCoordinate, $00FF
+    STORE_WORD wEventEngineYCoordinate, $00FF
+    CALL_ASM_SKIPPABLE $9A8D4A, $0000
+
+    STORE_LONG lUnknown7EA4EC, $9A9029
+    CALL_ASM_SKIPPABLE $84B719, $0000
+
+    HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
+
+    CALL_ASM_SKIPPABLE rlUpdateUnitMaps, $0000
+    CALL_ASM_SKIPPABLE rlUpdateVisibilityMap, $0000
+
+    PAUSE_SKIPPABLE 2
+    YIELD
+
+    +
+    STORE_WORD wEventEngineParameter1, Rewarp
+    STORE_WORD wEventEngineParameter2, $0000
+    STORE_WORD wEventEngineCharacterStructParameter, Ishtar
+    STORE_WORD wEventEngineCharacterTarget, $0000
+    STORE_WORD wEventEngineXCoordinate, $00FF
+    STORE_WORD wEventEngineYCoordinate, $00FF
+    CALL_ASM_SKIPPABLE $9A8D4A, $0000
+
+    STORE_LONG lUnknown7EA4EC, $9A9029
+
+    CALL_ASM_SKIPPABLE $9A8F82, $0000
+    CALL_ASM_SKIPPABLE $84B719, $0000
+
+    HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
+
+    CALL_ASM_SKIPPABLE rlUpdateUnitMaps, $0000
+    CALL_ASM_SKIPPABLE rlUpdateVisibilityMap, $0000
+
+    PAUSE_SKIPPABLE 2
+    YIELD
+
+    STORE_WORD wEventEngineCharacterTarget, JuliusJuliaPortrait
+    CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Ishtar
+    CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+
+    STORE_WORD wEventEngineCharacterTarget, Dean
+    CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+    JUMP_FALSE +
+
+    STORE_WORD wEventEngineCharacterTarget, Linoan
+    CALL_ASM_LOOP rlASMCCheckAllUnitAlive, $0000
+    JUMP_TRUE +
+
+    STORE_WORD wCurrentMapMusic, $0000
+    PLAY_SOUND_WORD $00E0
+    PAUSE_SKIPPABLE 32
+    YIELD
+
+    SET_MUSIC $42
+    YIELD
+
+    STORE_WORD wEventEngineParameter1, 3
+    CALL_ASM_SKIPPABLE rlASMCDialogueWithBGSetup, <>rsUnknown80A23A
+
+    HALT_UNTIL_WORD_SKIPPABLE wUnknown000302, $0009
+
+    CALL_ASM_LONG_SKIPPABLE rlASMCDialogueWithBGStart, dialogueChapterEndLinoanDead
+    YIELD_UNK
+    YIELD_UNK
+    YIELD_UNK
+    YIELD
+
+    HALT_UNTIL_WORD_SKIPPABLE wUnknown0017E9, $0000
+    FADE_OUT $01
+    YIELD
+
+    CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut, $0000
+
+    STORE_BYTE bBuf_INIDISP, $00
+    STORE_WORD wEventEngineCharacterTarget, Dean
+    CALL_ASM_LOOP rlASMCRemoveUnit, $0000
+
+    +
+    CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured, $0000
+
+    FADE_OUT $01
+    YIELD
+
+    CALL_ASM_LOOP rlASMCChapterEnd, $0000
+  END1

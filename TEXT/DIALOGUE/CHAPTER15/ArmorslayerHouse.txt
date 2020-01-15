@@ -1,33 +1,33 @@
 dialogueChapter15ArmorslayerHouse ; 92/E5C3
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan11Portrait
-	DIALOGUE_FONT_0
-	.text "あんたたち"
-	DIALOGUE_FONT_2
-	.text "強"
-	DIALOGUE_FONT_0
-	.text "いねえ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あんたたちならこの"
-	DIALOGUE_FONT_1
-	.text "剣"
-	DIALOGUE_NL
-	DIALOGUE_FONT_0
-	.text "つかいこなせそうだな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "けに"
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "てくれたお"
-	DIALOGUE_FONT_2
-	.text "礼"
-	DIALOGUE_FONT_0
-	.text "にあげるよ"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan11Portrait
+  DIALOGUE_FONT_0
+  .text "あんたたち"
+  DIALOGUE_FONT_2
+  .text "強"
+  DIALOGUE_FONT_0
+  .text "いねえ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あんたたちならこの"
+  DIALOGUE_FONT_1
+  .text "剣"
+  DIALOGUE_NL
+  DIALOGUE_FONT_0
+  .text "つかいこなせそうだな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "けに"
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "てくれたお"
+  DIALOGUE_FONT_2
+  .text "礼"
+  DIALOGUE_FONT_0
+  .text "にあげるよ"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

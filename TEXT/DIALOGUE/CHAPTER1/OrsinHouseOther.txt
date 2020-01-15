@@ -1,12 +1,12 @@
 dialogueChapter1OrsinHouseOther ; 95/B370
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan1Portrait
-	DIALOGUE_FONT_0
-	.text "オーシンのヤロウは"
-	DIALOGUE_NL
-	.text "どこであそんでやがる"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $20
-	.text "あのやくたたずめ！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan1Portrait
+  DIALOGUE_FONT_0
+  .text "オーシンのヤロウは"
+  DIALOGUE_NL
+  .text "どこであそんでやがる"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $20
+  .text "あのやくたたずめ！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

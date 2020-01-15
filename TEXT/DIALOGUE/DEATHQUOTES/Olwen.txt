@@ -1,14 +1,14 @@
 dialogueOlwenDeathQuote ; 82/BCD9
-	DIALOGUE_FONT_0
-	.text "く､"
-	DIALOGUE_PAUSE $10
-	.text "こんなところで･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "兄"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "･･･"
+  DIALOGUE_FONT_0
+  .text "く､"
+  DIALOGUE_PAUSE $10
+  .text "こんなところで･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "兄"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "･･･"
 DIALOGUE_END_SCENE

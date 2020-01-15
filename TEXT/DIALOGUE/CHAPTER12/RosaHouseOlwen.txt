@@ -1,36 +1,36 @@
 dialogueChapter12RosaHouseOlwen ; 92/A0E6
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCGirl1Portrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "あっ､おねえちゃん！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "まってたんだよ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "これ､"
-	DIALOGUE_PAUSE $08
-	.text "おねえちゃんのでしょう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_FONT_0
-	.text "で"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "つけたんだけど"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "わたすの"
-	DIALOGUE_FONT_3
-	.text "忘"
-	DIALOGUE_FONT_0
-	.text "れてたの"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ごめんね"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCGirl1Portrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "あっ､おねえちゃん！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "まってたんだよ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "これ､"
+  DIALOGUE_PAUSE $08
+  .text "おねえちゃんのでしょう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_FONT_0
+  .text "で"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "つけたんだけど"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "わたすの"
+  DIALOGUE_FONT_3
+  .text "忘"
+  DIALOGUE_FONT_0
+  .text "れてたの"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ごめんね"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

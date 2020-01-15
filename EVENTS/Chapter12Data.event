@@ -1,80 +1,80 @@
 
 eventChapter12Data ; B1/C788
 
-	_PrepGroup ; B1/C788
-		.byte 8, 9
+  _PrepGroup ; B1/C788
+    .byte 8, 9
 
-		UNIT Salem, Enemy, [3, 9], [3, 9], Pan, [Jormungand, Sleep], 5, False, [$0D, $03, $00, $00]
-		UNIT BanditBrigand2, Enemy, [17, 11], [17, 11], Kolkho, [IronAxe], 9, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [16, 9], [16, 9], Kolkho, [HandAxe], 5, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [16, 13], [16, 13], Kolkho, [HandAxe], 5, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand2, Enemy, [18, 13], [18, 13], Kolkho, [IronAxe], 10, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [19, 12], [19, 12], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [20, 14], [20, 14], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [16, 15], [16, 15], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [19, 9], [19, 9], Kolkho, [IronAxe, BridgeKey], 6, False, [$02, $09, $00, $00]
-		UNIT BanditBrigand2, Enemy, [20, 8], [20, 8], Kolkho, [IronAxe], 11, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand2, Enemy, [16, 17], [16, 17], Kolkho, [IronAxe], 12, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand2, Enemy, [22, 6], [22, 6], Kolkho, [IronAxe], 5, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand2, Enemy, [24, 5], [24, 5], Kolkho, [IronAxe], 5, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [18, 14], [18, 14], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [20, 10], [20, 10], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [18, 16], [18, 16], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [20, 17], [20, 17], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [16, 3], [16, 3], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [19, 4], [19, 4], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
-		UNIT BanditBrigand1, Enemy, [14, 17], [14, 17], Kolkho, [IronAxe], 6, False, [$00, $09, $00, $00]
-		UNIT BanditBrigand1, Enemy, [15, 11], [15, 11], Kolkho, [IronAxe], 6, False, [$00, $09, $00, $00]
-		UNIT BanditBrigand1, Enemy, [6, 9], [6, 9], Kolkho, [IronAxe], 2, False, [$00, $09, $00, $00]
-		UNIT BanditBrigand1, Enemy, [7, 10], [7, 10], Kolkho, [IronAxe], 2, False, [$00, $09, $00, $00]
-		UNIT BanditBrigand1, Enemy, [7, 3], [7, 3], Kolkho, [IronAxe], 2, False, [$00, $09, $00, $00]
-		UNIT BanditBrigand1, Enemy, [9, 4], [9, 4], Kolkho, [IronAxe], 2, False, [$00, $09, $00, $00]
-		UNIT BanditBrigand1, Enemy, [8, 9], [8, 9], Kolkho, [IronAxe], 2, False, [$00, $09, $00, $00]
-		UNIT Kolkho, Enemy, [14, 7], [14, 7], Kolkho, [PoisonAxe, Hammer, Vulnerary, VantageManual], 8, True, [$00, $03, $00, $80]
-	UNIT
+    UNIT Salem, Enemy, [3, 9], [3, 9], Pan, [Jormungand, Sleep], 5, False, [$0D, $03, $00, $00]
+    UNIT BanditBrigand2, Enemy, [17, 11], [17, 11], Kolkho, [IronAxe], 9, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [16, 9], [16, 9], Kolkho, [HandAxe], 5, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [16, 13], [16, 13], Kolkho, [HandAxe], 5, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand2, Enemy, [18, 13], [18, 13], Kolkho, [IronAxe], 10, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [19, 12], [19, 12], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [20, 14], [20, 14], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [16, 15], [16, 15], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [19, 9], [19, 9], Kolkho, [IronAxe, BridgeKey], 6, False, [$02, $09, $00, $00]
+    UNIT BanditBrigand2, Enemy, [20, 8], [20, 8], Kolkho, [IronAxe], 11, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand2, Enemy, [16, 17], [16, 17], Kolkho, [IronAxe], 12, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand2, Enemy, [22, 6], [22, 6], Kolkho, [IronAxe], 5, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand2, Enemy, [24, 5], [24, 5], Kolkho, [IronAxe], 5, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [18, 14], [18, 14], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [20, 10], [20, 10], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [18, 16], [18, 16], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [20, 17], [20, 17], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [16, 3], [16, 3], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [19, 4], [19, 4], Kolkho, [IronAxe], 6, False, [$00, $00, $00, $00]
+    UNIT BanditBrigand1, Enemy, [14, 17], [14, 17], Kolkho, [IronAxe], 6, False, [$00, $09, $00, $00]
+    UNIT BanditBrigand1, Enemy, [15, 11], [15, 11], Kolkho, [IronAxe], 6, False, [$00, $09, $00, $00]
+    UNIT BanditBrigand1, Enemy, [6, 9], [6, 9], Kolkho, [IronAxe], 2, False, [$00, $09, $00, $00]
+    UNIT BanditBrigand1, Enemy, [7, 10], [7, 10], Kolkho, [IronAxe], 2, False, [$00, $09, $00, $00]
+    UNIT BanditBrigand1, Enemy, [7, 3], [7, 3], Kolkho, [IronAxe], 2, False, [$00, $09, $00, $00]
+    UNIT BanditBrigand1, Enemy, [9, 4], [9, 4], Kolkho, [IronAxe], 2, False, [$00, $09, $00, $00]
+    UNIT BanditBrigand1, Enemy, [8, 9], [8, 9], Kolkho, [IronAxe], 2, False, [$00, $09, $00, $00]
+    UNIT Kolkho, Enemy, [14, 7], [14, 7], Kolkho, [PoisonAxe, Hammer, Vulnerary, VantageManual], 8, True, [$00, $03, $00, $80]
+  UNIT
 
-	_MareetaCameraCoordinates ; B1/C9A8
-		.byte 8, 7
+  _MareetaCameraCoordinates ; B1/C9A8
+    .byte 8, 7
 
-	_MareetaGroup ; B1/C9AA
-		UNIT Mareeta, Player, [8, 16], [8, 16], Leif, [MareetasBlade, Vulnerary], 2, False, [$00, $00, $00, $00]
-	UNIT
+  _MareetaGroup ; B1/C9AA
+    UNIT Mareeta, Player, [8, 16], [8, 16], Leif, [MareetasBlade, Vulnerary], 2, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates1 ; B1/C9C0
-		.byte 8, 7
+  _UnusedCoordinates1 ; B1/C9C0
+    .byte 8, 7
 
-	_BrigandLeftReinforcementsGroup ; B1/C9C2
-		UNIT BanditBrigand1, Enemy, [5, 1], [5, 1], Kolkho, [IronAxe], 3, False, [$00, $09, $00, $00]
-	UNIT
+  _BrigandLeftReinforcementsGroup ; B1/C9C2
+    UNIT BanditBrigand1, Enemy, [5, 1], [5, 1], Kolkho, [IronAxe], 3, False, [$00, $09, $00, $00]
+  UNIT
 
-	_UnusedCoordinates2 ; B1/C9D8
-		.byte 8, 7
+  _UnusedCoordinates2 ; B1/C9D8
+    .byte 8, 7
 
-	_BrigandMiddleReinforcements ; B1/C9DA
-		UNIT BanditBrigand2, Enemy, [6, 1], [6, 1], Kolkho, [IronAxe], 3, False, [$00, $00, $00, $00]
-	UNIT
+  _BrigandMiddleReinforcements ; B1/C9DA
+    UNIT BanditBrigand2, Enemy, [6, 1], [6, 1], Kolkho, [IronAxe], 3, False, [$00, $00, $00, $00]
+  UNIT
 
-	_UnusedCoordinates3 ; B1/C9F0
-		.byte 8, 7
+  _UnusedCoordinates3 ; B1/C9F0
+    .byte 8, 7
 
-	_BrigandRightReinforcements ; B1/C9F2
-		UNIT BanditBrigand1, Enemy, [7, 1], [7, 1], Kolkho, [IronAxe], 3, False, [$00, $09, $00, $00]
-	UNIT
+  _BrigandRightReinforcements ; B1/C9F2
+    UNIT BanditBrigand1, Enemy, [7, 1], [7, 1], Kolkho, [IronAxe], 3, False, [$00, $09, $00, $00]
+  UNIT
 
-	_StartingPositions ; B1/CA08
-		.byte 29, 11
-		.byte 26, 8
-		.byte 26, 10
-		.byte 26, 12
-		.byte 27, 9
-		.byte 27, 11
-		.byte 27, 13
-		.byte 28, 8
-		.byte 28, 10
-		.byte 28, 12
-		.byte 29, 9
-		.byte 29, 13
-	.byte $FF
+  _StartingPositions ; B1/CA08
+    .byte 29, 11
+    .byte 26, 8
+    .byte 26, 10
+    .byte 26, 12
+    .byte 27, 9
+    .byte 27, 11
+    .byte 27, 13
+    .byte 28, 8
+    .byte 28, 10
+    .byte 28, 12
+    .byte 29, 9
+    .byte 29, 13
+  .byte $FF
 
-	_Vendor ; B1/CA21
-		SHOP [21, 2], [Vulnerary, DoorKey, Wind, Fire, Torch]
+  _Vendor ; B1/CA21
+    SHOP [21, 2], [Vulnerary, DoorKey, Wind, Fire, Torch]

@@ -1,11 +1,11 @@
 dialogueNicolovReleaseQuote ; 98/B586
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なぜ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "助"
-	DIALOGUE_FONT_0
-	.text "けるのだ･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なぜ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "助"
+  DIALOGUE_FONT_0
+  .text "けるのだ･･･"
 DIALOGUE_END_SCENE

@@ -1,154 +1,154 @@
 dialogueChapter23AlphanFetch ; 98/E11C
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD EichmannPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "およびでございますか"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "アルファン"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD AlphanPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "おい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "わしの"
-	DIALOGUE_FONT_1
-	.text "魔道書"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "つからぬのだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ちょっと"
-	DIALOGUE_FONT_4
-	.text "探"
-	DIALOGUE_FONT_0
-	.text "してこい"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "えっ､"
-	DIALOGUE_PAUSE $08
-	.text "またですか･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "なんじゃ？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "か"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "ったか？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "いえ､"
-	DIALOGUE_PAUSE $08
-	.text "なにも･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "して､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_2
-	.text "度"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "魔道書"
-	DIALOGUE_FONT_0
-	.text "です？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "ポイズンという"
-	DIALOGUE_FONT_1
-	.text "魔道書"
-	DIALOGUE_FONT_0
-	.text "じゃ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あれがないと"
-	DIALOGUE_FONT_2
-	.text "遠"
-	DIALOGUE_FONT_0
-	.text "くの"
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "攻撃"
-	DIALOGUE_FONT_0
-	.text "できぬ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "わかりました"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "探"
-	DIALOGUE_FONT_0
-	.text "してまいりますのでお"
-	DIALOGUE_FONT_1
-	.text "待"
-	DIALOGUE_FONT_0
-	.text "ちください"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_UNLOAD
-	DIALOGUE_CLOSE
-	DIALOGUE_PAUSE $10
-	DIALOGUE_RIGHT
-	.text "この"
-	DIALOGUE_FONT_1
-	.text "前"
-	DIALOGUE_FONT_0
-	.text "より"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_0
-	.text "つかりやすい"
-	DIALOGUE_FONT_1
-	.text "場"
-	DIALOGUE_FONT_2
-	.text "所"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	.text "あればいいんだが･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD EichmannPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "およびでございますか"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "アルファン"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD AlphanPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "おい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "わしの"
+  DIALOGUE_FONT_1
+  .text "魔道書"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "つからぬのだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ちょっと"
+  DIALOGUE_FONT_4
+  .text "探"
+  DIALOGUE_FONT_0
+  .text "してこい"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "えっ､"
+  DIALOGUE_PAUSE $08
+  .text "またですか･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "なんじゃ？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "か"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "ったか？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "いえ､"
+  DIALOGUE_PAUSE $08
+  .text "なにも･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "して､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_2
+  .text "度"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "魔道書"
+  DIALOGUE_FONT_0
+  .text "です？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "ポイズンという"
+  DIALOGUE_FONT_1
+  .text "魔道書"
+  DIALOGUE_FONT_0
+  .text "じゃ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あれがないと"
+  DIALOGUE_FONT_2
+  .text "遠"
+  DIALOGUE_FONT_0
+  .text "くの"
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "攻撃"
+  DIALOGUE_FONT_0
+  .text "できぬ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "わかりました"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "探"
+  DIALOGUE_FONT_0
+  .text "してまいりますのでお"
+  DIALOGUE_FONT_1
+  .text "待"
+  DIALOGUE_FONT_0
+  .text "ちください"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_UNLOAD
+  DIALOGUE_CLOSE
+  DIALOGUE_PAUSE $10
+  DIALOGUE_RIGHT
+  .text "この"
+  DIALOGUE_FONT_1
+  .text "前"
+  DIALOGUE_FONT_0
+  .text "より"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_0
+  .text "つかりやすい"
+  DIALOGUE_FONT_1
+  .text "場"
+  DIALOGUE_FONT_2
+  .text "所"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  .text "あればいいんだが･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

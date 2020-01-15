@@ -1,64 +1,64 @@
 dialogueChapter16ASchroffDialogue ; 98/A712
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD SchroffPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD NPCWoman1Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_1
-	.text "神父様"
-	DIALOGUE_FONT_0
-	.text "､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_3
-	.text "外"
-	DIALOGUE_FONT_0
-	.text "では"
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_FONT_1
-	.text "始"
-	DIALOGUE_FONT_0
-	.text "まるようです"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "今出"
-	DIALOGUE_FONT_0
-	.text "られては"
-	DIALOGUE_FONT_4
-	.text "危険"
-	DIALOGUE_FONT_0
-	.text "です"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "もう"
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_0
-	.text "しこの"
-	DIALOGUE_FONT_1
-	.text "家"
-	DIALOGUE_FONT_0
-	.text "でお"
-	DIALOGUE_FONT_1
-	.text "休"
-	DIALOGUE_FONT_0
-	.text "みください"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "はい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ではお"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_4
-	.text "葉"
-	DIALOGUE_FONT_0
-	.text "にあまえて･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD SchroffPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD NPCWoman1Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_1
+  .text "神父様"
+  DIALOGUE_FONT_0
+  .text "､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_3
+  .text "外"
+  DIALOGUE_FONT_0
+  .text "では"
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_FONT_1
+  .text "始"
+  DIALOGUE_FONT_0
+  .text "まるようです"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "今出"
+  DIALOGUE_FONT_0
+  .text "られては"
+  DIALOGUE_FONT_4
+  .text "危険"
+  DIALOGUE_FONT_0
+  .text "です"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "もう"
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_0
+  .text "しこの"
+  DIALOGUE_FONT_1
+  .text "家"
+  DIALOGUE_FONT_0
+  .text "でお"
+  DIALOGUE_FONT_1
+  .text "休"
+  DIALOGUE_FONT_0
+  .text "みください"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "はい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ではお"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_4
+  .text "葉"
+  DIALOGUE_FONT_0
+  .text "にあまえて･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
 DIALOGUE_END_SCENE

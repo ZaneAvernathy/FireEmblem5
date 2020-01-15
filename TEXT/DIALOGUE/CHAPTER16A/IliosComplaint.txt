@@ -1,49 +1,49 @@
 dialogueChapter16AIliosComplaint ; 98/A7CE
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD Ilios2Portrait
-	DIALOGUE_FONT_0
-	.text "ちっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "なんであんなバカの"
-	DIALOGUE_FONT_1
-	.text "前"
-	DIALOGUE_FONT_3
-	.text "衛"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "がつかねばならん"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_2
-	.text "平民"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "は､"
-	DIALOGUE_PAUSE $08
-	.text "しょせんは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "貴"
-	DIALOGUE_FONT_2
-	.text "族"
-	DIALOGUE_FONT_0
-	.text "どもの"
-	DIALOGUE_FONT_2
-	.text "盾"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "すぎないということか･･･"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD Ilios2Portrait
+  DIALOGUE_FONT_0
+  .text "ちっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "なんであんなバカの"
+  DIALOGUE_FONT_1
+  .text "前"
+  DIALOGUE_FONT_3
+  .text "衛"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "がつかねばならん"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_2
+  .text "平民"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "は､"
+  DIALOGUE_PAUSE $08
+  .text "しょせんは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "貴"
+  DIALOGUE_FONT_2
+  .text "族"
+  DIALOGUE_FONT_0
+  .text "どもの"
+  DIALOGUE_FONT_2
+  .text "盾"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "すぎないということか･･･"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

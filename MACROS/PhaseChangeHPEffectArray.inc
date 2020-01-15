@@ -1,5 +1,5 @@
 
 structPhaseChangeHPEffectArrayEntryRAM .struct
-	DeploymentNumber .byte ?
-	HPChange .char ?
-	.ends
+  DeploymentNumber .byte ?
+  HPChange         .char ?
+.ends

@@ -1,113 +1,113 @@
 dialogueChapter19UnusedIshtarArrive ; B0/B6E4
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD BossUnknown5Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD IshtarPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "ウォルフ､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "戦"
-	DIALOGUE_FONT_4
-	.text "況"
-	DIALOGUE_FONT_0
-	.text "はどうです？"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "これはイシュタル"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ただいまアルスターから"
-	DIALOGUE_FONT_2
-	.text "逃"
-	DIALOGUE_FONT_0
-	.text "げた"
-	DIALOGUE_FONT_1
-	.text "敵兵"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_NL
-	DIALOGUE_FONT_2
-	.text "追"
-	DIALOGUE_FONT_1
-	.text "撃"
-	DIALOGUE_FONT_0
-	.text "しております"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "そうですか･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_2
-	.text "作"
-	DIALOGUE_FONT_1
-	.text "戦会"
-	DIALOGUE_FONT_3
-	.text "議"
-	DIALOGUE_FONT_0
-	.text "のため"
-	DIALOGUE_NL
-	DIALOGUE_FONT_0
-	.text "ウォルフを"
-	DIALOGUE_FONT_4
-	.text "呼"
-	DIALOGUE_FONT_0
-	.text "びに"
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "たのだけれど"
-	DIALOGUE_NL
-	.text "まだ"
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_0
-	.text "し"
-	DIALOGUE_FONT_2
-	.text "時間"
-	DIALOGUE_FONT_0
-	.text "があるわ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "わたしも"
-	DIALOGUE_FONT_1
-	.text "手"
-	DIALOGUE_FONT_2
-	.text "伝"
-	DIALOGUE_FONT_0
-	.text "いましょう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "イシュタル"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "おんみずから？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "これはありがたい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "士気"
-	DIALOGUE_FONT_0
-	.text "も"
-	DIALOGUE_FONT_2
-	.text "高"
-	DIALOGUE_FONT_0
-	.text "まりましょう"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD BossUnknown5Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD IshtarPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "ウォルフ､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "戦"
+  DIALOGUE_FONT_4
+  .text "況"
+  DIALOGUE_FONT_0
+  .text "はどうです？"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "これはイシュタル"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ただいまアルスターから"
+  DIALOGUE_FONT_2
+  .text "逃"
+  DIALOGUE_FONT_0
+  .text "げた"
+  DIALOGUE_FONT_1
+  .text "敵兵"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_NL
+  DIALOGUE_FONT_2
+  .text "追"
+  DIALOGUE_FONT_1
+  .text "撃"
+  DIALOGUE_FONT_0
+  .text "しております"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "そうですか･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_2
+  .text "作"
+  DIALOGUE_FONT_1
+  .text "戦会"
+  DIALOGUE_FONT_3
+  .text "議"
+  DIALOGUE_FONT_0
+  .text "のため"
+  DIALOGUE_NL
+  DIALOGUE_FONT_0
+  .text "ウォルフを"
+  DIALOGUE_FONT_4
+  .text "呼"
+  DIALOGUE_FONT_0
+  .text "びに"
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "たのだけれど"
+  DIALOGUE_NL
+  .text "まだ"
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_0
+  .text "し"
+  DIALOGUE_FONT_2
+  .text "時間"
+  DIALOGUE_FONT_0
+  .text "があるわ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "わたしも"
+  DIALOGUE_FONT_1
+  .text "手"
+  DIALOGUE_FONT_2
+  .text "伝"
+  DIALOGUE_FONT_0
+  .text "いましょう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "イシュタル"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "おんみずから？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "これはありがたい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "士気"
+  DIALOGUE_FONT_0
+  .text "も"
+  DIALOGUE_FONT_2
+  .text "高"
+  DIALOGUE_FONT_0
+  .text "まりましょう"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

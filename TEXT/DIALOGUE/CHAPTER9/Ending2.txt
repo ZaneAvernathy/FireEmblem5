@@ -1,69 +1,69 @@
 dialogueChapter9Ending2 ; 93/E740
-	DIALOGUE_ASMC_0 rlDialogueSilenceMusic
-	DIALOGUE_PAUSE $10
-	DIALOGUE_UNK $13
-	.text "ぃ"
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD DoriasPortrait
-	DIALOGUE_FONT_0
-	.text "うーむ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "あの"
-	DIALOGUE_FONT_1
-	.text "男"
-	DIALOGUE_FONT_0
-	.text "のいった"
-	DIALOGUE_FONT_3
-	.text "通"
-	DIALOGUE_FONT_0
-	.text "りだ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "こちらへの"
-	DIALOGUE_FONT_1
-	.text "攻撃"
-	DIALOGUE_FONT_0
-	.text "をやめておる"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "しかし"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "いったいどうしたというのだ？"
-	DIALOGUE_NL
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "ん？　"
-	DIALOGUE_PAUSE $10
-	.text "なんだ？　"
-	DIALOGUE_PAUSE $10
-	.text "あの"
-	DIALOGUE_FONT_1
-	.text "女竜騎士"
-	DIALOGUE_FONT_0
-	.text "は･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $20
-	.text "トラキア"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "向"
-	DIALOGUE_FONT_0
-	.text "かって"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "何"
-	DIALOGUE_FONT_0
-	.text "か"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "おうとしているようだが･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
+  DIALOGUE_ASMC_0 rlDialogueSilenceMusic
+  DIALOGUE_PAUSE $10
+  DIALOGUE_UNK $13
+  .text "ぃ"
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD DoriasPortrait
+  DIALOGUE_FONT_0
+  .text "うーむ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "あの"
+  DIALOGUE_FONT_1
+  .text "男"
+  DIALOGUE_FONT_0
+  .text "のいった"
+  DIALOGUE_FONT_3
+  .text "通"
+  DIALOGUE_FONT_0
+  .text "りだ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "こちらへの"
+  DIALOGUE_FONT_1
+  .text "攻撃"
+  DIALOGUE_FONT_0
+  .text "をやめておる"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "しかし"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "いったいどうしたというのだ？"
+  DIALOGUE_NL
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "ん？　"
+  DIALOGUE_PAUSE $10
+  .text "なんだ？　"
+  DIALOGUE_PAUSE $10
+  .text "あの"
+  DIALOGUE_FONT_1
+  .text "女竜騎士"
+  DIALOGUE_FONT_0
+  .text "は･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $20
+  .text "トラキア"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "向"
+  DIALOGUE_FONT_0
+  .text "かって"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "何"
+  DIALOGUE_FONT_0
+  .text "か"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "おうとしているようだが･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
 DIALOGUE_END_SCENE

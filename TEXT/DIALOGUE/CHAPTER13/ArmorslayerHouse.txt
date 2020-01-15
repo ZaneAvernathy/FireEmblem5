@@ -1,37 +1,37 @@
 dialogueChapter13ArmorslayerHouse ; B9/CFA2
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan7Portrait
-	DIALOGUE_FONT_0
-	.text "よう､"
-	DIALOGUE_PAUSE $08
-	.text "ターラに"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "くんだってな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "帝国兵"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_2
-	.text "重装"
-	DIALOGUE_FONT_1
-	.text "備"
-	DIALOGUE_FONT_0
-	.text "したやつが"
-	DIALOGUE_FONT_1
-	.text "多"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "このアーマーキラーを"
-	DIALOGUE_FONT_1
-	.text "持"
-	DIALOGUE_FONT_0
-	.text "っていきな"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan7Portrait
+  DIALOGUE_FONT_0
+  .text "よう､"
+  DIALOGUE_PAUSE $08
+  .text "ターラに"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "くんだってな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "帝国兵"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_2
+  .text "重装"
+  DIALOGUE_FONT_1
+  .text "備"
+  DIALOGUE_FONT_0
+  .text "したやつが"
+  DIALOGUE_FONT_1
+  .text "多"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "このアーマーキラーを"
+  DIALOGUE_FONT_1
+  .text "持"
+  DIALOGUE_FONT_0
+  .text "っていきな"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

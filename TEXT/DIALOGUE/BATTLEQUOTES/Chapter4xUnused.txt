@@ -1,26 +1,26 @@
 dialogueChapter4xUnusedBattleQuote ; 98/85F9
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_2
-	.text "反乱"
-	DIALOGUE_FONT_3
-	.text "派"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "兵士"
-	DIALOGUE_FONT_0
-	.text "だな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "子"
-	DIALOGUE_FONT_0
-	.text "どもを"
-	DIALOGUE_FONT_2
-	.text "逃"
-	DIALOGUE_FONT_0
-	.text "がそうったって"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "そうはいかないぞ"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_2
+  .text "反乱"
+  DIALOGUE_FONT_3
+  .text "派"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "兵士"
+  DIALOGUE_FONT_0
+  .text "だな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "子"
+  DIALOGUE_FONT_0
+  .text "どもを"
+  DIALOGUE_FONT_2
+  .text "逃"
+  DIALOGUE_FONT_0
+  .text "がそうったって"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "そうはいかないぞ"
 DIALOGUE_END_SCENE

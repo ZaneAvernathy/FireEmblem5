@@ -1,18 +1,18 @@
 dialogueChapter2xTitle ; 9A/B82D
-	DIALOGUE_FONT_1
-	.text "⅛½⅛½"
-	DIALOGUE_FONT_2
-	.text "第"
-	DIALOGUE_FONT_0
-	.text "２"
-	DIALOGUE_FONT_2
-	.text "章"
-	DIALOGUE_FONT_3
-	.text "外"
-	DIALOGUE_FONT_2
-	.text "伝"
-	DIALOGUE_FONT_0
-	.text "　　"
-	DIALOGUE_FONT_1
-	.text "海賊島⅛½⅛½"
+  DIALOGUE_FONT_1
+  .text "⅛½⅛½"
+  DIALOGUE_FONT_2
+  .text "第"
+  DIALOGUE_FONT_0
+  .text "２"
+  DIALOGUE_FONT_2
+  .text "章"
+  DIALOGUE_FONT_3
+  .text "外"
+  DIALOGUE_FONT_2
+  .text "伝"
+  DIALOGUE_FONT_0
+  .text "　　"
+  DIALOGUE_FONT_1
+  .text "海賊島⅛½⅛½"
 DIALOGUE_EOF

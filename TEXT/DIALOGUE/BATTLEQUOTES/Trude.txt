@@ -1,14 +1,14 @@
 dialogueTrudeBattleQuote ; 92/BE45
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "これで"
-	DIALOGUE_FONT_2
-	.text "終"
-	DIALOGUE_FONT_0
-	.text "りだな､"
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "死"
-	DIALOGUE_FONT_0
-	.text "ね！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "これで"
+  DIALOGUE_FONT_2
+  .text "終"
+  DIALOGUE_FONT_0
+  .text "りだな､"
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "死"
+  DIALOGUE_FONT_0
+  .text "ね！"
 DIALOGUE_END_SCENE

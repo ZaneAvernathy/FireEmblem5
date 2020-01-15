@@ -1,14 +1,14 @@
 dialogueGalzusChapter24DeathQuote ; B0/F514
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "くっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "マリータ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "俺"
-	DIALOGUE_FONT_0
-	.text "は･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "くっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "マリータ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "俺"
+  DIALOGUE_FONT_0
+  .text "は･･･"
 DIALOGUE_END_SCENE

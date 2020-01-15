@@ -1,38 +1,38 @@
 dialogueChapter7RaydrikDialogue ; 93/A3A0
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD RaydrikPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なに"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ハンニバルが"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "てきただと？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "まずいな･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	.text "やむをえん"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ここはひけ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_2
-	.text "全"
-	DIALOGUE_FONT_1
-	.text "軍"
-	DIALOGUE_FONT_0
-	.text "マンスターに"
-	DIALOGUE_FONT_1
-	.text "退"
-	DIALOGUE_FONT_3
-	.text "却"
-	DIALOGUE_FONT_0
-	.text "せよ！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD RaydrikPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なに"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ハンニバルが"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "てきただと？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "まずいな･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  .text "やむをえん"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ここはひけ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_2
+  .text "全"
+  DIALOGUE_FONT_1
+  .text "軍"
+  DIALOGUE_FONT_0
+  .text "マンスターに"
+  DIALOGUE_FONT_1
+  .text "退"
+  DIALOGUE_FONT_3
+  .text "却"
+  DIALOGUE_FONT_0
+  .text "せよ！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

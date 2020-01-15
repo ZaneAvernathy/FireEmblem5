@@ -1,4 +1,4 @@
 
 menutextDvorakName ; 86/E23D
-	.enc "MenuText"
-	.text "ドボルザーク\n"
+  .enc "MenuText"
+  .text "ドボルザーク\n"

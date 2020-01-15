@@ -1,19 +1,19 @@
 dialogueChapter14House6 ; 92/D532
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD NPCMan11Portrait
-	DIALOGUE_FONT_0
-	.text "おやじもおふくろも"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "殺"
-	DIALOGUE_FONT_0
-	.text "されちまった･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "もうこんな"
-	DIALOGUE_FONT_2
-	.text "町"
-	DIALOGUE_FONT_0
-	.text "はたくさんだ！"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD NPCMan11Portrait
+  DIALOGUE_FONT_0
+  .text "おやじもおふくろも"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "殺"
+  DIALOGUE_FONT_0
+  .text "されちまった･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "もうこんな"
+  DIALOGUE_FONT_2
+  .text "町"
+  DIALOGUE_FONT_0
+  .text "はたくさんだ！"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

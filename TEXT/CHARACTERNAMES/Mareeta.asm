@@ -1,4 +1,4 @@
 
 menutextMareetaName ; 86/DE7D
-	.enc "MenuText"
-	.text "マリータ\n"
+  .enc "MenuText"
+  .text "マリータ\n"

@@ -1,4 +1,4 @@
 
 menutextSwordKnightDismountedName ; 89/85CA
-	.enc "MenuText"
-	.text "フリーナイト　　\n"
+  .enc "MenuText"
+  .text "フリーナイト　　\n"

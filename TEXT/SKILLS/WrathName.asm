@@ -1,4 +1,4 @@
 
 menutextWrathSkillName ; 81/CD67
-	.enc "MenuText"
-	.text "いかり\n"
+  .enc "MenuText"
+  .text "いかり\n"

@@ -1,16 +1,16 @@
 dialogueChapter10Title ; 9A/B95A
-	DIALOGUE_FONT_2
-	.text "第"
-	DIALOGUE_FONT_0
-	.text "１０"
-	DIALOGUE_FONT_2
-	.text "章"
-	DIALOGUE_FONT_1
-	.text "⅛"
-	DIALOGUE_FONT_0
-	.text "　　　　　ノエル"
-	DIALOGUE_FONT_5
-	.text "渓"
-	DIALOGUE_FONT_1
-	.text "谷"
+  DIALOGUE_FONT_2
+  .text "第"
+  DIALOGUE_FONT_0
+  .text "１０"
+  DIALOGUE_FONT_2
+  .text "章"
+  DIALOGUE_FONT_1
+  .text "⅛"
+  DIALOGUE_FONT_0
+  .text "　　　　　ノエル"
+  DIALOGUE_FONT_5
+  .text "渓"
+  DIALOGUE_FONT_1
+  .text "谷"
 DIALOGUE_EOF

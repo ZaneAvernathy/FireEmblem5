@@ -1,4 +1,4 @@
 
 menutextFredName ; 86/DE01
-	.enc "MenuText"
-	.text "フレッド\n"
+  .enc "MenuText"
+  .text "フレッド\n"

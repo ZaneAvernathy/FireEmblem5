@@ -1,15 +1,15 @@
 dialogueSeimtoreBattleQuote ; B0/CFC3
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "レンスターの"
-	DIALOGUE_FONT_1
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "め！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "覚悟"
-	DIALOGUE_FONT_0
-	.text "！"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "レンスターの"
+  DIALOGUE_FONT_1
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "め！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "覚悟"
+  DIALOGUE_FONT_0
+  .text "！"
 DIALOGUE_END_SCENE

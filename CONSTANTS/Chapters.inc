@@ -3,4 +3,4 @@
 
 ; See "ChapterEventPointers.asm"
 
-	ChapterWorldMap = ChapterUnknown+1
+  ChapterWorldMap = ChapterUnknown+1

@@ -1,12 +1,12 @@
 dialogueShanamReleaseQuote ; DA/E6FC
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "とりあえず"
-	DIALOGUE_FONT_2
-	.text "礼"
-	DIALOGUE_FONT_0
-	.text "はいっておく"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "フッ･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "とりあえず"
+  DIALOGUE_FONT_2
+  .text "礼"
+  DIALOGUE_FONT_0
+  .text "はいっておく"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "フッ･･･"
 DIALOGUE_END_SCENE

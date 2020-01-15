@@ -1,13 +1,13 @@
 dialogueFE4Demo17 ; 9C/FF5C
-	DIALOGUE_RIGHT
-	DIALOGUE_OPEN
-	DIALOGUE_LOAD DagdarPortrait
-	DIALOGUE_FONT_0
-	.text "くっ､"
-	DIALOGUE_FONT_1
-	.text "無"
-	DIALOGUE_FONT_3
-	.text "念"
-	DIALOGUE_FONT_0
-	.text "だ･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_OPEN
+  DIALOGUE_LOAD DagdarPortrait
+  DIALOGUE_FONT_0
+  .text "くっ､"
+  DIALOGUE_FONT_1
+  .text "無"
+  DIALOGUE_FONT_3
+  .text "念"
+  DIALOGUE_FONT_0
+  .text "だ･･･"
 DIALOGUE_EOF

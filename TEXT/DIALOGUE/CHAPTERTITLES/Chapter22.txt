@@ -1,20 +1,20 @@
 dialogueChapter22Title ; 9A/BAF7
-	DIALOGUE_FONT_2
-	.text "第"
-	DIALOGUE_FONT_0
-	.text "２２"
-	DIALOGUE_FONT_2
-	.text "章"
-	DIALOGUE_FONT_1
-	.text "⅛"
-	DIALOGUE_FONT_0
-	.text "　　　　　"
-	DIALOGUE_FONT_5
-	.text "渡"
-	DIALOGUE_FONT_4
-	.text "河"
-	DIALOGUE_FONT_2
-	.text "作"
-	DIALOGUE_FONT_1
-	.text "戦"
+  DIALOGUE_FONT_2
+  .text "第"
+  DIALOGUE_FONT_0
+  .text "２２"
+  DIALOGUE_FONT_2
+  .text "章"
+  DIALOGUE_FONT_1
+  .text "⅛"
+  DIALOGUE_FONT_0
+  .text "　　　　　"
+  DIALOGUE_FONT_5
+  .text "渡"
+  DIALOGUE_FONT_4
+  .text "河"
+  DIALOGUE_FONT_2
+  .text "作"
+  DIALOGUE_FONT_1
+  .text "戦"
 DIALOGUE_EOF

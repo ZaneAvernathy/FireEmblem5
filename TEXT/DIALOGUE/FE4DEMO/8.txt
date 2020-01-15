@@ -1,19 +1,19 @@
 dialogueFE4Demo8 ; 9C/FDFF
-	DIALOGUE_RIGHT
-	DIALOGUE_OPEN
-	DIALOGUE_LOAD ReinhardtPortrait
-	DIALOGUE_FONT_0
-	.text "あははっ､スカサハったら"
-	DIALOGUE_NL
-	DIALOGUE_FONT_3
-	.text "修"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "してよけいに"
-	DIALOGUE_NL
-	DIALOGUE_FONT_3
-	.text "腕"
-	DIALOGUE_FONT_0
-	.text "がなまったんじゃないの？"
+  DIALOGUE_RIGHT
+  DIALOGUE_OPEN
+  DIALOGUE_LOAD ReinhardtPortrait
+  DIALOGUE_FONT_0
+  .text "あははっ､スカサハったら"
+  DIALOGUE_NL
+  DIALOGUE_FONT_3
+  .text "修"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "してよけいに"
+  DIALOGUE_NL
+  DIALOGUE_FONT_3
+  .text "腕"
+  DIALOGUE_FONT_0
+  .text "がなまったんじゃないの？"
 DIALOGUE_EOF

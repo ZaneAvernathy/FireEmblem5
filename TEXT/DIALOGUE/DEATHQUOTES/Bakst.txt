@@ -1,11 +1,11 @@
 dialogueBakstDeathQuote ; 95/C1DD
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "うぐぐ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "てめえら"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "おぼえてろ･･･"
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "うぐぐ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "てめえら"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "おぼえてろ･･･"
 DIALOGUE_END_SCENE

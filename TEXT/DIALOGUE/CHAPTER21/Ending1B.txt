@@ -1,213 +1,213 @@
 dialogueChapter21Ending1B ; B0/CCE5
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD AugustPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD Leif2Portrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "アウグスト！"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ここはただの"
-	DIALOGUE_FONT_1
-	.text "砦"
-	DIALOGUE_FONT_0
-	.text "ではないな"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "守"
-	DIALOGUE_FONT_0
-	.text "りがきびしすぎる"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "どうやらここは"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "捕"
-	DIALOGUE_FONT_3
-	.text "虜"
-	DIALOGUE_FONT_5
-	.text "収"
-	DIALOGUE_FONT_4
-	.text "容"
-	DIALOGUE_FONT_2
-	.text "所"
-	DIALOGUE_FONT_0
-	.text "のようですな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "われらが"
-	DIALOGUE_FONT_2
-	.text "包囲"
-	DIALOGUE_FONT_0
-	.text "したことで"
-	DIALOGUE_NL
-	DIALOGUE_FONT_1
-	.text "敵"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "捕"
-	DIALOGUE_FONT_3
-	.text "虜"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_3
-	.text "処刑"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_1
-	.text "始"
-	DIALOGUE_FONT_0
-	.text "めたようです"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "なんだと！？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "では一"
-	DIALOGUE_FONT_4
-	.text "刻"
-	DIALOGUE_FONT_0
-	.text "のゆうよもならない"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "今"
-	DIALOGUE_FONT_0
-	.text "すぐ"
-	DIALOGUE_FONT_1
-	.text "捕"
-	DIALOGUE_FONT_3
-	.text "虜"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "救出"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_1
-	.text "向"
-	DIALOGUE_FONT_0
-	.text "かおう"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "リーフ"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "兵"
-	DIALOGUE_FONT_0
-	.text "はつかれております"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "それにロプトの"
-	DIALOGUE_FONT_1
-	.text "魔道軍"
-	DIALOGUE_FONT_0
-	.text "が"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "来"
-	DIALOGUE_FONT_0
-	.text "ているとの"
-	DIALOGUE_FONT_3
-	.text "情報"
-	DIALOGUE_FONT_0
-	.text "もあります"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "ここはいったんお"
-	DIALOGUE_FONT_3
-	.text "引"
-	DIALOGUE_FONT_0
-	.text "きください"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "いや､"
-	DIALOGUE_PAUSE $08
-	.text "だめだ､"
-	DIALOGUE_PAUSE $08
-	.text "アウグスト"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_SCROLL
-	DIALOGUE_FONT_3
-	.text "仲"
-	DIALOGUE_FONT_2
-	.text "間"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_1
-	.text "見"
-	DIALOGUE_FONT_3
-	.text "捨"
-	DIALOGUE_FONT_0
-	.text "てられない"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "捕"
-	DIALOGUE_FONT_0
-	.text "えられたものたちは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ぼくがひとりでも"
-	DIALOGUE_FONT_1
-	.text "救"
-	DIALOGUE_FONT_0
-	.text "い"
-	DIALOGUE_FONT_1
-	.text "出"
-	DIALOGUE_FONT_0
-	.text "す！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "ふっ･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "やむをえませんな"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	.text "では"
-	DIALOGUE_FONT_2
-	.text "少"
-	DIALOGUE_FONT_1
-	.text "数"
-	DIALOGUE_FONT_0
-	.text "の"
-	DIALOGUE_FONT_1
-	.text "者"
-	DIALOGUE_FONT_0
-	.text "をお"
-	DIALOGUE_FONT_2
-	.text "連"
-	DIALOGUE_FONT_0
-	.text "れください"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "他"
-	DIALOGUE_FONT_0
-	.text "のものは"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "休"
-	DIALOGUE_FONT_0
-	.text "ませることにいたしましょう"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD AugustPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD Leif2Portrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "アウグスト！"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ここはただの"
+  DIALOGUE_FONT_1
+  .text "砦"
+  DIALOGUE_FONT_0
+  .text "ではないな"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "守"
+  DIALOGUE_FONT_0
+  .text "りがきびしすぎる"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "どうやらここは"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "捕"
+  DIALOGUE_FONT_3
+  .text "虜"
+  DIALOGUE_FONT_5
+  .text "収"
+  DIALOGUE_FONT_4
+  .text "容"
+  DIALOGUE_FONT_2
+  .text "所"
+  DIALOGUE_FONT_0
+  .text "のようですな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "われらが"
+  DIALOGUE_FONT_2
+  .text "包囲"
+  DIALOGUE_FONT_0
+  .text "したことで"
+  DIALOGUE_NL
+  DIALOGUE_FONT_1
+  .text "敵"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "捕"
+  DIALOGUE_FONT_3
+  .text "虜"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_3
+  .text "処刑"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_1
+  .text "始"
+  DIALOGUE_FONT_0
+  .text "めたようです"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "なんだと！？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "では一"
+  DIALOGUE_FONT_4
+  .text "刻"
+  DIALOGUE_FONT_0
+  .text "のゆうよもならない"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "今"
+  DIALOGUE_FONT_0
+  .text "すぐ"
+  DIALOGUE_FONT_1
+  .text "捕"
+  DIALOGUE_FONT_3
+  .text "虜"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "救出"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_1
+  .text "向"
+  DIALOGUE_FONT_0
+  .text "かおう"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "リーフ"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "兵"
+  DIALOGUE_FONT_0
+  .text "はつかれております"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "それにロプトの"
+  DIALOGUE_FONT_1
+  .text "魔道軍"
+  DIALOGUE_FONT_0
+  .text "が"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "来"
+  DIALOGUE_FONT_0
+  .text "ているとの"
+  DIALOGUE_FONT_3
+  .text "情報"
+  DIALOGUE_FONT_0
+  .text "もあります"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "ここはいったんお"
+  DIALOGUE_FONT_3
+  .text "引"
+  DIALOGUE_FONT_0
+  .text "きください"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "いや､"
+  DIALOGUE_PAUSE $08
+  .text "だめだ､"
+  DIALOGUE_PAUSE $08
+  .text "アウグスト"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_SCROLL
+  DIALOGUE_FONT_3
+  .text "仲"
+  DIALOGUE_FONT_2
+  .text "間"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_1
+  .text "見"
+  DIALOGUE_FONT_3
+  .text "捨"
+  DIALOGUE_FONT_0
+  .text "てられない"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "捕"
+  DIALOGUE_FONT_0
+  .text "えられたものたちは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ぼくがひとりでも"
+  DIALOGUE_FONT_1
+  .text "救"
+  DIALOGUE_FONT_0
+  .text "い"
+  DIALOGUE_FONT_1
+  .text "出"
+  DIALOGUE_FONT_0
+  .text "す！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "ふっ･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "やむをえませんな"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  .text "では"
+  DIALOGUE_FONT_2
+  .text "少"
+  DIALOGUE_FONT_1
+  .text "数"
+  DIALOGUE_FONT_0
+  .text "の"
+  DIALOGUE_FONT_1
+  .text "者"
+  DIALOGUE_FONT_0
+  .text "をお"
+  DIALOGUE_FONT_2
+  .text "連"
+  DIALOGUE_FONT_0
+  .text "れください"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "他"
+  DIALOGUE_FONT_0
+  .text "のものは"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "休"
+  DIALOGUE_FONT_0
+  .text "ませることにいたしましょう"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE

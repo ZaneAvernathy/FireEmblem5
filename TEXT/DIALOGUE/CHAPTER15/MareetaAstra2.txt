@@ -1,171 +1,171 @@
 dialogueChapter15MareetaAstra2 ; DA/E43C
-	DIALOGUE_LEFT
-	DIALOGUE_LOAD MareetaPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD ShanamPortrait
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "えっ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "これって･･･"
-	DIALOGUE_PAUSE $10
-	.text "まさか･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "うそ･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "ううん､"
-	DIALOGUE_PAUSE $08
-	.text "そんなはずはないわ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "こんなに"
-	DIALOGUE_FONT_4
-	.text "簡単"
-	DIALOGUE_FONT_0
-	.text "にできるはずないもの"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "そうですよね､"
-	DIALOGUE_PAUSE $08
-	.text "シャナン"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "！"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "えっ？"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "･･･"
-	DIALOGUE_PAUSE $10
-	.text "あ､"
-	DIALOGUE_PAUSE $08
-	.text "ああ､"
-	DIALOGUE_PAUSE $08
-	.text "ももももちろんだとも"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "こ､"
-	DIALOGUE_PAUSE $08
-	.text "これでは"
-	DIALOGUE_FONT_3
-	.text "流"
-	DIALOGUE_FONT_1
-	.text "星剣"
-	DIALOGUE_FONT_0
-	.text "とは"
-	DIALOGUE_FONT_1
-	.text "言"
-	DIALOGUE_FONT_0
-	.text "えぬ･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "やっぱり･･･"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	.text "あやうくカンちがいするところだったわ"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "と､"
-	DIALOGUE_PAUSE $08
-	.text "とにかく"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "さわりだけ"
-	DIALOGUE_FONT_3
-	.text "教"
-	DIALOGUE_FONT_0
-	.text "えるという"
-	DIALOGUE_FONT_3
-	.text "約束"
-	DIALOGUE_FONT_0
-	.text "は"
-	DIALOGUE_FONT_3
-	.text "果"
-	DIALOGUE_FONT_0
-	.text "たしたぞ"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_4
-	.text "私"
-	DIALOGUE_FONT_0
-	.text "はもう"
-	DIALOGUE_FONT_1
-	.text "行"
-	DIALOGUE_FONT_0
-	.text "くから"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_CLEAR_ALL
-	DIALOGUE_LEFT
-	DIALOGUE_FONT_0
-	.text "はい"
-	DIALOGUE_NL
-	DIALOGUE_PAUSE $08
-	.text "ありがとうございました､"
-	DIALOGUE_PAUSE $08
-	.text "シャナン"
-	DIALOGUE_FONT_1
-	.text "様"
-	DIALOGUE_FONT_0
-	.text "！"
-	DIALOGUE_NL
-	DIALOGUE_RIGHT
-	DIALOGUE_UNLOAD
-	DIALOGUE_LEFT
-	DIALOGUE_PAUSE $10
-	DIALOGUE_FONT_1
-	.text "技"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "心"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_3
-	.text "乗"
-	DIALOGUE_FONT_0
-	.text "せる､"
-	DIALOGUE_PAUSE $08
-	DIALOGUE_FONT_1
-	.text "技"
-	DIALOGUE_FONT_0
-	.text "に"
-	DIALOGUE_FONT_2
-	.text "心"
-	DIALOGUE_FONT_0
-	.text "を"
-	DIALOGUE_FONT_3
-	.text "乗"
-	DIALOGUE_FONT_0
-	.text "せる･･･"
-	DIALOGUE_WAIT_PRESS
-	DIALOGUE_UNLOAD
-	DIALOGUE_CLOSE
-	DIALOGUE_RIGHT
-	DIALOGUE_LOAD ShanamPortrait
-	DIALOGUE_RIGHT
-	DIALOGUE_FONT_0
-	.text "なんなんだ､"
-	DIALOGUE_PAUSE $08
-	.text "あの"
-	DIALOGUE_FONT_3
-	.text "娘"
-	DIALOGUE_FONT_0
-	.text "は～"
-	DIALOGUE_WAIT_PRESS
+  DIALOGUE_LEFT
+  DIALOGUE_LOAD MareetaPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD ShanamPortrait
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "えっ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "これって･･･"
+  DIALOGUE_PAUSE $10
+  .text "まさか･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "うそ･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "ううん､"
+  DIALOGUE_PAUSE $08
+  .text "そんなはずはないわ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "こんなに"
+  DIALOGUE_FONT_4
+  .text "簡単"
+  DIALOGUE_FONT_0
+  .text "にできるはずないもの"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "そうですよね､"
+  DIALOGUE_PAUSE $08
+  .text "シャナン"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "！"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "えっ？"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "･･･"
+  DIALOGUE_PAUSE $10
+  .text "あ､"
+  DIALOGUE_PAUSE $08
+  .text "ああ､"
+  DIALOGUE_PAUSE $08
+  .text "ももももちろんだとも"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "こ､"
+  DIALOGUE_PAUSE $08
+  .text "これでは"
+  DIALOGUE_FONT_3
+  .text "流"
+  DIALOGUE_FONT_1
+  .text "星剣"
+  DIALOGUE_FONT_0
+  .text "とは"
+  DIALOGUE_FONT_1
+  .text "言"
+  DIALOGUE_FONT_0
+  .text "えぬ･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "やっぱり･･･"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  .text "あやうくカンちがいするところだったわ"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "と､"
+  DIALOGUE_PAUSE $08
+  .text "とにかく"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "さわりだけ"
+  DIALOGUE_FONT_3
+  .text "教"
+  DIALOGUE_FONT_0
+  .text "えるという"
+  DIALOGUE_FONT_3
+  .text "約束"
+  DIALOGUE_FONT_0
+  .text "は"
+  DIALOGUE_FONT_3
+  .text "果"
+  DIALOGUE_FONT_0
+  .text "たしたぞ"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_4
+  .text "私"
+  DIALOGUE_FONT_0
+  .text "はもう"
+  DIALOGUE_FONT_1
+  .text "行"
+  DIALOGUE_FONT_0
+  .text "くから"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_CLEAR_ALL
+  DIALOGUE_LEFT
+  DIALOGUE_FONT_0
+  .text "はい"
+  DIALOGUE_NL
+  DIALOGUE_PAUSE $08
+  .text "ありがとうございました､"
+  DIALOGUE_PAUSE $08
+  .text "シャナン"
+  DIALOGUE_FONT_1
+  .text "様"
+  DIALOGUE_FONT_0
+  .text "！"
+  DIALOGUE_NL
+  DIALOGUE_RIGHT
+  DIALOGUE_UNLOAD
+  DIALOGUE_LEFT
+  DIALOGUE_PAUSE $10
+  DIALOGUE_FONT_1
+  .text "技"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "心"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_3
+  .text "乗"
+  DIALOGUE_FONT_0
+  .text "せる､"
+  DIALOGUE_PAUSE $08
+  DIALOGUE_FONT_1
+  .text "技"
+  DIALOGUE_FONT_0
+  .text "に"
+  DIALOGUE_FONT_2
+  .text "心"
+  DIALOGUE_FONT_0
+  .text "を"
+  DIALOGUE_FONT_3
+  .text "乗"
+  DIALOGUE_FONT_0
+  .text "せる･･･"
+  DIALOGUE_WAIT_PRESS
+  DIALOGUE_UNLOAD
+  DIALOGUE_CLOSE
+  DIALOGUE_RIGHT
+  DIALOGUE_LOAD ShanamPortrait
+  DIALOGUE_RIGHT
+  DIALOGUE_FONT_0
+  .text "なんなんだ､"
+  DIALOGUE_PAUSE $08
+  .text "あの"
+  DIALOGUE_FONT_3
+  .text "娘"
+  DIALOGUE_FONT_0
+  .text "は～"
+  DIALOGUE_WAIT_PRESS
 DIALOGUE_END_SCENE
