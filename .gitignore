@@ -10,3 +10,11 @@ TOOLS/superfamiconv
 *.casm
 *.~lock*
 *.exe
+*-000.spc
+*-apuram.bin
+*-cgram.bin
+*-oam.bin
+*-sram.bin
+*-vram.bin
+*-wram.bin
+*.srm
