@@ -168,7 +168,7 @@ GUARD_FE5_RESET :?= false
 
         .databank 0
 
-    .send InitPPURegistersSection
+    .endsection InitPPURegistersSection
 
     .section ResetHandlerSection
 
@@ -542,7 +542,7 @@ GUARD_FE5_RESET :?= false
 
         .databank 0
 
-    .send ResetHandlerSection
+    .endsection ResetHandlerSection
 
     .section ResetAlreadyInitializedSection
 
@@ -571,7 +571,7 @@ GUARD_FE5_RESET :?= false
 
         .databank 0
 
-    .send ResetAlreadyInitializedSection
+    .endsection ResetAlreadyInitializedSection
 
     .section MainLoopSection
 
@@ -604,6 +604,6 @@ GUARD_FE5_RESET :?= false
 
         .databank 0
 
-    .send MainLoopSection
+    .endsection MainLoopSection
 
 .endif ; GUARD_FE5_RESET

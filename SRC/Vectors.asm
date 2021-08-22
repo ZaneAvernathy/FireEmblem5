@@ -42,6 +42,6 @@ GUARD_FE5_VECTORS :?= false
       aRESETVectorE .addr riResetE
       aIRQVectorE   .addr riBRK
 
-    .send VectorTableSection
+    .endsection VectorTableSection
 
 .endif ; GUARD_FE5_VECTORS

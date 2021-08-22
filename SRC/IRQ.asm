@@ -70,7 +70,7 @@ GUARD_FE5_IRQ :?= false
 
         .databank 0
 
-    .send IRQHandlerSection
+    .endsection IRQHandlerSection
 
     .section IRQDummyRoutineSection
 
@@ -93,6 +93,6 @@ GUARD_FE5_IRQ :?= false
 
         .databank 0
 
-    .send IRQDummyRoutineSection
+    .endsection IRQDummyRoutineSection
 
 .endif ; GUARD_FE5_IRQ

@@ -136,7 +136,7 @@ GUARD_FE5_SPRITES :?= false
 
             stx i+1
 
-          .next
+          .endfor
 
         _HideNoSprites ; 80/83FA
 
@@ -147,7 +147,7 @@ GUARD_FE5_SPRITES :?= false
 
         .databank 0
 
-    .send HideSpritesSection
+    .endsection HideSpritesSection
 
     .section ClearSpriteExtBufferSection
 
@@ -169,13 +169,13 @@ GUARD_FE5_SPRITES :?= false
 
           stz aSpriteExtBuffer+i,b
 
-        .next
+        .endfor
 
         rtl
 
         .databank 0
 
-    .send ClearSpriteExtBufferSection
+    .endsection ClearSpriteExtBufferSection
 
     .section OAMExtBitTableSection
 
@@ -197,11 +197,11 @@ GUARD_FE5_SPRITES :?= false
             .word (1 << (n))
             .word (1 << (n + 1))
 
-          .next
+          .endfor
 
-        .next
+        .endfor
 
-    .send OAMExtBitTableSection
+    .endsection OAMExtBitTableSection
 
     .section OAMExtPointerAndExtBitsTableSection
 
@@ -224,11 +224,11 @@ GUARD_FE5_SPRITES :?= false
             .word <>aSpriteExtBuffer+i
             .word (%11 << n)
 
-          .next
+          .endfor
 
-        .next
+        .endfor
 
-    .send OAMExtPointerAndExtBitsTableSection
+    .endsection OAMExtPointerAndExtBitsTableSection
 
     .section PushToOAMBufferSection
 
@@ -417,7 +417,7 @@ GUARD_FE5_SPRITES :?= false
 
         .databank 0
 
-    .send PushToOAMBufferSection
+    .endsection PushToOAMBufferSection
 
     .section SpliceOAMBufferSection
 
@@ -465,6 +465,6 @@ GUARD_FE5_SPRITES :?= false
 
         .databank 0
 
-    .send SpliceOAMBufferSection
+    .endsection SpliceOAMBufferSection
 
 .endif ; GUARD_FE5_SPRITES

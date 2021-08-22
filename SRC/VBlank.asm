@@ -80,7 +80,7 @@ GUARD_FE5_VBLANK :?= false
           lda i
           pha
 
-        .next
+        .endfor
 
         pea #<>(+)-1
 
@@ -95,7 +95,7 @@ GUARD_FE5_VBLANK :?= false
           pla
           sta i
 
-        .next
+        .endfor
 
         inc wVBlankEnabledFramecount
 
@@ -128,7 +128,7 @@ GUARD_FE5_VBLANK :?= false
 
         .databank 0
 
-    .send VBlankHandlerSection
+    .endsection VBlankHandlerSection
 
     .section EnableVBlankSection
 
@@ -159,7 +159,7 @@ GUARD_FE5_VBLANK :?= false
 
         .databank 0
 
-    .send EnableVBlankSection
+    .endsection EnableVBlankSection
 
     .section DisableVBlankSection
 
@@ -190,7 +190,7 @@ GUARD_FE5_VBLANK :?= false
 
         .databank 0
 
-    .send DisableVBlankSection
+    .endsection DisableVBlankSection
 
     .section HaltUntilVBlankSection
 
@@ -200,7 +200,7 @@ GUARD_FE5_VBLANK :?= false
         .databank ?
 
         ; Halts code execution until the
-        ; next VBlank has occurred.
+        ; endfor VBlank has occurred.
 
         ; Inputs:
         ; None
@@ -220,7 +220,7 @@ GUARD_FE5_VBLANK :?= false
 
         rtl
 
-    .send HaltUntilVBlankSection
+    .endsection HaltUntilVBlankSection
 
     .section EnableForcedBlankSection
 
@@ -230,7 +230,7 @@ GUARD_FE5_VBLANK :?= false
         .databank ?
 
         ; Enables forced blanking and
-        ; waits for next VBlank.
+        ; waits for endfor VBlank.
 
         ; Inputs:
         ; None
@@ -261,7 +261,7 @@ GUARD_FE5_VBLANK :?= false
 
         .databank 0
 
-    .send EnableForcedBlankSection
+    .endsection EnableForcedBlankSection
 
     .section DisableForcedBlankSection
 
@@ -271,7 +271,7 @@ GUARD_FE5_VBLANK :?= false
         .databank ?
 
         ; Disables forced blanking and
-        ; waits for next VBlank.
+        ; waits for endfor VBlank.
 
         ; Inputs:
         ; None
@@ -302,6 +302,6 @@ GUARD_FE5_VBLANK :?= false
 
         .databank 0
 
-    .send DisableForcedBlankSection
+    .endsection DisableForcedBlankSection
 
 .endif ; GUARD_FE5_VBLANK

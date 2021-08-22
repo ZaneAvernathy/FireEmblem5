@@ -127,6 +127,6 @@ GUARD_FE5_DMA :?= false
 
         .databank 0
 
-    .send UnknownDMASection
+    .endsection UnknownDMASection
 
 .endif ; GUARD_FE5_DMA

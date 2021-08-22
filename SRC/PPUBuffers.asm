@@ -96,7 +96,7 @@ GUARD_FE5_PPU_BUFFERS :?= false
 
         .databank 0
 
-    .send DMAPaletteAndOAMBufferSection
+    .endsection DMAPaletteAndOAMBufferSection
 
     .section CopyPPURegisterBufferSection
 
@@ -259,7 +259,7 @@ GUARD_FE5_PPU_BUFFERS :?= false
 
         .databank 0
 
-    .send CopyPPURegisterBufferSection
+    .endsection CopyPPURegisterBufferSection
 
     .section CopyINIDISPBufferSection
 
@@ -296,6 +296,6 @@ GUARD_FE5_PPU_BUFFERS :?= false
 
         .databank 0
 
-    .send CopyINIDISPBufferSection
+    .endsection CopyINIDISPBufferSection
 
 .endif ; GUARD_FE5_PPU_BUFFERS

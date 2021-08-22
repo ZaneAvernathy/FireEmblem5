@@ -92,7 +92,7 @@ GUARD_FE5_CODE83TEMP :?= false
         .word pack([7, 24])
         .word pack([7, 23])
 
-    .send
+    .endsection
 
     .section SetChapterTurncountSection
 
@@ -147,7 +147,7 @@ GUARD_FE5_CODE83TEMP :?= false
 
         .databank 0
 
-    .send SetChapterTurncountSection
+    .endsection SetChapterTurncountSection
 
     .section ClearUnitArraysSection
 
@@ -173,7 +173,7 @@ GUARD_FE5_CODE83TEMP :?= false
 
         .databank 0
 
-    .send ClearUnitArraysSection
+    .endsection ClearUnitArraysSection
 
     .section ClearLossesWinsTurncountsSection
 
@@ -199,6 +199,6 @@ GUARD_FE5_CODE83TEMP :?= false
 
         .databank 0
 
-    .send ClearLossesWinsTurncountsSection
+    .endsection ClearLossesWinsTurncountsSection
 
 .endif ; GUARD_FE5_CODE83TEMP

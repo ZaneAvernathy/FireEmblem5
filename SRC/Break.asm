@@ -22,6 +22,6 @@ GUARD_FE5_BREAK :?= false
 
         .databank 0
 
-    .send BreakpointHandlerSection
+    .endsection BreakpointHandlerSection
 
 .endif ; GUARD_FE5_BREAK

@@ -163,6 +163,6 @@ GUARD_FE5_JOYPAD :?= false
 
       .databank 0
 
-  .send GetJoypadInputSection
+  .endsection GetJoypadInputSection
 
 .endif ; GUARD_FE5_JOYPAD
