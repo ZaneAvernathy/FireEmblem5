@@ -215,40 +215,40 @@ GUARD_FE5_PPU_BUFFERS :?= false
 
         lda wBufferBG1HOFS
         sta BG1HOFS,b
-        lda wBufferBG1HOFS+1
+        lda wBufferBG1HOFS+size(byte)
         sta BG1HOFS,b
 
         lda wBufferBG1VOFS
         sec
         sbc #1
         sta BG1VOFS,b
-        lda wBufferBG1VOFS+1
+        lda wBufferBG1VOFS+size(byte)
         sbc #0
         sta BG1VOFS,b
 
         lda wBufferBG2HOFS
         sta BG2HOFS,b
-        lda wBufferBG2HOFS+1
+        lda wBufferBG2HOFS+size(byte)
         sta BG2HOFS,b
 
         lda wBufferBG2VOFS
         sec
         sbc #1
         sta BG2VOFS,b
-        lda wBufferBG2VOFS+1
+        lda wBufferBG2VOFS+size(byte)
         sbc #0
         sta BG2VOFS,b
 
         lda wBufferBG3HOFS
         sta BG3HOFS,b
-        lda wBufferBG3HOFS+1
+        lda wBufferBG3HOFS+size(byte)
         sta BG3HOFS,b
 
         lda wBufferBG3VOFS
         sec
         sbc #1
         sta BG3VOFS,b
-        lda wBufferBG3VOFS+1
+        lda wBufferBG3VOFS+size(byte)
         sbc #0
         sta BG3VOFS,b
 

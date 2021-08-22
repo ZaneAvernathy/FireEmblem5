@@ -59,12 +59,12 @@ GUARD_FE5_RESET :?= false
         stz WRMPYA,b
         stz WRMPYB,b
         stz WRDIVA,b
-        stz WRDIVA+1,b
+        stz WRDIVA+size(byte),b
         stz WRDIVB,b
         stz HTIME,b
-        stz HTIME+1,b
+        stz HTIME+size(byte),b
         stz VTIME,b
-        stz VTIME+1,b
+        stz VTIME+size(byte),b
         stz MDMAEN,b
         stz HDMAEN,b
         stz APU00,b
@@ -93,8 +93,8 @@ GUARD_FE5_RESET :?= false
         ; having priority.
 
         lda #OAMADD_Priority_Setting(true, 0) >> 8
-        sta OAMADD+1,b
-        sta wBufferOAMADD+1
+        sta OAMADD+size(byte),b
+        sta wBufferOAMADD+size(byte)
 
         stz OAMDATA,b
         stz OAMDATA,b
@@ -598,7 +598,7 @@ GUARD_FE5_RESET :?= false
 
         rep #$30
 
-        pea #<>rsMainLoop-1
+        pea #<>rsMainLoop-size(byte)
 
         jmp (wMainLoopPointer)
 

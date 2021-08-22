@@ -82,7 +82,7 @@ GUARD_FE5_VBLANK :?= false
 
         .endfor
 
-        pea #<>(+)-1
+        pea #<>(+)-size(byte)
 
         jmp (wVBlankPointer)
 

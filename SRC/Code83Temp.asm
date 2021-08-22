@@ -31,12 +31,12 @@ GUARD_FE5_CODE83TEMP :?= false
         lda #<>aUnknown83FC70
         sta lR18
         lda #>`aUnknown83FC70
-        sta lR18+1
+        sta lR18+size(byte)
 
         lda #<>rlUnknown83FC4B
         sta lR25
         lda #>`rlUnknown83FC4B
-        sta lR25+1
+        sta lR25+size(byte)
 
         lda #Player + 1
         jsl rlRunRoutineForAllUnitsInAllegiance

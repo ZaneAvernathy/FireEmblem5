@@ -55,7 +55,7 @@ GUARD_FE5_IRQ :?= false
         bit #TIMEUP_IRQ
         beq +
 
-          pea #<>(+)-1
+          pea #<>(+)-size(byte)
           jmp (wIRQPointer)
 
         +
