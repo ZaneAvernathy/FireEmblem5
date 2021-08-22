@@ -1,4 +1,0 @@
-; 90/8070
-DIALOGUE_FONT_0
-.text "エンディング"
-DIALOGUE_EOF

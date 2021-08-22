@@ -1,8 +1,0 @@
-dialogueShanam1DeathQuote ; DA/E6EC
-  DIALOGUE_RIGHT
-  DIALOGUE_FONT_0
-  .text "そ"
-  DIALOGUE_NL
-  DIALOGUE_PAUSE $08
-  .text "そんなばかな･･･"
-DIALOGUE_END_SCENE

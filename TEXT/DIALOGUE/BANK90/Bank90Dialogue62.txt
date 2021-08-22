@@ -1,8 +1,0 @@
-; 90/850A
-DIALOGUE_FONT_0
-.text "　　　　　アグストリアに"
-DIALOGUE_FONT_2
-.text "侵"
-DIALOGUE_FONT_1
-.text "攻"
-DIALOGUE_EOF

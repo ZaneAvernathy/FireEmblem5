@@ -1,8 +1,0 @@
-; 90/85D6
-DIALOGUE_FONT_0
-.text "　　　　　レンスターに"
-DIALOGUE_FONT_2
-.text "生"
-DIALOGUE_FONT_0
-.text "まれる"
-DIALOGUE_EOF

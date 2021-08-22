@@ -1,4 +1,0 @@
-; 90/8067
-DIALOGUE_FONT_0
-.text "ゲームオーバー"
-DIALOGUE_EOF

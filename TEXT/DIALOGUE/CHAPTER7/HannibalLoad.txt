@@ -1,4 +1,0 @@
-dialogueChapter7HannibalLoad ; 93/A6B4
-  DIALOGUE_LEFT
-  DIALOGUE_LOAD HannibalPortrait
-DIALOGUE_END_SCENE

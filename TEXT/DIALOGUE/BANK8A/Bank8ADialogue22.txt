@@ -1,6 +1,0 @@
-; 8A/B54F
-DIALOGUE_FONT_0
-.text "なんだ　ひやかしかい"
-DIALOGUE_NL
-.text "じゃまだ　あっちへいきな"
-DIALOGUE_EOF

@@ -1,7 +1,0 @@
-dialogueMartyDeathQuote ; 82/B9A9
-  DIALOGUE_FONT_0
-  .text "ちぇっ"
-  DIALOGUE_NL
-  DIALOGUE_PAUSE $10
-  .text "ついてねえな･･･"
-DIALOGUE_END_SCENE

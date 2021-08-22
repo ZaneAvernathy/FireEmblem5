@@ -1,6 +1,0 @@
-dialogueChapter7Ending6 ; 93/A6BA
-  DIALOGUE_LEFT
-  DIALOGUE_FONT_0
-  .text "おわびといってはなんだが"
-  DIALOGUE_NL
-DIALOGUE_END_SCENE

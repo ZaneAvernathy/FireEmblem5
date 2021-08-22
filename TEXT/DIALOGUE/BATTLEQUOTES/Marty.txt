@@ -1,9 +1,0 @@
-dialogueMartyBattleQuote ; 93/C422
-  DIALOGUE_RIGHT
-  DIALOGUE_FONT_0
-  .text "なんだか"
-  DIALOGUE_NL
-  .text "まずいことに"
-  DIALOGUE_NL
-  .text "なったなぁ･･･"
-DIALOGUE_END_SCENE

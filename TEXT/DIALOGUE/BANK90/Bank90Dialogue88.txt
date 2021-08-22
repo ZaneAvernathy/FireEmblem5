@@ -1,8 +1,0 @@
-; 90/874E
-DIALOGUE_FONT_0
-.text "　　　　　トラキア"
-DIALOGUE_FONT_1
-.text "解放戦争"
-DIALOGUE_FONT_0
-.text "のはじまり"
-DIALOGUE_EOF

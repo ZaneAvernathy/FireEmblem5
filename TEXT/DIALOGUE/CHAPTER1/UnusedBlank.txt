@@ -1,2 +1,0 @@
-dialogueChapter1UnusedBlank ; 95/B921
-DIALOGUE_END_SCENE

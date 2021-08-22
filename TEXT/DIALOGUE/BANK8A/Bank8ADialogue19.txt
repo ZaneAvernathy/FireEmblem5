@@ -1,8 +1,0 @@
-; 8A/B518
-DIALOGUE_FONT_0
-.text "ここは"
-DIALOGUE_FONT_1
-.text "閾技場"
-DIALOGUE_FONT_0
-.text "だ"
-DIALOGUE_EOF

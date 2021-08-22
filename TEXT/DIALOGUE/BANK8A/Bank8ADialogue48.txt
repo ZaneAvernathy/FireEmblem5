@@ -1,8 +1,0 @@
-; 8A/B741
-DIALOGUE_FONT_2
-.text "玉座"
-DIALOGUE_FONT_0
-.text "の"
-DIALOGUE_FONT_2
-.text "制圧"
-DIALOGUE_EOF

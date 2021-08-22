@@ -1,8 +1,0 @@
-dialogueTinaChapter12xDeathQuote ; 92/BEA8
-  DIALOGUE_RIGHT
-  DIALOGUE_FONT_0
-  .text "おねえちゃん･･･"
-  DIALOGUE_NL
-  DIALOGUE_PAUSE $20
-  .text "ごめんなさい･･･"
-DIALOGUE_END_SCENE

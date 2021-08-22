@@ -1,52 +1,24 @@
 
-# ROM Stuff
+include Tools.mak
+
+BUILD_SCRIPT := Build.asm
 
 ROM_SOURCE := FE5.sfc
 ROM_TARGET := FE5_Disassembly.sfc
 
-SYM_TARGET := $(patsubst %.sfc,%.cpu.sym,$(ROM_TARGET))
+SYM_TARGET := $(ROM_TARGET:.sfc=.cpu.sym)
 
-# Folders
+ASFLAGS := -f -i $(BUILD_SCRIPT) -o $(ROM_TARGET)
+ASFLAGS += --vice-labels -l $(SYM_TARGET)
+ASFLAGS += -Wall -Wno-portable -Wno-shadow
 
-GFX             := $(realpath .)/GFX
-TOOLS           := $(realpath .)/TOOLS
-TABLES          := $(realpath .)/TABLES
+DEPS := $(shell $(scan_includes) $(BUILD_SCRIPT))
 
-# Ensure that we're using the right version of python
-# credit to Stan
-
-ifeq ($(shell python -c 'import sys; print(int(sys.version_info[0] > 2))'),1)
-  PYTHON3 := python
-else
-  PYTHON3 := python3
-endif
-
-# Ensure the right file extensions on Windows
-ifeq ($(OS),Windows_NT)
-  EXE := .exe
-else
-  EXE :=
-endif
-
-# Tools
-
-SF              := $(TOOLS)/superfamiconv$(EXE)
-64tass          := $(TOOLS)/64tass$(EXE)
-scan_includes   := $(PYTHON3) $(TOOLS)/scan_includes.py
-compare         := $(PYTHON3) $(TOOLS)/compare.py
-c2a             := $(PYTHON3) $(TOOLS)/c2a.py
-update_checksum := $(PYTHON3) $(TOOLS)/update_checksum.py
-fix_sym         := $(PYTHON3) $(TOOLS)/fix_sym.py
-
-DEPS := $(shell $(scan_includes) Build.asm)
-
-ASFLAGS := -f -i Build.asm -o $(ROM_TARGET) --vice-labels -l $(SYM_TARGET)
-
-# Build Targets
+CLEAN_FILES := 
 
 all: $(ROM_TARGET) checksum compare symbols
 
-$(ROM_TARGET): $(DEPS) Build.asm Makefile
+$(ROM_TARGET) $(SYM_TARGET): $(DEPS) $(BUILD_SCRIPT) $(MAKEFILE_LIST)
 	@$(64tass) $(ASFLAGS)
 
 checksum: $(ROM_TARGET)
@@ -58,27 +30,17 @@ compare: $(ROM_TARGET)
 symbols: $(SYM_TARGET)
 	@$(fix_sym) $(SYM_TARGET)
 
-# Going to avoid cleaning most things until
-# they're able to be generated automatically
+# Clean targets
 
-.PHONY: clean veryclean
+ifeq ($(MAKECMDGOALS),clean)
+  CLEAN_FILES += $(ROM_TARGET)
+  CLEAN_FILES += $(SYM_TARGET)
+  CLEAN_FILES += $(wildcard *.png)
+  CLEAN_FILES += $(wildcard *.srm)
+  CLEAN_FILES += $(wildcard *.bst)
+endif
+
+.PHONY: clean
+
 clean:
-	$(RM) $(ROM_TARGET)
-	$(RM) *.sym
-	$(RM) *.png
-	$(RM) *.srm
-	$(RM) *.bst
-	$(RM) $(TABLES)/*.casm
-
-veryclean: clean
-	$(RM) $(ROM_SOURCE)
-
-# Table rules
-
-%.casm: %.csv
-	$(c2a) $< $@
-
-# Image rules
-
-%.4bpp: %.png
-	$(SF) -v -i $< -t $@ -B 4 -R
+	@$(RM) $(CLEAN_FILES)

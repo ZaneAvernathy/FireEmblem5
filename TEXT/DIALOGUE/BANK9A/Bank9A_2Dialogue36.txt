@@ -1,4 +1,0 @@
-; 9A/E12B
-DIALOGUE_FONT_0
-.text "𝑪"
-DIALOGUE_EOF

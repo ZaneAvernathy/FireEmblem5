@@ -1,6 +1,0 @@
-; 90/8011
-DIALOGUE_FONT_0
-.text "イスの"
-DIALOGUE_FONT_1
-.text "海岸"
-DIALOGUE_EOF

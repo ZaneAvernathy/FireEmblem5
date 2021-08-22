@@ -1,4 +1,0 @@
-dialogueChapterFinalNannaLoad ; E7/DA73
-  DIALOGUE_RIGHT
-  DIALOGUE_LOAD NannaPortrait
-DIALOGUE_END_SCENE

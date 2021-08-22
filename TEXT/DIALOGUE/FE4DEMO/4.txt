@@ -1,9 +1,0 @@
-dialogueFE4Demo4 ; 9C/FD6F
-  DIALOGUE_RIGHT
-  DIALOGUE_OPEN
-  DIALOGUE_LOAD SelphinaPortrait
-  DIALOGUE_FONT_4
-  .text "私"
-  DIALOGUE_FONT_0
-  .text "は､そんな･･･"
-DIALOGUE_EOF

@@ -1,8 +1,0 @@
-; 9A/E107
-DIALOGUE_FONT_4
-.text "総"
-DIALOGUE_FONT_1
-.text "合"
-DIALOGUE_FONT_0
-.text "ランク"
-DIALOGUE_EOF

@@ -1,9 +1,0 @@
-; 9A/CBD4
-DIALOGUE_FONT_0
-.text "サバンの"
-DIALOGUE_FONT_1
-.text "傭兵"
-DIALOGUE_FONT_0
-.text "　シヴァ"
-DIALOGUE_NL
-DIALOGUE_EOF

@@ -1,6 +1,0 @@
-; 9A/E027
-DIALOGUE_FONT_1
-.text "南"
-DIALOGUE_FONT_0
-.text "トラキアには､トラバントひきいる"
-DIALOGUE_EOF

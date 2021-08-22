@@ -1,8 +1,0 @@
-; 8A/B755
-DIALOGUE_FONT_0
-.text "（２０ターンまでに"
-DIALOGUE_FONT_2
-.text "制圧"
-DIALOGUE_FONT_0
-.text "）"
-DIALOGUE_EOF

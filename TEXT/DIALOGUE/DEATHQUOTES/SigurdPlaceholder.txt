@@ -1,4 +1,0 @@
-dialogueSigurdPlaceholderDeathQuote ; 82/B8AF
-  DIALOGUE_FONT_0
-  .text "シグルドしぼう"
-DIALOGUE_END_SCENE

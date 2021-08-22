@@ -1,3 +1,0 @@
-structTerrainEntry 0,MapEdge,Peak,Thicket,Cliff,Plains,Forest,Sea,River,Mountain,SandyLand,Castle,Fort,House1,Gate,Unknown1,Wasteland,Bridge,Lake,Village,Ruins,Unknown2,Unknown3,Supply,Church1,House2,Road,Armory,Vendor,Arena,Floor,Unknown4,Throne,Door,Chest1,Exit,Pillar,Drawbridge,SecretShop,Unknown5,SandySoil,MagicFloor1,MagicFloor2,Church2,Chest2
-GroundHitAvoid,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-FlyingHitAvoid,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

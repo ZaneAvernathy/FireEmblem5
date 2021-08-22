@@ -1,9 +1,0 @@
-; 9A/DA4C
-DIALOGUE_FONT_0
-.text "カリスマの"
-DIALOGUE_FONT_1
-.text "騎士"
-DIALOGUE_FONT_0
-.text "　デルムッド"
-DIALOGUE_NL
-DIALOGUE_EOF

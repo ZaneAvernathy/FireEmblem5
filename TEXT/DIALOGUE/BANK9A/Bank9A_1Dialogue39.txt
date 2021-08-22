@@ -1,4 +1,0 @@
-; 9A/BB9A
-DIALOGUE_FONT_0
-.text "ＥＸＰ"
-DIALOGUE_EOF

@@ -1,4 +1,0 @@
-; 9A/E121
-DIALOGUE_FONT_0
-.text "𝑨𝑨"
-DIALOGUE_EOF

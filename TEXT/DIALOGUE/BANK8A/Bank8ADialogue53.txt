@@ -1,8 +1,0 @@
-; 8A/B787
-DIALOGUE_FONT_0
-.text "１０ターンまで"
-DIALOGUE_FONT_2
-.text "防"
-DIALOGUE_FONT_3
-.text "衛"
-DIALOGUE_EOF

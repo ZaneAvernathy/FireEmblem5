@@ -1,6 +1,0 @@
-; 90/8000
-DIALOGUE_FONT_0
-.text "フィアナ"
-DIALOGUE_FONT_1
-.text "村"
-DIALOGUE_EOF

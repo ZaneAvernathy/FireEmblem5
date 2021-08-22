@@ -1,5 +1,0 @@
-dialogueChapterFinalUnusedDeathQuote ; E7/DFFF
-  DIALOGUE_RIGHT
-  DIALOGUE_FONT_0
-  .text "ググ･･･"
-DIALOGUE_END_SCENE

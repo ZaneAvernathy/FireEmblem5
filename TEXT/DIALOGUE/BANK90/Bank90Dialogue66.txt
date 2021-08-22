@@ -1,8 +1,0 @@
-; 90/8558
-DIALOGUE_FONT_0
-.text "　　　　　アグストリア"
-DIALOGUE_FONT_1
-.text "王国"
-DIALOGUE_FONT_2
-.text "滅亡"
-DIALOGUE_EOF

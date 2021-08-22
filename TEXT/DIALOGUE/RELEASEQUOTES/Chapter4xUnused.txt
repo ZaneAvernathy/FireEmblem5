@@ -1,8 +1,0 @@
-dialogueChapter4xUnusedReleaseQuote ; 98/8646
-  DIALOGUE_RIGHT
-  DIALOGUE_FONT_0
-  .text "た､"
-  DIALOGUE_PAUSE $08
-  .text "たすかった･･･"
-  DIALOGUE_NL
-DIALOGUE_END_SCENE

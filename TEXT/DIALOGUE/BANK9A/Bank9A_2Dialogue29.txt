@@ -1,4 +1,0 @@
-; 9A/E110
-DIALOGUE_FONT_0
-.text "𝑺𝑺𝑺"
-DIALOGUE_EOF
