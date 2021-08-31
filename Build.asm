@@ -1,6 +1,10 @@
 
 .cpu "65816"
 
+; Temporarily use vanilla definitions
+
+  USE_FE5_DEFINITIONS := true
+
 .include "../VoltEdge/VoltEdge.h"
 .include "DisassemblyHelpers.h"
 
@@ -20,6 +24,9 @@
   .include "SRC/DMA.asm"
   .include "SRC/Reset.asm"
   .include "SRC/IRQ.asm"
+  .include "SRC/Code83Temp.asm"
+
+  .include "EVENTS/Chapter1.event"
 
 ; Sections
 
@@ -65,7 +72,7 @@
 
     endCode
 
-  .here
+  .endlogical
 
   * := $007FE0
   .logical mapped($007FE0)
@@ -76,7 +83,48 @@
 
     endData $810000
 
-  .here
+  .endlogical
+
+  * := $01FB4D
+  .logical mapped($01FB4D)
+
+    startCode
+
+      .dsection ResetCapturedPlayerUnitsSection
+      .dsection FreeNonplayerDeploymentSlotsSection
+      .dsection SetNewGameOptionsSection
+      .dsection UnknownResetPlayerUnitVisibilitySection
+      .dsection SetChapterTurncountSection
+      .dsection ClearUnitArraysSection
+      .dsection ClearLossesWinsTurncountsSection
+
+    endCode
+
+  .endlogical
+
+  .fill ($020000 - *), $FF
+
+  * := $18FB37
+  .logical mapped($18FB37)
+
+    startData
+
+      .dsection Chapter1DataSection
+
+    endData
+
+  .endlogical
+
+  * := $3E8000
+  .logical mapped($3E8000)
+
+    startEvents
+
+      .dsection Chapter1EventsSection
+
+    endEvents
+
+  .endlogical
 
 ; Add up disassembly byte counts
 

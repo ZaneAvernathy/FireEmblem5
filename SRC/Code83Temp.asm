@@ -13,29 +13,224 @@ GUARD_FE5_CODE83TEMP :?= false
 
     .weak
 
-      rlCopyCharacterDataFromBuffer       :?= address($839041)
-      rlRunRoutineForAllUnitsInAllegiance :?= address($839825)
+      rlCopyCharacterDataFromBuffer              :?= address($839041)
+      rlRunRoutineForAllUnitsInAllegiance        :?= address($839825)
+      rlSetChapterVisionRange                    :?= address($849485)
+      rlSetChapterAllegiancesAndPhaseControllers :?= address($8494B3)
+      rlCopyDefaultOptions                       :?= address($8594CE)
+      rlSetCurrentMenuColor                      :?= address($859532)
+      rlClearConvoy                              :?= address($85C769)
+      rlSetDefaultSpeedOptions                   :?= address($8AC46F)
+      rlClearPermanentEventFlags                 :?= address($8C9C23)
+      rlClearTemporaryEventFlags                 :?= address($8C9C3A)
 
     .endweak
 
   ; Freespace inclusions
 
-    .section
+    .section ResetCapturedPlayerUnitsSection
 
-      rs
+      rlResetCapturedPlayerUnits ; 83/FB4D
 
         .al
         .autsiz
         .databank ?
 
-        lda #<>aUnknown83FC70
+        lda #<>rlResetCapturedPlayerUnitsEffect
+        sta lR25
+        lda #>`rlResetCapturedPlayerUnitsEffect
+        sta lR25+size(byte)
+
+        lda #Player + 1
+        jsl rlRunRoutineForAllUnitsInAllegiance
+
+        rtl
+
+        .databank 0
+
+      rlResetCapturedPlayerUnitsEffect ; 83/FB5F
+
+        .al
+        .autsiz
+        .databank ?
+
+        lda aTargetingCharacterBuffer.UnitState,b
+        ora #UnitStateHidden
+        sta aTargetingCharacterBuffer.UnitState,b
+
+        lda aTargetingCharacterBuffer.UnitState,b
+        bit #(UnitStateDead | UnitStateDisabled | UnitStateCaptured)
+        bne _End
+
+        and #~(UnitStateRescued | UnitStateRescuing)
+        and #~(UnitStateMoved | UnitStateUnknown3)
+        sta aTargetingCharacterBuffer.UnitState,b
+
+        lda #pack([1, 1])
+        sta aTargetingCharacterBuffer.Coordinates,b
+
+        sep #$20
+
+        lda #Leif
+        sta aTargetingCharacterBuffer.Leader,b
+
+        lda aTargetingCharacterBuffer.MaxHP,b
+        sta aTargetingCharacterBuffer.CurrentHP,b
+
+        stz aTargetingCharacterBuffer.Rescue,b
+        stz aTargetingCharacterBuffer.VisionBonus,b
+        stz aTargetingCharacterBuffer.MagicBonus,b
+
+        lda aTargetingCharacterBuffer.Status,b
+        cmp #StatusPetrify
+        beq +
+
+        stz aTargetingCharacterBuffer.Status,b
+
+        rep #$30
+
+        lda aTargetingCharacterBuffer.UnitState,b
+        and #~UnitStateGrayed
+        sta aTargetingCharacterBuffer.UnitState,b
+
+        +
+        rep #$30
+
+        _End
+        lda #<>aTargetingCharacterBuffer
+        sta wR1
+        jsl rlCopyCharacterDataFromBuffer
+        rtl
+
+        .databank 0
+
+    .endsection ResetCapturedPlayerUnitsSection
+
+    .section FreeNonplayerDeploymentSlotsSection
+
+      rlFreeNonplayerDeploymentSlots ; 83/FBB6
+
+        .al
+        .autsiz
+        .databank ?
+
+        ; Frees all Enemy and NPC deployment
+        ; slots by clearing the slots' character.
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
+
+        lda #<>rlFreeNonplayerDeploymentSlotsEffect
+        sta lR25
+        lda #>`rlFreeNonplayerDeploymentSlotsEffect
+        sta lR25+size(byte)
+
+        lda #Enemy + 1
+        jsl rlRunRoutineForAllUnitsInAllegiance
+
+        lda #NPC + 1
+        jsl rlRunRoutineForAllUnitsInAllegiance
+
+        rtl
+
+        .databank 0
+
+      rlFreeNonplayerDeploymentSlotsEffect ; 83/FBCF
+
+        .autsiz
+        .databank ?
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
+
+        stz aTargetingCharacterBuffer.Character,b
+
+        lda #<>aTargetingCharacterBuffer
+        sta wR1
+        jsl rlCopyCharacterDataFromBuffer
+        rtl
+
+        .databank 0
+
+    .endsection FreeNonplayerDeploymentSlotsSection
+
+    .section SetNewGameOptionsSection
+
+      rlSetNewGameOptions ; 83/FBDC
+
+        .autsiz
+        .databank ?
+
+        php
+        phb
+
+        sep #$20
+
+        lda #`aOptions
+        pha
+
+        rep #$20
+
+        plb
+
+        .databank `aOptions
+
+        stz aOptions.wWindow
+
+        jsl rlCopyDefaultOptions
+        jsl rlSetCurrentMenuColor
+
+        stz wIngameTime,b
+        stz wMenuCounter,b
+        stz wWinCounter,b
+        stz wCaptureCounter,b
+
+        lda #NPC
+        sta wCurrentPhase,b
+
+        stz wCurrentChapter,b
+        stz wCurrentTurn,b
+        stz wParagonModeEnable,b
+
+        jsl rlSetChapterAllegiancesAndPhaseControllers
+        jsl rlSetChapterVisionRange
+        jsl rlClearPermanentEventFlags
+        jsl rlClearTemporaryEventFlags
+        jsl rlClearConvoy
+        jsl rlClearUnitArrays
+        jsl rlClearLossesWinsTurncounts
+        jsl rlSetDefaultSpeedOptions
+
+        plb
+        plp
+        rtl
+
+        .databank 0
+
+    .endsection SetNewGameOptionsSection
+
+    .section UnknownResetPlayerUnitVisibilitySection
+
+      rsUnknownResetPlayerUnitVisibility ; 83/FC2F
+
+        .al
+        .autsiz
+        .databank ?
+
+        lda #<>aUnknownResetPlayerUnitVisibilityCoordinates
         sta lR18
-        lda #>`aUnknown83FC70
+        lda #>`aUnknownResetPlayerUnitVisibilityCoordinates
         sta lR18+size(byte)
 
-        lda #<>rlUnknown83FC4B
+        lda #<>rlUnknownResetPlayerUnitVisibilityEffect
         sta lR25
-        lda #>`rlUnknown83FC4B
+        lda #>`rlUnknownResetPlayerUnitVisibilityEffect
         sta lR25+size(byte)
 
         lda #Player + 1
@@ -45,7 +240,7 @@ GUARD_FE5_CODE83TEMP :?= false
 
         .databank 0
 
-      rlUnknown83FC4B ; 83/FC4B
+      rlUnknownResetPlayerUnitVisibilityEffect ; 83/FC4B
 
         .autsiz
         .databank ?
@@ -63,7 +258,7 @@ GUARD_FE5_CODE83TEMP :?= false
         rep #$20
 
         lda aTargetingCharacterBuffer.UnitState,b
-        and #~UnitStateRescuing
+        and #~UnitStateHidden
         sta aTargetingCharacterBuffer.UnitState,b
 
         lda #<>aTargetingCharacterBuffer
@@ -75,24 +270,24 @@ GUARD_FE5_CODE83TEMP :?= false
 
         .databank 0
 
-      aUnknown83FC70 ; 83/FC70
-        .word pack([6, 25])
-        .word pack([6, 26])
-        .word pack([6, 27])
-        .word pack([6, 24])
-        .word pack([6, 23])
-        .word pack([5, 25])
-        .word pack([5, 26])
-        .word pack([5, 27])
-        .word pack([5, 24])
-        .word pack([5, 23])
-        .word pack([7, 25])
-        .word pack([7, 26])
-        .word pack([7, 27])
-        .word pack([7, 24])
-        .word pack([7, 23])
+      aUnknownResetPlayerUnitVisibilityCoordinates ; 83/FC70
+        .word pack([25, 6])
+        .word pack([26, 6])
+        .word pack([27, 6])
+        .word pack([24, 6])
+        .word pack([23, 6])
+        .word pack([25, 5])
+        .word pack([26, 5])
+        .word pack([27, 5])
+        .word pack([24, 5])
+        .word pack([23, 5])
+        .word pack([25, 7])
+        .word pack([26, 7])
+        .word pack([27, 7])
+        .word pack([24, 7])
+        .word pack([23, 7])
 
-    .endsection
+    .endsection UnknownResetPlayerUnitVisibilitySection
 
     .section SetChapterTurncountSection
 
@@ -102,6 +297,18 @@ GUARD_FE5_CODE83TEMP :?= false
         .autsiz
         .databank ?
 
+        ; Adds an entry to aTurncountsTable
+        ; for the current chapter.
+
+        ; Warning: no bounds checking.
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
+
+        php
         phb
 
         sep #$20
@@ -155,7 +362,15 @@ GUARD_FE5_CODE83TEMP :?= false
 
         .xl
         .autsiz
-        .databank ?
+        .databank `aPlayerUnits
+
+        ; Clears every deployment slot.
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
 
         php
 
@@ -182,6 +397,15 @@ GUARD_FE5_CODE83TEMP :?= false
         .xl
         .autsiz
         .databank `aLossesTable
+
+        ; Clears the losses, wins, and turncounts
+        ; tables.
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
 
         php
 
