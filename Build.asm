@@ -27,6 +27,7 @@
   .include "SRC/Code83Temp.asm"
 
   .include "EVENTS/Chapter1.event"
+  .include "EVENTS/Chapter2.event"
 
 ; Sections
 
@@ -103,6 +104,28 @@
   .endlogical
 
   .fill ($020000 - *), $FF
+
+  * := $0C81B4
+  .logical mapped($0C81B4)
+
+    startEvents
+
+      .dsection Chapter2EventsSection
+
+    endEvents
+
+  .endlogical
+
+  * := $18F91C
+  .logical mapped($18F91C)
+
+    startData
+
+      .dsection Chapter2DataSection
+
+    endData
+
+  .endlogical
 
   * := $18FB37
   .logical mapped($18FB37)

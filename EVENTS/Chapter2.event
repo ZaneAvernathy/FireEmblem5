@@ -1,0 +1,536 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER2 :?= false
+.if (!GUARD_FE5_CHAPTER2)
+  GUARD_FE5_CHAPTER2 := true
+
+  .include "../../VoltEdge/VoltEdge.h"
+
+  ; Definitions
+
+    .weak
+
+      dialogueChapter2RonanHouse                    :?= address($95BC4E)
+      dialogueChapter2RonanHouseVillageAttacked     :?= address($95BD7F)
+      dialogueChapter2SpeedRingHouse                :?= address($95BDA3)
+      dialogueChapter2SpeedRingHouseVillageAttacked :?= address($95BF54)
+      dialogueChapter2VulneraryHouse                :?= address($95BBCB)
+      dialogueChapter2VulneraryHouseVillageAttacked :?= address($95BC29)
+      dialogueChapter2Title                         :?= address($9AB80F)
+      dialogueChapter2Opening1                      :?= address($95B922)
+      dialogueChapter2Opening2A                     :?= address($95BB35)
+      dialogueChapter2Opening2B                     :?= address($95C21F)
+      dialogueChapter2Opening2C                     :?= address($95C27F)
+      dialogueChapter2Ending1A                      :?= address($95C0AD)
+      dialogueChapter2Ending1B                      :?= address($95BF77)
+
+      eventMapDeathQuoteDummyEvent :?= address($99812F)
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter2EventsSection
+
+      eventChapter2Events ; 99/81B4
+
+        _OpeningEventDefinitions ; 99/81B4
+          EVENT FlagAlwaysZero, $9985CA
+            CMP_WORD wCurrentTurn, 0
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _TurnEventDefinitions ; 99/81C1
+          EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+            CHECK_IF_BOSS_DEAD Bakst
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlwaysZero, $9985A3
+            CMP_WORD wCurrentTurn, 3
+            CMP_WORD wCurrentPhase, Enemy
+            TEST_FLAG_UNSET FlagBossDeath
+          END_DEFINITION
+          EVENT FlagAlwaysZero, $9985B0
+            CMP_WORD wCurrentTurn, 6
+            CMP_WORD wCurrentPhase, Enemy
+            TEST_FLAG_UNSET FlagBossDeath
+          END_DEFINITION
+          EVENT FlagAlwaysZero, $9985BD
+            CMP_WORD wCurrentTurn, 8
+            CMP_WORD wCurrentPhase, Enemy
+            TEST_FLAG_UNSET FlagBossDeath
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _TalkEventDefinitions ; 99/820A
+        END_DEFINITION_ARRAY
+
+        _LocationEventDefinitions ; 99/820C
+          EVENT $22, $99850A
+            macroECCheckCoordinates [8, 10]
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT $25, _RonanHouseVisit
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [8, 10]
+            TEST_FLAG_UNSET $0A
+          END_DEFINITION
+          EVENT FlagAlwaysZero, $99835B
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [8, 10]
+            TEST_FLAG_SET $0A
+          END_DEFINITION
+          EVENT $23, $99853D
+            macroECCheckCoordinates [16, 13]
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT $26, $998364
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [16, 13]
+            TEST_FLAG_UNSET $0A
+          END_DEFINITION
+          EVENT FlagAlwaysZero, $9983C7
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [16, 13]
+            TEST_FLAG_SET $0A
+          END_DEFINITION
+          EVENT $24, $998570
+            macroECCheckCoordinates [10, 20]
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT $27, $9983D0
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [10, 20]
+            TEST_FLAG_UNSET $0A
+          END_DEFINITION
+          EVENT FlagAlwaysZero, $998433
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [10, 20]
+            TEST_FLAG_SET $0A
+          END_DEFINITION
+          EVENT $21, $9984AC
+            macroECCheckCoordinates [17, 19]
+            CMP_WORD wCurrentPhase, Player
+          END_DEFINITION
+          EVENT FlagAlwaysZero, $99870A
+            macroECCheckCoordinates [9, 3]
+            CMP_WORD wCurrentPhase, Player
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _BeforeActionEventDefinitions ; 99/8301
+        END_DEFINITION_ARRAY
+
+        _AfterActionEventDefinitions ; 99/8303
+        END_DEFINITION_ARRAY
+
+        _BattleEventDefinitions ; 99/8305
+          macroECBossQuote $05, Bakst
+        END_DEFINITION_ARRAY
+
+        _ShopEventDefinitions ; 99/830F
+          macroECShop eventChapter2Data._Vendor
+        END_DEFINITION_ARRAY
+
+        _RonanHouseVisit ; 99/8324
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $4A
+          YIELD
+
+          DIALOGUE dialogueChapter2RonanHouse
+          YIELD
+
+          macroASMCLoadUnitGroup eventChapter2Data._RonanGroup
+
+          macroASMCSingleTileChangeByCoords [8, 10], $03F0
+        END2
+
+        _RonanHouseVisitVillageAttacked ; 99/835B
+          macroDialogue dialogueChapter2RonanHouseVillageAttacked
+        END2
+
+        _SpeedRingHouseVisit ; 99/8364
+          macroItemHouse dialogueChapter2SpeedRingHouse, SpeedRing, [16, 13], $03F0
+        END2
+
+        _SpeedRingHouseVisitVillageAttacked ; 99/83C7
+          macroDialogue dialogueChapter2SpeedRingHouseVillageAttacked
+        END2
+
+        _VulneraryHouseVisit ; 99/83D0
+          macroItemHouse dialogueChapter2VulneraryHouse, Vulnerary, [10, 20], $03F0
+        END2
+
+        _VulneraryHouseVisitVillageAttacked ; 99/8433
+          macroDialogue dialogueChapter2VulneraryHouseVillageAttacked
+        END2
+
+        _UnusedHouseVisit ; 99/843C
+          PLAY_SOUND_WORD $00F7
+          EVENT_TEST_FLAG_SET $0A
+          JUMP_TRUE +
+
+            DIALOGUE dialogueChapter2VulneraryHouse
+            YIELD
+
+            macroASMCActiveUnitSetUnitState UnitStateHidden
+
+            macroGiveActiveUnitItem Vulnerary
+
+            macroASMCActiveUnitUnsetUnitState UnitStateHidden
+
+            macroASMCSingleTileChangeByCoords [10, 20], $03F0
+
+            JUMP ++
+
+          +
+            DIALOGUE dialogueChapter2VulneraryHouse
+            YIELD
+
+          +
+        END2
+
+        _OpeningHouseDestroy ; 99/84AC
+          macroDestroyHouseByTileChangeID 0
+        END1
+
+        _UnusedHouseDestroy ; 99/84DB
+          macroDestroyHouseByTileChangeID 0
+        END1
+
+        _RonanHouseDestroy ; 99/850A
+          macroDestroyHouseByTileChangeID 1
+
+          SET_FLAG $0A
+          SET_FLAG FlagAlliedDeath
+        END1
+
+        _SpeedRingHouseDestroy ; 99/853D
+          macroDestroyHouseByTileChangeID 2
+
+          SET_FLAG $0A
+          SET_FLAG FlagAlliedDeath
+        END1
+
+        _VulneraryHouseDestroy
+          macroDestroyHouseByTileChangeID 3
+
+          SET_FLAG $0A
+          SET_FLAG FlagAlliedDeath
+        END1
+
+        _BottomPirateReinforcements ; 99/85A3
+          SCROLL_CAMERA_ADDRESS eventChapter2Data._BottomPirateReinforcementsCameraCoordinates
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter2Data._BottomPirateReinforcementsGroup
+          WAIT_MOVE
+
+          YIELD
+          YIELD_UNK
+        END2
+
+        _MiddlePirateReinforcements ; 99/85B0
+          SCROLL_CAMERA_ADDRESS eventChapter2Data._MiddlePirateReinforcementsCameraCoordinates
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter2Data._MiddlePirateReinforcementsGroup
+          WAIT_MOVE
+          YIELD
+          YIELD_UNK
+        END2
+
+        _TopPirateReinforcements ; 99/85BD
+          SCROLL_CAMERA_ADDRESS eventChapter2Data._TopPirateReinforcementsCameraCoordinates
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter2Data._TopPirateReinforcementsGroup
+          WAIT_MOVE
+          YIELD
+          YIELD_UNK
+        END2
+
+        _OpeningEvent ; 99/85CA
+          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+
+          macroLoadPlayerUnitsByStartingPositions
+
+          SET_CAMERA_POSITION [2, 2]
+
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $3A
+          YIELD
+
+          macroChapterTitlePopup dialogueChapter2Title
+
+          SCROLL_CAMERA_ADDRESS eventChapter2Data._BishopCameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter2Data._BishopGroup
+          WAIT_MOVE
+          YIELD
+
+          WAIT_MOVE
+          YIELD
+
+          SCROLL_CAMERA_ADDRESS eventChapter2Data._BakstCameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter2Data._BakstGroup
+          WAIT_MOVE
+          YIELD
+
+          WAIT_MOVE
+          YIELD
+
+          DIALOGUE dialogueChapter2Opening1
+          YIELD
+
+          macroASMCRemoveUnit FriegeBishop2
+
+          WAIT_MOVE
+          YIELD
+
+          MOVE_CHAR Bakst, [9, 3], 0, None
+          WAIT_MOVE
+          YIELD
+
+          SCROLL_CAMERA_ADDRESS eventChapter2Data._HunterCameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter2Data._HunterGroup
+          WAIT_MOVE
+          YIELD
+
+          SCROLL_CAMERA_ADDRESS eventChapter2Data._PirateGroup3CameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter2Data._PirateGroup3
+          WAIT_MOVE
+          YIELD
+
+          SCROLL_CAMERA_ADDRESS eventChapter2Data._PirateGroup2CameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter2Data._PirateGroup2
+          WAIT_MOVE
+          YIELD
+
+          SCROLL_CAMERA_ADDRESS eventChapter2Data._PirateGroup1CameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter2Data._PirateGroup1
+          WAIT_MOVE
+          YIELD
+
+          macroDestroyHouseByTileChangeID 0
+
+          SET_FLAG $21
+
+          WAIT_MOVE
+          YIELD
+
+          SCROLL_CAMERA_ADDRESS eventChapter2Data._HunterPirateCameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter2Data._HunterPirateGroup
+          WAIT_MOVE
+          YIELD
+
+          WAIT_MOVE
+          YIELD
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $31
+          YIELD
+
+          SCROLL_CAMERA_COORDS [7, 20], 3
+          YIELD
+
+          macroASMCCountAllUnitsUncapturedAlive Eyvel
+          JUMP_FALSE +
+
+            DIALOGUE dialogueChapter2Opening2A
+            YIELD
+
+            JUMP _OpeningEvent_End
+
+          +
+          macroASMCCountAllUnitsUncapturedAlive Finn
+          JUMP_FALSE +
+
+            DIALOGUE dialogueChapter2Opening2B
+            YIELD
+
+            JUMP _OpeningEvent_End
+
+          +
+          DIALOGUE dialogueChapter2Opening2C
+          YIELD
+
+          _OpeningEvent_End
+        END2
+
+        _EndingEvent ; 99/870A
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 16
+          YIELD
+
+          CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $41
+          YIELD
+
+          CALL_ASM_LOOP rlASMCSaveChapterTurncount
+
+          EVENT_TEST_FLAG_SET $0A
+          JUMP_FALSE +
+
+            macroDialogueWithBG dialogueChapter2Ending1A, 3
+
+            ADD_WORD wCurrentChapter, Chapter3 - Chapter2 - 1
+            YIELD_UNK
+
+            JUMP ++
+
+          +
+            macroDialogueWithBG dialogueChapter2Ending1B, 3
+
+          +
+          FADE_OUT 1
+          YIELD
+
+          CALL_ASM_LOOP rlASMCChapterEnd
+        END1
+
+    .endsection Chapter2EventsSection
+
+    .section Chapter2DataSection
+
+      eventChapter2Data ; B1/F91C
+
+        _BakstCameraCoordinates ; B1/F91C
+          .byte [8, 7]
+
+        _BakstGroup ; B1/F91E
+          UNIT Bakst, Enemy, [9, 3], [9, 4], Bakst, [IronAxe, IronBow, Vulnerary], 4, True, [$01, $03, $00, $80]
+        UNIT
+
+        _HunterCameraCoordinates ; B1/F934
+          .byte [10, 7]
+
+        _HunterGroup ; B1/F936
+          UNIT LithisCrewHunter, Enemy, [9, 3], [10, 4], Bakst, [IronBow, Vulnerary], 3, False, [$02, $08, $00, $00]
+          UNIT LithisCrewHunter, Enemy, [9, 3], [11, 4], Bakst, [IronBow], 3, False, [$02, $08, $00, $00]
+        UNIT
+
+        _TopPirateReinforcementsCameraCoordinates ; B1/F960
+          .byte [14, 7]
+
+        _TopPirateReinforcementsGroup ; B1/F962
+          UNIT LithisCrewPirate, Enemy, [22, 7], [21, 7], Bakst, [HandAxe], 2, False, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 6], [21, 6], Bakst, [IronAxe], 2, False, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 8], [21, 8], Bakst, [SteelAxe, Vulnerary], 10, False, [$02, $09, $00, $01]
+        UNIT
+
+        _MiddlePirateReinforcementsCameraCoordinates ; B1/F9A0
+          .byte [14, 14]
+
+        _MiddlePirateReinforcementsGroup ; B1/F9A2
+          UNIT LithisCrewPirate, Enemy, [22, 16], [21, 16], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 15], [21, 15], Bakst, [IronAxe, Vulnerary], 1, False, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 14], [21, 14], Bakst, [HandAxe], 3, False, [$00, $00, $00, $00]
+        UNIT
+
+        _BottomPirateReinforcementsCameraCoordinates ; B1/F9E0
+          .byte [14, 25]
+
+        _BottomPirateReinforcementsGroup ; B1/F9E2
+          UNIT LithisCrewPirate, Enemy, [22, 28], [21, 28], Bakst, [IronAxe], 1, False, [$02, $09, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 29], [21, 29], Bakst, [IronAxe], 3, False, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 30], [21, 30], Bakst, [HandAxe, Vulnerary], 1, False, [$02, $09, $00, $00]
+        UNIT
+
+        _HunterPirateCameraCoordinates ; B1/FA20
+          .byte [16, 24]
+
+        _HunterPirateGroup ; B1/FA22
+          UNIT LithisCrewHunter, Enemy, [15, 16], [18, 22], Bakst, [IronBow], 1, False, [$00, $01, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [14, 16], [17, 22], Bakst, [IronAxe], 2, False, [$00, $03, $00, $00]
+        UNIT
+
+        _PirateGroup1CameraCoordinates ; B1/FA4C
+          .byte [16, 23]
+
+        _PirateGroup1 ; B1/FA4E
+          UNIT LithisCrewPirate, Enemy, [13, 15], [17, 20], Bakst, [HandAxe, Vulnerary], 3, False, [$00, $03, $00, $00]
+        UNIT
+
+        _PirateGroup2CameraCoordinates ; B1/FA64
+          .byte [11, 18]
+
+        _PirateGroup2 ; B1/FA66
+          UNIT LithisCrewPirate, Enemy, [15, 26], [13, 22], Bakst, [IronAxe], 1, False, [$00, $03, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [14, 25], [12, 21], Bakst, [IronAxe, Vulnerary], 2, False, [$00, $03, $00, $00]
+        UNIT
+
+        _PirateGroup3CameraCoordinates ; B1/FA90
+          .byte [14, 7]
+
+        _PirateGroup3 ; B1/FA92
+          UNIT LithisCrewPirate, Enemy, [19, 5], [19, 5], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [18, 3], [18, 3], Bakst, [IronAxe, Vulnerary], 3, False, [$02, $09, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [18, 4], [18, 4], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [19, 4], [19, 4], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCameraCoordinates1 ; B1/FAE4
+          .byte [8, 7]
+
+        _RonanGroup ; B1/FAE6
+          UNIT Ronan, Player, [9, 10], [9, 10], Leif, [IronBow], 1, False, [$00, $00, $00, $00]
+        UNIT
+
+        _BishopCameraCoordinates ; B1/FAFC
+          .byte [8, 7]
+
+        _BishopGroup ; B1/FAFE
+          UNIT FriegeBishop2, Enemy, [9, 3], [9, 3], Bakst, [], 1, False, [$00, $00, $00, $00]
+        UNIT
+
+        _StartingPositions ; B1/FB14
+          .byte [7, 25]
+          .byte [7, 24]
+          .byte [8, 25]
+          .byte [6, 24]
+          .byte [6, 26]
+          .byte [8, 26]
+          .byte [8, 24]
+          .byte [6, 25]
+        .char -1
+
+        _Vendor ; B1/FB25
+          SHOP [3, 6], [Vulnerary]
+
+    .endsection Chapter2DataSection
+
+.endif ; GUARD_FE5_CHAPTER2
