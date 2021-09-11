@@ -48,17 +48,17 @@ GUARD_FE5_CHAPTER2 :?= false
             CHECK_IF_BOSS_DEAD Bakst
             CMP_WORD wCurrentPhase, Enemy
           END_DEFINITION
-          EVENT FlagAlwaysZero, $9985A3
+          EVENT FlagAlwaysZero, _BottomPirateReinforcements
             CMP_WORD wCurrentTurn, 3
             CMP_WORD wCurrentPhase, Enemy
             TEST_FLAG_UNSET FlagBossDeath
           END_DEFINITION
-          EVENT FlagAlwaysZero, $9985B0
+          EVENT FlagAlwaysZero, _MiddlePirateReinforcements
             CMP_WORD wCurrentTurn, 6
             CMP_WORD wCurrentPhase, Enemy
             TEST_FLAG_UNSET FlagBossDeath
           END_DEFINITION
-          EVENT FlagAlwaysZero, $9985BD
+          EVENT FlagAlwaysZero, _TopPirateReinforcements
             CMP_WORD wCurrentTurn, 8
             CMP_WORD wCurrentPhase, Enemy
             TEST_FLAG_UNSET FlagBossDeath
@@ -69,7 +69,7 @@ GUARD_FE5_CHAPTER2 :?= false
         END_DEFINITION_ARRAY
 
         _LocationEventDefinitions ; 99/820C
-          EVENT $22, $99850A
+          EVENT $22, _RonanHouseDestroy
             macroECCheckCoordinates [8, 10]
             CMP_WORD wCurrentPhase, Enemy
           END_DEFINITION
@@ -78,44 +78,44 @@ GUARD_FE5_CHAPTER2 :?= false
             macroECCheckCoordinates [8, 10]
             TEST_FLAG_UNSET $0A
           END_DEFINITION
-          EVENT FlagAlwaysZero, $99835B
+          EVENT FlagAlwaysZero, _RonanHouseVisitVillageAttacked
             CMP_WORD wCurrentPhase, Player
             macroECCheckCoordinates [8, 10]
             TEST_FLAG_SET $0A
           END_DEFINITION
-          EVENT $23, $99853D
+          EVENT $23, _SpeedRingHouseDestroy
             macroECCheckCoordinates [16, 13]
             CMP_WORD wCurrentPhase, Enemy
           END_DEFINITION
-          EVENT $26, $998364
+          EVENT $26, _SpeedRingHouseVisit
             CMP_WORD wCurrentPhase, Player
             macroECCheckCoordinates [16, 13]
             TEST_FLAG_UNSET $0A
           END_DEFINITION
-          EVENT FlagAlwaysZero, $9983C7
+          EVENT FlagAlwaysZero, _SpeedRingHouseVisitVillageAttacked
             CMP_WORD wCurrentPhase, Player
             macroECCheckCoordinates [16, 13]
             TEST_FLAG_SET $0A
           END_DEFINITION
-          EVENT $24, $998570
+          EVENT $24, _VulneraryHouseDestroy
             macroECCheckCoordinates [10, 20]
             CMP_WORD wCurrentPhase, Enemy
           END_DEFINITION
-          EVENT $27, $9983D0
+          EVENT $27, _VulneraryHouseVisit
             CMP_WORD wCurrentPhase, Player
             macroECCheckCoordinates [10, 20]
             TEST_FLAG_UNSET $0A
           END_DEFINITION
-          EVENT FlagAlwaysZero, $998433
+          EVENT FlagAlwaysZero, _VulneraryHouseVisitVillageAttacked
             CMP_WORD wCurrentPhase, Player
             macroECCheckCoordinates [10, 20]
             TEST_FLAG_SET $0A
           END_DEFINITION
-          EVENT $21, $9984AC
+          EVENT $21, _OpeningHouseDestroy
             macroECCheckCoordinates [17, 19]
             CMP_WORD wCurrentPhase, Player
           END_DEFINITION
-          EVENT FlagAlwaysZero, $99870A
+          EVENT FlagAlwaysZero, _EndingEvent
             macroECCheckCoordinates [9, 3]
             CMP_WORD wCurrentPhase, Player
           END_DEFINITION
