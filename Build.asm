@@ -24,6 +24,7 @@
   .include "SRC/DMA.asm"
   .include "SRC/Reset.asm"
   .include "SRC/IRQ.asm"
+  .include "SRC/ActionStruct.asm"
   .include "SRC/Code83Temp.asm"
 
   .include "EVENTS/Chapter1.event"
@@ -86,6 +87,17 @@
 
   .endlogical
 
+  * := $01CE64
+  .logical mapped($01CE64)
+
+    startCode
+
+      .dsection ActionStructSingleSection
+
+    endCode
+
+  .endlogical
+
   * := $01FB4D
   .logical mapped($01FB4D)
 
@@ -101,9 +113,9 @@
 
     endCode
 
-  .endlogical
+    .fill mapped($018000) + $8000 - *, $FF
 
-  .fill ($020000 - *), $FF
+  .endlogical
 
   * := $0C81B4
   .logical mapped($0C81B4)
