@@ -38,7 +38,7 @@ GUARD_FE5_CHAPTER2 :?= false
       eventChapter2Events ; 99/81B4
 
         _OpeningEventDefinitions ; 99/81B4
-          EVENT FlagAlwaysZero, $9985CA
+          EVENT FlagAlwaysZero, _OpeningEvent
             CMP_WORD wCurrentTurn, 0
           END_DEFINITION
         END_DEFINITION_ARRAY
