@@ -22,10 +22,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
       ; Action struct types
 
-        ActionStruct_Unknown1 :?= 1
-        ActionStruct_Unknown2 :?= 2
-        ActionStruct_Unknown3 :?= 3
-        ActionStruct_Single   :?= 4
+        ActionStruct_Default         :?= 0
+        ActionStruct_EnemyInitiated  :?= 1
+        ActionStruct_PlayerInitiated :?= 2
+        ActionStruct_Unknown3        :?= 3
+        ActionStruct_Single          :?= 4
 
     .endweak
 
@@ -38,6 +39,18 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .xl
         .autsiz
         .databank ?
+
+        ; Writes a unit's action struct to
+        ; aActionStructUnit1, filling aActionStructUnit2
+        ; with a dummy unit.
+
+        ; Inputs:
+        ; wR0: short pointer to character buffer
+        ;   filled with character
+
+        ; Outputs:
+        ; aActionStructUnit1: unit
+        ; aActionStructUnit2: dummy unit
 
         php
         phb
