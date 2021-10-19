@@ -510,9 +510,7 @@ GUARD_FE5_CHAPTER3 :?= false
           SET_MUSIC $32
           YIELD
 
-          GET_CHARACTER_COORDS Leif
-          SCROLL_CAMERA 4
-          YIELD
+          SCROLL_CAMERA_CHAR Leif, 4
 
           DIALOGUE dialogueChapter3Opening2
           YIELD
@@ -606,9 +604,7 @@ GUARD_FE5_CHAPTER3 :?= false
             macroASMCCountAllUnitsRescuedByPlayerOrNPC _DialogueChar
             JUMP_FALSE +
 
-              GET_CHARACTER_COORDS _DialogueChar
-              SCROLL_CAMERA 4
-              YIELD
+              SCROLL_CAMERA_CHAR _DialogueChar, 4
 
               DIALOGUE _DialoguePointer
               YIELD

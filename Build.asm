@@ -31,6 +31,7 @@
   .include "EVENTS/Chapter2.event"
   .include "EVENTS/Chapter2x.event"
   .include "EVENTS/Chapter3.event"
+  .include "Events/Chapter4.event"
 
 ; Sections
 
@@ -147,8 +148,20 @@
     startEvents
 
       .dsection Chapter2EventsSection
+      .dsection Chapter4EventsSection
 
     endEvents
+
+  .endlogical
+
+  * := $18EF95
+  .logical mapped($18EF95)
+
+    startData
+
+      .dsection Chapter4DataSection
+
+    endData
 
   .endlogical
 

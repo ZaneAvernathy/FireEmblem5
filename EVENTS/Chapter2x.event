@@ -13,7 +13,6 @@ GUARD_FE5_CHAPTER2x :?= false
 
     .weak
 
-
       dialogueChapter2xOpening1               :?= address($95C2CB)
       dialogueChapter2xOpening2               :?= address($95C5CB)
       dialogueChapter2xReinforcementsDialogue :?= address($95C6AF)
