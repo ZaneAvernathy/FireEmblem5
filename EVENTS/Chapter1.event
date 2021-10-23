@@ -13,6 +13,13 @@ GUARD_FE5_CHAPTER1 :?= false
 
     .weak
 
+      dialogueChapter1WorldMap1 :?= address($82C82F)
+      dialogueChapter1WorldMap2 :?= address($82C86C)
+      dialogueChapter1WorldMap3 :?= address($82C911)
+      dialogueChapter1WorldMap4 :?= address($82C919)
+      dialogueChapter1WorldMap5 :?= address($82C929)
+      dialogueChapter1WorldMap6 :?= address($82CA43)
+
       dialogueChapter1OrsinHouseOrsin   :?= address($95B216)
       dialogueChapter1OrsinHouseOther   :?= address($95B370)
       dialogueChapter1LifeRingHouse     :?= address($95B590)
@@ -517,5 +524,133 @@ GUARD_FE5_CHAPTER1 :?= false
           SHOP [12, 6], [Vulnerary]
 
     .endsection Chapter1DataSection
+
+    .section Chapter1WorldMapEventsSection
+
+      eventChapter1WorldMapEvents ; E7/E010
+
+        SCROLL_CAMERA_COORDS [20, 1], 4
+        SET_CURSOR_POSITION
+        YIELD
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $2A
+        YIELD
+
+        FADE_IN 1
+        YIELD
+
+        SCROLL_CAMERA_COORDS [12, 1], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [128, 72], $0E, 0
+
+        macroASMCWMDialogue dialogueChapter1WorldMap1
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        PAUSE_SKIPPABLE 32
+
+        macroASMCWMDialogue dialogueChapter1WorldMap2
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        SCROLL_CAMERA_COORDS [12, 10], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        PAUSE_SKIPPABLE 32
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [104, 120], $0E, 0
+
+        macroASMCWMDialogue dialogueChapter1WorldMap3
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        PAUSE_SKIPPABLE 32
+        PAUSE_SKIPPABLE 32
+
+        SCROLL_CAMERA_COORDS [8, 10], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        SCROLL_CAMERA_COORDS [8, 16], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        PAUSE_SKIPPABLE 32
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [112, 104], $0E, 0
+
+        macroASMCWMDialogue dialogueChapter1WorldMap4
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        PAUSE_SKIPPABLE 32
+
+        SCROLL_CAMERA_COORDS [20, 16], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        PAUSE_SKIPPABLE 32
+        PAUSE_SKIPPABLE 32
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [144, 112], $0D, 0
+
+        macroASMCWMDialogue dialogueChapter1WorldMap5
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        PAUSE_SKIPPABLE 32
+
+        macroASMCWMDialogue dialogueChapter1WorldMap6
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        FADE_OUT 2
+        YIELD
+
+        CALL_ASM_LOOP rlASMCEndWMEvents
+        YIELD
+      END1
+
+    .endsection Chapter1WorldMapEventsSection
 
 .endif ; GUARD_FE5_CHAPTER1

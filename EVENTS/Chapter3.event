@@ -15,6 +15,9 @@ GUARD_FE5_CHAPTER3 :?= false
 
       rlEventEngineCancelFading           :?= address($8C8461)
 
+      dialogueChapter3WorldMap1           :?= address($82CB22)
+      dialogueChapter3WorldMap2           :?= address($82CB5F)
+
       dialogueChapter3Opening1            :?= address($938000)
       dialogueChapter3Opening2            :?= address($938211)
       dialogueChapter3RomeoHouseRomeo     :?= address($938506)
@@ -785,5 +788,66 @@ GUARD_FE5_CHAPTER3 :?= false
         _Vendor SHOP [2, 1], [Vulnerary, DoorKey] ; B1/F65B
 
     .endsection Chapter3DataSection
+
+    .section Chapter3WorldMapEventsSection
+
+      eventChapter3WorldMapEvents ; E7/E336
+
+        SCROLL_CAMERA_COORDS [20, 14], 4
+        SET_CURSOR_POSITION
+        YIELD
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $29
+        YIELD
+
+        FADE_IN 1
+        YIELD
+
+        SCROLL_CAMERA_COORDS [20, 12], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [96, 80], $0E, 0
+
+        macroASMCWMDialogue dialogueChapter3WorldMap1
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        PAUSE_SKIPPABLE 2
+        YIELD
+
+        macroWMDrawSpecialMarker [136, 112], $0D, 0
+
+        macroASMCWMDialogue dialogueChapter3WorldMap2
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        FADE_OUT 2
+        YIELD
+
+        CALL_ASM_LOOP rlASMCEndWMEvents
+        YIELD
+      END1
+
+    .endsection Chapter3WorldMapEventsSection
 
 .endif ; GUARD_FE5_CHAPTER3

@@ -13,6 +13,10 @@ GUARD_FE5_CHAPTER2 :?= false
 
     .weak
 
+      dialogueChapter2WorldMap1                     :?= address($82CA63)
+      dialogueChapter2WorldMap2                     :?= address($82CACD)
+      dialogueChapter2WorldMap3                     :?= address($82CAE3)
+
       dialogueChapter2RonanHouse                    :?= address($95BC4E)
       dialogueChapter2RonanHouseVillageAttacked     :?= address($95BD7F)
       dialogueChapter2SpeedRingHouse                :?= address($95BDA3)
@@ -532,5 +536,66 @@ GUARD_FE5_CHAPTER2 :?= false
           SHOP [3, 6], [Vulnerary]
 
     .endsection Chapter2DataSection
+
+    .section Chapter2WorldMapEventsSection
+
+      eventChapter2WorldMapEvents ; E7/E225
+
+        SCROLL_CAMERA_COORDS [20, 16], 4
+        SET_CURSOR_POSITION
+        YIELD
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $29
+        YIELD
+
+        FADE_IN 1
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [144, 112], $0D, 0
+
+        macroASMCWMDialogue dialogueChapter2WorldMap1
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        macroWMDrawSpecialMarker [96, 16], $0E, 0
+
+        macroASMCWMDialogue dialogueChapter2WorldMap2
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        macroWMDrawSpecialMarker [151, 87], $0d, 0
+
+        macroASMCWMDialogue dialogueChapter2WorldMap3
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        FADE_OUT 2
+        YIELD
+
+        CALL_ASM_LOOP rlASMCEndWMEvents
+        YIELD
+      END1
+
+    .endsection Chapter2WorldMapEventsSection
 
 .endif ; GUARD_FE5_CHAPTER2
