@@ -33,6 +33,8 @@
   .include "EVENTS/Chapter3.event"
   .include "Events/Chapter4.event"
   .include "Events/Chapter4x.event"
+  .include "Events/Chapter5.event"
+  .include "Events/Chapter6.event"
 
 ; Sections
 
@@ -150,27 +152,21 @@
 
       .dsection Chapter2EventsSection
       .dsection Chapter4EventsSection
+      .dsection Chapter5EventsSection
+      .dsection Chapter6EventsSection
 
     endEvents
 
   .endlogical
 
-  * := $18EB48
-  .logical mapped($18EB48)
+  * := $18E22A
+  .logical mapped($18E22A)
 
     startData
 
+      .dsection Chapter6DataSection
+      .dsection Chapter5DataSection
       .dsection Chapter4xDataSection
-
-    endData
-
-  .endlogical
-
-  * := $18EF95
-  .logical mapped($18EF95)
-
-    startData
-
       .dsection Chapter4DataSection
       .dsection Chapter3DataSection
       .dsection Chapter2xDataSection

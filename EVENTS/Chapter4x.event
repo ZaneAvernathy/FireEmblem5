@@ -13,6 +13,19 @@ GUARD_FE5_CHAPTER4x :?= false
 
     .weak
 
+      rlUpdateUnitMapsAndFog            :?= address($81AC00)
+      rlAddSelectedUnitToPlayerPool     :?= address($83A3BF)
+      rlEventEngineCancelFading         :?= address($8C8461)
+
+      dialogueChapter4xTitle            :?= address($9AB886)
+
+      dialogueChapter4xOpening1         :?= address($988000)
+      dialogueChapter4xAsvelRecruitment :?= address($988374)
+      dialogueChapter4xKarinCedTalk     :?= address($988656)
+      dialogueChapter4xOpening2         :?= address($988DE5)
+      dialogueChapter4xLowerCellUnlock  :?= address($988EA0)
+      dialogueChapter4xUpperCellUnlock  :?= address($988EF1)
+
     .endweak
 
   ; Freespace inclusions
@@ -22,12 +35,448 @@ GUARD_FE5_CHAPTER4x :?= false
       eventChapter4xEvents ; FD/85C5
 
         _OpeningEventDefinitions ; FD/85C5
-          EVENT FlagAlwaysZero, $FD8E69
+          EVENT FlagAlwaysZero, _OpeningEvent
             CMP_WORD wCurrentTurn, 0
           END_DEFINITION
         END_DEFINITION_ARRAY
 
+        _TurnEventDefinitions ; FD/85D2
+          EVENT FlagAlwaysZero, _SoldierLeftReinforcements
+            CMP_WORD_RANGE wCurrentTurn, 10, 24
+            CMP_WORD wCurrentPhase, Enemy
+            ROLL_RNG 40
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _ArcherLeftReinforcements
+            CMP_WORD_RANGE wCurrentTurn, 10, 24
+            CMP_WORD wCurrentPhase, Enemy
+            ROLL_RNG 40
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _SoldierRightReinforcements
+            CMP_WORD_RANGE wCurrentTurn, 10, 24
+            CMP_WORD wCurrentPhase, Enemy
+            ROLL_RNG 40
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _ArcherRightReinforcements
+            CMP_WORD_RANGE wCurrentTurn, 10, 24
+            CMP_WORD wCurrentPhase, Enemy
+            ROLL_RNG 40
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _MyrmidonLeftReinforcements
+            CMP_WORD_RANGE wCurrentTurn, 12, 32
+            CMP_WORD wCurrentPhase, Enemy
+            ROLL_RNG 40
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _MyrmidonRightReinforcements
+            CMP_WORD_RANGE wCurrentTurn, 12, 32
+            CMP_WORD wCurrentPhase, Enemy
+            ROLL_RNG 40
+          END_DEFINITION
+          EVENT $07, _CedAISwitch
+            RUN_ASM _rlNPCCheck
+            CMP_WORD wCurrentPhase, NPC
+            CMP_WORD_RANGE wCurrentTurn, 32, 255
+          END_DEFINITION
+        END_DEFINITION_ARRAY
 
+        _TalkEventDefinitions ; FD/8669
+          EVENT $05, _AsvelLeifTalk
+            CHECK_CHARS2 Asvel, Leif
+          END_DEFINITION
+          EVENT $05, _LeifAsvelTalk
+            CHECK_CHARS2 Leif, Asvel
+          END_DEFINITION
+          EVENT $06, _KarinCedTalk
+            CHECK_CHARS2 Karin, CedChp4x
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _LocationEventDefinitions ; FD/8689
+          macroECDoor $21, [6, 4], _Door1
+          macroECDoor $22, [12, 4], _Door2
+          macroECDoor $23, [3, 6], _Door3
+          macroECDoor $24, [9, 6], _Door4
+          macroECDoor $25, [7, 9], _Door5
+          macroECDoor $25, [8, 9], _Door5
+          macroECDoor $26, [3, 14], _Door6
+          macroECDoor $27, [12, 14], _Door7
+          macroECDoor $28, [3, 17], _Door8
+          macroECDoor $29, [12, 17], _Door9
+          macroECVanillaChest $2A, eventChapter4xData._Chest1
+          macroECVanillaChest $2B, eventChapter4xData._Chest2
+          macroECVanillaChest $2C, eventChapter4xData._Chest3
+        END_DEFINITION_ARRAY
+
+        _BeforeActionEventDefinitions ; FD/875A
+          macroECPlayerRetreat $08, _PlayerRetreat, Leif
+          EVENT FlagAlwaysZero, _NPCRetreat
+            CMP_WORD wCurrentPhase, NPC
+            TEST_FLAG_UNSET $08
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _AfterActionEventDefinitions ; FD/87A7
+          EVENT FlagAlwaysZero, _EndingEvent
+            TEST_FLAG_SET $08
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _BattleEventDefinitions ; FD/87B0
+        END_DEFINITION_ARRAY
+
+        _ShopEventDefinitions ; FD/87B2
+        END_DEFINITION_ARRAY
+
+        _rlNPCCheck ; FD/87B4
+
+          .al
+          .xl
+          .autsiz
+          .databank ?
+
+          _NPCList := [Emily, Muffy, Vera, Cliff, Bowie, Lina]
+
+          .for _NPC in _NPCList
+
+            lda #_NPC
+            sta wEventEngineCharacterTarget,b
+            jsl rlASMCCountAllUnitsUncapturedAlive
+            lda wEventEngineParameter1,b
+            bne _False
+
+          .endfor
+
+          sec
+          bra _End
+
+          _False
+          clc
+
+          _End
+          rtl
+
+        _SoldierLeftReinforcements ; FD/8813
+          LOAD_GROUP_BLOCKABLE eventChapter4xData._SoldierLeftGroup
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _ArcherLeftReinforcements ; FD/881A
+          LOAD_GROUP_BLOCKABLE eventChapter4xData._ArcherLeftGroup
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _SoldierRightReinforcements ; FD/8821
+          LOAD_GROUP_BLOCKABLE eventChapter4xData._SoldierRightGroup
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _ArcherRightReinforcements ; FD/8828
+          LOAD_GROUP_BLOCKABLE eventChapter4xData._ArcherRightGroup
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _MyrmidonLeftReinforcements ; FD/882F
+          LOAD_GROUP_BLOCKABLE eventChapter4xData._MyrmidonLeftGroup
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _MyrmidonRightReinforcements ; FD/8836
+          LOAD_GROUP_BLOCKABLE eventChapter4xData._MyrmidonRightGroup
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _CedAISwitch ; FD/883D
+          macroSetCharacterAI CedChp4x, [$02, $00, $0B, $00]
+          macroASMCUnsetBitsCharacterDataWord CedChp4x, Unknown3F, $0080
+        END2
+
+        _Door1 ; FD/88B6
+          macroOpenDoorByTileChangeID 0
+        END1
+
+        _Door2 ; FD/88E1
+          macroOpenDoorByTileChangeID 1
+        END1
+
+        _Door3 ; FD/890C
+          macroOpenDoorByTileChangeID 2
+
+          EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
+          JUMP_FALSE +
+
+            _AIChangeList  := [(MansterArmoredAxe, [$00, $00, $00, $00])]
+            _AIChangeList ..= [(MansterBishop1, [$00, $00, $00, $00])]
+            _AIChangeList ..= [(MansterSoldier2, [$00, $00, $00, $00])]
+            _AIChangeList ..= [(MansterMage2, [$00, $00, $00, $00])]
+
+            .for _Tup in _AIChangeList
+
+              _Character := _Tup[0]
+              _AISetting := _Tup[1]
+
+              macroSetCharacterAI _Character, _AISetting
+
+            .endfor
+
+          +
+        END1
+
+        _Door4 ; FD/8ABF
+          macroOpenDoorByTileChangeID 3
+
+          EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
+          JUMP_FALSE +
+
+            _AIChangeList  := [(MansterArmoredAxe, [$00, $00, $00, $00])]
+            _AIChangeList ..= [(MansterBishop1, [$00, $00, $00, $00])]
+            _AIChangeList ..= [(MansterSoldier2, [$00, $00, $00, $00])]
+            _AIChangeList ..= [(MansterMage2, [$00, $00, $00, $00])]
+
+            .for _Tup in _AIChangeList
+
+              _Character := _Tup[0]
+              _AISetting := _Tup[1]
+
+              macroSetCharacterAI _Character, _AISetting
+
+            .endfor
+
+          +
+        END1
+
+        _Door5 ; FD/8C72
+          macroOpenDoorByTileChangeID 4
+        END1
+
+        _Door6 ; FD/8C9D
+          macroOpenDoorByTileChangeID 5
+        END1
+
+        _Door7 ; FD/8CC8
+          macroOpenDoorByTileChangeID 6
+
+          EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
+          JUMP_FALSE +
+
+            PLAY_SOUND_WORD $00F7
+            DIALOGUE dialogueChapter4xUpperCellUnlock
+            YIELD
+          END2
+
+          +
+        END1
+
+        _Door8 ; FD/8D04
+          macroOpenDoorByTileChangeID 7
+        END1
+
+        _Door9 ; FD/8D2F
+          macroOpenDoorByTileChangeID 8
+
+          EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
+          JUMP_FALSE +
+
+            PLAY_SOUND_WORD $00F7
+            DIALOGUE dialogueChapter4xLowerCellUnlock
+            YIELD
+          END2
+
+          +
+        END1
+
+        _PlayerRetreat ; FD/8D6B
+          macroASMCSetFlagIfRetreatingUnitByTable _RetreatingChildTable
+
+          macroHaveActiveUnitRetreat _RetreatMovestring
+        END2
+
+        _NPCRetreat ; FD/8DB5
+          EVENT_CMP_BYTE_EQ $7E402E, $05
+          JUMP_FALSE +
+
+            macroASMCSetFlagIfRetreatingUnitByTable _RetreatingChildTable
+
+          +
+        END1
+
+        _RetreatMovestring ; FD/8DCB
+          MS_MOVE_UP
+          MS_MOVE_UP
+        MS_END
+
+        _AsvelLeifTalk ; FD/8DCE
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $4A
+          YIELD
+
+          DIALOGUE dialogueChapter4xAsvelRecruitment
+          YIELD
+
+          CALL_ASM_SKIPPABLE rlAddSelectedUnitToPlayerPool, Player
+        END2
+
+        _LeifAsvelTalk ; FD/8DE4
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $4A
+          YIELD
+
+          DIALOGUE dialogueChapter4xAsvelRecruitment
+          YIELD
+
+          macroASMCChangeAllegianceToPlayer Asvel
+          macroASMCSetCharacterDataWord Asvel, Leader, Leif
+        END2
+
+        _KarinCedTalk ; FD/8E18
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $4B
+          YIELD
+
+          DIALOGUE dialogueChapter4xKarinCedTalk
+          YIELD
+
+          macroASMCActiveUnitSetUnitState UnitStateHidden
+
+          macroGiveActiveUnitItem CedsScroll
+
+          macroASMCActiveUnitUnsetUnitState UnitStateHidden
+        END2
+
+        _OpeningEvent ; FD/8E69
+          CALL_ASM_SKIPPABLE rlEventEngineCancelFading
+
+          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+
+          macroLoadPlayerUnitsByStartingPositions
+
+          macroASMCPrepareCapturedUnitsForRescue Player, _CapturedUnitTable
+
+          macroASMCLoadUnitGroup eventChapter4xData._ChildGroup
+          macroASMCLoadUnitGroup eventChapter4xData._ArmorGroup
+          macroASMCLoadUnitGroup eventChapter4xData._EnemyGroup1
+
+          WAIT_MOVE
+          YIELD
+
+          CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog
+
+          FADE_IN 2
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $4B
+          YIELD
+
+          macroChapterTitlePopup dialogueChapter4xTitle
+
+          SCROLL_CAMERA_ADDRESS eventChapter4xData._Opening1CameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter4xData._CedGroup
+          WAIT_MOVE
+          YIELD
+
+          SCROLL_CAMERA_CHAR CedChp4x, 4
+
+          DIALOGUE dialogueChapter4xOpening1
+          YIELD
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $07
+          YIELD
+
+          PLAY_SOUND_WORD $00F7
+
+          SCROLL_CAMERA_CHAR Vera, 4
+
+          DIALOGUE dialogueChapter4xOpening2
+          YIELD
+        END2
+
+        _CapturedUnitTable ; FD/8F37
+          .byte [2, 11]
+          .byte [3, 11]
+          .byte [4, 11]
+
+          .byte [2, 12]
+          .byte [3, 12]
+          .byte [4, 12]
+
+          .byte [2, 19]
+          .byte [3, 19]
+          .byte [4, 19]
+
+          .byte [2, 20]
+          .byte [3, 20]
+          .byte [4, 20]
+
+          .byte [2, 13]
+          .byte [3, 13]
+          .byte [4, 13]
+
+          .byte [2, 18]
+          .byte [3, 18]
+          .byte [4, 18]
+
+        .byte 0
+
+        _EndingEvent ; FD/8F5C
+
+          STORE_WORD wCurrentMapMusic, $0000
+          PAUSE_SKIPPABLE 16
+          YIELD
+
+          CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+          CALL_ASM_LOOP rlASMCSaveChapterTurncount
+          CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured
+
+          FADE_OUT 1
+          YIELD
+
+          CALL_ASM_LOOP rlASMCChapterEnd
+        END1
+
+        _RetreatingChildTable ; FD/8F82
+
+          _RetreatingChildList  := [(Emily, FlagEmilySaved)]
+          _RetreatingChildList ..= [(Muffy, FlagMuffySaved)]
+          _RetreatingChildList ..= [(Vera, FlagVeraSaved)]
+          _RetreatingChildList ..= [(Cliff, FlagCliffSaved)]
+          _RetreatingChildList ..= [(Bowie, FlagBowieSaved)]
+          _RetreatingChildList ..= [(Lina, FlagLinaSaved)]
+
+          .for _Tup in _RetreatingChildList
+
+            _Character := _Tup[0]
+            _Flag      := _Tup[1]
+
+            .word _Character
+            .byte _Flag
+
+          .endfor
+
+        .word 0, 0
 
     .endsection Chapter4xEventsSection
 
@@ -136,6 +585,21 @@ GUARD_FE5_CHAPTER4x :?= false
         _MyrmidonRightGroup ; B1/EEA2
           UNIT MercenaryMyrmidon1, Enemy, [8, 22], [8, 22], Raydrik, [IronSword], 5, False, [$00, $00, $00, $00]
         UNIT
+
+        _StartingPositions ; B1/EEB8
+          .byte [7, 19]
+          .byte [8, 19]
+          .byte [7, 20]
+          .byte [8, 20]
+          .byte [6, 19]
+          .byte [6, 21]
+          .byte [9, 19]
+          .byte [9, 21]
+        .char -1
+
+        _Chest2 VANILLA_CHEST IronBlade, [3, 3] ; B1/EEC9
+        _Chest3 VANILLA_CHEST BraveSword, [4, 3] ; B1/EF0D
+        _Chest1 VANILLA_CHEST LifeRing, [3, 4] ; B1/EF51
 
     .endsection Chapter4xDataSection
 
