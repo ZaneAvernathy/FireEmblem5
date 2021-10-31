@@ -23,10 +23,12 @@ GUARD_FE5_ACTIONSTRUCT :?= false
       rlCopyExpandedCharacterDataBufferToBuffer     :?= address($83905C)
       rlCombineCharacterDataAndClassBases           :?= address($8390BE)
       rlCopyClassDataToBuffer                       :?= address($8393E0)
+      rlCopyCharacterDataToBuffer                   :?= address($83941A)
       rlGetEquippableItemInventoryOffset            :?= address($839705)
       rlSearchForUnitAndWriteTargetToBuffer         :?= address($83976E)
       rlRunRoutineForAllUnitsInAllegiance           :?= address($839825)
       rlRunRoutineForAllVisibleUnitsInRange         :?= address($8398FD)
+      rlRunRoutineForAllItemsInInventory            :?= address($83993C)
       rlGetTier1ClassRelativePowerModifier          :?= address($83A9EC)
       rlCopyItemDataToBuffer                        :?= address($83B00D)
 
@@ -418,6 +420,257 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank 0
 
     .endsection ActionStructWeaponTriangleSection
+
+    .section ActionStructLevelUpSection
+
+      rlActionStructCopyGrowthsToBuffer ; 83/DD73
+
+        .al
+        .autsiz
+        .databank `aCharacterDataBuffer
+
+        _GrowthList  := [(aCharacterDataBuffer.HPGrowth, aUnitAdjustedGrowths.wHP)]
+        _GrowthList ..= [(aCharacterDataBuffer.StrengthGrowth, aUnitAdjustedGrowths.wSTR)]
+        _GrowthList ..= [(aCharacterDataBuffer.MagicGrowth, aUnitAdjustedGrowths.wMAG)]
+        _GrowthList ..= [(aCharacterDataBuffer.SkillGrowth, aUnitAdjustedGrowths.wSKL)]
+        _GrowthList ..= [(aCharacterDataBuffer.SpeedGrowth, aUnitAdjustedGrowths.wSPD)]
+        _GrowthList ..= [(aCharacterDataBuffer.DefenseGrowth, aUnitAdjustedGrowths.wDEF)]
+        _GrowthList ..= [(aCharacterDataBuffer.ConstitutionGrowth, aUnitAdjustedGrowths.wCON)]
+        _GrowthList ..= [(aCharacterDataBuffer.LuckGrowth, aUnitAdjustedGrowths.wLUK)]
+        _GrowthList ..= [(aCharacterDataBuffer.MovementGrowth, aUnitAdjustedGrowths.wMOV)]
+
+        ; Given a short pointer to a unit's action
+        ; struct in X, copy their growths to
+        ; aUnitAdjustedGrowths
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ;   aUnitAdjustedGrowths: filled with growths
+
+        lda structActionStructEntry.Character,b,x
+        jsl rlCopyCharacterDataToBuffer
+
+        .for _Growth in _GrowthList
+
+          lda _Growth[0]
+          and #$00FF
+          sta _Growth[1]
+
+        .endfor
+
+        rtl
+
+        .databank 0
+
+      rsActionStructGetScrollGrowths ; 83/DDCC
+
+        .al
+        .xl
+        .autsiz
+        .databank `aUnitAdjustedGrowths
+
+        lda #<>rlActionStructGetScrollGrowthsEffect
+        sta lR25
+        lda #>`rlActionStructGetScrollGrowthsEffect
+        sta lR25+size(byte)
+        txa
+        clc
+        adc #structActionStructEntry.Items
+        jsl rlRunRoutineForAllItemsInInventory
+
+        rts
+
+        .databank 0
+
+      rlActionStructGetScrollGrowthsEffect ; 83/DDE0
+
+        .xl
+        .autsiz
+        .databank `aUnitAdjustedGrowths
+
+        _GrowthList  := [aUnitAdjustedGrowths.wHP]
+        _GrowthList ..= [aUnitAdjustedGrowths.wSTR]
+        _GrowthList ..= [aUnitAdjustedGrowths.wMAG]
+        _GrowthList ..= [aUnitAdjustedGrowths.wSKL]
+        _GrowthList ..= [aUnitAdjustedGrowths.wSPD]
+        _GrowthList ..= [aUnitAdjustedGrowths.wDEF]
+        _GrowthList ..= [aUnitAdjustedGrowths.wCON]
+        _GrowthList ..= [aUnitAdjustedGrowths.wLUK]
+        _GrowthList ..= [aUnitAdjustedGrowths.wMOV]
+
+        ; Given an item ID in A, check if
+        ; it's a scroll and modify the growths
+        ; in aUnitAdjustedGrowths if it is.
+
+        ; Inputs:
+        ;   A: item ID
+        ;   aUnitAdjustedGrowths: filled with growths
+
+        ; Outputs:
+        ;   aUnitAdjustedGrowths: modified growths
+
+        ldx #<>aScrollTable
+        stx lR18
+        ldx #>`aScrollTable
+        stx lR18+size(byte)
+
+        sep #$20
+
+        sta wR0
+
+        ; Look through the scroll table
+        ; until a matching scroll or terminator
+        ; is found.
+
+        _Loop
+
+          lda [lR18]
+          beq _End
+
+          cmp wR0
+          beq _Match
+
+            rep #$30
+
+            lda lR18
+            clc
+            adc #size(structScrollGrowthModifiers)
+            sta lR18
+
+            sep #$20
+
+            bra _Loop
+
+        .as
+        .autsiz
+
+        _End
+        rtl
+
+        .as
+        .autsiz
+
+        _Match
+
+        rep #$30
+
+        ; Add all of the growths in aUnitAdjustedGrowths
+        ; to the scroll modifiers.
+
+        .for _Growth in _GrowthList
+
+          inc lR18
+
+          lda [lR18]
+          and #$00FF
+
+          ; Nice trick to convert s8 -> s16
+
+          xba
+
+          ora #0
+          bpl +
+
+            ora #narrow(-1, 1)
+
+          +
+          xba
+
+          clc
+          adc _Growth
+          sta _Growth
+
+        .endfor
+
+        rtl
+
+        .databank 0
+
+      rsActionStructClampAdjustedGrowths ; 83/DEE0
+
+        .al
+        .autsiz
+        .databank `aUnitAdjustedGrowths
+
+        _GrowthList  := [aUnitAdjustedGrowths.wHP]
+        _GrowthList ..= [aUnitAdjustedGrowths.wSTR]
+        _GrowthList ..= [aUnitAdjustedGrowths.wMAG]
+        _GrowthList ..= [aUnitAdjustedGrowths.wSKL]
+        _GrowthList ..= [aUnitAdjustedGrowths.wSPD]
+        _GrowthList ..= [aUnitAdjustedGrowths.wDEF]
+        _GrowthList ..= [aUnitAdjustedGrowths.wCON]
+        _GrowthList ..= [aUnitAdjustedGrowths.wLUK]
+        _GrowthList ..= [aUnitAdjustedGrowths.wMOV]
+
+        ; Clamps aUnitAdjustedGrowths to be 0-255
+
+        ; Inputs:
+        ;   aUnitAdjustedGrowths: filled with growths
+
+        ; Outputs:
+        ;   aUnitAdjustedGrowths: clamped growths
+
+        .for _Growth in _GrowthList
+
+          lda _Growth
+          bpl +
+
+            lda #0
+
+          +
+          cmp #255
+          blt +
+
+            lda #255
+
+          +
+          sta _Growth
+
+        .endfor
+
+        rts
+
+        .databank 0
+
+      ActionStructLevelUpInfo  := [(aUnitAdjustedGrowths.wHP, structActionStructEntry.LevelUpHPGain, structActionStructEntry.MaxHP, HPCap)]
+      ActionStructLevelUpInfo ..= [(aUnitAdjustedGrowths.wSTR, structActionStructEntry.LevelUpStrengthGain, structActionStructEntry.Strength, StatCap)]
+      ActionStructLevelUpInfo ..= [(aUnitAdjustedGrowths.wMAG, structActionStructEntry.LevelUpMagicGain, structActionStructEntry.Magic, StatCap)]
+      ActionStructLevelUpInfo ..= [(aUnitAdjustedGrowths.wSKL, structActionStructEntry.LevelUpSkillGain, structActionStructEntry.Skill, StatCap)]
+      ActionStructLevelUpInfo ..= [(aUnitAdjustedGrowths.wSPD, structActionStructEntry.LevelUpSpeedGain, structActionStructEntry.Speed, StatCap)]
+      ActionStructLevelUpInfo ..= [(aUnitAdjustedGrowths.wDEF, structActionStructEntry.LevelUpDefenseGain, structActionStructEntry.Defense, StatCap)]
+      ActionStructLevelUpInfo ..= [(aUnitAdjustedGrowths.wCON, structActionStructEntry.LevelUpConstitutionGain, structActionStructEntry.Constitution, StatCap)]
+      ActionStructLevelUpInfo ..= [(aUnitAdjustedGrowths.wLUK, structActionStructEntry.LevelUpLuckGain, structActionStructEntry.Luck, StatCap)]
+      ActionStructLevelUpInfo ..= [(aUnitAdjustedGrowths.wMOV, structActionStructEntry.LevelUpMovementGain, structActionStructEntry.Movement, StatCap)]
+
+      aActionStructGrowthOffsetsTable ; 83/DF8C
+        .for _Growth in ActionStructLevelUpInfo[:,0]
+          .word <>_Growth
+        .endfor
+      .word 0
+
+      aActionStructLevelUpGainTable ; 83/DFA0
+        .for _LevelUpGain in ActionStructLevelUpInfo[:,1]
+          .word _LevelUpGain
+        .endfor
+
+      aActionStructLevelUpStatTable ; 83/DFB2
+        .for _LevelUpStat in ActionStructLevelUpInfo[:,2]
+          .word _LevelUpStat
+        .endfor
+
+      aActionStructLevelUpCapTable ; 83/DFC4
+        .for _Cap in ActionStructLevelUpInfo[:,3]
+          .word _Cap
+        .endfor
+
+      rlActionStructGetLevelUpStatGains ; 83/DFD6
+
+
+
+
+    .endsection ActionStructLevelUpSection
 
     .section ActionStructCalculateGainedWEXPSection
 

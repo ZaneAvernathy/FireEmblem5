@@ -1,0 +1,13 @@
+.structScrollGrowthModifiers 0,ItemID,HPGrowth,StrengthGrowth,MagicGrowth,SkillGrowth,SpeedGrowth,DefenseGrowth,ConstitutionGrowth,LuckGrowth,MovementGrowth
+OdosScrollScrollEntry,OdosScroll,0,0,0,30,0,0,0,0,0
+BaldursScrollScrollEntry,BaldursScroll,5,5,0,5,5,5,0,5,0
+HezulsScrollScrollEntry,HezulsScroll,30,10,0,0,0,0,0,-10,0
+DainsScrollScrollEntry,DainsScroll,0,5,0,0,-10,30,0,0,5
+NovasScrollScrollEntry,NovasScroll,0,30,-10,0,10,5,0,-5,0
+NeirsScrollScrollEntry,NeirsScroll,10,10,0,-10,0,10,10,0,0
+UllursScrollScrollEntry,UllursScroll,0,0,0,10,10,0,0,10,0
+TordosScrollScrollEntry,TordosScroll,5,5,5,10,0,0,0,5,0
+ValasScrollScrollEntry,ValasScroll,0,5,5,10,10,0,0,0,0
+CedsScrollScrollEntry,CedsScroll,-10,0,10,0,30,0,0,0,0
+BragisScrollScrollEntry,BragisScroll,0,-10,10,0,0,0,0,30,0
+HeimsScrollScrollEntry,HeimsScroll,0,0,30,0,0,-10,0,10,0

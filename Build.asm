@@ -28,6 +28,7 @@
   .include "SRC/Code83Temp.asm"
   .include "SRC/CharacterData.asm"
   .include "SRC/ItemData.asm"
+  .include "SRC/DeploymentSlots.asm"
 
   .include "EVENTS/Chapter1.event"
   .include "EVENTS/Chapter2.event"
@@ -95,6 +96,17 @@
 
   .endlogical
 
+  * := $018E98
+  .logical mapped($018E98)
+
+    startData
+
+      .dsection DeploymentSlotTableSection
+
+    endData
+
+  .endlogical
+
   * := $01CE64
   .logical mapped($01CE64)
 
@@ -126,6 +138,17 @@
     startCode
 
       .dsection ActionStructWeaponTriangleSection
+
+    endCode
+
+  .endlogical
+
+  * := $01DD73
+  .logical mapped($01DD73)
+
+    startCode
+
+      .dsection ActionStructLevelUpSection
 
     endCode
 
@@ -192,11 +215,12 @@
 
   .endlogical
 
-  * := $0400CD
-  .logical mapped($0400CD)
+  * := $040054
+  .logical mapped($040054)
 
     startData
 
+      .dsection ScrollGrowthModifiersSection
       .dsection SupportDataSection
 
     endData

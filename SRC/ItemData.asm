@@ -25,6 +25,9 @@ GUARD_FE5_ITEM_DATA :?= false
 
         aNoItemBonuses           .dstruct structItemStatBonuses,  0,  0,  0,  0,  0,  0,  0,  0 ; B0/8000
 
+        ; Normally I would use a .csv for tables like this,
+        ; but this random word in the table messes that up.
+
         .word $0000 ; B0/8008
 
         aBlessedSwordItemBonuses .dstruct structItemStatBonuses,  0, 10,  0,  0,  0,  0,  0,  0 ; B0/800A
@@ -45,5 +48,12 @@ GUARD_FE5_ITEM_DATA :?= false
       .endblock
 
     .endsection ItemBonusesSection
+
+    .section ScrollGrowthModifiersSection
+
+      aScrollTable .include "../TABLES/ScrollTable.csv.asm" ; 88/8054
+      .byte 0
+
+    .endsection ScrollGrowthModifiersSection
 
 .endif ; GUARD_FE5_ITEM_DATA
