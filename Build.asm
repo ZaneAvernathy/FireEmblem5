@@ -26,6 +26,8 @@
   .include "SRC/IRQ.asm"
   .include "SRC/ActionStruct.asm"
   .include "SRC/Code83Temp.asm"
+  .include "SRC/CharacterData.asm"
+  .include "SRC/ItemData.asm"
 
   .include "EVENTS/Chapter1.event"
   .include "EVENTS/Chapter2.event"
@@ -104,6 +106,73 @@
 
   .endlogical
 
+  * := $01CFED
+  .logical mapped($01CFED)
+
+    startCode
+
+      .dsection ActionStructGetBaseStatsSection
+      .dsection ActionStructClearActionStructSection
+      .dsection ActionStructCopyStartingStatsSection
+      .dsection ActionStructTrySetUnitCoordinatesSection
+
+    endCode
+
+  .endlogical
+
+  * := $01DBC4
+  .logical mapped($01DBC4)
+
+    startCode
+
+      .dsection ActionStructWeaponTriangleSection
+
+    endCode
+
+  .endlogical
+
+  * := $01E2B0
+  .logical mapped($01E2B0)
+
+    startCode
+
+      .dsection ActionStructCalculateGainedWEXPSection
+      .dsection ActionStructCalculateHitAvoidBonusSection
+      .dsection ActionStructHalveStatsSection
+      .dsection ActionStructZeroCombatStatsSection
+      .dsection ActionStructSetGainedWEXPSection
+      .dsection ActionStructEXPSection
+
+    endCode
+
+  .endlogical
+
+  * := $01E5A5
+  .logical mapped($01E5A5)
+
+    startCode
+
+      .dsection ActionStructGetSupportBonusSection
+      .dsection ActionStructUnknownSetCallbackSection
+      .dsection ActionStructGetItemBonusesSection
+
+    endCode
+
+  .endlogical
+
+  * := $01E6E5
+  .logical mapped($01E6E5)
+
+    startCode
+
+      .dsection ActionStructWinsLossesSection
+      .dsection ActionStructGetCombatStatTotalSection
+      .dsection ActionStructGetStatTotalDifferenceTierSection
+
+    endCode
+
+  .endlogical
+
   * := $01FB4D
   .logical mapped($01FB4D)
 
@@ -120,6 +189,17 @@
     endCode
 
     .fill mapped($018000) + $8000 - *, $FF
+
+  .endlogical
+
+  * := $0400CD
+  .logical mapped($0400CD)
+
+    startData
+
+      .dsection SupportDataSection
+
+    endData
 
   .endlogical
 
@@ -156,6 +236,17 @@
       .dsection Chapter6EventsSection
 
     endEvents
+
+  .endlogical
+
+  * := $180000
+  .logical mapped($180000)
+
+    startData
+
+      .dsection ItemBonusesSection
+
+    endData
 
   .endlogical
 
