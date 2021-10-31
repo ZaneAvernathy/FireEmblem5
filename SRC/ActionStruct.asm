@@ -1622,8 +1622,6 @@ GUARD_FE5_ACTIONSTRUCT :?= false
           _Bonus  := _Tup[1]
           _Stat   := _Tup[2]
 
-          .warn _Source
-
           lda _Source+((`aItemBonuses)<<16),x
           sta _Bonus
 
