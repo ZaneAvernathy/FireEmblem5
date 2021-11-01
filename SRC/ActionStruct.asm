@@ -20,6 +20,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
       rlGetCharacterWinLossTableOffset              :?= address($81C9C7)
       rlGetMapTileIndexByCoords                     :?= address($838E76)
       rlCopyCharacterDataToBufferByDeploymentNumber :?= address($83901C)
+      rlCopyCharacterDataFromBuffer                 :?= address($839041)
       rlCopyExpandedCharacterDataBufferToBuffer     :?= address($83905C)
       rlCombineCharacterDataAndClassBases           :?= address($8390BE)
       rlCopyClassDataToBuffer                       :?= address($8393E0)
@@ -29,8 +30,12 @@ GUARD_FE5_ACTIONSTRUCT :?= false
       rlRunRoutineForAllUnitsInAllegiance           :?= address($839825)
       rlRunRoutineForAllVisibleUnitsInRange         :?= address($8398FD)
       rlRunRoutineForAllItemsInInventory            :?= address($83993C)
+      rlTryGiveCharacterItemFromBuffer              :?= address($83A443)
+      rlRollRandomNumber0To100                      :?= address($83A791)
       rlGetTier1ClassRelativePowerModifier          :?= address($83A9EC)
+      rlCheckIfTileIsGateOrThroneByTerrainID        :?= address($83AF3F)
       rlCopyItemDataToBuffer                        :?= address($83B00D)
+      rlUnknown848E5A                               :?= address($848E5A)
 
       rsActionStructGetItemInfoAndCapturingStats   :?= address($83D085)
       rsActionStructGetTerrainBonusesAndDistance   :?= address($83D1F3)
@@ -52,6 +57,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         HPCap   := 80
         StatCap := 20
+
+        LevelCap := 20
+        ExperienceCap := 100
 
     .endweak
 
@@ -421,7 +429,350 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
     .endsection ActionStructWeaponTriangleSection
 
+    .section ActionStructAdjustVantageRoundOrderSection
+
+      rsActionStructAdjustVantageRoundOrder ; 83/DC0D
+
+        .autsiz
+        .databank `wActionStructGeneratedRoundActor
+
+        ; Sets the round actor be be the
+        ; second unit if they have vantage.
+
+        ; Inputs:
+        ;   aActionStructUnit2: filled with unit
+
+        ; Outputs:
+        ;   wActionStructGeneratedRoundActor: set to second unit
+        ;     if success, unchanged otherwise.
+
+        php
+
+        rep #$30
+
+        stz wActionStructGeneratedRoundActor
+
+        lda aActionStructUnit2.EquippedItemID2
+        and #$00FF
+        beq +
+
+          lda aActionStructUnit2.Skills2
+          bit #Skill2Vantage
+          beq +
+
+            ldx #$0002
+            stx wActionStructGeneratedRoundActor
+
+        +
+        lda wActionStructGeneratedRoundActor
+        sta wActionStructGeneratedRoundUnknownActor
+
+        plp
+        rts
+
+        .databank 0
+
+    .endsection ActionStructAdjustVantageRoundOrderSection
+
+    .section ActionStructUnknown83DC31Section
+
+      rlActionStructUnknown83DC31 ; 83/DC31
+
+        .xl
+        .autsiz
+        .databank `aActionStructUnit1
+
+        stz wActionStructGeneratedRoundVar1
+        stz wActionStructGeneratedRoundOffset
+        stz wActionStructGeneratedRoundLastOffset
+        stz wActionStructGeneratedRoundBonusCombat
+        stz wActionStructGeneratedRoundDamage
+        stz wActionStructGeneratedRoundBufferPointer
+        stz wActionStructGeneratedRoundDeploymentNumber
+        stz wActionStructGeneratedRoundCombatType
+
+        ldx #<>aActionStructUnit1
+        jsr rsActionStructUnknown83DC59
+
+        ldx #<>aActionStructUnit2
+        jsr rsActionStructUnknown83DC59
+
+        jsr rsActionStructUnknown83DCA3
+
+        rts
+
+        .databank 0
+
+      rsActionStructUnknown83DC59 ; 83/DC59
+
+        .xl
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; This seems to have had two purposes:
+        ; to set wActionStructGeneratedRoundVar1 to
+        ; a pointer to a living player unit's inventory,
+        ; or to store a dead non-player's items
+        ; to a previously-saved unit.
+
+        sep #$20
+
+        ; Check if successfully captured?
+
+        lda structActionStructEntry.CurrentHP,b,x
+        bne +
+
+        ; Player units?
+
+        lda structActionStructEntry.DeploymentNumber,b,x
+        and #AllAllegiances
+        beq +
+
+          bra _NotPlayerDead
+
+        +
+        rep #$30
+
+        lda structActionStructEntry.DeploymentNumber,b,x
+        sta wActionStructGeneratedRoundVar1
+
+        ; Seems like this is missing something
+        ; about a free inventory slot in
+        ; a player unit's inventory?
+
+        ; Maybe not an inventory but somewhere
+        ; else in RAM?
+
+        stx wActionStructGeneratedRoundVar1
+        rts
+
+        _NotPlayerDead
+        rep #$30
+
+        ; Seems like this is supposed to
+        ; set up pointers inventories.
+
+        txa
+        clc
+        adc #structActionStructEntry.Items
+        sta wR1
+
+        lda #<>wActionStructGeneratedRoundVar1
+        sta wR2
+
+        ldy #0
+
+        ; Supposed to copy items from the
+        ; dead unit?
+
+        _Loop
+          lda (wR1),y
+          beq _End
+
+          jsl rlCopyItemDataToBuffer
+
+          lda aItemDataBuffer.Traits,b
+          bne +
+
+            lda (wR1),y
+            sta (wR2)
+            inc wR2
+            inc wR2
+
+          +
+          inc y
+          inc y
+          cpy #size(structActionStructEntry.Items)
+          bra _Loop
+
+        _End
+        rts
+
+        .databank 0
+
+      rsActionStructUnknown83DCA3 ; 83/DCA3
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Seems like it's supposed to
+        ; copy the items taken from the dead
+        ; unit in the previous routine to the
+        ; target unit.
+
+        lda #<>wActionStructGeneratedRoundVar1
+        sta wR17
+
+        _Loop
+          lda (wR17)
+          beq _End
+
+          jsl rlCopyItemDataToBuffer
+
+          lda wActionStructGeneratedRoundVar1
+          sta wR1
+          jsl rlTryGiveCharacterItemFromBuffer
+
+          inc wR17
+          inc wR17
+
+          bra _Loop
+
+        _End
+        rts
+
+        .databank 0
+
+    .endsection ActionStructUnknown83DC31Section
+
     .section ActionStructLevelUpSection
+
+      rsActionStructTryGetBothLevelupGains ; 83/DCC0
+
+        .xl
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ldx #<>aActionStructUnit1
+        jsr rsActionStructTryGetLevelUpGains
+        ldx #<>aActionStructUnit2
+        jsr rsActionStructTryGetLevelUpGains
+
+        rts
+
+        .databank 0
+
+      rsActionStructTryGetLevelUpGains ; 83/DCCD
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        _StatList  := [(aBurstWindowCharacterBuffer.Strength, structActionStructEntry.Strength)]
+        _StatList ..= [(aBurstWindowCharacterBuffer.Magic, structActionStructEntry.Magic)]
+        _StatList ..= [(aBurstWindowCharacterBuffer.Skill, structActionStructEntry.Skill)]
+        _StatList ..= [(aBurstWindowCharacterBuffer.Speed, structActionStructEntry.Speed)]
+        _StatList ..= [(aBurstWindowCharacterBuffer.Defense, structActionStructEntry.Defense)]
+        _StatList ..= [(aBurstWindowCharacterBuffer.Constitution, structActionStructEntry.Constitution)]
+        _StatList ..= [(aBurstWindowCharacterBuffer.Luck, structActionStructEntry.Luck)]
+
+        ; Given a short pointer to an action
+        ; struct in X, check if a unit has
+        ; gained enough EXP to level up and
+        ; gain stats.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        jsl rlActionStructClearLevelUpStatGains
+
+        jsr rsActionStructTrySetLevelUp
+        bcc _End
+
+          phx
+
+          lda #ActionStruct_Unknown3
+          cmp wActionStructGeneratedRoundCombatType
+          beq +
+
+            lda structActionStructEntry.DeploymentNumber,b,x
+            sta wR0
+            lda #<>aBurstWindowCharacterBuffer
+            sta wR1
+            jsl rlCopyCharacterDataToBufferByDeploymentNumber
+
+            lda structActionStructEntry.Coordinates,b,x
+            sta aBurstWindowCharacterBuffer.Coordinates,b
+
+            lda #<>aBurstWindowCharacterBuffer
+            sta wR1
+            jsl rlCombineCharacterDataAndClassBases
+
+            lda #$01,s
+            tax
+
+            sep #$20
+
+            .for _Stat in _StatList
+
+              lda _Stat[0],b
+              sta _Stat[1],b,x
+
+            .endfor
+
+            rep #$30
+
+          +
+          jsl rlActionStructCopyGrowthsToBuffer
+          jsr rsActionStructGetScrollGrowths
+          jsr rsActionStructClampAdjustedGrowths
+          plx
+          jsl rlActionStructGetLevelUpStatGains
+
+        _End
+        rts
+
+        .databank 0
+
+      rsActionStructTrySetLevelUp ; 83/DD3D
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an action
+        ; struct in X, try increasing the unit's
+        ; level.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        php
+        sep #$20
+
+        lda structActionStructEntry.Level,b,x
+        cmp #LevelCap
+        beq _False
+
+          lda structActionStructEntry.Experience,b,x
+          sec
+          sbc #ExperienceCap
+          bmi _False
+
+            sta structActionStructEntry.Experience,b,x
+
+            lda structActionStructEntry.Level,b,x
+            inc a
+            cmp #LevelCap
+            blt +
+
+              lda #ExperienceCap
+              sec
+              sbc structActionStructEntry.StartingExperience,b,x
+              sta structActionStructEntry.GainedExperience,b,x
+
+              lda #-1
+              sta structActionStructEntry.Experience,b,x
+
+              lda #LevelCap
+
+            +
+            sta structActionStructEntry.Level,b,x
+            plp
+            sec
+            rts
+
+        _False
+        plp
+        clc
+        rts
+
+        .databank 0
 
       rlActionStructCopyGrowthsToBuffer ; 83/DD73
 
@@ -667,26 +1018,663 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
       rlActionStructGetLevelUpStatGains ; 83/DFD6
 
+        .al
+        .xl
+        .autsiz
+        .databank `aActionStructUnit1
 
+        ; Given a short pointer to an action
+        ; struct in X and a set of growths in
+        ; aUnitAdjustedGrowths, roll growths and
+        ; store the gains in the action struct's
+        ; level up gains.
 
+        ; Inputs:
+        ;   X: short pointer to action struct
+        ;   aUnitAdjustedGrowths: filled with growths
+
+        ; Outputs:
+        ; None
+
+        stx wR2
+        cpx #<>aActionStructUnit1
+        beq _Unit1
+
+          ; Otherwise get pointer by slot
+
+          lda aActionStructUnit2.DeploymentNumber
+          and #$00FF
+          asl a
+          tax
+          lda aDeploymentSlotTable,x
+          sta wR3
+
+          bra +
+
+        _Unit1
+
+          lda #<>aSelectedCharacterBuffer
+          sta wR3
+
+        +
+
+        ldx #0
+
+        _Loop
+
+          ; Get a growth or table end.
+          ; Roll the growth for potential gains.
+
+          lda aActionStructGrowthOffsetsTable,x
+          beq _End
+
+          tay
+          lda 0,b,y
+          jsr rsActionStructRollPercentage
+          sta wR4
+
+          ; Get the unit's current stat and
+          ; add to gain.
+
+          lda aActionStructLevelUpStatTable,x
+          tay
+          lda (wR3),y
+          and #$00FF
+          clc
+          adc wR4
+
+          ; If the result is higher than
+          ; the cap, use the difference to set
+          ; to the cap.
+
+          sec
+          sbc aActionStructLevelUpCapTable,x
+          bmi +
+
+            sta wR5
+
+            lda wR4
+            sec
+            sbc wR5
+            sta wR4
+
+          +
+
+          ; Store gain to action struct.
+
+          lda aActionStructLevelUpGainTable,x
+          tay
+
+          sep #$20
+
+          lda wR4
+          sta (wR2),y
+
+          rep #$30
+
+          inc x
+          inc x
+          bra _Loop
+
+        _End
+        rtl
+
+        .databank 0
+
+      rlActionStructClearLevelUpStatGains ; 83/E033
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        _LevelUpStatList  := [structActionStructEntry.LevelUpHPGain]
+        _LevelUpStatList ..= [structActionStructEntry.LevelUpStrengthGain]
+        _LevelUpStatList ..= [structActionStructEntry.LevelUpMagicGain]
+        _LevelUpStatList ..= [structActionStructEntry.LevelUpSkillGain]
+        _LevelUpStatList ..= [structActionStructEntry.LevelUpSpeedGain]
+        _LevelUpStatList ..= [structActionStructEntry.LevelUpDefenseGain]
+        _LevelUpStatList ..= [structActionStructEntry.LevelUpConstitutionGain]
+        _LevelUpStatList ..= [structActionStructEntry.LevelUpLuckGain]
+        _LevelUpStatList ..= [structActionStructEntry.LevelUpMovementGain]
+
+        ; Given a short pointer to an action
+        ; struct in X, clear level up stat gains.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        php
+        sep #$20
+
+        .for _LevelUpStat in _LevelUpStatList
+
+          stz _LevelUpStat,b,x
+
+        .endfor
+
+        plp
+        rtl
+
+        .databank 0
 
     .endsection ActionStructLevelUpSection
 
-    .section ActionStructCalculateGainedWEXPSection
+    .section ActionStructCalculateWeaponTriangleBonusSection
 
-      rsActionStructRollGainedWEXP ; 83/E2B0
+      rsActionStructCalculateWeaponTriangleBonus ; 83/E053
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Check to see if either unit should
+        ; get a weapon triangle bonus.
+
+        ; Inputs:
+        ;   aActionStructUnit1: filled with unit
+        ;   aActionStructUnit2: filled with unit
+
+        php
+        sep #$20
+
+        stz aActionStructUnit1.WeaponTriangleBonus
+        stz aActionStructUnit2.WeaponTriangleBonus
+
+        ; Assume the first unit has a weapon.
+
+        lda aActionStructUnit2.EquippedItemID1
+        beq _End
+
+          lda aActionStructUnit1.AttackType
+          sta wR0
+          lda aActionStructUnit2.AttackType
+          sta wR1
+          jsl rlActionStructCheckIfWeaponTriangleAdvantage
+          bcc +
+
+            lda #5
+            sta aActionStructUnit1.WeaponTriangleBonus
+
+          +
+          lda aActionStructUnit2.AttackType
+          sta wR0
+          lda aActionStructUnit1.AttackType
+          sta wR1
+          jsl rlActionStructCheckIfWeaponTriangleAdvantage
+          bcc _End
+
+            lda #5
+            sta aActionStructUnit2.WeaponTriangleBonus
+
+        _End
+        plp
+        rts
+
+        .databank 0
+
+    .endsection ActionStructCalculateWeaponTriangleBonusSection
+
+    .section ActionStructWeaponEffectSection
+
+      rsActionStructGetWeaponEffect ; 83/E08D
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an attacker's
+        ; action struct in X and a defender's in
+        ; Y, apply the attacker's weapon's effect,
+        ; if it has one.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+        ;   Y: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        php
+        phx
+        phy
+
+        rep #$30
+
+        lda structActionStructEntry.EquippedItemID2,b,x
+        jsl rlCopyItemDataToBuffer
+
+        lda $7EA4E4
+        bit #$0040
+        beq +
+
+          sep #$20
+
+          lda #WeaponEffects.LifestealWeaponEffect
+          sta aItemDataBuffer.WeaponEffect,b
+
+          rep #$20
+
+        +
+        lda aItemDataBuffer.WeaponEffect,b
+        and #$00FF
+        beq +
+
+          phx
+
+          tax
+          lda aWeaponEffectPointers,x
+          sta lR19
+
+          plx
+
+          pea <>(+)-size(byte)
+          jmp (lR19)
+
+        +
+        ply
+        plx
+        plp
+        rts
+
+        .databank 0
+
+      aWeaponEffectPointers .include "../TABLES/WeaponEffectTable.csv.asm" ; 83/E0C5
+      WeaponEffects .binclude "../TABLES/WeaponEffectOffsets.csv.asm"
+
+      rsActionStructLifestealWeaponEffect ; 83/E0D5
+
+        .al
+        .xl
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+        ;   Y: short pointer to action struct
+
+        php
+
+        sep #$20
+
+        lda structActionStructEntry.CurrentHP,b,y
+        sec
+        sbc wActionStructGeneratedRoundDamage
+        bpl +
+
+          lda structActionStructEntry.CurrentHP,b,y
+          sta wActionStructGeneratedRoundDamage
+
+        +
+        lda structActionStructEntry.CurrentHP,b,x
+        clc
+        adc wActionStructGeneratedRoundDamage
+        cmp structActionStructEntry.MaxHP,b,x
+        blt +
+
+          lda structActionStructEntry.MaxHP,b,x
+
+        +
+        sta structActionStructEntry.CurrentHP,b,x
+
+        rep #$30
+
+        lda $7EA4E4
+        ora #$0080
+        sta $7EA4E4
+
+        plp
+        rts
+
+        .databank 0
+
+      rsActionStructPoisonWeaponEffect ; 83/E106
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+        ;   Y: short pointer to action struct
+
+        php
+        sep #$20
+
+        lda structActionStructEntry.DeploymentNumber,b,x
+        and #AllAllegiances
+        beq _End
+
+        rep #$30
+
+        lda structActionStructEntry.Skills2,b,y
+        bit #pack([None, Skill3Immortal])
+        bne _End
+
+          sep #$20
+
+          lda structActionStructEntry.Status,b,y
+          cmp #StatusPetrify
+          beq _End
+
+            lda #StatusPoison
+            sta structActionStructEntry.PostBattleStatus,b,y
+
+            rep #$30
+
+            lda $7EA4E4
+            ora #$0080
+            sta $7EA4E4
+
+            lda #<>rlActionStructStatusCallback
+            sta lUnknown7EA4EC
+            lda #>`rlActionStructStatusCallback
+            sta lUnknown7EA4EC+size(byte)
+
+        _End
+        plp
+        rts
+
+        .databank 0
+
+      rsActionStructDevilWeaponEffect ; 83/E106
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+        ;   Y: short pointer to action struct
+
+        lda structActionStructEntry.Skills2,b,y
+        bit #pack([None, Skill3Immortal])
+        bne _End
+
+          lda structActionStructEntry.Luck,b,x
+          and #$00FF
+          sta wR0
+
+          lda #StatCap + 1
+          sec
+          sbc wR0
+          bpl +
+
+            lda #1
+
+          +
+          jsl rlRollRandomNumber0To100
+          bcc _End
+
+          lda $7EA4E4
+          ora #$0080
+          sta $7EA4E4
+
+        _End
+        rts
+
+        .databank 0
+
+      rsActionStructPetrifyWeaponEffect ; 83/E16C
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+        ;   Y: short pointer to action struct
+
+        sep #$20
+
+        lda #StatusPetrify
+        sta structActionStructEntry.PostBattleStatus,b,y
+
+        lda #$06
+        sta bUnknown7E4FCF
+
+        lda structActionStructEntry.DeploymentNumber,b,y
+        sta bUnknownTargetingDeploymentNumber
+
+        rep #$30
+
+        lda $7EA4E4
+        ora #$0080
+        sta $7EA4E4
+
+        lda #<>rlActionStructStatusCallback
+        sta lUnknown7EA4EC
+        lda #>`rlActionStructStatusCallback
+        sta lUnknown7EA4EC+size(byte)
+
+        rts
+
+        .databank 0
+
+      rlActionStructStatusCallback ; 83/E196
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Copies the post battle stauses
+        ; of the action struct units into their
+        ; statuses. Also does map sprite stuff?
+
+        php
+        phb
+
+        sep #$20
+
+        lda #`wUnknownMapBattleFlag
+        pha
+
+        rep #$20
+
+        plb
+
+        .databank `wUnknownMapBattleFlag
+
+        lda wUnknownMapBattleFlag
+        bmi _End
+
+          sep #$20
+
+          lda aActionStructUnit1.Status
+          cmp aActionStructUnit1.PostBattleStatus
+          beq +
+
+            lda aActionStructUnit1.PostBattleStatus
+            sta aSelectedCharacterBuffer.Status,b
+
+            lda wUnknownMapBattleFlag
+            bne +
+
+              ldx #<>aSelectedCharacterBuffer
+              stx wR1
+              jsl rlUnknown848E5A
+
+          +
+          lda aActionStructUnit2.Status
+          cmp aActionStructUnit2.PostBattleStatus
+          beq _Continue
+
+            lda aActionStructUnit2.DeploymentNumber
+            sta wR0
+            ldx #<>aBurstWindowCharacterBuffer
+            stx wR1
+            jsl rlCopyCharacterDataToBufferByDeploymentNumber
+
+            lda aActionStructUnit2.PostBattleStatus
+            sta aBurstWindowCharacterBuffer.Status,b
+
+            lda wUnknownMapBattleFlag
+            bne +
+
+              ldx #<>aBurstWindowCharacterBuffer
+              stx wR1
+              jsl rlUnknown848E5A
+
+            +
+            ldx #<>aBurstWindowCharacterBuffer
+            stx wR1
+            jsl rlCopyCharacterDataFromBuffer
+
+          _Continue
+          ldx #-1
+          stx wUnknownMapBattleFlag
+
+        _End
+        plb
+        plp
+        rtl
+
+        .databank 0
+
+      rsActionStructHelWeaponEffect ; 83/E1FF
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        lda structActionStructEntry.CurrentHP,b,y
+        and #$00FF
+        dec a
+        sta wActionStructGeneratedRoundDamage
+
+        lda $7EA4E4
+        ora #$0080
+        sta $7EA4E4
+
+        rts
+
+        .databank 0
+
+      rsActionStructBerserkWeaponEffect ; 83/E213
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+        ;   Y: short pointer to action struct
+
+        lda structActionStructEntry.Skills2,b,y
+        bit #pack([None, Skill3Immortal])
+        bne +
+
+          lda structActionStructEntry.TerrainType,b,y
+          jsl rlCheckIfTileIsGateOrThroneByTerrainID
+          bcs +
+
+          lda structActionStructEntry.Status,b,y
+          and #$00FF
+          cmp #StatusPetrify
+          beq +
+
+            sep #$20
+
+            lda #StatusBerserk
+            sta structActionStructEntry.PostBattleStatus,b,y
+
+            rep #$20
+
+            lda structActionStructEntry.UnitState,b,y
+            ora #(UnitStateMovementStar | UnitStateMoved)
+            sta structActionStructEntry.UnitState,b,y
+
+            lda $7EA4E4
+            ora #$0080
+            sta $7EA4E4
+
+            lda #<>rlActionStructStatusCallback
+            sta lUnknown7EA4EC
+            lda #>`rlActionStructStatusCallback
+            sta lUnknown7EA4EC+size(byte)
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructSleepWeaponEffect ; 83/E257
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+        ;   Y: short pointer to action struct
+
+        lda structActionStructEntry.Skills2,b,y
+        bit #pack([None, Skill3Immortal])
+        bne _End
+
+        lda structActionStructEntry.TerrainType,b,y
+        jsl rlCheckIfTileIsGateOrThroneByTerrainID
+        bcs _End
+
+        lda structActionStructEntry.Status,b,y
+        and #$00FF
+
+        cmp #StatusPetrify
+        beq _End
+
+          sep #$20
+
+          lda structActionStructEntry.PostBattleStatus,x
+
+          cmp #StatusSleep
+          beq _End
+
+          cmp #StatusPetrify
+          beq _End
+
+            lda #StatusSleep
+            sta structActionStructEntry.PostBattleStatus,b,y
+
+            lda #$06
+            sta $7E4FCF
+
+            lda structActionStructEntry.DeploymentNumber,b,y
+            sta bUnknownTargetingDeploymentNumber
+
+            rep #$30
+
+            lda structActionStructEntry.UnitState,b,y
+            ora #(UnitStateMovementStar | UnitStateMoved)
+            sta structActionStructEntry.UnitState,b,y
+
+            lda $7EA4E4
+            ora #$0080
+            sta $7EA4E4
+
+            lda #<>rlActionStructStatusCallback
+            sta lUnknown7EA4EC
+            lda #>`rlActionStructStatusCallback
+            sta lUnknown7EA4EC+size(byte)
+
+        _End
+        rts
+
+        .databank 0
+
+    .endsection ActionStructWeaponEffectSection
+
+    .section ActionStructRollGainsSection
+
+      rsActionStructRollPercentage ; 83/E2B0
 
         .autsiz
         .databank ?
 
-        ; Given a percent chance in A,
-        ; roll number of gained weapon WEXP.
+        ; Rolls a percent chance.
+        ; Values over 100% are returned as
+        ; (chance // 100) + (roll(chance % 100) ? 1 : 0)
 
         ; Inputs:
         ;   A: percent chance
 
         ; Outputs:
-        ;   wR1: WEXP
+        ;   wR1: proc'd gains
 
         php
 
@@ -749,7 +1737,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         tdc
         lda structActionStructEntry.WeaponEXPGainChance,b,x
-        jsr rsActionStructRollGainedWEXP
+        jsr rsActionStructRollPercentage
         clc
         adc structActionStructEntry.GainedWeaponEXP,b,x
         cmp #250
@@ -765,7 +1753,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         .databank 0
 
-    .endsection ActionStructCalculateGainedWEXPSection
+    .endsection ActionStructRollGainsSection
 
     .section ActionStructCalculateHitAvoidBonusSection
 

@@ -1,0 +1,9 @@
+.word 0,Pointer
+NoneWeaponEffectPointer,None
+PoisonWeaponEffectPointer,<>rsActionStructPoisonWeaponEffect
+DevilWeaponEffectPointer,<>rsActionStructDevilWeaponEffect
+LifestealWeaponEffectPointer,<>rsActionStructLifestealWeaponEffect
+PetrifyWeaponEffectPointer,<>rsActionStructPetrifyWeaponEffect
+HelWeaponEffectPointer,<>rsActionStructHelWeaponEffect
+BerserkWeaponEffectPointer,<>rsActionStructBerserkWeaponEffect
+SleepWeaponEffectPointer,<>rsActionStructSleepWeaponEffect

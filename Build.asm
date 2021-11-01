@@ -138,28 +138,22 @@
     startCode
 
       .dsection ActionStructWeaponTriangleSection
-
-    endCode
-
-  .endlogical
-
-  * := $01DD73
-  .logical mapped($01DD73)
-
-    startCode
-
+      .dsection ActionStructAdjustVantageRoundOrderSection
+      .dsection ActionStructUnknown83DC31Section
       .dsection ActionStructLevelUpSection
+      .dsection ActionStructCalculateWeaponTriangleBonusSection
 
     endCode
 
   .endlogical
 
-  * := $01E2B0
-  .logical mapped($01E2B0)
+  * := $01E08D
+  .logical mapped($01E08D)
 
     startCode
 
-      .dsection ActionStructCalculateGainedWEXPSection
+      .dsection ActionStructWeaponEffectSection
+      .dsection ActionStructRollGainsSection
       .dsection ActionStructCalculateHitAvoidBonusSection
       .dsection ActionStructHalveStatsSection
       .dsection ActionStructZeroCombatStatsSection
