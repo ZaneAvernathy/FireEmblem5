@@ -138,16 +138,6 @@
     startCode
 
       .dsection ActionStructRoundSection
-
-    endCode
-
-  .endlogical
-
-  * := $01DA13
-  .logical mapped($01DA13)
-
-    startCode
-
       .dsection ActionStructUnknown83DA13Section
       .dsection ActionStructWriteLevelUpActionStructSection
       .dsection ActionStructTryUpdateRoundCaptureFlagSection

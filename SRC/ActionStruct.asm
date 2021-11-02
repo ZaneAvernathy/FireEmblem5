@@ -13,6 +13,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
     .weak
 
+      rlUnsignedMultiply16By16                      :?= address($80AA27)
       rlUnsignedDivide16By8                         :?= address($80AAC3)
       rlGetRandomNumber100                          :?= address($80B0E6)
       rlBlockFillWord                               :?= address($80B36C)
@@ -38,6 +39,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
       rlGetTier1ClassRelativePowerModifier          :?= address($83A9EC)
       rlCheckIfTileIsGateOrThroneByTerrainID        :?= address($83AF3F)
       rlCopyItemDataToBuffer                        :?= address($83B00D)
+      rlTryGetBrokenItemID                          :?= address($83B0B7)
       rlUnknown848E5A                               :?= address($848E5A)
 
       rsActionStructGetItemInfoAndCapturingStats   :?= address($83D085)
@@ -57,31 +59,31 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         ; TODO: names, unknowns
 
-        wActionStructRoundTempBitfield1_01             := bits($01)
-        wActionStructRoundTempBitfield1_DefenderMove   := bits($02)
-        wActionStructRoundTempBitfield1_04             := bits($04)
-        wActionStructRoundTempBitfield1_08             := bits($08)
-        wActionStructRoundTempBitfield1_UnitKilled     := bits($10)
-        wActionStructRoundTempBitfield1_DefenderKilled := bits($20)
-        wActionStructRoundTempBitfield1_40             := bits($40)
-        wActionStructRoundTempBitfield1_80             := bits($80)
+        RoundFlowFlag01             := bits($01)
+        RoundFlowFlagDefenderMove   := bits($02)
+        RoundFlowFlag04             := bits($04)
+        RoundFlowFlag08             := bits($08)
+        RoundFlowFlagUnitKilled     := bits($10)
+        RoundFlowFlagDefenderKilled := bits($20)
+        RoundFlowFlag40             := bits($40)
+        RoundFlowFlag80             := bits($80)
 
-        wActionStructRoundTempBitfield2_Critical     := bits($0001)
-        wActionStructRoundTempBitfield2_StaffMiss    := bits($0002)
-        wActionStructRoundTempBitfield2_Pavise       := bits($0004)
-        wActionStructRoundTempBitfield2_Immortal     := bits($0008)
-        wActionStructRoundTempBitfield2_Astra        := bits($0010)
-        wActionStructRoundTempBitfield2_Luna         := bits($0020)
-        wActionStructRoundTempBitfield2_Sol          := bits($0040)
-        wActionStructRoundTempBitfield2_WeaponEffect := bits($0080)
-        wActionStructRoundTempBitfield2_Double       := bits($0100)
-        wActionStructRoundTempBitfield2_0200         := bits($0200)
-        wActionStructRoundTempBitfield2_0400         := bits($0400)
-        wActionStructRoundTempBitfield2_0800         := bits($0800)
-        wActionStructRoundTempBitfield2_1000         := bits($1000)
-        wActionStructRoundTempBitfield2_2000         := bits($2000)
-        wActionStructRoundTempBitfield2_4000         := bits($4000)
-        wActionStructRoundTempBitfield2_8000         := bits($8000)
+        RoundAttackFlagCritical     := bits($0001)
+        RoundAttackFlagMiss         := bits($0002)
+        RoundAttackFlagPavise       := bits($0004)
+        RoundAttackFlagImmortal     := bits($0008)
+        RoundAttackFlagAstra        := bits($0010)
+        RoundAttackFlagLuna         := bits($0020)
+        RoundAttackFlagSol          := bits($0040)
+        RoundAttackFlagWeaponEffect := bits($0080)
+        RoundAttackFlagDouble       := bits($0100)
+        RoundAttackFlagCounter      := bits($0200)
+        RoundAttackFlagUnableToAct  := bits($0400)
+        RoundAttackFlag0800         := bits($0800)
+        RoundAttackFlag1000         := bits($1000)
+        RoundAttackFlag2000         := bits($2000)
+        RoundAttackFlag4000         := bits($4000)
+        RoundAttackFlag8000         := bits($8000)
 
       ; Stat stuff?
 
@@ -93,6 +95,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         LevelCap := 20
         ExperienceCap := 100
+
+        CritCap := 100
+        FirstAttackCritCap := 25
 
     .endweak
 
@@ -403,8 +408,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ;   aActionStructGeneratedRounds: filled with rounds
 
         ; Outputs:
-        ;   wActionStructRoundTempBitfield1: structBattleGeneratedRound.Bitfield1
-        ;   wActionStructRoundTempBitfield2: structBattleGeneratedRound.Bitfield2
+        ;   wActionStructRoundFlowBitfield: structBattleGeneratedRound.FlowFlagBitfield
+        ;   wActionStructRoundAttackBitfield: structBattleGeneratedRound.AttackFlagBitfield
 
         php
         phx
@@ -412,12 +417,12 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         rep #$30
 
         ldx wActionStructGeneratedRoundOffset
-        lda aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield2,x
-        sta wActionStructRoundTempBitfield2
+        lda aActionStructGeneratedRounds+structBattleGeneratedRound.AttackFlagBitfield,x
+        sta wActionStructRoundAttackBitfield
 
-        lda aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield1,x
+        lda aActionStructGeneratedRounds+structBattleGeneratedRound.FlowFlagBitfield,x
         and #$00FF
-        sta wActionStructRoundTempBitfield1
+        sta wActionStructRoundFlowBitfield
 
         plx
         plp
@@ -439,8 +444,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ;   aActionStructGeneratedRounds: filled with rounds
 
         ; Outputs:
-        ;   wActionStructRoundTempBitfield1: structBattleGeneratedRound.Bitfield1
-        ;   wActionStructRoundTempBitfield2: structBattleGeneratedRound.Bitfield2
+        ;   wActionStructRoundFlowBitfield: structBattleGeneratedRound.FlowFlagBitfield
+        ;   wActionStructRoundAttackBitfield: structBattleGeneratedRound.AttackFlagBitfield
         ;   wActionStructGeneratedRoundOffset: advanced an entry
 
         php
@@ -462,12 +467,12 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         ldx wActionStructGeneratedRoundOffset
 
-        lda aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield2,x
-        sta wActionStructRoundTempBitfield2
+        lda aActionStructGeneratedRounds+structBattleGeneratedRound.AttackFlagBitfield,x
+        sta wActionStructRoundAttackBitfield
 
-        lda aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield1,x
+        lda aActionStructGeneratedRounds+structBattleGeneratedRound.FlowFlagBitfield,x
         and #$00FF
-        sta wActionStructRoundTempBitfield1
+        sta wActionStructRoundFlowBitfield
 
         txa
         clc
@@ -491,8 +496,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; if the rounds array is full.
 
         ; Inputs:
-        ;   wActionStructRoundTempBitfield1: filled with bitfield
-        ;   wActionStructRoundTempBitfield2: filled with bitfield
+        ;   wActionStructRoundFlowBitfield: filled with bitfield
+        ;   wActionStructRoundAttackBitfield: filled with bitfield
         ;   wActionStructRoundTempDamage: damage
         ;   wActionStructGeneratedRoundOffset: offset into array to write to
 
@@ -511,13 +516,13 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         cpx #size(aActionStructGeneratedRounds) - size(structBattleGeneratedRound)
         beq _Full
 
-        lda wActionStructRoundTempBitfield2
-        sta aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield2,x
+        lda wActionStructRoundAttackBitfield
+        sta aActionStructGeneratedRounds+structBattleGeneratedRound.AttackFlagBitfield,x
 
         sep #$20
 
-        lda wActionStructRoundTempBitfield1
-        sta aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield1,x
+        lda wActionStructRoundFlowBitfield
+        sta aActionStructGeneratedRounds+structBattleGeneratedRound.FlowFlagBitfield,x
 
         lda wActionStructRoundTempDamage
         sta aActionStructGeneratedRounds+structBattleGeneratedRound.Damage,x
@@ -554,7 +559,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ldx wActionStructGeneratedRoundOffset
 
         lda #-1
-        sta aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield2,x
+        sta aActionStructGeneratedRounds+structBattleGeneratedRound.AttackFlagBitfield,x
 
         lda wActionStructGeneratedRoundOffset
         sta wActionStructGeneratedRoundLastOffset
@@ -562,7 +567,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         sep #$20
 
         lda #-1
-        sta aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield1,x
+        sta aActionStructGeneratedRounds+structBattleGeneratedRound.FlowFlagBitfield,x
 
         lda #-1
         sta aActionStructGeneratedRounds+structBattleGeneratedRound.Damage,x
@@ -591,7 +596,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ;   wActionStructRoundTempUnknownAttackCount: number of attacks
 
         stz wActionStructGeneratedRoundOffset
-        stz wActionStructRoundTempBitfield2
+        stz wActionStructRoundAttackBitfield
         stz wActionStructRoundTempDamage
         stz wActionStructRoundTempUnknownAttackCount
         stz wActionStructGeneratedRoundBonusCombat
@@ -623,15 +628,15 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ;   wActionStructGeneratedRoundActor
 
         ; Outputs:
-        ;   wActionStructRoundTempUnknownBitfield: 1 if defender, 0 otherwise
+        ;   wActionStructTempRoundAttackBitfield: 1 if defender, 0 otherwise
 
-        stz wActionStructRoundTempUnknownBitfield
+        stz wActionStructTempRoundAttackBitfield
         lda wActionStructGeneratedRoundActor
         beq +
 
-          lda wActionStructRoundTempUnknownBitfield
-          ora #wActionStructRoundTempBitfield1_01
-          sta wActionStructRoundTempUnknownBitfield
+          lda wActionStructTempRoundAttackBitfield
+          ora #RoundFlowFlag01
+          sta wActionStructTempRoundAttackBitfield
 
         +
         rts
@@ -662,9 +667,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         phx
         phy
 
-        lda wActionStructRoundTempBitfield1
-        ora #wActionStructRoundTempBitfield1_80
-        sta wActionStructRoundTempBitfield1
+        lda wActionStructRoundFlowBitfield
+        ora #RoundFlowFlag80
+        sta wActionStructRoundFlowBitfield
 
         jsr rsActionStructRoundGetBattleLengthModifiers
 
@@ -672,9 +677,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         jsr rsActionStructRoundGetRoundCharacters
 
-        lda wActionStructRoundTempBitfield2
-        ora #wActionStructRoundTempBitfield2_0200
-        sta wActionStructRoundTempBitfield2
+        lda wActionStructRoundAttackBitfield
+        ora #RoundAttackFlagCounter
+        sta wActionStructRoundAttackBitfield
 
         jsr rsActionStructRoundGetBattleLengthModifiers
         jsr rsActionStructRoundGetRoundCharacters
@@ -703,23 +708,23 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ;   wActionStructGeneratedRoundActor: current attacker (0, 2)
 
         ; Outputs:
-        ;   wActionStructRoundTempBitfield1: sets
-        ;     wActionStructRoundTempBitfield1_DefenderMove if
+        ;   wActionStructRoundFlowBitfield: sets
+        ;     RoundFlowFlagDefenderMove if
         ;     defender next
         ;   wActionStructGeneratedRoundActor: new attacker (0, 2)
 
-        lda wActionStructRoundTempUnknownBitfield
-        sta wActionStructRoundTempBitfield1
+        lda wActionStructTempRoundAttackBitfield
+        sta wActionStructRoundFlowBitfield
 
-        stz wActionStructRoundTempBitfield2
+        stz wActionStructRoundAttackBitfield
 
         lda wActionStructGeneratedRoundActor
         bit #$0002
         beq +
 
-          lda wActionStructRoundTempBitfield1
-          ora #wActionStructRoundTempBitfield1_DefenderMove
-          sta wActionStructRoundTempBitfield1
+          lda wActionStructRoundFlowBitfield
+          ora #RoundFlowFlagDefenderMove
+          sta wActionStructRoundFlowBitfield
 
         +
         ldx wActionStructGeneratedRoundActor
@@ -907,16 +912,16 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
           ldx #<>aActionStructUnit1
           ldy #<>aActionStructUnit2
-          lda wActionStructRoundTempUnknownBitfield
-          sta wActionStructRoundTempBitfield1
+          lda wActionStructTempRoundAttackBitfield
+          sta wActionStructRoundFlowBitfield
           bra _Continue
 
         _DefenderDoubles
           ldx #<>aActionStructUnit2
           ldy #<>aActionStructUnit1
-          lda wActionStructRoundTempUnknownBitfield
-          ora #wActionStructRoundTempBitfield1_DefenderMove
-          sta wActionStructRoundTempBitfield1
+          lda wActionStructTempRoundAttackBitfield
+          ora #RoundFlowFlagDefenderMove
+          sta wActionStructRoundFlowBitfield
           bra _Continue
 
         _NoDoubling
@@ -927,8 +932,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         _Continue
         rep #$30
 
-        lda #wActionStructRoundTempBitfield2_Double
-        sta wActionStructRoundTempBitfield2
+        lda #RoundAttackFlagDouble
+        sta wActionStructRoundAttackBitfield
         sec
         rts
 
@@ -948,7 +953,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         ; Outputs:
         ;   wActionStructGeneratedRoundVar1: 5 if astra, unchanged otherwise
-        ;   wActionStructRoundTempBitfield2: modified with wActionStructRoundTempBitfield2_Astra
+        ;   wActionStructRoundAttackBitfield: modified with RoundAttackFlagAstra
         ;     if astra, unchanged otherwise
 
         lda structActionStructEntry.Skills2,b,x
@@ -963,9 +968,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
             lda #5
             sta wActionStructGeneratedRoundVar1
 
-            lda wActionStructRoundTempBitfield2
-            ora #wActionStructRoundTempBitfield2_Astra
-            sta wActionStructRoundTempBitfield2
+            lda wActionStructRoundAttackBitfield
+            ora #RoundAttackFlagAstra
+            sta wActionStructRoundAttackBitfield
 
         +
         rts
@@ -1056,13 +1061,13 @@ GUARD_FE5_ACTIONSTRUCT :?= false
           jsr rsActionStructWriteRound
           bcs +
 
-            lda wActionStructRoundTempBitfield1
-            and #~wActionStructRoundTempBitfield1_80
-            sta wActionStructRoundTempBitfield1
+            lda wActionStructRoundFlowBitfield
+            and #~RoundFlowFlag80
+            sta wActionStructRoundFlowBitfield
 
-            lda wActionStructRoundTempBitfield2
-            and #~wActionStructRoundTempBitfield1_UnitKilled
-            sta wActionStructRoundTempBitfield2
+            lda wActionStructRoundAttackBitfield
+            and #~RoundFlowFlagUnitKilled
+            sta wActionStructRoundAttackBitfield
 
             dec wActionStructGeneratedRoundVar1
             bne _Loop
@@ -1100,11 +1105,684 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         jsl rlBlockFillWord
 
         stz wActionStructGeneratedRoundOffset
-        stz wActionStructRoundTempBitfield1
-        stz wActionStructRoundTempBitfield2
+        stz wActionStructRoundFlowBitfield
+        stz wActionStructRoundAttackBitfield
         stz wActionStructRoundTempDamage
 
         plp
+        rts
+
+        .databank 0
+
+      rsActionStructRoundGetAttackerDefenderOrder ; 83/D773
+
+        .al
+        .xl
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Gives action structs in X/Y depending
+        ; on whose move it is.
+
+        ; Inputs:
+        ;   wActionStructRoundFlowBitfield: actor
+
+        ; Outputs:
+        ;   X: short poitner to attacker action struct
+        ;   Y: short pointer to defender action struct
+
+        lda wActionStructRoundFlowBitfield
+        bit #RoundFlowFlagDefenderMove
+        beq +
+
+          ldx #<>aActionStructUnit2
+          ldy #<>aActionStructUnit1
+          rts
+
+        +
+        ldx #<>aActionStructUnit1
+        ldy #<>aActionStructUnit2
+        rts
+
+        .databank 0
+
+      rsActionStructRoundGetRoundModifiers ; 83/D789
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Sets modifiers like crits and skills
+        ; for each round.
+
+        ; Inputs:
+        ;   aActionStructUnit1: filled with unit
+        ;   aActionStructUnit2: filled with unit
+
+        ; Outputs:
+        ;   aActionStructGeneratedRounds: rounds
+
+        stz wActionStructGeneratedRoundOffset
+
+        _Loop
+        jsr rsActionStructGetGeneratedRoundBitfields
+
+        ; Check for end of rounds terminator.
+
+        lda wActionStructRoundAttackBitfield
+        cmp #-1
+        beq _End
+
+          jsr rsActionStructRoundGetAttackerDefenderOrder
+
+          stz wActionStructGeneratedRoundDamage
+
+          jsr rsActionStructRoundTrySetUnableToAct
+          bcs +
+
+            jsr rsActionStructRoundStoreParameters
+            jsr rsActionStructRoundAdjustCrit
+            jsr rsActionStructRoundTryProcLuna
+            jsr rsActionStructRoundTryProcSol
+            jsr rsActionStructRoundTryProcPavise
+            jsr rsActionStructRoundCheckWrath
+            jsr rsActionStructRoundTryProcCrit
+            jsr rsActionStructRoundApplyHit
+
+          +
+          jsr rsActionStructRoundWriteRoundAndMarkDeaths
+          bcc _Loop
+
+          jsr rsActionStructTerminateRoundArray
+
+        _End
+        rts
+
+        .databank 0
+
+      rsActionStructRoundTrySetUnableToAct ; 83/D7C3
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Marks a unit as unable to act if they're
+        ; asleep or petrified.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ;   wActionStructRoundAttackBitfield: modified with
+        ;     RoundAttackFlagUnableToAct if unable
+        ;     to act, unchanged otherwise.
+        ;   Carry set if unable to act, carry clear otherwise
+
+        lda structActionStructEntry.Status,b,x
+        and #$00FF
+        cmp #StatusPetrify
+        beq +
+
+        cmp #StatusSleep
+        beq +
+
+          clc
+          rts
+
+        +
+        lda wActionStructRoundAttackBitfield
+        ora #RoundAttackFlagUnableToAct
+        sta wActionStructRoundAttackBitfield
+        sec
+        rts
+
+        .databank 0
+
+      rsActionStructRoundStoreParameters ; 83/D7E0
+
+        .al
+        .autsiz
+        .databank `wActionStructGeneratedRoundMight
+
+        ; Gets stats used by a round.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        lda structActionStructEntry.BattleMight,b,x
+        and #$00FF
+        sta wActionStructGeneratedRoundMight
+
+        lda structActionStructEntry.BattleDefense,b,y
+        and #$00FF
+        sta wActionStructGeneratedRoundDefense
+
+        lda structActionStructEntry.BattleAdjustedHit,b,x
+        and #$00FF
+        sta wActionStructGeneratedRoundHit
+
+        lda structActionStructEntry.BattleAdjustedCrit,b,x
+        and #$00FF
+        sta wActionStructGeneratedRoundCrit
+
+        rts
+
+        .databank 0
+
+      rsActionStructRoundAdjustCrit ; 83/D805
+
+        .al
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; If a unit is doubling, calculate their critrate
+        ; as BattleAdjustedCrit * CriticalCoefficient.
+
+        ; If not a double attack, cap crit at FirstAttackCritCap.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ;   wActionStructGeneratedRoundCrit: adjusted crit
+
+        lda wActionStructRoundAttackBitfield
+        bit #RoundAttackFlagDouble
+        bne _WithCoefficient
+
+          lda wActionStructGeneratedRoundCrit
+          cmp #FirstAttackCritCap
+          blt _End
+
+            lda #FirstAttackCritCap
+            sta wActionStructGeneratedRoundCrit
+            bra _End
+
+        _WithCoefficient
+          phx
+          phy
+          lda structActionStructEntry.CriticalCoefficient,b,x
+          and #$00FF
+          sta wR10
+          lda structActionStructEntry.BattleAdjustedCrit,b,x
+          and #$00FF
+          sta wR11
+          jsl rlUnsignedMultiply16By16
+
+          ply
+          plx
+          lda wR12
+          cmp #CritCap
+          blt +
+
+            lda #CritCap
+
+          +
+          sta wActionStructGeneratedRoundCrit
+
+        _End
+        rts
+
+        .databank 0
+
+      rsActionStructRoundTryProcLuna ; 83/D843
+
+        .al
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; Sets an attack as luna if the unit
+        ; has it and it successfully procs.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        lda structActionStructEntry.Skills2,b,x
+        bit #pack([None, Skill3Luna])
+        beq +
+
+          lda structActionStructEntry.Skill,b,x
+          and #$00FF
+          jsl rlRollRandomNumber0To100
+          bcc +
+
+            lda wActionStructRoundAttackBitfield
+            ora #RoundAttackFlagLuna
+            sta wActionStructRoundAttackBitfield
+
+            stz wActionStructGeneratedRoundDefense
+
+            lda #100
+            sta wActionStructGeneratedRoundHit
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructRoundTryProcSol ; 83/D86A
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Sets an attack as sol if the unit
+        ; has it and it successfully procs.
+
+        ; Will not proc if the unit is using a weapon
+        ; with an effect (other than lifesteal).
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        lda structActionStructEntry.Skills2,b,x
+        bit #pack([None, Skill3Sol])
+        beq _End
+
+          lda structActionStructEntry.Skill,b,x
+          and #$00FF
+          jsl rlRollRandomNumber0To100
+          bcc _End
+
+            lda structActionStructEntry.EquippedItemID2,b,x
+            jsl rlCopyItemDataToBuffer
+
+            lda aItemDataBuffer.WeaponEffect,b
+            beq +
+
+              cmp #WeaponEffects.LifestealWeaponEffect
+              beq +
+
+              bra _End
+
+        +
+        lda #100
+        sta wActionStructGeneratedRoundHit
+
+        lda wActionStructRoundAttackBitfield
+        ora #RoundAttackFlagSol
+        sta wActionStructRoundAttackBitfield
+
+        _End
+        rts
+
+        .databank 0
+
+      rsActionStructRoundTryProcPavise ; 83/D8A1
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Tries to proc pavise. Will not
+        ; proc if attacker has proc'd luna or sol
+        ; during this attack.
+
+        ; Inputs:
+        ;   X: short pointer to attacker action struct
+        ;   Y: short pointer to attacker action struct
+
+        ; Outputs:
+        ; None
+
+        lda structActionStructEntry.Skills2,b,y
+        bit #Skill2Pavise
+        beq +
+
+        lda structActionStructEntry.Level,b,y
+        jsl rlRollRandomNumber0To100
+        bcc +
+
+        lda wActionStructRoundAttackBitfield
+        bit #(RoundAttackFlagLuna | RoundAttackFlagSol)
+        bne +
+
+        lda wActionStructRoundAttackBitfield
+        ora #RoundAttackFlagPavise
+        sta wActionStructRoundAttackBitfield
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructRoundCheckWrath ; 83/D8C4
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Checks if a unit has wrath and
+        ; sets their crit to 100 if counterattacking.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        lda structActionStructEntry.Skills2,b,x
+        bit #pack([None, Skill3Wrath])
+        beq +
+
+        lda wActionStructRoundAttackBitfield
+        bit #RoundAttackFlagCounter
+        beq +
+
+          lda #100
+          sta wActionStructGeneratedRoundCrit
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructRoundNullDamageIfImmortal ; 83/D8DB
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Nullifies damage if the defender is immortal
+        ; during this attack.
+
+        ; Inputs:
+        ;   X: short pointer to attacker action struct
+        ;   Y: short pointer to defender action struct
+
+        ; Outputs:
+        ; None
+
+        lda structActionStructEntry.CurrentHP,b,y
+        and #$00FF
+        sec
+        sbc wActionStructGeneratedRoundDamage
+        beq +
+        bpl _False
+
+        +
+        lda structActionStructEntry.UnkillableFlag,b,y
+        and #$00FF
+        beq _False
+
+        lda wActionStructRoundAttackBitfield
+        ora #RoundAttackFlagImmortal
+        sta wActionStructRoundAttackBitfield
+
+        stz wActionStructGeneratedRoundDamage
+
+        sec
+        rts
+
+        _False
+        clc
+        rts
+
+        .databank 0
+
+      rsActionStructRoundTryProcCrit ; 83/D901
+
+        .al
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; Checks if an attack was a crit, sets
+        ; might accordingly.
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
+
+        lda #100
+        jsl rlGetRandomNumber100
+        cmp wActionStructGeneratedRoundCrit
+        bge +
+
+          lda wActionStructRoundAttackBitfield
+          ora #RoundAttackFlagCritical
+          sta wActionStructRoundAttackBitfield
+
+          lda wActionStructGeneratedRoundMight
+          asl a
+          sta wActionStructGeneratedRoundMight
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructRoundApplyHit ; 83/D91E
+
+        .al
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; Inputs:
+        ;   X: short pointer to attacker action struct
+        ;   Y: short pointer to defender action struct
+
+        ; Outputs:
+        ;   bUnknown7E4FCF: $02 on kill, unchanged otherwise
+        ;   bUnknownTargetingDeploymentNumber: defender deployment
+        ;     number on kill, unchanged otherwise
+
+        jsr rsActionStructCalculateWEXPGain
+
+        ; Pavise doesn't care if the attack
+        ; would have dealt damage or missed.
+
+        lda wActionStructRoundAttackBitfield
+        bit #RoundAttackFlagPavise
+        beq +
+
+          jmp _End
+
+        +
+        lda wActionStructGeneratedRoundHit
+        jsl rlRollRandomNumber0To100
+        bcc _Miss
+
+          lda wActionStructGeneratedRoundMight
+          sec
+          sbc wActionStructGeneratedRoundDefense
+          bpl +
+
+            lda #0
+
+          +
+          cmp #HPCap
+          blt +
+
+            lda #80
+
+          +
+          sta wActionStructGeneratedRoundDamage
+
+          ; Immortal acts like a miss.
+
+          jsr rsActionStructRoundNullDamageIfImmortal
+          bcs _Miss
+
+          jsr rsActionStructGetWeaponEffect
+          jsr rsActionStructSwapUnitsIfDevilEffect
+
+          sep #$20
+
+          lda structActionStructEntry.CurrentHP,b,y
+          sec
+          sbc wActionStructGeneratedRoundDamage
+          beq _Kill
+          bpl +
+
+            _Kill
+            lda #$02
+            sta bUnknown7E4FCF
+            lda structActionStructEntry.DeploymentNumber,b,y
+            sta bUnknownTargetingDeploymentNumber
+            lda #0
+
+          +
+          sta structActionStructEntry.CurrentHP,b,y
+
+          rep #$30
+
+          jsr rsActionStructSwapUnitsIfDevilEffect
+          lda structActionStructEntry.EquippedItemID2,b,x
+          jsl rlTryGetBrokenItemID
+          sta structActionStructEntry.EquippedItemID2,b,x
+          rts
+
+        _Miss
+
+        ; Tomes always lose durability on a miss
+        ; 1-2 range weapons only lose durability at 2
+        ; range on a miss, staves always lose durability
+        ; on a miss.
+
+        lda structActionStructEntry.WeaponTraits,b,x
+        bit #TraitTome
+        bne _Continue
+
+          lda bActionStructDistance
+          and #$00FF
+
+          cmp #1
+          beq +
+
+          cmp #narrow(-1, 1)
+          beq +
+
+        _Continue
+        lda structActionStructEntry.EquippedItemID2,b,x
+        jsl rlTryGetBrokenItemID
+        sta structActionStructEntry.EquippedItemID2,b,x
+
+        +
+        lda wActionStructRoundAttackBitfield
+        and #~RoundAttackFlagCritical
+        ora #RoundAttackFlagMiss
+        sta wActionStructRoundAttackBitfield
+        rts
+
+        _End
+        rts
+
+        .databank 0
+
+      rsActionStructSwapUnitsIfDevilEffect ; 83/D9B4
+
+        .al
+        .autsiz
+        .databank `wActionStructRoundAttackBitfield
+
+        ; Swaps the order of units if the
+        ; devil effect was triggered.
+
+        ; Inputs:
+        ;   X: short pointer to attacker action struct
+        ;   Y: short pointer to defender action struct
+        ;   aItemDataBuffer: filled with item
+
+        ; Outputs:
+        ;   X: new attacker
+        ;   Y: new defender
+
+        lda aItemDataBuffer.WeaponEffect,b
+        and #$00FF
+        cmp #WeaponEffects.DevilWeaponEffect
+        bne +
+
+        lda wActionStructRoundAttackBitfield
+        bit #RoundAttackFlagWeaponEffect
+        beq +
+
+          txa
+          tyx
+          tay
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructRoundWriteRoundAndMarkDeaths ; 83/D9CB
+
+        .al
+        .autsiz
+        .databank `wActionStructRoundAttackBitfield
+
+        ; Writes the round and checks if combat should
+        ; end due to a broken item or a death.
+
+        ; Inputs:
+        ;   X: short pointer to attacker action struct
+        ;   Y: short pointer to defender action struct
+
+        ; Outputs:
+        ;   Carry set if combat should end, carry clear if
+        ;     combat can continue.
+
+        php
+        phx
+
+        lda wActionStructRoundAttackBitfield
+        ora structActionStructEntry.RoundAttackHistory,b,x
+        sta structActionStructEntry.RoundAttackHistory,b,x
+
+        sep #$20
+
+        lda structActionStructEntry.CurrentHP,b,x
+        beq _AttackerDeath
+
+        lda structActionStructEntry.CurrentHP,b,y
+        beq _DefenderDeath
+
+        bra +
+
+        _AttackerDeath
+          lda wActionStructRoundFlowBitfield
+          ora #RoundFlowFlagUnitKilled
+          sta wActionStructRoundFlowBitfield
+
+          bra +
+
+        _DefenderDeath
+          lda wActionStructRoundFlowBitfield
+          ora #(RoundFlowFlagUnitKilled | RoundFlowFlagDefenderKilled)
+          sta wActionStructRoundFlowBitfield
+
+        +
+        lda wActionStructGeneratedRoundDamage
+        sta wActionStructRoundTempDamage
+        jsr rsActionStructWriteRound
+
+        lda bUnknownTargetingDeploymentNumber
+        bne _EndCombat
+
+        lda structActionStructEntry.EquippedItemID2,b,x
+        and #$FF
+        beq _EndCombat
+
+        plx
+        plp
+        clc
+        rts
+
+        _EndCombat
+        plx
+        plp
+        sec
         rts
 
         .databank 0
@@ -2326,8 +3004,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         lda structActionStructEntry.EquippedItemID2,b,x
         jsl rlCopyItemDataToBuffer
 
-        lda wActionStructRoundTempBitfield2
-        bit #wActionStructRoundTempBitfield2_Sol
+        lda wActionStructRoundAttackBitfield
+        bit #RoundAttackFlagSol
         beq +
 
           sep #$20
@@ -2401,9 +3079,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         rep #$30
 
-        lda wActionStructRoundTempBitfield2
+        lda wActionStructRoundAttackBitfield
         ora #$0080
-        sta wActionStructRoundTempBitfield2
+        sta wActionStructRoundAttackBitfield
 
         plp
         rts
@@ -2443,9 +3121,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
             rep #$30
 
-            lda wActionStructRoundTempBitfield2
-            ora #wActionStructRoundTempBitfield2_WeaponEffect
-            sta wActionStructRoundTempBitfield2
+            lda wActionStructRoundAttackBitfield
+            ora #RoundAttackFlagWeaponEffect
+            sta wActionStructRoundAttackBitfield
 
             lda #<>rlActionStructStatusCallback
             sta lUnknown7EA4EC
@@ -2487,9 +3165,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
           jsl rlRollRandomNumber0To100
           bcc _End
 
-          lda wActionStructRoundTempBitfield2
+          lda wActionStructRoundAttackBitfield
           ora #$0080
-          sta wActionStructRoundTempBitfield2
+          sta wActionStructRoundAttackBitfield
 
         _End
         rts
@@ -2518,9 +3196,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         rep #$30
 
-        lda wActionStructRoundTempBitfield2
-        ora #wActionStructRoundTempBitfield2_WeaponEffect
-        sta wActionStructRoundTempBitfield2
+        lda wActionStructRoundAttackBitfield
+        ora #RoundAttackFlagWeaponEffect
+        sta wActionStructRoundAttackBitfield
 
         lda #<>rlActionStructStatusCallback
         sta lUnknown7EA4EC
@@ -2621,9 +3299,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         dec a
         sta wActionStructGeneratedRoundDamage
 
-        lda wActionStructRoundTempBitfield2
+        lda wActionStructRoundAttackBitfield
         ora #$0080
-        sta wActionStructRoundTempBitfield2
+        sta wActionStructRoundAttackBitfield
 
         rts
 
@@ -2663,9 +3341,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
             ora #(UnitStateMovementStar | UnitStateMoved)
             sta structActionStructEntry.UnitState,b,y
 
-            lda wActionStructRoundTempBitfield2
-            ora #wActionStructRoundTempBitfield2_WeaponEffect
-            sta wActionStructRoundTempBitfield2
+            lda wActionStructRoundAttackBitfield
+            ora #RoundAttackFlagWeaponEffect
+            sta wActionStructRoundAttackBitfield
 
             lda #<>rlActionStructStatusCallback
             sta lUnknown7EA4EC
@@ -2726,9 +3404,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
             ora #(UnitStateMovementStar | UnitStateMoved)
             sta structActionStructEntry.UnitState,b,y
 
-            lda wActionStructRoundTempBitfield2
-            ora #wActionStructRoundTempBitfield2_WeaponEffect
-            sta wActionStructRoundTempBitfield2
+            lda wActionStructRoundAttackBitfield
+            ora #RoundAttackFlagWeaponEffect
+            sta wActionStructRoundAttackBitfield
 
             lda #<>rlActionStructStatusCallback
             sta lUnknown7EA4EC
