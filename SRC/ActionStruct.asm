@@ -15,8 +15,10 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
       rlUnsignedDivide16By8                         :?= address($80AAC3)
       rlGetRandomNumber100                          :?= address($80B0E6)
+      rlBlockFillWord                               :?= address($80B36C)
       rlGetMapUnitsInRange                          :?= address($80E5CD)
       rlFillMapByWord                               :?= address($80E849)
+      rlUpdateSaveSlotLosses                        :?= address($81C99F)
       rlGetCharacterWinLossTableOffset              :?= address($81C9C7)
       rlGetMapTileIndexByCoords                     :?= address($838E76)
       rlCopyCharacterDataToBufferByDeploymentNumber :?= address($83901C)
@@ -24,6 +26,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
       rlCopyExpandedCharacterDataBufferToBuffer     :?= address($83905C)
       rlCombineCharacterDataAndClassBases           :?= address($8390BE)
       rlCopyClassDataToBuffer                       :?= address($8393E0)
+      rlClampCharacterStats                         :?= address($839278)
       rlCopyCharacterDataToBuffer                   :?= address($83941A)
       rlGetEquippableItemInventoryOffset            :?= address($839705)
       rlSearchForUnitAndWriteTargetToBuffer         :?= address($83976E)
@@ -49,6 +52,36 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ActionStruct_PlayerInitiated :?= 2
         ActionStruct_Unknown3        :?= 3
         ActionStruct_Single          :?= 4
+
+      ; Bitfields
+
+        ; TODO: names, unknowns
+
+        wActionStructRoundTempBitfield1_01             := bits($01)
+        wActionStructRoundTempBitfield1_DefenderMove   := bits($02)
+        wActionStructRoundTempBitfield1_04             := bits($04)
+        wActionStructRoundTempBitfield1_08             := bits($08)
+        wActionStructRoundTempBitfield1_UnitKilled     := bits($10)
+        wActionStructRoundTempBitfield1_DefenderKilled := bits($20)
+        wActionStructRoundTempBitfield1_40             := bits($40)
+        wActionStructRoundTempBitfield1_80             := bits($80)
+
+        wActionStructRoundTempBitfield2_Critical     := bits($0001)
+        wActionStructRoundTempBitfield2_StaffMiss    := bits($0002)
+        wActionStructRoundTempBitfield2_Pavise       := bits($0004)
+        wActionStructRoundTempBitfield2_Immortal     := bits($0008)
+        wActionStructRoundTempBitfield2_Astra        := bits($0010)
+        wActionStructRoundTempBitfield2_Luna         := bits($0020)
+        wActionStructRoundTempBitfield2_Sol          := bits($0040)
+        wActionStructRoundTempBitfield2_WeaponEffect := bits($0080)
+        wActionStructRoundTempBitfield2_Double       := bits($0100)
+        wActionStructRoundTempBitfield2_0200         := bits($0200)
+        wActionStructRoundTempBitfield2_0400         := bits($0400)
+        wActionStructRoundTempBitfield2_0800         := bits($0800)
+        wActionStructRoundTempBitfield2_1000         := bits($1000)
+        wActionStructRoundTempBitfield2_2000         := bits($2000)
+        wActionStructRoundTempBitfield2_4000         := bits($4000)
+        wActionStructRoundTempBitfield2_8000         := bits($8000)
 
       ; Stat stuff?
 
@@ -353,6 +386,1056 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank 0
 
     .endsection ActionStructTrySetUnitCoordinatesSection
+
+    .section ActionStructRoundSection
+
+      rsActionStructGetGeneratedRoundBitfields ; 83/D4E5
+
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; Writes the current round accessed
+        ; by wActionStructGeneratedRoundOffset to
+        ; the temp area.
+
+        ; Inputs:
+        ;   wActionStructGeneratedRoundOffset: offset into aActionStructGeneratedRounds
+        ;   aActionStructGeneratedRounds: filled with rounds
+
+        ; Outputs:
+        ;   wActionStructRoundTempBitfield1: structBattleGeneratedRound.Bitfield1
+        ;   wActionStructRoundTempBitfield2: structBattleGeneratedRound.Bitfield2
+
+        php
+        phx
+
+        rep #$30
+
+        ldx wActionStructGeneratedRoundOffset
+        lda aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield2,x
+        sta wActionStructRoundTempBitfield2
+
+        lda aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield1,x
+        and #$00FF
+        sta wActionStructRoundTempBitfield1
+
+        plx
+        plp
+        rts
+
+        .databank 0
+
+      rsActionStructGetGeneratedRoundBitfieldsAndAdvance ; 83/D4FE
+
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; Writes the current round accessed
+        ; by wActionStructGeneratedRoundOffset to
+        ; the temp area and advances an entry.
+
+        ; Inputs:
+        ;   wActionStructGeneratedRoundOffset: offset into aActionStructGeneratedRounds
+        ;   aActionStructGeneratedRounds: filled with rounds
+
+        ; Outputs:
+        ;   wActionStructRoundTempBitfield1: structBattleGeneratedRound.Bitfield1
+        ;   wActionStructRoundTempBitfield2: structBattleGeneratedRound.Bitfield2
+        ;   wActionStructGeneratedRoundOffset: advanced an entry
+
+        php
+        phb
+
+        sep #$20
+
+        lda #`aActionStructGeneratedRounds
+        pha
+
+        rep #$20
+
+        plb
+
+        .databank `aActionStructGeneratedRounds
+
+        phx
+        rep #$30
+
+        ldx wActionStructGeneratedRoundOffset
+
+        lda aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield2,x
+        sta wActionStructRoundTempBitfield2
+
+        lda aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield1,x
+        and #$00FF
+        sta wActionStructRoundTempBitfield1
+
+        txa
+        clc
+        adc #size(structBattleGeneratedRound)
+        sta wActionStructGeneratedRoundOffset
+
+        plx
+        plb
+        plp
+        rts
+
+        .databank 0
+
+      rsActionStructWriteRound ; 83/D529
+
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; Writes an entry to aActionStructGeneratedRounds
+        ; using the temp area. Doesn't write the entry
+        ; if the rounds array is full.
+
+        ; Inputs:
+        ;   wActionStructRoundTempBitfield1: filled with bitfield
+        ;   wActionStructRoundTempBitfield2: filled with bitfield
+        ;   wActionStructRoundTempDamage: damage
+        ;   wActionStructGeneratedRoundOffset: offset into array to write to
+
+        ; Outputs:
+        ;   wActionStructGeneratedRoundOffset: advanced an entry
+        ;   Carry set if array full, else carry clear and entry written
+        ;     to aActionStructGeneratedRounds
+
+        php
+        phx
+
+        rep #$30
+
+        ldx wActionStructGeneratedRoundOffset
+
+        cpx #size(aActionStructGeneratedRounds) - size(structBattleGeneratedRound)
+        beq _Full
+
+        lda wActionStructRoundTempBitfield2
+        sta aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield2,x
+
+        sep #$20
+
+        lda wActionStructRoundTempBitfield1
+        sta aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield1,x
+
+        lda wActionStructRoundTempDamage
+        sta aActionStructGeneratedRounds+structBattleGeneratedRound.Damage,x
+
+        rep #$30
+
+        txa
+        clc
+        adc #size(structBattleGeneratedRound)
+        sta wActionStructGeneratedRoundOffset
+
+        plx
+        plp
+        clc
+        rts
+
+        _Full
+        plx
+        plp
+        sec
+        rts
+
+        .databank 0
+
+      rsActionStructTerminateRoundArray ; 83/D55B
+
+        .databank `wActionStructGeneratedRoundOffset
+
+        php
+        phx
+
+        rep #$30
+
+        ldx wActionStructGeneratedRoundOffset
+
+        lda #-1
+        sta aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield2,x
+
+        lda wActionStructGeneratedRoundOffset
+        sta wActionStructGeneratedRoundLastOffset
+
+        sep #$20
+
+        lda #-1
+        sta aActionStructGeneratedRounds+structBattleGeneratedRound.Bitfield1,x
+
+        lda #-1
+        sta aActionStructGeneratedRounds+structBattleGeneratedRound.Damage,x
+
+        plx
+        plp
+        rts
+
+        .databank 0
+
+      rsActionStructGetAttacksAndGenerateRounds ; 83/D57D
+
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; Determines how many attacks a unit is
+        ; going to make and writes round data for each.
+
+        ; Inputs:
+        ;   X: short pointer to attacker action struct
+        ;   Y: short pointer to defender action struct
+
+        ; Outputs:
+        ;   aActionStructGeneratedRounds: rounds
+        ;   wActionStructGeneratedRoundOffset: offset of terminator
+        ;   wActionStructRoundTempUnknownAttackCount: number of attacks
+
+        stz wActionStructGeneratedRoundOffset
+        stz wActionStructRoundTempBitfield2
+        stz wActionStructRoundTempDamage
+        stz wActionStructRoundTempUnknownAttackCount
+        stz wActionStructGeneratedRoundBonusCombat
+
+        jsr rsActionStructAdjustVantageRoundOrder
+        jsr rsActionStructRoundUnknownCheckIfDefender
+
+        _AttackLoop
+          inc wActionStructRoundTempUnknownAttackCount
+          jsr rsActionStructRoundTryGetMultipleAttacks
+          jsr rsActionStructRoundCheckBothAssail
+          bcs _AttackLoop
+
+        jsr rsActionStructTerminateRoundArray
+
+        rts
+
+        .databank 0
+
+      rsActionStructRoundUnknownCheckIfDefender ; 83/D5A1
+
+        .al
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; Checks if the round actor is the defender.
+
+        ; Inputs:
+        ;   wActionStructGeneratedRoundActor
+
+        ; Outputs:
+        ;   wActionStructRoundTempUnknownBitfield: 1 if defender, 0 otherwise
+
+        stz wActionStructRoundTempUnknownBitfield
+        lda wActionStructGeneratedRoundActor
+        beq +
+
+          lda wActionStructRoundTempUnknownBitfield
+          ora #wActionStructRoundTempBitfield1_01
+          sta wActionStructRoundTempUnknownBitfield
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructRoundTryGetMultipleAttacks ; 83/D5B3
+
+        .al
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; Tries to get all attacks for both units.
+
+        ; Inputs:
+        ;   X: short pointer to attacker action struct
+        ;   Y: short pointer to defender action struct
+
+        ; Outputs:
+        ;   aActionStructGeneratedRounds: rounds
+
+        ; Fetch attacks made by the attacker.
+
+        lda wActionStructGeneratedRoundUnknownActor
+        sta wActionStructGeneratedRoundActor
+
+        jsr rsActionStructRoundGetRoundCharacters
+        phx
+        phy
+
+        lda wActionStructRoundTempBitfield1
+        ora #wActionStructRoundTempBitfield1_80
+        sta wActionStructRoundTempBitfield1
+
+        jsr rsActionStructRoundGetBattleLengthModifiers
+
+        ; Fetch attacks made by the defender.
+
+        jsr rsActionStructRoundGetRoundCharacters
+
+        lda wActionStructRoundTempBitfield2
+        ora #wActionStructRoundTempBitfield2_0200
+        sta wActionStructRoundTempBitfield2
+
+        jsr rsActionStructRoundGetBattleLengthModifiers
+        jsr rsActionStructRoundGetRoundCharacters
+
+        jsr rsActionStructRoundCheckDoubling
+        bcc +
+
+          jsr rsActionStructRoundGetBattleLengthModifiers
+
+        +
+        ply
+        plx
+        rts
+
+        .databank 0
+
+      rsActionStructRoundGetRoundCharacters ; 83/D5E7
+
+        .al
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; Gets which unit is attacking next.
+
+        ; Inputs:
+        ;   wActionStructGeneratedRoundActor: current attacker (0, 2)
+
+        ; Outputs:
+        ;   wActionStructRoundTempBitfield1: sets
+        ;     wActionStructRoundTempBitfield1_DefenderMove if
+        ;     defender next
+        ;   wActionStructGeneratedRoundActor: new attacker (0, 2)
+
+        lda wActionStructRoundTempUnknownBitfield
+        sta wActionStructRoundTempBitfield1
+
+        stz wActionStructRoundTempBitfield2
+
+        lda wActionStructGeneratedRoundActor
+        bit #$0002
+        beq +
+
+          lda wActionStructRoundTempBitfield1
+          ora #wActionStructRoundTempBitfield1_DefenderMove
+          sta wActionStructRoundTempBitfield1
+
+        +
+        ldx wActionStructGeneratedRoundActor
+        lda _CharacterOrderTable+size(word),x
+        tay
+        lda _CharacterOrderTable,x
+        tax
+        lda wActionStructGeneratedRoundActor
+        eor #$0002
+        sta wActionStructGeneratedRoundActor
+        rts
+
+        _CharacterOrderTable ; 83/D618
+          .word <>aActionStructUnit1.Character
+          .word <>aActionStructUnit2.Character
+          .word <>aActionStructUnit1.Character
+
+        .databank 0
+
+      rsActionStructRoundGetBattleLengthModifiers ; 83/D61E
+
+        .al
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; If unit has a weapon, get all of the different
+        ; ways they might get more than one attack.
+
+        ; Inputs:
+        ;   X: short pointer to attacker action struct
+        ;   Y: short pointer to defender action struct
+
+        ; Outputs:
+        ;   aActionStructGeneratedRounds: rounds
+
+        lda structActionStructEntry.EquippedItemID2,b,x
+        and #$00FF
+        beq +
+
+          ; Number of attacks
+
+          lda #1
+          sta wActionStructGeneratedRoundVar1
+
+          jsr rsActionStructRoundTryProcAstra
+          jsr rsActionStructRoundTryProcAdept
+          jsr rsActionStructRoundDoubleRoundsIfBrave
+          jsr rsActionStructRoundFlushAttacksToRoundArray
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructRoundCheckBothAssail ; 83/D639
+
+        .al
+        .autsiz
+        .databank `wActionStructGeneratedRoundOffset
+
+        ; Increases the number of bonus rounds
+        ; for each unit with assail.
+
+        ; Inputs:
+        ;   wActionStructType: struct type
+
+        ; Outputs:
+        ;   wActionStructGeneratedRoundBonusCombat: bonus rounds
+        ;   Carry set if assail, else carry clear unless
+        ;     struct type is ActionStruct_Unknown3, then carry set?
+
+        lda wActionStructType
+        cmp #ActionStruct_Unknown3
+        bne +
+
+        lda wActionStructGeneratedRoundOffset
+        cmp #size(aActionStructGeneratedRounds) - size(structBattleGeneratedRound)
+        beq _Full
+
+        sec
+        rts
+
+        +
+        lda wActionStructGeneratedRoundBonusCombat
+        bne _NotAssail
+
+          ldx #<>aActionStructUnit1
+          ldy #<>aActionStructUnit2
+          jsr rsActionStructRoundCheckAssail
+
+          ldx #<>aActionStructUnit2
+          ldy #<>aActionStructUnit1
+          jsr rsActionStructRoundCheckAssail
+
+          lda wActionStructGeneratedRoundBonusCombat
+          beq _NotAssail
+
+            sec
+            rts
+
+        _Full
+        jsr rsActionStructTerminateRoundArray
+
+        _NotAssail
+        clc
+        rts
+
+        .databank 0
+
+      rsActionStructRoundCheckAssail ; 83/D66E
+
+        .al
+        .autsiz
+        .databank `wActionStructGeneratedRoundBonusCombat
+
+        ; Increases wActionStructGeneratedRoundBonusCombat
+        ; if the attacker has assail.
+
+        ; Inputs:
+        ;   X: short pointer to attacker action struct
+        ;   Y: short pointer to defender action struct
+        ;   wActionStructGeneratedRoundBonusCombat bonus rounds
+
+        ; Outputs:
+        ;   wActionStructGeneratedRoundBonusCombat: bonus rounds
+
+        lda structActionStructEntry.Skills2,b,x
+        bit #Skill2Assail
+        beq +
+
+          sep #$20
+
+          lda structActionStructEntry.CurrentHP,b,x
+          cmp structActionStructEntry.CurrentHP,b,y
+          beq +
+          blt +
+
+            lda structActionStructEntry.BattleAttackSpeed,b,x
+            cmp structActionStructEntry.BattleAttackSpeed,b,y
+            beq +
+            blt +
+
+              inc wActionStructGeneratedRoundBonusCombat
+
+        +
+        rep #$30
+        rts
+
+        .databank 0
+
+      rsActionStructRoundCheckDoubling ; 83/D692
+
+        .xl
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Checks to see if either unit can double.
+
+        ; Inputs:
+        ;   aActionStructUnit1: filled with unit
+        ;   aActionStructUnit2: filled with unit
+
+        ; Outputs:
+        ;   Bitfields set
+        ;   X: short pointer to attacker action struct
+        ;   Y: short pointer to defender action struct
+
+        sep #$20
+
+        lda aActionStructUnit1.BattleAttackSpeed
+        sec
+        sbc aActionStructUnit2.BattleAttackSpeed
+        bpl +
+
+          eor #-1
+          inc a
+
+        +
+        cmp #4
+        blt _NoDoubling
+
+        lda aActionStructUnit1.BattleAttackSpeed
+        cmp aActionStructUnit2.BattleAttackSpeed
+        blt _DefenderDoubles
+
+          ldx #<>aActionStructUnit1
+          ldy #<>aActionStructUnit2
+          lda wActionStructRoundTempUnknownBitfield
+          sta wActionStructRoundTempBitfield1
+          bra _Continue
+
+        _DefenderDoubles
+          ldx #<>aActionStructUnit2
+          ldy #<>aActionStructUnit1
+          lda wActionStructRoundTempUnknownBitfield
+          ora #wActionStructRoundTempBitfield1_DefenderMove
+          sta wActionStructRoundTempBitfield1
+          bra _Continue
+
+        _NoDoubling
+        rep #$30
+        clc
+        rts
+
+        _Continue
+        rep #$30
+
+        lda #wActionStructRoundTempBitfield2_Double
+        sta wActionStructRoundTempBitfield2
+        sec
+        rts
+
+        .databank 0
+
+      rsActionStructRoundTryProcAstra ; 83/D6D8
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Sets the number of attacks to 5 if unit
+        ; has astra and procs it.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ;   wActionStructGeneratedRoundVar1: 5 if astra, unchanged otherwise
+        ;   wActionStructRoundTempBitfield2: modified with wActionStructRoundTempBitfield2_Astra
+        ;     if astra, unchanged otherwise
+
+        lda structActionStructEntry.Skills2,b,x
+        bit #pack([None, Skill3Astra])
+        beq +
+
+          lda structActionStructEntry.Skill,b,x
+          and #$00FF
+          jsl rlRollRandomNumber0To100
+          bcc +
+
+            lda #5
+            sta wActionStructGeneratedRoundVar1
+
+            lda wActionStructRoundTempBitfield2
+            ora #wActionStructRoundTempBitfield2_Astra
+            sta wActionStructRoundTempBitfield2
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructRoundTryProcAdept ; 83/D6FC
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Sets the number of attacks to 2 if unit
+        ; has adept and procs it, as long as astra
+        ; wasn't triggered.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ;   wActionStructGeneratedRoundVar1: 2 if adept, unchanged otherwise
+
+        lda #1
+        cmp wActionStructGeneratedRoundVar1
+        bne +
+
+          lda structActionStructEntry.Skills2,b,x
+          bit #Skill2Adept
+          beq +
+
+            lda structActionStructEntry.BattleAttackSpeed,b,x
+            and #$00FF
+            jsl rlRollRandomNumber0To100
+            bcc +
+
+              lda #2
+              sta wActionStructGeneratedRoundVar1
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructRoundDoubleRoundsIfBrave ; 83/D71F
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; If unit has brave, double number of attacks.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ;   wActionStructGeneratedRoundVar1: doubled if brave, unchanged otherwise
+
+        lda structActionStructEntry.Skills2,b,x
+        bit #pack([None, Skill3Brave])
+        beq +
+
+          asl wActionStructGeneratedRoundVar1
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructRoundFlushAttacksToRoundArray ; 83/D72B
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Writes wActionStructGeneratedRoundVar1
+        ; attacks to aActionStructGeneratedRounds
+
+        ; Inputs:
+        ;   wActionStructGeneratedRoundVar1: number of attacks
+        ;   Bitfields, damage, etc. set
+
+        ; Outputs:
+        ;   aActionStructGeneratedRounds: rounds
+
+        php
+        rep #$30
+
+        _Loop
+          jsr rsActionStructWriteRound
+          bcs +
+
+            lda wActionStructRoundTempBitfield1
+            and #~wActionStructRoundTempBitfield1_80
+            sta wActionStructRoundTempBitfield1
+
+            lda wActionStructRoundTempBitfield2
+            and #~wActionStructRoundTempBitfield1_UnitKilled
+            sta wActionStructRoundTempBitfield2
+
+            dec wActionStructGeneratedRoundVar1
+            bne _Loop
+
+        +
+        plp
+        rts
+
+        .databank 0
+
+      rsActionStructClearGeneratedRounds ; 83/D74C
+
+        .autsiz
+        .databank `wActionStructGeneratedRoundVar1
+
+        ; Clears aActionStructGeneratedRounds
+        ; and related variables.
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
+
+        php
+        rep #$30
+
+        lda #(`aActionStructGeneratedRounds)<<8
+        sta lR18+size(byte)
+        lda #<>aActionStructGeneratedRounds
+        sta lR18
+        lda #size(aActionStructGeneratedRounds)
+        sta lR19
+        lda #$0000
+        jsl rlBlockFillWord
+
+        stz wActionStructGeneratedRoundOffset
+        stz wActionStructRoundTempBitfield1
+        stz wActionStructRoundTempBitfield2
+        stz wActionStructRoundTempDamage
+
+        plp
+        rts
+
+        .databank 0
+
+    .endsection ActionStructRoundSection
+
+    .section ActionStructUnknown83DA13Section
+
+      rlActionStructUnknown83DA13 ; 83/DA13
+
+        .autsiz
+        .databank ?
+
+        php
+        phb
+
+        sep #$20
+
+        lda #`wActiveTileUnitParameter1
+        pha
+
+        rep #$20
+
+        plb
+
+        .databank `wActiveTileUnitParameter1
+
+        lda #$0009
+        sta wActionStructGeneratedRoundCombatType
+
+        lda wActiveTileUnitParameter1
+        beq _Dead
+
+          lda #$0008
+          sta wActionStructGeneratedRoundCombatType
+
+          lda wActiveTileUnitParameter2
+          beq _DA60
+
+            lda wActiveTileUnitAllegiance
+            beq _Player
+
+              lda #$000A
+              sta wActionStructGeneratedRoundCombatType
+
+              sep #$20
+
+              lda wActiveTileUnitParameter1
+              sta aSelectedCharacterBuffer.CurrentHP,b
+
+              rep #$20
+
+              stz bUnknownTargetingDeploymentNumber
+
+        _End
+        plb
+        plp
+        rtl
+
+        .al
+        .autsiz
+
+        _Player
+          lda #$000B
+          sta wActionStructGeneratedRoundCombatType
+
+          sep #$20
+
+          lda wActiveTileUnitParameter1
+          sta aSelectedCharacterBuffer.CurrentHP,b
+
+          rep #$20
+
+          bra _End
+
+        .al
+        .autsiz
+
+        _DA60
+          jsl rlActionStructTryUpdateWinsLosses
+
+          stz bUnknownTargetingDeploymentNumber
+          bra +
+
+        .al
+        .autsiz
+
+        _Dead
+          jsl rlActionStructTryUpdateWinsLosses
+
+        +
+        lda aSelectedCharacterBuffer.Item1ID,b
+        pha
+
+        sep #$20
+
+        lda wActiveTileUnitParameter1
+        sta aActionStructUnit1.CurrentHP
+
+        rep #$20
+
+        ldx #<>aActionStructUnit1
+        ldy wActionStructGeneratedRoundBufferPointer
+        jsr rsActionStructWriteLevelUpActionStruct
+        jsl rlUpdateSaveSlotLosses
+
+        pla
+        sta aSelectedCharacterBuffer.Item1ID,b
+
+        bra _End
+
+        .databank 0
+
+    .endsection ActionStructUnknown83DA13Section
+
+    .section ActionStructWriteLevelUpActionStructSection
+
+      rsActionStructWriteBothLevelUpActionStructs ; 83/DA8E
+
+        .autsiz
+        .databank `wActionStructGeneratedRoundDeploymentNumber
+
+        php
+        sep #$20
+
+        ldx #<>aActionStructUnit1
+        ldy wActionStructGeneratedRoundBufferPointer
+        jsr rsActionStructWriteLevelUpActionStruct
+
+        rep #$30
+
+        lda wActionStructGeneratedRoundDeploymentNumber
+        sta wR0
+        lda #<>aBurstWindowCharacterBuffer
+        sta wR1
+        jsl rlCopyCharacterDataToBufferByDeploymentNumber
+
+        ldx #<>aActionStructUnit2
+        ldy #<>aBurstWindowCharacterBuffer
+        jsr rsActionStructWriteLevelUpActionStruct
+
+        lda #<>aBurstWindowCharacterBuffer
+        sta wR1
+        jsl rlCopyCharacterDataFromBuffer
+
+        plp
+        rts
+
+        .databank 0
+
+      rlActionStructAddLevelupCoreStats ; 83/DABE
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        _StatList  := [(structActionStructEntry.CurrentHP, structActionStructEntry.LevelUpHPGain)]
+        _StatList ..= [(structActionStructEntry.MaxHP, structActionStructEntry.LevelUpHPGain)]
+        _StatList ..= [(structActionStructEntry.Strength, structActionStructEntry.LevelUpStrengthGain)]
+        _StatList ..= [(structActionStructEntry.Magic, structActionStructEntry.LevelUpMagicGain)]
+        _StatList ..= [(structActionStructEntry.Skill, structActionStructEntry.LevelUpSkillGain)]
+        _StatList ..= [(structActionStructEntry.Speed, structActionStructEntry.LevelUpSpeedGain)]
+        _StatList ..= [(structActionStructEntry.Defense, structActionStructEntry.LevelUpDefenseGain)]
+        _StatList ..= [(structActionStructEntry.Constitution, structActionStructEntry.LevelUpConstitutionGain)]
+        _StatList ..= [(structActionStructEntry.Luck, structActionStructEntry.LevelUpLuckGain)]
+        _StatList ..= [(structActionStructEntry.Movement, structActionStructEntry.LevelUpMovementGain)]
+
+        php
+
+        sep #$20
+
+        .for _Stat in _StatList
+
+          lda _Stat[0],b,y
+          clc
+          adc _Stat[1],b,x
+          sta _Stat[0],b,y
+
+        .endfor
+
+        plp
+        rtl
+
+        .databank 0
+
+      rsActionStructWriteLevelUpActionStruct ; 83/DB27
+
+        .autsiz
+        .databank ?
+
+        _ByteStatList  := [structActionStructEntry.Level]
+        _ByteStatList ..= [structActionStructEntry.CurrentHP]
+        _ByteStatList ..= [structActionStructEntry.MaxHP]
+        _ByteStatList ..= [structActionStructEntry.Experience]
+        _ByteStatList ..= [structActionStructEntry.Class]
+        _ByteStatList ..= [structActionStructEntry.SpriteInfo1]
+
+        _WordStatList  := [structActionStructEntry.UnitState]
+        _WordStatList ..= [structActionStructEntry.TotalEXP]
+
+        ; Copies stats from one action struct to
+        ; another for level up/weapon rank gains.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+        ;   Y: short pointer to new action struct
+
+        ; Outputs:
+        ;   Y: short pointer to new action struct, set up for level
+
+        sep #$20
+
+        .for _Stat in _ByteStatList
+
+          lda _Stat,b,x
+          sta _Stat,b,y
+
+        .endfor
+
+        rep #$30
+
+        .for _Stat in _WordStatList
+
+          lda _Stat,b,x
+          sta _Stat,b,y
+
+        .endfor
+
+        sep #$20
+
+        lda structActionStructEntry.WeaponTraits,b,x
+        bit #TraitBallista
+        bne +
+
+          lda structActionStructEntry.EquippedItemID2,b,x
+          beq _Continue
+
+        +
+        rep #$30
+
+        ; Copy their equipped item.
+
+        sty wR1
+
+        lda structActionStructEntry.EquippedItemID2,b,x
+        sta wR0
+
+        lda structActionStructEntry.EquippedItemInventoryIndex,b,x
+        and #$00FF
+        clc
+        adc #structActionStructEntry.Items
+        tay
+        lda wR0
+        sta (wR1),y
+        ldy wR1
+
+        sep #$20
+
+        _Continue
+
+        ; Increment fatigue, cap.
+
+        lda structActionStructEntry.Fatigue,b,y
+        cmp #99
+        bge +
+
+          inc a
+          sta structActionStructEntry.Fatigue,b,y
+
+        +
+        jsl rlActionStructAddLevelupCoreStats
+        jsl rlClampCharacterStats
+
+        rep #$30
+
+        jsr rsActionStructSetGainedWEXP
+        jsr rsActionStructTryGetGainedWeaponRank
+        rts
+
+        .databank 0
+
+    .endsection ActionStructWriteLevelUpActionStructSection
+
+    .section ActionStructTryUpdateRoundCaptureFlagSection
+
+      rsActionStructTryUpdateRoundCaptureFlag ; 83/DBA1
+
+        .al
+        .autsiz
+        .databank `wCapturingFlag
+
+        ; Flags a round as a capture
+        ; attempt and sets bUnknown7E4FCF
+        ; if successful?
+
+        ; Inputs:
+        ;   wCapturingFlag: nonzero if capture attempt
+        ;   aActionStructUnit2: filled with defender
+
+        ; Outputs:
+        ;   wActionStructGeneratedRoundCombatType: set to $0006
+        ;     if capture attempt
+        ;   bUnknown7E4FCF: set to $04 if successful,
+        ;     otherwise unchanged
+
+        lda wCapturingFlag
+        beq +
+
+          lda #$0006
+          sta wActionStructGeneratedRoundCombatType
+
+          stz wCapturingFlag
+
+          lda aActionStructUnit2.CurrentHP
+          and #$00FF
+          bne +
+
+            inc wCapturingFlag
+
+            sep #$20
+
+            lda #$04
+            sta bUnknown7E4FCF
+
+            rep #$20
+
+        +
+        rts
+
+        .databank 0
+
+    .endsection ActionStructTryUpdateRoundCaptureFlagSection
 
     .section ActionStructWeaponTriangleSection
 
@@ -1243,8 +2326,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         lda structActionStructEntry.EquippedItemID2,b,x
         jsl rlCopyItemDataToBuffer
 
-        lda $7EA4E4
-        bit #$0040
+        lda wActionStructRoundTempBitfield2
+        bit #wActionStructRoundTempBitfield2_Sol
         beq +
 
           sep #$20
@@ -1318,9 +2401,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         rep #$30
 
-        lda $7EA4E4
+        lda wActionStructRoundTempBitfield2
         ora #$0080
-        sta $7EA4E4
+        sta wActionStructRoundTempBitfield2
 
         plp
         rts
@@ -1360,9 +2443,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
             rep #$30
 
-            lda $7EA4E4
-            ora #$0080
-            sta $7EA4E4
+            lda wActionStructRoundTempBitfield2
+            ora #wActionStructRoundTempBitfield2_WeaponEffect
+            sta wActionStructRoundTempBitfield2
 
             lda #<>rlActionStructStatusCallback
             sta lUnknown7EA4EC
@@ -1404,9 +2487,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
           jsl rlRollRandomNumber0To100
           bcc _End
 
-          lda $7EA4E4
+          lda wActionStructRoundTempBitfield2
           ora #$0080
-          sta $7EA4E4
+          sta wActionStructRoundTempBitfield2
 
         _End
         rts
@@ -1435,9 +2518,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         rep #$30
 
-        lda $7EA4E4
-        ora #$0080
-        sta $7EA4E4
+        lda wActionStructRoundTempBitfield2
+        ora #wActionStructRoundTempBitfield2_WeaponEffect
+        sta wActionStructRoundTempBitfield2
 
         lda #<>rlActionStructStatusCallback
         sta lUnknown7EA4EC
@@ -1538,9 +2621,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         dec a
         sta wActionStructGeneratedRoundDamage
 
-        lda $7EA4E4
+        lda wActionStructRoundTempBitfield2
         ora #$0080
-        sta $7EA4E4
+        sta wActionStructRoundTempBitfield2
 
         rts
 
@@ -1580,9 +2663,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
             ora #(UnitStateMovementStar | UnitStateMoved)
             sta structActionStructEntry.UnitState,b,y
 
-            lda $7EA4E4
-            ora #$0080
-            sta $7EA4E4
+            lda wActionStructRoundTempBitfield2
+            ora #wActionStructRoundTempBitfield2_WeaponEffect
+            sta wActionStructRoundTempBitfield2
 
             lda #<>rlActionStructStatusCallback
             sta lUnknown7EA4EC
@@ -1643,9 +2726,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
             ora #(UnitStateMovementStar | UnitStateMoved)
             sta structActionStructEntry.UnitState,b,y
 
-            lda $7EA4E4
-            ora #$0080
-            sta $7EA4E4
+            lda wActionStructRoundTempBitfield2
+            ora #wActionStructRoundTempBitfield2_WeaponEffect
+            sta wActionStructRoundTempBitfield2
 
             lda #<>rlActionStructStatusCallback
             sta lUnknown7EA4EC
@@ -1880,12 +2963,12 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         lda structActionStructEntry.X,b,x
         and #$00FF
         sta wR0
-        sta wActiveTileXCoordinate
+        sta wActiveTileUnitParameter1
 
         lda structActionStructEntry.Y,b,x
         and #$00FF
         sta wR1
-        sta wActiveTileYCoordinate
+        sta wActiveTileUnitParameter2
 
         lda structActionStructEntry.DeploymentNumber,b,x
         and #AllAllegiances
@@ -1898,9 +2981,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         ; Exclude the unit itself.
 
-        lda wActiveTileXCoordinate
+        lda wActiveTileUnitParameter1
         sta wR0
-        lda wActiveTileYCoordinate
+        lda wActiveTileUnitParameter2
         sta wR1
         jsl rlGetMapTileIndexByCoords
 
@@ -3201,5 +4284,111 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank 0
 
     .endsection ActionStructGetStatTotalDifferenceTierSection
+
+    .section ActionStructTryGetGainedWeaponRankSection
+
+      rsActionStructTryGetGainedWeaponRank ; 83/E879
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an action 
+        ; struct in X with its GainedWeaponEXP set,
+        ; Check if a weapon rank was gained.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ;   structActionStructEntry.WeaponEXP: attack type if rank gained
+        ;     or -1 if no rank gained
+
+        ; To gain a weapon rank, a unit needs to be alive,
+        ; not berserked, and have a weapon rank in that type.
+
+        lda structActionStructEntry.CurrentHP,b,x
+        and #$00FF
+        beq _NoRankIncrease
+
+        lda structActionStructEntry.Status,b,x
+        and #$00FF
+        cmp #StatusBerserk
+        beq _NoRankIncrease
+
+        lda structActionStructEntry.Class,b,x
+        jsl rlCopyClassDataToBuffer
+
+        lda structActionStructEntry.AttackType,b,x
+        and #$00FF
+        tay
+        lda aClassDataBuffer.WeaponRanks,y
+        and #$00FF
+        beq _NoRankIncrease
+
+          ; Get current weapon rank.
+
+          lda structActionStructEntry.WeaponEXP,b,x
+          and #$00FF
+          sta wR13
+          lda #WeaponRankIncrement
+          sta wR14
+          jsl rlUnsignedDivide16By8
+
+          lda wR13
+          sta wR0
+
+          ; Get new weapon rank, capping at A.
+
+          lda structActionStructEntry.GainedWeaponEXP,b,x
+          and #$00FF
+          sta wR1
+
+          lda structActionStructEntry.WeaponEXP,b,x
+          and #$00FF
+          clc
+          adc wR1
+
+          cmp #RankA
+          bcc +
+
+            lda #RankA
+
+          +
+          sta wR13
+          lda #WeaponRankIncrement
+          sta wR14
+          jsl rlUnsignedDivide16By8
+
+          ; We've gained a rank if the ranks
+          ; are different.
+
+          lda wR13
+          cmp wR0
+          bne _RankIncrease
+
+        _NoRankIncrease
+        sep #$20
+
+        lda #-1
+        sta structActionStructEntry.WeaponEXP,b,x
+
+        rep #$20
+
+        rts
+
+        _RankIncrease
+        sep #$20
+
+        lda structActionStructEntry.AttackType,b,x
+        sta structActionStructEntry.WeaponEXP,b,x
+
+        rep #$20
+
+        rts
+
+        .databank 0
+
+    .endsection ActionStructTryGetGainedWeaponRankSection
 
 .endif ; GUARD_FE5_ACTIONSTRUCT

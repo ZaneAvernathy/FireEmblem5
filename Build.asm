@@ -132,26 +132,30 @@
 
   .endlogical
 
-  * := $01DBC4
-  .logical mapped($01DBC4)
+  * := $01D4E5
+  .logical mapped($01D4E5)
 
     startCode
 
-      .dsection ActionStructWeaponTriangleSection
-      .dsection ActionStructAdjustVantageRoundOrderSection
-      .dsection ActionStructUnknown83DC31Section
-      .dsection ActionStructLevelUpSection
-      .dsection ActionStructCalculateWeaponTriangleBonusSection
+      .dsection ActionStructRoundSection
 
     endCode
 
   .endlogical
 
-  * := $01E08D
-  .logical mapped($01E08D)
+  * := $01DA13
+  .logical mapped($01DA13)
 
     startCode
 
+      .dsection ActionStructUnknown83DA13Section
+      .dsection ActionStructWriteLevelUpActionStructSection
+      .dsection ActionStructTryUpdateRoundCaptureFlagSection
+      .dsection ActionStructWeaponTriangleSection
+      .dsection ActionStructAdjustVantageRoundOrderSection
+      .dsection ActionStructUnknown83DC31Section
+      .dsection ActionStructLevelUpSection
+      .dsection ActionStructCalculateWeaponTriangleBonusSection
       .dsection ActionStructWeaponEffectSection
       .dsection ActionStructRollGainsSection
       .dsection ActionStructCalculateHitAvoidBonusSection
@@ -159,32 +163,23 @@
       .dsection ActionStructZeroCombatStatsSection
       .dsection ActionStructSetGainedWEXPSection
       .dsection ActionStructEXPSection
-
-    endCode
-
-  .endlogical
-
-  * := $01E5A5
-  .logical mapped($01E5A5)
-
-    startCode
-
       .dsection ActionStructGetSupportBonusSection
       .dsection ActionStructUnknownSetCallbackSection
       .dsection ActionStructGetItemBonusesSection
+      .dsection ActionStructWinsLossesSection
+      .dsection ActionStructGetCombatStatTotalSection
+      .dsection ActionStructGetStatTotalDifferenceTierSection
 
     endCode
 
   .endlogical
 
-  * := $01E6E5
-  .logical mapped($01E6E5)
+  * := $01E879
+  .logical mapped($01E879)
 
     startCode
 
-      .dsection ActionStructWinsLossesSection
-      .dsection ActionStructGetCombatStatTotalSection
-      .dsection ActionStructGetStatTotalDifferenceTierSection
+      .dsection ActionStructTryGetGainedWeaponRankSection
 
     endCode
 
