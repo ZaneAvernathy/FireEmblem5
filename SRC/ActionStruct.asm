@@ -208,10 +208,10 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; on action struct type.
 
         ; Inputs:
-        ;   None
+        ; None
 
         ; Outputs:
-        ;   None
+        ; None
 
         lda #<>aActionStructUnit1
         sta lR18
@@ -264,10 +264,10 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; struct in lR18, clear it.
 
         ; Inputs:
-        ;   lR18: short pointer to action struct
+        ; lR18: short pointer to action struct
 
         ; Outputs:
-        ;   None
+        ; None
 
         sep #$20
 
@@ -311,10 +311,10 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; starting stats.
 
         ; Inputs:
-        ;   wR1: short pointer to action struct
+        ; wR1: short pointer to action struct
 
         ; Outputs:
-        ;   None
+        ; None
 
         _StatList  := [(structActionStructEntry.MaxHP, structActionStructEntry.StartingMaxHP)]
         _StatList ..= [(structActionStructEntry.CurrentHP, structActionStructEntry.StartingCurrentHP)]
@@ -363,8 +363,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; If enemy initiated, write coordinates.
 
         ; Inputs:
-        ;   wR2: X coordinates
-        ;   wR3: Y coordinate
+        ; wR2: X coordinates
+        ; wR3: Y coordinate
 
         ; Outputs:
         ; None
@@ -403,7 +403,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; in X, flag a unit as unkillable.
 
         ; Inputs:
-        ;   X: short pointer to action struct
+        ; X: short pointer to action struct
 
         ; Outputs:
         ; None
@@ -1962,6 +1962,14 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .autsiz
         .databank `wActionStructGeneratedRoundDeploymentNumber
 
+        ; Tries to add level-up stats for both units.
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
+
         php
         sep #$20
 
@@ -2006,6 +2014,16 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         _StatList ..= [(structActionStructEntry.Luck, structActionStructEntry.LevelUpLuckGain)]
         _StatList ..= [(structActionStructEntry.Movement, structActionStructEntry.LevelUpMovementGain)]
 
+        ; Adds gained stats to an action struct's
+        ; core stats.
+
+        ; Inputs:
+        ; X: short pointer to main action struct
+        ; Y: short pointer to level action struct
+
+        ; Outputs:
+        ; None
+
         php
 
         sep #$20
@@ -2043,11 +2061,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; another for level up/weapon rank gains.
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   Y: short pointer to new action struct
+        ; X: short pointer to action struct
+        ; Y: short pointer to new action struct
 
         ; Outputs:
-        ;   Y: short pointer to new action struct, set up for level
+        ; Y: short pointer to new action struct, set up for level
 
         sep #$20
 
@@ -2184,11 +2202,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; against opponent's weapon.
 
         ; Inputs:
-        ;   wR0: weapon type to check
-        ;   wR1: opponent's weapon type
+        ; wR0: weapon type to check
+        ; wR1: opponent's weapon type
 
         ; Outputs:
-        ;   Carry set if advantage, else carry clear
+        ; Carry set if advantage, else carry clear
 
         php
 
@@ -2258,11 +2276,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; second unit if they have vantage.
 
         ; Inputs:
-        ;   aActionStructUnit2: filled with unit
+        ; aActionStructUnit2: filled with unit
 
         ; Outputs:
-        ;   wActionStructGeneratedRoundActor: set to second unit
-        ;     if success, unchanged otherwise.
+        ; wActionStructGeneratedRoundActor: set to second unit
+        ;   if success, unchanged otherwise.
 
         php
 
@@ -2452,6 +2470,14 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .autsiz
         .databank `aActionStructUnit1
 
+        ; Tries to get both units' level up gains.
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
+
         ldx #<>aActionStructUnit1
         jsr rsActionStructTryGetLevelUpGains
         ldx #<>aActionStructUnit2
@@ -2480,7 +2506,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; gain stats.
 
         ; Inputs:
-        ;   X: short pointer to action struct
+        ; X: short pointer to action struct
 
         ; Outputs:
         ; None
@@ -2545,7 +2571,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; level.
 
         ; Inputs:
-        ;   X: short pointer to action struct
+        ; X: short pointer to action struct
 
         ; Outputs:
         ; None
@@ -2613,10 +2639,10 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; aUnitAdjustedGrowths
 
         ; Inputs:
-        ;   X: short pointer to action struct
+        ; X: short pointer to action struct
 
         ; Outputs:
-        ;   aUnitAdjustedGrowths: filled with growths
+        ; aUnitAdjustedGrowths: filled with growths
 
         lda structActionStructEntry.Character,b,x
         jsl rlCopyCharacterDataToBuffer
@@ -2639,6 +2665,15 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .xl
         .autsiz
         .databank `aUnitAdjustedGrowths
+
+        ; Tries to modify a unit's growths
+        ; using all scrolls in their inventory.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+
+        ; Outputs:
+        ; aUnitAdjustedGrowths: modified growths
 
         lda #<>rlActionStructGetScrollGrowthsEffect
         sta lR25
@@ -2674,11 +2709,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; in aUnitAdjustedGrowths if it is.
 
         ; Inputs:
-        ;   A: item ID
-        ;   aUnitAdjustedGrowths: filled with growths
+        ; A: item ID
+        ; aUnitAdjustedGrowths: filled with growths
 
         ; Outputs:
-        ;   aUnitAdjustedGrowths: modified growths
+        ; aUnitAdjustedGrowths: modified growths
 
         ldx #<>aScrollTable
         stx lR18
@@ -2776,10 +2811,10 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; Clamps aUnitAdjustedGrowths to be 0-255
 
         ; Inputs:
-        ;   aUnitAdjustedGrowths: filled with growths
+        ; aUnitAdjustedGrowths: filled with growths
 
         ; Outputs:
-        ;   aUnitAdjustedGrowths: clamped growths
+        ; aUnitAdjustedGrowths: clamped growths
 
         .for _Growth in _GrowthList
 
@@ -2848,8 +2883,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; level up gains.
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   aUnitAdjustedGrowths: filled with growths
+        ; X: short pointer to action struct
+        ; aUnitAdjustedGrowths: filled with growths
 
         ; Outputs:
         ; None
@@ -2958,7 +2993,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; struct in X, clear level up stat gains.
 
         ; Inputs:
-        ;   X: short pointer to action struct
+        ; X: short pointer to action struct
 
         ; Outputs:
         ; None
@@ -2990,8 +3025,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; get a weapon triangle bonus.
 
         ; Inputs:
-        ;   aActionStructUnit1: filled with unit
-        ;   aActionStructUnit2: filled with unit
+        ; aActionStructUnit1: filled with unit
+        ; aActionStructUnit2: filled with unit
 
         php
         sep #$20
@@ -3046,8 +3081,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; if it has one.
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   Y: short pointer to action struct
+        ; X: short pointer to action struct
+        ; Y: short pointer to action struct
 
         ; Outputs:
         ; None
@@ -3107,8 +3142,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank `aActionStructUnit1
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   Y: short pointer to action struct
+        ; X: short pointer to action struct
+        ; Y: short pointer to action struct
 
         php
 
@@ -3151,8 +3186,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank `aActionStructUnit1
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   Y: short pointer to action struct
+        ; X: short pointer to action struct
+        ; Y: short pointer to action struct
 
         php
         sep #$20
@@ -3200,8 +3235,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank `aActionStructUnit1
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   Y: short pointer to action struct
+        ; X: short pointer to action struct
+        ; Y: short pointer to action struct
 
         lda structActionStructEntry.Skills2,b,y
         bit #pack([None, Skill3Immortal])
@@ -3237,8 +3272,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank `aActionStructUnit1
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   Y: short pointer to action struct
+        ; X: short pointer to action struct
+        ; Y: short pointer to action struct
 
         sep #$20
 
@@ -3371,8 +3406,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank `aActionStructUnit1
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   Y: short pointer to action struct
+        ; X: short pointer to action struct
+        ; Y: short pointer to action struct
 
         lda structActionStructEntry.Skills2,b,y
         bit #pack([None, Skill3Immortal])
@@ -3419,8 +3454,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank `aActionStructUnit1
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   Y: short pointer to action struct
+        ; X: short pointer to action struct
+        ; Y: short pointer to action struct
 
         lda structActionStructEntry.Skills2,b,y
         bit #pack([None, Skill3Immortal])
@@ -3489,10 +3524,10 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; (chance // 100) + (roll(chance % 100) ? 1 : 0)
 
         ; Inputs:
-        ;   A: percent chance
+        ; A: percent chance
 
         ; Outputs:
-        ;   wR1: proc'd gains
+        ; wR1: proc'd gains
 
         php
 
@@ -3544,7 +3579,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; struct in X, roll gained WEXP.
 
         ; Inputs:
-        ;   X: short pointer to action struct
+        ; X: short pointer to action struct
 
         ; Outputs:
         ; None
@@ -3585,11 +3620,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; supports, leadership, and charm.
 
         ; Inputs:
-        ;   X: short pointer to recipient action struct
-        ;   Y: short pointer to target action struct
+        ; X: short pointer to recipient action struct
+        ; Y: short pointer to target action struct
 
         ; Outputs:
-        ;   None
+        ; None
 
         php
         rep #$30
@@ -3670,11 +3705,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; that unit by nearby units with charm.
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   wHitAvoidBonus: running total
+        ; X: short pointer to action struct
+        ; wHitAvoidBonus: running total
 
         ; Outputs:
-        ;   wHitAvoidBonus: running total
+        ; wHitAvoidBonus: running total
 
         phx
         phy
@@ -3767,12 +3802,12 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; a running total.
 
         ; Inputs:
-        ;   wR0: deployment number
-        ;   wActiveTileUnitAllegiance: target allegiance
-        ;   wHitAvoidBonus: running total
+        ; wR0: deployment number
+        ; wActiveTileUnitAllegiance: target allegiance
+        ; wHitAvoidBonus: running total
 
         ; Output:
-        ;   wHitAvoidBonus: running total
+        ; wHitAvoidBonus: running total
 
         ; Store deployment number for later.
         ; If unit at tile doesn't have the same allegiance
@@ -3830,11 +3865,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; is getting to wHitAvoidBonus.
 
         ; Inputs:
-        ;   X: short pointer to action stuct
-        ;   wHitAvoidBonus: running total
+        ; X: short pointer to action stuct
+        ; wHitAvoidBonus: running total
 
         ; Outputs:
-        ;   wHitAvoidBonus: running total
+        ; wHitAvoidBonus: running total
 
         phx
         phy
@@ -3869,11 +3904,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; unit's leader's bonus to a running total.
 
         ; Inputs:
-        ;   aTargetingCharacterBuffer: potential leader unit
-        ;   wR17: faction
+        ; aTargetingCharacterBuffer: potential leader unit
+        ; wR17: faction
 
         ; Outputs:
-        ;   wHitAvoidBonus: running total
+        ; wHitAvoidBonus: running total
 
         lda aTargetingCharacterBuffer.UnitState,b
         bit #(UnitStateDead | UnitStateUnknown1 | UnitStateRescued | UnitStateDisabled | UnitStateCaptured)
@@ -3921,9 +3956,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; action struct unit.
 
         ; Inputs:
-        ;   wCapturingFlag: set if capturing,
-        ;     unset otherwise
-        ;   aActionStructUnit1: filled with unit
+        ; wCapturingFlag: set if capturing,
+        ;   unset otherwise
+        ; aActionStructUnit1: filled with unit
 
         ; Outputs:
         ; None
@@ -3949,7 +3984,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; action struct in X, halve specific stats.
 
         ; Inputs:
-        ;   X: short pointer to action struct
+        ; X: short pointer to action struct
 
         ; Outputs:
         ; None
@@ -3989,8 +4024,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; do not get their skill halved.
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   wActionStructType: action struct type
+        ; X: short pointer to action struct
+        ; wActionStructType: action struct type
 
         ; Outputs:
         ; None
@@ -4057,8 +4092,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; Always clears the second unit's item info?
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   aActionStructUnit2: filled with unit
+        ; X: short pointer to action struct
+        ; aActionStructUnit2: filled with unit
 
         ; Ouputs:
         ; None
@@ -4095,8 +4130,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; add WEXP and cap it.
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   Y: WEXP to gain
+        ; X: short pointer to action struct
+        ; Y: WEXP to gain
 
         ; Outputs:
         ; None
@@ -4160,6 +4195,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; aActionStructUnit1: filled with unit
         ; aActionStructUnit2: filled with unit
 
+        ; Outputs:
+        ; None
+
         ; Player units gain EXP.
 
         lda aActionStructUnit1.DeploymentNumber
@@ -4214,12 +4252,12 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; is a boss.
 
         ; Inputs:
-        ;   X: short pointer to player unit action struct
-        ;   Y: short pointer to enemy unit action struct
-        ;   wKillExperienceBonus: running total
+        ; X: short pointer to player unit action struct
+        ; Y: short pointer to enemy unit action struct
+        ; wKillExperienceBonus: running total
 
         ; Outputs:
-        ;   wKillExperienceBonus: running total
+        ; wKillExperienceBonus: running total
 
         lda structActionStructEntry.Character,b,y
         cmp wChapterBoss,b
@@ -4248,12 +4286,12 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; can steal.
 
         ; Inputs:
-        ;   X: short pointer to player unit action struct
-        ;   Y: short pointer to enemy unit action struct
-        ;   wKillExperienceBonus: running total
+        ; X: short pointer to player unit action struct
+        ; Y: short pointer to enemy unit action struct
+        ; wKillExperienceBonus: running total
 
         ; Outputs:
-        ;   wKillExperienceBonus: running total
+        ; wKillExperienceBonus: running total
 
         lda structActionStructEntry.Skills1,b,y
         bit #Skill1Steal
@@ -4279,12 +4317,12 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; on the units' relative powers.
 
         ; Inputs:
-        ;   X: short pointer to player unit action struct
-        ;   Y: short pointer to enemy unit action struct
-        ;   wKillExperienceBonus: running total
+        ; X: short pointer to player unit action struct
+        ; Y: short pointer to enemy unit action struct
+        ; wKillExperienceBonus: running total
 
         ; Outputs:
-        ;   wKillExperienceBonus: running total
+        ; wKillExperienceBonus: running total
 
         ; Enemy mod + 20 - player mod, floor 0.
 
@@ -4326,11 +4364,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; EXP gained.
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   wKillExperienceBonus: running total
+        ; X: short pointer to action struct
+        ; wKillExperienceBonus: running total
 
         ; Outputs:
-        ;   wKillExperienceBonus: running total
+        ; wKillExperienceBonus: running total
 
         lda structActionStructEntry.Class,b,x
         jsl rlCopyClassDataToBuffer
@@ -4376,8 +4414,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; if they're a support partner of the recipient.
 
         ; Inputs:
-        ;   A: target deployment number
-        ;   X: short pointer to recipient action struct
+        ; A: target deployment number
+        ; X: short pointer to recipient action struct
 
         ; Outputs:
         ; None
@@ -4558,10 +4596,10 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; item bonuses.
 
         ; Inputs:
-        ;   X: short pointer to action struct
+        ; X: short pointer to action struct
 
         ; Outputs:
-        ;   aItemStatBonusBuffer: bonuses
+        ; aItemStatBonusBuffer: bonuses
 
         php
 
@@ -4603,11 +4641,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; is already filled.
 
         ; Inputs:
-        ;   X: short pointer to action struct
-        ;   aItemDataBuffer: filled with item
+        ; X: short pointer to action struct
+        ; aItemDataBuffer: filled with item
 
         ; Outputs:
-        ;   aItemStatBonusBuffer: bonuses
+        ; aItemStatBonusBuffer: bonuses
 
         php
 
@@ -4663,11 +4701,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; action struct, get and apply item bonuses.
 
         ; Inputs:
-        ;   X: short pointer to item bonuses
-        ;   Y: short pointer to action struct
+        ; X: short pointer to item bonuses
+        ; Y: short pointer to action struct
 
         ; Outputs:
-        ;   aItemStatBonusBuffer: bonuses
+        ; aItemStatBonusBuffer: bonuses
 
         _BonusList  := [(structItemStatBonuses.Strength, aItemStatBonusBuffer.Strength, structActionStructEntry.Strength)]
         _BonusList ..= [(structItemStatBonuses.Skill, aItemStatBonusBuffer.Skill, structActionStructEntry.Skill)]
@@ -4719,10 +4757,13 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; by a player unit.
 
         ; Inputs:
-        ;   aActionStructUnit1: filled with initiator
-        ;   aActionStructUnit2: filled with defender
-        ;   bUnknownTargetingDeploymentNumber: slain unit's deployment number
-        ;   wCapturingFlag: nonzero if capturing, zero otherwise
+        ; aActionStructUnit1: filled with initiator
+        ; aActionStructUnit2: filled with defender
+        ; bUnknownTargetingDeploymentNumber: slain unit's deployment number
+        ; wCapturingFlag: nonzero if capturing, zero otherwise
+
+        ; Outputs:
+        ; None
 
         ; Check the defeated unit's allegiance,
         ; exit if player unit.
@@ -4805,6 +4846,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; bUnknownTargetingDeploymentNumber: deployment number
         ;   of defeated unit
 
+        ; Outputs:
+        ; None
+
         _BattleOutcomeList := [$02, $04, $12, $14]
 
         lda bUnknown7E4FCF
@@ -4841,6 +4885,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; Y: short pointer to action struct
         ; bUnknownTargetingDeploymentNumber: deployment number
         ;   of defeated unit
+
+        ; Outputs:
+        ; None
 
         ; Only player units have win/loss entries.
 
@@ -5033,11 +5080,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; Check if a weapon rank was gained.
 
         ; Inputs:
-        ;   X: short pointer to action struct
+        ; X: short pointer to action struct
 
         ; Outputs:
-        ;   structActionStructEntry.WeaponEXP: attack type if rank gained
-        ;     or -1 if no rank gained
+        ; structActionStructEntry.WeaponEXP: attack type if rank gained
+        ;   or -1 if no rank gained
 
         ; To gain a weapon rank, a unit needs to be alive,
         ; not berserked, and have a weapon rank in that type.
