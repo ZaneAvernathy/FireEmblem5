@@ -132,11 +132,12 @@
 
   .endlogical
 
-  * := $01D4E5
-  .logical mapped($01D4E5)
+  * := $01D4AC
+  .logical mapped($01D4AC)
 
     startCode
 
+      .dsection ActionStructGetCoreStatsSection
       .dsection ActionStructRoundSection
       .dsection ActionStructUnknown83DA13Section
       .dsection ActionStructWriteLevelUpActionStructSection

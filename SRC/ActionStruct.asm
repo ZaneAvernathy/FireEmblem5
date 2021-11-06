@@ -392,6 +392,63 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
     .endsection ActionStructTrySetUnitCoordinatesSection
 
+    .section ActionStructGetCoreStatsSection
+
+      rsActionStructCheckUnkillable ; 83/D4AC
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an action struct
+        ; in X, flag a unit as unkillable.
+
+        ; Inputs:
+        ;   X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        sep #$20
+
+        stz structActionStructEntry.UnkillableFlag,b,x
+
+        rep #$30
+
+        cpx #<>aActionStructUnit1
+        beq +
+
+          lda wCapturingFlag
+          bne _Continue
+
+        +
+        lda structActionStructEntry.Skills2,b,x
+        bit #pack([None, Skill3Immortal])
+        bne _Unkillable
+
+        _Continue
+        lda structActionStructEntry.Skills2,b,x
+        bit #pack([Skill2Miracle, None])
+        beq +
+
+          lda structActionStructEntry.Luck,b,x
+          clc
+          adc structActionStructEntry.Luck,b,x
+          clc
+          adc structActionStructEntry.Luck,b,x
+          and #$00FF
+          jsl rlRollRandomNumber0To100
+          bcc +
+
+            _Unkillable
+            inc structActionStructEntry.UnkillableFlag,b,x
+
+        +
+        rts
+
+        .databank 0
+
+    .endsection ActionStructGetCoreStatsSection
+
     .section ActionStructRoundSection
 
       rsActionStructGetGeneratedRoundBitfields ; 83/D4E5
