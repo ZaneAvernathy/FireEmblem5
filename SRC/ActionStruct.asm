@@ -31,6 +31,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
       rlCopyCharacterDataToBuffer                   :?= address($83941A)
       rlGetEquippableItemInventoryOffset            :?= address($839705)
       rlSearchForUnitAndWriteTargetToBuffer         :?= address($83976E)
+      rlCheckIfWeaponEffective                      :?= address($8397AB)
       rlRunRoutineForAllUnitsInAllegiance           :?= address($839825)
       rlRunRoutineForAllVisibleUnitsInRange         :?= address($8398FD)
       rlRunRoutineForAllItemsInInventory            :?= address($83993C)
@@ -40,12 +41,12 @@ GUARD_FE5_ACTIONSTRUCT :?= false
       rlCheckIfTileIsGateOrThroneByTerrainID        :?= address($83AF3F)
       rlCopyItemDataToBuffer                        :?= address($83B00D)
       rlTryGetBrokenItemID                          :?= address($83B0B7)
+      rlCheckIfInRange                              :?= address($83B104)
       rlUnknown848E5A                               :?= address($848E5A)
 
-      rsActionStructGetItemInfoAndCapturingStats   :?= address($83D085)
-      rsActionStructGetTerrainBonusesAndDistance   :?= address($83D1F3)
-      rsActionStructGetStatsNoTerrainOrSupports    :?= address($83D295)
-      rsActionStructGetStatsWithTerrainAndSupports :?= address($83D2AE)
+      rsActionStructClearOpponentWeaponIfUsingLongRange :?= address($83E957)
+      rsActionStructSetGainedEXP                        :?= address($83EF86)
+
 
       ; Action struct types
 
@@ -95,6 +96,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         LevelCap := 20
         ExperienceCap := 100
+
+        MinimumHit := 1
+        MaximumHit := 99
 
         CritCap := 100
         FirstAttackCritCap := 25
@@ -180,13 +184,13 @@ GUARD_FE5_ACTIONSTRUCT :?= false
           bne _Prep
 
         +
-        jsr rsActionStructGetStatsWithTerrainAndSupports
+        jsr rsActionStructGetStatsWithHitAvoidBonuses
         plb
         plp
         rtl
 
         _Prep
-        jsr rsActionStructGetStatsNoTerrainOrSupports
+        jsr rsActionStructGetStatsNoHitAvoidBonuses
         plb
         plp
         rtl
@@ -194,6 +198,197 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank 0
 
     .endsection ActionStructSingleSection
+
+    .section ActionStructCombatStructsSection
+
+      rlActionStructCombatStructs ; 83/CF2B
+
+        .al
+        .xl
+        .autsiz
+        .databank ?
+
+        ; Writes the action structs and generates combat
+        ; rounds for two units. Used for actual combat.
+
+        ; Inputs:
+        ; wR0: short pointer to initiator character buffer
+        ; wR1: target deployment number
+
+        ; Outputs:
+        ; Action structs, rounds
+
+        lda #0
+        sta wActionStructGeneratedRoundCombatType
+
+        lda #ActionStruct_Default
+        sta wActionStructType
+
+        jsl rlActionStructUnknownSetCallback
+
+        jmp rlActionStructWriteCombatStructs
+
+        .databank 0
+
+      rlActionStructPlayerCombatSelection ; 83/CF40
+
+        .al
+        .xl
+        .autsiz
+        .databank ?
+
+        ; Writes the action structs and generates combat
+        ; rounds for two units. Used for player targeting.
+
+        ; Inputs:
+        ; wR0: short pointer to initiator character buffer
+        ; wR1: target deployment number
+
+        ; Outputs:
+        ; Action structs, rounds
+
+        lda #ActionStruct_PlayerInitiated
+        sta wActionStructType
+
+        jmp rlActionStructWriteCombatStructs
+
+        .databank 0
+
+      rlActionStructEnemyCombatSelection ; 83/CF4A
+
+        .al
+        .xl
+        .autsiz
+        .databank ?
+
+        ; Writes the action structs and generates combat
+        ; rounds for two units. Used for enemy targeting.
+
+        ; Inputs:
+        ; wR0: short pointer to initiator character buffer
+        ; wR1: target deployment number
+
+        ; Outputs:
+        ; Action structs, rounds
+
+        lda #ActionStruct_EnemyInitiated
+        sta wActionStructType
+
+        jmp rlActionStructWriteCombatStructs
+
+      rlActionStructWriteCombatStructs ; 83/CF54
+
+        .al
+        .xl
+        .autsiz
+        .databank ?
+
+        ; Writes the action structs and generates combat
+        ; rounds for two units.
+
+        ; Inputs:
+        ; wR0: short pointer to initiator character buffer
+        ; wR1: target deployment number
+        ; wActionStructType: struct type
+
+        ; Outputs:
+        ; Action structs, rounds
+
+        php
+        phb
+
+        sep #$20
+
+        lda #`aActionStructUnit1
+        pha
+
+        rep #$20
+
+        plb
+
+        .databank `aActionStructUnit1
+
+        lda wR0
+        sta wActionStructGeneratedRoundBufferPointer
+        lda wR1
+        sta wActionStructGeneratedRoundDeploymentNumber
+
+        jsr rsActionStructGetBaseStats
+        jsr rsActionStructTrySetUnitCoordinates
+        jsr rsActionStructGetTerrainBonusesAndDistance
+
+        stz bDefeatedUnitDeploymentNumber
+
+        jsr rsActionStructGetItemInfoAndCapturingStats
+        jsr rsActionStructAdjustNihilSkills
+        jsr rsActionStructClearGeneratedRounds
+        jsr rsActionStructCalculateWeaponTriangleBonus
+
+        ldx #<>aActionStructUnit1
+        ldy #<>aActionStructUnit2
+        jsr rsActionStructGetStatsWithHitAvoidBonuses
+
+        ldx #<>aActionStructUnit2
+        ldy #<>aActionStructUnit1
+        jsr rsActionStructGetStatsWithHitAvoidBonuses
+
+        ldx #<>aActionStructUnit1
+        ldy #<>aActionStructUnit2
+        jsr rsActionStructAdjustHitAndCrit
+
+        ldx #<>aActionStructUnit2
+        ldy #<>aActionStructUnit1
+        jsr rsActionStructAdjustHitAndCrit
+
+        jsr rsActionStructGetAttacksAndGenerateRounds
+        jsr rsActionStructRoundGetRoundModifiers
+
+        lda wActionStructType
+
+        cmp #ActionStruct_Unknown3
+        beq _Unknown3
+
+        cmp #ActionStruct_Default
+        bne _Default
+
+          dec wUnknown7E4F9A
+
+          jsr rsActionStructCalculateCombatEXPGain
+          jsr rsActionStructSetGainedEXP
+          jsr rsActionStructTryGetBothLevelupGains
+
+          jsr rsActionStructWriteBothLevelUpActionStructs
+          jsr rsActionStructTryUpdateRoundCaptureFlag
+
+          jsl rlTryUpdateTotalWinsCaptures
+          jsl rlActionStructTryUpdateWinsLosses
+          jsl rlUpdateSaveSlotLosses
+
+          plb
+          plp
+          rtl
+
+        _Default
+        stz bDefeatedUnitDeploymentNumber
+
+        plb
+        plp
+        rtl
+
+        _Unknown3
+        stz wActiveTileUnitAllegiance
+
+        jsr rsActionStructCalculateCombatEXPGain
+        jsr rsActionStructSetGainedEXP
+        jsr rsActionStructTryGetBothLevelupGains
+
+        plb
+        plp
+        rtl
+
+        .databank 0
+
+    .endsection ActionStructCombatStructsSection
 
     .section ActionStructGetBaseStatsSection
 
@@ -392,7 +587,1204 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
     .endsection ActionStructTrySetUnitCoordinatesSection
 
+    .section ActionStructWeaponInfoSection
+
+      rsActionStructGetItemInfoAndCapturingStats ; 83/D085
+
+        .al
+        .xl
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Gets units' base stats and item info.
+
+        ; Inputs:
+        ; aActionStructUnit1: filled with unit
+        ; aActionStructUnit2: filled with unit
+        ; wActionStructType: struct type
+
+        ; Outputs:
+        ; None
+
+        ; Base stats, item stats.
+
+        lda #<>aActionStructUnit1
+        sta wR1
+        jsl rlCombineCharacterDataAndClassBases
+
+        jsr rsActionStructHalveStatsWhenCapturing
+
+        lda aActionStructUnit1.Character
+        jsl rlCopyCharacterDataToBuffer
+
+        lda #<>aActionStructUnit1
+        sta wR1
+        jsr rsActionStructGetWeaponInfoByIndex
+
+        ldx #<>aActionStructUnit1
+        jsl rlActionStructGetItemBonuses
+
+        ; Single-entry mode doesn't need the second unit.
+
+        lda #ActionStruct_Single
+        cmp wActionStructType
+        beq _Single
+
+          lda #<>aActionStructUnit2
+          sta wR1
+          jsl rlCombineCharacterDataAndClassBases
+
+          lda aActionStructUnit2.Character
+          jsl rlCopyCharacterDataToBuffer
+
+          lda #<>aActionStructUnit2
+          sta wR1
+          jsr rsActionStructGetWeaponInfoByPointer
+
+          ; Clear the second unit's item if they can't retaliate.
+
+          lda aActionStructUnit2.Status
+          and #$00FF
+
+          cmp #StatusSleep
+          beq +
+
+            cmp #StatusPetrify
+            bne _Continue
+
+            +
+            sep #$20
+
+            stz aActionStructUnit2.EquippedItemID2
+            stz aActionStructUnit2.EquippedItemMaxDurability
+            stz aActionStructUnit2.EquippedItemInventoryIndex
+
+            rep #$30
+
+          _Continue
+          jsr rsActionStructClearOpponentWeaponIfUsingLongRange
+
+          ldx #<>aActionStructUnit2
+          jsl rlActionStructGetItemBonuses
+
+          rts
+
+        _Single
+        stz aActionStructUnit2.EquippedItemID2
+        stz aActionStructUnit2.EquippedItemID1
+        rts
+
+        .databank 0
+
+      rsActionStructGetWeaponInfoByIndex ; 83/D0F6
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an action
+        ; struct in wR1 and an inventory offset of
+        ; an equipped item (or -1 to find one on the fly) in wR17,
+        ; store the unit's weapon info to their action struct.
+
+        ; Inputs:
+        ; wR1: short pointer to action struct
+        ; wR17: inventory offset or -1
+
+        ; Outputs:
+        ; aActionStructUnit1: filled with unit if wR17 was -1
+
+        php
+
+        rep #$30
+
+        ; Grab inventory offset. If -1, find one.
+
+        ldx wR17
+        bmi _FindEquippable
+
+          ; Copy item to buffer and get info.
+
+          phx
+
+          lda aActionStructUnit1.Items,x
+          jsl rlCopyItemDataToBuffer
+
+          pla
+          ldx #<>aActionStructUnit1
+
+          sep #$20
+
+          bra rsActionStructGetWeaponInfoMain
+
+        _FindEquippable
+
+        .al
+        .xl
+        .autsiz
+
+        ; Find item, get info.
+
+        lda #<>aActionStructUnit1
+        sta wR1
+        jsl rlGetEquippableItemInventoryOffset
+
+        lda wR1
+        ldx #<>aActionStructUnit1
+
+        sep #$20
+
+        bra rsActionStructGetWeaponInfoMain
+
+        .databank 0
+
+      rsActionStructGetWeaponInfoByPointer ; 83/D11F
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an action
+        ; struct in wR1, write their equipped item's
+        ; info.
+
+        php
+
+        rep #$30
+
+        ldx wR1
+        stx wR17
+
+        jsl rlGetEquippableItemInventoryOffset
+
+        lda wR1
+
+        sep #$20
+
+        .databank 0
+
+      rsActionStructGetWeaponInfoMain ; 83/D12E
+
+        .as
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given the offset of an equipped weapon
+        ; in A and a short pointer to an action struct
+        ; in X, write the unit's item info to their action
+        ; struct.
+
+        ; Inputs:
+        ; A: inventory offset
+        ; X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        sta structActionStructEntry.EquippedItemInventoryIndex,b,x
+
+        lda aItemDataBuffer.DisplayedWeapon,b
+        sta structActionStructEntry.EquippedItemID1,b,x
+
+        lda aItemDataBuffer.Durability,b
+        sta structActionStructEntry.EquippedItemMaxDurability,b,x
+
+        rep #$30
+
+        lda structActionStructEntry.Skills2,b,x
+        ora aItemDataBuffer.Skills2,b
+        sta structActionStructEntry.Skills2,b,x
+
+        lda bActionStructDistance
+        jsl rlCheckIfInRange
+        bcs +
+
+          lda aItemDataBuffer.Type,b
+          pha
+
+          lda #pack([None, 0])
+          jsl rlCopyItemDataToBuffer
+
+          pla
+          sta aItemDataBuffer.Type,b
+
+        +
+        sep #$20
+
+        lda aItemDataBuffer.Traits,b
+        bit #TraitMagicRanged
+        beq +
+
+          lda #1
+          cmp bActionStructDistance
+          beq +
+
+            lda aItemDataBuffer.Type,b
+            lsr a
+            lsr a
+            lsr a
+            lsr a
+            sta aItemDataBuffer.Type,b
+
+            lda aItemDataBuffer.Traits,b
+            ora #TraitTome
+            sta aItemDataBuffer.Traits,b
+
+        +
+        lda aItemDataBuffer.DisplayedWeapon,b
+        sta structActionStructEntry.EquippedItemID2,b,x
+
+        lda aItemDataBuffer.Type,b
+        and #$0F
+        sta structActionStructEntry.AttackType,b,x
+
+        lda aItemDataBuffer.Traits,b
+        sta structActionStructEntry.WeaponTraits,b,x
+
+        phy
+        tdc
+
+        lda aItemDataBuffer.Type,b
+        and #$0F
+        tay
+        lda aCharacterDataBuffer.WeaponEXPModifiers,y
+        sta structActionStructEntry.WeaponEXPGainChance,b,x
+
+        stz structActionStructEntry.GainedWeaponEXP,b,x
+
+        rep #$30
+
+        txa
+        clc
+        adc #structActionStructEntry.WeaponRanks
+        sta wR0
+
+        lda (wR0),y
+        and #$00FF
+        sta wR0
+
+        lda aClassDataBuffer.WeaponRanks,y
+        and #$00FF
+        clc
+        adc wR0
+        cmp #RankA
+        blt +
+
+          lda #RankA
+
+        +
+        sep #$20
+
+        sta structActionStructEntry.WeaponEXP,b,x
+
+        ply
+        plp
+        rts
+
+        .databank 0
+
+    .endsection ActionStructWeaponInfoSection
+
+    .section ActionStructAdjustNihilSkillsSection
+
+      rsActionStructAdjustNihilSkills ; 83/D1D0
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        _NihilCancelledSkills2 := [Skill2Adept, Skill2Charm, Skill2Miracle, Skill2Vantage, Skill2Assail, Skill2Pavise] | ...
+        _NihilCancelledSkills3 := [Skill3Wrath, Skill3Astra, Skill3Luna, Skill3Sol] | ...
+
+        _UnitList  := [(aActionStructUnit1, aActionStructUnit2)]
+        _UnitList ..= [(aActionStructUnit2, aActionStructUnit1)]
+
+        ; Tries to nullify opponent's skills due to nihil.
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
+
+        .for _Tup in _UnitList
+
+          _NihilUnit := _Tup[0]
+          _Target    := _Tup[1]
+
+          lda _NihilUnit.Skills2
+          bit #Skill2Nihil
+          beq +
+
+            lda _Target.Skills2
+            and #~pack([_NihilCancelledSkills2, _NihilCancelledSkills3])
+            sta _Target.Skills2
+
+          +
+        .endfor
+
+        rts
+
+        .databank 0
+
+    .endsection ActionStructAdjustNihilSkillsSection
+
+    .section ActionStructGetTerrainBonusesAndDistanceSection
+
+      rsActionStructGetTerrainBonusesAndDistance ; 83/D1F3
+
+        .xl
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Get the terrain stats for both units and
+        ; the distance between them.
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
+
+        ldx #<>aActionStructUnit1
+        jsl rsActionStructGetTerrainStats
+
+        ldx #<>aActionStructUnit2
+        jsl rsActionStructGetTerrainStats
+
+        jsr rsActionStructGetDistanceBetweenUnits
+        rts
+
+        .databank 0
+
+      rsActionStructGetTerrainStats ; 83/D205
+
+        .autsiz
+        .databank ?
+
+        _TerrainBonusList  := [(aClassDataBuffer.TerrainAvoidPointer, structActionStructEntry.TerrainAvoid)]
+        _TerrainBonusList ..= [(aClassDataBuffer.TerrainDefensePointer, structActionStructEntry.TerrainDefense)]
+        _TerrainBonusList ..= [(aClassDataBuffer.TerrainHitAvoidPointer, structActionStructEntry.TerrainHitAvoid)]
+
+        ; Given a unit, get their bonuses from terrain.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        php
+        phb
+
+        sep #$20
+
+        lda #`aActionStructUnit1
+        pha
+
+        rep #$20
+
+        plb
+
+        .databank `aActionStructUnit1
+
+        lda #>`aClassData
+        sta lR18+size(byte)
+
+        lda structActionStructEntry.Class,b,x
+        jsl rlCopyClassDataToBuffer
+
+        lda structActionStructEntry.X,b,x
+        and #$00FF
+        sta wR0
+        lda structActionStructEntry.Y,b,x
+        and #$00FF
+        sta wR1
+        jsl rlGetMapTileIndexByCoords
+
+        tay
+        lda aTerrainMap,y
+        and #$00FF
+        sta structActionStructEntry.TerrainType,b,x
+        tay
+
+        .for _Tup in _TerrainBonusList
+
+          _Pointer := _Tup[0]
+          _Stat    := _Tup[1]
+
+          lda _Pointer
+          sta lR18
+
+          lda [lR18],y
+
+          sep #$20
+
+          sta _Stat,b,x
+
+          rep #$20
+
+        .endfor
+
+        plb
+        plp
+        rtl
+
+        .databank 0
+
+      rsActionStructGetDistanceBetweenUnits ; 83/D267
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given two units, get the distance
+        ; between them.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+        ; Y: short pointer to action struct
+
+        ; Outputs:
+        ; wR0: distance
+
+        php
+
+        sep #$20
+
+        ; Missing branch?
+
+        lda #ActionStruct_PlayerInitiated
+        cmp wActionStructType
+
+        ; Use absolute values for distances.
+
+        lda aActionStructUnit1.X
+        sec
+        sbc aActionStructUnit2.X
+        bpl +
+
+          eor #-1
+          inc a
+
+        +
+        sta wR0
+
+        lda aActionStructUnit1.Y
+        sec
+        sbc aActionStructUnit2.Y
+        bpl +
+
+          eor #-1
+          inc a
+
+        +
+        clc
+        adc wR0
+
+        -
+        sta bActionStructDistance
+
+        plp
+        rts
+
+        .as
+        .autsiz
+
+        _Unused
+        lda #-1
+        bra -
+
+        .databank 0
+
+    .endsection ActionStructGetTerrainBonusesAndDistanceSection
+
     .section ActionStructGetCoreStatsSection
+
+      rsActionStructGetStatsNoHitAvoidBonuses ; 83/D295
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Gets a unit's main action struct stats.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+        ; Y: short pointer to opponent action struct
+
+        ; Outputs:
+        ; None
+
+        php
+
+        sep #$20
+
+        stz aActionStructUnit1.TerrainType
+        stz aActionStructUnit1.TerrainDefense
+        stz aActionStructUnit1.TerrainHitAvoid
+        stz aActionStructUnit1.TerrainAvoid
+        stz aActionStructUnit1.HitAvoidBonus
+        stz wSupportBonus
+
+        rep #$30
+
+        bra rsActionStructGetStatsMain
+
+        .databank 0
+
+      rsActionStructGetStatsWithHitAvoidBonuses ; 83/D2AE
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Gets a unit's main action struct stats.
+        ; Factors in terrain, supports, charm, and leadership
+        ; into hit/avoid.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+        ; Y: short pointer to opponent action struct
+
+        ; Outputs:
+        ; None
+
+        php
+
+        rep #$30
+
+        lda structActionStructEntry.Class,b,x
+        jsl rlCopyClassDataToBuffer
+
+        jsr rsActionStructCalculateHitAvoidBonus
+
+        .databank 0
+
+      rsActionStructGetStatsMain ; 83/D2BB
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Gets a unit's main action struct stats.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+        ; Y: short pointer to opponent action struct
+
+        ; Outputs:
+        ; None
+
+        jsr rsActionStructGetDefensiveStat
+        jsr rsActionStructAddOffensiveStat
+        jsr rsActionStructGetEffectiveMight
+        jsr rsActionStructSetSpecialWeaponMight
+        jsr rsActionStructGetAttackSpeed
+        jsr rsActionStructGetHit
+        jsr rsActionStructGetBaseAvoid
+        jsr rsActionStructGetCrit
+        jsr rsActionStructGetDodge
+        jsr rsActionStructCheckUnkillable
+
+        plp
+        rts
+
+        .databank 0
+
+      rsActionStructAdjustHitAndCrit ; 83/D2DB
+
+        .databank `aActionStructUnit1
+
+        ; Gets a unit's adjusted hit and crit.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+        ; Y: short pointer to opponent action struct
+
+        ; Outputs:
+        ; None
+
+        jsr rsActionStructGetAdjustedHit
+        jsr rsActionStructGetAdjustedCrit
+        rts
+
+        .databank 0
+
+      rsActionStructGetDefensiveStat ; 83/D2E2
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Adds the unit's defensive stat, either
+        ; defense or resistance, to their battle defense.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+        ; Y: short pointer to opponent action struct
+
+        ; Outputs:
+        ; None
+
+        phx
+        phy
+
+        lda #>`aClassData
+        sta lR18+size(byte)
+
+        lda structActionStructEntry.Class,b,x
+        jsl rlCopyClassDataToBuffer
+
+        lda aClassDataBuffer.TerrainDefensePointer
+        sta lR18
+
+        lda structActionStructEntry.TerrainType,b,x
+        and #$00FF
+        tay
+
+        sep #$20
+
+        lda [lR18],y
+        sta wR0
+
+        ply
+        plx
+
+        lda structActionStructEntry.WeaponTraits,b,y
+        bit #TraitTome
+        beq _NonMagic
+
+          lda structActionStructEntry.Magic,b,x
+          bra +
+
+        _NonMagic
+        lda structActionStructEntry.Defense,b,x
+        clc
+        adc wR0
+
+        +
+        sta structActionStructEntry.BattleDefense,b,x
+
+        rep #$30
+
+        rts
+
+        .databank 0
+
+      rsActionStructAddOffensiveStat ; 83/D31C
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Adds the unit's combat stat, either
+        ; strength or magic, to their battle might.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        sep #$20
+
+        lda structActionStructEntry.EquippedItemMaxDurability,b,x
+        xba
+        lda structActionStructEntry.EquippedItemID1,b,x
+        jsl rlCopyItemDataToBuffer
+
+        lda aItemDataBuffer.DisplayedWeapon,b
+        beq _End
+
+          lda structActionStructEntry.WeaponTraits,b,x
+          bit #TraitTome
+          beq _Strength
+
+            lda structActionStructEntry.Magic,b,x
+            bra +
+
+          _Strength
+          lda structActionStructEntry.Strength,b,x
+
+        +
+        clc
+        adc aItemDataBuffer.Might,b
+        sta structActionStructEntry.BattleMight,b,x
+
+        _End
+        rep #$30
+
+        rts
+
+        .databank 0
+
+      rsActionStructGetEffectiveMight ; 83/D347
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an action
+        ; struct in X, get effective hit.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        sty wR1
+        lda bActionStructDistance
+        jsl rlCheckIfWeaponEffective
+        bcc +
+
+          sep #$20
+
+          lda structActionStructEntry.BattleMight,b,x
+
+          clc
+          adc aItemDataBuffer.Might,b
+
+          clc
+          adc aItemDataBuffer.Might,b
+
+          sta structActionStructEntry.BattleMight,b,x
+
+          rep #$30
+
+        +
+        rts
+
+        .databank 0
+
+      rsActionStructSetSpecialWeaponMight ; 83/D365
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; A special calculation for fighting
+        ; someone with Loptyr's Blade or when
+        ; using Hel.
+
+        ; Inputs:
+        ; X: Short pointer to attacker action struct
+        ; Y: Short pointer to defender action struct
+
+        ; Outputs:
+        ; attacker BattleMight: adjusted might
+
+        sep #$20
+
+        ; Bragi's Blade always does full damage.
+
+        lda structActionStructEntry.EquippedItemID2,b,x
+        cmp #BragisBlade
+        beq +
+
+          ; If not attacking with Bragi's Blade, check if
+          ; defender is using Loptyr's Blade.
+
+          lda structActionStructEntry.EquippedItemID1,b,y
+          cmp #LoptyrsBlade
+          bne +
+
+            ; Halve might if attacking someone who is
+            ; using Loptyr's Blade.
+
+            lda structActionStructEntry.BattleMight,b,x
+            lsr a
+            sta structActionStructEntry.BattleMight,b,x
+
+        +
+
+        ; Flag Hel users with a special value.
+
+        lda structActionStructEntry.EquippedItemID2,b,x
+        cmp #Hel
+        bne +
+
+          lda #-1
+          sta structActionStructEntry.BattleMight,b,x
+
+        +
+        rep #$30
+
+        rts
+
+        .databank 0
+
+      rsActionStructGetAttackSpeed ; 83/D38B
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an action
+        ; struct in X, get the unit's attack speed.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        sep #$20
+
+        stz wR0
+
+        lda aItemDataBuffer.Traits,b
+        bit #TraitTome
+        bne +
+
+          lda structActionStructEntry.Constitution,b,x
+          sta wR0
+
+        +
+        lda aItemDataBuffer.Weight,b
+        sec
+        sbc wR0
+        bpl +
+
+          lda #0
+
+        +
+        sta wR0
+
+        lda structActionStructEntry.Speed,b,x
+        sec
+        sbc wR0
+        bpl +
+
+          lda #0
+
+        +
+        sta structActionStructEntry.BattleAttackSpeed,b,x
+
+        rep #$30
+
+        rts
+
+        .databank 0
+
+      rsActionStructGetHit ; 83/D3B7
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an action
+        ; struct in X, get the unit's hit.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        sep #$20
+
+        lda structActionStructEntry.Skill,b,x
+        asl a
+        clc
+        adc structActionStructEntry.Luck,b,x
+
+        clc
+        adc structActionStructEntry.HitAvoidBonus,b,x
+        bcs +
+
+          clc
+          adc aItemDataBuffer.Accuracy,b
+          bcs +
+
+            sta structActionStructEntry.BattleHit,b,x
+
+            rep #$30
+            rts
+
+        +
+        sep #$20
+
+        lda #-1
+        sta structActionStructEntry.BattleHit,b,x
+
+        rep #$20
+
+        rts
+
+        .databank 0
+
+      rsActionStructGetBaseAvoid ; 83/D3DD
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        _StatList  := [structActionStructEntry.TerrainAvoid]
+        _StatList ..= [structActionStructEntry.HitAvoidBonus]
+        _StatList ..= [structActionStructEntry.Luck]
+        _StatList ..= [structActionStructEntry.BattleAttackSpeed]
+        _StatList ..= [structActionStructEntry.BattleAttackSpeed]
+
+        ; Given a short pointer to an action
+        ; struct in X, get the unit's avoid.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        sep #$20
+
+        lda _StatList[0],b,x
+
+        .for _Stat in _StatList[1:]
+
+          clc
+          adc _Stat,b,x
+
+        .endfor
+
+        sta structActionStructEntry.BattleAvoid,b,x
+
+        rep #$30
+
+        rts
+
+        .databank 0
+
+      rsActionStructGetCrit ; 83/D3F8
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an action
+        ; struct in X, get the unit's crit.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        sep #$20
+
+        lda structActionStructEntry.Skill,b,x
+
+        clc
+        adc aItemDataBuffer.Critrate,b
+
+        clc
+        adc wSupportBonus
+
+        sta structActionStructEntry.BattleCrit,b,x
+
+        rep #$30
+
+        lda structActionStructEntry.Character,b,x
+        jsl rlCopyCharacterDataToBuffer
+
+        sep #$20
+
+        lda aCharacterDataBuffer.CriticalCoefficient
+        sta structActionStructEntry.CriticalCoefficient,b,x
+
+        rep #$30
+
+        rts
+
+        .databank 0
+
+      rsActionStructGetDodge ; 83/D41C
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an action
+        ; struct in X, get the unit's battle dodge
+        ; (crit avoid).
+
+        ; Inputs:
+        ; X: short pointer to action struct
+
+        ; Outputs:
+        ; None
+
+        sep #$20
+
+        lda structActionStructEntry.Luck,b,x
+
+        lsr a
+        clc
+        adc wSupportBonus
+        sta structActionStructEntry.BattleDodge,b,x
+
+        rep #$30
+
+        rts
+
+        .databank 0
+
+      rsActionStructGetAdjustedHit ; 83/D42C
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given two action structs, adjust hit.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+        ; Y: short pointer to target action struct
+
+        ; Outputs:
+        ; None
+
+        lda structActionStructEntry.BattleHit,b,x
+        and #$00FF
+        sta wR0
+
+        lda structActionStructEntry.BattleAvoid,b,y
+        and #$00FF
+        sta wR1
+
+        lda wR0
+        sec
+        sbc wR1
+        beq _Min
+        bpl +
+
+          _Min
+          lda #MinimumHit
+
+        +
+        cmp #MaximumHit
+        blt +
+
+          lda #MaximumHit
+
+        +
+        sep #$20
+
+        sta structActionStructEntry.BattleAdjustedHit,b,x
+
+        rep #$30
+
+        rts
+
+        .databank 0
+
+      rsActionStructCheckIfOpponentHoldingScroll ; 83/D458
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given a short pointer to an action
+        ; struct in Y, check if holding any scrolls.
+
+        ; Inputs:
+        ; Y: short pointer to action struct
+
+        ; Outputs:
+        ; Carry set if holding any scrolls,
+        ;   carry clear otherwise
+
+        phx
+        phy
+
+        lda #<>rlActionStructCheckIfOpponentHoldingScrollEffect
+        sta lR25
+        lda #>`rlActionStructCheckIfOpponentHoldingScrollEffect
+        sta lR25+size(byte)
+
+        stz wR0
+
+        tya
+        clc
+        adc #structActionStructEntry.Items
+
+        jsl rlRunRoutineForAllItemsInInventory
+
+        lda wR0
+        beq _NoScrolls
+
+          ply
+          plx
+          sec
+          rts
+
+        _NoScrolls
+        ply
+        plx
+        clc
+        rts
+
+        .databank 0
+
+      rlActionStructCheckIfOpponentHoldingScrollEffect ; 83/D47B
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given an item ID in A, increment a
+        ; counter if item is a scroll.
+
+        ; Inputs:
+        ; A: item ID
+
+        ; Outputs:
+        ; wR0: incremented if scroll, otherwise unchanged
+
+        jsl rlCopyItemDataToBuffer
+        lda aItemDataBuffer.Skills2,b
+        bit #pack([None, Skill3Scroll])
+        beq +
+
+          inc wR0
+
+        +
+        rtl
+
+        .databank 0
+
+      rsActionStructGetAdjustedCrit ; 83/D48A
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given two action structs, adjust crit, nullifying
+        ; if the opponent has any scrolls.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+        ; Y: short pointer to target action struct
+
+        ; Outputs:
+        ; None
+
+        jsr rsActionStructCheckIfOpponentHoldingScroll
+        bcs _HasScroll
+
+          sep #$20
+
+          lda structActionStructEntry.BattleCrit,b,x
+          sec
+          sbc structActionStructEntry.BattleDodge,b,y
+          bpl +
+
+            lda #0
+
+          +
+          sta structActionStructEntry.BattleAdjustedCrit,b,x
+
+          rep #$30
+
+          rts
+
+        _HasScroll
+
+        sep #$20
+
+        lda #0
+        sta structActionStructEntry.BattleAdjustedCrit,b,x
+
+        rep #$20
+
+        rts
+
+        .databank 0
 
       rsActionStructCheckUnkillable ; 83/D4AC
 
@@ -607,6 +1999,14 @@ GUARD_FE5_ACTIONSTRUCT :?= false
       rsActionStructTerminateRoundArray ; 83/D55B
 
         .databank `wActionStructGeneratedRoundOffset
+
+        ; Caps the generated round array.
+
+        ; Inputs:
+        ; None
+
+        ; Outputs:
+        ; None
 
         php
         phx
@@ -1631,7 +3031,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         ; Outputs:
         ;   bUnknown7E4FCF: $02 on kill, unchanged otherwise
-        ;   bUnknownTargetingDeploymentNumber: defender deployment
+        ;   bDefeatedUnitDeploymentNumber: defender deployment
         ;     number on kill, unchanged otherwise
 
         jsr rsActionStructCalculateWEXPGain
@@ -1686,7 +3086,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
             lda #$02
             sta bUnknown7E4FCF
             lda structActionStructEntry.DeploymentNumber,b,y
-            sta bUnknownTargetingDeploymentNumber
+            sta bDefeatedUnitDeploymentNumber
             lda #0
 
           +
@@ -1824,7 +3224,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         sta wActionStructRoundTempDamage
         jsr rsActionStructWriteRound
 
-        lda bUnknownTargetingDeploymentNumber
+        lda bDefeatedUnitDeploymentNumber
         bne _EndCombat
 
         lda structActionStructEntry.EquippedItemID2,b,x
@@ -1892,7 +3292,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
               rep #$20
 
-              stz bUnknownTargetingDeploymentNumber
+              stz bDefeatedUnitDeploymentNumber
 
         _End
         plb
@@ -1921,7 +3321,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         _DA60
           jsl rlActionStructTryUpdateWinsLosses
 
-          stz bUnknownTargetingDeploymentNumber
+          stz bDefeatedUnitDeploymentNumber
           bra +
 
         .al
@@ -3284,7 +4684,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         sta bUnknown7E4FCF
 
         lda structActionStructEntry.DeploymentNumber,b,y
-        sta bUnknownTargetingDeploymentNumber
+        sta bDefeatedUnitDeploymentNumber
 
         rep #$30
 
@@ -3488,7 +4888,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
             sta $7E4FCF
 
             lda structActionStructEntry.DeploymentNumber,b,y
-            sta bUnknownTargetingDeploymentNumber
+            sta bDefeatedUnitDeploymentNumber
 
             rep #$30
 
@@ -3617,7 +5017,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         ; Given two units, a recipient and a target,
         ; get the recipient's hit/avoid bonus from
-        ; supports, leadership, and charm.
+        ; supports, leadership, terrain, and charm.
 
         ; Inputs:
         ; X: short pointer to recipient action struct
@@ -4750,7 +6150,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         .al
         .autsiz
-        .databank `bUnknownTargetingDeploymentNumber
+        .databank `bDefeatedUnitDeploymentNumber
 
         ; Increments either the wins or captures
         ; counter if a non-player unit is defeated
@@ -4759,7 +6159,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; Inputs:
         ; aActionStructUnit1: filled with initiator
         ; aActionStructUnit2: filled with defender
-        ; bUnknownTargetingDeploymentNumber: slain unit's deployment number
+        ; bDefeatedUnitDeploymentNumber: slain unit's deployment number
         ; wCapturingFlag: nonzero if capturing, zero otherwise
 
         ; Outputs:
@@ -4768,7 +6168,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; Check the defeated unit's allegiance,
         ; exit if player unit.
 
-        lda bUnknownTargetingDeploymentNumber
+        lda bDefeatedUnitDeploymentNumber
         and #AllAllegiances
         beq +
 
@@ -4843,7 +6243,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; aActionStructUnit1: filled with initiator
         ; aActionStructUnit2: filled with defender
         ; bUnknown7E4FCF: battle outcome type
-        ; bUnknownTargetingDeploymentNumber: deployment number
+        ; bDefeatedUnitDeploymentNumber: deployment number
         ;   of defeated unit
 
         ; Outputs:
@@ -4883,7 +6283,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         ; Inputs:
         ; Y: short pointer to action struct
-        ; bUnknownTargetingDeploymentNumber: deployment number
+        ; bDefeatedUnitDeploymentNumber: deployment number
         ;   of defeated unit
 
         ; Outputs:
@@ -4911,7 +6311,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
           ; Determine if it's a win or a loss.
 
           lda structActionStructEntry.DeploymentNumber,b,y
-          cmp bUnknownTargetingDeploymentNumber
+          cmp bDefeatedUnitDeploymentNumber
           beq +
 
             lda aWinsTable,x

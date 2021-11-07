@@ -29,6 +29,7 @@
   .include "SRC/CharacterData.asm"
   .include "SRC/ItemData.asm"
   .include "SRC/DeploymentSlots.asm"
+  .include "SRC/ClassData.asm"
 
   .include "EVENTS/Chapter1.event"
   .include "EVENTS/Chapter2.event"
@@ -118,25 +119,19 @@
 
   .endlogical
 
-  * := $01CFED
-  .logical mapped($01CFED)
+  * := $01CF2B
+  .logical mapped($01CF2B)
 
     startCode
 
+      .dsection ActionStructCombatStructsSection
       .dsection ActionStructGetBaseStatsSection
       .dsection ActionStructClearActionStructSection
       .dsection ActionStructCopyStartingStatsSection
       .dsection ActionStructTrySetUnitCoordinatesSection
-
-    endCode
-
-  .endlogical
-
-  * := $01D4AC
-  .logical mapped($01D4AC)
-
-    startCode
-
+      .dsection ActionStructWeaponInfoSection
+      .dsection ActionStructAdjustNihilSkillsSection
+      .dsection ActionStructGetTerrainBonusesAndDistanceSection
       .dsection ActionStructGetCoreStatsSection
       .dsection ActionStructRoundSection
       .dsection ActionStructUnknown83DA13Section
@@ -192,6 +187,29 @@
     endCode
 
     .fill mapped($018000) + $8000 - *, $FF
+
+  .endlogical
+
+  * := $030000
+  .logical mapped($030000)
+
+    startData
+
+      .dsection ClassDataSection
+
+    endData
+
+  .endlogical
+
+  * := $0310BC
+  .logical mapped($0310BC)
+
+    startData
+
+      .dsection MovementTypeSection
+      .dsection TerrainBonusSection
+
+    endData
 
   .endlogical
 
