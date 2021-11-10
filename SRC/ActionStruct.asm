@@ -42,11 +42,11 @@ GUARD_FE5_ACTIONSTRUCT :?= false
       rlCopyItemDataToBuffer                        :?= address($83B00D)
       rlTryGetBrokenItemID                          :?= address($83B0B7)
       rlCheckIfInRange                              :?= address($83B104)
+      rlGetAllegianceInfoOffset                     :?= address($83B296)
       rlUnknown848E5A                               :?= address($848E5A)
 
       rsActionStructClearOpponentWeaponIfUsingLongRange :?= address($83E957)
       rsActionStructSetGainedEXP                        :?= address($83EF86)
-
 
       ; Action struct types
 
@@ -199,6 +199,118 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
     .endsection ActionStructSingleSection
 
+    .section ActionStructUnknown83CEAESection
+
+      rlActionStructUnknown83CEAE ; 83/CEAE
+
+        .autsiz
+        .databank ?
+
+        ; Seems unused and bugged.
+
+        php
+        phb
+
+        sep #$20
+
+        lda #`aActionStructUnit1
+        pha
+
+        rep #$20
+
+        plb
+
+        .databank `aActionStructUnit1
+
+        jsl rlActionStructUnknownSetCallback
+
+        lda #ActionStruct_Unknown3
+        sta @l wActionStructType
+
+        lda #1
+        sta @l wActionStructGeneratedRoundCombatType
+
+        lda #<>aSelectedCharacterBuffer
+        sta wActionStructGeneratedRoundBufferPointer
+
+        lda #<>aActionStructUnit1
+        sta wR1
+        jsr rsActionStructCopyStartingStats
+
+        lda #<>aActionStructUnit2
+        sta wR1
+        jsr rsActionStructCopyStartingStats
+
+        sep #$20
+
+        lda #-1
+        sta bActionStructDistance
+
+        rep #$20
+
+        ldx aActionStructUnit1.Coordinates
+        stx aActionStructUnit2.Coordinates
+
+        stz wR17
+        stz bDefeatedUnitDeploymentNumber
+
+        jsr rsActionStructCalculateWeaponTriangleBonus
+        jsr rsActionStructUnknownGetItemInfo
+        jsr rsActionStructGetTerrainBonusesAndDistance
+
+        sep #$20
+
+        lda #-1
+        sta bActionStructDistance
+
+        rep #$20
+
+        jmp rlActionStructWriteCombatStructsMain
+
+        .databank 0
+
+      rsActionStructUnknownGetItemInfo ; 83/CF09
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; This is supposed to get both action
+        ; structs' item info, but passes in the
+        ; units' character IDs instead of class IDs.
+
+        ; Inputs:
+        ; wR17: offset of unit1's equipped item
+        ;   in inventory, -1 to calculate on the fly
+        ; aActionStructUnit1: WIP action struct
+        ; aActionStructUnit2: WIP action struct
+
+        ; Outputs:
+        ; aActionStructUnit1: WIP action struct
+        ; aActionStructUnit2: WIP action struct
+
+        lda #<>aActionStructUnit1
+        sta wR1
+        jsr rsActionStructHalveStatsWhenCapturing
+
+        lda aActionStructUnit1.Character
+        jsl rlCopyClassDataToBuffer
+
+        jsr rsActionStructGetWeaponInfoByOffset
+
+        lda #<>aActionStructUnit2
+        sta wR1
+        jsr rsActionStructGetWeaponInfoByPointer
+
+        lda aActionStructUnit2.Character
+        jsl rlCopyClassDataToBuffer
+
+        rts
+
+        .databank 0
+
+    .endsection ActionStructUnknown83CEAESection
+
     .section ActionStructCombatStructsSection
 
       rlActionStructCombatStructs ; 83/CF2B
@@ -320,6 +432,20 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         stz bDefeatedUnitDeploymentNumber
 
         jsr rsActionStructGetItemInfoAndCapturingStats
+
+        .databank 0
+
+      rlActionStructWriteCombatStructsMain ; 83/CF77
+
+        .al
+        .xl
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; See above, this routine is split like this
+        ; due to being called by (the probably unused)
+        ; rlActionStructUnknown83CEAE
+
         jsr rsActionStructAdjustNihilSkills
         jsr rsActionStructClearGeneratedRounds
         jsr rsActionStructCalculateWeaponTriangleBonus
@@ -619,7 +745,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         lda #<>aActionStructUnit1
         sta wR1
-        jsr rsActionStructGetWeaponInfoByIndex
+        jsr rsActionStructGetWeaponInfoByOffset
 
         ldx #<>aActionStructUnit1
         jsl rlActionStructGetItemBonuses
@@ -676,7 +802,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         .databank 0
 
-      rsActionStructGetWeaponInfoByIndex ; 83/D0F6
+      rsActionStructGetWeaponInfoByOffset ; 83/D0F6
 
         .autsiz
         .databank `aActionStructUnit1
@@ -5621,7 +5747,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         rts
 
         _Continue
-        stz wKillExperienceBonus
+        stz wGainedExperience
 
         lda structActionStructEntry.CurrentHP,b,y
         and #$00FF
@@ -5654,19 +5780,19 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; Inputs:
         ; X: short pointer to player unit action struct
         ; Y: short pointer to enemy unit action struct
-        ; wKillExperienceBonus: running total
+        ; wGainedExperience: running total
 
         ; Outputs:
-        ; wKillExperienceBonus: running total
+        ; wGainedExperience: running total
 
         lda structActionStructEntry.Character,b,y
         cmp wChapterBoss,b
         bne +
 
-          lda wKillExperienceBonus
+          lda wGainedExperience
           clc
           adc #40
-          sta wKillExperienceBonus
+          sta wGainedExperience
 
         +
         rts
@@ -5688,19 +5814,19 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; Inputs:
         ; X: short pointer to player unit action struct
         ; Y: short pointer to enemy unit action struct
-        ; wKillExperienceBonus: running total
+        ; wGainedExperience: running total
 
         ; Outputs:
-        ; wKillExperienceBonus: running total
+        ; wGainedExperience: running total
 
         lda structActionStructEntry.Skills1,b,y
         bit #Skill1Steal
         beq +
 
-          lda wKillExperienceBonus
+          lda wGainedExperience
           clc
           adc #20
-          sta wKillExperienceBonus
+          sta wGainedExperience
 
         +
         rts
@@ -5719,10 +5845,10 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; Inputs:
         ; X: short pointer to player unit action struct
         ; Y: short pointer to enemy unit action struct
-        ; wKillExperienceBonus: running total
+        ; wGainedExperience: running total
 
         ; Outputs:
-        ; wKillExperienceBonus: running total
+        ; wGainedExperience: running total
 
         ; Enemy mod + 20 - player mod, floor 0.
 
@@ -5744,8 +5870,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         +
         clc
-        adc wKillExperienceBonus
-        sta wKillExperienceBonus
+        adc wGainedExperience
+        sta wGainedExperience
 
         rts
 
@@ -5760,15 +5886,15 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; Given a short pointer to a player
         ; unit's action struct in X and
         ; a running EXP bonus total in
-        ; wKillExperienceBonus, get total
+        ; wGainedExperience, get total
         ; EXP gained.
 
         ; Inputs:
         ; X: short pointer to action struct
-        ; wKillExperienceBonus: running total
+        ; wGainedExperience: running total
 
         ; Outputs:
-        ; wKillExperienceBonus: running total
+        ; wGainedExperience: running total
 
         lda structActionStructEntry.Class,b,x
         jsl rlCopyClassDataToBuffer
@@ -5787,10 +5913,10 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         sta wR13
         jsl rlUnsignedDivide16By8
 
-        lda wKillExperienceBonus
+        lda wGainedExperience
         clc
         adc wR13
-        sta wKillExperienceBonus
+        sta wGainedExperience
 
         rts
 
@@ -6466,6 +6592,166 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank 0
 
     .endsection ActionStructGetStatTotalDifferenceTierSection
+
+    .section ActionStructMarkSelectableTargetSection
+
+      rlActionStructMarkSelectableTarget ; 83/E7BE
+
+        .al
+        .autsiz
+        .databank `aAllegianceTargets
+
+        ; Clears the UnitStateUnselectable
+        ; unit state for a visible targetable
+        ; unit.
+
+        ; Inputs:
+        ; wCurrentPhase: phase
+        ; aActionStructUnit1: filled with unit
+
+        ; Outputs:
+        ; None
+
+        lda wCurrentPhase,b
+        jsl rlGetAllegianceInfoOffset
+
+        lda aAllegianceTargets,x
+        and #$00FF
+        bne _Targetable
+
+          lda aActionStructUnit1.X
+          and #$00FF
+          sta wR0
+
+          lda aActionStructUnit1.Y
+          and #$00FF
+          sta wR1
+
+          jsl rlGetMapTileIndexByCoords
+
+          tax
+          lda aVisibilityMap,x
+          and #$00FF
+          beq _NotVisible
+
+        _Targetable
+        lda aActionStructUnit1.UnitState
+        and #~UnitStateUnselectable
+        sta aActionStructUnit1.UnitState
+
+        rtl
+
+        _NotVisible
+        lda aActionStructUnit1.UnitState
+        ora #UnitStateUnselectable
+        sta aActionStructUnit1.UnitState
+        rtl
+
+        .databank 0
+
+    .endsection ActionStructMarkSelectableTargetSection
+
+    .section ActionStructGetDanceEXPSection
+
+      rlActionStructUnknownGetDanceEXP ; 83/E81B
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit1
+
+        lda #<>aSelectedCharacterBuffer
+        sta wR0
+        lda #<>aActionStructUnit1
+        sta wR1
+        jsl rlCopyExpandedCharacterDataBufferToBuffer
+
+        lda #<>aActionStructUnit1
+        sta wR1
+        jsl rlCombineCharacterDataAndClassBases
+
+        lda #10
+        sta wGainedExperience
+
+        .databank 0
+
+      rlActionStructGetDanceEXP ; 83/E81B
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given experience in wGainedExperience,
+        ; give to a dancer and see if they need to
+        ; be leveled.
+
+        ; Inputs:
+        ; wGainedExperience: experience
+        ; aActionStructUnit1: filled with unit
+
+        ; Outputs:
+        ; None
+
+        sep #$20
+
+        lda #-1
+        sta aActionStructUnit1.BattleMight
+        sta aActionStructUnit1.BattleAdjustedHit
+        sta aActionStructUnit1.BattleDefense
+
+        ; Only player units get EXP for dancing.
+
+        lda aActionStructUnit1.DeploymentNumber
+        and #AllAllegiances
+        bne _End
+
+          ; Dummy out second unit's experience gains.
+
+          lda #Enemy
+          sta aActionStructUnit2.DeploymentNumber
+
+          stz aActionStructUnit2.GainedExperience
+          stz aActionStructUnit1.EquippedItemID2
+          stz aActionStructUnit1.WeaponTraits
+          stz aActionStructUnit1.AttackType
+          stz aActionStructUnit1.GainedExperience
+
+          ; Copy dancer's gains.
+
+          lda aSelectedCharacterBuffer.Experience,b
+          sta aActionStructUnit1.Experience
+          sta aActionStructUnit1.StartingExperience
+
+          lda aActionStructUnit1.CurrentHP
+          sta aActionStructUnit1.StartingCurrentHP
+
+          lda aActionStructUnit1.MaxHP
+          sta aActionStructUnit1.StartingMaxHP
+
+          rep #$30
+
+          lda wGainedExperience
+          stz wGainedExperience
+
+          jsr rsActionStructSetGainedEXP
+          jsr rsActionStructTryGetBothLevelupGains
+
+          sep #$20
+
+          stz aActionStructUnit1.GainedWeaponEXP
+
+          rep #$30
+
+          ldx #<>aActionStructUnit1
+          ldy #<>aSelectedCharacterBuffer
+          jsr rsActionStructWriteLevelUpActionStruct
+
+        _End
+        rep #$30
+
+        rtl
+
+        .databank 0
+
+    .endsection ActionStructGetDanceEXPSection
 
     .section ActionStructTryGetGainedWeaponRankSection
 

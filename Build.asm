@@ -114,16 +114,7 @@
     startCode
 
       .dsection ActionStructSingleSection
-
-    endCode
-
-  .endlogical
-
-  * := $01CF2B
-  .logical mapped($01CF2B)
-
-    startCode
-
+      .dsection ActionStructUnknown83CEAESection
       .dsection ActionStructCombatStructsSection
       .dsection ActionStructGetBaseStatsSection
       .dsection ActionStructClearActionStructSection
@@ -155,16 +146,8 @@
       .dsection ActionStructWinsLossesSection
       .dsection ActionStructGetCombatStatTotalSection
       .dsection ActionStructGetStatTotalDifferenceTierSection
-
-    endCode
-
-  .endlogical
-
-  * := $01E879
-  .logical mapped($01E879)
-
-    startCode
-
+      .dsection ActionStructMarkSelectableTargetSection
+      .dsection ActionStructGetDanceEXPSection
       .dsection ActionStructTryGetGainedWeaponRankSection
 
     endCode
