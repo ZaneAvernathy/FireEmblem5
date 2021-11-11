@@ -1,0 +1,595 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER8 :?= false
+.if (!GUARD_FE5_CHAPTER8)
+  GUARD_FE5_CHAPTER8 := true
+
+  .include "../../VoltEdge/VoltEdge.h"
+
+  ; Definitions
+
+    .weak
+
+      eventMapDeathQuoteDummyEvent :?= address($99812F)
+
+      dialogueChapter8WorldMap1               :?= address($82CDBC)
+      dialogueChapter8WorldMap2               :?= address($82CE28)
+      dialogueChapter8Opening1                :?= address($93B6F8)
+      dialogueChapter8GomerAppear             :?= address($93BB65)
+      dialogueChapter8KnightCrestHouse        :?= address($93BC45)
+      dialogueChapter8LuckRingHouse           :?= address($93BD1A)
+      dialogueChapter8TanyaPlaceholder        :?= address($93BDCE)
+      dialogueChapter8GomerPlaceholder        :?= address($93BDFC)
+      dialogueChapter8RumaighMount            :?= address($93BE2B)
+      dialogueChapter8Ending1A                :?= address($93BE85)
+      dialogueChapter8Ending1B                :?= address($93C14C)
+      dialogueChapter8MartyCaptured           :?= address($93C44B)
+      dialogueChapter8UnusedDagdarPlaceholder :?= address($93C49D)
+      dialogueChapter8UnusedHouse1            :?= address($93C4C8)
+      dialogueChapter8UnusedHouse2            :?= address($93C515)
+      dialogueChapter8OrsinMartyTalk          :?= address($93C585)
+      dialogueChapter8HalvanMartyTalk         :?= address($93C75C)
+      dialogueChapter8Ending1D                :?= address($93C8EF)
+      dialogueChapter8Ending1C                :?= address($93C9F7)
+
+      dialogueChapter8Title :?= address($9AB8FF)
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter8EventsSection
+
+      eventChapter8Events ; 99/BE7D
+
+        _OpeningEventDefinitions ; 99/BE7D
+          EVENT FlagAlwaysZero, _OpeningEvent
+            CMP_WORD wCurrentTurn, 0
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _TurnEventDefinitions ; 99/BE8A
+          EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+            CHECK_IF_BOSS_DEAD Rumaigh
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _GomerAppear
+            CMP_WORD wCurrentTurn, 1
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _RightReinforcements
+            CMP_WORD_RANGE wCurrentTurn, 7, 24
+            CMP_WORD wCurrentPhase, Enemy
+            ROLL_RNG 30
+            TEST_FLAG_UNSET FlagBossDeath
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _LeftReinforcements
+            CMP_WORD_RANGE wCurrentTurn, 5, 30
+            CMP_WORD wCurrentPhase, Enemy
+            ROLL_RNG 80
+            TEST_FLAG_UNSET FlagBossDeath
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _RumaighAIChange
+            CMP_WORD wCurrentTurn, 16
+            CHECK_NUM_UNITS_GTE Rumaigh, 1
+            CMP_UNITSTATE_UNSET Rumaigh, UnitStateRescued
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+            CMP_WORD wCurrentTurn, 16
+            CHECK_NUM_UNITS_GTE Rumaigh, 1
+            CMP_UNITSTATE_UNSET Rumaigh, UnitStateRescued
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _TalkEventDefinitions ; 99/BF0D
+          EVENT $08, _OrsinMartyTalk
+            CHECK_CHARS2 Orsin, Marty
+          END_DEFINITION
+          EVENT $08, _HalvanMartyTalk
+            CHECK_CHARS2 Halvan, Marty
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _LocationEventDefinitions ; 99/BF23
+          EVENT $25, _KnightCrestHouseDestroy
+            macroECCheckCoordinates [12, 9]
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT $21, _KnightCrestHouseVisit
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [12, 9]
+          END_DEFINITION
+          EVENT $28, _LuckRingHouseDestroy
+            macroECCheckCoordinates [18, 16]
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT $24, _LuckRingHouseVisit
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [18, 16]
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _EndingEvent
+            macroECCheckCoordinates [2, 9]
+            CMP_WORD wCurrentPhase, Player
+            CMP_WORD aSelectedCharacterBuffer.Character, Leif
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _BeforeActionEventDefinitions ; 99/BF94
+        END_DEFINITION_ARRAY
+
+        _AfterActionEventDefinitions ; 99/BF96
+          EVENT $08, _MartyCaptured
+            CHECK_ACTIVE_CARRYING Marty
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _BattleEventDefinitions ; 99/BFA0
+          macroECBossQuote $06, Rumaigh
+          macroECBossQuote $0A, Marty
+        END_DEFINITION_ARRAY
+
+        _ShopEventDefinitions ; 99/BFB2
+          macroECShop eventChapter8Data._Armory
+          macroECShop eventChapter8Data._Vendor
+        END_DEFINITION_ARRAY
+
+        _RightReinforcements ; 99/BFDA
+          SCROLL_CAMERA_ADDRESS eventChapter8Data._RightReinforcementsCameraCoordinates1
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter8Data._RightReinforcementsGroup1
+          WAIT_MOVE
+          YIELD
+
+          YIELD_UNK
+
+          SCROLL_CAMERA_ADDRESS eventChapter8Data._RightReinforcementsCameraCoordinates2
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter8Data._RightReinforcementsGroup2
+          WAIT_MOVE
+          YIELD
+
+          YIELD_UNK
+        END2
+
+        _LeftReinforcements ; 99/BFF3
+          SCROLL_CAMERA_ADDRESS eventChapter8Data._LeftReinforcementsCameraCoordinates
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter8Data._LeftReinforcementsGroup
+          WAIT_MOVE
+          YIELD
+
+          YIELD_UNK
+        END2
+
+        _RumaighAIChange ; 99/C000
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $0A
+          YIELD
+
+          PLAY_SOUND_WORD $00F7
+
+          SCROLL_CAMERA_CHAR Rumaigh, 4
+
+          DIALOGUE dialogueChapter8RumaighMount
+          YIELD
+
+          macroASMCMount Rumaigh
+
+          macroSetCharacterAI Rumaigh, [$00, $00, $03, $00]
+        END2
+
+        _OrsinMartyTalk ; 99/C084
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $4C
+          YIELD
+
+          DIALOGUE dialogueChapter8OrsinMartyTalk
+          YIELD
+
+          macroASMCChangeAllegianceToPlayer Marty
+          macroASMCSetCharacterDataWord Marty, Leader, Leif
+
+          SET_FLAG $0A
+        END2
+
+        _HalvanMartyTalk ; 99/C0BA
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $4C
+          YIELD
+
+          DIALOGUE dialogueChapter8HalvanMartyTalk
+          YIELD
+
+          macroASMCChangeAllegianceToPlayer Marty
+          macroASMCSetCharacterDataWord Marty, Leader, Leif
+
+          SET_FLAG $0A
+        END2
+
+        _MartyCaptured ; 99/C0F0
+          PLAY_SOUND_WORD $00F7
+
+          DIALOGUE dialogueChapter8MartyCaptured
+          YIELD
+
+          macroASMCChangeAllegianceToPlayerIfHeld Marty
+
+          SET_FLAG $0A
+        END2
+
+        _GomerAppear ; 99/C107
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $3A
+          YIELD
+
+          macroASMCCountAllUnitsUncapturedAlive Rumaigh
+          JUMP_FALSE +
+
+          macroASMCCheckUnitStateSet Rumaigh, (UnitStateDead | UnitStateUnknown1 | UnitStateDisabled | UnitStateCaptured)
+          JUMP_TRUE +
+
+            SCROLL_CAMERA_CHAR Rumaigh, 4
+
+            MOVE_CHAR Rumaigh, [2, 10], 1, None
+            WAIT_MOVE
+            YIELD
+
+            LOAD_GROUP eventChapter8Data._GomerGroup
+            WAIT_MOVE
+            YIELD
+
+            DIALOGUE dialogueChapter8GomerAppear
+            YIELD
+
+            macroASMCRemoveUnit Gomer
+
+            WAIT_MOVE
+            YIELD
+
+            MOVE_CHAR Rumaigh, [2, 9], 1, None
+            WAIT_MOVE
+            YIELD
+
+          +
+        END2
+
+        _KnightCrestHouseVisit ; 99/C170
+          macroItemHouse dialogueChapter8KnightCrestHouse, KnightCrest, [12, 9], $03F0
+        END2
+
+        _LuckRingHouseVisit ; 99/C1D3
+          macroItemHouse dialogueChapter8LuckRingHouse, LuckRing, [18, 16], $03F0
+        END2
+
+        _KnightCrestHouseDestroy ; 99/C236
+          macroDestroyHouseByTileChangeID 0
+        END1
+
+        _LuckRingHouseDestroy ; 99/C265
+          macroDestroyHouseByTileChangeID 3
+        END1
+
+        _PrepGroups ; 99/C294
+          .long eventChapter8Data._PrepGroup1
+          .long eventChapter8Data._PrepGroup2
+        .word $0000
+
+        _OpeningEvent ; 99/C29C
+          SET_CAMERA_POSITION [22, 12]
+
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $31
+          YIELD
+
+          macroChapterTitlePopup dialogueChapter8Title
+
+          macroASMCCheckUnitStateSet Marty, UnitStateDisabled
+          JUMP_FALSE +
+
+            macroASMCUnsetUnitState Marty, (UnitStateUnknown1 | UnitStateDisabled)
+            macroASMCSetUnitPosition Marty, [13, 11]
+            macroASMCSetCharacterDataByte Marty, Fatigue, 0
+
+          +
+          macroASMCChangeAllegianceToEnemy Marty
+          macroSetCharacterAI Marty, [$00, $00, $03, $00]
+          macroASMCSetCharacterDataWord Marty, Leader, Gomer
+
+          macroSetCursorPosition [22, 12]
+
+          macroASMCLoadUnitGroup eventChapter8Data._RumaighGroup
+
+          macroASMCDismount Rumaigh
+
+          MOVE_CHAR Rumaigh, [2, 9], 1, None
+
+          WAIT_MOVE
+          YIELD
+
+          GET_CHARACTER_COORDS Leif
+          SCROLL_CAMERA 4
+
+          LOAD_GROUP eventChapter8Data._CallionGroup
+          WAIT_MOVE
+          YIELD
+
+          DIALOGUE dialogueChapter8Opening1
+          YIELD
+
+          MOVE_CHAR Callion, [22, 9], 2, None
+
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _EndingEvent ; 99/C3F7
+          STORE_WORD wCurrentMapMusic, $00
+
+        PAUSE_SKIPPABLE 16
+        YIELD
+
+        CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+        CALL_ASM_LOOP rlASMCSaveChapterTurncount
+
+        macroASMCCountAllUnitsAlive Dagdar
+        JUMP_FALSE _EndingEvent_DagdarDead
+
+        macroASMCCountAllUnitsAlive Tanya
+        JUMP_FALSE _EndingEvent_TanyaDead
+
+        macroASMCIsUnitHeld Rumaigh
+        JUMP_FALSE _EndingEvent_Failed
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $41
+          YIELD
+
+          macroDialogueWithBG dialogueChapter8Ending1A, 1
+          CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+          YIELD
+
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+          JUMP _EndingEvent_End
+
+
+        _EndingEvent_TanyaDead
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $42
+          YIELD
+
+          macroASMCUnsetUnitState Dagdar, UnitStateDisabled
+
+          macroDialogueWithBG dialogueChapter8Ending1B, 1
+          CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+          YIELD
+
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+          JUMP _EndingEvent_Continue
+
+        _EndingEvent_DagdarDead
+          macroASMCCheckUnitStateSet Tanya, (UnitStateDead | UnitStateCaptured)
+          JUMP_TRUE _EndingEvent_Failed
+
+            PLAY_SOUND_WORD $00E0
+            PAUSE_SKIPPABLE 32
+            YIELD
+
+            SET_MUSIC $42
+            YIELD
+
+            macroASMCUnsetUnitState Tanya, UnitStateDisabled
+
+            macroDialogueWithBG dialogueChapter8Ending1C, 1
+            CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+            YIELD
+
+            HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+            JUMP _EndingEvent_Continue
+
+        _EndingEvent_Failed
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $41
+          YIELD
+
+          macroDialogueWithBG dialogueChapter8Ending1D, 1
+          CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+          YIELD
+
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+          YIELD
+
+        _EndingEvent_Continue
+        ADD_WORD wCurrentChapter, Chapter9 - Chapter8 - 1
+        YIELD_UNK
+
+        _EndingEvent_End
+        PLAY_SOUND_WORD $00E7
+
+        FADE_OUT 1
+        YIELD
+
+        CALL_ASM_LOOP rlASMCChapterEnd
+      END1
+
+    .endsection Chapter8EventsSection
+
+    .section Chapter8DataSection
+
+      eventChapter8Data ; B1/DD06
+
+        _PrepGroup1 ; B1/DD06
+          .byte [8, 7]
+
+          UNIT BanditWarrior, Enemy, [6, 11], [6, 11], Gomer, [PoisonAxe, PoisonBow, Vulnerary], 8, False, [$00, $03, $00, $00]
+        UNIT
+
+        _RightReinforcementsCameraCoordinates1 ; B1/DD1E
+          .byte [14, 8]
+
+        _RightReinforcementsGroup1 ; B1/DD20
+          UNIT BanditBrigand1, Enemy, [13, 0], [13, 1], Gomer, [PoisonAxe], 8, False, [$00, $00, $00, $00]
+        UNIT
+
+        _RightReinforcementsCameraCoordinates2 ; B1/DD36
+          .byte [14, 8]
+
+        _RightReinforcementsGroup2 ; B1/DD38
+          UNIT BanditHunter, Enemy, [14, 0], [14, 1], Gomer, [PoisonBow], 3, False, [$00, $00, $00, $00]
+        UNIT
+
+        _LeftReinforcementsCameraCoordinates ; B1/DD4E
+          .byte [9, 8]
+
+        _LeftReinforcementsGroup ; B1/DD50
+          UNIT BanditBrigand1, Enemy, [4, 0], [4, 1], Gomer, [IronAxe], 7, False, [$00, $01, $00, $00]
+        UNIT
+
+        _PrepGroup2 ; B1/DD66
+          .byte [8, 7]
+
+          UNIT BanditBrigand1, Enemy, [14, 10], [14, 10], Gomer, [PoisonAxe], 5, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [17, 12], [17, 12], Gomer, [PoisonAxe], 8, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [18, 13], [18, 13], Gomer, [PoisonAxe, Vulnerary], 7, False, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [15, 13], [15, 13], Gomer, [PoisonBow], 3, False, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [16, 14], [16, 14], Gomer, [PoisonBow], 3, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [12, 9], [12, 9], Gomer, [PoisonAxe], 5, False, [$01, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [18, 16], [18, 16], Gomer, [PoisonAxe], 7, False, [$01, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [13, 14], [13, 14], Gomer, [PoisonAxe], 10, False, [$01, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [16, 8], [16, 8], Gomer, [PoisonAxe], 10, False, [$01, $03, $00, $00]
+        UNIT
+
+        _UnusedCoordinates1 ; B1/DE1E
+          .byte [8, 7]
+
+        _RumaighGroup ; B1/DE20
+          UNIT Rumaigh, Enemy, [2, 10], [2, 10], Rumaigh, [Horseslayer, SteelLance, IronSword, Vulnerary, KnightCrest], 5, True, [$01, $03, $02, $80]
+        UNIT
+
+        _UnusedCoordinates2 ; B1/DE36
+          .byte [22, 10]
+
+        _CallionGroup ; B1/DE38
+          UNIT Callion, Player, [30, 15], [28, 9], Leif, [SteelLance], 1, False, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates3 ; B1/DE4E
+          .byte [8, 7]
+
+        _GomerGroup ; B1/DE50
+          UNIT Gomer, Enemy, [2, 9], [2, 9], Gomer, [], 3, False, [$00, $00, $00, $00]
+        UNIT
+
+        _StartingPositions ; B1/DE66
+          .byte [29, 9]
+          .byte [26, 9]
+          .byte [24, 10]
+          .byte [28, 8]
+          .byte [24, 8]
+          .byte [27, 8]
+          .byte [25, 7]
+          .byte [29, 7]
+        .char -1
+
+        _Armory ; B1/DE77
+          SHOP [16, 8], [IronAxe, SteelAxe, HandAxe, Hammer]
+
+        _Vendor ; B1/DE89
+          SHOP [13, 14], [Vulnerary, Antidote, Torch, DoorKey]
+
+    .endsection Chapter8DataSection
+
+    .section Chapter8WorldMapEventsSection
+
+      eventChapter8WorldMapEvents ; E7/E66E
+
+        SCROLL_CAMERA_COORDS [18, 14], 4
+        SET_CURSOR_POSITION
+        YIELD
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $29
+        YIELD
+
+        FADE_IN 1
+        YIELD
+
+        SCROLL_CAMERA_COORDS [18, 16], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [96, 97], $0E, 0
+
+        macroASMCWMDialogue dialogueChapter8WorldMap1
+
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [88, 80], $0D, 0
+
+        macroASMCWMDialogue dialogueChapter8WorldMap2
+
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        FADE_OUT 2
+        YIELD
+
+        CALL_ASM_LOOP rlASMCEndWMEvents
+        YIELD
+      END1
+
+    .endsection Chapter8WorldMapEventsSection
+
+.endif ; GUARD_FE5_CHAPTER8

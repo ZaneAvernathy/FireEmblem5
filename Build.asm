@@ -35,10 +35,12 @@
   .include "EVENTS/Chapter2.event"
   .include "EVENTS/Chapter2x.event"
   .include "EVENTS/Chapter3.event"
-  .include "Events/Chapter4.event"
-  .include "Events/Chapter4x.event"
-  .include "Events/Chapter5.event"
-  .include "Events/Chapter6.event"
+  .include "EVENTS/Chapter4.event"
+  .include "EVENTS/Chapter4x.event"
+  .include "EVENTS/Chapter5.event"
+  .include "EVENTS/Chapter6.event"
+  .include "EVENTS/Chapter7.event"
+  .include "EVENTS/Chapter8.event"
 
 ; Sections
 
@@ -239,6 +241,8 @@
       .dsection Chapter4EventsSection
       .dsection Chapter5EventsSection
       .dsection Chapter6EventsSection
+      .dsection Chapter7EventsSection
+      .dsection Chapter8EventsSection
 
     endEvents
 
@@ -255,11 +259,13 @@
 
   .endlogical
 
-  * := $18E22A
-  .logical mapped($18E22A)
+  * := $18DD06
+  .logical mapped($18DD06)
 
     startData
 
+      .dsection Chapter8DataSection
+      .dsection Chapter7DataSection
       .dsection Chapter6DataSection
       .dsection Chapter5DataSection
       .dsection Chapter4xDataSection
@@ -282,6 +288,8 @@
       .dsection Chapter2WorldMapEventsSection
       .dsection Chapter3WorldMapEventsSection
       .dsection Chapter4WorldMapEventsSection
+      .dsection Chapter7WorldMapEventsSection
+      .dsection Chapter8WorldMapEventsSection
 
     endEvents
 

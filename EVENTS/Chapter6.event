@@ -545,146 +545,146 @@ GUARD_FE5_CHAPTER6 :?= false
 
         macroASMCAddCharacterDataByte Leif, LeadershipStars, 1
 
-          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
-          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+        macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+        macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
 
-          macroLoadPlayerUnitsByStartingPositions
+        macroLoadPlayerUnitsByStartingPositions
 
-          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+        HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
 
-          PLAY_SOUND_WORD $00E0
-          PAUSE_SKIPPABLE 32
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $33
+        YIELD
+
+        macroChapterTitlePopup dialogueChapter6Title
+
+        SCROLL_CAMERA_CHAR Leif, 4
+
+        LOAD_GROUP eventChapter6Data._BishopGroup
+        WAIT_MOVE
+        YIELD
+
+        DIALOGUE dialogueChapter6Opening1
+
+        macroASMCCountAllUnitsUncapturedAlive Karin
+        JUMP_FALSE +
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter6Opening2
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+        +
+        YIELD
+
+        MOVE_CHAR FriegeBishop2, [30, 10], 1, _AugustMovestring
+
+        WAIT_MOVE
+        YIELD
+
+        macroASMCRemoveUnit FriegeBishop2
+
+        SCROLL_CAMERA_ADDRESS eventChapter6Data._RaydrikCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter6Data._RaydrikGroup
+        WAIT_MOVE
+        YIELD
+
+        SCROLL_CAMERA_ADDRESS eventChapter6Data._TrumanCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter6Data._TrumanGroup
+        WAIT_MOVE
+        YIELD
+
+        SCROLL_CAMERA_ADDRESS eventChapter6Data._ArmorCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter6Data._ArmorGroup
+        WAIT_MOVE
+        YIELD
+
+        SCROLL_CAMERA_ADDRESS eventChapter6Data._SoldierCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter6Data._SoldierGroup
+        WAIT_MOVE
+        YIELD
+      END2
+
+      _AugustMovestring ; 99/AF6B
+        MS_MOVE_LEFT
+      MS_END
+
+      _rlChapter4xCheck ; 99/AF6D
+
+        .al
+        .xl
+        .autsiz
+        .databank ?
+
+        lda #Chapter4x
+        sta wEventEngineParameter1,b
+        jsl rlASMCGetChapterTurncount
+        lda wEventEngineParameter1,b
+        beq +
+
+        clc
+        rtl
+
+        +
+        sec
+        rtl
+
+      _PlayerRetreat ; 99/AF80
+        macroHaveActiveUnitRetreat _RetreatMovestring
+      END2
+
+      _RetreatMovestring ; 99/AFBD
+        MS_MOVE_DOWN
+        MS_MOVE_DOWN
+      MS_END
+
+      _EndingEvent ; 99/AFC0
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 16
+        YIELD
+
+        CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $3B
+        YIELD
+
+        CALL_ASM_LOOP rlASMCSaveChapterTurncount
+
+        EVENT_TEST_FLAG_SET FlagGalzusDead
+        JUMP_TRUE +
+
+          macroDialogueWithBG dialogueChapter6Ending, 3
           YIELD
 
-          SET_MUSIC $33
+          HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+          FADE_OUT $01
           YIELD
 
-          macroChapterTitlePopup dialogueChapter6Title
+          CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
+          STORE_BYTE bBufferINIDISP, INIDISP_Setting(False, 0)
 
-          SCROLL_CAMERA_CHAR Leif, 4
+        +
+        CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured
 
-          LOAD_GROUP eventChapter6Data._BishopGroup
-          WAIT_MOVE
-          YIELD
+        FADE_OUT 1
+        YIELD
 
-          DIALOGUE dialogueChapter6Opening1
-
-          macroASMCCountAllUnitsUncapturedAlive Karin
-          JUMP_FALSE +
-
-            STORE_LONG lEventEngineLongParameter, dialogueChapter6Opening2
-            CALL_ASM_LOOP rlASMCDialogueContinue
-
-          +
-          YIELD
-
-          MOVE_CHAR FriegeBishop2, [30, 10], 1, _AugustMovestring
-
-          WAIT_MOVE
-          YIELD
-
-          macroASMCRemoveUnit FriegeBishop2
-
-          SCROLL_CAMERA_ADDRESS eventChapter6Data._RaydrikCameraCoordinates
-          YIELD
-
-          LOAD_GROUP eventChapter6Data._RaydrikGroup
-          WAIT_MOVE
-          YIELD
-
-          SCROLL_CAMERA_ADDRESS eventChapter6Data._TrumanCameraCoordinates
-          YIELD
-
-          LOAD_GROUP eventChapter6Data._TrumanGroup
-          WAIT_MOVE
-          YIELD
-
-          SCROLL_CAMERA_ADDRESS eventChapter6Data._ArmorCameraCoordinates
-          YIELD
-
-          LOAD_GROUP eventChapter6Data._ArmorGroup
-          WAIT_MOVE
-          YIELD
-
-          SCROLL_CAMERA_ADDRESS eventChapter6Data._SoldierCameraCoordinates
-          YIELD
-
-          LOAD_GROUP eventChapter6Data._SoldierGroup
-          WAIT_MOVE
-          YIELD
-        END2
-
-        _AugustMovestring ; 99/AF6B
-          MS_MOVE_LEFT
-        MS_END
-
-        _rlChapter4xCheck ; 99/AF6D
-
-          .al
-          .xl
-          .autsiz
-          .databank ?
-
-          lda #Chapter4x
-          sta wEventEngineParameter1,b
-          jsl rlASMCGetChapterTurncount
-          lda wEventEngineParameter1,b
-          beq +
-
-          clc
-          rtl
-
-          +
-          sec
-          rtl
-
-        _PlayerRetreat ; 99/AF80
-          macroHaveActiveUnitRetreat _RetreatMovestring
-        END2
-
-        _RetreatMovestring ; 99/AFBD
-          MS_MOVE_DOWN
-          MS_MOVE_DOWN
-        MS_END
-
-        _EndingEvent ; 99/AFC0
-
-          PLAY_SOUND_WORD $00E0
-          PAUSE_SKIPPABLE 16
-          YIELD
-
-          CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
-
-          PLAY_SOUND_WORD $00E0
-          PAUSE_SKIPPABLE 32
-          YIELD
-
-          SET_MUSIC $3B
-          YIELD
-
-          CALL_ASM_LOOP rlASMCSaveChapterTurncount
-
-          EVENT_TEST_FLAG_SET FlagGalzusDead
-          JUMP_TRUE +
-
-            macroDialogueWithBG dialogueChapter6Ending, 3
-            YIELD
-
-            HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
-            FADE_OUT $01
-            YIELD
-
-            CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
-            STORE_BYTE bBufferINIDISP, INIDISP_Setting(False, 0)
-
-          +
-          CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured
-
-          FADE_OUT 1
-          YIELD
-
-          CALL_ASM_LOOP rlASMCChapterEnd
-        END1
+        CALL_ASM_LOOP rlASMCChapterEnd
+      END1
 
     .endsection Chapter6EventsSection
 

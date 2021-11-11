@@ -1,0 +1,949 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER7 :?= false
+.if (!GUARD_FE5_CHAPTER7)
+  GUARD_FE5_CHAPTER7 := true
+
+  .include "../../VoltEdge/VoltEdge.h"
+
+  ; Definitions
+
+    .weak
+
+      eventMapDeathQuoteDummyEvent :?= address($99812F)
+
+      rlUpdateUnitMapsAndFog :?= address($81AC00)
+
+      dialogueChapter7WorldMap1               :?= address($82CCC0)
+      dialogueChapter7WorldMap2               :?= address($82CD27)
+      dialogueChapter7Opening1                :?= address($939B67)
+      dialogueChapter7EisenhoweSpawn          :?= address($939F5D)
+      dialogueChapter7FinnSapphieAppear1      :?= address($93A123)
+      dialogueChapter7FinnSapphieAppear2      :?= address($93A24C)
+      dialogueChapter7FinnSapphieAppear3      :?= address($93A29D)
+      dialogueChapter7HannibalAppear          :?= address($93A31B)
+      dialogueChapter7RaydrikDialogue         :?= address($93A3A0)
+      dialogueChapter7Ending1                 :?= address($93A3EC)
+      dialogueChapter7Ending2                 :?= address($93A5B8)
+      dialogueChapter7Ending3                 :?= address($93A613)
+      dialogueChapter7Ending4                 :?= address($93A64C)
+      dialogueChapter7Ending5                 :?= address($93A680)
+      dialogueChapter7HannibalLoad            :?= address($93A6B4)
+      dialogueChapter7Ending6                 :?= address($93A6BA)
+      dialogueChapter7Ending7                 :?= address($93A6CA)
+      dialogueChapter7Ending8                 :?= address($93A7EA)
+      dialogueChapter7Ending9                 :?= address($93A888)
+      dialogueChapter7Opening2                :?= address($93A985)
+      dialogueChapter7SapphieShivaTalk        :?= address($93AA34)
+      dialogueChapter7FinnSapphieAppear4A     :?= address($93ACF4)
+      dialogueChapter7FinnSapphieAppear5      :?= address($93AD27)
+      dialogueChapter7FinnSapphieAppear4B     :?= address($93AFAC)
+      dialogueChapter7LeifFinnTalk            :?= address($93AFC6)
+      dialogueChapter7NannaFinnTalk           :?= address($93B33D)
+      dialogueChapter7AntidoteHouse           :?= address($93B483)
+      dialogueChapter7KnightCrestHouse        :?= address($93B54F)
+      dialogueChapter7EmilyFailurePlaceholder :?= address($93B5D6)
+      dialogueChapter7PureWaterHouse          :?= address($93B603)
+
+      dialogueChapter7Title :?= address($9AB8DF)
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter7EventsSection
+
+      _OpeningEventDefinitions ; 99/B023
+        EVENT FlagAlwaysZero, _OpeningEvent
+          CMP_WORD wCurrentTurn, 0
+        END_DEFINITION
+      END_DEFINITION_ARRAY
+
+      _TurnEventDefinitions ; 99/B030
+        EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+          CHECK_IF_BOSS_DEAD Eisenhowe
+          CMP_WORD wCurrentPhase, Enemy
+        END_DEFINITION
+        EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+          TEST_FLAG_SET FlagPlayerDeath
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _EisenhoweSpawn
+          CMP_WORD wCurrentTurn, 2
+          CMP_WORD wCurrentPhase, Enemy
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _HannibalGroupAIChange
+          CMP_WORD wCurrentPhase, NPC
+        END_DEFINITION
+        EVENT $0D, _EisenhoweAIChange
+          CMP_WORD wCurrentTurn, 13
+          CMP_WORD wCurrentPhase, Player
+          TEST_FLAG_UNSET $0A
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _FinnSapphieAppear
+          CMP_WORD wCurrentTurn, 2
+          CMP_WORD wCurrentPhase, Player
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _CavalierReinforcements
+          CMP_WORD_RANGE wCurrentTurn, 2, 5
+          CMP_WORD wCurrentPhase, Enemy
+          TEST_FLAG_UNSET $0A
+          TEST_FLAG_UNSET FlagBossDeath
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _MageBishopReinforcements
+          CMP_WORD_RANGE wCurrentTurn, 6, 7
+          CMP_WORD wCurrentPhase, Enemy
+          TEST_FLAG_UNSET $0A
+          TEST_FLAG_UNSET FlagBossDeath
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _MageBishopReinforcements
+          CMP_WORD_RANGE wCurrentTurn, 11, 12
+          CMP_WORD wCurrentPhase, Enemy
+          TEST_FLAG_UNSET $0A
+          TEST_FLAG_UNSET FlagBossDeath
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _SoldierArmorReinforcements
+          CMP_WORD_RANGE wCurrentTurn, 8, 10
+          CMP_WORD wCurrentPhase, Enemy
+          TEST_FLAG_UNSET $0A
+          TEST_FLAG_UNSET FlagBossDeath
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _RaydrikDialogue
+          TEST_FLAG_SET $06
+          TEST_FLAG_UNSET $0A
+          CMP_WORD wCurrentPhase, Enemy
+        END_DEFINITION
+      END_DEFINITION_ARRAY
+
+      _TalkEventDefinitions ; 99/B0F2
+        EVENT $0F, _SapphieShivaTalk
+          CHECK_CHARS2 Sapphie, Shiva
+        END_DEFINITION
+        EVENT $10, _LeifFinnTalk
+          CHECK_CHARS2 Leif, Finn
+        END_DEFINITION
+        EVENT $12, _NannaFinnTalk
+          CHECK_CHARS2 Nanna, Finn
+        END_DEFINITION
+      END_DEFINITION_ARRAY
+
+      _LocationEventDefinitions ; 99/B112
+        EVENT $21, _PureWaterHouse
+          macroECCheckCoordinates [6, 46]
+          CMP_WORD wCurrentPhase, Player
+        END_DEFINITION
+        EVENT $22, _AntidoteHouse
+          macroECCheckCoordinates [2, 12]
+          CMP_WORD wCurrentPhase, Player
+        END_DEFINITION
+        EVENT $23, _KnightCrestHouse
+          macroECCheckCoordinates [2, 13]
+          CMP_WORD wCurrentPhase, Player
+        END_DEFINITION
+      END_DEFINITION_ARRAY
+
+      _BeforeActionEventDefinitions ; 99/B153
+        macroECPlayerRetreat $14, _PlayerRetreat, Leif
+      END_DEFINITION_ARRAY
+
+      _AfterActionEventDefinitions ; 99/B193
+        EVENT $06, _HannibalAppearCheck
+          macroECCheckCoordinates [10, 48]
+          CMP_WORD wCurrentPhase, Player
+          RUN_ASM _rlEnemyCheck
+          TEST_FLAG_UNSET $14
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _EndingEvent
+          TEST_FLAG_SET $14
+        END_DEFINITION
+      END_DEFINITION_ARRAY
+
+      _BattleEventDefinitions ; 99/B1B7
+        macroECBossQuote $0B, Eisenhowe
+        macroECBossQuote $0C, Shiva
+        macroECBossQuote $0E, Raydrik
+      END_DEFINITION_ARRAY
+
+      _ShopEventDefinitions ; 99/B1D1
+        macroECShop eventChapter7Data._Vendor
+      END_DEFINITION_ARRAY
+
+      _rlEnemyCheck ; 99/B1E6
+
+        .al
+        .xl
+        .autsiz
+        .databank ?
+
+        _EnemyList  := [Eisenhowe]
+        _EnemyList ..= [MansterCavalier]
+        _EnemyList ..= [MansterBowKnight]
+        _EnemyList ..= [MansterTroubadour]
+        _EnemyList ..= [MansterAxeKnight]
+        _EnemyList ..= [Raydrik]
+
+        lda #(`_EnemyTable)<<8
+        sta lEventEngineLongParameter+size(byte),b
+        lda #<>_EnemyTable
+        sta lEventEngineLongParameter,b
+        jsl rlASMCCountAllUnitsUncapturedAliveByTable
+        lda wEventEngineParameter1,b
+        bne +
+
+          clc
+          rtl
+
+        +
+        sec
+        rtl
+
+      _EnemyTable ; 99/B1FF
+        .for _Enemy in _EnemyList
+          .word _Enemy
+        .endfor
+      .word 0
+
+      _CavalierReinforcements ; 99/B20D
+        SCROLL_CAMERA_ADDRESS eventChapter7Data._CavalierReinforcementsCameraCoordinates
+        YIELD
+
+        LOAD_GROUP_BLOCKABLE eventChapter7Data._CavalierReinforcementsGroup
+        WAIT_MOVE
+        YIELD
+
+        YIELD_UNK
+      END2
+
+      _MageBishopReinforcements ; 99/B21A
+        SCROLL_CAMERA_ADDRESS eventChapter7Data._MageBishopReinforcementsCameraCoordinates
+        YIELD
+
+        LOAD_GROUP_BLOCKABLE eventChapter7Data._MageBishopReinforcementsGroup
+        WAIT_MOVE
+        YIELD
+
+        YIELD_UNK
+      END2
+
+      _SoldierArmorReinforcements ; 99/B227
+        SCROLL_CAMERA_ADDRESS eventChapter7Data._SoldierArmorReinforcementsCameraCoordinates
+        YIELD
+
+        LOAD_GROUP_BLOCKABLE eventChapter7Data._SoldierArmorReinforcementsGroup
+        WAIT_MOVE
+        YIELD
+
+        YIELD_UNK
+      END2
+
+      _FinnSapphieAppear ; 99/B234
+
+        SCROLL_CAMERA_COORDS [10, 48], 4
+        YIELD
+
+        macroASMCCheckUnitStateSet Finn, UnitStateDisabled
+        JUMP_FALSE +
+
+          macroASMCUnsetUnitState Finn, (UnitStateUnknown1 | UnitStateDisabled)
+
+          macroASMCSetUnitPosition Finn, [1, 35]
+          macroASMCSetCharacterDataByte Finn, Fatigue, 0
+
+        +
+
+        macroASMCCheckUnitStateSet Sapphie, UnitStateDisabled
+        JUMP_FALSE +
+
+          macroASMCUnsetUnitState Sapphie, (UnitStateUnknown1 | UnitStateDisabled)
+
+          macroASMCSetUnitPosition Sapphie, [2, 35]
+          macroASMCSetCharacterDataByte Sapphie, Fatigue, 0
+
+        +
+
+        CALL_ASM_LOOP rlUpdateUnitMapsAndFog
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $3D
+        YIELD
+
+        macroASMCCheckUnitStateSet Finn, (UnitStateDead | UnitStateUnknown1 | UnitStateDisabled | UnitStateCaptured)
+        JUMP_TRUE +
+
+          macroDialogueWithBG dialogueChapter7FinnSapphieAppear1, 1
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter7FinnSapphieAppear2
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter7FinnSapphieAppear3
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+          JUMP _FinnSapphieAppear_Continue
+
+        +
+
+        macroDialogueWithBG dialogueChapter7FinnSapphieAppear1, 1
+
+        STORE_LONG lEventEngineLongParameter, dialogueChapter7FinnSapphieAppear3
+        CALL_ASM_LOOP rlASMCDialogueContinue
+
+        _FinnSapphieAppear_Continue
+
+        CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+        YIELD
+
+        HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+
+        macroASMCCountAllUnitsUncapturedAlive Finn
+        JUMP_FALSE _FinnSapphieAppear_NoFinn
+
+          SCROLL_CAMERA_CHAR Finn, 4
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $33
+          YIELD
+
+          DIALOGUE dialogueChapter7FinnSapphieAppear4A
+
+          macroASMCCountAllUnitsUncapturedAlive Sapphie
+          JUMP_FALSE +
+
+            STORE_LONG lEventEngineLongParameter, dialogueChapter7FinnSapphieAppear5
+            CALL_ASM_LOOP rlASMCDialogueContinue
+
+          +
+          YIELD
+          JUMP +
+
+        _FinnSapphieAppear_NoFinn
+
+        macroASMCCountAllUnitsUncapturedAlive Sapphie
+        JUMP_FALSE +
+
+          SCROLL_CAMERA_CHAR Sapphie, 4
+
+          DIALOGUE dialogueChapter7FinnSapphieAppear4B
+          YIELD
+
+        +
+      END2
+
+      _UnknownDialogue ; 99/B3D6
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $39
+        YIELD
+
+        DIALOGUE dialogueChapter6SaiasGalzus1
+        YIELD
+      END2
+
+      _SapphieShivaTalk ; 99/B3E6
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $4A
+        YIELD
+
+        DIALOGUE dialogueChapter7SapphieShivaTalk
+        YIELD
+
+        macroASMCChangeAllegianceToPlayer Shiva
+
+        macroASMCSetCharacterDataWord Shiva, Leader, Leif
+
+        SET_FLAG $0C
+      END2
+
+      _LeifFinnTalk ; 99/B41C
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $4B
+        YIELD
+
+        DIALOGUE dialogueChapter7LeifFinnTalk
+        YIELD
+      END2
+
+      _NannaFinnTalk ; 99/B42C
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $4B
+        YIELD
+
+        DIALOGUE dialogueChapter7NannaFinnTalk
+        YIELD
+      END2
+
+      _HannibalAppearCheck ; 99/B43C
+
+        EVENT_CMP_WORD_EQ aSelectedCharacterBuffer.Character, Leif
+        JUMP_FALSE +
+
+          UNSET_FLAG $06
+          JUMP ++
+
+        +
+        SCROLL_CAMERA_COORDS [10, 48], 4
+        YIELD
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $3D
+        YIELD
+
+        DIALOGUE dialogueChapter7HannibalAppear
+        YIELD
+
+        SCROLL_CAMERA_ADDRESS eventChapter7Data._HannibalCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter7Data._HannibalGroup
+        WAIT_MOVE
+        YIELD
+
+        SCROLL_CAMERA_ADDRESS eventChapter7Data._HannibalArmorCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter7Data._HannibalArmorGroup
+        WAIT_MOVE
+        YIELD
+
+        +
+      END2
+
+      _RaydrikDialogue ; 99/B475
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $39
+        YIELD
+
+        DIALOGUE dialogueChapter7RaydrikDialogue
+        YIELD
+
+        SET_FLAG $0A
+
+        _EisenhoweGroup1List  := [(Eisenhowe, [$00, $10], [$02, $00, $0B, $00])]
+        _EisenhoweGroup1List ..= [(MansterCavalier, [$00, $10], [$02, $00, $0B, $00])]
+        _EisenhoweGroup1List ..= [(MansterBowKnight, [$00, $10], [$02, $00, $0B, $00])]
+        _EisenhoweGroup1List ..= [(MansterTroubadour, [$00, $10], [$02, $00, $0B, $00])]
+        _EisenhoweGroup1List ..= [(MansterAxeKnight, [$00, $10], [$02, $00, $0B, $00])]
+
+        _EisenhoweGroup2List  := [(MansterThunderMage, [$00, $10], [$02, $00, $0B, $00])]
+        _EisenhoweGroup2List ..= [(MansterBishop1, [$00, $10], [$02, $00, $0B, $00])]
+        _EisenhoweGroup2List ..= [(MansterSoldier2, [$00, $10], [$02, $00, $0B, $00])]
+        _EisenhoweGroup2List ..= [(MansterArmoredSword, [$00, $10], [$02, $00, $0B, $00])]
+
+        .for _List in [_EisenhoweGroup1List, _EisenhoweGroup2List]
+
+          .for _Tup in _List
+
+            _Character      := _Tup[0]
+            _UnknownSetting := _Tup[1]
+
+            macroASMCSetCharacterDataByte _Character, Unknown3F, pack(_UnknownSetting)
+
+          .endfor
+
+          .for _Tup in _List
+
+            _Character := _Tup[0]
+            _AISetting := _Tup[2]
+
+            macroSetCharacterAI _Character, _AISetting
+
+          .endfor
+
+        .endfor
+      END2
+
+      _HannibalGroupAIChange ; 99/B8BF
+
+        macroASMCCountAllUnitsWithCharacterDataWord Leader, Eisenhowe
+
+        EVENT_CMP_BYTE_EQ wEventEngineParameter1, 0
+        JUMP_FALSE +
+
+          SET_FLAG $15
+
+          macroSetAllUnitsAIIfCharacterDataWord Leader, Hannibal, [$02, $00, $13, $00]
+
+        +
+      END2
+
+      _EisenhoweAIChange ; 99/B954
+        macroSetCharacterAI Eisenhowe, [$00, $00, $00, $00]
+      END2
+
+      _EisenhoweSpawn ; 99/B9B5
+        SCROLL_CAMERA_ADDRESS eventChapter7Data._RaydrikCameraCoordinates
+        YIELD
+
+        LOAD_GROUP_BLOCKABLE eventChapter7Data._RaydrikGroup
+        WAIT_MOVE
+        YIELD
+
+        YIELD_UNK
+
+        SCROLL_CAMERA_ADDRESS eventChapter7Data._EisenhoweCameraCoordinates
+        YIELD
+
+        LOAD_GROUP_BLOCKABLE eventChapter7Data._EisenhoweGroup
+        WAIT_MOVE
+        YIELD
+
+        YIELD_UNK
+
+        MOVE_CHAR Raydrik, [9, 5], 1, None
+
+        WAIT_MOVE
+        YIELD
+
+        SCROLL_CAMERA_COORDS [7, 9], 3
+        YIELD
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $39
+        YIELD
+
+        DIALOGUE dialogueChapter7EisenhoweSpawn
+        YIELD
+
+        UNSET_FLAG FlagBossDeath
+
+        MOVE_CHAR Raydrik, [7, 1], 1, None
+
+        WAIT_MOVE
+        YIELD
+
+        macroASMCRemoveUnit Raydrik
+
+        WAIT_MOVE
+        YIELD
+      END2
+
+      _PureWaterHouse ; 99/BA0E
+        macroItemHouse dialogueChapter7PureWaterHouse, PureWater, [6, 46], $0021
+      END2
+
+      _AntidoteHouse ; 99/BA71
+
+        PLAY_SOUND_WORD $00F7
+
+        macroASMCSingleTileChangeByCoords [2, 12], $0021
+
+        DIALOGUE dialogueChapter7AntidoteHouse
+        YIELD
+
+        macroASMCActiveUnitSetUnitState UnitStateHidden
+
+        macroGiveActiveUnitItem Antidote
+
+        macroASMCActiveUnitUnsetUnitState UnitStateHidden
+      END2
+
+      _KnightCrestHouse ; 99/BAD4
+        macroItemHouse dialogueChapter7KnightCrestHouse, KnightCrest, [2, 13], $0021
+      END2
+
+      _PlayerRetreat ; 99/BB37
+        macroHaveActiveUnitRetreat _RetreatMovestring
+      END2
+
+      _RetreatMovestring ; 99/BB74
+      MS_END
+
+      _OpeningEvent ; 99/BB75
+        HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $33
+        YIELD
+
+        macroChapterTitlePopup dialogueChapter7Title
+
+        macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+        macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+
+        macroLoadPlayerUnitsByStartingPositions
+
+        CALL_ASM_SKIPPABLE rlUpdateVisibilityMap
+        CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog
+
+        DIALOGUE dialogueChapter7Opening1
+        YIELD
+
+        SCROLL_CAMERA_ADDRESS eventChapter7Data._BanditCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter7Data._BanditGroup
+        WAIT_MOVE
+        YIELD
+
+        EVENT_TEST_FLAG_SET FlagShivaDiedInChp2x
+        JUMP_TRUE +
+
+          SCROLL_CAMERA_ADDRESS eventChapter7Data._ShivaCameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter7Data._ShivaGroup
+          WAIT_MOVE
+          YIELD
+
+          SCROLL_CAMERA_CHAR Shiva, 4
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $3A
+          YIELD
+
+          DIALOGUE dialogueChapter7Opening2
+          YIELD
+
+        +
+      END2
+
+      _EndingEvent ; 99/BC0A
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 16
+        YIELD
+
+        CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $41
+        YIELD
+
+        CALL_ASM_LOOP rlASMCSaveChapterTurncount
+
+        macroDialogueWithBG dialogueChapter7Ending1, 1
+
+        macroASMCCountAllUnitsAlive Orsin
+        JUMP_TRUE _EndingEvent_OrsinHalvanOrRonanAlive1
+
+        macroASMCCountAllUnitsAlive Halvan
+        JUMP_TRUE _EndingEvent_OrsinHalvanOrRonanAlive1
+
+        macroASMCCountAllUnitsAlive Ronan
+        JUMP_FALSE +
+
+        _EndingEvent_OrsinHalvanOrRonanAlive1
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter7Ending2
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+        +
+        macroASMCCountAllUnitsAlive Halvan
+        JUMP_FALSE +
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter7Ending3
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+        +
+        macroASMCCountAllUnitsAlive Orsin
+        JUMP_FALSE +
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter7Ending4
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+        +
+        macroASMCCountAllUnitsAlive Ronan
+        JUMP_FALSE +
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter7Ending5
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+        +
+        macroASMCCountAllUnitsAlive Orsin
+        JUMP_TRUE _EndingEvent_OrsinHalvanOrRonanAlive2
+
+        macroASMCCountAllUnitsAlive Halvan
+        JUMP_TRUE _EndingEvent_OrsinHalvanOrRonanAlive2
+
+        macroASMCCountAllUnitsAlive Ronan
+        JUMP_FALSE +
+
+        _EndingEvent_OrsinHalvanOrRonanAlive2
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter7HannibalLoad
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter7Ending6
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+        +
+        STORE_LONG lEventEngineLongParameter, dialogueChapter7Ending7
+        CALL_ASM_LOOP rlASMCDialogueContinue
+
+        EVENT_TEST_FLAG_SET FlagCairpreSaved
+        JUMP_FALSE +
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter7Ending8
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+          macroASMCGiveConvoyItem Warp
+
+        +
+        STORE_LONG lEventEngineLongParameter, dialogueChapter7Ending9
+        CALL_ASM_LOOP rlASMCDialogueContinue
+
+        YIELD
+
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        FADE_OUT 1
+        YIELD
+
+        CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
+        STORE_BYTE bBufferINIDISP, INIDISP_Setting(False, 0)
+
+        PLAY_SOUND_WORD $00E7
+
+        CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured
+
+        _RegainedUnitList  := [(Orsin, [12, 42])]
+        _RegainedUnitList ..= [(Halvan, [10, 41])]
+        _RegainedUnitList ..= [(Ronan, [10, 42])]
+
+        .for _Tup in _RegainedUnitList
+
+          _Character   := _Tup[0]
+          _Coordinates := _Tup[1]
+
+          macroASMCCheckUnitStateSet _Character, UnitStateDisabled
+          JUMP_FALSE +
+
+            macroASMCUnsetUnitState _Character, (UnitStateUnknown1 | UnitStateDisabled)
+            macroASMCSetUnitPosition _Character, _Coordinates
+            macroASMCSetCharacterDataByte _Character, Fatigue, 0
+
+          +
+        .endfor
+
+        FADE_OUT 1
+        YIELD
+
+        CALL_ASM_LOOP rlASMCChapterEnd
+      END1
+
+    .endsection Chapter7EventsSection
+
+    .section Chapter7DataSection
+
+      eventChapter7Data ; B1/DE9B
+
+        _EisenhoweCameraCoordinates ; B1/DE9B
+          .byte [8, 8]
+
+        _EisenhoweGroup ; B1/DE9D
+          UNIT Eisenhowe, Enemy, [8, 5], [8, 5], Eisenhowe, [Greatlance, Javelin, Vulnerary], 6, True, [$01, $03, $02, $00]
+        UNIT
+
+        _CavalierReinforcementsCameraCoordinates ; B1/DEB3
+          .byte [8, 8]
+
+        _CavalierReinforcementsGroup ; B1/DEB5
+          UNIT MansterCavalier, Enemy, [10, 1], [10, 1], Eisenhowe, [Javelin, Rapier], 6, False, [$00, $00, $00, $00]
+          UNIT MansterCavalier, Enemy, [9, 1], [9, 1], Eisenhowe, [LongLance, Rapier], 10, False, [$00, $00, $00, $00]
+          UNIT MansterCavalier, Enemy, [8, 1], [8, 1], Eisenhowe, [Javelin, Rapier], 6, False, [$00, $00, $00, $00]
+        UNIT
+
+        _MageBishopReinforcementsCameraCoordinates ; B1/DEF3
+          .byte [8, 8]
+
+        _MageBishopReinforcementsGroup ; B1/DEF5
+          UNIT MansterThunderMage, Enemy, [8, 1], [8, 1], Eisenhowe, [Fire], 7, False, [$00, $00, $00, $00]
+          UNIT MansterThunderMage, Enemy, [10, 1], [10, 1], Eisenhowe, [Fire], 7, False, [$00, $00, $00, $00]
+          UNIT MansterBishop1, Enemy, [9, 1], [9, 1], Eisenhowe, [Meteor, Heal], 3, False, [$00, $00, $00, $00]
+        UNIT
+
+        _SoldierArmorReinforcementsCameraCoordinates ; B1/DF33
+          .byte [8, 8]
+
+        _SoldierArmorReinforcementsGroup ; B1/DF35
+          UNIT MansterSoldier2, Enemy, [8, 1], [8, 1], Eisenhowe, [Javelin], 10, False, [$00, $00, $00, $00]
+          UNIT MansterSoldier2, Enemy, [10, 1], [10, 1], Eisenhowe, [Javelin], 10, False, [$00, $00, $00, $00]
+          UNIT MansterArmoredSword, Enemy, [9, 1], [9, 1], Eisenhowe, [Longsword], 8, False, [$00, $00, $00, $00]
+        UNIT
+
+        _HannibalCameraCoordinates ; B1/DF73
+          .byte [8, 45]
+
+        _HannibalGroup ; B1/DF75
+          UNIT Hannibal, NPC, [10, 44], [10, 45], Hannibal, [SilverLance, SilverBow], 20, False, [$00, $03, $00, $00]
+        UNIT
+
+        _HannibalArmorCameraCoordinates ; B1/DF8B
+          .byte [8, 46]
+
+        _HannibalArmorGroup ; B1/DF8D
+          UNIT ThracianArmoredLance, NPC, [8, 45], [8, 45], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
+          UNIT ThracianArmoredSword, NPC, [9, 45], [9, 45], Hannibal, [SilverSword], 15, False, [$00, $01, $00, $00]
+          UNIT ThracianArmoredSword, NPC, [11, 45], [11, 45], Hannibal, [SilverSword], 15, False, [$00, $01, $00, $00]
+          UNIT ThracianArmoredLance, NPC, [12, 45], [12, 45], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
+          UNIT ThracianArmoredLance, NPC, [12, 46], [12, 46], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
+          UNIT ThracianArmoredSword, NPC, [11, 46], [11, 46], Hannibal, [Armorslayer], 15, False, [$00, $01, $00, $00]
+          UNIT ThracianArmoredSword, NPC, [10, 46], [10, 46], Hannibal, [SteelSword], 15, False, [$00, $01, $00, $00]
+          UNIT ThracianArmoredSword, NPC, [9, 46], [9, 46], Hannibal, [Armorslayer], 15, False, [$00, $01, $00, $00]
+          UNIT ThracianArmoredLance, NPC, [8, 46], [8, 46], Hannibal, [Horseslayer], 15, False, [$00, $01, $00, $00]
+        UNIT
+
+        _RaydrikCameraCoordinates ; B1/E043
+          .byte [8, 8]
+
+        _RaydrikGroup ; B1/E045
+          UNIT Raydrik, Enemy, [11, 2], [11, 2], Raydrik, [LoptyrsBlade], 1, False, [$02, $03, $00, $00]
+        UNIT
+
+        _BanditCameraCoordinates ; B1/E05B
+          .byte [8, 7]
+
+        _BanditGroup ; B1/E05D
+          UNIT BanditWarrior, Enemy, [1, 20], [1, 20], Gomer, [IronBow, Hammer, HandAxe, Vulnerary], 8, False, [$01, $03, $02, $00]
+          UNIT BanditHunter, Enemy, [2, 20], [2, 20], Gomer, [IronBow, PureWater], 12, False, [$01, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [1, 21], [1, 21], Gomer, [IronBow, PureWater], 12, False, [$01, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [1, 23], [1, 23], Gomer, [IronBow], 12, False, [$00, $03, $00, $00]
+          UNIT ThiefEnemy1, Enemy, [2, 21], [2, 21], Gomer, [Lockpick, IronSword], 3, False, [$01, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [1, 22], [1, 22], Gomer, [HandAxe], 7, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [1, 27], [1, 27], Gomer, [HandAxe], 7, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [1, 25], [1, 25], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [2, 25], [2, 25], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [2, 26], [2, 26], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [1, 26], [1, 26], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
+          UNIT BanditBerserker, Enemy, [1, 29], [1, 29], Gomer, [PoisonAxe, Vulnerary, Antidote], 5, False, [$00, $03, $02, $00]
+        UNIT
+
+        _ShivaCameraCoordinates ; B1/E14F
+          .byte [8, 7]
+
+        _ShivaGroup ; B1/E14F
+          UNIT MercenaryMyrmidon3, Enemy, [9, 36], [9, 36], Shiva, [IronSword], 4, False, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon3, Enemy, [10, 36], [10, 36], Shiva, [IronBlade], 6, False, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon3, Enemy, [8, 36], [8, 36], Shiva, [IronBlade, Vulnerary], 8, False, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon3, Enemy, [9, 37], [9, 37], Shiva, [KillingEdge], 7, False, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon3, Enemy, [8, 37], [8, 37], Shiva, [SilverSword, Vulnerary], 10, False, [$00, $00, $00, $00]
+          UNIT Shiva, Enemy, [9, 38], [9, 38], Shiva, [KillingEdge], 4, False, [$0F, $00, $00, $00]
+          UNIT MercenaryMyrmidon3, Enemy, [10, 38], [10, 38], Shiva, [IronSword], 4, False, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon3, Enemy, [11, 38], [11, 38], Shiva, [IronBlade], 5, False, [$00, $00, $00, $00]
+        UNIT
+
+        _StartingPositions ; B1/E1F3
+          .byte [9, 15]
+          .byte [10, 14]
+          .byte [9, 13]
+          .byte [8, 10]
+          .byte [10, 10]
+          .byte [10, 16]
+          .byte [9, 11]
+          .byte [12, 16]
+          .byte [8, 12]
+          .byte [10, 13]
+          .byte [7, 13]
+          .byte [8, 14]
+          .byte [6, 12]
+          .byte [11, 15]
+          .byte [4, 13]
+          .byte [5, 12]
+          .byte [7, 11]
+          .byte [8, 11]
+        .char -1
+
+        _Vendor ; B1/E218
+          SHOP [6, 48], [Vulnerary, Heal]
+
+    .endsection Chapter7DataSection
+
+    .section Chapter7WorldMapEventsSection
+
+      eventChapter7WorldMapEvents ; E7/E57A
+
+        SCROLL_CAMERA_COORDS [20, 12], 4
+        SET_CURSOR_POSITION
+        YIELD
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $2A
+        YIELD
+
+        FADE_IN 1
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [96, 80], $0E, 0
+
+        macroASMCWMDialogue dialogueChapter7WorldMap1
+
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        SCROLL_CAMERA_COORDS [18, 12], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        SCROLL_CAMERA_COORDS [18, 14], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [112, 104], $0D, 0
+
+        macroASMCWMDialogue dialogueChapter7WorldMap2
+
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        FADE_OUT 2
+        YIELD
+
+        CALL_ASM_LOOP rlASMCEndWMEvents
+        YIELD
+      END1
+
+    .endsection Chapter7WorldMapEventsSection
+
+.endif ; GUARD_FE5_CHAPTER7
