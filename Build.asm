@@ -25,6 +25,7 @@
   .include "SRC/Reset.asm"
   .include "SRC/IRQ.asm"
   .include "SRC/ActionStruct.asm"
+  .include "SRC/ActionStructStaff.asm"
   .include "SRC/Code83Temp.asm"
   .include "SRC/CharacterData.asm"
   .include "SRC/ItemData.asm"
@@ -151,6 +152,37 @@
       .dsection ActionStructMarkSelectableTargetSection
       .dsection ActionStructGetDanceEXPSection
       .dsection ActionStructTryGetGainedWeaponRankSection
+      .dsection ActionStructDanceSection
+      .dsection ActionStructClearOpponentWeaponIfUsingLongRangeSection
+      .dsection ActionStructGetTerrainTileSection
+      .dsection ActionStructStaffSection
+      .dsection HealingStaffTargetEffectSection
+      .dsection FortifyTargetEffectSection
+      .dsection SilenceStaffTargetEffectSection
+      .dsection BerserkStaffTargetEffectSection
+      .dsection SleepStaffTargetEffectSection
+      .dsection StatusStaffCallbackSection
+      .dsection RestoreTargetEffectSection
+      .dsection WarpTargetEffectSection
+      .dsection RewarpTargetEffectSection
+      .dsection BarrierTargetEffectSection
+      .dsection RescueStaffTargetEffectSection
+      .dsection TorchStaffTargetEffectSection
+      .dsection HammerneTargetEffectSection
+      .dsection ThiefStaffTargetEffectSection
+      .dsection ActionStructStaffGetEXPByCostSection
+      .dsection ActionStructSetGainedEXPSection
+      .dsection ActionStructGetStaffInfoSection
+      .dsection ReturnStaffTargetEffectSection
+      .dsection ActionStructStaffGetClosestTileSection
+      .dsection ActionStructStaffRollHitSection
+      .dsection ActionStructStaffRollDoublingSection
+      .dsection ActionStructStaffTryGetClosestTileSection
+      .dsection ActionStructStaffGetPowerSection
+      .dsection UnlockTargetEffectSection
+      .dsection WatchTargetEffectSection
+      .dsection KiaTargetEffectSection
+      .dsection ActionStructStaffGetGainedWEXPSection
 
     endCode
 

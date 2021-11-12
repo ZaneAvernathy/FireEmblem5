@@ -43,10 +43,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
       rlTryGetBrokenItemID                          :?= address($83B0B7)
       rlCheckIfInRange                              :?= address($83B104)
       rlGetAllegianceInfoOffset                     :?= address($83B296)
+      rlUnknown83CD3E                               :?= address($83CD3E)
       rlUnknown848E5A                               :?= address($848E5A)
-
-      rsActionStructClearOpponentWeaponIfUsingLongRange :?= address($83E957)
-      rsActionStructSetGainedEXP                        :?= address($83EF86)
 
       ; Action struct types
 
@@ -6653,7 +6651,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
     .section ActionStructGetDanceEXPSection
 
-      rlActionStructUnknownGetDanceEXP ; 83/E81B
+      rlActionStructUnknownGetDanceEXP ; 83/E7FE
 
         .al
         .autsiz
@@ -6858,5 +6856,345 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         .databank 0
 
     .endsection ActionStructTryGetGainedWeaponRankSection
+
+    .section ActionStructDanceSection
+
+      rlActionStructDance ; 83/E8F6
+
+        .xl
+        .autsiz
+        .databank ?
+
+        php
+        phb
+
+        sep #$20
+
+        lda #`aActionStructUnit1
+        pha
+
+        rep #$20
+
+        plb
+
+        .databank `aActionStructUnit1
+
+        lda aActionStructUnit2.UnitState
+        and #~(UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+        sta aActionStructUnit2.UnitState
+
+        ldx #<>aActionStructUnit1
+        stx wR1
+        jsl rlActionStructCopyStartingStatsWrapper
+
+        ldx #<>aActionStructUnit2
+        stx wR1
+        jsl rlActionStructCopyStartingStatsWrapper
+
+        jsr rsActionStructGetTerrainBonusesAndDistance
+
+        lda #10
+        sta wGainedExperience
+
+        jsl rlActionStructGetDanceEXP
+
+        lda #$0002
+        sta wActionStructGeneratedRoundCombatType
+
+        lda #<>rlActionStructDanceCallback
+        sta lUnknown7EA4EC
+        lda #>`rlActionStructDanceCallback
+        sta lUnknown7EA4EC+size(byte)
+        jsl rlUnknown83CD3E
+
+        plb
+        plp
+        rtl
+
+        .databank 0
+
+      rlActionStructDanceCallback ; 83/E941
+
+        .autsiz
+        .databank ?
+
+        php
+        phb
+
+        sep #$20
+
+        lda #`aActionStructUnit2
+        pha
+
+        rep #$20
+
+        plb
+
+        .databank `aActionStructUnit2
+
+        lda #<>aActionStructUnit2
+        sta wR1
+        jsl rlCopyCharacterDataFromBuffer
+        plb
+        plp
+        rtl
+
+        .databank 0
+
+    .endsection ActionStructDanceSection
+
+    .section ActionStructClearOpponentWeaponIfUsingLongRangeSection
+
+      rsActionStructClearOpponentWeaponIfUsingLongRange ; 83/E957
+
+        .al
+        .autsiz
+        .databank `aActionStructUnit2
+
+        ; Clears the second unit's weapon if the first
+        ; unit is using a long-range weapon.
+
+        ; Inputs:
+        ; aActionStructUnit1: filled with unit
+        ; aActionStructUnit2: filled with unit
+
+        ; Outputs:
+        ; None
+
+        lda aActionStructUnit1.EquippedItemID2
+        jsl rlCopyItemDataToBuffer
+
+        lda aItemDataBuffer.Range,b
+        and #$000F
+        cmp #3
+        blt +
+
+          sep #$20
+
+          stz aActionStructUnit2.EquippedItemID2
+          stz aActionStructUnit2.WeaponTraits
+
+          rep #$30
+
+        +
+        rts
+
+        .databank 0
+
+    .endsection ActionStructClearOpponentWeaponIfUsingLongRangeSection
+
+    .section ActionStructGetTerrainTileSection
+
+      rlActionStructGetTerrainTile ; 83/E974
+
+        .al
+        .autsiz
+        .databank `aTerrainMap
+
+        ; Given a short pointer to an action struct in
+        ; X, return the terrain type they're on in A.
+
+        ; Inputs:
+        ; X: short pointer to action struct
+
+        ; Outputs:
+        ; A: terrain type
+
+        lda structActionStructEntry.X,b,x
+        and #$00FF
+        sta wR0
+        lda structActionStructEntry.Y,b,x
+        and #$00FF
+        sta wR1
+        jsl rlGetMapTileIndexByCoords
+
+        tax
+        lda aTerrainMap,x
+        and #$00FF
+        rtl
+
+        .databank 0
+
+    .endsection ActionStructGetTerrainTileSection
+
+    .section ActionStructSetGainedEXPSection
+
+      rsActionStructSetGainedEXP ; 83/EF86
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        ; Given an experience value in A and
+        ; one of the two action structs as a player unit,
+        ; add experience to their experience, applying
+        ; bonuses from paragon and capping at ExperienceCap.
+
+        ; Inputs:
+        ; A: experience
+        ; At least one player action struct
+
+        ; Outputs:
+        ; None
+
+        rep #$30
+
+        sta wR0
+
+        lda wParagonModeEnable,b
+        bit #$0001
+        beq +
+
+          asl wR0
+
+        +
+        ldx #<>aActionStructUnit1
+        lda aActionStructUnit1.DeploymentNumber
+        and #AllAllegiances
+        beq +
+
+        ldx #<>aActionStructUnit2
+        lda aActionStructUnit2.DeploymentNumber
+        and #AllAllegiances
+        beq +
+
+          rts
+
+        +
+        lda wR0
+        pha
+
+        stx wR1
+        jsl rlGetEquippableItemInventoryOffset
+
+        pla
+        sta wR0
+
+        lda structActionStructEntry.CurrentHP,b,x
+        and #$00FF
+        beq _End
+
+        lda structActionStructEntry.Status,b,x
+        and #$00FF
+        cmp #StatusBerserk
+        beq _End
+
+          lda structActionStructEntry.Skills2,b,x
+          ora aItemDataBuffer.Skills2,b
+          bit #pack([None, Skill3Paragon])
+          beq +
+
+            asl wR0
+
+          +
+          lda wR0
+          cmp #ExperienceCap
+          blt +
+
+            lda #ExperienceCap
+            sta wR0
+
+          +
+          sep #$20
+          lda structActionStructEntry.Level,b,x
+          cmp #LevelCap
+          beq _End
+
+            lda wR0
+            sta structActionStructEntry.GainedExperience,b,x
+
+            clc
+            adc structActionStructEntry.Experience,b,x
+            sta structActionStructEntry.Experience,b,x
+
+            rep #$30
+
+            lda structActionStructEntry.TotalEXP,b,x
+            clc
+            adc wR0
+            sta structActionStructEntry.TotalEXP,b,x
+
+        _End
+        rep #$30
+        rts
+
+        .databank 0
+
+    .endsection ActionStructSetGainedEXPSection
+
+    .section ActionStructGetStaffInfoSection
+
+      rsActionStructGetStaffInfo ; 83/F006
+
+        .autsiz
+        .databank `aActionStructUnit1
+
+        php
+
+        sep #$20
+
+        lda aItemDataBuffer.DisplayedWeapon,b
+        sta aActionStructUnit1.EquippedItemID2
+        sta aActionStructUnit1.EquippedItemID1
+
+        lda aItemDataBuffer.Durability,b
+        sta aActionStructUnit1.EquippedItemMaxDurability
+
+        lda aItemDataBuffer.Type,b
+        sta aActionStructUnit1.AttackType
+
+        lda #-1
+        sta aActionStructUnit1.BattleAdjustedHit
+        sta aActionStructUnit1.BattleMight
+        sta aActionStructUnit1.BattleDefense
+        sta aActionStructUnit2.BattleAdjustedHit
+        sta aActionStructUnit2.BattleMight
+        sta aActionStructUnit2.BattleDefense
+
+        stz aActionStructUnit2.GainedExperience
+
+        lda aActionStructUnit1.Character
+        jsl rlCopyCharacterDataToBuffer
+
+        lda aActionStructUnit1.Class
+        jsl rlCopyClassDataToBuffer
+
+        ldx #<>aActionStructUnit1
+        tdc
+
+        lda aItemDataBuffer.Type,b
+        and #$0F
+        tay
+        lda aCharacterDataBuffer.WeaponEXPModifiers,y
+        sta structActionStructEntry.WeaponEXPGainChance,b,x
+
+        stz structActionStructEntry.GainedWeaponEXP,b,x
+
+        rep #$30
+
+        txa
+        clc
+        adc #structActionStructEntry.WeaponRanks
+        sta wR0
+        lda (wR0),y
+        and #$00FF
+        sta wR0
+        lda aClassDataBuffer.WeaponRanks,y
+        and #$00FF
+        clc
+        adc wR0
+        cmp #RankA
+        blt +
+
+          lda #RankA
+
+        +
+        sep #$20
+        sta structActionStructEntry.WeaponEXP,b,x
+        plp
+        rts
+
+        .databank 0
+
+    .endsection ActionStructGetStaffInfoSection
 
 .endif ; GUARD_FE5_ACTIONSTRUCT
