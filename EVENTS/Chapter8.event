@@ -349,7 +349,7 @@ GUARD_FE5_CHAPTER8 :?= false
         END2
 
         _EndingEvent ; 99/C3F7
-          STORE_WORD wCurrentMapMusic, $00
+        STORE_WORD wCurrentMapMusic, $00
 
         PAUSE_SKIPPABLE 16
         YIELD

@@ -1,0 +1,304 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER8x :?= false
+.if (!GUARD_FE5_CHAPTER8x)
+  GUARD_FE5_CHAPTER8x := true
+
+  .include "../../VoltEdge/VoltEdge.h"
+
+  ; Definitions
+
+    .weak
+
+      dialogueChapter8xOpening1 :?= address($93CB6B)
+      dialogueChapter8xOrsinTanyaTalk :?= address($93CD46)
+      dialogueChapter8xLeifDagdarTalk :?= address($93CE95)
+      dialogueChapter8xEnding1 :?= address($93D0E4)
+      dialogueChapter8xOpeningPlaceholder :?= address($93D5F2)
+
+      rlUpdateUnitMapsAndFog :?= address($81AC00)
+      rlEventEngineCancelFading :?= address($8C8461)
+
+      eventMapDeathQuoteDummyEvent :?= address($99812F)
+
+      dialogueChapter8xTitle :?= address($9AB91C)
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter8xEventsSection
+
+      _OpeningEventDefinitions ; 97/844D
+        EVENT FlagAlwaysZero, _OpeningEvent
+          CMP_WORD wCurrentTurn, 0
+        END_DEFINITION
+      END_DEFINITION_ARRAY
+
+      _TurnEventDefinitions ; 97/845A
+        EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+          CHECK_IF_BOSS_DEAD Gomer
+          CMP_WORD wCurrentPhase, Enemy
+        END_DEFINITION
+        EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+          TEST_FLAG_SET FlagPlayerDeath
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _TanyaRemoveImmortality
+          CMP_WORD wCurrentPhase, Player
+          CMP_WORD wCurrentTurn, 15
+        END_DEFINITION
+      END_DEFINITION_ARRAY
+
+      _TalkEventDefinitions ; 97/8482
+        EVENT $05, _OrsinTanyaTalk
+          CHECK_CHARS2 Orsin, Tanya
+        END_DEFINITION
+        EVENT $06, _LeifDagdarTalk
+          CHECK_CHARS2 Leif, Dagdar
+        END_DEFINITION
+      END_DEFINITION_ARRAY
+
+      _LocationEventDefinitions ; 97/8498
+        macroECDoor $22, [10, 6], _Door1
+        macroECDoor $23, [5, 9], _Door2
+        macroECDoor $24, [5, 13], _Door3
+        macroECDoor $25, [17, 7], _Door4
+        macroECDoor $26, [15, 9], _Door5
+        macroECDoor $27, [15, 13], _Door6
+        macroECVanillaChest $28, eventChapter8xData._Chest1
+        macroECVanillaChest $29, eventChapter8xData._Chest2
+        macroECVanillaChest $2A, eventChapter8xData._Chest3
+        macroECVanillaChest $2B, eventChapter8xData._Chest4
+        macroECVanillaChest $2C, eventChapter8xData._Chest5
+        macroECVanillaChest $2D, eventChapter8xData._Chest6
+        EVENT FlagAlwaysZero, _EndingEvent
+          macroECCheckCoordinates [10, 2]
+          CMP_WORD wCurrentPhase, Player
+          CMP_WORD aSelectedCharacterBuffer.Character, Leif
+        END_DEFINITION
+      END_DEFINITION_ARRAY
+
+      _BeforeActionEventDefinitions ; 97/8581
+      END_DEFINITION_ARRAY
+
+      _AfterActionEventDefinitions ; 97/8583
+      END_DEFINITION_ARRAY
+
+      _BattleEventDefinitions ; 97/8585
+        macroECBossQuote $07, Gomer
+      END_DEFINITION_ARRAY
+
+      _ShopEventDefinitions ; 97/858F
+      END_DEFINITION_ARRAY
+
+      _Door1 ; 97/8591
+        macroOpenDoorByTileChangeID 0
+        macroOpenDoorByTileChangeID 1
+      END1
+
+      _Door2 ; 97/85E6
+        macroOpenDoorByTileChangeID 2
+      END1
+
+      _Door3 ; 97/8611
+        macroOpenDoorByTileChangeID 3
+      END1
+
+      _Door4 ; 97/863C
+        macroOpenDoorByTileChangeID 4
+      END1
+
+      _Door5 ; 97/8667
+        macroOpenDoorByTileChangeID 5
+      END1
+
+      _Door6 ; 97/8692
+        macroOpenDoorByTileChangeID 6
+      END1
+
+      _TanyaRemoveImmortality ; 97/86BD
+        macroASMCUnsetBitsCharacterDataWord Tanya, Skills2, pack([Skill2Unknown, Skill3Immortal])
+      END2
+
+      _OrsinTanyaTalk ; 97/86D6
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $4A
+        YIELD
+
+        DIALOGUE dialogueChapter8xOrsinTanyaTalk
+        YIELD
+      END2
+
+      _LeifDagdarTalk ; 97/86E6
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $4A
+        YIELD
+
+        DIALOGUE dialogueChapter8xLeifDagdarTalk
+        YIELD
+      END2
+
+      _PrepGroups ; 97/86F6
+        .long eventChapter8xData._PrepGroup
+      .word $0000
+
+      _OpeningEvent ; 97/86FB
+        CALL_ASM_SKIPPABLE rlEventEngineCancelFading
+
+        macroASMCCheckUnitStateSet Dagdar, UnitStateDisabled
+        JUMP_FALSE +
+
+          macroASMCUnsetUnitState Dagdar, (UnitStateUnknown1 | UnitStateDisabled)
+          macroASMCSetUnitPosition Dagdar, [9, 15]
+          macroASMCSetCharacterDataByte Dagdar, Fatigue, 0
+
+        +
+        macroASMCCheckUnitStateSet Tanya, UnitStateDisabled
+        JUMP_FALSE +
+
+          macroASMCUnsetUnitState Tanya, (UnitStateUnknown1 | UnitStateDisabled)
+          macroASMCSetUnitPosition Tanya, [11, 16]
+          macroASMCSetCharacterDataByte Tanya, Fatigue, 0
+
+        +
+        macroASMCSetBitsCharacterDataWord Tanya, Skills2, pack([None, Skill3Immortal])
+
+        CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog
+
+        FADE_IN 2
+
+        HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $31
+        YIELD
+
+        macroChapterTitlePopup dialogueChapter8xTitle
+
+        macroDialogueWithBG dialogueChapter8xOpening1, 1
+
+        CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+        YIELD
+
+        HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+      END2
+
+      _EndingEvent ; 97/8822
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 16
+        YIELD
+
+        CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $44
+        YIELD
+
+        CALL_ASM_LOOP rlASMCSaveChapterTurncount
+
+        macroASMCUnsetBitsCharacterDataWord Tanya, Skills2, pack([Skill2Unknown, Skill3Immortal])
+
+        macroDialogueWithBG dialogueChapter8xEnding1, 1
+        YIELD
+
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        FADE_OUT 1
+        YIELD
+
+        CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
+
+        STORE_BYTE bBufferINIDISP, INIDISP_Setting(False, 0)
+
+        PLAY_SOUND_WORD $00E7
+
+        FADE_OUT 1
+        YIELD
+
+        CALL_ASM_LOOP rlASMCChapterEnd
+      END1
+
+    .endsection Chapter8xEventsSection
+
+    .section Chapter8xDataSection
+
+      eventChapter8xData ; B1/D851
+
+        _PrepGroup ; B1/D851
+          .byte [11, 8]
+
+          UNIT Gomer, Enemy, [10, 2], [10, 2], Gomer, [SteelAxe, SteelBow, Lockpick], 5, True, [$01, $03, $00, $80]
+          UNIT BanditHunter, Enemy, [4, 11], [4, 11], Gomer, [PoisonBow], 10, False, [$00, $00, $00, $00]
+          UNIT BanditHunter, Enemy, [6, 11], [6, 11], Gomer, [PoisonBow], 10, False, [$00, $00, $00, $00]
+          UNIT BanditHunter, Enemy, [14, 11], [14, 11], Gomer, [PoisonBow], 10, False, [$00, $00, $00, $00]
+          UNIT BanditHunter, Enemy, [16, 11], [16, 11], Gomer, [PoisonBow], 10, False, [$00, $00, $00, $00]
+          UNIT BanditBrigand1, Enemy, [9, 8], [9, 8], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [11, 8], [11, 8], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [9, 9], [9, 9], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [11, 9], [11, 9], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [9, 10], [9, 10], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [11, 10], [11, 10], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [10, 9], [10, 9], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [10, 8], [10, 8], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [4, 8], [4, 8], Gomer, [HandAxe], 12, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [9, 3], [9, 3], Gomer, [SteelAxe], 15, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [16, 8], [16, 8], Gomer, [HandAxe], 12, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [10, 4], [10, 4], Gomer, [SteelAxe], 15, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [11, 3], [11, 3], Gomer, [SteelAxe], 15, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [7, 1], [7, 1], Gomer, [HandAxe], 10, False, [$00, $10, $00, $00]
+          UNIT BanditBrigand1, Enemy, [13, 1], [13, 1], Gomer, [HandAxe], 10, False, [$00, $10, $00, $00]
+          UNIT BanditBrigand1, Enemy, [12, 2], [12, 2], Gomer, [HandAxe], 10, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [8, 2], [8, 2], Gomer, [HandAxe], 10, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [4, 2], [4, 2], Gomer, [HandAxe], 10, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [3, 1], [3, 1], Gomer, [HandAxe], 10, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [5, 1], [5, 1], Gomer, [HandAxe], 10, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [1, 15], [1, 15], Gomer, [IronAxe, Antidote], 8, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [1, 10], [1, 10], Gomer, [SteelAxe], 8, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [4, 18], [4, 18], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [1, 17], [1, 17], Gomer, [SteelBow], 10, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [19, 10], [19, 10], Gomer, [Hammer], 8, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [19, 15], [19, 15], Gomer, [SteelAxe], 10, False, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [16, 18], [16, 18], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [19, 17], [19, 17], Gomer, [SteelBow], 9, False, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [8, 1], [8, 1], Gomer, [SteelBow], 9, False, [$00, $10, $00, $00]
+          UNIT BanditHunter, Enemy, [12, 1], [12, 1], Gomer, [SteelBow], 9, False, [$00, $10, $00, $00]
+          UNIT BanditHunter, Enemy, [3, 2], [3, 2], Gomer, [SteelBow], 9, False, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [5, 2], [5, 2], Gomer, [SteelBow], 9, False, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [4, 1], [4, 1], Gomer, [SteelBow], 9, False, [$00, $03, $00, $00]
+          UNIT ThiefEnemy1, Enemy, [12, 7], [12, 7], Gomer, [Lockpick, SlimSword], 5, False, [$10, $0B, $00, $00]
+        UNIT
+
+        _StartingPositions ; B1/DB61
+          .byte [10, 21]
+          .byte [8, 21]
+          .byte [12, 21]
+          .byte [9, 20]
+          .byte [11, 20]
+          .byte [10, 19]
+        .char -1
+
+        _Chest1 VANILLA_CHEST LegRing, [3, 5] ; B1/DB6E
+        _Chest3 VANILLA_CHEST WrathManual, [4, 15] ; B1/DBB2
+        _Chest4 VANILLA_CHEST DevilAxe, [6, 15] ; B1/DBF6
+        _Chest5 VANILLA_CHEST Hammer, [14, 15] ; B1/DC3A
+        _Chest6 VANILLA_CHEST NeirsScroll, [16, 15] ; B1/DC7E
+        _Chest2 VANILLA_CHEST PureWater, [17, 3], $0002 ; B1/DCC2
+
+    .endsection Chapter8xDataSection
+
+.endif ; GUARD_FE5_CHAPTER8x
