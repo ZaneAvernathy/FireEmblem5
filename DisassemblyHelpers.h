@@ -29,6 +29,9 @@ GUARD_DISASSEMBLY_HELPERS :?= false
   EventsStarts    := [0]
   EventsEnds      := [0]
 
+  TextStarts    := [0]
+  TextEnds      := [0]
+
   startData .segment Pointer=*
     DataStarts ..= [\Pointer]
   .endm
@@ -45,6 +48,10 @@ GUARD_DISASSEMBLY_HELPERS :?= false
     EventsStarts ..= [\Pointer]
   .endm
 
+  startText .segment Pointer=*
+    TextStarts ..= [\Pointer]
+  .endm
+
   endData .segment Pointer=*
     DataEnds ..= [\Pointer]
   .endm
@@ -59,6 +66,10 @@ GUARD_DISASSEMBLY_HELPERS :?= false
 
   endEvents .segment Pointer=*
     EventsEnds ..= [\Pointer]
+  .endm
+
+  endText .segment Pointer=*
+    TextEnds ..= [\Pointer]
   .endm
 
   SizeFormatter .function dSize, ROMSize=$400000

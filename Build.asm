@@ -44,6 +44,9 @@
   .include "EVENTS/Chapter8.event"
   .include "EVENTS/Chapter8x.event"
 
+  .include "SRC/Dialogue.asm"
+  .include "SRC/ChapterTitles.asm"
+
 ; Sections
 
   * := $000000
@@ -282,6 +285,17 @@
 
   .endlogical
 
+  * = $0D37EF
+  .logical mapped($0D37EF)
+
+    startText
+
+      .dsection ChapterTitleSection
+
+    endText
+
+  .endlogical
+
   * := $180000
   .logical mapped($180000)
 
@@ -348,11 +362,13 @@
   CodeSize := CodeEnds - CodeStarts + ...
   GraphicsSize := GraphicsEnds - GraphicsStarts + ...
   EventsSize := EventsEnds - EventsStarts + ...
+  TextSize := TextEnds - TextStarts + ...
 
-  DisassemblySize := DataSize + CodeSize + GraphicsSize + EventsSize
+  DisassemblySize := DataSize + CodeSize + GraphicsSize + EventsSize + TextSize
 
   .warn "Total Disassembled: ", SizeFormatter(DisassemblySize)
   .warn "Data: ", SizeFormatter(DataSize)
   .warn "Code: ", SizeFormatter(CodeSize)
   .warn "Graphics: ", SizeFormatter(GraphicsSize)
   .warn "Events: ", SizeFormatter(EventsSize)
+  .warn "Text: ", SizeFormatter(TextSize)

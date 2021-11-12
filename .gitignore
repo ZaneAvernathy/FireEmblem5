@@ -16,3 +16,5 @@ TOOLS/**
 !TOOLS/*.py
 
 *.sublime*
+
+*.dialogue.txt
