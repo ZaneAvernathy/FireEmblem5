@@ -1,4 +1,5 @@
 .enc "DialoguePage0"
+  .edef "\n", $02
   .edef "あ", $10
   .edef "い", $11
   .edef "う", $12
@@ -241,6 +242,7 @@
   .edef "S", $FF
 
 .enc "DialoguePage1"
+  .edef "\n", $02
   .edef "T", $10
   .edef "U", $11
   .edef "V", $12
@@ -483,6 +485,7 @@
   .edef "美", $FF
 
 .enc "DialoguePage2"
+  .edef "\n", $02
   .edef "荒", $10
   .edef "迎", $11
   .edef "全", $12
@@ -725,6 +728,7 @@
   .edef "由", $FF
 
 .enc "DialoguePage3"
+  .edef "\n", $02
   .edef "耳", $10
   .edef "産", $11
   .edef "棒", $12
@@ -967,6 +971,7 @@
   .edef "咸", $FF
 
 .enc "DialoguePage4"
+  .edef "\n", $02
   .edef "付", $10
   .edef "頃", $11
   .edef "盛", $12
@@ -1209,6 +1214,7 @@
   .edef "木", $FF
 
 .enc "DialoguePage5"
+  .edef "\n", $02
   .edef "芸", $10
   .edef "糸", $11
   .edef "衣", $12
