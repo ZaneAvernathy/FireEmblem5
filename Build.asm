@@ -15,6 +15,8 @@
 
 ; Sources
 
+  .include "SRC/Dialogue.asm"
+
   .include "SRC/Break.asm"
   .include "SRC/Vectors.asm"
   .include "SRC/Joypad.asm"
@@ -32,6 +34,8 @@
   .include "SRC/DeploymentSlots.asm"
   .include "SRC/ClassData.asm"
 
+  .include "SRC/ChapterTitles.asm"
+
   .include "EVENTS/Chapter1.event"
   .include "EVENTS/Chapter2.event"
   .include "EVENTS/Chapter2x.event"
@@ -43,9 +47,6 @@
   .include "EVENTS/Chapter7.event"
   .include "EVENTS/Chapter8.event"
   .include "EVENTS/Chapter8x.event"
-
-  .include "SRC/Dialogue.asm"
-  .include "SRC/ChapterTitles.asm"
 
 ; Sections
 
@@ -101,6 +102,17 @@
       .dsection VectorTableSection
 
     endData $810000
+
+  .endlogical
+
+  * := $01482F
+  .logical mapped($01482F)
+
+    startText
+
+      .dsection Chapter1WMDialogueSection
+
+    endText
 
   .endlogical
 
@@ -254,6 +266,17 @@
       .dsection Chapter3EventsSection
 
     endEvents
+
+  .endlogical
+
+  * := $0AA493
+  .logical mapped($0AA493)
+
+    startText
+
+      .dsection Chapter1DialogueSection
+
+    endText
 
   .endlogical
 
