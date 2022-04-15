@@ -525,7 +525,7 @@ GUARD_FE5_CHAPTER1 :?= false
 
         macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
 
-        macroWMDrawSpecialMarker [128, 72], $0E, 0
+        macroWMDrawSpecialMarker [128, 72], WMMarkerTable.Crown, 0
 
         macroASMCWMDialogue dialogueChapter1WorldMap1
         HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
@@ -550,7 +550,7 @@ GUARD_FE5_CHAPTER1 :?= false
 
         macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
 
-        macroWMDrawSpecialMarker [104, 120], $0E, 0
+        macroWMDrawSpecialMarker [104, 120], WMMarkerTable.Crown, 0
 
         macroASMCWMDialogue dialogueChapter1WorldMap3
         HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
@@ -577,7 +577,7 @@ GUARD_FE5_CHAPTER1 :?= false
 
         macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
 
-        macroWMDrawSpecialMarker [112, 104], $0E, 0
+        macroWMDrawSpecialMarker [112, 104], WMMarkerTable.Crown, 0
 
         macroASMCWMDialogue dialogueChapter1WorldMap4
         HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
@@ -600,7 +600,7 @@ GUARD_FE5_CHAPTER1 :?= false
 
         macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
 
-        macroWMDrawSpecialMarker [144, 112], $0D, 0
+        macroWMDrawSpecialMarker [144, 112], WMMarkerTable.Circle, 0
 
         macroASMCWMDialogue dialogueChapter1WorldMap5
         HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000

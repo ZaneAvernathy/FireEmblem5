@@ -1,0 +1,17 @@
+.word 0,ScriptPointer,InitPointer
+Marker00,<>aWMSpecialMarker00Script,<>rsWMSpecialMarkerTrailInit
+Marker01,<>aWMSpecialMarker01Script,<>rsWMSpecialMarkerTrailInit
+Marker02,<>aWMSpecialMarker02Script,<>rsWMSpecialMarkerTrailInit
+Marker03,<>aWMSpecialMarker03Script,<>rsWMSpecialMarkerTrailInit
+Marker04,<>aWMSpecialMarker04Script,<>rsWMSpecialMarkerTrailInit
+Marker05,<>aWMSpecialMarker05Script,<>rsWMSpecialMarkerTrailInit
+Marker06,<>aWMSpecialMarker06Script,<>rsWMSpecialMarkerTrailInit
+Marker07,<>aWMSpecialMarker07Script,<>rsWMSpecialMarkerTrailInit
+Marker08,<>aWMSpecialMarker08Script,<>rsWMSpecialMarkerTrailInit
+Marker09,<>aWMSpecialMarker09Script,<>rsWMSpecialMarkerTrailInit
+Marker0A,<>aWMSpecialMarker0AScript,<>rsWMSpecialMarkerTrailInit
+Marker0B,<>aWMSpecialMarker0BScript,<>rsWMSpecialMarkerTrailInit
+Marker0C,<>aWMSpecialMarker0CScript,<>rsWMSpecialMarkerTrailInit
+Circle,None,<>rsWMSpecialMarkerCircleInit
+Crown,None,<>rsWMSpecialMarkerCrownInit
+Unknown,<>aWMSpecialMarkerUnknownScript91CEB6,None

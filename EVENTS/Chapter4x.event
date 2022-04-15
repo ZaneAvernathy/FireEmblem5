@@ -466,10 +466,7 @@ GUARD_FE5_CHAPTER4x :?= false
           _RetreatingChildList ..= [(Bowie, FlagBowieSaved)]
           _RetreatingChildList ..= [(Lina, FlagLinaSaved)]
 
-          .for _Tup in _RetreatingChildList
-
-            _Character := _Tup[0]
-            _Flag      := _Tup[1]
+          .for _Character, _Flag in _RetreatingChildList
 
             .word _Character
             .byte _Flag

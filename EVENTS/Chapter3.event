@@ -599,10 +599,7 @@ GUARD_FE5_CHAPTER3 :?= false
           _EndingDialogueList ..= [(Sapphie, dialogueChapter3Ending6)]
           _EndingDialogueList ..= [(Dagdar, dialogueChapter3Ending7)]
 
-          .for _Dialogue in _EndingDialogueList
-
-            _DialogueChar    := _Dialogue[0]
-            _DialoguePointer := _Dialogue[1]
+          .for _DialogueChar, _DialoguePointer in _EndingDialogueList
 
             macroASMCCountAllUnitsRescuedByPlayerOrNPC _DialogueChar
             JUMP_FALSE +
@@ -813,7 +810,7 @@ GUARD_FE5_CHAPTER3 :?= false
 
         macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
 
-        macroWMDrawSpecialMarker [96, 80], $0E, 0
+        macroWMDrawSpecialMarker [96, 80], WMMarkerTable.Crown, 0
 
         macroASMCWMDialogue dialogueChapter3WorldMap1
         HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
@@ -826,7 +823,7 @@ GUARD_FE5_CHAPTER3 :?= false
         PAUSE_SKIPPABLE 2
         YIELD
 
-        macroWMDrawSpecialMarker [136, 112], $0D, 0
+        macroWMDrawSpecialMarker [136, 112], WMMarkerTable.Circle, 0
 
         macroASMCWMDialogue dialogueChapter3WorldMap2
         HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000

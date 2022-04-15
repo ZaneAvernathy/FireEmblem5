@@ -557,7 +557,7 @@ GUARD_FE5_CHAPTER8 :?= false
 
         macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
 
-        macroWMDrawSpecialMarker [96, 97], $0E, 0
+        macroWMDrawSpecialMarker [96, 97], WMMarkerTable.Crown, 0
 
         macroASMCWMDialogue dialogueChapter8WorldMap1
 
@@ -571,7 +571,7 @@ GUARD_FE5_CHAPTER8 :?= false
 
         macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
 
-        macroWMDrawSpecialMarker [88, 80], $0D, 0
+        macroWMDrawSpecialMarker [88, 80], WMMarkerTable.Circle, 0
 
         macroASMCWMDialogue dialogueChapter8WorldMap2
 

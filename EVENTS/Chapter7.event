@@ -735,10 +735,7 @@ GUARD_FE5_CHAPTER7 :?= false
         _RegainedUnitList ..= [(Halvan, [10, 41])]
         _RegainedUnitList ..= [(Ronan, [10, 42])]
 
-        .for _Tup in _RegainedUnitList
-
-          _Character   := _Tup[0]
-          _Coordinates := _Tup[1]
+        .for _Character, _Coordinates in _RegainedUnitList
 
           macroASMCCheckUnitStateSet _Character, UnitStateDisabled
           JUMP_FALSE +
@@ -903,7 +900,7 @@ GUARD_FE5_CHAPTER7 :?= false
 
         macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
 
-        macroWMDrawSpecialMarker [96, 80], $0E, 0
+        macroWMDrawSpecialMarker [96, 80], WMMarkerTable.Crown, 0
 
         macroASMCWMDialogue dialogueChapter7WorldMap1
 
@@ -925,7 +922,7 @@ GUARD_FE5_CHAPTER7 :?= false
 
         macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
 
-        macroWMDrawSpecialMarker [112, 104], $0D, 0
+        macroWMDrawSpecialMarker [112, 104], WMMarkerTable.Circle, 0
 
         macroASMCWMDialogue dialogueChapter7WorldMap2
 

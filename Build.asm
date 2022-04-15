@@ -35,6 +35,7 @@
   .include "SRC/ClassData.asm"
 
   .include "SRC/ChapterTitles.asm"
+  .include "SRC/WMMarkers.asm"
 
   .include "EVENTS/Chapter1.event"
   .include "EVENTS/Chapter2.event"
@@ -466,6 +467,29 @@
     startFreespace
 
       .fill mapped($080000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $08CCEA
+  .logical mapped($08CCEA)
+
+    startCode
+
+      .dsection AS_ASMCDrawSpecialMarkerSection
+
+    endCode
+
+    startData
+
+      .dsection AS_ASMCDrawSpecialMarkerDataSection
+
+    endData
+
+    startFreespace
+
+      .fill mapped($088000) + $8000 - *, $FF
 
     endFreespace
 
