@@ -648,10 +648,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         ldx wR1
 
-        .for _Tup in _StatList
-
-          _Source := _Tup[0]
-          _Dest   := _Tup[1]
+        .for _Source, _Dest in _StatList
 
           lda _Source,b,x
           sta _Dest,b,x
@@ -1029,10 +1026,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; Outputs:
         ; None
 
-        .for _Tup in _UnitList
-
-          _NihilUnit := _Tup[0]
-          _Target    := _Tup[1]
+        .for _NihilUnit, _Target in _UnitList
 
           lda _NihilUnit.Skills2
           bit #Skill2Nihil
@@ -1130,10 +1124,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         sta structActionStructEntry.TerrainType,b,x
         tay
 
-        .for _Tup in _TerrainBonusList
-
-          _Pointer := _Tup[0]
-          _Stat    := _Tup[1]
+        .for _Pointer, _Stat in _TerrainBonusList
 
           lda _Pointer
           sta lR18
@@ -1445,7 +1436,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; struct in X, get effective hit.
 
         ; Inputs:
-        ; X: short pointer to action struct
+        ; X: short pointer to attacker action struct
+        ; Y: short pointer to defender action struct
 
         ; Outputs:
         ; None
@@ -4042,7 +4034,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
           phx
 
-          lda #ActionStruct_Unknown3
+          lda #3
           cmp wActionStructGeneratedRoundCombatType
           beq +
 
@@ -5241,9 +5233,9 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         ; Clear the movement map.
 
-        lda #<>aMovementMap
+        lda #<>aRangeMap
         sta lR18
-        lda #>`aMovementMap
+        lda #>`aRangeMap
         sta lR18+size(byte)
         lda #0
         jsl rlFillMapByWord
@@ -5268,7 +5260,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         and #AllAllegiances
         sta wActiveTileUnitAllegiance
 
-        lda #<>aMovementMap
+        lda #<>aRangeMap
         sta wR3
         lda #pack([1, 3], size(byte))
         jsl rlGetMapUnitsInRange
@@ -5285,7 +5277,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
         sep #$20
 
-        stz aMovementMap,x
+        stz aRangeMap,x
 
         rep #$30
 
@@ -6237,11 +6229,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         _BonusList ..= [(structItemStatBonuses.Defense, aItemStatBonusBuffer.Defense, structActionStructEntry.Defense)]
         _BonusList ..= [(structItemStatBonuses.Luck, aItemStatBonusBuffer.Luck, structActionStructEntry.Luck)]
 
-        .for _Tup in _BonusList
-
-          _Source := _Tup[0]
-          _Bonus  := _Tup[1]
-          _Stat   := _Tup[2]
+        .for _Source, _Bonus, _Stat in _BonusList
 
           lda _Source+((`aItemBonuses)<<16),x
           sta _Bonus

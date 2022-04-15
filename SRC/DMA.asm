@@ -43,7 +43,7 @@ GUARD_FE5_DMA :?= false
           _DB             .byte ?
           _P              .byte ?
           _ReturnLocation .long ?
-        .endv
+        .endvirtual
 
         lda _ReturnLocation+2
         pha

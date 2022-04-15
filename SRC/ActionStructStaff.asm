@@ -58,7 +58,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
 
     .section ActionStructStaffSection
 
-      rsActionStructStaff ; 83/E990
+      rlActionStructStaff ; 83/E990
 
         .xl
         .autsiz
@@ -78,7 +78,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
 
         .databank `aActionStructUnit1
 
-        stz $7EA4E8
+        stz wStaffHitCounter
 
         jsl rlActionStructUnknownSetCallback
 
@@ -109,7 +109,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
 
         jsr rsActionStructGetTerrainBonusesAndDistance
 
-        ldx wUnknownStaffActionStructPointer
+        ldx wStaffInventoryOffset
 
         lda aActionStructUnit1.Items,x
         jsl rlCopyItemDataToBuffer
@@ -123,7 +123,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
         jmp [lR18]
 
         +
-        ldx wUnknownStaffActionStructPointer
+        ldx wStaffInventoryOffset
 
         lda aActionStructUnit1.EquippedItemID2
         sta aActionStructUnit1.Items,x
@@ -264,9 +264,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
         bra _Continue
 
         _aHealingStaffAmountTable ; 83/EAA2
-          .for _Tup in _HealingStaffAmountList
-            _Staff  := _Tup[0]
-            _Amount := _Tup[1]
+          .for _Staff, _Amount in _HealingStaffAmountList
 
             .byte _Staff, _Amount
 
@@ -302,7 +300,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
 
-          inc $7EA4E8
+          inc wStaffHitCounter
 
           bra +
 
@@ -402,7 +400,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           lda aActionStructUnit1.EquippedItemID2
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
-          inc $7EA4E8
+          inc wStaffHitCounter
 
         _Continue
         sep #$20
@@ -457,7 +455,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
 
-          inc $7EA4E8
+          inc wStaffHitCounter
 
         +
         jsr rsActionStructWriteRound
@@ -505,7 +503,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
 
-          inc $7EA4E8
+          inc wStaffHitCounter
 
         +
         jsr rsActionStructWriteRound
@@ -541,7 +539,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
 
-          inc $7EA4E8
+          inc wStaffHitCounter
 
           sep #$20
 
@@ -655,7 +653,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
 
-          inc $7EA4E8
+          inc wStaffHitCounter
 
         +
         jsr rsActionStructWriteRound
@@ -705,7 +703,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
 
-          inc $7EA4E8
+          inc wStaffHitCounter
 
           lda #<>rlWarpCallback
           sta lUnknown7EA4EC
@@ -804,7 +802,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
 
-          inc $7EA4E8
+          inc wStaffHitCounter
 
           lda #<>rlRewarpCallback
           sta lUnknown7EA4EC
@@ -891,7 +889,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
 
-          inc $7EA4E8
+          inc wStaffHitCounter
 
         +
         jsr rsActionStructWriteRound
@@ -991,7 +989,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
 
-          inc $7EA4E8
+          inc wStaffHitCounter
 
         +
         jsr rsActionStructWriteRound
@@ -1052,7 +1050,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
 
-          inc $7EA4E8
+          inc wStaffHitCounter
 
         +
         jsr rsActionStructWriteRound
@@ -1412,7 +1410,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
         lda aTargetableUnitMap,x
         bne +
 
-        lda aRangeMap,x
+        lda aMovementMap,x
         cmp $7E4008
         bge +
 
@@ -1480,7 +1478,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
 
         .xl
         .autsiz
-        .databank `aRangeMap
+        .databank `aMovementMap
 
         ; Given a tile index in X, check if
         ; tile is unoccupied and costs less to
@@ -1499,7 +1497,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
         lda aTargetableUnitMap,x
         bne _End
 
-        lda aRangeMap,x
+        lda aMovementMap,x
         cmp $7E4008
         bge _End
 
@@ -1511,7 +1509,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           lda aTerrainMovementCostBuffer,y
           bmi _End
 
-            lda aRangeMap,x
+            lda aMovementMap,x
             sta $7E4008
             stx $7E400A
 
@@ -1544,14 +1542,14 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
 
         sep #$20
 
-        lda #`aRangeMap
+        lda #`aMovementMap
         pha
 
         rep #$20
 
         plb
 
-        .databank `aRangeMap
+        .databank `aMovementMap
 
         jmp rlFillMovementRangeArray
 
@@ -1823,7 +1821,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           jsl rlTryGetBrokenItemID
           sta aActionStructUnit1.EquippedItemID2
 
-          inc $7EA4E8
+          inc wStaffHitCounter
 
           lda #<>rlUnlockCallback
           sta lUnknown7EA4EC
