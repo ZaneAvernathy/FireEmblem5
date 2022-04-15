@@ -94,6 +94,39 @@
 
   .endlogical
 
+  * := $001753
+  .logical mapped($001753)
+
+    startFreespace
+
+      .fill mapped($001B00) - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $005D77
+  .logical mapped($005D77)
+
+    startFreespace
+
+      .fill mapped($005E00) - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $006B28
+  .logical mapped($006B28)
+
+    startFreespace
+
+      .fill mapped($007FB0) - *, $FF
+
+    endFreespace
+
+  .endlogical
+
   * := $007FE0
   .logical mapped($007FE0)
 
@@ -105,6 +138,28 @@
 
   .endlogical
 
+  * := $008B13
+  .logical mapped($008B13)
+
+    startFreespace
+
+      .fill mapped($00A800) - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $00FF9D
+  .logical mapped($00FF9D)
+
+    startFreespace
+
+      .fill mapped($008000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
   * := $01482F
   .logical mapped($01482F)
 
@@ -113,6 +168,17 @@
       .dsection Chapter1WMDialogueSection
 
     endText
+
+  .endlogical
+
+  * := $016556
+  .logical mapped($016556)
+
+    startFreespace
+
+      .fill mapped($010000) + $8000 - *, $FF
+
+    endFreespace
 
   .endlogical
 
@@ -219,7 +285,33 @@
 
     endCode
 
-    .fill mapped($018000) + $8000 - *, $FF
+    startFreespace
+
+      .fill mapped($018000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $027C7B
+  .logical mapped($027C7B)
+
+    startFreespace
+
+      .fill mapped($020000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $02FFE1
+  .logical mapped($02FFE1)
+
+    startFreespace
+
+      .fill mapped($028000) + $8000 - *, $FF
+
+    endFreespace
 
   .endlogical
 
@@ -246,6 +338,28 @@
 
   .endlogical
 
+  * := $0366AD
+  .logical mapped($0366AD)
+
+    startFreespace
+
+      .fill mapped($030000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $03FFA5
+  .logical mapped($03FFA5)
+
+    startFreespace
+
+      .fill mapped($038000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
   * := $040054
   .logical mapped($040054)
 
@@ -255,6 +369,50 @@
       .dsection SupportDataSection
 
     endData
+
+  .endlogical
+
+  * := $047103
+  .logical mapped($047103)
+
+    startFreespace
+
+      .fill mapped($040000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $04FA7C
+  .logical mapped($04FA7C)
+
+    startFreespace
+
+      .fill mapped($048000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $0568E2
+  .logical mapped($0568E2)
+
+    startFreespace
+
+      .fill mapped($050000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $05FBDF
+  .logical mapped($05FBDF)
+
+    startFreespace
+
+      .fill mapped($058000) + $8000 - *, $FF
+
+    endFreespace
 
   .endlogical
 
@@ -269,6 +427,83 @@
 
   .endlogical
 
+  * := $067FF3
+  .logical mapped($067FF3)
+
+    startFreespace
+
+      .fill mapped($060000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $076FDE
+  .logical mapped($076FDE)
+
+    startFreespace
+
+      .fill mapped($070000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $07F2D7
+  .logical mapped($07F2D7)
+
+    startFreespace
+
+      .fill mapped($078000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $0871F3
+  .logical mapped($0871F3)
+
+    startFreespace
+
+      .fill mapped($080000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $097D45
+  .logical mapped($097D45)
+
+    startFreespace
+
+      .fill mapped($090000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $09ECEF
+  .logical mapped($09ECEF)
+
+    startFreespace
+
+      .fill mapped($098000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $0A7DEA
+  .logical mapped($0A7DEA)
+
+    startFreespace
+
+      .fill mapped($0A0000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
   * := $0AA493
   .logical mapped($0AA493)
 
@@ -277,6 +512,28 @@
       .dsection Chapter1DialogueSection
 
     endText
+
+  .endlogical
+
+  * := $0AFD4C
+  .logical mapped($0AFD4C)
+
+    startFreespace
+
+      .fill mapped($0A8000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $0B7711
+  .logical mapped($0B7711)
+
+    startFreespace
+
+      .fill mapped($0B0000) + $8000 - *, $FF
+
+    endFreespace
 
   .endlogical
 
@@ -289,6 +546,28 @@
       .dsection Chapter8xEventsSection
 
     endEvents
+
+  .endlogical
+
+  * := $0BFB88
+  .logical mapped($0BFB88)
+
+    startFreespace
+
+      .fill mapped($0B8000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $0C6C60
+  .logical mapped($0C6C60)
+
+    startFreespace
+
+      .fill mapped($0C0000) + $8000 - *, $FF
+
+    endFreespace
 
   .endlogical
 
@@ -316,6 +595,83 @@
       .dsection ChapterTitleSection
 
     endText
+
+  .endlogical
+
+  * := $0D7E28
+  .logical mapped($0D7E28)
+
+    startFreespace
+
+      .fill mapped($0D0000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $0DFE95
+  .logical mapped($0DFE95)
+
+    startFreespace
+
+      .fill mapped($0D8000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $0E7F71
+  .logical mapped($0E7F71)
+
+    startFreespace
+
+      .fill mapped($0E0000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $0EFEF0
+  .logical mapped($0EFEF0)
+
+    startFreespace
+
+      .fill mapped($0E8000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $0F0786
+  .logical mapped($0F0786)
+
+    startFreespace
+
+      .fill mapped($0F1000) - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $0F73B2
+  .logical mapped($0F73B2)
+
+    startFreespace
+
+      .fill mapped($0F0000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
+  * := $0FF4C4
+  .logical mapped($0FF4C4)
+
+    startFreespace
+
+      .fill mapped($0F8000) + $8000 - *, $FF
+
+    endFreespace
 
   .endlogical
 
@@ -386,8 +742,9 @@
   GraphicsSize := GraphicsEnds - GraphicsStarts + ...
   EventsSize := EventsEnds - EventsStarts + ...
   TextSize := TextEnds - TextStarts + ...
+  FreespaceSize := FreespaceEnds - FreespaceStarts + ...
 
-  DisassemblySize := DataSize + CodeSize + GraphicsSize + EventsSize + TextSize
+  DisassemblySize := DataSize + CodeSize + GraphicsSize + EventsSize + TextSize + FreespaceSize
 
   .warn "Total Disassembled: ", SizeFormatter(DisassemblySize)
   .warn "Data: ", SizeFormatter(DataSize)
@@ -395,3 +752,4 @@
   .warn "Graphics: ", SizeFormatter(GraphicsSize)
   .warn "Events: ", SizeFormatter(EventsSize)
   .warn "Text: ", SizeFormatter(TextSize)
+  .warn "Freespace: ", SizeFormatter(FreespaceSize)
