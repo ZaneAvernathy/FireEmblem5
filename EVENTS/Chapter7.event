@@ -455,19 +455,13 @@ GUARD_FE5_CHAPTER7 :?= false
 
         .for _List in [_EisenhoweGroup1List, _EisenhoweGroup2List]
 
-          .for _Tup in _List
+          .for _Character, _PropertiesSetting, _AISetting in _List
 
-            _Character      := _Tup[0]
-            _UnknownSetting := _Tup[1]
-
-            macroASMCSetCharacterDataByte _Character, Unknown3F, pack(_UnknownSetting)
+            macroASMCSetCharacterDataByte _Character, AIProperties, pack(_PropertiesSetting)
 
           .endfor
 
-          .for _Tup in _List
-
-            _Character := _Tup[0]
-            _AISetting := _Tup[2]
+          .for _Character, _PropertiesSetting, _AISetting in _List
 
             macroSetCharacterAI _Character, _AISetting
 

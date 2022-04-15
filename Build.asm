@@ -33,6 +33,7 @@
   .include "SRC/ItemData.asm"
   .include "SRC/DeploymentSlots.asm"
   .include "SRC/ClassData.asm"
+  .include "SRC/AI.asm"
 
   .include "SRC/ChapterTitles.asm"
   .include "SRC/WMMarkers.asm"
@@ -439,6 +440,115 @@
 
   .endlogical
 
+  * := $068000
+  .logical mapped($068000)
+
+    startCode
+
+      .dsection AIMainSection
+      .dsection AIRecoveryThresholdSection
+      .dsection AIReadScriptOpcodeSection
+      .dsection AICopyMapsSection
+      .dsection AIStaffEffectSection
+      .dsection AILootTileEffectSection
+      .dsection AIRequestHealingInRecoveryModeSection
+      .dsection AITryUseHealingItemSection
+      .dsection AIUnknown8D869ASection
+      .dsection AIRecoveryModeSection
+
+    endCode
+
+  .endlogical
+
+  * := $069A4F
+  .logical mapped($069A4F)
+
+    startCode
+
+      .dsection AITryCantoSection
+      .dsection AIGetRandomTileInRangeSection
+      .dsection AIMovementStarSection
+      .dsection AIUnknownGetLowThreatTileInRangeSection
+      .dsection AIApproachTileSection
+      .dsection AIGetSafestTileNearTargetSection
+
+    endCode
+
+  .endlogical
+
+  * := $06B88C
+  .logical mapped($06B88C)
+
+    startCode
+
+      .dsection AICheckIfUnitCanOpenChestsSection
+
+    endCode
+
+  .endlogical
+
+  * := $06BABC
+  .logical mapped($06BABC)
+
+    startCode
+
+      .dsection AICheckIfTileIsLessThreatenedSection
+
+    endCode
+
+  .endlogical
+
+  * := $06D8A4
+  .logical mapped($06D8A4)
+
+    startCode
+
+      .dsection AIItemUseSection
+
+    endCode
+
+  .endlogical
+
+  * := $06DCC6
+  .logical mapped($06DCC6)
+
+    startCode
+
+      .dsection AICountTargetsInRangeSection
+      .dsection AICheckIfUnitInAreaSection
+      .dsection AICheckIfFlagSetSection
+      .dsection AIGetCurrentTurnSection
+      .dsection AIPatrolSection
+      .dsection AIUpdateGroupAISection
+      .dsection AIMoveToCoordinatesByChapterSection
+      .dsection AIMoveToIsolatedTargetSection
+      .dsection AIDanceSection
+      .dsection AIGetEffectiveThreatenedTilesSection
+      .dsection AIOverwriteStationaryFlagSection
+      .dsection AISetUpperActionCapabilityBitfield
+      .dsection AICountCharacterInMovementRangeSection
+      .dsection AISetAIForUnitInCurrentPhaseSection
+      .dsection AICountWeaponsInInventorySection
+      .dsection AIGetAICounterSection
+      .dsection AIForceHealSection
+      .dsection AIIsCharacterInIgnoreTableSection
+      .dsection AISetAllegianceToNPCSection
+      .dsection AIUnknownSetAISection
+      .dsection AICheckIfTerrainAtCoordinatesSection
+      .dsection AITryOpenClosestDoorSection
+      .dsection AIUnknown8DE468Section
+      .dsection AISetBusyStatusSection
+
+    endCode
+
+    startFreespace
+
+      .fill mapped($068000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
   * := $076FDE
   .logical mapped($076FDE)
 
@@ -447,6 +557,41 @@
       .fill mapped($070000) + $8000 - *, $FF
 
     endFreespace
+
+  .endlogical
+
+  * := $078000
+  .logical mapped($078000)
+
+    startData
+
+      .dsection ActionAIScriptSection
+      .dsection MovementAIScriptSection
+      .dsection AIRecoveryThresholdTableSection
+
+    endData
+
+  .endlogical
+
+  * := $0788F2
+  .logical mapped($0788F2)
+
+    startData
+
+      .dsection AIChapterCoordinatesSection
+
+    endData
+
+  .endlogical
+
+  * := $078B6B
+  .logical mapped($078B6B)
+
+    startData
+
+      .dsection AIIgnoreTableSection
+
+    endData
 
   .endlogical
 

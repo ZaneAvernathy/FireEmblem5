@@ -1,0 +1,22 @@
+.addr 0,Pointer
+Heal,rsAIHealingStaffEffect
+Mend,rsAIHealingStaffEffect
+Recover,rsAIHealingStaffEffect
+Physic,rsAIHealingStaffEffect
+Fortify,rsAIFortifyStaffEffect
+Rescue,rsAIStatusStaffEffect
+Warp,rsAIWarpStaffEffect
+Restore,rsAIStatusStaffEffect
+SilenceStaff,rsAIStatusStaffEffect
+Sleep,rsAIStatusStaffEffect
+TorchStaff,rsAIDummyStaffEffect
+ReturnStaff,rsAIStatusStaffEffect
+Hammerne,rsAIItemStaffEffect
+ThiefStaff,rsAIItemStaffEffect
+Watch,rsAIDummyStaffEffect
+Berserk,rsAIStatusStaffEffect
+Unlock,rsAIUnlockStaffEffect
+Ward,rsAIStatusStaffEffect
+Rewarp,rsAIRewarpStaffEffect
+Kia,rsAIDummyStaffEffect
+DrainedStaff,rsAIDummyStaffEffect

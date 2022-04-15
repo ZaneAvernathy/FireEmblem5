@@ -192,7 +192,7 @@ GUARD_FE5_CHAPTER4x :?= false
 
         _CedAISwitch ; FD/883D
           macroSetCharacterAI CedChp4x, [$02, $00, $0B, $00]
-          macroASMCUnsetBitsCharacterDataWord CedChp4x, Unknown3F, $0080
+          macroASMCUnsetBitsCharacterDataWord CedChp4x, AIProperties, $0080
         END2
 
         _Door1 ; FD/88B6
@@ -214,10 +214,7 @@ GUARD_FE5_CHAPTER4x :?= false
             _AIChangeList ..= [(MansterSoldier2, [$00, $00, $00, $00])]
             _AIChangeList ..= [(MansterMage2, [$00, $00, $00, $00])]
 
-            .for _Tup in _AIChangeList
-
-              _Character := _Tup[0]
-              _AISetting := _Tup[1]
+            .for _Character, _AISetting in _AIChangeList
 
               macroSetCharacterAI _Character, _AISetting
 
@@ -237,10 +234,7 @@ GUARD_FE5_CHAPTER4x :?= false
             _AIChangeList ..= [(MansterSoldier2, [$00, $00, $00, $00])]
             _AIChangeList ..= [(MansterMage2, [$00, $00, $00, $00])]
 
-            .for _Tup in _AIChangeList
-
-              _Character := _Tup[0]
-              _AISetting := _Tup[1]
+            .for _Character, _AISetting in _AIChangeList
 
               macroSetCharacterAI _Character, _AISetting
 

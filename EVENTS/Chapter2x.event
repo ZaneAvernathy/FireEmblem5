@@ -140,10 +140,7 @@ GUARD_FE5_CHAPTER2x :?= false
         END2
 
         _ShivaAIChange ; 97/81A5
-          macroASMCSetCharacterDataByte Shiva, AI1, $00
-          macroASMCSetCharacterDataByte Shiva, AI4, $00
-          macroASMCSetCharacterDataByte Shiva, AI2, $00
-          macroASMCSetCharacterDataByte Shiva, Unknown3E, $00
+          macroSetCharacterAI Shiva, [$00, $00, $00, $00]
         END2
 
         _PrepGroups ; 97/8206

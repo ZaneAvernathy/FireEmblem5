@@ -160,9 +160,7 @@ GUARD_FE5_CHAPTER6 :?= false
         _TrumanGroupAIList ..= [(MansterArmoredSword, [$00, $00, $00, $00])]
         _TrumanGroupAIList ..= [(MansterThunderMage, [$00, $00, $00, $00])]
 
-        .for _Tup in _TrumanGroupAIList
-          _Character := _Tup[0]
-          _AISetting := _Tup[1]
+        .for _Character, _AISetting in _TrumanGroupAIList
 
           macroSetCharacterAI _Character, _AISetting
 
@@ -450,12 +448,10 @@ GUARD_FE5_CHAPTER6 :?= false
         _CedGroupAIList ..= [(MagiSquadFighter, [$0B, $00])]
         _CedGroupAIList ..= [(MagiSquadArcher, [$0B, $00])]
 
-        .for _Tup in _CedGroupAIList
-          _Character := _Tup[0]
-          _AISetting := _Tup[1]
+        .for _Character, _AISetting in _CedGroupAIList
 
-          macroASMCSetCharacterDataByte _Character, AI2, _AISetting[0]
-          macroASMCSetCharacterDataByte _Character, Unknown3E, _AISetting[1]
+          macroASMCSetCharacterDataByte _Character, MovementAI, _AISetting[0]
+          macroASMCSetCharacterDataByte _Character, MovementAIOffset, _AISetting[1]
 
         .endfor
       END2

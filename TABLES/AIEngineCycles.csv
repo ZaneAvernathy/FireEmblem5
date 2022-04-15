@@ -1,0 +1,7 @@
+.addr 1,RoutinePointer
+AIMainCycle,rlAIEngineMainCycle
+AIItemCycle,rlAIEngineNoncombatCycle
+AIActionCycle,rlAIEngineActionCycle
+AIMovementCycle,rlAIEngineMovementCycle
+AINextCycle,rlAIEngineNextCycle
+AICantoCycle,rlAIEngineCantoCycle
