@@ -6554,10 +6554,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
         ; distances to allow for a list of arbitrary
         ; size.
 
-        .for _Tier in _Tiers
-
-          _Threshold := _Tier[0]
-          _Tier      := _Tier[1]
+        .for _Threshold, _Tier in _Tiers
 
           cmp #_Threshold
           blt _TierReturns + (size(_TierSetting) * _Tier)
