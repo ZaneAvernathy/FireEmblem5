@@ -7,8 +7,6 @@ GUARD_FE5_BREAK :?= false
 .if (!GUARD_FE5_BREAK)
   GUARD_FE5_BREAK := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Freespace inclusions
 
     .section BreakpointHandlerSection

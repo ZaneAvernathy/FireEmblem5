@@ -7,8 +7,6 @@ GUARD_FE5_WM_MARKERS :?= false
 .if (!GUARD_FE5_WM_MARKERS)
   GUARD_FE5_WM_MARKERS := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak

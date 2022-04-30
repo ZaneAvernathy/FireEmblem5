@@ -7,8 +7,6 @@ GUARD_FE5_VBLANK :?= false
 .if (!GUARD_FE5_VBLANK)
   GUARD_FE5_VBLANK := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak

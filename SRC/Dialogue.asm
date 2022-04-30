@@ -7,8 +7,6 @@ GUARD_FE5_DIALOGUE :?= false
 .if (!GUARD_FE5_DIALOGUE)
   GUARD_FE5_DIALOGUE := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak

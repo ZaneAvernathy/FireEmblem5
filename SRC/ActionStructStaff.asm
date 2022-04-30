@@ -7,8 +7,6 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
 .if (!GUARD_FE5_ACTIONSTRUCT_STAFF)
   GUARD_FE5_ACTIONSTRUCT_STAFF := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak

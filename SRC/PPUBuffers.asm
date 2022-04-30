@@ -7,8 +7,6 @@ GUARD_FE5_PPU_BUFFERS :?= false
 .if (!GUARD_FE5_PPU_BUFFERS)
   GUARD_FE5_PPU_BUFFERS := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Freespace inclusions
 
     .section DMAPaletteAndOAMBufferSection

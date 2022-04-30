@@ -1,11 +1,9 @@
 
 .cpu "65816"
 
-; Temporarily use vanilla definitions
+; TODO: incorporate better size helpers
+; TODO: incorporate functions
 
-  USE_FE5_DEFINITIONS := true
-
-.include "../VoltEdge/VoltEdge.h"
 .include "DisassemblyHelpers.h"
 
 ; Until everything is disassembled,

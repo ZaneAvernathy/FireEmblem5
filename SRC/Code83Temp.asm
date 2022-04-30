@@ -7,8 +7,6 @@ GUARD_FE5_CODE83TEMP :?= false
 .if (!GUARD_FE5_CODE83TEMP)
   GUARD_FE5_CODE83TEMP := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak

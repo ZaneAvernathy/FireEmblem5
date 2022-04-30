@@ -7,8 +7,6 @@ GUARD_FE5_CLASS_DATA :?= false
 .if (!GUARD_FE5_CLASS_DATA)
   GUARD_FE5_CLASS_DATA := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak

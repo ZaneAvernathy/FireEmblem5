@@ -7,8 +7,6 @@ GUARD_FE5_DMA :?= false
 .if (!GUARD_FE5_DMA)
   GUARD_FE5_DMA := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Freespace inclusions
 
     .section UnknownDMASection

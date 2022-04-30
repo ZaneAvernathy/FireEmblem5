@@ -4,6 +4,8 @@
 *.bst
 *.srm
 
+BIN/*.*
+
 /*.png
 /*.spc
 /*.bin
@@ -18,3 +20,6 @@ TOOLS/**
 *.sublime*
 
 *.dialogue.txt
+
+Errors.txt
+Log.txt

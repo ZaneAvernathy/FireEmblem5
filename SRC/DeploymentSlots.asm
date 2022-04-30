@@ -7,8 +7,6 @@ GUARD_FE5_DEPLOYMENT_SLOTS :?= false
 .if (!GUARD_FE5_DEPLOYMENT_SLOTS)
   GUARD_FE5_DEPLOYMENT_SLOTS := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak

@@ -7,8 +7,6 @@ GUARD_FE5_RESET :?= false
 .if (!GUARD_FE5_RESET)
   GUARD_FE5_RESET := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak
@@ -22,7 +20,7 @@ GUARD_FE5_RESET :?= false
       rlAntipiracyScreen     :?= address($8AAFCA)
       rlIrregularityCheck    :?= address($8AB000)
 
-      .enc "None"
+      .enc "none"
         EngineName :?= "ELM0"
 
     .endweak
@@ -264,7 +262,7 @@ GUARD_FE5_RESET :?= false
         ; written, skip checking for
         ; irregularities.
 
-        .enc "None"
+        .enc "none"
 
         lda aEngineName,b
         cmp #EngineName[0:2]

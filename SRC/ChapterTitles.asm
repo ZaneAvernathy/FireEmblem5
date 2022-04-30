@@ -7,8 +7,6 @@ GUARD_FE5_CHAPTERTITLES :?= false
 .if (!GUARD_FE5_CHAPTERTITLES)
   GUARD_FE5_CHAPTERTITLES := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Freespace inclusions
 
     .section ChapterTitleSection

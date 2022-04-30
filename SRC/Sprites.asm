@@ -7,8 +7,6 @@ GUARD_FE5_SPRITES :?= false
 .if (!GUARD_FE5_SPRITES)
   GUARD_FE5_SPRITES := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Freespace inclusions
 
     .section HideSpritesSection

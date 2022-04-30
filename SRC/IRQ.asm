@@ -7,8 +7,6 @@ GUARD_FE5_IRQ :?= false
 .if (!GUARD_FE5_IRQ)
   GUARD_FE5_IRQ := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Freespace inclusions
 
     .section IRQHandlerSection

@@ -7,8 +7,6 @@ GUARD_FE5_VECTORS :?= false
 .if (!GUARD_FE5_VECTORS)
   GUARD_FE5_VECTORS := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak

@@ -7,8 +7,6 @@ GUARD_FE5_JOYPAD :?= false
 .if (!GUARD_FE5_JOYPAD)
   GUARD_FE5_JOYPAD := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Freespace inclusions
 
   .section GetJoypadInputSection
