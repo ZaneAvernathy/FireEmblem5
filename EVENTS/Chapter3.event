@@ -7,39 +7,11 @@ GUARD_FE5_CHAPTER3 :?= false
 .if (!GUARD_FE5_CHAPTER3)
   GUARD_FE5_CHAPTER3 := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak
 
-      rlEventEngineCancelFading           :?= address($8C8461)
-
-      dialogueChapter3WorldMap1           :?= address($82CB22)
-      dialogueChapter3WorldMap2           :?= address($82CB5F)
-
-      dialogueChapter3Opening1            :?= address($938000)
-      dialogueChapter3Opening2            :?= address($938211)
-      dialogueChapter3RomeoHouseRomeo     :?= address($938506)
-      dialogueChapter3RomeoHouseOther     :?= address($93856E)
-      dialogueChapter3LuciaHouseLucia     :?= address($93859F)
-      dialogueChapter3LuciaHouseOther     :?= address($938663)
-      dialogueChapter3HubertHouseHubert   :?= address($938698)
-      dialogueChapter3HubertHouseOther    :?= address($938757)
-      dialogueChapter3CairpreHouseCairpre :?= address($938799)
-      dialogueChapter3CairpreHouseOther   :?= address($938853)
-      dialogueChapter3Ending1             :?= address($938919)
-      dialogueChapter3Ending2             :?= address($938A66)
-      dialogueChapter3UnusedEndingFinn    :?= address($938ACD)
-      dialogueChapter3Ending3             :?= address($938AEC)
-      dialogueChapter3Ending5             :?= address($938B3D)
-      dialogueChapter3Ending4             :?= address($938B52)
-      dialogueChapter3Ending6             :?= address($938B90)
-      dialogueChapter3Ending7             :?= address($938BB3)
-
-      eventMapDeathQuoteDummyEvent        :?= address($99812F)
-
-      dialogueChapter3Title               :?= address($9AB848)
+      rlEventEngineCancelFading :?= address($8C8461)
 
     .endweak
 
@@ -388,7 +360,7 @@ GUARD_FE5_CHAPTER3 :?= false
         _OpeningEvent ; 8C/EAC4
           CALL_ASM_SKIPPABLE rlEventEngineCancelFading
 
-          STORE_BYTE bBufferINIDISP, INIDISP_Setting(False, 0)
+          STORE_BYTE bBufferINIDISP, INIDISP_Setting(false, 0)
 
           SET_CAMERA_POSITION [13, 8]
           YIELD
@@ -415,7 +387,7 @@ GUARD_FE5_CHAPTER3 :?= false
 
           FADE_IN 2
 
-          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
           PLAY_SOUND_WORD $00E0
           PAUSE_SKIPPABLE 32
@@ -429,7 +401,7 @@ GUARD_FE5_CHAPTER3 :?= false
           SCROLL_CAMERA_COORDS [8, 7], 4
           YIELD
 
-          MOVE_CHAR Raydrik, [12, 12], 1, None
+          MOVE_CHAR Raydrik, [12, 12], 1
 
           WAIT_MOVE
           YIELD
@@ -440,7 +412,7 @@ GUARD_FE5_CHAPTER3 :?= false
 
           MOVE_CHAR Raydrik, [11, 11], 1, _RaydrikMovestring1
 
-          MOVE_CHAR Lobos, [13, 5], 1, None
+          MOVE_CHAR Lobos, [13, 5], 1
 
           PAUSE_SKIPPABLE 64
           YIELD
@@ -451,7 +423,7 @@ GUARD_FE5_CHAPTER3 :?= false
           WAIT_MOVE
           YIELD
 
-          MOVE_CHAR Lobos, [12, 5], 1, None
+          MOVE_CHAR Lobos, [12, 5], 1
 
           WAIT_MOVE
           YIELD
@@ -466,7 +438,7 @@ GUARD_FE5_CHAPTER3 :?= false
 
           macroASMCRemoveUnit Raydrik
 
-          MOVE_CHAR Lobos, [12, 4], 1, None
+          MOVE_CHAR Lobos, [12, 4], 1
 
           WAIT_MOVE
           YIELD
@@ -518,7 +490,7 @@ GUARD_FE5_CHAPTER3 :?= false
           DIALOGUE dialogueChapter3Opening2
           YIELD
 
-          MOVE_UNIT ThracianBishop, [11, 28], [1, 27], 1, None
+          MOVE_UNIT ThracianBishop, [11, 28], [1, 27], 1
           YIELD_UNK
 
           WAIT_MOVE
@@ -583,7 +555,7 @@ GUARD_FE5_CHAPTER3 :?= false
           CALL_ASM_LOOP rlASMCDialogueWithBGEnd
           YIELD
 
-          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
           PLAY_SOUND_WORD $00E0
           PAUSE_SKIPPABLE 32
@@ -617,7 +589,7 @@ GUARD_FE5_CHAPTER3 :?= false
           FADE_OUT 1
           YIELD
 
-          STORE_BYTE bBufferINIDISP, INIDISP_Setting(False, 0)
+          STORE_BYTE bBufferINIDISP, INIDISP_Setting(false, 0)
 
           macroASMCUnsetUnitState Eyvel, UnitStateCaptured
 
@@ -654,115 +626,115 @@ GUARD_FE5_CHAPTER3 :?= false
           .byte [11, 11]
 
         _BossesGroup ; B1/F31A
-          UNIT Lobos, Enemy, [12, 4], [12, 4], Lobos, [Longbow, ShortLance], 1, True, [$01, $03, $00, $80]
-          UNIT Raydrik, Enemy, [14, 19], [14, 19], Raydrik, [], 1, False, [$00, $00, $00, $00]
+          UNIT Lobos, Enemy, [12, 4], [12, 4], Lobos, [Longbow, ShortLance], 1, true, [$01, $03, $00, $80]
+          UNIT Raydrik, Enemy, [14, 19], [14, 19], Raydrik, [], 1, false, [$00, $00, $00, $00]
         UNIT
 
         _EnemyGroup1CameraCoordinates ; B1/F344
           .byte [13, 8]
 
         _EnemyGroup1 ; B1/F346
-          UNIT MansterArmoredSword, Enemy, [7, 6], [7, 6], Lobos, [Shortsword, Vulnerary], 8, False, [$19, $03, $00, $00]
-          UNIT MansterArmoredSword, Enemy, [15, 10], [15, 10], Lobos, [Shortsword, DoorKey, Vulnerary], 8, False, [$19, $03, $00, $00]
-          UNIT MansterSoldier2, Enemy, [9, 5], [9, 5], Lobos, [ShortLance], 12, False, [$19, $03, $00, $00]
-          UNIT MansterSoldier2, Enemy, [9, 10], [9, 10], Lobos, [ShortLance], 9, False, [$19, $29, $00, $00]
-          UNIT MansterSoldier2, Enemy, [18, 7], [18, 7], Lobos, [ShortLance], 10, False, [$19, $29, $00, $00]
-          UNIT MansterSoldier2, Enemy, [3, 5], [3, 5], Lobos, [ShortLance], 8, False, [$19, $29, $00, $00]
-          UNIT MansterBishop2, Enemy, [15, 3], [15, 3], Lobos, [Elfire, Heal, DoorKey, ChestKey], 10, False, [$08, $03, $00, $00]
+          UNIT MansterArmoredSword, Enemy, [7, 6], [7, 6], Lobos, [Shortsword, Vulnerary], 8, false, [$19, $03, $00, $00]
+          UNIT MansterArmoredSword, Enemy, [15, 10], [15, 10], Lobos, [Shortsword, DoorKey, Vulnerary], 8, false, [$19, $03, $00, $00]
+          UNIT MansterSoldier2, Enemy, [9, 5], [9, 5], Lobos, [ShortLance], 12, false, [$19, $03, $00, $00]
+          UNIT MansterSoldier2, Enemy, [9, 10], [9, 10], Lobos, [ShortLance], 9, false, [$19, $29, $00, $00]
+          UNIT MansterSoldier2, Enemy, [18, 7], [18, 7], Lobos, [ShortLance], 10, false, [$19, $29, $00, $00]
+          UNIT MansterSoldier2, Enemy, [3, 5], [3, 5], Lobos, [ShortLance], 8, false, [$19, $29, $00, $00]
+          UNIT MansterBishop2, Enemy, [15, 3], [15, 3], Lobos, [Elfire, Heal, DoorKey, ChestKey], 10, false, [$08, $03, $00, $00]
         UNIT
 
         _EnemyGroup2CameraCoordinates ; B1/F3D4
           .byte [17, 14]
 
         _EnemyGroup2 ; B1/F3D6
-          UNIT MansterArmoredBow, Enemy, [18, 13], [18, 13], Lobos, [Shortbow, Vulnerary], 7, False, [$19, $03, $00, $00]
-          UNIT MansterSoldier2, Enemy, [23, 15], [23, 15], Lobos, [ShortLance, Vulnerary], 13, False, [$19, $29, $00, $00]
-          UNIT MansterSoldier2, Enemy, [21, 12], [21, 12], Lobos, [ShortLance], 13, False, [$19, $29, $00, $00]
+          UNIT MansterArmoredBow, Enemy, [18, 13], [18, 13], Lobos, [Shortbow, Vulnerary], 7, false, [$19, $03, $00, $00]
+          UNIT MansterSoldier2, Enemy, [23, 15], [23, 15], Lobos, [ShortLance, Vulnerary], 13, false, [$19, $29, $00, $00]
+          UNIT MansterSoldier2, Enemy, [21, 12], [21, 12], Lobos, [ShortLance], 13, false, [$19, $29, $00, $00]
         UNIT
 
         _EnemyGroup3CameraCoordinates ; B1/F414
           .byte [8, 10]
 
         _EnemyGroup3 ; B1/F416
-          UNIT MansterThunderMage, Enemy, [1, 11], [1, 11], Lobos, [Fire], 6, False, [$19, $29, $00, $00]
-          UNIT MansterSoldier2, Enemy, [4, 11], [4, 11], Lobos, [ShortLance], 11, False, [$19, $29, $00, $00]
+          UNIT MansterThunderMage, Enemy, [1, 11], [1, 11], Lobos, [Fire], 6, false, [$19, $29, $00, $00]
+          UNIT MansterSoldier2, Enemy, [4, 11], [4, 11], Lobos, [ShortLance], 11, false, [$19, $29, $00, $00]
         UNIT
 
         _EnemyGroup4CameraCoordinates ; B1/F440
           .byte [13, 16]
 
         _EnemyGroup4 ; B1/F442
-          UNIT MansterSoldier2, Enemy, [12, 15], [12, 15], Lobos, [ShortLance, DoorKey], 10, False, [$19, $03, $00, $00]
-          UNIT MansterArcher, Enemy, [13, 14], [13, 14], Lobos, [Shortbow], 10, False, [$19, $03, $00, $00]
-          UNIT MansterArcher, Enemy, [10, 13], [11, 14], Lobos, [Shortbow], 10, False, [$19, $03, $00, $00]
+          UNIT MansterSoldier2, Enemy, [12, 15], [12, 15], Lobos, [ShortLance, DoorKey], 10, false, [$19, $03, $00, $00]
+          UNIT MansterArcher, Enemy, [13, 14], [13, 14], Lobos, [Shortbow], 10, false, [$19, $03, $00, $00]
+          UNIT MansterArcher, Enemy, [10, 13], [11, 14], Lobos, [Shortbow], 10, false, [$19, $03, $00, $00]
         UNIT
 
         _EnemyGroup5CameraCoordinates ; B1/F480
           .byte [8, 23]
 
         _EnemyGroup5 ; B1/F482
-          UNIT MansterArcher, Enemy, [6, 23], [6, 23], Lobos, [Shortbow], 10, False, [$19, $29, $00, $00]
-          UNIT MansterSoldier2, Enemy, [4, 23], [4, 23], Lobos, [ShortLance, Vulnerary], 11, False, [$19, $29, $00, $00]
-          UNIT MansterSoldier2, Enemy, [5, 29], [5, 25], Lobos, [ShortLance], 12, False, [$19, $29, $00, $00]
+          UNIT MansterArcher, Enemy, [6, 23], [6, 23], Lobos, [Shortbow], 10, false, [$19, $29, $00, $00]
+          UNIT MansterSoldier2, Enemy, [4, 23], [4, 23], Lobos, [ShortLance, Vulnerary], 11, false, [$19, $29, $00, $00]
+          UNIT MansterSoldier2, Enemy, [5, 29], [5, 25], Lobos, [ShortLance], 12, false, [$19, $29, $00, $00]
         UNIT
 
         _SoldierReinforcementsCameraCoordinates ; B1/F4C0
           .byte [8, 8]
 
         _SoldierReinforcementsGroup ; B1/F4C2
-          UNIT MansterSoldier2, Enemy, [8, 1], [8, 1], Lobos, [ShortLance], 7, False, [$00, $00, $00, $00]
+          UNIT MansterSoldier2, Enemy, [8, 1], [8, 1], Lobos, [ShortLance], 7, false, [$00, $00, $00, $00]
         UNIT
 
         _ArmorReinforcementsCameraCoordinates ; B1/F4D8
           .byte [17, 8]
 
         _ArmorReinforcementsGroup ; B1/F4DA
-          UNIT MansterArmoredSword, Enemy, [16, 1], [16, 1], Lobos, [Shortsword], 8, False, [$00, $00, $00, $00]
+          UNIT MansterArmoredSword, Enemy, [16, 1], [16, 1], Lobos, [Shortsword], 8, false, [$00, $00, $00, $00]
         UNIT
 
         _Brigand1ReinforcementsCameraCoordinates ; B1/F4F0
           .byte [8, 21]
 
         _Brigand1ReinforcementsGroup1 ; B1/F4F2
-          UNIT BanditBrigand1, Enemy, [0, 21], [1, 21], Raydrik, [IronAxe], 5, False, [$19, $09, $00, $00]
+          UNIT BanditBrigand1, Enemy, [0, 21], [1, 21], Raydrik, [IronAxe], 5, false, [$19, $09, $00, $00]
         UNIT
 
         _Brigand2ReinforcementsCameraCoordinates ; B1/F508
           .byte [8, 21]
 
         _Brigand2ReinforcementsGroup1 ; B1/F50A
-          UNIT BanditBrigand1, Enemy, [0, 21], [1, 21], Raydrik, [IronAxe], 5, False, [$02, $09, $00, $00]
+          UNIT BanditBrigand1, Enemy, [0, 21], [1, 21], Raydrik, [IronAxe], 5, false, [$02, $09, $00, $00]
         UNIT
 
         _UnusedCoordinates2 ; B1/F520
           .byte [13, 8]
 
         _NPCGroup ; B1/F522
-          UNIT Romeo, NPC, [12, 8], [12, 8], Raydrik, [], 1, False, [$02, $03, $00, $00]
-          UNIT Lucia, NPC, [14, 8], [14, 8], Raydrik, [], 1, False, [$02, $03, $00, $00]
-          UNIT Cairpre, NPC, [13, 7], [13, 7], Raydrik, [], 1, False, [$02, $03, $00, $00]
-          UNIT Hubert, NPC, [11, 7], [11, 7], Raydrik, [], 1, False, [$02, $03, $00, $00]
+          UNIT Romeo, NPC, [12, 8], [12, 8], Raydrik, [], 1, false, [$02, $03, $00, $00]
+          UNIT Lucia, NPC, [14, 8], [14, 8], Raydrik, [], 1, false, [$02, $03, $00, $00]
+          UNIT Cairpre, NPC, [13, 7], [13, 7], Raydrik, [], 1, false, [$02, $03, $00, $00]
+          UNIT Hubert, NPC, [11, 7], [11, 7], Raydrik, [], 1, false, [$02, $03, $00, $00]
         UNIT
 
         _UnusedCoordinates3 ; B1/F574
           .byte [13, 8]
 
         _BishopGroup ; B1/F576
-          UNIT ThracianBishop, Player, [11, 28], [11, 28], Leif, [], 1, False, [$00, $00, $00, $00]
+          UNIT ThracianBishop, Player, [11, 28], [11, 28], Leif, [], 1, false, [$00, $00, $00, $00]
         UNIT
 
         _UnusedCoordinates4 ; B1/F58C
           .byte [8, 7]
 
         _Brigand2ReinforcementsGroup2 ; B1/F58E
-          UNIT BanditBrigand1, Enemy, [0, 22], [1, 22], Raydrik, [IronAxe], 5, False, [$02, $09, $00, $00]
+          UNIT BanditBrigand1, Enemy, [0, 22], [1, 22], Raydrik, [IronAxe], 5, false, [$02, $09, $00, $00]
         UNIT
 
         _UnusedCoordinates5 ; B1/F5A4
           .byte [8, 26]
 
         _Brigand1ReinforcementsGroup2 ; B1/F5A6
-          UNIT BanditBrigand1, Enemy, [0, 22], [1, 22], Raydrik, [IronAxe], 5, False, [$02, $09, $00, $00]
+          UNIT BanditBrigand1, Enemy, [0, 22], [1, 22], Raydrik, [IronAxe], 5, false, [$02, $09, $00, $00]
         UNIT
 
         _StartingPositions ; B1/F5BC
@@ -846,5 +818,40 @@ GUARD_FE5_CHAPTER3 :?= false
       END1
 
     .endsection Chapter3WorldMapEventsSection
+
+    .section Chapter3DialogueSection
+
+      dialogueChapter3Opening1 .include "../TEXT/DIALOGUE/CHAPTER3/Opening1.dialogue.txt" ; 93/8000
+      dialogueChapter3Opening2 .include "../TEXT/DIALOGUE/CHAPTER3/Opening2.dialogue.txt" ; 93/8211
+      dialogueChapter3RomeoHouseRomeo .include "../TEXT/DIALOGUE/CHAPTER3/RomeoHouseRomeo.dialogue.txt" ; 93/8506
+      dialogueChapter3RomeoHouseOther .include "../TEXT/DIALOGUE/CHAPTER3/RomeoHouseOther.dialogue.txt" ; 93/856E
+      dialogueChapter3LuciaHouseLucia .include "../TEXT/DIALOGUE/CHAPTER3/LuciaHouseLucia.dialogue.txt" ; 93/859F
+      dialogueChapter3LuciaHouseOther .include "../TEXT/DIALOGUE/CHAPTER3/LuciaHouseOther.dialogue.txt" ; 93/8663
+      dialogueChapter3HubertHouseHubert .include "../TEXT/DIALOGUE/CHAPTER3/HubertHouseHubert.dialogue.txt" ; 93/8698
+      dialogueChapter3HubertHouseOther .include "../TEXT/DIALOGUE/CHAPTER3/HubertHouseOther.dialogue.txt" ; 93/8757
+      dialogueChapter3CairpreHouseCairpre .include "../TEXT/DIALOGUE/CHAPTER3/CairpreHouseCairpre.dialogue.txt" ; 93/8799
+      dialogueChapter3CairpreHouseOther .include "../TEXT/DIALOGUE/CHAPTER3/CairpreHouseOther.dialogue.txt" ; 93/8853
+
+      dialogueLobosBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Lobos.dialogue.txt" ; 93/888B
+      dialogueLobosDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Lobos.dialogue.txt" ; 93/88C2
+      dialogueLobosReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Lobos.dialogue.txt" ; 93/88E6
+
+      dialogueChapter3Ending1 .include "../TEXT/DIALOGUE/CHAPTER3/Ending1.dialogue.txt" ; 93/8919
+      dialogueChapter3Ending2 .include "../TEXT/DIALOGUE/CHAPTER3/Ending2.dialogue.txt" ; 93/8A66
+      dialogueChapter3UnusedEndingFinn .include "../TEXT/DIALOGUE/CHAPTER3/UnusedEndingFinn.dialogue.txt" ; 93/8ACD
+      dialogueChapter3Ending3 .include "../TEXT/DIALOGUE/CHAPTER3/Ending3.dialogue.txt" ; 93/8AEC
+      dialogueChapter3Ending5 .include "../TEXT/DIALOGUE/CHAPTER3/Ending5.dialogue.txt" ; 93/8B3D
+      dialogueChapter3Ending4 .include "../TEXT/DIALOGUE/CHAPTER3/Ending4.dialogue.txt" ; 93/8B52
+      dialogueChapter3Ending6 .include "../TEXT/DIALOGUE/CHAPTER3/Ending6.dialogue.txt" ; 93/8B90
+      dialogueChapter3Ending7 .include "../TEXT/DIALOGUE/CHAPTER3/Ending7.dialogue.txt" ; 93/8B90
+
+    .endsection Chapter3DialogueSection
+
+    .section Chapter3WMDialogueSection
+
+      dialogueChapter3WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER3/WorldMap1.dialogue.txt" ; 82/CB22
+      dialogueChapter3WorldMap2 .include "../TEXT/DIALOGUE/CHAPTER3/WorldMap2.dialogue.txt" ; 82/CB5F
+
+    .endsection Chapter3WMDialogueSection
 
 .endif ; GUARD_FE5_CHAPTER3

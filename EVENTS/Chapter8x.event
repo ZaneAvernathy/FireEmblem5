@@ -7,8 +7,6 @@ GUARD_FE5_CHAPTER8x :?= false
 .if (!GUARD_FE5_CHAPTER8x)
   GUARD_FE5_CHAPTER8x := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak
@@ -176,7 +174,7 @@ GUARD_FE5_CHAPTER8x :?= false
 
         FADE_IN 2
 
-        HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+        HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
         PLAY_SOUND_WORD $00E0
         PAUSE_SKIPPABLE 32
@@ -192,7 +190,7 @@ GUARD_FE5_CHAPTER8x :?= false
         CALL_ASM_LOOP rlASMCDialogueWithBGEnd
         YIELD
 
-        HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+        HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
       END2
 
       _EndingEvent ; 97/8822
@@ -223,7 +221,7 @@ GUARD_FE5_CHAPTER8x :?= false
 
         CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
 
-        STORE_BYTE bBufferINIDISP, INIDISP_Setting(False, 0)
+        STORE_BYTE bBufferINIDISP, INIDISP_Setting(false, 0)
 
         PLAY_SOUND_WORD $00E7
 
@@ -242,45 +240,45 @@ GUARD_FE5_CHAPTER8x :?= false
         _PrepGroup ; B1/D851
           .byte [11, 8]
 
-          UNIT Gomer, Enemy, [10, 2], [10, 2], Gomer, [SteelAxe, SteelBow, Lockpick], 5, True, [$01, $03, $00, $80]
-          UNIT BanditHunter, Enemy, [4, 11], [4, 11], Gomer, [PoisonBow], 10, False, [$00, $00, $00, $00]
-          UNIT BanditHunter, Enemy, [6, 11], [6, 11], Gomer, [PoisonBow], 10, False, [$00, $00, $00, $00]
-          UNIT BanditHunter, Enemy, [14, 11], [14, 11], Gomer, [PoisonBow], 10, False, [$00, $00, $00, $00]
-          UNIT BanditHunter, Enemy, [16, 11], [16, 11], Gomer, [PoisonBow], 10, False, [$00, $00, $00, $00]
-          UNIT BanditBrigand1, Enemy, [9, 8], [9, 8], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
-          UNIT BanditBrigand1, Enemy, [11, 8], [11, 8], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
-          UNIT BanditBrigand1, Enemy, [9, 9], [9, 9], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
-          UNIT BanditBrigand1, Enemy, [11, 9], [11, 9], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
-          UNIT BanditBrigand1, Enemy, [9, 10], [9, 10], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
-          UNIT BanditBrigand1, Enemy, [11, 10], [11, 10], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
-          UNIT BanditBrigand1, Enemy, [10, 9], [10, 9], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
-          UNIT BanditBrigand1, Enemy, [10, 8], [10, 8], Gomer, [IronAxe], 12, False, [$00, $01, $00, $00]
-          UNIT BanditBrigand1, Enemy, [4, 8], [4, 8], Gomer, [HandAxe], 12, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [9, 3], [9, 3], Gomer, [SteelAxe], 15, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [16, 8], [16, 8], Gomer, [HandAxe], 12, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [10, 4], [10, 4], Gomer, [SteelAxe], 15, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [11, 3], [11, 3], Gomer, [SteelAxe], 15, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [7, 1], [7, 1], Gomer, [HandAxe], 10, False, [$00, $10, $00, $00]
-          UNIT BanditBrigand1, Enemy, [13, 1], [13, 1], Gomer, [HandAxe], 10, False, [$00, $10, $00, $00]
-          UNIT BanditBrigand1, Enemy, [12, 2], [12, 2], Gomer, [HandAxe], 10, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [8, 2], [8, 2], Gomer, [HandAxe], 10, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [4, 2], [4, 2], Gomer, [HandAxe], 10, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [3, 1], [3, 1], Gomer, [HandAxe], 10, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [5, 1], [5, 1], Gomer, [HandAxe], 10, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [1, 15], [1, 15], Gomer, [IronAxe, Antidote], 8, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [1, 10], [1, 10], Gomer, [SteelAxe], 8, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [4, 18], [4, 18], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
-          UNIT BanditHunter, Enemy, [1, 17], [1, 17], Gomer, [SteelBow], 10, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [19, 10], [19, 10], Gomer, [Hammer], 8, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [19, 15], [19, 15], Gomer, [SteelAxe], 10, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [16, 18], [16, 18], Gomer, [IronAxe], 8, False, [$00, $03, $00, $00]
-          UNIT BanditHunter, Enemy, [19, 17], [19, 17], Gomer, [SteelBow], 9, False, [$00, $03, $00, $00]
-          UNIT BanditHunter, Enemy, [8, 1], [8, 1], Gomer, [SteelBow], 9, False, [$00, $10, $00, $00]
-          UNIT BanditHunter, Enemy, [12, 1], [12, 1], Gomer, [SteelBow], 9, False, [$00, $10, $00, $00]
-          UNIT BanditHunter, Enemy, [3, 2], [3, 2], Gomer, [SteelBow], 9, False, [$00, $03, $00, $00]
-          UNIT BanditHunter, Enemy, [5, 2], [5, 2], Gomer, [SteelBow], 9, False, [$00, $03, $00, $00]
-          UNIT BanditHunter, Enemy, [4, 1], [4, 1], Gomer, [SteelBow], 9, False, [$00, $03, $00, $00]
-          UNIT ThiefEnemy1, Enemy, [12, 7], [12, 7], Gomer, [Lockpick, SlimSword], 5, False, [$10, $0B, $00, $00]
+          UNIT Gomer, Enemy, [10, 2], [10, 2], Gomer, [SteelAxe, SteelBow, Lockpick], 5, true, [$01, $03, $00, $80]
+          UNIT BanditHunter, Enemy, [4, 11], [4, 11], Gomer, [PoisonBow], 10, false, [$00, $00, $00, $00]
+          UNIT BanditHunter, Enemy, [6, 11], [6, 11], Gomer, [PoisonBow], 10, false, [$00, $00, $00, $00]
+          UNIT BanditHunter, Enemy, [14, 11], [14, 11], Gomer, [PoisonBow], 10, false, [$00, $00, $00, $00]
+          UNIT BanditHunter, Enemy, [16, 11], [16, 11], Gomer, [PoisonBow], 10, false, [$00, $00, $00, $00]
+          UNIT BanditBrigand1, Enemy, [9, 8], [9, 8], Gomer, [IronAxe], 12, false, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [11, 8], [11, 8], Gomer, [IronAxe], 12, false, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [9, 9], [9, 9], Gomer, [IronAxe], 12, false, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [11, 9], [11, 9], Gomer, [IronAxe], 12, false, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [9, 10], [9, 10], Gomer, [IronAxe], 12, false, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [11, 10], [11, 10], Gomer, [IronAxe], 12, false, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [10, 9], [10, 9], Gomer, [IronAxe], 12, false, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [10, 8], [10, 8], Gomer, [IronAxe], 12, false, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [4, 8], [4, 8], Gomer, [HandAxe], 12, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [9, 3], [9, 3], Gomer, [SteelAxe], 15, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [16, 8], [16, 8], Gomer, [HandAxe], 12, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [10, 4], [10, 4], Gomer, [SteelAxe], 15, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [11, 3], [11, 3], Gomer, [SteelAxe], 15, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [7, 1], [7, 1], Gomer, [HandAxe], 10, false, [$00, $10, $00, $00]
+          UNIT BanditBrigand1, Enemy, [13, 1], [13, 1], Gomer, [HandAxe], 10, false, [$00, $10, $00, $00]
+          UNIT BanditBrigand1, Enemy, [12, 2], [12, 2], Gomer, [HandAxe], 10, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [8, 2], [8, 2], Gomer, [HandAxe], 10, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [4, 2], [4, 2], Gomer, [HandAxe], 10, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [3, 1], [3, 1], Gomer, [HandAxe], 10, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [5, 1], [5, 1], Gomer, [HandAxe], 10, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [1, 15], [1, 15], Gomer, [IronAxe, Antidote], 8, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [1, 10], [1, 10], Gomer, [SteelAxe], 8, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [4, 18], [4, 18], Gomer, [IronAxe], 8, false, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [1, 17], [1, 17], Gomer, [SteelBow], 10, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [19, 10], [19, 10], Gomer, [Hammer], 8, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [19, 15], [19, 15], Gomer, [SteelAxe], 10, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [16, 18], [16, 18], Gomer, [IronAxe], 8, false, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [19, 17], [19, 17], Gomer, [SteelBow], 9, false, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [8, 1], [8, 1], Gomer, [SteelBow], 9, false, [$00, $10, $00, $00]
+          UNIT BanditHunter, Enemy, [12, 1], [12, 1], Gomer, [SteelBow], 9, false, [$00, $10, $00, $00]
+          UNIT BanditHunter, Enemy, [3, 2], [3, 2], Gomer, [SteelBow], 9, false, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [5, 2], [5, 2], Gomer, [SteelBow], 9, false, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [4, 1], [4, 1], Gomer, [SteelBow], 9, false, [$00, $03, $00, $00]
+          UNIT ThiefEnemy1, Enemy, [12, 7], [12, 7], Gomer, [Lockpick, SlimSword], 5, false, [$10, $0B, $00, $00]
         UNIT
 
         _StartingPositions ; B1/DB61

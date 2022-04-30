@@ -47,6 +47,7 @@
   .include "EVENTS/Chapter7.event"
   .include "EVENTS/Chapter8.event"
   .include "EVENTS/Chapter8x.event"
+  .include "EVENTS/Chapter9.event"
 
 ; Sections
 
@@ -166,6 +167,8 @@
     startText
 
       .dsection Chapter1WMDialogueSection
+      .dsection Chapter2WMDialogueSection
+      .dsection Chapter3WMDialogueSection
 
     endText
 
@@ -422,6 +425,7 @@
     startEvents
 
       .dsection Chapter3EventsSection
+      .dsection Chapter9EventsSection
 
     endEvents
 
@@ -649,6 +653,17 @@
 
   .endlogical
 
+  * := $098000
+  .logical mapped($098000)
+
+    startText
+
+      .dsection Chapter3DialogueSection
+
+    endText
+
+  .endlogical
+
   * := $09ECEF
   .logical mapped($09ECEF)
 
@@ -677,6 +692,8 @@
     startText
 
       .dsection Chapter1DialogueSection
+      .dsection Chapter2DialogueSection
+      .dsection Chapter2xDialogueSection
 
     endText
 
@@ -853,11 +870,12 @@
 
   .endlogical
 
-  * := $18D851
-  .logical mapped($18D851)
+  * := $18D508
+  .logical mapped($18D508)
 
     startData
 
+      .dsection Chapter9DataSection
       .dsection Chapter8xDataSection
       .dsection Chapter8DataSection
       .dsection Chapter7DataSection
@@ -885,6 +903,7 @@
       .dsection Chapter4WorldMapEventsSection
       .dsection Chapter7WorldMapEventsSection
       .dsection Chapter8WorldMapEventsSection
+      .dsection Chapter9WorldMapEventsSection
 
     endEvents
 

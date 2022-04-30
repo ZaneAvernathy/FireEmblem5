@@ -1,0 +1,2 @@
+{DIALOGUE_RIGHT}甘いやつらだ･･･\n
+{DIALOGUE_PAUSE $10}だが借りができたな･･･{DIALOGUE_END_SCENE}

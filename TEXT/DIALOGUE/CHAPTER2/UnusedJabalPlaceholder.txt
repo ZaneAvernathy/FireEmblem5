@@ -1,0 +1,4 @@
+{DIALOGUE_RIGHT}{DIALOGUE_LOAD $0090}
+元メッセージ｢ジャバルＮ場｣です\n
+このメッセージは使用しないことに\n
+なりました{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

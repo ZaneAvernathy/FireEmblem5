@@ -7,31 +7,9 @@ GUARD_FE5_CHAPTER2 :?= false
 .if (!GUARD_FE5_CHAPTER2)
   GUARD_FE5_CHAPTER2 := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak
-
-      dialogueChapter2WorldMap1                     :?= address($82CA63)
-      dialogueChapter2WorldMap2                     :?= address($82CACD)
-      dialogueChapter2WorldMap3                     :?= address($82CAE3)
-
-      dialogueChapter2RonanHouse                    :?= address($95BC4E)
-      dialogueChapter2RonanHouseVillageAttacked     :?= address($95BD7F)
-      dialogueChapter2SpeedRingHouse                :?= address($95BDA3)
-      dialogueChapter2SpeedRingHouseVillageAttacked :?= address($95BF54)
-      dialogueChapter2VulneraryHouse                :?= address($95BBCB)
-      dialogueChapter2VulneraryHouseVillageAttacked :?= address($95BC29)
-      dialogueChapter2Title                         :?= address($9AB80F)
-      dialogueChapter2Opening1                      :?= address($95B922)
-      dialogueChapter2Opening2A                     :?= address($95BB35)
-      dialogueChapter2Opening2B                     :?= address($95C21F)
-      dialogueChapter2Opening2C                     :?= address($95C27F)
-      dialogueChapter2Ending1A                      :?= address($95C0AD)
-      dialogueChapter2Ending1B                      :?= address($95BF77)
-
-      eventMapDeathQuoteDummyEvent :?= address($99812F)
 
     .endweak
 
@@ -268,7 +246,7 @@ GUARD_FE5_CHAPTER2 :?= false
 
           SET_CAMERA_POSITION [2, 2]
 
-          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
           PLAY_SOUND_WORD $00E0
           PAUSE_SKIPPABLE 32
@@ -307,7 +285,7 @@ GUARD_FE5_CHAPTER2 :?= false
           WAIT_MOVE
           YIELD
 
-          MOVE_CHAR Bakst, [9, 3], 0, None
+          MOVE_CHAR Bakst, [9, 3], 0
           WAIT_MOVE
           YIELD
 
@@ -436,89 +414,89 @@ GUARD_FE5_CHAPTER2 :?= false
           .byte [8, 7]
 
         _BakstGroup ; B1/F91E
-          UNIT Bakst, Enemy, [9, 3], [9, 4], Bakst, [IronAxe, IronBow, Vulnerary], 4, True, [$01, $03, $00, $80]
+          UNIT Bakst, Enemy, [9, 3], [9, 4], Bakst, [IronAxe, IronBow, Vulnerary], 4, true, [$01, $03, $00, $80]
         UNIT
 
         _HunterCameraCoordinates ; B1/F934
           .byte [10, 7]
 
         _HunterGroup ; B1/F936
-          UNIT LithisCrewHunter, Enemy, [9, 3], [10, 4], Bakst, [IronBow, Vulnerary], 3, False, [$02, $08, $00, $00]
-          UNIT LithisCrewHunter, Enemy, [9, 3], [11, 4], Bakst, [IronBow], 3, False, [$02, $08, $00, $00]
+          UNIT LithisCrewHunter, Enemy, [9, 3], [10, 4], Bakst, [IronBow, Vulnerary], 3, false, [$02, $08, $00, $00]
+          UNIT LithisCrewHunter, Enemy, [9, 3], [11, 4], Bakst, [IronBow], 3, false, [$02, $08, $00, $00]
         UNIT
 
         _TopPirateReinforcementsCameraCoordinates ; B1/F960
           .byte [14, 7]
 
         _TopPirateReinforcementsGroup ; B1/F962
-          UNIT LithisCrewPirate, Enemy, [22, 7], [21, 7], Bakst, [HandAxe], 2, False, [$00, $00, $00, $00]
-          UNIT LithisCrewPirate, Enemy, [22, 6], [21, 6], Bakst, [IronAxe], 2, False, [$00, $00, $00, $00]
-          UNIT LithisCrewPirate, Enemy, [22, 8], [21, 8], Bakst, [SteelAxe, Vulnerary], 10, False, [$02, $09, $00, $01]
+          UNIT LithisCrewPirate, Enemy, [22, 7], [21, 7], Bakst, [HandAxe], 2, false, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 6], [21, 6], Bakst, [IronAxe], 2, false, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 8], [21, 8], Bakst, [SteelAxe, Vulnerary], 10, false, [$02, $09, $00, $01]
         UNIT
 
         _MiddlePirateReinforcementsCameraCoordinates ; B1/F9A0
           .byte [14, 14]
 
         _MiddlePirateReinforcementsGroup ; B1/F9A2
-          UNIT LithisCrewPirate, Enemy, [22, 16], [21, 16], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
-          UNIT LithisCrewPirate, Enemy, [22, 15], [21, 15], Bakst, [IronAxe, Vulnerary], 1, False, [$00, $00, $00, $00]
-          UNIT LithisCrewPirate, Enemy, [22, 14], [21, 14], Bakst, [HandAxe], 3, False, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 16], [21, 16], Bakst, [IronAxe], 1, false, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 15], [21, 15], Bakst, [IronAxe, Vulnerary], 1, false, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 14], [21, 14], Bakst, [HandAxe], 3, false, [$00, $00, $00, $00]
         UNIT
 
         _BottomPirateReinforcementsCameraCoordinates ; B1/F9E0
           .byte [14, 25]
 
         _BottomPirateReinforcementsGroup ; B1/F9E2
-          UNIT LithisCrewPirate, Enemy, [22, 28], [21, 28], Bakst, [IronAxe], 1, False, [$02, $09, $00, $00]
-          UNIT LithisCrewPirate, Enemy, [22, 29], [21, 29], Bakst, [IronAxe], 3, False, [$00, $00, $00, $00]
-          UNIT LithisCrewPirate, Enemy, [22, 30], [21, 30], Bakst, [HandAxe, Vulnerary], 1, False, [$02, $09, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 28], [21, 28], Bakst, [IronAxe], 1, false, [$02, $09, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 29], [21, 29], Bakst, [IronAxe], 3, false, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [22, 30], [21, 30], Bakst, [HandAxe, Vulnerary], 1, false, [$02, $09, $00, $00]
         UNIT
 
         _HunterPirateCameraCoordinates ; B1/FA20
           .byte [16, 24]
 
         _HunterPirateGroup ; B1/FA22
-          UNIT LithisCrewHunter, Enemy, [15, 16], [18, 22], Bakst, [IronBow], 1, False, [$00, $01, $00, $00]
-          UNIT LithisCrewPirate, Enemy, [14, 16], [17, 22], Bakst, [IronAxe], 2, False, [$00, $03, $00, $00]
+          UNIT LithisCrewHunter, Enemy, [15, 16], [18, 22], Bakst, [IronBow], 1, false, [$00, $01, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [14, 16], [17, 22], Bakst, [IronAxe], 2, false, [$00, $03, $00, $00]
         UNIT
 
         _PirateGroup1CameraCoordinates ; B1/FA4C
           .byte [16, 23]
 
         _PirateGroup1 ; B1/FA4E
-          UNIT LithisCrewPirate, Enemy, [13, 15], [17, 20], Bakst, [HandAxe, Vulnerary], 3, False, [$00, $03, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [13, 15], [17, 20], Bakst, [HandAxe, Vulnerary], 3, false, [$00, $03, $00, $00]
         UNIT
 
         _PirateGroup2CameraCoordinates ; B1/FA64
           .byte [11, 18]
 
         _PirateGroup2 ; B1/FA66
-          UNIT LithisCrewPirate, Enemy, [15, 26], [13, 22], Bakst, [IronAxe], 1, False, [$00, $03, $00, $00]
-          UNIT LithisCrewPirate, Enemy, [14, 25], [12, 21], Bakst, [IronAxe, Vulnerary], 2, False, [$00, $03, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [15, 26], [13, 22], Bakst, [IronAxe], 1, false, [$00, $03, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [14, 25], [12, 21], Bakst, [IronAxe, Vulnerary], 2, false, [$00, $03, $00, $00]
         UNIT
 
         _PirateGroup3CameraCoordinates ; B1/FA90
           .byte [14, 7]
 
         _PirateGroup3 ; B1/FA92
-          UNIT LithisCrewPirate, Enemy, [19, 5], [19, 5], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
-          UNIT LithisCrewPirate, Enemy, [18, 3], [18, 3], Bakst, [IronAxe, Vulnerary], 3, False, [$02, $09, $00, $00]
-          UNIT LithisCrewPirate, Enemy, [18, 4], [18, 4], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
-          UNIT LithisCrewPirate, Enemy, [19, 4], [19, 4], Bakst, [IronAxe], 1, False, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [19, 5], [19, 5], Bakst, [IronAxe], 1, false, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [18, 3], [18, 3], Bakst, [IronAxe, Vulnerary], 3, false, [$02, $09, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [18, 4], [18, 4], Bakst, [IronAxe], 1, false, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [19, 4], [19, 4], Bakst, [IronAxe], 1, false, [$00, $00, $00, $00]
         UNIT
 
         _UnusedCameraCoordinates1 ; B1/FAE4
           .byte [8, 7]
 
         _RonanGroup ; B1/FAE6
-          UNIT Ronan, Player, [9, 10], [9, 10], Leif, [IronBow], 1, False, [$00, $00, $00, $00]
+          UNIT Ronan, Player, [9, 10], [9, 10], Leif, [IronBow], 1, false, [$00, $00, $00, $00]
         UNIT
 
         _BishopCameraCoordinates ; B1/FAFC
           .byte [8, 7]
 
         _BishopGroup ; B1/FAFE
-          UNIT FriegeBishop2, Enemy, [9, 3], [9, 3], Bakst, [], 1, False, [$00, $00, $00, $00]
+          UNIT FriegeBishop2, Enemy, [9, 3], [9, 3], Bakst, [], 1, false, [$00, $00, $00, $00]
         UNIT
 
         _StartingPositions ; B1/FB14
@@ -597,5 +575,37 @@ GUARD_FE5_CHAPTER2 :?= false
       END1
 
     .endsection Chapter2WorldMapEventsSection
+
+    .section Chapter2DialogueSection
+
+      dialogueChapter2Opening1 .include "../TEXT/DIALOGUE/CHAPTER2/Opening1.dialogue.txt" ; 95/B922
+      dialogueChapter2Opening2A .include "../TEXT/DIALOGUE/CHAPTER2/Opening2A.dialogue.txt" ; 95/B935
+      dialogueChapter2UnusedJabalPlaceholder .include "../TEXT/DIALOGUE/CHAPTER2/UnusedJabalPlaceholder.dialogue.txt" ; 95/BB97
+      dialogueChapter2VulneraryHouse .include "../TEXT/DIALOGUE/CHAPTER2/VulneraryHouse.dialogue.txt" ; 95/BBCB
+      dialogueChapter2VulneraryHouseVillageAttacked .include "../TEXT/DIALOGUE/CHAPTER2/VulneraryHouseVillageAttacked.dialogue.txt" ; 95/BC29
+      dialogueChapter2RonanHouse .include "../TEXT/DIALOGUE/CHAPTER2/RonanHouse.dialogue.txt" ; 95/BC4E
+      dialogueChapter2RonanHouseVillageAttacked .include "../TEXT/DIALOGUE/CHAPTER2/RonanHouseVillageAttacked.dialogue.txt" ; 95/BC7F
+      dialogueChapter2SpeedRingHouse .include "../TEXT/DIALOGUE/CHAPTER2/SpeedRingHouse.dialogue.txt" ; 95/BDA3
+      dialogueChapter2SpeedRingHouseVillageAttacked .include "../TEXT/DIALOGUE/CHAPTER2/SpeedRingHouseVillageAttacked.dialogue.txt" ; 95/BF54
+      dialogueChapter2Ending1B .include "../TEXT/DIALOGUE/CHAPTER2/Ending1B.dialogue.txt" ; 95/BF77
+      dialogueChapter2Ending1A .include "../TEXT/DIALOGUE/CHAPTER2/Ending1A.dialogue.txt" ; 95/C0AD
+
+      dialogueBakstBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Bakst.dialogue.txt" ; 95/C1BC
+      dialogueBakstDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Bakst.dialogue.txt" ; 95/C1DD
+      dialogueBakstReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Bakst.dialogue.txt" ; 95/C1F8
+
+      dialogueChapter2Opening2B .include "../TEXT/DIALOGUE/CHAPTER2/Opening2B.dialogue.txt" ; 95/C21F
+      dialogueChapter2UnusedBlank .include "../TEXT/DIALOGUE/CHAPTER2/UnusedBlank.dialogue.txt" ; 95/C27E
+      dialogueChapter2Opening2C .include "../TEXT/DIALOGUE/CHAPTER2/Opening2C.dialogue.txt" ; 95/C27F
+
+    .endsection Chapter2DialogueSection
+
+    .section Chapter2WMDialogueSection
+
+      dialogueChapter2WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER2/WorldMap1.dialogue.txt" ; 82/CA63
+      dialogueChapter2WorldMap2 .include "../TEXT/DIALOGUE/CHAPTER2/WorldMap2.dialogue.txt" ; 82/CACD
+      dialogueChapter2WorldMap3 .include "../TEXT/DIALOGUE/CHAPTER2/WorldMap3.dialogue.txt" ; 82/CAE3
+
+    .endsection Chapter2WMDialogueSection
 
 .endif ; GUARD_FE5_CHAPTER2

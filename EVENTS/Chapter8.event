@@ -7,8 +7,6 @@ GUARD_FE5_CHAPTER8 :?= false
 .if (!GUARD_FE5_CHAPTER8)
   GUARD_FE5_CHAPTER8 := true
 
-  .include "../../VoltEdge/VoltEdge.h"
-
   ; Definitions
 
     .weak
@@ -251,7 +249,7 @@ GUARD_FE5_CHAPTER8 :?= false
 
             SCROLL_CAMERA_CHAR Rumaigh, 4
 
-            MOVE_CHAR Rumaigh, [2, 10], 1, None
+            MOVE_CHAR Rumaigh, [2, 10], 1
             WAIT_MOVE
             YIELD
 
@@ -267,7 +265,7 @@ GUARD_FE5_CHAPTER8 :?= false
             WAIT_MOVE
             YIELD
 
-            MOVE_CHAR Rumaigh, [2, 9], 1, None
+            MOVE_CHAR Rumaigh, [2, 9], 1
             WAIT_MOVE
             YIELD
 
@@ -298,7 +296,7 @@ GUARD_FE5_CHAPTER8 :?= false
         _OpeningEvent ; 99/C29C
           SET_CAMERA_POSITION [22, 12]
 
-          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
           PLAY_SOUND_WORD $00E0
           PAUSE_SKIPPABLE 32
@@ -327,7 +325,7 @@ GUARD_FE5_CHAPTER8 :?= false
 
           macroASMCDismount Rumaigh
 
-          MOVE_CHAR Rumaigh, [2, 9], 1, None
+          MOVE_CHAR Rumaigh, [2, 9], 1
 
           WAIT_MOVE
           YIELD
@@ -342,7 +340,7 @@ GUARD_FE5_CHAPTER8 :?= false
           DIALOGUE dialogueChapter8Opening1
           YIELD
 
-          MOVE_CHAR Callion, [22, 9], 2, None
+          MOVE_CHAR Callion, [22, 9], 2
 
           WAIT_MOVE
           YIELD
@@ -377,7 +375,7 @@ GUARD_FE5_CHAPTER8 :?= false
           CALL_ASM_LOOP rlASMCDialogueWithBGEnd
           YIELD
 
-          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
           JUMP _EndingEvent_End
 
 
@@ -395,7 +393,7 @@ GUARD_FE5_CHAPTER8 :?= false
           CALL_ASM_LOOP rlASMCDialogueWithBGEnd
           YIELD
 
-          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
           JUMP _EndingEvent_Continue
 
         _EndingEvent_DagdarDead
@@ -415,7 +413,7 @@ GUARD_FE5_CHAPTER8 :?= false
             CALL_ASM_LOOP rlASMCDialogueWithBGEnd
             YIELD
 
-            HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+            HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
             JUMP _EndingEvent_Continue
 
         _EndingEvent_Failed
@@ -430,7 +428,7 @@ GUARD_FE5_CHAPTER8 :?= false
           CALL_ASM_LOOP rlASMCDialogueWithBGEnd
           YIELD
 
-          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(False, 15)
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
           YIELD
 
         _EndingEvent_Continue
@@ -455,63 +453,63 @@ GUARD_FE5_CHAPTER8 :?= false
         _PrepGroup1 ; B1/DD06
           .byte [8, 7]
 
-          UNIT BanditWarrior, Enemy, [6, 11], [6, 11], Gomer, [PoisonAxe, PoisonBow, Vulnerary], 8, False, [$00, $03, $00, $00]
+          UNIT BanditWarrior, Enemy, [6, 11], [6, 11], Gomer, [PoisonAxe, PoisonBow, Vulnerary], 8, false, [$00, $03, $00, $00]
         UNIT
 
         _RightReinforcementsCameraCoordinates1 ; B1/DD1E
           .byte [14, 8]
 
         _RightReinforcementsGroup1 ; B1/DD20
-          UNIT BanditBrigand1, Enemy, [13, 0], [13, 1], Gomer, [PoisonAxe], 8, False, [$00, $00, $00, $00]
+          UNIT BanditBrigand1, Enemy, [13, 0], [13, 1], Gomer, [PoisonAxe], 8, false, [$00, $00, $00, $00]
         UNIT
 
         _RightReinforcementsCameraCoordinates2 ; B1/DD36
           .byte [14, 8]
 
         _RightReinforcementsGroup2 ; B1/DD38
-          UNIT BanditHunter, Enemy, [14, 0], [14, 1], Gomer, [PoisonBow], 3, False, [$00, $00, $00, $00]
+          UNIT BanditHunter, Enemy, [14, 0], [14, 1], Gomer, [PoisonBow], 3, false, [$00, $00, $00, $00]
         UNIT
 
         _LeftReinforcementsCameraCoordinates ; B1/DD4E
           .byte [9, 8]
 
         _LeftReinforcementsGroup ; B1/DD50
-          UNIT BanditBrigand1, Enemy, [4, 0], [4, 1], Gomer, [IronAxe], 7, False, [$00, $01, $00, $00]
+          UNIT BanditBrigand1, Enemy, [4, 0], [4, 1], Gomer, [IronAxe], 7, false, [$00, $01, $00, $00]
         UNIT
 
         _PrepGroup2 ; B1/DD66
           .byte [8, 7]
 
-          UNIT BanditBrigand1, Enemy, [14, 10], [14, 10], Gomer, [PoisonAxe], 5, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [17, 12], [17, 12], Gomer, [PoisonAxe], 8, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [18, 13], [18, 13], Gomer, [PoisonAxe, Vulnerary], 7, False, [$00, $03, $00, $00]
-          UNIT BanditHunter, Enemy, [15, 13], [15, 13], Gomer, [PoisonBow], 3, False, [$00, $03, $00, $00]
-          UNIT BanditHunter, Enemy, [16, 14], [16, 14], Gomer, [PoisonBow], 3, False, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [12, 9], [12, 9], Gomer, [PoisonAxe], 5, False, [$01, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [18, 16], [18, 16], Gomer, [PoisonAxe], 7, False, [$01, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [13, 14], [13, 14], Gomer, [PoisonAxe], 10, False, [$01, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [16, 8], [16, 8], Gomer, [PoisonAxe], 10, False, [$01, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [14, 10], [14, 10], Gomer, [PoisonAxe], 5, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [17, 12], [17, 12], Gomer, [PoisonAxe], 8, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [18, 13], [18, 13], Gomer, [PoisonAxe, Vulnerary], 7, false, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [15, 13], [15, 13], Gomer, [PoisonBow], 3, false, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [16, 14], [16, 14], Gomer, [PoisonBow], 3, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [12, 9], [12, 9], Gomer, [PoisonAxe], 5, false, [$01, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [18, 16], [18, 16], Gomer, [PoisonAxe], 7, false, [$01, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [13, 14], [13, 14], Gomer, [PoisonAxe], 10, false, [$01, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [16, 8], [16, 8], Gomer, [PoisonAxe], 10, false, [$01, $03, $00, $00]
         UNIT
 
         _UnusedCoordinates1 ; B1/DE1E
           .byte [8, 7]
 
         _RumaighGroup ; B1/DE20
-          UNIT Rumaigh, Enemy, [2, 10], [2, 10], Rumaigh, [Horseslayer, SteelLance, IronSword, Vulnerary, KnightCrest], 5, True, [$01, $03, $02, $80]
+          UNIT Rumaigh, Enemy, [2, 10], [2, 10], Rumaigh, [Horseslayer, SteelLance, IronSword, Vulnerary, KnightCrest], 5, true, [$01, $03, $02, $80]
         UNIT
 
         _UnusedCoordinates2 ; B1/DE36
           .byte [22, 10]
 
         _CallionGroup ; B1/DE38
-          UNIT Callion, Player, [30, 15], [28, 9], Leif, [SteelLance], 1, False, [$00, $00, $00, $00]
+          UNIT Callion, Player, [30, 15], [28, 9], Leif, [SteelLance], 1, false, [$00, $00, $00, $00]
         UNIT
 
         _UnusedCoordinates3 ; B1/DE4E
           .byte [8, 7]
 
         _GomerGroup ; B1/DE50
-          UNIT Gomer, Enemy, [2, 9], [2, 9], Gomer, [], 3, False, [$00, $00, $00, $00]
+          UNIT Gomer, Enemy, [2, 9], [2, 9], Gomer, [], 3, false, [$00, $00, $00, $00]
         UNIT
 
         _StartingPositions ; B1/DE66
