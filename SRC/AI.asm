@@ -882,7 +882,7 @@ GUARD_FE5_AI :?= false
 
           sep #$20
 
-          .for _Index, _Param in enumerate(aAIMainVariables.aCurrentScriptCommand.aParameters[1:], 3)
+          .for _Index, _Param in iter.enumerate(aAIMainVariables.aCurrentScriptCommand.aParameters[1:], 3)
 
             lda _Index,b,x
             sta _Param

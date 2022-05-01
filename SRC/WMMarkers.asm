@@ -529,7 +529,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         _SpritePos := aWMSpecialMarker00Sprites[0]
 
-        .for i, _ in enumerate(WMSpecialMarker00Sprites)
+        .for i, _ in iter.enumerate(WMSpecialMarker00Sprites)
 
           -
           AS_Sprite 16, aWMSpecialMarker00Sprites[i]
@@ -544,7 +544,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         PROC_END
 
-        aWMSpecialMarker00Sprites .bfor i, _ in enumerate(WMSpecialMarker00Sprites)
+        aWMSpecialMarker00Sprites .bfor i, _ in iter.enumerate(WMSpecialMarker00Sprites)
           SL := WMSpecialMarker00Sprites[:i+1][::-1]
           .dstruct structSpriteArray, SL
         .endfor
@@ -573,7 +573,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         _SpritePos := aWMSpecialMarker01Sprites[0]
 
-        .for i, _ in enumerate(WMSpecialMarker01Sprites)
+        .for i, _ in iter.enumerate(WMSpecialMarker01Sprites)
 
           -
           AS_Sprite 16, aWMSpecialMarker01Sprites[i]
@@ -584,7 +584,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         AS_Loop -
 
-        aWMSpecialMarker01Sprites .bfor i, _ in enumerate(WMSpecialMarker01Sprites)
+        aWMSpecialMarker01Sprites .bfor i, _ in iter.enumerate(WMSpecialMarker01Sprites)
           SL := WMSpecialMarker01Sprites[:i+1][::-1]
           .dstruct structSpriteArray, SL
         .endfor
@@ -687,7 +687,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         _SpritePos := aWMSpecialMarker03Sprites0[0]
 
-        .for i, _ in enumerate(WMSpecialMarker03Sprites0)
+        .for i, _ in iter.enumerate(WMSpecialMarker03Sprites0)
 
           AS_Sprite 16, aWMSpecialMarker03Sprites0[i]
 
@@ -702,7 +702,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         _SpritePos := aWMSpecialMarker03Sprites1[0]
 
-        .for i, _ in enumerate(WMSpecialMarker03Sprites1)
+        .for i, _ in iter.enumerate(WMSpecialMarker03Sprites1)
 
           -
           AS_Sprite 16, aWMSpecialMarker03Sprites1[i]
@@ -713,12 +713,12 @@ GUARD_FE5_WM_MARKERS :?= false
 
         AS_Loop -
 
-        aWMSpecialMarker03Sprites0 .bfor i, _ in enumerate(WMSpecialMarker03Sprites0)
+        aWMSpecialMarker03Sprites0 .bfor i, _ in iter.enumerate(WMSpecialMarker03Sprites0)
           SL := WMSpecialMarker03Sprites0[:i+1][::-1]
           .dstruct structSpriteArray, SL
         .endfor
 
-        aWMSpecialMarker03Sprites1 .bfor i, _ in enumerate(WMSpecialMarker03Sprites1)
+        aWMSpecialMarker03Sprites1 .bfor i, _ in iter.enumerate(WMSpecialMarker03Sprites1)
           SL := WMSpecialMarker03Sprites1[:i+1][::-1]
           .dstruct structSpriteArray, SL
         .endfor
@@ -742,7 +742,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         _SpritePos := aWMSpecialMarker04Sprites[0]
 
-        .for i, _ in enumerate(WMSpecialMarker04Sprites)
+        .for i, _ in iter.enumerate(WMSpecialMarker04Sprites)
 
           -
           AS_Sprite 16, aWMSpecialMarker04Sprites[i]
@@ -753,7 +753,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         AS_Loop -
 
-        aWMSpecialMarker04Sprites .bfor i, _ in enumerate(WMSpecialMarker04Sprites)
+        aWMSpecialMarker04Sprites .bfor i, _ in iter.enumerate(WMSpecialMarker04Sprites)
           SL := WMSpecialMarker04Sprites[:i+1][::-1]
 
           ; This one has a random difference.
@@ -793,7 +793,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         _SpritePos := aWMSpecialMarker05Sprites[0]
 
-        .for i, _ in enumerate(WMSpecialMarker05Sprites)
+        .for i, _ in iter.enumerate(WMSpecialMarker05Sprites)
 
           -
           AS_Sprite 16, aWMSpecialMarker05Sprites[i]
@@ -804,7 +804,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         AS_Loop -
 
-        aWMSpecialMarker05Sprites .bfor i, _ in enumerate(WMSpecialMarker05Sprites)
+        aWMSpecialMarker05Sprites .bfor i, _ in iter.enumerate(WMSpecialMarker05Sprites)
           SL := WMSpecialMarker05Sprites[:i+1][::-1]
           .dstruct structSpriteArray, SL
         .endfor
@@ -836,7 +836,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         _SpritePos := aWMSpecialMarker06Sprites[0]
 
-        .for i, _ in enumerate(WMSpecialMarker06Sprites)
+        .for i, _ in iter.enumerate(WMSpecialMarker06Sprites)
 
           -
           AS_Sprite 16, aWMSpecialMarker06Sprites[i]
@@ -847,7 +847,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         AS_Loop -
 
-        aWMSpecialMarker06Sprites .bfor i, _ in enumerate(WMSpecialMarker06Sprites)
+        aWMSpecialMarker06Sprites .bfor i, _ in iter.enumerate(WMSpecialMarker06Sprites)
           SL := WMSpecialMarker06Sprites[:i+1][::-1]
           .dstruct structSpriteArray, SL
         .endfor
@@ -889,7 +889,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         _SpritePos := aWMSpecialMarker07Sprites[0]
 
-        .for i, _ in enumerate(WMSpecialMarker07Sprites)
+        .for i, _ in iter.enumerate(WMSpecialMarker07Sprites)
 
           -
           AS_Sprite 16, aWMSpecialMarker07Sprites[i]
@@ -900,7 +900,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         AS_Loop -
 
-        aWMSpecialMarker07Sprites .bfor i, _ in enumerate(WMSpecialMarker07Sprites)
+        aWMSpecialMarker07Sprites .bfor i, _ in iter.enumerate(WMSpecialMarker07Sprites)
           SL := WMSpecialMarker07Sprites[:i+1][::-1]
           .dstruct structSpriteArray, SL
         .endfor
@@ -920,7 +920,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         _SpritePos := aWMSpecialMarker08Sprites[0]
 
-        .for i, _ in enumerate(WMSpecialMarker08Sprites)
+        .for i, _ in iter.enumerate(WMSpecialMarker08Sprites)
 
           -
           AS_Sprite 16, aWMSpecialMarker08Sprites[i]
@@ -931,7 +931,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         AS_Loop -
 
-        aWMSpecialMarker08Sprites .bfor i, _ in enumerate(WMSpecialMarker08Sprites)
+        aWMSpecialMarker08Sprites .bfor i, _ in iter.enumerate(WMSpecialMarker08Sprites)
           SL := WMSpecialMarker08Sprites[:i+1][::-1]
           .dstruct structSpriteArray, SL
         .endfor
@@ -1329,7 +1329,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         _SpritePos := aWMSpecialMarker09Sprites[0]
 
-        .for i, _ in enumerate(WMSpecialMarker09Sprites)
+        .for i, _ in iter.enumerate(WMSpecialMarker09Sprites)
 
           -
           AS_Sprite 16, aWMSpecialMarker09Sprites[i]
@@ -1340,7 +1340,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         AS_Loop -
 
-        aWMSpecialMarker09Sprites .bfor i, _ in enumerate(WMSpecialMarker09Sprites)
+        aWMSpecialMarker09Sprites .bfor i, _ in iter.enumerate(WMSpecialMarker09Sprites)
           SL := WMSpecialMarker09Sprites[:i+1][::-1]
           .dstruct structSpriteArray, SL
         .endfor
@@ -1364,7 +1364,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         _SpritePos := aWMSpecialMarker0ASprites[0]
 
-        .for i, _ in enumerate(WMSpecialMarker0ASprites)
+        .for i, _ in iter.enumerate(WMSpecialMarker0ASprites)
 
           -
           AS_Sprite 16, aWMSpecialMarker0ASprites[i]
@@ -1375,7 +1375,7 @@ GUARD_FE5_WM_MARKERS :?= false
 
         AS_Loop -
 
-        aWMSpecialMarker0ASprites .bfor i, _ in enumerate(WMSpecialMarker0ASprites)
+        aWMSpecialMarker0ASprites .bfor i, _ in iter.enumerate(WMSpecialMarker0ASprites)
           SL := WMSpecialMarker0ASprites[:i+1][::-1]
 
           ; The last sprite breaks the pattern.
