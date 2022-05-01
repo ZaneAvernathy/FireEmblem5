@@ -11,85 +11,93 @@ GUARD_FE5_IRQ :?= false
 
     .section IRQHandlerSection
 
-      riIRQN ; 80/82B4
+      startCode
 
-        .autsiz
-        .databank ?
+        riIRQN ; 80/82B4
 
-        ; Handles IRQs.
-        ; You shouldn't call this yourself.
+          .autsiz
+          .databank ?
 
-        ; Inputs:
-        ; wIRQPointer: short pointer to routine
+          ; Handles IRQs.
+          ; You shouldn't call this yourself.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; wIRQPointer: short pointer to routine
 
-        rep #$30
+          ; Outputs:
+          ; None
 
-        ; Break out of bank 00
+          rep #$30
 
-        jml +
+          ; Break out of bank 00
 
-        +
+          jml +
 
-        phb
-        phd
-        pha
-        phx
-        phy
+          +
 
-        phk
-        plb
+          phb
+          phd
+          pha
+          phx
+          phy
 
-        .databank `*
+          phk
+          plb
 
-        lda #0
-        tcd
+          .databank `*
 
-        ; Execute routine if IRQ.
+          lda #0
+          tcd
 
-        lda TIMEUP,b
-        bit #TIMEUP_IRQ
-        beq +
+          ; Execute routine if IRQ.
 
-          pea #<>(+)-size(byte)
-          jmp (wIRQPointer)
+          lda TIMEUP,b
+          bit #TIMEUP_IRQ
+          beq +
 
-        +
+            pea #<>(+)-size(byte)
+            jmp (wIRQPointer)
 
-        ply
-        plx
-        pla
-        pld
-        plb
+          +
 
-        rti
+          ply
+          plx
+          pla
+          pld
+          plb
 
-        .databank 0
+          rti
+
+          .databank 0
+
+      endCode
 
     .endsection IRQHandlerSection
 
     .section IRQDummyRoutineSection
 
-      rsIRQDummyRoutine ; 80/82D9
+      startCode
 
-        .autsiz
-        .databank ?
+        rsIRQDummyRoutine ; 80/82D9
 
-        ; wIRQPointer is set to this
-        ; when there isn't anything needed
-        ; for IRQs.
+          .autsiz
+          .databank ?
 
-        ; Inputs:
-        ; None
+          ; wIRQPointer is set to this
+          ; when there isn't anything needed
+          ; for IRQs.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        rts
+          ; Outputs:
+          ; None
 
-        .databank 0
+          rts
+
+          .databank 0
+
+      endCode
 
     .endsection IRQDummyRoutineSection
 

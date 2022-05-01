@@ -51,26 +51,22 @@
   * := $000000
   .logical mapped($000000)
 
-    startCode
-
-      .dsection BreakpointHandlerSection
-      .dsection GetJoypadInputSection
-      .dsection DMAPaletteAndOAMBufferSection
-      .dsection CopyPPURegisterBufferSection
-      .dsection CopyINIDISPBufferSection
-      .dsection VBlankHandlerSection
-      .dsection IRQHandlerSection
-      .dsection IRQDummyRoutineSection
-      .dsection EnableVBlankSection
-      .dsection DisableVBlankSection
-      .dsection HaltUntilVBlankSection
-      .dsection EnableForcedBlankSection
-      .dsection DisableForcedBlankSection
-      .dsection HideSpritesSection
-      .dsection ClearSpriteExtBufferSection
-      .dsection UnknownDMASection
-
-    endCode
+    .dsection BreakpointHandlerSection
+    .dsection GetJoypadInputSection
+    .dsection DMAPaletteAndOAMBufferSection
+    .dsection CopyPPURegisterBufferSection
+    .dsection CopyINIDISPBufferSection
+    .dsection VBlankHandlerSection
+    .dsection IRQHandlerSection
+    .dsection IRQDummyRoutineSection
+    .dsection EnableVBlankSection
+    .dsection DisableVBlankSection
+    .dsection HaltUntilVBlankSection
+    .dsection EnableForcedBlankSection
+    .dsection DisableForcedBlankSection
+    .dsection HideSpritesSection
+    .dsection ClearSpriteExtBufferSection
+    .dsection UnknownDMASection
 
     startData
 
@@ -79,16 +75,12 @@
 
     endData
 
-    startCode
-
-      .dsection PushToOAMBufferSection
-      .dsection SpliceOAMBufferSection
-      .dsection InitPPURegistersSection
-      .dsection ResetHandlerSection
-      .dsection ResetAlreadyInitializedSection
-      .dsection MainLoopSection
-
-    endCode
+    .dsection PushToOAMBufferSection
+    .dsection SpliceOAMBufferSection
+    .dsection InitPPURegistersSection
+    .dsection ResetHandlerSection
+    .dsection ResetAlreadyInitializedSection
+    .dsection MainLoopSection
 
   .endlogical
 
@@ -161,13 +153,13 @@
   * := $01482F
   .logical mapped($01482F)
 
-    startText
+    startDialogue
 
       .dsection Chapter1WMDialogueSection
       .dsection Chapter2WMDialogueSection
       .dsection Chapter3WMDialogueSection
 
-    endText
+    endDialogue
 
   .endlogical
 
@@ -185,105 +177,93 @@
   * := $018E98
   .logical mapped($018E98)
 
-    startData
-
-      .dsection DeploymentSlotTableSection
-
-    endData
+    .dsection DeploymentSlotTableSection
 
   .endlogical
 
   * := $01CE64
   .logical mapped($01CE64)
 
-    startCode
-
-      .dsection ActionStructSingleSection
-      .dsection ActionStructUnknown83CEAESection
-      .dsection ActionStructCombatStructsSection
-      .dsection ActionStructGetBaseStatsSection
-      .dsection ActionStructClearActionStructSection
-      .dsection ActionStructCopyStartingStatsSection
-      .dsection ActionStructTrySetUnitCoordinatesSection
-      .dsection ActionStructWeaponInfoSection
-      .dsection ActionStructAdjustNihilSkillsSection
-      .dsection ActionStructGetTerrainBonusesAndDistanceSection
-      .dsection ActionStructGetCoreStatsSection
-      .dsection ActionStructRoundSection
-      .dsection ActionStructUnknown83DA13Section
-      .dsection ActionStructWriteLevelUpActionStructSection
-      .dsection ActionStructTryUpdateRoundCaptureFlagSection
-      .dsection ActionStructWeaponTriangleSection
-      .dsection ActionStructAdjustVantageRoundOrderSection
-      .dsection ActionStructUnknown83DC31Section
-      .dsection ActionStructLevelUpSection
-      .dsection ActionStructCalculateWeaponTriangleBonusSection
-      .dsection ActionStructWeaponEffectSection
-      .dsection ActionStructRollGainsSection
-      .dsection ActionStructCalculateHitAvoidBonusSection
-      .dsection ActionStructHalveStatsSection
-      .dsection ActionStructZeroCombatStatsSection
-      .dsection ActionStructSetGainedWEXPSection
-      .dsection ActionStructEXPSection
-      .dsection ActionStructGetSupportBonusSection
-      .dsection ActionStructUnknownSetCallbackSection
-      .dsection ActionStructGetItemBonusesSection
-      .dsection ActionStructWinsLossesSection
-      .dsection ActionStructGetCombatStatTotalSection
-      .dsection ActionStructGetStatTotalDifferenceTierSection
-      .dsection ActionStructMarkSelectableTargetSection
-      .dsection ActionStructGetDanceEXPSection
-      .dsection ActionStructTryGetGainedWeaponRankSection
-      .dsection ActionStructDanceSection
-      .dsection ActionStructClearOpponentWeaponIfUsingLongRangeSection
-      .dsection ActionStructGetTerrainTileSection
-      .dsection ActionStructStaffSection
-      .dsection HealingStaffTargetEffectSection
-      .dsection FortifyTargetEffectSection
-      .dsection SilenceStaffTargetEffectSection
-      .dsection BerserkStaffTargetEffectSection
-      .dsection SleepStaffTargetEffectSection
-      .dsection StatusStaffCallbackSection
-      .dsection RestoreTargetEffectSection
-      .dsection WarpTargetEffectSection
-      .dsection RewarpTargetEffectSection
-      .dsection BarrierTargetEffectSection
-      .dsection RescueStaffTargetEffectSection
-      .dsection TorchStaffTargetEffectSection
-      .dsection HammerneTargetEffectSection
-      .dsection ThiefStaffTargetEffectSection
-      .dsection ActionStructStaffGetEXPByCostSection
-      .dsection ActionStructSetGainedEXPSection
-      .dsection ActionStructGetStaffInfoSection
-      .dsection ReturnStaffTargetEffectSection
-      .dsection ActionStructStaffGetClosestTileSection
-      .dsection ActionStructStaffRollHitSection
-      .dsection ActionStructStaffRollDoublingSection
-      .dsection ActionStructStaffTryGetClosestTileSection
-      .dsection ActionStructStaffGetPowerSection
-      .dsection UnlockTargetEffectSection
-      .dsection WatchTargetEffectSection
-      .dsection KiaTargetEffectSection
-      .dsection ActionStructStaffGetGainedWEXPSection
-
-    endCode
+    .dsection ActionStructSingleSection
+    .dsection ActionStructUnknown83CEAESection
+    .dsection ActionStructCombatStructsSection
+    .dsection ActionStructGetBaseStatsSection
+    .dsection ActionStructClearActionStructSection
+    .dsection ActionStructCopyStartingStatsSection
+    .dsection ActionStructTrySetUnitCoordinatesSection
+    .dsection ActionStructWeaponInfoSection
+    .dsection ActionStructAdjustNihilSkillsSection
+    .dsection ActionStructGetTerrainBonusesAndDistanceSection
+    .dsection ActionStructGetCoreStatsSection
+    .dsection ActionStructRoundSection
+    .dsection ActionStructUnknown83DA13Section
+    .dsection ActionStructWriteLevelUpActionStructSection
+    .dsection ActionStructTryUpdateRoundCaptureFlagSection
+    .dsection ActionStructWeaponTriangleSection
+    .dsection ActionStructAdjustVantageRoundOrderSection
+    .dsection ActionStructUnknown83DC31Section
+    .dsection ActionStructLevelUpSection
+    .dsection ActionStructCalculateWeaponTriangleBonusSection
+    .dsection ActionStructWeaponEffectSection
+    .dsection ActionStructRollGainsSection
+    .dsection ActionStructCalculateHitAvoidBonusSection
+    .dsection ActionStructHalveStatsSection
+    .dsection ActionStructZeroCombatStatsSection
+    .dsection ActionStructSetGainedWEXPSection
+    .dsection ActionStructEXPSection
+    .dsection ActionStructGetSupportBonusSection
+    .dsection ActionStructUnknownSetCallbackSection
+    .dsection ActionStructGetItemBonusesSection
+    .dsection ActionStructWinsLossesSection
+    .dsection ActionStructGetCombatStatTotalSection
+    .dsection ActionStructGetStatTotalDifferenceTierSection
+    .dsection ActionStructMarkSelectableTargetSection
+    .dsection ActionStructGetDanceEXPSection
+    .dsection ActionStructTryGetGainedWeaponRankSection
+    .dsection ActionStructDanceSection
+    .dsection ActionStructClearOpponentWeaponIfUsingLongRangeSection
+    .dsection ActionStructGetTerrainTileSection
+    .dsection ActionStructStaffSection
+    .dsection HealingStaffTargetEffectSection
+    .dsection FortifyTargetEffectSection
+    .dsection SilenceStaffTargetEffectSection
+    .dsection BerserkStaffTargetEffectSection
+    .dsection SleepStaffTargetEffectSection
+    .dsection StatusStaffCallbackSection
+    .dsection RestoreTargetEffectSection
+    .dsection WarpTargetEffectSection
+    .dsection RewarpTargetEffectSection
+    .dsection BarrierTargetEffectSection
+    .dsection RescueStaffTargetEffectSection
+    .dsection TorchStaffTargetEffectSection
+    .dsection HammerneTargetEffectSection
+    .dsection ThiefStaffTargetEffectSection
+    .dsection ActionStructStaffGetEXPByCostSection
+    .dsection ActionStructSetGainedEXPSection
+    .dsection ActionStructGetStaffInfoSection
+    .dsection ReturnStaffTargetEffectSection
+    .dsection ActionStructStaffGetClosestTileSection
+    .dsection ActionStructStaffRollHitSection
+    .dsection ActionStructStaffRollDoublingSection
+    .dsection ActionStructStaffTryGetClosestTileSection
+    .dsection ActionStructStaffGetPowerSection
+    .dsection UnlockTargetEffectSection
+    .dsection WatchTargetEffectSection
+    .dsection KiaTargetEffectSection
+    .dsection ActionStructStaffGetGainedWEXPSection
 
   .endlogical
 
   * := $01FB4D
   .logical mapped($01FB4D)
 
-    startCode
-
-      .dsection ResetCapturedPlayerUnitsSection
-      .dsection FreeNonplayerDeploymentSlotsSection
-      .dsection SetNewGameOptionsSection
-      .dsection UnknownResetPlayerUnitVisibilitySection
-      .dsection SetChapterTurncountSection
-      .dsection ClearUnitArraysSection
-      .dsection ClearLossesWinsTurncountsSection
-
-    endCode
+    .dsection ResetCapturedPlayerUnitsSection
+    .dsection FreeNonplayerDeploymentSlotsSection
+    .dsection SetNewGameOptionsSection
+    .dsection UnknownResetPlayerUnitVisibilitySection
+    .dsection SetChapterTurncountSection
+    .dsection ClearUnitArraysSection
+    .dsection ClearLossesWinsTurncountsSection
 
     startFreespace
 
@@ -318,23 +298,15 @@
   * := $030000
   .logical mapped($030000)
 
-    startData
-
-      .dsection ClassDataSection
-
-    endData
+    .dsection ClassDataSection
 
   .endlogical
 
   * := $0310BC
   .logical mapped($0310BC)
 
-    startData
-
-      .dsection MovementTypeSection
-      .dsection TerrainBonusSection
-
-    endData
+    .dsection MovementTypeSection
+    .dsection TerrainBonusSection
 
   .endlogical
 
@@ -363,12 +335,8 @@
   * := $040054
   .logical mapped($040054)
 
-    startData
-
-      .dsection ScrollGrowthModifiersSection
-      .dsection SupportDataSection
-
-    endData
+    .dsection ScrollGrowthModifiersSection
+    .dsection SupportDataSection
 
   .endlogical
 
@@ -419,12 +387,12 @@
   * := $066435
   .logical mapped($066435)
 
-    startEvents
+    startEventScenes
 
       .dsection Chapter3EventsSection
       .dsection Chapter9EventsSection
 
-    endEvents
+    endEventScenes
 
   .endlogical
 
@@ -442,103 +410,79 @@
   * := $068000
   .logical mapped($068000)
 
-    startCode
-
-      .dsection AIMainSection
-      .dsection AIRecoveryThresholdSection
-      .dsection AIReadScriptOpcodeSection
-      .dsection AICopyMapsSection
-      .dsection AIStaffEffectSection
-      .dsection AILootTileEffectSection
-      .dsection AIRequestHealingInRecoveryModeSection
-      .dsection AITryUseHealingItemSection
-      .dsection AIUnknown8D869ASection
-      .dsection AIRecoveryModeSection
-
-    endCode
+    .dsection AIMainSection
+    .dsection AIRecoveryThresholdSection
+    .dsection AIReadScriptOpcodeSection
+    .dsection AICopyMapsSection
+    .dsection AIStaffEffectSection
+    .dsection AILootTileEffectSection
+    .dsection AIRequestHealingInRecoveryModeSection
+    .dsection AITryUseHealingItemSection
+    .dsection AIUnknown8D869ASection
+    .dsection AIRecoveryModeSection
 
   .endlogical
 
   * := $069A4F
   .logical mapped($069A4F)
 
-    startCode
-
-      .dsection AITryCantoSection
-      .dsection AIGetRandomTileInRangeSection
-      .dsection AIMovementStarSection
-      .dsection AIUnknownGetLowThreatTileInRangeSection
-      .dsection AIApproachTileSection
-      .dsection AIGetSafestTileNearTargetSection
-
-    endCode
+    .dsection AITryCantoSection
+    .dsection AIGetRandomTileInRangeSection
+    .dsection AIMovementStarSection
+    .dsection AIUnknownGetLowThreatTileInRangeSection
+    .dsection AIApproachTileSection
+    .dsection AIGetSafestTileNearTargetSection
 
   .endlogical
 
   * := $06B88C
   .logical mapped($06B88C)
 
-    startCode
-
-      .dsection AICheckIfUnitCanOpenChestsSection
-
-    endCode
+    .dsection AICheckIfUnitCanOpenChestsSection
 
   .endlogical
 
   * := $06BABC
   .logical mapped($06BABC)
 
-    startCode
-
-      .dsection AICheckIfTileIsLessThreatenedSection
-
-    endCode
+    .dsection AICheckIfTileIsLessThreatenedSection
 
   .endlogical
 
   * := $06D8A4
   .logical mapped($06D8A4)
 
-    startCode
-
-      .dsection AIItemUseSection
-
-    endCode
+    .dsection AIItemUseSection
 
   .endlogical
 
   * := $06DCC6
   .logical mapped($06DCC6)
 
-    startCode
-
-      .dsection AICountTargetsInRangeSection
-      .dsection AICheckIfUnitInAreaSection
-      .dsection AICheckIfFlagSetSection
-      .dsection AIGetCurrentTurnSection
-      .dsection AIPatrolSection
-      .dsection AIUpdateGroupAISection
-      .dsection AIMoveToCoordinatesByChapterSection
-      .dsection AIMoveToIsolatedTargetSection
-      .dsection AIDanceSection
-      .dsection AIGetEffectiveThreatenedTilesSection
-      .dsection AIOverwriteStationaryFlagSection
-      .dsection AISetUpperActionCapabilityBitfield
-      .dsection AICountCharacterInMovementRangeSection
-      .dsection AISetAIForUnitInCurrentPhaseSection
-      .dsection AICountWeaponsInInventorySection
-      .dsection AIGetAICounterSection
-      .dsection AIForceHealSection
-      .dsection AIIsCharacterInIgnoreTableSection
-      .dsection AISetAllegianceToNPCSection
-      .dsection AIUnknownSetAISection
-      .dsection AICheckIfTerrainAtCoordinatesSection
-      .dsection AITryOpenClosestDoorSection
-      .dsection AIUnknown8DE468Section
-      .dsection AISetBusyStatusSection
-
-    endCode
+    .dsection AICountTargetsInRangeSection
+    .dsection AICheckIfUnitInAreaSection
+    .dsection AICheckIfFlagSetSection
+    .dsection AIGetCurrentTurnSection
+    .dsection AIPatrolSection
+    .dsection AIUpdateGroupAISection
+    .dsection AIMoveToCoordinatesByChapterSection
+    .dsection AIMoveToIsolatedTargetSection
+    .dsection AIDanceSection
+    .dsection AIGetEffectiveThreatenedTilesSection
+    .dsection AIOverwriteStationaryFlagSection
+    .dsection AISetUpperActionCapabilityBitfield
+    .dsection AICountCharacterInMovementRangeSection
+    .dsection AISetAIForUnitInCurrentPhaseSection
+    .dsection AICountWeaponsInInventorySection
+    .dsection AIGetAICounterSection
+    .dsection AIForceHealSection
+    .dsection AIIsCharacterInIgnoreTableSection
+    .dsection AISetAllegianceToNPCSection
+    .dsection AIUnknownSetAISection
+    .dsection AICheckIfTerrainAtCoordinatesSection
+    .dsection AITryOpenClosestDoorSection
+    .dsection AIUnknown8DE468Section
+    .dsection AISetBusyStatusSection
 
     startFreespace
 
@@ -562,35 +506,23 @@
   * := $078000
   .logical mapped($078000)
 
-    startData
-
-      .dsection ActionAIScriptSection
-      .dsection MovementAIScriptSection
-      .dsection AIRecoveryThresholdTableSection
-
-    endData
+    .dsection ActionAIScriptSection
+    .dsection MovementAIScriptSection
+    .dsection AIRecoveryThresholdTableSection
 
   .endlogical
 
   * := $0788F2
   .logical mapped($0788F2)
 
-    startData
-
-      .dsection AIChapterCoordinatesSection
-
-    endData
+    .dsection AIChapterCoordinatesSection
 
   .endlogical
 
   * := $078B6B
   .logical mapped($078B6B)
 
-    startData
-
-      .dsection AIIgnoreTableSection
-
-    endData
+    .dsection AIIgnoreTableSection
 
   .endlogical
 
@@ -619,17 +551,8 @@
   * := $08CCEA
   .logical mapped($08CCEA)
 
-    startCode
-
-      .dsection AS_ASMCDrawSpecialMarkerSection
-
-    endCode
-
-    startData
-
-      .dsection AS_ASMCDrawSpecialMarkerDataSection
-
-    endData
+    .dsection AS_ASMCDrawSpecialMarkerSection
+    .dsection AS_ASMCDrawSpecialMarkerDataSection
 
     startFreespace
 
@@ -653,11 +576,11 @@
   * := $098000
   .logical mapped($098000)
 
-    startText
+    startDialogue
 
       .dsection Chapter3DialogueSection
 
-    endText
+    endDialogue
 
   .endlogical
 
@@ -686,13 +609,13 @@
   * := $0AA493
   .logical mapped($0AA493)
 
-    startText
+    startDialogue
 
       .dsection Chapter1DialogueSection
       .dsection Chapter2DialogueSection
       .dsection Chapter2xDialogueSection
 
-    endText
+    endDialogue
 
   .endlogical
 
@@ -721,12 +644,12 @@
   * := $0B805A
   .logical mapped($0B805A)
 
-    startEvents
+    startEventScenes
 
       .dsection Chapter2xEventsSection
       .dsection Chapter8xEventsSection
 
-    endEvents
+    endEventScenes
 
   .endlogical
 
@@ -755,7 +678,7 @@
   * := $0C81B4
   .logical mapped($0C81B4)
 
-    startEvents
+    startEventScenes
 
       .dsection Chapter2EventsSection
       .dsection Chapter4EventsSection
@@ -764,18 +687,14 @@
       .dsection Chapter7EventsSection
       .dsection Chapter8EventsSection
 
-    endEvents
+    endEventScenes
 
   .endlogical
 
   * = $0D37EF
   .logical mapped($0D37EF)
 
-    startText
-
-      .dsection ChapterTitleSection
-
-    endText
+    .dsection ChapterTitleSection
 
   .endlogical
 
@@ -870,7 +789,7 @@
   * := $18D508
   .logical mapped($18D508)
 
-    startData
+    startEventData
 
       .dsection Chapter9DataSection
       .dsection Chapter8xDataSection
@@ -885,14 +804,14 @@
       .dsection Chapter2DataSection
       .dsection Chapter1DataSection
 
-    endData
+    endEventData
 
   .endlogical
 
   * := $33E010
   .logical mapped($33E010)
 
-    startEvents
+    startEventScenes
 
       .dsection Chapter1WorldMapEventsSection
       .dsection Chapter2WorldMapEventsSection
@@ -902,19 +821,19 @@
       .dsection Chapter8WorldMapEventsSection
       .dsection Chapter9WorldMapEventsSection
 
-    endEvents
+    endEventScenes
 
   .endlogical
 
   * := $3E8000
   .logical mapped($3E8000)
 
-    startEvents
+    startEventScenes
 
       .dsection Chapter1EventsSection
       .dsection Chapter4xEventsSection
 
-    endEvents
+    endEventScenes
 
   .endlogical
 

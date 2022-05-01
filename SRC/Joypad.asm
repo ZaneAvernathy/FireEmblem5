@@ -11,155 +11,159 @@ GUARD_FE5_JOYPAD :?= false
 
   .section GetJoypadInputSection
 
-    rlGetJoypadInput ; 80/8002
+    startCode
 
-      .autsiz
-      .databank ?
+      rlGetJoypadInput ; 80/8002
 
-      ; Reads joypad input every frame.
-      ; You shouldn't call this yourself.
+        .autsiz
+        .databank ?
 
-      ; Inputs:
-      ; None
+        ; Reads joypad input every frame.
+        ; You shouldn't call this yourself.
 
-      ; Outputs:
-      ; None
+        ; Inputs:
+        ; None
 
-      php
+        ; Outputs:
+        ; None
 
-      sep #$20
+        php
 
-      ; Wait for controllers.
+        sep #$20
 
-      -
-      lda HVBJOY,b
-      and #HVBJOY_JoypadBusy
-      bne -
+        ; Wait for controllers.
 
-      rep #$20
+        -
+        lda HVBJOY,b
+        and #HVBJOY_JoypadBusy
+        bne -
 
-      ; Controller 1
+        rep #$20
 
-      ; Fetch inputs.
+        ; Controller 1
 
-      lda JOY1,b
-      sta wJoy1Input
+        ; Fetch inputs.
 
-      ; If a nonstandard controller
-      ; is plugged in, use old inputs.
-
-      and #JOY_ID
-      beq +
-
-        lda wJoy1Old
+        lda JOY1,b
         sta wJoy1Input
 
-      +
+        ; If a nonstandard controller
+        ; is plugged in, use old inputs.
 
-      ; Strip strictly-new inputs.
+        and #JOY_ID
+        beq +
 
-      lda wJoy1Input
-      eor wJoy1Old
-      and wJoy1Input
-      sta wJoy1New
-      sta wJoy1Repeated
+          lda wJoy1Old
+          sta wJoy1Input
 
-      ; Check for held inputs.
+        +
 
-      lda wJoy1Input
-      beq _Joy1Reset
+        ; Strip strictly-new inputs.
 
-      cmp wJoy1Old
-      bne _Joy1Reset
+        lda wJoy1Input
+        eor wJoy1Old
+        and wJoy1Input
+        sta wJoy1New
+        sta wJoy1Repeated
 
-        ; Every time the timer ticks out,
-        ; set the repeated inputs and
-        ; reset the timer to the repeat
-        ; interval.
+        ; Check for held inputs.
 
-        dec wJoy1RepeatTimer
-        bne +
+        lda wJoy1Input
+        beq _Joy1Reset
 
-          lda wJoy1Input
-          sta wJoy1Repeated
+        cmp wJoy1Old
+        bne _Joy1Reset
 
-          lda wJoyRepeatInterval
-          sta wJoy1RepeatTimer
+          ; Every time the timer ticks out,
+          ; set the repeated inputs and
+          ; reset the timer to the repeat
+          ; interval.
 
-          bra +
+          dec wJoy1RepeatTimer
+          bne +
 
-      _Joy1Reset
+            lda wJoy1Input
+            sta wJoy1Repeated
 
-      lda wJoyRepeatDelay
-      sta wJoy1RepeatTimer
+            lda wJoyRepeatInterval
+            sta wJoy1RepeatTimer
 
-      +
+            bra +
 
-      lda wJoy1Input
-      sta wJoy1Old
+        _Joy1Reset
 
-      ; Same thing for controller 2
+        lda wJoyRepeatDelay
+        sta wJoy1RepeatTimer
 
-      lda JOY2,b
-      sta wJoy2Input
+        +
 
-      ; If a nonstandard controller
-      ; is plugged in, use old inputs.
+        lda wJoy1Input
+        sta wJoy1Old
 
-      and #JOY_ID
-      beq +
+        ; Same thing for controller 2
 
-        lda wJoy2Old
+        lda JOY2,b
         sta wJoy2Input
 
-      +
+        ; If a nonstandard controller
+        ; is plugged in, use old inputs.
 
-      ; Strip strictly-new inputs.
+        and #JOY_ID
+        beq +
 
-      lda wJoy2Input
-      eor wJoy2Old
-      and wJoy2Input
-      sta wJoy2New
-      sta wJoy2Repeated
+          lda wJoy2Old
+          sta wJoy2Input
 
-      ; Check for held inputs.
+        +
 
-      lda wJoy2Input
-      beq _Joy2Reset
+        ; Strip strictly-new inputs.
 
-      cmp wJoy2Old
-      bne _Joy2Reset
+        lda wJoy2Input
+        eor wJoy2Old
+        and wJoy2Input
+        sta wJoy2New
+        sta wJoy2Repeated
 
-        ; Every time the timer ticks out,
-        ; set the repeated inputs and
-        ; reset the timer to the repeat
-        ; interval.
+        ; Check for held inputs.
 
-        dec wJoy2RepeatTimer
-        bne +
+        lda wJoy2Input
+        beq _Joy2Reset
 
-          lda wJoy2Input
-          sta wJoy2Repeated
+        cmp wJoy2Old
+        bne _Joy2Reset
 
-          lda wJoyRepeatInterval
-          sta wJoy2RepeatTimer
+          ; Every time the timer ticks out,
+          ; set the repeated inputs and
+          ; reset the timer to the repeat
+          ; interval.
 
-          bra +
+          dec wJoy2RepeatTimer
+          bne +
 
-      _Joy2Reset
+            lda wJoy2Input
+            sta wJoy2Repeated
 
-      lda wJoyRepeatDelay
-      sta wJoy2RepeatTimer
+            lda wJoyRepeatInterval
+            sta wJoy2RepeatTimer
 
-      +
+            bra +
 
-      lda wJoy2Input
-      sta wJoy2Old
+        _Joy2Reset
 
-      plp
-      rtl
+        lda wJoyRepeatDelay
+        sta wJoy2RepeatTimer
 
-      .databank 0
+        +
+
+        lda wJoy2Input
+        sta wJoy2Old
+
+        plp
+        rtl
+
+        .databank 0
+
+    endCode
 
   .endsection GetJoypadInputSection
 

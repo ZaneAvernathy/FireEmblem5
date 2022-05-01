@@ -11,14 +11,18 @@ GUARD_FE5_BREAK :?= false
 
     .section BreakpointHandlerSection
 
-      riBRK ; 80/8000
+      startCode
 
-        .autsiz
-        .databank ?
+        riBRK ; 80/8000
 
-        bra riBRK
+          .autsiz
+          .databank ?
 
-        .databank 0
+          bra riBRK
+
+          .databank 0
+
+      endCode
 
     .endsection BreakpointHandlerSection
 

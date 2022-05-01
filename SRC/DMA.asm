@@ -11,119 +11,123 @@ GUARD_FE5_DMA :?= false
 
     .section UnknownDMASection
 
-      rlUnknownDMA ; 80/842C
+      startCode
 
-        .autsiz
-        .databank ?
+        rlUnknownDMA ; 80/842C
 
-        ; DMAs data using a series of structs after
-        ; the jsl to this routine.
+          .autsiz
+          .databank ?
 
-        ; Data has the format:
-        ; Byte channels to use
-        ; 7 bytes per channel, format is
-        ; ports $0043x0-$0043x7 in order.
+          ; DMAs data using a series of structs after
+          ; the jsl to this routine.
 
-        ; Inputs:
-        ; Data immediately following jsl
+          ; Data has the format:
+          ; Byte channels to use
+          ; 7 bytes per channel, format is
+          ; ports $0043x0-$0043x7 in order.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; Data immediately following jsl
 
-        php
-        phb
+          ; Outputs:
+          ; None
 
-        sep #$20
+          php
+          phb
 
-        ; Temporary stack definition
+          sep #$20
 
-        .virtual #$01,s
-          _DB             .byte ?
-          _P              .byte ?
-          _ReturnLocation .long ?
-        .endvirtual
+          ; Temporary stack definition
 
-        lda _ReturnLocation+2
-        pha
+          .virtual #$01,s
+            _DB             .byte ?
+            _P              .byte ?
+            _ReturnLocation .long ?
+          .endvirtual
 
-        plb
+          lda _ReturnLocation+2
+          pha
 
-        .databank ?
+          plb
 
-        rep #$30
+          .databank ?
 
-        lda _ReturnLocation
-        tax
+          rep #$30
 
-        ; Get channels.
+          lda _ReturnLocation
+          tax
 
-        lda 1,b,x
-        and #$00FF
+          ; Get channels.
 
-        sta wR34
-        sta wR35
+          lda 1,b,x
+          and #$00FF
 
-        inc x
+          sta wR34
+          sta wR35
 
-        ldy #0
+          inc x
 
-        _ChannelLoop
+          ldy #0
 
-          ; If channel is used, fill in with data.
+          _ChannelLoop
 
-          lsr wR34
-          bcc +
+            ; If channel is used, fill in with data.
 
-            lda 1+structDMAChannel.Parameters,b,x
-            sta DMA_IO[0].DMAP,b,y
+            lsr wR34
+            bcc +
 
-            lda 1+structDMAChannel.Source,b,x
-            sta DMA_IO[0].A1,b,y
-            lda 1+structDMAChannel.Source+2,b,x
-            sta DMA_IO[0].A1+2,b,y
+              lda 1+structDMAChannel.Parameters,b,x
+              sta DMA_IO[0].DMAP,b,y
 
-            lda 1+structDMAChannel.Count,b,x
-            sta DMA_IO[0].DAS,b,y
+              lda 1+structDMAChannel.Source,b,x
+              sta DMA_IO[0].A1,b,y
+              lda 1+structDMAChannel.Source+2,b,x
+              sta DMA_IO[0].A1+2,b,y
 
-            ; Move to next data struct.
+              lda 1+structDMAChannel.Count,b,x
+              sta DMA_IO[0].DAS,b,y
 
-            txa
+              ; Move to next data struct.
+
+              txa
+              clc
+              adc #size(structDMAChannel)
+              tax
+
+            +
+
+            ; Move to next set of DMA ports.
+
+            tya
             clc
-            adc #size(structDMAChannel)
-            tax
+            adc #size(DMA_IO[0])
+            tay
 
-          +
+            ; Continue for all channels.
 
-          ; Move to next set of DMA ports.
+            cpy #size(DMA_IO) + ...
+            bne _ChannelLoop
 
-          tya
-          clc
-          adc #size(DMA_IO[0])
-          tay
+          ; Overwrite return address to jump
+          ; over data.
 
-          ; Continue for all channels.
+          txa
+          sta _ReturnLocation
 
-          cpy #size(DMA_IO) + ...
-          bne _ChannelLoop
+          sep #$20
 
-        ; Overwrite return address to jump
-        ; over data.
+          ; Begin transfers.
 
-        txa
-        sta _ReturnLocation
+          lda wR35
+          sta MDMAEN,b
 
-        sep #$20
+          plb
+          plp
+          rtl
 
-        ; Begin transfers.
+          .databank 0
 
-        lda wR35
-        sta MDMAEN,b
-
-        plb
-        plp
-        rtl
-
-        .databank 0
+      endCode
 
     .endsection UnknownDMASection
 

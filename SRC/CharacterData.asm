@@ -17,8 +17,12 @@ GUARD_FE5_CHARACTER_DATA :?= false
 
     .section SupportDataSection
 
-      aSupportData .include "../TABLES/SupportData.csv.asm"
-      .word 0
+      startData
+
+        aSupportData .include "../TABLES/SupportData.csv.asm"
+        .word 0
+
+      endData
 
     .endsection SupportDataSection
 

@@ -11,288 +11,300 @@ GUARD_FE5_PPU_BUFFERS :?= false
 
     .section DMAPaletteAndOAMBufferSection
 
-      rlDMAPaletteAndOAMBuffer ; 80/807C
+      startCode
 
-        .autsiz
-        .databank ?
+        rlDMAPaletteAndOAMBuffer ; 80/807C
 
-        ; Copies the palette and OAM buffers
-        ; to CGRAM and OAM respectively every
-        ; frame.
+          .autsiz
+          .databank ?
 
-        ; You shouldn't call this yourself.
+          ; Copies the palette and OAM buffers
+          ; to CGRAM and OAM respectively every
+          ; frame.
 
-        ; Inputs:
-        ; None
+          ; You shouldn't call this yourself.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        php
+          ; Outputs:
+          ; None
 
-        sep #$10
-        rep #$20
+          php
 
-        ; Mode, destination
+          sep #$10
+          rep #$20
 
-        lda #pack([DMAP_DMA_Setting(DMAP_CPUToIO, DMAP_Increment, DMAP_Mode0), narrow(OAMDATA - PPU_REG_BASE, 1)])
-        sta DMA_IO[0].DMAP,b
+          ; Mode, destination
 
-        ; Source
+          lda #pack([DMAP_DMA_Setting(DMAP_CPUToIO, DMAP_Increment, DMAP_Mode0), narrow(OAMDATA - PPU_REG_BASE, 1)])
+          sta DMA_IO[0].DMAP,b
 
-        lda #<>aSpriteBuffer
-        sta DMA_IO[0].A1,b
+          ; Source
 
-        ldx #`aSpriteBuffer
-        stx DMA_IO[0].A1+2,b
+          lda #<>aSpriteBuffer
+          sta DMA_IO[0].A1,b
 
-        ; Size
+          ldx #`aSpriteBuffer
+          stx DMA_IO[0].A1+2,b
 
-        lda #size(aSpriteBuffer)+size(aSpriteExtBuffer)
-        sta DMA_IO[0].DAS,b
+          ; Size
 
-        ; Reset position of writes/reads
+          lda #size(aSpriteBuffer)+size(aSpriteExtBuffer)
+          sta DMA_IO[0].DAS,b
 
-        stz OAMADD,b
+          ; Reset position of writes/reads
 
-        ; Mode, destination
+          stz OAMADD,b
 
-        lda #pack([DMAP_DMA_Setting(DMAP_CPUToIO, DMAP_Increment, DMAP_Mode0), narrow(CGDATA - PPU_REG_BASE, 1)])
-        sta DMA_IO[1].DMAP,b
+          ; Mode, destination
 
-        ; Source
+          lda #pack([DMAP_DMA_Setting(DMAP_CPUToIO, DMAP_Increment, DMAP_Mode0), narrow(CGDATA - PPU_REG_BASE, 1)])
+          sta DMA_IO[1].DMAP,b
 
-        lda #<>aBGPaletteBuffer
-        sta DMA_IO[1].A1,b
+          ; Source
 
-        ldx #`aBGPaletteBuffer
-        stx DMA_IO[1].A1+2,b
+          lda #<>aBGPaletteBuffer
+          sta DMA_IO[1].A1,b
 
-        ; Size
+          ldx #`aBGPaletteBuffer
+          stx DMA_IO[1].A1+2,b
 
-        lda #size(aBGPaletteBuffer)+size(aOAMPaletteBuffer)
-        sta DMA_IO[1].DAS,b
+          ; Size
 
-        ; Reset position of writes/reads
+          lda #size(aBGPaletteBuffer)+size(aOAMPaletteBuffer)
+          sta DMA_IO[1].DAS,b
 
-        ldx #0
-        stx CGADD,b
+          ; Reset position of writes/reads
 
-        ; Start DMA
+          ldx #0
+          stx CGADD,b
 
-        ldx #MDMAEN_Setting([0, 1])
-        stx MDMAEN,b
+          ; Start DMA
 
-        ; Restore OAM position
+          ldx #MDMAEN_Setting([0, 1])
+          stx MDMAEN,b
 
-        lda wBufferOAMADD
-        sta OAMADD,b
+          ; Restore OAM position
 
-        plp
+          lda wBufferOAMADD
+          sta OAMADD,b
 
-        rtl
+          plp
 
-        .databank 0
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection DMAPaletteAndOAMBufferSection
 
     .section CopyPPURegisterBufferSection
 
-      rlCopyPPURegisterBuffer ; 80/80C3
+      startCode
 
-        .autsiz
-        .databank ?
+        rlCopyPPURegisterBuffer ; 80/80C3
 
-        ; Copies buffers for PPU registers
-        ; to their actual registers.
+          .autsiz
+          .databank ?
 
-        ; You shouldn't call this yourself.
+          ; Copies buffers for PPU registers
+          ; to their actual registers.
 
-        ; Inputs:
-        ; None
+          ; You shouldn't call this yourself.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        php
-        phb
+          ; Outputs:
+          ; None
 
-        phk
-        plb
+          php
+          phb
 
-        .databank `*
+          phk
+          plb
 
-        sep #$20
+          .databank `*
 
-        lda bBufferINIDISP
-        sta INIDISP,b
+          sep #$20
 
-        lda bBufferOBSEL
-        sta OBSEL,b
+          lda bBufferINIDISP
+          sta INIDISP,b
 
-        lda bBufferBGMODE
-        sta BGMODE,b
+          lda bBufferOBSEL
+          sta OBSEL,b
 
-        lda bBufferMOSAIC
-        sta MOSAIC,b
+          lda bBufferBGMODE
+          sta BGMODE,b
 
-        lda bBufferBG1SC
-        sta BG1SC,b
+          lda bBufferMOSAIC
+          sta MOSAIC,b
 
-        lda bBufferBG2SC
-        sta BG2SC,b
+          lda bBufferBG1SC
+          sta BG1SC,b
 
-        lda bBufferBG3SC
-        sta BG3SC,b
+          lda bBufferBG2SC
+          sta BG2SC,b
 
-        lda bBufferBG4SC
-        sta BG4SC,b
+          lda bBufferBG3SC
+          sta BG3SC,b
 
-        lda bBufferBG12NBA
-        sta BG12NBA,b
+          lda bBufferBG4SC
+          sta BG4SC,b
 
-        lda bBufferBG34NBA
-        sta BG34NBA,b
+          lda bBufferBG12NBA
+          sta BG12NBA,b
 
-        lda bBufferW12SEL
-        sta W12SEL,b
+          lda bBufferBG34NBA
+          sta BG34NBA,b
 
-        lda bBufferW34SEL
-        sta W34SEL,b
+          lda bBufferW12SEL
+          sta W12SEL,b
 
-        lda bBufferWOBJSEL
-        sta WOBJSEL,b
+          lda bBufferW34SEL
+          sta W34SEL,b
 
-        lda bBufferWH0
-        sta WH0,b
+          lda bBufferWOBJSEL
+          sta WOBJSEL,b
 
-        lda bBufferWH1
-        sta WH1,b
+          lda bBufferWH0
+          sta WH0,b
 
-        lda bBufferWH2
-        sta WH2,b
+          lda bBufferWH1
+          sta WH1,b
 
-        lda bBufferWH3
-        sta WH3,b
+          lda bBufferWH2
+          sta WH2,b
 
-        lda bBufferWBGLOG
-        sta WBGLOG,b
+          lda bBufferWH3
+          sta WH3,b
 
-        lda bBufferWOBJLOG
-        sta WOBJLOG,b
+          lda bBufferWBGLOG
+          sta WBGLOG,b
 
-        lda bBufferTM
-        sta TM,b
+          lda bBufferWOBJLOG
+          sta WOBJLOG,b
 
-        lda bBufferTMW
-        sta TMW,b
+          lda bBufferTM
+          sta TM,b
 
-        lda bBufferTS
-        sta TS,b
+          lda bBufferTMW
+          sta TMW,b
 
-        lda bBufferTSW
-        sta TSW,b
+          lda bBufferTS
+          sta TS,b
 
-        lda bBufferCGWSEL
-        sta CGWSEL,b
+          lda bBufferTSW
+          sta TSW,b
 
-        lda bBufferCGADSUB
-        sta CGADSUB,b
+          lda bBufferCGWSEL
+          sta CGWSEL,b
 
-        lda bBufferCOLDATA_1
-        sta COLDATA,b
+          lda bBufferCGADSUB
+          sta CGADSUB,b
 
-        lda bBufferCOLDATA_2
-        sta COLDATA,b
+          lda bBufferCOLDATA_1
+          sta COLDATA,b
 
-        lda bBufferCOLDATA_3
-        sta COLDATA,b
+          lda bBufferCOLDATA_2
+          sta COLDATA,b
 
-        lda bBufferSETINI
-        sta SETINI,b
+          lda bBufferCOLDATA_3
+          sta COLDATA,b
 
-        lda wBufferBG1HOFS
-        sta BG1HOFS,b
-        lda wBufferBG1HOFS+size(byte)
-        sta BG1HOFS,b
+          lda bBufferSETINI
+          sta SETINI,b
 
-        lda wBufferBG1VOFS
-        sec
-        sbc #1
-        sta BG1VOFS,b
-        lda wBufferBG1VOFS+size(byte)
-        sbc #0
-        sta BG1VOFS,b
+          lda wBufferBG1HOFS
+          sta BG1HOFS,b
+          lda wBufferBG1HOFS+size(byte)
+          sta BG1HOFS,b
 
-        lda wBufferBG2HOFS
-        sta BG2HOFS,b
-        lda wBufferBG2HOFS+size(byte)
-        sta BG2HOFS,b
+          lda wBufferBG1VOFS
+          sec
+          sbc #1
+          sta BG1VOFS,b
+          lda wBufferBG1VOFS+size(byte)
+          sbc #0
+          sta BG1VOFS,b
 
-        lda wBufferBG2VOFS
-        sec
-        sbc #1
-        sta BG2VOFS,b
-        lda wBufferBG2VOFS+size(byte)
-        sbc #0
-        sta BG2VOFS,b
+          lda wBufferBG2HOFS
+          sta BG2HOFS,b
+          lda wBufferBG2HOFS+size(byte)
+          sta BG2HOFS,b
 
-        lda wBufferBG3HOFS
-        sta BG3HOFS,b
-        lda wBufferBG3HOFS+size(byte)
-        sta BG3HOFS,b
+          lda wBufferBG2VOFS
+          sec
+          sbc #1
+          sta BG2VOFS,b
+          lda wBufferBG2VOFS+size(byte)
+          sbc #0
+          sta BG2VOFS,b
 
-        lda wBufferBG3VOFS
-        sec
-        sbc #1
-        sta BG3VOFS,b
-        lda wBufferBG3VOFS+size(byte)
-        sbc #0
-        sta BG3VOFS,b
+          lda wBufferBG3HOFS
+          sta BG3HOFS,b
+          lda wBufferBG3HOFS+size(byte)
+          sta BG3HOFS,b
 
-        plb
-        plp
+          lda wBufferBG3VOFS
+          sec
+          sbc #1
+          sta BG3VOFS,b
+          lda wBufferBG3VOFS+size(byte)
+          sbc #0
+          sta BG3VOFS,b
 
-        rtl
+          plb
+          plp
 
-        .databank 0
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection CopyPPURegisterBufferSection
 
     .section CopyINIDISPBufferSection
 
-      rlCopyINIDISPBuffer ; 80/81A8
+      startCode
 
-        .autsiz
-        .databank ?
+        rlCopyINIDISPBuffer ; 80/81A8
 
-        ; Copies INIDISP from buffer to register
+          .autsiz
+          .databank ?
 
-        ; Inputs:
-        ; None
+          ; Copies INIDISP from buffer to register
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        php
-        phb
+          ; Outputs:
+          ; None
 
-        phk
-        plb
+          php
+          phb
 
-        .databank `*
+          phk
+          plb
 
-        sep #$20
+          .databank `*
 
-        lda bBufferINIDISP
-        sta INIDISP,b
+          sep #$20
 
-        plb
-        plp
+          lda bBufferINIDISP
+          sta INIDISP,b
 
-        rtl
+          plb
+          plp
 
-        .databank 0
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection CopyINIDISPBufferSection
 

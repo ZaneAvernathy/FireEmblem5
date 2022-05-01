@@ -17,22 +17,34 @@ GUARD_FE5_CLASS_DATA :?= false
 
     .section ClassDataSection
 
-      aClassData ; TODO: class data
+      startData
+
+        aClassData ; TODO: class data
+
+      endData
 
     .endsection ClassDataSection
 
     .section MovementTypeSection
 
-      .include "../TABLES/MovementType.csv.asm"
+      startData
+
+        .include "../TABLES/MovementType.csv.asm"
+
+      endData
 
     .endsection MovementTypeSection
 
     .section TerrainBonusSection
 
-      TerrainHitAvoid .include "../TABLES/TerrainHitAvoid.csv.asm"
-      TerrainAvoid .include "../TABLES/TerrainAvoid.csv.asm"
-      TerrainDefense .include "../TABLES/TerrainDefense.csv.asm"
-      aTerrainMagicTable .include "../TABLES/TerrainMagic.csv.asm"
+      startData
+
+        TerrainHitAvoid .include "../TABLES/TerrainHitAvoid.csv.asm"
+        TerrainAvoid .include "../TABLES/TerrainAvoid.csv.asm"
+        TerrainDefense .include "../TABLES/TerrainDefense.csv.asm"
+        aTerrainMagicTable .include "../TABLES/TerrainMagic.csv.asm"
+
+      endData
 
     .endsection TerrainBonusSection
 

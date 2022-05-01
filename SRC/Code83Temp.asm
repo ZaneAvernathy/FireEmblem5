@@ -28,398 +28,429 @@ GUARD_FE5_CODE83TEMP :?= false
 
     .section ResetCapturedPlayerUnitsSection
 
-      rlResetCapturedPlayerUnits ; 83/FB4D
+      startCode
 
-        .al
-        .autsiz
-        .databank ?
+        rlResetCapturedPlayerUnits ; 83/FB4D
 
-        lda #<>rlResetCapturedPlayerUnitsEffect
-        sta lR25
-        lda #>`rlResetCapturedPlayerUnitsEffect
-        sta lR25+size(byte)
+          .al
+          .autsiz
+          .databank ?
 
-        lda #Player + 1
-        jsl rlRunRoutineForAllUnitsInAllegiance
+          lda #<>rlResetCapturedPlayerUnitsEffect
+          sta lR25
+          lda #>`rlResetCapturedPlayerUnitsEffect
+          sta lR25+size(byte)
 
-        rtl
+          lda #Player + 1
+          jsl rlRunRoutineForAllUnitsInAllegiance
 
-        .databank 0
+          rtl
 
-      rlResetCapturedPlayerUnitsEffect ; 83/FB5F
+          .databank 0
 
-        .al
-        .autsiz
-        .databank ?
+        rlResetCapturedPlayerUnitsEffect ; 83/FB5F
 
-        lda aTargetingCharacterBuffer.UnitState,b
-        ora #UnitStateHidden
-        sta aTargetingCharacterBuffer.UnitState,b
+          .al
+          .autsiz
+          .databank ?
 
-        lda aTargetingCharacterBuffer.UnitState,b
-        bit #(UnitStateDead | UnitStateDisabled | UnitStateCaptured)
-        bne _End
+          lda aTargetingCharacterBuffer.UnitState,b
+          ora #UnitStateHidden
+          sta aTargetingCharacterBuffer.UnitState,b
 
-        and #~(UnitStateRescued | UnitStateRescuing)
-        and #~(UnitStateMoved | UnitStateUnknown3)
-        sta aTargetingCharacterBuffer.UnitState,b
+          lda aTargetingCharacterBuffer.UnitState,b
+          bit #(UnitStateDead | UnitStateDisabled | UnitStateCaptured)
+          bne _End
 
-        lda #pack([1, 1])
-        sta aTargetingCharacterBuffer.Coordinates,b
+          and #~(UnitStateRescued | UnitStateRescuing)
+          and #~(UnitStateMoved | UnitStateUnknown3)
+          sta aTargetingCharacterBuffer.UnitState,b
 
-        sep #$20
+          lda #pack([1, 1])
+          sta aTargetingCharacterBuffer.Coordinates,b
 
-        lda #Leif
-        sta aTargetingCharacterBuffer.Leader,b
+          sep #$20
 
-        lda aTargetingCharacterBuffer.MaxHP,b
-        sta aTargetingCharacterBuffer.CurrentHP,b
+          lda #Leif
+          sta aTargetingCharacterBuffer.Leader,b
 
-        stz aTargetingCharacterBuffer.Rescue,b
-        stz aTargetingCharacterBuffer.VisionBonus,b
-        stz aTargetingCharacterBuffer.MagicBonus,b
+          lda aTargetingCharacterBuffer.MaxHP,b
+          sta aTargetingCharacterBuffer.CurrentHP,b
 
-        lda aTargetingCharacterBuffer.Status,b
-        cmp #StatusPetrify
-        beq +
+          stz aTargetingCharacterBuffer.Rescue,b
+          stz aTargetingCharacterBuffer.VisionBonus,b
+          stz aTargetingCharacterBuffer.MagicBonus,b
 
-        stz aTargetingCharacterBuffer.Status,b
+          lda aTargetingCharacterBuffer.Status,b
+          cmp #StatusPetrify
+          beq +
 
-        rep #$30
+          stz aTargetingCharacterBuffer.Status,b
 
-        lda aTargetingCharacterBuffer.UnitState,b
-        and #~UnitStateGrayed
-        sta aTargetingCharacterBuffer.UnitState,b
+          rep #$30
 
-        +
-        rep #$30
+          lda aTargetingCharacterBuffer.UnitState,b
+          and #~UnitStateGrayed
+          sta aTargetingCharacterBuffer.UnitState,b
 
-        _End
-        lda #<>aTargetingCharacterBuffer
-        sta wR1
-        jsl rlCopyCharacterDataFromBuffer
-        rtl
+          +
+          rep #$30
 
-        .databank 0
+          _End
+          lda #<>aTargetingCharacterBuffer
+          sta wR1
+          jsl rlCopyCharacterDataFromBuffer
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection ResetCapturedPlayerUnitsSection
 
     .section FreeNonplayerDeploymentSlotsSection
 
-      rlFreeNonplayerDeploymentSlots ; 83/FBB6
+      startCode
 
-        .al
-        .autsiz
-        .databank ?
+        rlFreeNonplayerDeploymentSlots ; 83/FBB6
 
-        ; Frees all Enemy and NPC deployment
-        ; slots by clearing the slots' character.
+          .al
+          .autsiz
+          .databank ?
 
-        ; Inputs:
-        ; None
+          ; Frees all Enemy and NPC deployment
+          ; slots by clearing the slots' character.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        lda #<>rlFreeNonplayerDeploymentSlotsEffect
-        sta lR25
-        lda #>`rlFreeNonplayerDeploymentSlotsEffect
-        sta lR25+size(byte)
+          ; Outputs:
+          ; None
 
-        lda #Enemy + 1
-        jsl rlRunRoutineForAllUnitsInAllegiance
+          lda #<>rlFreeNonplayerDeploymentSlotsEffect
+          sta lR25
+          lda #>`rlFreeNonplayerDeploymentSlotsEffect
+          sta lR25+size(byte)
 
-        lda #NPC + 1
-        jsl rlRunRoutineForAllUnitsInAllegiance
+          lda #Enemy + 1
+          jsl rlRunRoutineForAllUnitsInAllegiance
 
-        rtl
+          lda #NPC + 1
+          jsl rlRunRoutineForAllUnitsInAllegiance
 
-        .databank 0
+          rtl
 
-      rlFreeNonplayerDeploymentSlotsEffect ; 83/FBCF
+          .databank 0
 
-        .autsiz
-        .databank ?
+        rlFreeNonplayerDeploymentSlotsEffect ; 83/FBCF
 
-        ; Inputs:
-        ; None
+          .autsiz
+          .databank ?
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        stz aTargetingCharacterBuffer.Character,b
+          ; Outputs:
+          ; None
 
-        lda #<>aTargetingCharacterBuffer
-        sta wR1
-        jsl rlCopyCharacterDataFromBuffer
-        rtl
+          stz aTargetingCharacterBuffer.Character,b
 
-        .databank 0
+          lda #<>aTargetingCharacterBuffer
+          sta wR1
+          jsl rlCopyCharacterDataFromBuffer
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection FreeNonplayerDeploymentSlotsSection
 
     .section SetNewGameOptionsSection
 
-      rlSetNewGameOptions ; 83/FBDC
+      startCode
 
-        .autsiz
-        .databank ?
+        rlSetNewGameOptions ; 83/FBDC
 
-        php
-        phb
+          .autsiz
+          .databank ?
 
-        sep #$20
+          php
+          phb
 
-        lda #`aOptions
-        pha
+          sep #$20
 
-        rep #$20
+          lda #`aOptions
+          pha
 
-        plb
+          rep #$20
 
-        .databank `aOptions
+          plb
 
-        stz aOptions.wWindow
+          .databank `aOptions
 
-        jsl rlCopyDefaultOptions
-        jsl rlSetCurrentMenuColor
+          stz aOptions.wWindow
 
-        stz wIngameTime,b
-        stz wMenuCounter,b
-        stz wWinCounter,b
-        stz wCaptureCounter,b
+          jsl rlCopyDefaultOptions
+          jsl rlSetCurrentMenuColor
 
-        lda #NPC
-        sta wCurrentPhase,b
+          stz wIngameTime,b
+          stz wMenuCounter,b
+          stz wWinCounter,b
+          stz wCaptureCounter,b
 
-        stz wCurrentChapter,b
-        stz wCurrentTurn,b
-        stz wParagonModeEnable,b
+          lda #NPC
+          sta wCurrentPhase,b
 
-        jsl rlSetChapterAllegiancesAndPhaseControllers
-        jsl rlSetChapterVisionRange
-        jsl rlClearPermanentEventFlags
-        jsl rlClearTemporaryEventFlags
-        jsl rlClearConvoy
-        jsl rlClearUnitArrays
-        jsl rlClearLossesWinsTurncounts
-        jsl rlSetDefaultSpeedOptions
+          stz wCurrentChapter,b
+          stz wCurrentTurn,b
+          stz wParagonModeEnable,b
 
-        plb
-        plp
-        rtl
-
-        .databank 0
-
-    .endsection SetNewGameOptionsSection
-
-    .section UnknownResetPlayerUnitVisibilitySection
-
-      rsUnknownResetPlayerUnitVisibility ; 83/FC2F
-
-        .al
-        .autsiz
-        .databank ?
-
-        lda #<>aUnknownResetPlayerUnitVisibilityCoordinates
-        sta lR18
-        lda #>`aUnknownResetPlayerUnitVisibilityCoordinates
-        sta lR18+size(byte)
-
-        lda #<>rlUnknownResetPlayerUnitVisibilityEffect
-        sta lR25
-        lda #>`rlUnknownResetPlayerUnitVisibilityEffect
-        sta lR25+size(byte)
-
-        lda #Player + 1
-        jsl rlRunRoutineForAllUnitsInAllegiance
-
-        rts
-
-        .databank 0
-
-      rlUnknownResetPlayerUnitVisibilityEffect ; 83/FC4B
-
-        .autsiz
-        .databank ?
-
-        sep #$20
-
-        lda [lR18]
-        inc lR18
-        sta aTargetingCharacterBuffer.X,b
-
-        lda [lR18]
-        inc lR18
-        sta aTargetingCharacterBuffer.Y,b
-
-        rep #$20
-
-        lda aTargetingCharacterBuffer.UnitState,b
-        and #~UnitStateHidden
-        sta aTargetingCharacterBuffer.UnitState,b
-
-        lda #<>aTargetingCharacterBuffer
-        sta wR1
-
-        jsl rlCopyCharacterDataFromBuffer
-
-        rtl
-
-        .databank 0
-
-      aUnknownResetPlayerUnitVisibilityCoordinates ; 83/FC70
-        .word pack([25, 6])
-        .word pack([26, 6])
-        .word pack([27, 6])
-        .word pack([24, 6])
-        .word pack([23, 6])
-        .word pack([25, 5])
-        .word pack([26, 5])
-        .word pack([27, 5])
-        .word pack([24, 5])
-        .word pack([23, 5])
-        .word pack([25, 7])
-        .word pack([26, 7])
-        .word pack([27, 7])
-        .word pack([24, 7])
-        .word pack([23, 7])
-
-    .endsection UnknownResetPlayerUnitVisibilitySection
-
-    .section SetChapterTurncountSection
-
-      rlSetChapterTurncount ; 83/FC8F
-
-        .xl
-        .autsiz
-        .databank ?
-
-        ; Adds an entry to aTurncountsTable
-        ; for the current chapter.
-
-        ; Warning: no bounds checking.
-
-        ; Inputs:
-        ; None
-
-        ; Outputs:
-        ; None
-
-        php
-        phb
-
-        sep #$20
-
-        lda #`aTurncountsTable
-        pha
-
-        rep #$20
-
-        plb
-
-        .databank `aTurncountsTable
-
-        ldx #0
-
-        ; Look for the next free entry.
-
-        _Loop
-
-          ; Grab an entry, check if clear.
-
-          lda aTurncountsTable+structTurncountEntryRAM.Chapter,x
-          ora aTurncountsTable+structTurncountEntryRAM.Turncount,x
-          beq _Found
-
-            inc x
-            inc x
-            inc x
-
-            bra _Loop
-
-        _Found
-
-          lda wCurrentChapter,b
-          sta aTurncountsTable+structTurncountEntryRAM.Chapter,x
-
-          lda wCurrentTurn,b
-          sta aTurncountsTable+structTurncountEntryRAM.Turncount,x
+          jsl rlSetChapterAllegiancesAndPhaseControllers
+          jsl rlSetChapterVisionRange
+          jsl rlClearPermanentEventFlags
+          jsl rlClearTemporaryEventFlags
+          jsl rlClearConvoy
+          jsl rlClearUnitArrays
+          jsl rlClearLossesWinsTurncounts
+          jsl rlSetDefaultSpeedOptions
 
           plb
           plp
           rtl
 
-        .databank 0
+          .databank 0
+
+      endCode
+
+    .endsection SetNewGameOptionsSection
+
+    .section UnknownResetPlayerUnitVisibilitySection
+
+      startCode
+
+        rsUnknownResetPlayerUnitVisibility ; 83/FC2F
+
+          .al
+          .autsiz
+          .databank ?
+
+          lda #<>aUnknownResetPlayerUnitVisibilityCoordinates
+          sta lR18
+          lda #>`aUnknownResetPlayerUnitVisibilityCoordinates
+          sta lR18+size(byte)
+
+          lda #<>rlUnknownResetPlayerUnitVisibilityEffect
+          sta lR25
+          lda #>`rlUnknownResetPlayerUnitVisibilityEffect
+          sta lR25+size(byte)
+
+          lda #Player + 1
+          jsl rlRunRoutineForAllUnitsInAllegiance
+
+          rts
+
+          .databank 0
+
+        rlUnknownResetPlayerUnitVisibilityEffect ; 83/FC4B
+
+          .autsiz
+          .databank ?
+
+          sep #$20
+
+          lda [lR18]
+          inc lR18
+          sta aTargetingCharacterBuffer.X,b
+
+          lda [lR18]
+          inc lR18
+          sta aTargetingCharacterBuffer.Y,b
+
+          rep #$20
+
+          lda aTargetingCharacterBuffer.UnitState,b
+          and #~UnitStateHidden
+          sta aTargetingCharacterBuffer.UnitState,b
+
+          lda #<>aTargetingCharacterBuffer
+          sta wR1
+
+          jsl rlCopyCharacterDataFromBuffer
+
+          rtl
+
+          .databank 0
+
+      endCode
+      startData
+
+        aUnknownResetPlayerUnitVisibilityCoordinates ; 83/FC70
+          .word pack([25, 6])
+          .word pack([26, 6])
+          .word pack([27, 6])
+          .word pack([24, 6])
+          .word pack([23, 6])
+          .word pack([25, 5])
+          .word pack([26, 5])
+          .word pack([27, 5])
+          .word pack([24, 5])
+          .word pack([23, 5])
+          .word pack([25, 7])
+          .word pack([26, 7])
+          .word pack([27, 7])
+          .word pack([24, 7])
+          .word pack([23, 7])
+
+      endData
+
+    .endsection UnknownResetPlayerUnitVisibilitySection
+
+    .section SetChapterTurncountSection
+
+      startCode
+
+        rlSetChapterTurncount ; 83/FC8F
+
+          .xl
+          .autsiz
+          .databank ?
+
+          ; Adds an entry to aTurncountsTable
+          ; for the current chapter.
+
+          ; Warning: no bounds checking.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
+          php
+          phb
+
+          sep #$20
+
+          lda #`aTurncountsTable
+          pha
+
+          rep #$20
+
+          plb
+
+          .databank `aTurncountsTable
+
+          ldx #0
+
+          ; Look for the next free entry.
+
+          _Loop
+
+            ; Grab an entry, check if clear.
+
+            lda aTurncountsTable+structTurncountEntryRAM.Chapter,x
+            ora aTurncountsTable+structTurncountEntryRAM.Turncount,x
+            beq _Found
+
+              inc x
+              inc x
+              inc x
+
+              bra _Loop
+
+          _Found
+
+            lda wCurrentChapter,b
+            sta aTurncountsTable+structTurncountEntryRAM.Chapter,x
+
+            lda wCurrentTurn,b
+            sta aTurncountsTable+structTurncountEntryRAM.Turncount,x
+
+            plb
+            plp
+            rtl
+
+          .databank 0
+
+      endCode
 
     .endsection SetChapterTurncountSection
 
     .section ClearUnitArraysSection
 
-      rlClearUnitArrays ; 83/FCB7
+      startCode
 
-        .xl
-        .autsiz
-        .databank `aPlayerUnits
+        rlClearUnitArrays ; 83/FCB7
 
-        ; Clears every deployment slot.
+          .xl
+          .autsiz
+          .databank `aPlayerUnits
 
-        ; Inputs:
-        ; None
+          ; Clears every deployment slot.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        php
+          ; Outputs:
+          ; None
 
-        sep #$20
+          php
 
-        ldx #size(aPlayerUnits)+size(aEnemyUnits)+size(aNPCUnits)-size(word)
+          sep #$20
 
-        _Loop
-          stz aPlayerUnits,x
-          dec x
-          bpl _Loop
+          ldx #size(aPlayerUnits)+size(aEnemyUnits)+size(aNPCUnits)-size(word)
 
-        plp
-        rtl
+          _Loop
+            stz aPlayerUnits,x
+            dec x
+            bpl _Loop
 
-        .databank 0
+          plp
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection ClearUnitArraysSection
 
     .section ClearLossesWinsTurncountsSection
 
-      rlClearLossesWinsTurncounts ; 83/FCC5
+      startCode
 
-        .xl
-        .autsiz
-        .databank `aLossesTable
+        rlClearLossesWinsTurncounts ; 83/FCC5
 
-        ; Clears the losses, wins, and turncounts
-        ; tables.
+          .xl
+          .autsiz
+          .databank `aLossesTable
 
-        ; Inputs:
-        ; None
+          ; Clears the losses, wins, and turncounts
+          ; tables.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        php
+          ; Outputs:
+          ; None
 
-        sep #$20
+          php
 
-        ldx #size(aLossesTable)+size(aWinsTable)+size(aTurncountsTable)-size(byte)
+          sep #$20
 
-        _Loop
-          stz aLossesTable,x
-          dec x
-          bpl _Loop
+          ldx #size(aLossesTable)+size(aWinsTable)+size(aTurncountsTable)-size(byte)
 
-        plp
-        rtl
+          _Loop
+            stz aLossesTable,x
+            dec x
+            bpl _Loop
 
-        .databank 0
+          plp
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection ClearLossesWinsTurncountsSection
 

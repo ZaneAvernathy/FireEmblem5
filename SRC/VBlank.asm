@@ -21,284 +21,310 @@ GUARD_FE5_VBLANK :?= false
 
     .section VBlankHandlerSection
 
-      riVBlankN ; 80/81B6
+      startCode
 
-        .autsiz
-        .databank ?
+        riVBlankN ; 80/81B6
 
-        ; Handles VBlank.
-        ; You shouldn't call this yourself.
+          .autsiz
+          .databank ?
 
-        ; Inputs:
-        ; wVBlankPointer: short pointer to routine
-        ; wUnknown0000D9: some kind of flag
+          ; Handles VBlank.
+          ; You shouldn't call this yourself.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; wVBlankPointer: short pointer to routine
+          ; wUnknown0000D9: some kind of flag
 
-        cli
+          ; Outputs:
+          ; None
 
-        rep #$30
+          cli
 
-        ; Break out of bank 00
+          rep #$30
 
-        jml +
+          ; Break out of bank 00
 
-        +
+          jml +
 
-        phb
-        phd
-        pha
-        phx
-        phy
+          +
 
-        lda #0
-        tcd
-
-        phk
-        plb
-
-        .databank `*
-
-        ; Acknowledge VBlank.
-
-        lda RDNMI,b
-
-        lda wVBlankFlag
-        bpl +
-
-          jmp _8A20
-
-        +
-        ora #$8000
-        sta wVBlankFlag
-
-        .for i in range(wR0, wR26, size(word))
-
-          lda i
+          phb
+          phd
           pha
+          phx
+          phy
 
-        .endfor
+          lda #0
+          tcd
 
-        pea #<>(+)-size(byte)
+          phk
+          plb
 
-        jmp (wVBlankPointer)
+          .databank `*
 
-        +
+          ; Acknowledge VBlank.
 
-        jsl rlIncrementIngameTime
+          lda RDNMI,b
 
-        .for i in range(wR26-size(word), wR0-size(word), -size(word))
+          lda wVBlankFlag
+          bpl +
 
+            jmp _8A20
+
+          +
+          ora #$8000
+          sta wVBlankFlag
+
+          .for i in range(wR0, wR26, size(word))
+
+            lda i
+            pha
+
+          .endfor
+
+          pea #<>(+)-size(byte)
+
+          jmp (wVBlankPointer)
+
+          +
+
+          jsl rlIncrementIngameTime
+
+          .for i in range(wR26-size(word), wR0-size(word), -size(word))
+
+            pla
+            sta i
+
+          .endfor
+
+          inc wVBlankEnabledFramecount
+
+          ply
+          plx
           pla
-          sta i
+          pld
 
-        .endfor
+          stz wVBlankFlag,b
 
-        inc wVBlankEnabledFramecount
+          plb
 
-        ply
-        plx
-        pla
-        pld
+          rti
 
-        stz wVBlankFlag,b
+          _8A20
 
-        plb
+          inc wVBlankDisabledFramecount
 
-        rti
+          jsl rlProcessSoundQueues
+          jsl rlCopyINIDISPBuffer
+          jsl rlIncrementIngameTime
 
-        _8A20
+          ply
+          plx
+          pla
+          pld
+          plb
 
-        inc wVBlankDisabledFramecount
+          rti
 
-        jsl rlProcessSoundQueues
-        jsl rlCopyINIDISPBuffer
-        jsl rlIncrementIngameTime
+          .databank 0
 
-        ply
-        plx
-        pla
-        pld
-        plb
-
-        rti
-
-        .databank 0
+      endCode
 
     .endsection VBlankHandlerSection
 
     .section EnableVBlankSection
 
-      rlEnableVBlank ; 80/82DA
+      startCode
 
-        .autsiz
-        .databank ?
+        rlEnableVBlank ; 80/82DA
 
-        ; Enables VBlank.
+          .autsiz
+          .databank ?
 
-        ; Inputs:
-        ; None
+          ; Enables VBlank.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        php
+          ; Outputs:
+          ; None
 
-        sep #$20
+          php
 
-        lda bBufferNMITIMEN
-        ora #NMITIMEN_VBlank
-        sta bBufferNMITIMEN
-        sta NMITIMEN,b
+          sep #$20
 
-        plp
-        rtl
+          lda bBufferNMITIMEN
+          ora #NMITIMEN_VBlank
+          sta bBufferNMITIMEN
+          sta NMITIMEN,b
 
-        .databank 0
+          plp
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection EnableVBlankSection
 
     .section DisableVBlankSection
 
-      rlDisableVBlank ; 80/82E8
+      startCode
 
-        .autsiz
-        .databank ?
+        rlDisableVBlank ; 80/82E8
 
-        ; Disables VBlank.
+          .autsiz
+          .databank ?
 
-        ; Inputs:
-        ; None
+          ; Disables VBlank.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        php
+          ; Outputs:
+          ; None
 
-        sep #$20
+          php
 
-        lda bBufferNMITIMEN
-        and #~NMITIMEN_VBlank
-        sta bBufferNMITIMEN
-        sta NMITIMEN,b
+          sep #$20
 
-        plp
-        rtl
+          lda bBufferNMITIMEN
+          and #~NMITIMEN_VBlank
+          sta bBufferNMITIMEN
+          sta NMITIMEN,b
 
-        .databank 0
+          plp
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection DisableVBlankSection
 
     .section HaltUntilVBlankSection
 
-      rlHaltUntilVBlank ; 80/82F6
+      startCode
 
-        .autsiz
-        .databank ?
+        rlHaltUntilVBlank ; 80/82F6
 
-        ; Halts code execution until the
-        ; endfor VBlank has occurred.
+          .autsiz
+          .databank ?
 
-        ; Inputs:
-        ; None
+          ; Halts code execution until the
+          ; endfor VBlank has occurred.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        php
+          ; Outputs:
+          ; None
 
-        lda wVBlankEnabledFramecount
+          php
 
-        -
-        cmp wVBlankEnabledFramecount
-        beq -
+          lda wVBlankEnabledFramecount
 
-        plp
+          -
+          cmp wVBlankEnabledFramecount
+          beq -
 
-        rtl
+          plp
+
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection HaltUntilVBlankSection
 
     .section EnableForcedBlankSection
 
-      rlEnableForcedBlank ; 80/82FF
+      startCode
 
-        .autsiz
-        .databank ?
+        rlEnableForcedBlank ; 80/82FF
 
-        ; Enables forced blanking and
-        ; waits for endfor VBlank.
+          .autsiz
+          .databank ?
 
-        ; Inputs:
-        ; None
+          ; Enables forced blanking and
+          ; waits for endfor VBlank.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        php
-        phb
+          ; Outputs:
+          ; None
 
-        phk
-        plb
+          php
+          phb
 
-        .databank `*
+          phk
+          plb
 
-        sep #$20
+          .databank `*
 
-        lda bBufferINIDISP
-        ora #INIDISP_ForcedBlank
-        sta bBufferINIDISP
+          sep #$20
 
-        jsl rlHaltUntilVBlank
+          lda bBufferINIDISP
+          ora #INIDISP_ForcedBlank
+          sta bBufferINIDISP
 
-        plb
-        plp
+          jsl rlHaltUntilVBlank
 
-        rtl
+          plb
+          plp
 
-        .databank 0
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection EnableForcedBlankSection
 
     .section DisableForcedBlankSection
 
-      rlDisableForcedBlank ; 80/82FF
+      startCode
 
-        .autsiz
-        .databank ?
+        rlDisableForcedBlank ; 80/82FF
 
-        ; Disables forced blanking and
-        ; waits for endfor VBlank.
+          .autsiz
+          .databank ?
 
-        ; Inputs:
-        ; None
+          ; Disables forced blanking and
+          ; waits for endfor VBlank.
 
-        ; Outputs:
-        ; None
+          ; Inputs:
+          ; None
 
-        php
-        phb
+          ; Outputs:
+          ; None
 
-        phk
-        plb
+          php
+          phb
 
-        .databank `*
+          phk
+          plb
 
-        sep #$20
+          .databank `*
 
-        lda bBufferINIDISP
-        and #~INIDISP_ForcedBlank
-        sta bBufferINIDISP
+          sep #$20
 
-        jsl rlHaltUntilVBlank
+          lda bBufferINIDISP
+          and #~INIDISP_ForcedBlank
+          sta bBufferINIDISP
 
-        plb
-        plp
+          jsl rlHaltUntilVBlank
 
-        rtl
+          plb
+          plp
 
-        .databank 0
+          rtl
+
+          .databank 0
+
+      endCode
 
     .endsection DisableForcedBlankSection
 
