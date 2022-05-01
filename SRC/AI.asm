@@ -137,7 +137,7 @@ GUARD_FE5_AI :?= false
       macroAISpecialCoordinates .macro CoordinateList
         .if len(\CoordinateList) > 0
           _CoordsStart := * + (size(addr) * len(\CoordinateList))
-          .for _Index in enumerate(\CoordinateList)[:,0]
+          .for _Index in iter.enumerate(\CoordinateList)[:,0]
             .addr _CoordsStart + (size(addr) * _Index)
           .endfor
           .for _Coords in \CoordinateList
