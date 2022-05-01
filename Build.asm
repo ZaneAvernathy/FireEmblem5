@@ -1,10 +1,7 @@
 
 .cpu "65816"
 
-; TODO: incorporate better size helpers
-; TODO: incorporate functions
-
-.include "DisassemblyHelpers.h"
+.include "SizeHelpersStart.h"
 
 ; Until everything is disassembled,
 ; pre-fill the ROM.
@@ -923,19 +920,4 @@
 
 ; Add up disassembly byte counts
 
-  DataSize := DataEnds - DataStarts + ...
-  CodeSize := CodeEnds - CodeStarts + ...
-  GraphicsSize := GraphicsEnds - GraphicsStarts + ...
-  EventsSize := EventsEnds - EventsStarts + ...
-  TextSize := TextEnds - TextStarts + ...
-  FreespaceSize := FreespaceEnds - FreespaceStarts + ...
-
-  DisassemblySize := DataSize + CodeSize + GraphicsSize + EventsSize + TextSize + FreespaceSize
-
-  .warn "Total Disassembled: ", SizeFormatter(DisassemblySize)
-  .warn "Data: ", SizeFormatter(DataSize)
-  .warn "Code: ", SizeFormatter(CodeSize)
-  .warn "Graphics: ", SizeFormatter(GraphicsSize)
-  .warn "Events: ", SizeFormatter(EventsSize)
-  .warn "Text: ", SizeFormatter(TextSize)
-  .warn "Freespace: ", SizeFormatter(FreespaceSize)
+.include "SizeHelpersEnd.h"
