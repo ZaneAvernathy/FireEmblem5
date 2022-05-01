@@ -120,11 +120,7 @@
   * := $007FE0
   .logical mapped($007FE0)
 
-    startData
-
-      .dsection VectorTableSection
-
-    endData $810000
+    .dsection VectorTableSection
 
   .endlogical
 

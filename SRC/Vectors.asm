@@ -22,23 +22,27 @@ GUARD_FE5_VECTORS :?= false
 
     .section VectorTableSection
 
-                    .addr riBRK
-                    .addr riBRK
-      aCOPVectorN   .addr riBRK
-      aBRKVectorN   .addr riBRK
-      aABORTVectorN .addr riBRK
-      aNMIVectorN   .addr riVBlankN
-                    .addr riBRK
-      aIRQVectorN   .addr riIRQN
+      startData
 
-                    .addr riBRK
-                    .addr riBRK
-      aCOPVectorE   .addr riBRK
-      aBRKVectorE   .addr riBRK
-      aABORTVectorE .addr riBRK
-      aNMIVectorE   .addr riBRK
-      aRESETVectorE .addr riResetE
-      aIRQVectorE   .addr riBRK
+                      .addr riBRK
+                      .addr riBRK
+        aCOPVectorN   .addr riBRK
+        aBRKVectorN   .addr riBRK
+        aABORTVectorN .addr riBRK
+        aNMIVectorN   .addr riVBlankN
+                      .addr riBRK
+        aIRQVectorN   .addr riIRQN
+
+                      .addr riBRK
+                      .addr riBRK
+        aCOPVectorE   .addr riBRK
+        aBRKVectorE   .addr riBRK
+        aABORTVectorE .addr riBRK
+        aNMIVectorE   .addr riBRK
+        aRESETVectorE .addr riResetE
+        aIRQVectorE   .addr riBRK
+
+      endData
 
     .endsection VectorTableSection
 
