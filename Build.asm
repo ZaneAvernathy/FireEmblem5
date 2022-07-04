@@ -8,6 +8,25 @@
 
   .include "SRC/BaseROM.asm"
 
+  ; Grab the base ROM as bytes for shenanigans.
+  ROM = binary(BASEROM)
+
+  ; Temporary helper to work with data that crosses
+  ; bank boundaries. TODO: add to Volt Edge.
+
+  crossbankRawMissing   := 0
+  crossbankRawRemaining := b""
+
+  crossbankRaw .segment Block
+    crossbankRawMissing   := $10000 - (* & $FFFF)
+    crossbankRawRemaining := \Block[crossbankRawMissing:]
+    .text \Block[:crossbankRawMissing]
+  .endsegment
+
+  crossbankRawRemainder .segment
+    .text crossbankRawRemaining
+  .endsegment
+
 ; Sources
 
   .include "SRC/Dialogue.asm"
@@ -45,6 +64,7 @@
   .include "EVENTS/Chapter8.event"
   .include "EVENTS/Chapter8x.event"
   .include "EVENTS/Chapter9.event"
+  .include "SRC/BattleBackgrounds.asm"
 
 ; Sections
 
@@ -806,6 +826,55 @@
 
   * := $33E010
   .logical mapped($33E010)
+
+  * := $204AFF
+  .logical mapped($204AFF)
+
+    .dsection BattleBackgroundBlock1Section
+
+  .endlogical
+
+  * := $208000
+  .logical mapped($208000)
+
+    .dsection BattleBackgroundBlock2Section
+
+  .endlogical
+
+  * := $210000
+  .logical mapped($210000)
+
+    .dsection BattleBackgroundBlock3Section
+
+  .endlogical
+
+  * := $218000
+  .logical mapped($218000)
+
+    .dsection BattleBackgroundBlock4Section
+
+  .endlogical
+
+  * := $220000
+  .logical mapped($220000)
+
+    .dsection BattleBackgroundBlock5Section
+
+  .endlogical
+
+  * := $228000
+  .logical mapped($228000)
+
+    .dsection BattleBackgroundBlock6Section
+
+  .endlogical
+
+  * := $230000
+  .logical mapped($230000)
+
+    .dsection BattleBackgroundBlock7Section
+
+  .endlogical
 
     startEventScenes
 
