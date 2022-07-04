@@ -65,6 +65,7 @@
   .include "EVENTS/Chapter8x.event"
   .include "EVENTS/Chapter9.event"
   .include "SRC/BattleBackgrounds.asm"
+  .include "SRC/Portraits.asm"
 
 ; Sections
 
@@ -397,6 +398,13 @@
       .fill mapped($058000) + $8000 - *, $FF
 
     endFreespace
+
+  .endlogical
+
+  * := $06512A
+  .logical mapped($06512A)
+
+    .dsection PortraitTableSection
 
   .endlogical
 
@@ -890,6 +898,57 @@
 
   .endlogical
 
+  * := $354000
+  .logical mapped($354000)
+
+    .dsection PortraitPalettesSection
+
+    ; TODO: put this into its own place
+
+    startPalettes
+
+      aDialogueBoxPalette .text ROM[$355E60:$355E80]
+
+    endPalettes
+
+    .dsection PortraitGraphicsBlock1Section
+
+  .endlogical
+
+  * := $358000
+  .logical mapped($358000)
+
+    .dsection PortraitGraphicsBlock2Section
+
+  .endlogical
+
+  * := $360000
+  .logical mapped($360000)
+
+    .dsection PortraitGraphicsBlock3Section
+
+  .endlogical
+
+  * := $368000
+  .logical mapped($368000)
+
+    .dsection PortraitGraphicsBlock4Section
+
+  .endlogical
+
+  * := $370000
+  .logical mapped($370000)
+
+    .dsection PortraitGraphicsBlock5Section
+
+  .endlogical
+
+  * := $378000
+  .logical mapped($378000)
+
+    .dsection PortraitGraphicsBlock6Section
+
+  .endlogical
   * := $3E8000
   .logical mapped($3E8000)
 
