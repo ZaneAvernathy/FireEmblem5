@@ -1,0 +1,3 @@
+{DIALOGUE_RIGHT}貴様らごときに\n
+わしが倒せるものか！\n
+{DIALOGUE_PAUSE $10}さあ､{DIALOGUE_PAUSE $08}かかってこい！{DIALOGUE_END_SCENE}

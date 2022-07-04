@@ -1,0 +1,52 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER14 :?= false
+.if (!GUARD_FE5_CHAPTER14)
+  GUARD_FE5_CHAPTER14 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter14DialogueSection
+
+      dialogueChapter14Opening1 .include "../TEXT/DIALOGUE/CHAPTER14/Opening1.dialogue.txt" ; 92/BEE6
+      dialogueChapter14Opening2 .include "../TEXT/DIALOGUE/CHAPTER14/Opening2.dialogue.txt" ; 92/C13D
+      dialogueChapter14ShanamLeave .include "../TEXT/DIALOGUE/CHAPTER14/ShanamLeave.dialogue.txt" ; 92/C5CE
+      dialogueChapter14UnusedRemovedKarinShanam .include "../TEXT/DIALOGUE/CHAPTER14/UnusedRemovedKarinShanam.dialogue.txt" ; 92/C861
+      dialogueChapter14UnusedRemovedLaraTransformation .include "../TEXT/DIALOGUE/CHAPTER14/UnusedRemovedLaraTransformation.dialogue.txt" ; 92/C88F
+      dialogueChapter14NPCArrive .include "../TEXT/DIALOGUE/CHAPTER14/NPCArrive.dialogue.txt" ; 92/C8BC
+      dialogueChapter14Ending1 .include "../TEXT/DIALOGUE/CHAPTER14/Ending1.dialogue.txt" ; 92/C99A
+      dialogueChapter14Ending2 .include "../TEXT/DIALOGUE/CHAPTER14/Ending2.dialogue.txt" ; 92/CD08
+
+      dialoguePaulusBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Paulus.dialogue.txt" ; 92/D11D
+      dialoguePaulusDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Paulus.dialogue.txt" ; 92/D135
+      dialoguePaulusReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Paulus.dialogue.txt" ; 92/D16A
+      dialogueBaldachBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Baldach.dialogue.txt" ; 92/D199
+      dialogueBaldachDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Baldach.dialogue.txt" ; 92/D1B4
+      dialogueBaldachReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Baldach.dialogue.txt" ; 92/D1CB
+
+      dialogueChapter14HomerRecruitment .include "../TEXT/DIALOGUE/CHAPTER14/HomerRecruitment.dialogue.txt" ; 92/D1F9
+      dialogueChapter14HomerHouseChild .include "../TEXT/DIALOGUE/CHAPTER14/HomerHouseChild.dialogue.txt" ; 92/D39C
+      dialogueChapter14HomerHouseMan .include "../TEXT/DIALOGUE/CHAPTER14/HomerHouseMan.dialogue.txt" ; 92/D3C4
+      dialogueChapter14HomerHouseWoman .include "../TEXT/DIALOGUE/CHAPTER14/HomerHouseWoman.dialogue.txt" ; 92/D3E3
+      dialogueChapter14House1 .include "../TEXT/DIALOGUE/CHAPTER14/House1.dialogue.txt" ; 92/D40A
+      dialogueChapter14House2 .include "../TEXT/DIALOGUE/CHAPTER14/House2.dialogue.txt" ; 92/D43D
+      dialogueChapter14House3 .include "../TEXT/DIALOGUE/CHAPTER14/House3.dialogue.txt" ; 92/D49B
+      dialogueChapter14House4 .include "../TEXT/DIALOGUE/CHAPTER14/House4.dialogue.txt" ; 92/D4C3
+      dialogueChapter14House5 .include "../TEXT/DIALOGUE/CHAPTER14/House5.dialogue.txt" ; 92/D502
+      dialogueChapter14House6 .include "../TEXT/DIALOGUE/CHAPTER14/House6.dialogue.txt" ; 92/D532
+      dialogueChapter14NosferatuHouse .include "../TEXT/DIALOGUE/CHAPTER14/NosferatuHouse.dialogue.txt" ; 92/D562
+      dialogueChapter14WyrmlanceHouseOther .include "../TEXT/DIALOGUE/CHAPTER14/WyrmlanceHouseOther.dialogue.txt" ; 92/D5E1
+      dialogueChapter14WyrmlanceHouseDean .include "../TEXT/DIALOGUE/CHAPTER14/WyrmlanceHouseDean.dialogue.txt" ; 92/D60A
+
+    .endsection Chapter14DialogueSection
+
+.endif ; GUARD_FE5_CHAPTER14

@@ -1,0 +1,2 @@
+{DIALOGUE_RIGHT}{DIALOGUE_PAGE0}これがレンスターの戦いかた？\n
+{DIALOGUE_PAUSE $10}わしはまちがっていたのかもしれぬ･･･{DIALOGUE_END_SCENE}

@@ -1,0 +1,3 @@
+{DIALOGUE_PAGE0}さして面白くもねえが\n
+{DIALOGUE_PAUSE $10}くだらなくもねえ\n
+人生だったな･･･{DIALOGUE_END_SCENE}

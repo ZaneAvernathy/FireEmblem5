@@ -1,0 +1,2 @@
+{DIALOGUE_RIGHT}礼はいわん\n
+{DIALOGUE_PAUSE $08}次に会うときはきさまを殺す！{DIALOGUE_END_SCENE}

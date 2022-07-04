@@ -1,0 +1,45 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER24 :?= false
+.if (!GUARD_FE5_CHAPTER24)
+  GUARD_FE5_CHAPTER24 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter24DialogueSection
+
+      dialogueChapter24Opening1 .include "../TEXT/DIALOGUE/CHAPTER24/Opening1.dialogue.txt" ; B0/DF8C
+      dialogueChapter24Opening2A .include "../TEXT/DIALOGUE/CHAPTER24/Opening2A.dialogue.txt" ; B0/E0F6
+      dialogueChapter24Opening2B .include "../TEXT/DIALOGUE/CHAPTER24/Opening2B.dialogue.txt" ; B0/E3CA
+      dialogueChapter24Opening2C .include "../TEXT/DIALOGUE/CHAPTER24/Opening2C.dialogue.txt" ; B0/E6B8
+      dialogueChapter24Opening2D .include "../TEXT/DIALOGUE/CHAPTER24/Opening2D.dialogue.txt" ; B0/E978
+      dialogueChapter24KiaDoor1 .include "../TEXT/DIALOGUE/CHAPTER24/KiaDoor1.dialogue.txt" ; B0/EB8F
+      dialogueChapter24KiaDoor2 .include "../TEXT/DIALOGUE/CHAPTER24/KiaDoor2.dialogue.txt" ; B0/EBBA
+      dialogueChapter24MareetaGalzusTalk .include "../TEXT/DIALOGUE/CHAPTER24/MareetaGalzusTalk.dialogue.txt" ; B0/EBE8
+      dialogueChapter24Ending1 .include "../TEXT/DIALOGUE/CHAPTER24/Ending1.dialogue.txt" ; B0/EF1A
+      dialogueChapter24Ending2B .include "../TEXT/DIALOGUE/CHAPTER24/Ending2B.dialogue.txt" ; B0/F180
+      dialogueChapter24Ending2A .include "../TEXT/DIALOGUE/CHAPTER24/Ending2A.dialogue.txt" ; B0/F28B
+
+      dialogueRaydrikChapter24BattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/RaydrikChapter24.dialogue.txt" ; B0/F476
+      dialogueRaydrikChapter24DeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/RaydrikChapter24.dialogue.txt" ; B0/F4AD
+      dialogueGalzusChapter24DeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/GalzusChapter24.dialogue.txt" ; B0/F514
+      dialogueGalzusReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Galzus.dialogue.txt" ; B0/F530
+
+    .endsection Chapter24DialogueSection
+
+    .section Chapter24WMDialogueSection
+
+      dialogueChapter24WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER24/WorldMap1.dialogue.txt" ; 82/DACA
+
+    .endsection Chapter24WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER24

@@ -1,0 +1,1 @@
+{DIALOGUE_RIGHT}貴様らにこの城はわたさん！{DIALOGUE_END_SCENE}

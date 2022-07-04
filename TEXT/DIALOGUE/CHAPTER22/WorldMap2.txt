@@ -1,0 +1,6 @@
+{DIALOGUE_PAGE0}その目の前に､{DIALOGUE_PAUSE $08}トラキア半島最大の川\n
+{DIALOGUE_PAUSE $10}トラキア大河が広大なその姿をあらわす{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+これまで､{DIALOGUE_PAUSE $08}その豊かな水で北トラキア地方に\n
+多くのめぐみを与えてきたトラキア大河{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+このトラキア大河をこえれば\n
+{DIALOGUE_PAUSE $10}マンスターは目の前である{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

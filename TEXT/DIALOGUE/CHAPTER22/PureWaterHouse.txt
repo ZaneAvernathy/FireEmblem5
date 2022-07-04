@@ -1,0 +1,7 @@
+{DIALOGUE_RIGHT}{DIALOGUE_LOAD $0095}
+川の向こうは帝国の兵隊でいっぱいじゃ\n
+{DIALOGUE_PAUSE $10}中には恐ろしい魔法を使う連中が\n
+いるという話も聞く{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+何の準備もせずに行くのは危険じゃ\n
+{DIALOGUE_PAUSE $10}このせいすいを持ってゆきなされ\n
+{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

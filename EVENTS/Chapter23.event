@@ -1,0 +1,67 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER23 :?= false
+.if (!GUARD_FE5_CHAPTER23)
+  GUARD_FE5_CHAPTER23 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter23DialogueSection
+
+      dialogueChapter23Opening1 .include "../TEXT/DIALOGUE/CHAPTER23/Opening1.dialogue.txt" ; 98/CDC0
+      dialogueChapter23Opening2 .include "../TEXT/DIALOGUE/CHAPTER23/Opening2.dialogue.txt" ; 98/D163
+      dialogueChapter23Opening3 .include "../TEXT/DIALOGUE/CHAPTER23/Opening3.dialogue.txt" ; 98/D348
+      dialogueChapter23CoulterSpawn .include "../TEXT/DIALOGUE/CHAPTER23/CoulterSpawn.dialogue.txt" ; 98/D443
+      dialogueChapter23AltenaLeave .include "../TEXT/DIALOGUE/CHAPTER23/AltenaLeave.dialogue.txt" ; 98/D628
+      dialogueChapter23CedAppear .include "../TEXT/DIALOGUE/CHAPTER23/CedAppear.dialogue.txt" ; 98/D7E5
+      dialogueChapter23LeifCedTalk .include "../TEXT/DIALOGUE/CHAPTER23/LeifCedTalk.dialogue.txt" ; 98/D882
+      dialogueChapter23LeifSaiasTalk .include "../TEXT/DIALOGUE/CHAPTER23/LeifSaiasTalk.dialogue.txt" ; 98/DEB7
+      dialogueChapter23AlphanFetch .include "../TEXT/DIALOGUE/CHAPTER23/AlphanFetch.dialogue.txt" ; 98/E11C
+      dialogueChapter23AlphanTome .include "../TEXT/DIALOGUE/CHAPTER23/AlphanTome.dialogue.txt" ; 98/E23E
+      dialogueChapter23Ending1 .include "../TEXT/DIALOGUE/CHAPTER23/Ending1.dialogue.txt" ; 98/E2D0
+      dialogueChapter23Ending2A .include "../TEXT/DIALOGUE/CHAPTER23/Ending2A.dialogue.txt" ; 98/E3AC
+      dialogueChapter23Ending2B .include "../TEXT/DIALOGUE/CHAPTER23/Ending2B.dialogue.txt" ; 98/E44A
+      dialogueChapter23SaiasLoad .include "../TEXT/DIALOGUE/CHAPTER23/SaiasLoad.dialogue.txt" ; 98/E51F
+      dialogueChapter23Ending2C .include "../TEXT/DIALOGUE/CHAPTER23/Ending2C.dialogue.txt" ; 98/E525
+      dialogueChapter23Ending3 .include "../TEXT/DIALOGUE/CHAPTER23/Ending3.dialogue.txt" ; 98/E640
+      dialogueChapter23Ending4B .include "../TEXT/DIALOGUE/CHAPTER23/Ending4B.dialogue.txt" ; 98/E743
+      dialogueChapter23Ending4A .include "../TEXT/DIALOGUE/CHAPTER23/Ending4A.dialogue.txt" ; 98/E7A4
+      dialogueChapter23SarahPlaceholder .include "../TEXT/DIALOGUE/CHAPTER23/SarahPlaceholder.dialogue.txt" ; 98/E7FE
+
+      dialogueCedDeathLeifAugust .include "../TEXT/DIALOGUE/DEATHQUOTES/CedDeathLeifAugust.dialogue.txt" ; 98/E827
+
+      dialogueChapter23VulneraryHouse .include "../TEXT/DIALOGUE/CHAPTER23/VulneraryHouse.dialogue.txt" ; 98/E8B5
+      dialogueChapter23PureWaterHouse .include "../TEXT/DIALOGUE/CHAPTER23/PureWaterHouse.dialogue.txt" ; 98/E913
+      dialogueChapter23PhysicHouse .include "../TEXT/DIALOGUE/CHAPTER23/PhysicHouse.dialogue.txt" ; 98/E96D
+      dialogueChapter23ItemlessHouse2 .include "../TEXT/DIALOGUE/CHAPTER23/ItemlessHouse2.dialogue.txt" ; 98/E9DA
+      dialogueChapter23ItemlessHouse1 .include "../TEXT/DIALOGUE/CHAPTER23/ItemlessHouse1.dialogue.txt" ; 98/EA9F
+
+      dialogueCoulterBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Coulter.dialogue.txt" ; 98/EB48
+      dialogueCoulterDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Coulter.dialogue.txt" ; 98/EB65
+      dialogueCoulterReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Coulter.dialogue.txt" ; 98/EB86
+      dialogueAlphanBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Alphan.dialogue.txt" ; 98/EBB3
+      dialogueAlphanDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Alphan.dialogue.txt" ; 98/EBCF
+      dialogueAlphanReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Alphan.dialogue.txt" ; 98/EBEE
+      dialogueFardenBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Farden.dialogue.txt" ; 98/EC0C
+      dialogueFardenDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Farden.dialogue.txt" ; 98/EC38
+      dialogueFardenReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Farden.dialogue.txt" ; 98/EC4E
+
+    .endsection Chapter23DialogueSection
+
+    .section Chapter23WMDialogueSection
+
+      dialogueChapter23WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER23/WorldMap1.dialogue.txt" ; 82/DA08
+      dialogueChapter23WorldMap2 .include "../TEXT/DIALOGUE/CHAPTER23/WorldMap2.dialogue.txt" ; 82/DA36
+
+    .endsection Chapter23WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER23

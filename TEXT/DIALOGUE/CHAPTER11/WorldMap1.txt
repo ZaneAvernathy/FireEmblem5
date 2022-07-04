@@ -1,0 +1,3 @@
+国境を突破し､{DIALOGUE_PAUSE $10}ついに帝国領への\n
+進攻をはたしたリーフたち『解放軍』{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+{DIALOGUE_END_SCENE}

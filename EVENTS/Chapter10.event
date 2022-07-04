@@ -1,0 +1,54 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER10 :?= false
+.if (!GUARD_FE5_CHAPTER10)
+  GUARD_FE5_CHAPTER10 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter10DialogueSection
+
+      dialogueChapter10Opening1 .include "../TEXT/DIALOGUE/CHAPTER10/Opening1.dialogue.txt" ; E7/8BDF
+      dialogueChapter10Opening2 .include "../TEXT/DIALOGUE/CHAPTER10/Opening2.dialogue.txt" ; E7/8F0B
+      dialogueChapter10OlwenFredArrive .include "../TEXT/DIALOGUE/CHAPTER10/OlwenFredArrive.dialogue.txt" ; E7/909A
+      dialogueChapter10OlwenFredLeave .include "../TEXT/DIALOGUE/CHAPTER10/OlwenFredLeave.dialogue.txt" ; E7/91F7
+      dialogueChapter10Ending1A .include "../TEXT/DIALOGUE/CHAPTER10/Ending1A.dialogue.txt" ; E7/9245
+      dialogueChapter10Ending1B .include "../TEXT/DIALOGUE/CHAPTER10/Ending1B.dialogue.txt" ; E7/9435
+
+      dialogueLargoBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Largo.dialogue.txt" ; E7/9601
+      dialogueLargoDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Largo.dialogue.txt" ; E7/9624
+      dialogueLargoReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Largo.dialogue.txt" ; E7/9639
+
+      dialogueOlwenChapter10BattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/OlwenChapter10.dialogue.txt" ; E7/9653
+      dialogueFredChapter10BattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/FredChapter10.dialogue.txt" ; E7/9676
+      dialogueFredChapter10DeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/FredChapter10.dialogue.txt" ; E7/9699
+      dialogueFredUnusedChapter10ReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/FredUnusedChapter10.dialogue.txt" ; E7/96AD
+
+      dialogueChapter10UnusedSaiasMareetaPlaceholder .include "../TEXT/DIALOGUE/CHAPTER10/UnusedSaiasMareetaPlaceholder.dialogue.txt" ; E7/96CB
+      dialogueChapter10UnusedNotNannaPlaceholder .include "../TEXT/DIALOGUE/CHAPTER10/UnusedNotNannaPlaceholder.dialogue.txt" ; E7/96F9
+      dialogueChapter10UnusedNannaPlaceholder .include "../TEXT/DIALOGUE/CHAPTER10/UnusedNannaPlaceholder.dialogue.txt" ; E7/9721
+      dialogueChapter10RescueHouse .include "../TEXT/DIALOGUE/CHAPTER10/RescueHouse.dialogue.txt" ; E7/9749
+      dialogueChapter10WardHouse .include "../TEXT/DIALOGUE/CHAPTER10/WardHouse.dialogue.txt" ; E7/97BF
+      dialogueChapter10UnusedHouse .include "../TEXT/DIALOGUE/CHAPTER10/UnusedHouse.dialogue.txt" ; E7/9813
+      dialogueChapter10UnusedOlwenWeaponless .include "../TEXT/DIALOGUE/CHAPTER10/UnusedOlwenWeaponless.dialogue.txt" ; E7/984E
+      dialogueChapter10UnusedFredWeaponless .include "../TEXT/DIALOGUE/CHAPTER10/UnusedFredWeaponless.dialogue.txt" ; E7/9887
+
+    .endsection Chapter10DialogueSection
+
+    .section Chapter10WMDialogueSection
+
+      dialogueChapter10WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER10/WorldMap1.dialogue.txt" ; 82/CEEA
+      dialogueChapter10WorldMap2 .include "../TEXT/DIALOGUE/CHAPTER10/WorldMap2.dialogue.txt" ; 82/CF7D
+
+    .endsection Chapter10WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER10

@@ -1,0 +1,2 @@
+彼らの隠れ住んでいるという\n
+ハンニバルの山荘を目指す･･･{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

@@ -1,0 +1,3 @@
+{DIALOGUE_RIGHT}{DIALOGUE_LOAD $0090}
+元メッセージ｢タニアなしＯＰ｣です\n
+このメッセージはさくじょされました{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

@@ -1,0 +1,7 @@
+{DIALOGUE_RIGHT}{DIALOGUE_LOAD $0091}
+{DIALOGUE_PAGE0}わたしは\n
+{DIALOGUE_PAUSE $08}帝国やトラキアの支配から逃れるために\n
+この町に来たのです{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+帝国やトラキアに\n
+支配されてしまうのなら\n
+この町には用はないわ{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

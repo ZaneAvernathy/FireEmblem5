@@ -1,0 +1,48 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER12x :?= false
+.if (!GUARD_FE5_CHAPTER12x)
+  GUARD_FE5_CHAPTER12x := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter12xDialogueSection
+
+      dialogueChapter12xOpening1 .include "../TEXT/DIALOGUE/CHAPTER12x/Opening1.dialogue.txt" ; 92/AAE9
+      dialogueChapter12xOpening2 .include "../TEXT/DIALOGUE/CHAPTER12x/Opening2.dialogue.txt" ; 92/AD46
+      dialogueChapter12xOpening3 .include "../TEXT/DIALOGUE/CHAPTER12x/Opening3.dialogue.txt" ; 92/ADAF
+      dialogueChapter12xOpening4 .include "../TEXT/DIALOGUE/CHAPTER12x/Opening4.dialogue.txt" ; 92/AEDC
+      dialogueChapter12xPanRecruitment1 .include "../TEXT/DIALOGUE/CHAPTER12x/PanRecruitment1.dialogue.txt" ; 92/B00D
+      dialogueChapter12xPanRecruitment2 .include "../TEXT/DIALOGUE/CHAPTER12x/PanRecruitment2.dialogue.txt" ; 92/B15D
+      dialogueChapter12xLithisPanTalk1 .include "../TEXT/DIALOGUE/CHAPTER12x/LithisPanTalk1.dialogue.txt" ; 92/B1CA
+      dialogueChapter12xLithisPanTalk2 .include "../TEXT/DIALOGUE/CHAPTER12x/LithisPanTalk2.dialogue.txt" ; 92/B477
+      dialogueChapter12xTrudeRecruitment .include "../TEXT/DIALOGUE/CHAPTER12x/TrudeRecruitment.dialogue.txt" ; 92/B4F4
+      dialogueChapter12xTinaRecruitment .include "../TEXT/DIALOGUE/CHAPTER12x/TinaRecruitment.dialogue.txt" ; 92/B60A
+      dialogueChapter12xLaraPanTalk .include "../TEXT/DIALOGUE/CHAPTER12x/LaraPanTalk.dialogue.txt" ; 92/B988
+      dialogueChapter12xEnding1 .include "../TEXT/DIALOGUE/CHAPTER12x/Ending1.dialogue.txt" ; 92/BCCB
+      dialogueChapter12xUnusedRemoved .include "../TEXT/DIALOGUE/CHAPTER12x/UnusedRemoved.dialogue.txt" ; 92/BD13
+      dialogueChapter12xEnding2 .include "../TEXT/DIALOGUE/CHAPTER12x/Ending2.dialogue.txt" ; 92/BD22
+      dialogueChapter12xEnding3 .include "../TEXT/DIALOGUE/CHAPTER12x/Ending3.dialogue.txt" ; 92/BD81
+
+      dialoguePanBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Pan.dialogue.txt" ; 92/BDD6
+      dialoguePanChapter12xDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/PanChapter12x.dialogue.txt" ; 92/BE02
+      dialoguePanReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Pan.dialogue.txt" ; 92/BE17
+      dialogueTrudeBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Trude.dialogue.txt" ; 92/BE45
+      dialogueTrudeChapter12xDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/TrudeChapter12x.dialogue.txt" ; 92/BE59
+      dialogueTrudeReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Trude.dialogue.txt" ; 92/BE6F
+      dialogueTinaBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Tina.dialogue.txt" ; 92/BE8F
+      dialogueTinaChapter12xDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/TinaChapter12x.dialogue.txt" ; 92/BEA8
+      dialogueTinaReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Tina.dialogue.txt" ; 92/BEC0
+
+    .endsection Chapter12xDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER12x

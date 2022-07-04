@@ -1,0 +1,6 @@
+{DIALOGUE_RIGHT}{DIALOGUE_LOAD $002C}
+解放軍のかたがたか\n
+{DIALOGUE_PAUSE $10}これから東は帝国軍の拠点に近づくゆえ\n
+{DIALOGUE_PAUSE $08}戦いもいっそう困難なものとなろう{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+このせいすいを持ってゆきなされ\n
+{DIALOGUE_PAUSE $10}なんらかの時に役に立つじゃろうて{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

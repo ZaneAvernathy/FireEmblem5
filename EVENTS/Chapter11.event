@@ -1,0 +1,47 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER11 :?= false
+.if (!GUARD_FE5_CHAPTER11)
+  GUARD_FE5_CHAPTER11 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter11DialogueSection
+
+      dialogueChapter11Opening1 .include "../TEXT/DIALOGUE/CHAPTER11/Opening1.dialogue.txt" ; 95/E929
+      dialogueChapter11Opening2 .include "../TEXT/DIALOGUE/CHAPTER11/Opening2.dialogue.txt" ; 95/EE86
+      dialogueChapter11Opening3 .include "../TEXT/DIALOGUE/CHAPTER11/Opening3.dialogue.txt" ; 95/EEF0
+      dialogueChapter11KempfDialogue .include "../TEXT/DIALOGUE/CHAPTER11/KempfDialogue.dialogue.txt" ; 95/F1AB
+
+      dialogueKempfChapter11BattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/KempfChapter11.dialogue.txt" ; 95/F28B
+
+      dialogueChapter11KempfLeave .include "../TEXT/DIALOGUE/CHAPTER11/KempfLeave.dialogue.txt" ; 95/F2AF
+      dialogueChapter11Ending1A .include "../TEXT/DIALOGUE/CHAPTER11/Ending1A.dialogue.txt" ; 95/F2E7
+      dialogueChapter11Ending1B .include "../TEXT/DIALOGUE/CHAPTER11/Ending1B.dialogue.txt" ; 95/F39F
+
+      dialogueFredBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Fred.dialogue.txt" ; 95/F42D
+      dialogueFredChapter11DeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/FredChapter11.dialogue.txt" ; 95/F450
+      dialogueFredReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Fred.dialogue.txt" ; 95/F479
+
+      dialogueChapter11FredChange .include "../TEXT/DIALOGUE/CHAPTER11/FredChange.dialogue.txt" ; 95/F497
+      dialogueChapter11TrapSprung .include "../TEXT/DIALOGUE/CHAPTER11/TrapSprung.dialogue.txt" ; 95/F6FF
+
+    .endsection Chapter11DialogueSection
+
+    .section Chapter11WMDialogueSection
+
+      dialogueChapter11WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER11/WorldMap1.dialogue.txt" ; 82/CFB4
+      dialogueChapter11WorldMap2 .include "../TEXT/DIALOGUE/CHAPTER11/WorldMap2.dialogue.txt" ; 82/CFE6
+
+    .endsection Chapter11WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER11

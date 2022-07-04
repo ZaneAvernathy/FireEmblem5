@@ -1,0 +1,1 @@
+{DIALOGUE_RIGHT}言うべきことは何もない･･･{DIALOGUE_END_SCENE}

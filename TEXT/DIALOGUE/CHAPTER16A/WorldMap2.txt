@@ -1,0 +1,4 @@
+『ノルデン砦』と呼ばれる\n
+{DIALOGUE_PAUSE $10}帝国の砦を突破しなければならない{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+そこには､{DIALOGUE_PAUSE $08}フリージの精鋭軍団が配備され\n
+{DIALOGUE_PAUSE $10}『解放軍』の進撃を阻もうとしていた{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

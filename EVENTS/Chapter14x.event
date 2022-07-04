@@ -1,0 +1,37 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER14x :?= false
+.if (!GUARD_FE5_CHAPTER14x)
+  GUARD_FE5_CHAPTER14x := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter14xDialogueSection
+
+      dialogueChapter14xOpening1 .include "../TEXT/DIALOGUE/CHAPTER14x/Opening1.dialogue.txt" ; E7/98B5
+      dialogueChapter14xOpening2 .include "../TEXT/DIALOGUE/CHAPTER14x/Opening2.dialogue.txt" ; E7/9A69
+      dialogueChapter14xCivilian1 .include "../TEXT/DIALOGUE/CHAPTER14x/Civilian1.dialogue.txt" ; E7/9B84
+      dialogueChapter14xCivilian2 .include "../TEXT/DIALOGUE/CHAPTER14x/Civilian2.dialogue.txt" ; E7/9BB1
+      dialogueChapter14xCivilian3 .include "../TEXT/DIALOGUE/CHAPTER14x/Civilian3.dialogue.txt" ; E7/9BDD
+      dialogueChapter14xCivilian4 .include "../TEXT/DIALOGUE/CHAPTER14x/Civilian4.dialogue.txt" ; E7/9C02
+      dialogueChapter14xCivilian5 .include "../TEXT/DIALOGUE/CHAPTER14x/Civilian5.dialogue.txt" ; E7/9C32
+      dialogueChapter14xCivilian6 .include "../TEXT/DIALOGUE/CHAPTER14x/Civilian6.dialogue.txt" ; E7/9C60
+      dialogueChapter14xEnding1 .include "../TEXT/DIALOGUE/CHAPTER14x/Ending1.dialogue.txt" ; E7/9C90
+      dialogueChapter14xUnusedFailurePlaceholder .include "../TEXT/DIALOGUE/CHAPTER14x/UnusedFailurePlaceholder.dialogue.txt" ; E7/9EB6
+
+      dialogueCodhaBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Codha.dialogue.txt" ; E7/9EE0
+      dialogueCodhaDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Codha.dialogue.txt" ; E7/9EF9
+      dialogueCodhaReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Codha.dialogue.txt" ; E7/9F19
+
+    .endsection Chapter14xDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER14x

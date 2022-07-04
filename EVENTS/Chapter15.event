@@ -1,0 +1,57 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER15 :?= false
+.if (!GUARD_FE5_CHAPTER15)
+  GUARD_FE5_CHAPTER15 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter15DialogueSection
+
+      dialogueChapter15Opening1 .include "../TEXT/DIALOGUE/CHAPTER15/Opening1.dialogue.txt" ; 92/D964
+      dialogueChapter15Opening2 .include "../TEXT/DIALOGUE/CHAPTER15/Opening2.dialogue.txt" ; 92/DC9F
+      dialogueChapter15RalphAmaldaArrive .include "../TEXT/DIALOGUE/CHAPTER15/RalphAmaldaArrive.dialogue.txt" ; 92/DD9C
+      dialogueChapter15ChurchLeif1 .include "../TEXT/DIALOGUE/CHAPTER15/ChurchLeif1.dialogue.txt" ; 92/E379
+      dialogueChapter15UnusedBlank1 .include "../TEXT/DIALOGUE/CHAPTER15/UnusedBlank1.dialogue.txt" ; 92/E3DA
+      dialogueChapter15UnusedBlank2 .include "../TEXT/DIALOGUE/CHAPTER15/UnusedBlank2.dialogue.txt" ; 92/E3DB
+      dialogueChapter15UnusedBlank3 .include "../TEXT/DIALOGUE/CHAPTER15/UnusedBlank3.dialogue.txt" ; 92/E3DC
+      dialogueChapter15ChurchLeif2 .include "../TEXT/DIALOGUE/CHAPTER15/ChurchLeif2.dialogue.txt" ; 92/E3DD
+      dialogueChapter15ChurchLeif3 .include "../TEXT/DIALOGUE/CHAPTER15/ChurchLeif3.dialogue.txt" ; 92/E532
+      dialogueChapter15ChurchOther .include "../TEXT/DIALOGUE/CHAPTER15/ChurchOther.dialogue.txt" ; 92/E56B
+      dialogueChapter15ArmorslayerHouse .include "../TEXT/DIALOGUE/CHAPTER15/ArmorslayerHouse.dialogue.txt" ; 92/E5C3
+      dialogueChapter15SkillRingHouse .include "../TEXT/DIALOGUE/CHAPTER15/SkillRingHouse.dialogue.txt" ; 92/E607
+      dialogueChapter15KillerLanceHouse .include "../TEXT/DIALOGUE/CHAPTER15/KillerLanceHouse.dialogue.txt" ; 92/E659
+      dialogueChapter15UllursScrollHouse .include "../TEXT/DIALOGUE/CHAPTER15/UllursScrollHouse.dialogue.txt" ; 92/E6D1
+      dialogueChapter15LeftPath .include "../TEXT/DIALOGUE/CHAPTER15/LeftPath.dialogue.txt" ; 92/E772
+      dialogueChapter15LeftPathConfirm .include "../TEXT/DIALOGUE/CHAPTER15/LeftPathConfirm.dialogue.txt" ; 92/E7CC
+      dialogueChapter15RightPath .include "../TEXT/DIALOGUE/CHAPTER15/RightPath.dialogue.txt" ; 92/E7F6
+      dialogueChapter15RightPathConfirm .include "../TEXT/DIALOGUE/CHAPTER15/RightPathConfirm.dialogue.txt" ; 92/E868
+
+      dialogueZailleBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Zaille.dialogue.txt" ; 92/E892
+      dialogueZailleDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Zaille.dialogue.txt" ; 92/E8BD
+      dialogueZailleReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Zaille.dialogue.txt" ; 92/E8DA
+
+      dialogueChapter15RalphRecruitment .include "../TEXT/DIALOGUE/CHAPTER15/RalphRecruitment.dialogue.txt" ; 92/E910
+      dialogueChapter15AmaldaFlee .include "../TEXT/DIALOGUE/CHAPTER15/AmaldaFlee.dialogue.txt" ; 92/EB2A
+
+    .endsection Chapter15DialogueSection
+
+    .section Chapter15WMDialogueSection
+
+      dialogueChapter15WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER15/WorldMap1.dialogue.txt" ; 82/D269
+      dialogueChapter15WorldMap2 .include "../TEXT/DIALOGUE/CHAPTER15/WorldMap2.dialogue.txt" ; 82/D2CE
+      dialogueChapter15WorldMap3 .include "../TEXT/DIALOGUE/CHAPTER15/WorldMap3.dialogue.txt" ; 82/D2F6
+      dialogueChapter15WorldMap4 .include "../TEXT/DIALOGUE/CHAPTER15/WorldMap4.dialogue.txt" ; 82/D37A
+
+    .endsection Chapter15WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER15

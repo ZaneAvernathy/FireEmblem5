@@ -1,0 +1,2 @@
+{DIALOGUE_RIGHT}無理をするな\n
+{DIALOGUE_PAUSE $10}きさまに俺は倒せぬ･･･{DIALOGUE_END_SCENE}

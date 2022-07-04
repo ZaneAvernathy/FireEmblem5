@@ -1,0 +1,37 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER11x :?= false
+.if (!GUARD_FE5_CHAPTER11x)
+  GUARD_FE5_CHAPTER11x := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter11xDialogueSection
+
+      dialogueChapter11xOpening1 .include "../TEXT/DIALOGUE/CHAPTER11x/Opening1.dialogue.txt" ; 98/8F5A
+      dialogueChapter11xOpening2 .include "../TEXT/DIALOGUE/CHAPTER11x/Opening2.dialogue.txt" ; 98/917A
+      dialogueChapter11xFredArrive .include "../TEXT/DIALOGUE/CHAPTER11x/FredArrive.dialogue.txt" ; 98/93DD
+      dialogueChapter11xLeifOlwenTalk .include "../TEXT/DIALOGUE/CHAPTER11x/LeifOlwenTalk.dialogue.txt" ; 98/9465
+      dialogueChapter11xFredOlwenTalk .include "../TEXT/DIALOGUE/CHAPTER11x/FredOlwenTalk.dialogue.txt" ; 98/95ED
+      dialogueChapter11xEnding1 .include "../TEXT/DIALOGUE/CHAPTER11x/Ending1.dialogue.txt" ; 98/9900
+      dialogueChapter11xEnding2 .include "../TEXT/DIALOGUE/CHAPTER11x/Ending2.dialogue.txt" ; 98/9BC6
+
+      dialogueHortefeuxBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Hortefeux.dialogue.txt" ; 98/9C96
+      dialogueHortefeuxDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Hortefeux.dialogue.txt" ; 98/9CAA
+      dialogueHortefeuxReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Hortefeux.dialogue.txt" ; 98/9CC1
+
+      dialogueChapter11xUnusedOlwenFredTalk .include "../TEXT/DIALOGUE/CHAPTER11x/UnusedOlwenFredTalk.dialogue.txt" ; 98/9CEA
+      dialogueChapter11xHortefeuxLeave .include "../TEXT/DIALOGUE/CHAPTER11x/HortefeuxLeave.dialogue.txt" ; 98/9D94
+
+    .endsection Chapter11xDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER11x

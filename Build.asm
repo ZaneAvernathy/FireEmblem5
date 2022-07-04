@@ -52,18 +52,10 @@
   .include "SRC/ChapterTitles.asm"
   .include "SRC/WMMarkers.asm"
 
-  .include "EVENTS/Chapter1.event"
-  .include "EVENTS/Chapter2.event"
-  .include "EVENTS/Chapter2x.event"
-  .include "EVENTS/Chapter3.event"
-  .include "EVENTS/Chapter4.event"
-  .include "EVENTS/Chapter4x.event"
-  .include "EVENTS/Chapter5.event"
-  .include "EVENTS/Chapter6.event"
-  .include "EVENTS/Chapter7.event"
-  .include "EVENTS/Chapter8.event"
-  .include "EVENTS/Chapter8x.event"
-  .include "EVENTS/Chapter9.event"
+  .include "SRC/Events.asm"
+
+  .include "SRC/ChapterDialoguePointers.asm"
+
   .include "SRC/BattleBackgrounds.asm"
   .include "SRC/Portraits.asm"
   .include "SRC/Tilesets.asm"
@@ -168,16 +160,52 @@
 
   .endlogical
 
-  * := $01482F
-  .logical mapped($01482F)
+  * := $0138AF
+  .logical mapped($0138AF)
 
     startDialogue
 
-      .dsection Chapter1WMDialogueSection
-      .dsection Chapter2WMDialogueSection
-      .dsection Chapter3WMDialogueSection
+      .dsection DeathQuoteDialogueSection
+      .dsection RetreatQuoteDialogueSection
+      .dsection ChapterEndLinoanDeadDialogueSection
+      .dsection UnusedBlankWMDialogueSection
+      .dsection Chapter01WMDialogueSection
+      .dsection Chapter02WMDialogueSection
+      .dsection Chapter03WMDialogueSection
+      .dsection Chapter04WMDialogueSection
+      .dsection Chapter07WMDialogueSection
+      .dsection Chapter08WMDialogueSection
+      .dsection Chapter09WMDialogueSection
+      .dsection Chapter10WMDialogueSection
+      .dsection Chapter11WMDialogueSection
+      .dsection Chapter12WMDialogueSection
+      .dsection Chapter13WMDialogueSection
+      .dsection Chapter15WMDialogueSection
+      .dsection Chapter16AWMDialogueSection
+      .dsection Chapter17AWMDialogueSection
+      .dsection Chapter16BWMDialogueSection
+      .dsection Chapter17BWMDialogueSection
+      .dsection Chapter18WMDialogueSection
+      .dsection Chapter19WMDialogueSection
+      .dsection Chapter20WMDialogueSection
+      .dsection Chapter21WMDialogueSection
+      .dsection Chapter22WMDialogueSection
+      .dsection Chapter23WMDialogueSection
+      .dsection Chapter24WMDialogueSection
 
     endDialogue
+
+    startData
+
+      .dsection ChapterDialoguePointersSection
+
+    endData
+
+    startFreespace
+
+      .fill mapped($010000) + $8000 - *, $FF
+
+    endFreespace
 
   .endlogical
 
@@ -414,8 +442,8 @@
 
     startEventScenes
 
-      .dsection Chapter3EventsSection
-      .dsection Chapter9EventsSection
+      .dsection Chapter03EventsSection
+      .dsection Chapter09EventsSection
 
     endEventScenes
 
@@ -587,6 +615,22 @@
 
   .endlogical
 
+  * := $090000
+  .logical mapped($090000)
+
+    startDialogue
+
+      .dsection Chapter06DialogueSection
+      .dsection Chapter12DialogueSection
+      .dsection Chapter12xDialogueSection
+      .dsection Chapter14DialogueSection
+      .dsection Chapter15DialogueSection
+      .dsection Chapter20DialogueSection
+
+    endDialogue
+
+  .endlogical
+
   * := $097D45
   .logical mapped($097D45)
 
@@ -603,7 +647,12 @@
 
     startDialogue
 
-      .dsection Chapter3DialogueSection
+      .dsection Chapter03DialogueSection
+      .dsection Chapter05DialogueSection
+      .dsection Chapter07DialogueSection
+      .dsection Chapter08DialogueSection
+      .dsection Chapter08xDialogueSection
+      .dsection Chapter09DialogueSection
 
     endDialogue
 
@@ -636,9 +685,12 @@
 
     startDialogue
 
-      .dsection Chapter1DialogueSection
-      .dsection Chapter2DialogueSection
-      .dsection Chapter2xDialogueSection
+      .dsection Chapter01DialogueSection
+      .dsection Chapter02DialogueSection
+      .dsection Chapter02xDialogueSection
+      .dsection Chapter04DialogueSection
+      .dsection Chapter11DialogueSection
+      .dsection Chapter21xDialogueSection
 
     endDialogue
 
@@ -671,8 +723,8 @@
 
     startEventScenes
 
-      .dsection Chapter2xEventsSection
-      .dsection Chapter8xEventsSection
+      .dsection Chapter02xEventsSection
+      .dsection Chapter08xEventsSection
 
     endEventScenes
 
@@ -686,6 +738,21 @@
       .fill mapped($0B8000) + $8000 - *, $FF
 
     endFreespace
+
+  .endlogical
+
+  * := $0C0000
+  .logical mapped($0C0000)
+
+    startDialogue
+
+      .dsection Chapter04xDialogueSection
+      .dsection Chapter11xDialogueSection
+      .dsection Chapter16ADialogueSection
+      .dsection Chapter17ADialogueSection
+      .dsection Chapter23DialogueSection
+
+    endDialogue
 
   .endlogical
 
@@ -705,12 +772,12 @@
 
     startEventScenes
 
-      .dsection Chapter2EventsSection
-      .dsection Chapter4EventsSection
-      .dsection Chapter5EventsSection
-      .dsection Chapter6EventsSection
-      .dsection Chapter7EventsSection
-      .dsection Chapter8EventsSection
+      .dsection Chapter02EventsSection
+      .dsection Chapter04EventsSection
+      .dsection Chapter05EventsSection
+      .dsection Chapter06EventsSection
+      .dsection Chapter07EventsSection
+      .dsection Chapter08EventsSection
 
     endEventScenes
 
@@ -811,30 +878,52 @@
 
   .endlogical
 
+  * := $182EBC
+  .logical mapped($182EBC)
+
+    startDialogue
+
+      .dsection Chapter19DialogueSection
+      .dsection Chapter21DialogueSection
+      .dsection Chapter22DialogueSection
+      .dsection Chapter24DialogueSection
+
+    endDialogue
+
+  .endlogical
+
   * := $18D508
   .logical mapped($18D508)
 
     startEventData
 
-      .dsection Chapter9DataSection
-      .dsection Chapter8xDataSection
-      .dsection Chapter8DataSection
-      .dsection Chapter7DataSection
-      .dsection Chapter6DataSection
-      .dsection Chapter5DataSection
-      .dsection Chapter4xDataSection
-      .dsection Chapter4DataSection
-      .dsection Chapter3DataSection
-      .dsection Chapter2xDataSection
-      .dsection Chapter2DataSection
-      .dsection Chapter1DataSection
+      .dsection Chapter09DataSection
+      .dsection Chapter08xDataSection
+      .dsection Chapter08DataSection
+      .dsection Chapter07DataSection
+      .dsection Chapter06DataSection
+      .dsection Chapter05DataSection
+      .dsection Chapter04xDataSection
+      .dsection Chapter04DataSection
+      .dsection Chapter03DataSection
+      .dsection Chapter02xDataSection
+      .dsection Chapter02DataSection
+      .dsection Chapter01DataSection
 
     endEventData
 
   .endlogical
 
-  * := $33E010
-  .logical mapped($33E010)
+  * := $1CBFB0
+  .logical mapped($1CBFB0)
+
+    startDialogue
+
+      .dsection Chapter13DialogueSection
+
+    endDialogue
+
+  .endlogical
 
   * := $204AFF
   .logical mapped($204AFF)
@@ -885,15 +974,46 @@
 
   .endlogical
 
+  * := $2D3EF8
+  .logical mapped($2D3EF8)
+
+    startFreespace
+
+      .fill mapped($2D5000) - *, $FF
+
+    endFreespace
+
+    startDialogue
+
+      .dsection Chapter16BDialogueSection
+      .dsection Chapter18DialogueSection
+
+    endDialogue
+
+  .endlogical
+
+  * := $338BDF
+  .logical mapped($338BDF)
+
+    startDialogue
+
+      .dsection Chapter10DialogueSection
+      .dsection Chapter14xDialogueSection
+      .dsection Chapter17BDialogueSection
+      .dsection Chapter24xDialogueSection
+      .dsection ChapterFinalDialogueSection
+
+    endDialogue
+
     startEventScenes
 
-      .dsection Chapter1WorldMapEventsSection
-      .dsection Chapter2WorldMapEventsSection
-      .dsection Chapter3WorldMapEventsSection
-      .dsection Chapter4WorldMapEventsSection
-      .dsection Chapter7WorldMapEventsSection
-      .dsection Chapter8WorldMapEventsSection
-      .dsection Chapter9WorldMapEventsSection
+      .dsection Chapter01WorldMapEventsSection
+      .dsection Chapter02WorldMapEventsSection
+      .dsection Chapter03WorldMapEventsSection
+      .dsection Chapter04WorldMapEventsSection
+      .dsection Chapter07WorldMapEventsSection
+      .dsection Chapter08WorldMapEventsSection
+      .dsection Chapter09WorldMapEventsSection
 
     endEventScenes
 
@@ -964,8 +1084,8 @@
 
     startEventScenes
 
-      .dsection Chapter1EventsSection
-      .dsection Chapter4xEventsSection
+      .dsection Chapter01EventsSection
+      .dsection Chapter04xEventsSection
 
     endEventScenes
 

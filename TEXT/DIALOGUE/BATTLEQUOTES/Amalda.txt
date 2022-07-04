@@ -1,0 +1,3 @@
+{DIALOGUE_RIGHT}直ちに兵を引きなさい！\n
+{DIALOGUE_PAUSE $10}むだに命を落とすことは\n
+ありません！{DIALOGUE_END_SCENE}

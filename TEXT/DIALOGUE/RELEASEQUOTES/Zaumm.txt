@@ -1,0 +1,2 @@
+{DIALOGUE_RIGHT}今度はわしが捕虜か･･･\n
+{DIALOGUE_PAUSE $10}ひにくなものだ･･･{DIALOGUE_END_SCENE}

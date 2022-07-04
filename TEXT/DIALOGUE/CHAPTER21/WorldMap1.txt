@@ -1,0 +1,3 @@
+{DIALOGUE_PAGE0}レンスターでの戦後処理を終えた\n
+リーフたちがアルスターに出発したころ{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+{DIALOGUE_END_SCENE}

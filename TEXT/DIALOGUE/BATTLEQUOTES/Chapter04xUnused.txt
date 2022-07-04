@@ -1,0 +1,3 @@
+{DIALOGUE_RIGHT}反乱派の兵士だな\n
+{DIALOGUE_PAUSE $10}子どもを逃がそうったって\n
+{DIALOGUE_PAUSE $08}そうはいかないぞ{DIALOGUE_END_SCENE}

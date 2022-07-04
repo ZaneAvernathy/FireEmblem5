@@ -1,0 +1,3 @@
+{DIALOGUE_RIGHT}助けてくれたことには感謝する\n
+{DIALOGUE_PAUSE $10}だが\n
+{DIALOGUE_PAUSE $08}私は戦わなければならないのだ{DIALOGUE_END_SCENE}

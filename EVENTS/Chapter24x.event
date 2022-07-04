@@ -1,0 +1,35 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER24x :?= false
+.if (!GUARD_FE5_CHAPTER24x)
+  GUARD_FE5_CHAPTER24x := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter24xDialogueSection
+
+      dialogueChapter24xOpening1 .include "../TEXT/DIALOGUE/CHAPTER24x/Opening1.dialogue.txt" ; E7/B249
+      dialogueChapter24xLeifEyvelTalk .include "../TEXT/DIALOGUE/CHAPTER24x/LeifEyvelTalk.dialogue.txt" ; E7/B33C
+      dialogueChapter24xMareetaEyvelTalk .include "../TEXT/DIALOGUE/CHAPTER24x/MareetaEyvelTalk.dialogue.txt" ; E7/B515
+      dialogueChapter24xEnding1 .include "../TEXT/DIALOGUE/CHAPTER24x/Ending1.dialogue.txt" ; E7/B70F
+      dialogueChapter24xEnding2 .include "../TEXT/DIALOGUE/CHAPTER24x/Ending2.dialogue.txt" ; E7/BB13
+      dialogueChapter24xEnding3 .include "../TEXT/DIALOGUE/CHAPTER24x/Ending3.dialogue.txt" ; E7/BC80
+      dialogueChapter24xEnding4 .include "../TEXT/DIALOGUE/CHAPTER24x/Ending4.dialogue.txt" ; E7/BD2C
+      dialogueChapter24xEnding5 .include "../TEXT/DIALOGUE/CHAPTER24x/Ending5.dialogue.txt" ; E7/BD70
+      dialogueChapter24xEnding6 .include "../TEXT/DIALOGUE/CHAPTER24x/Ending6.dialogue.txt" ; E7/BE6C
+      dialogueChapter24xEnding7 .include "../TEXT/DIALOGUE/CHAPTER24x/Ending7.dialogue.txt" ; E7/BF18
+      dialogueChapter24xEnding8 .include "../TEXT/DIALOGUE/CHAPTER24x/Ending8.dialogue.txt" ; E7/BFD6
+      dialogueChapter24xEnding9 .include "../TEXT/DIALOGUE/CHAPTER24x/Ending9.dialogue.txt" ; E7/C35B
+
+    .endsection Chapter24xDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER24x

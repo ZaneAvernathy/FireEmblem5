@@ -1,0 +1,63 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER17A :?= false
+.if (!GUARD_FE5_CHAPTER17A)
+  GUARD_FE5_CHAPTER17A := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter17ADialogueSection
+
+      dialogueChapter17AOpening1 .include "../TEXT/DIALOGUE/CHAPTER17A/Opening1.dialogue.txt" ; 98/B59B
+      dialogueChapter17AOpening2 .include "../TEXT/DIALOGUE/CHAPTER17A/Opening2.dialogue.txt" ; 98/B868
+      dialogueChapter17AOpening3 .include "../TEXT/DIALOGUE/CHAPTER17A/Opening3.dialogue.txt" ; 98/B9B4
+      dialogueChapter17ASaiasSpawn1A .include "../TEXT/DIALOGUE/CHAPTER17A/SaiasSpawn1A.dialogue.txt" ; 98/BB33
+      dialogueChapter17ASaiasSpawn1B .include "../TEXT/DIALOGUE/CHAPTER17A/SaiasSpawn1B.dialogue.txt" ; 98/BC92
+      dialogueChapter17ASaiasSpawn2 .include "../TEXT/DIALOGUE/CHAPTER17A/SaiasSpawn2.dialogue.txt" ; 98/BDF5
+      dialogueChapter17AMuellerSpawn .include "../TEXT/DIALOGUE/CHAPTER17A/MuellerSpawn.dialogue.txt" ; 98/BF98
+      dialogueChapter17ASaiasLeave .include "../TEXT/DIALOGUE/CHAPTER17A/SaiasLeave.dialogue.txt" ; 98/C0CE
+      dialogueChapter17AKarinMischaTalk .include "../TEXT/DIALOGUE/CHAPTER17A/KarinMischaTalk.dialogue.txt" ; 98/C28D
+      dialogueChapter17AUnusedBridgeLower .include "../TEXT/DIALOGUE/CHAPTER17A/UnusedBridgeLower.dialogue.txt" ; 98/C356
+      dialogueChapter17AUnusedBridgeRaise .include "../TEXT/DIALOGUE/CHAPTER17A/UnusedBridgeRaise.dialogue.txt" ; 98/C38D
+      dialogueChapter17AMemberCardPlaceholder .include "../TEXT/DIALOGUE/CHAPTER17A/MemberCardPlaceholder.dialogue.txt" ; 98/C3D3
+      dialogueChapter17AKnightCrestPlaceholder .include "../TEXT/DIALOGUE/CHAPTER17A/KnightCrestPlaceholder.dialogue.txt" ; 98/C3FE
+      dialogueChapter17AEnding1 .include "../TEXT/DIALOGUE/CHAPTER17A/Ending1.dialogue.txt" ; 98/C427
+      dialogueChapter17AEnding2 .include "../TEXT/DIALOGUE/CHAPTER17A/Ending2.dialogue.txt" ; 98/C579
+
+      dialogueMooreBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Moore.dialogue.txt" ; 98/C9C7
+      dialogueMooreDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Moore.dialogue.txt" ; 98/C9D0
+      dialogueMooreReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Moore.dialogue.txt" ; 98/CA06
+      dialogueMuellerBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Mueller.dialogue.txt" ; 98/CA0F
+      dialogueMuellerDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Mueller.dialogue.txt" ; 98/CA30
+      dialogueMuellerReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Mueller.dialogue.txt" ; 98/CA53
+      dialogueSaias1BattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Saias1.dialogue.txt" ; 98/CA63
+      dialogueSaias1ReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Saias1.dialogue.txt" ; 98/CA8C
+      dialogueMischaBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Mischa.dialogue.txt" ; 98/CAA5
+      dialogueMischaReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Mischa.dialogue.txt" ; 98/CAB6
+      dialogueSarahBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Sarah.dialogue.txt" ; 98/CAE5
+      dialogueSarahReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Sarah.dialogue.txt" ; 98/CAFE
+
+      dialogueChapter17ARescueHouse .include "../TEXT/DIALOGUE/CHAPTER17A/RescueHouse.dialogue.txt" ; 98/CB0E
+      dialogueChapter17AWarpHouse .include "../TEXT/DIALOGUE/CHAPTER17A/WarpHouse.dialogue.txt" ; 98/CB61
+      dialogueChapter17APureWaterHouse .include "../TEXT/DIALOGUE/CHAPTER17A/PureWaterHouse.dialogue.txt" ; 98/CBCF
+      dialogueChapter17AMagicRingHouse .include "../TEXT/DIALOGUE/CHAPTER17A/MagicRingHouse.dialogue.txt" ; 98/CC07
+      dialogueChapter17AChurch .include "../TEXT/DIALOGUE/CHAPTER17A/Church.dialogue.txt" ; 98/CC68
+
+    .endsection Chapter17ADialogueSection
+
+    .section Chapter17AWMDialogueSection
+
+      dialogueChapter17AWorldMap1 .include "../TEXT/DIALOGUE/CHAPTER17A/WorldMap1.dialogue.txt" ; 82/D47E
+
+    .endsection Chapter17AWMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER17A

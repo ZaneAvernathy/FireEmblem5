@@ -13,18 +13,18 @@ GUARD_FE5_CHAPTERTITLES :?= false
 
       startDialogue
 
-        dialogueChapter1Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter1.dialogue.txt" ; 9A/B7EF
-        dialogueChapter2Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter2.dialogue.txt" ; 9A/B80F
-        dialogueChapter2xTitle .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter2x.dialogue.txt" ; 9A/B82D
-        dialogueChapter3Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter3.dialogue.txt" ; 9A/B848
-        dialogueChapter4Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter4.dialogue.txt" ; 9A/B867
-        dialogueChapter4xTitle .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter4x.dialogue.txt" ; 9A/B886
-        dialogueChapter5Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter5.dialogue.txt" ; 9A/B8A4
-        dialogueChapter6Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter6.dialogue.txt" ; 9A/B8C3
-        dialogueChapter7Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter7.dialogue.txt" ; 9A/B8DF
-        dialogueChapter8Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter8.dialogue.txt" ; 9A/B8FF
-        dialogueChapter8xTitle .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter8x.dialogue.txt" ; 9A/B91C
-        dialogueChapter9Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter9.dialogue.txt" ; 9A/B93A
+        dialogueChapter01Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter01.dialogue.txt" ; 9A/B7EF
+        dialogueChapter02Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter02.dialogue.txt" ; 9A/B80F
+        dialogueChapter02xTitle .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter02x.dialogue.txt" ; 9A/B82D
+        dialogueChapter03Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter03.dialogue.txt" ; 9A/B848
+        dialogueChapter04Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter04.dialogue.txt" ; 9A/B867
+        dialogueChapter04xTitle .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter04x.dialogue.txt" ; 9A/B886
+        dialogueChapter05Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter05.dialogue.txt" ; 9A/B8A4
+        dialogueChapter06Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter06.dialogue.txt" ; 9A/B8C3
+        dialogueChapter07Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter07.dialogue.txt" ; 9A/B8DF
+        dialogueChapter08Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter08.dialogue.txt" ; 9A/B8FF
+        dialogueChapter08xTitle .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter08x.dialogue.txt" ; 9A/B91C
+        dialogueChapter09Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter09.dialogue.txt" ; 9A/B93A
         dialogueChapter10Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter10.dialogue.txt" ; 9A/B95A
         dialogueChapter11Title .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter11.dialogue.txt" ; 9A/B971
         dialogueChapter11xTitle .include "../TEXT/DIALOGUE/CHAPTERTITLES/Chapter11x.dialogue.txt" ; 9A/B989

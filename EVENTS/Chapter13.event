@@ -1,0 +1,53 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER13 :?= false
+.if (!GUARD_FE5_CHAPTER13)
+  GUARD_FE5_CHAPTER13 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter13DialogueSection
+
+      dialogueChapter13Opening1 .include "../TEXT/DIALOGUE/CHAPTER13/Opening1.dialogue.txt" ; B9/BFB0
+      dialogueChapter13Opening2 .include "../TEXT/DIALOGUE/CHAPTER13/Opening2.dialogue.txt" ; B9/C07B
+      dialogueChapter13Opening3 .include "../TEXT/DIALOGUE/CHAPTER13/Opening3.dialogue.txt" ; B9/C0DF
+      dialogueChapter13Opening4 .include "../TEXT/DIALOGUE/CHAPTER13/Opening4.dialogue.txt" ; B9/C364
+      dialogueChapter13FinnGladeTalk .include "../TEXT/DIALOGUE/CHAPTER13/FinnGladeTalk.dialogue.txt" ; B9/C4FB
+      dialogueChapter13SelphinaGladeTalk1A .include "../TEXT/DIALOGUE/CHAPTER13/SelphinaGladeTalk1A.dialogue.txt" ; B9/C736
+      dialogueChapter13SelphinaGladeTalk1B .include "../TEXT/DIALOGUE/CHAPTER13/SelphinaGladeTalk1B.dialogue.txt" ; B9/C951
+      dialogueChapter13LeifGladeTalk .include "../TEXT/DIALOGUE/CHAPTER13/LeifGladeTalk.dialogue.txt" ; B9/CD7B
+      dialogueChapter13ArmorslayerHouse .include "../TEXT/DIALOGUE/CHAPTER13/ArmorslayerHouse.dialogue.txt" ; B9/CFA2
+      dialogueChapter13UnusedBlank1 .include "../TEXT/DIALOGUE/CHAPTER13/UnusedBlank1.dialogue.txt" ; B9/CFEB
+      dialogueChapter13KnightCrestHouse .include "../TEXT/DIALOGUE/CHAPTER13/KnightCrestHouse.dialogue.txt" ; B9/CFEC
+      dialogueChapter13UnusedBlank2 .include "../TEXT/DIALOGUE/CHAPTER13/UnusedBlank2.dialogue.txt" ; B9/D044
+      dialogueChapter13HammerHouse .include "../TEXT/DIALOGUE/CHAPTER13/HammerHouse.dialogue.txt" ; B9/D045
+      dialogueChapter13Unused .include "../TEXT/DIALOGUE/CHAPTER13/Unused.dialogue.txt" ; B9/D0A9
+      dialogueChapter13Ending1 .include "../TEXT/DIALOGUE/CHAPTER13/Ending1.dialogue.txt" ; B9/D139
+      dialogueChapter13PlayerLoss .include "../TEXT/DIALOGUE/CHAPTER13/PlayerLoss.dialogue.txt" ; B9/D3D6
+
+      dialogueLisztBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Liszt.dialogue.txt" ; B9/D437
+      dialogueLisztDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Liszt.dialogue.txt" ; B9/D44B
+      dialogueLisztReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Liszt.dialogue.txt" ; B9/D466
+      dialogueBaldachChapter13BattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/BaldachChapter13.dialogue.txt" ; B9/D492
+      dialogueBaldachChapter13DeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/BaldachChapter13.dialogue.txt" ; B9/D4AD
+      dialogueBaldachChapter13ReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/BaldachChapter13.dialogue.txt" ; B9/D4C4
+
+    .endsection Chapter13DialogueSection
+
+    .section Chapter13WMDialogueSection
+
+      dialogueChapter13WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER13/WorldMap1.dialogue.txt" ; 82/D0E9
+      dialogueChapter13WorldMap2 .include "../TEXT/DIALOGUE/CHAPTER13/WorldMap2.dialogue.txt" ; 82/D11A
+
+    .endsection Chapter13WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER13

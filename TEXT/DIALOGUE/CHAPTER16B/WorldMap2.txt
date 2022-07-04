@@ -1,0 +1,5 @@
+『迷いの森』と呼ばれるメルフィーユの\n
+森林地帯をこえる必要があった{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+そこが､{DIALOGUE_PAUSE $08}なぜ『迷いの森』と呼ばれるのか\n
+{DIALOGUE_PAUSE $10}そこを､{DIALOGUE_PAUSE $08}なぜ人々がさけようとするのか{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+リーフたちは身をもって知ることになる{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

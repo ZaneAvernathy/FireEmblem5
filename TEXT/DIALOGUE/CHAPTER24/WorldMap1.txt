@@ -1,0 +1,8 @@
+数々の障害をのりこえ､{DIALOGUE_PAUSE $08}マンスターへ\n
+たどり着いたリーフたち{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+彼らの前に立ちふさがるかのように\n
+{DIALOGUE_PAUSE $08}マンスターの城が高くそびえ立つ{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+一度は逃げ出したその『魔王の城』へ\n
+{DIALOGUE_PAUSE $08}再び足をふみいれるリーフたち{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+失われたものを取り戻すために･･･\n
+{DIALOGUE_PAUSE $10}新たな時代を切りひらくために･･･{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

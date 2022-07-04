@@ -1,0 +1,4 @@
+{DIALOGUE_RIGHT}俺を助けるっていうのか･･･\n
+{DIALOGUE_PAUSE $10}くっ\n
+{DIALOGUE_PAUSE $08}あんたらには勝てねぇ\n
+{DIALOGUE_PAUSE $08}勝てねぇよお～！{DIALOGUE_END_SCENE}

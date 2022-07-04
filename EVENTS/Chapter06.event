@@ -1,0 +1,844 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER06 :?= false
+.if (!GUARD_FE5_CHAPTER06)
+  GUARD_FE5_CHAPTER06 := true
+
+  ; Definitions
+
+    .weak
+
+      eventMapDeathQuoteDummyEvent :?= address($99812F)
+
+      dialogueChapter06SaiasGalzus1                 :?= address($93AE8F)
+      dialogueChapter06SaiasGalzus2                 :?= address($93AF8A)
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter06EventsSection
+
+      eventChapter06Events ; 99/A346
+
+        _OpeningEventDefinitions ; 99/A346
+          EVENT FlagAlwaysZero, _OpeningEvent
+            CMP_WORD wCurrentTurn, 0
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _TurnEventDefinitions ; 99/A353
+          EVENT FlagAlwaysZero, _CedAppear
+            RUN_ASM $99AF6D
+            CMP_WORD wCurrentTurn, 5
+            CMP_WORD wCurrentPhase, NPC
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _CedFlee
+            RUN_ASM $99AF6D
+            CMP_WORD wCurrentTurn, 9
+            CMP_WORD wCurrentPhase, NPC
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _SaiasGalzus
+            TEST_FLAG_UNSET FlagMareetaDiedInChp5
+            TEST_FLAG_UNSET FlagGalzusDead
+            CMP_WORD wCurrentTurn, 3
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _GalzusSpawn
+            CMP_WORD wCurrentTurn, 15
+            TEST_FLAG_UNSET FlagGalzusDead
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+            CMP_WORD wCurrentTurn, 15
+            CMP_WORD wCurrentPhase, Player
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _KnightReinforcements
+            CMP_WORD wCurrentTurn, 13
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT $07, _TrumanGroupCharge
+            CMP_WORD_FALSE wUnknown7E4F9A, $0000
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _TalkEventDefinitions ; 99/A3D4
+        END_DEFINITION_ARRAY
+
+        _LocationEventDefinitions ; 99/A3D6
+          macroECDoor $21, [23, 16], _Door1
+          macroECDoor $22, [23, 22], _Door2
+          macroECDoor $23, [23, 28], _Door3
+          macroECDoor $2B, [26, 12], _Door4
+          EVENT $2C, _Door5
+          END_DEFINITION
+          EVENT $25, _KnightCrestHouse
+            macroECCheckCoordinates [13, 21]
+            CMP_WORD wCurrentPhase, Player
+          END_DEFINITION
+          EVENT $26, _HicksHouse
+            macroECCheckCoordinates [13, 15]
+            CMP_WORD wCurrentPhase, Player
+          END_DEFINITION
+          EVENT $27, _PureWaterHouse
+            macroECCheckCoordinates [21, 24]
+            CMP_WORD wCurrentPhase, Player
+          END_DEFINITION
+          EVENT $28, _RapierHouse
+            macroECCheckCoordinates [19, 15]
+            CMP_WORD wCurrentPhase, Player
+          END_DEFINITION
+          EVENT $29, _ParagonManualHouse
+            macroECCheckCoordinates [2, 18]
+            CMP_WORD wCurrentPhase, Player
+          END_DEFINITION
+          EVENT $2A, _OdosScrollHouse
+            macroECCheckCoordinates [2, 24]
+            CMP_WORD wCurrentPhase, Player
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+       _BeforeActionEventDefinitions ; 99/A497
+        macroECPlayerRetreat $08, $99AF80, Leif
+      END_DEFINITION_ARRAY
+
+      _AfterActionEventDefinitions ; 99/A4D7
+        EVENT $2C, _Door5
+          macroECCheckCoordinateRanges [7, 25], [8, 25]
+        END_DEFINITION
+        EVENT $09, _DoorOpenDialogue
+          TEST_FLAG_SET $2C
+        END_DEFINITION
+        EVENT $0B, _HicksSpawn
+          TEST_FLAG_SET $0A
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _EndingEvent
+          TEST_FLAG_SET $08
+        END_DEFINITION
+      END_DEFINITION_ARRAY
+
+      _BattleEventDefinitions ; 99/A4FF
+        macroECBossQuote $06, Galzus
+      END_DEFINITION_ARRAY
+
+      _ShopEventDefinitions ; 99/A509
+        macroECShop eventChapter06Data._Vendor
+        macroECShop eventChapter06Data._Armory
+      END_DEFINITION_ARRAY
+
+      _TrumanGroupCharge ; 99/A531
+
+        _TrumanGroupAIList  := [(MansterArmoredAxe, [$00, $00, $00, $00])]
+        _TrumanGroupAIList ..= [(MansterArmoredBow, [$00, $00, $00, $00])]
+        _TrumanGroupAIList ..= [(MansterArmoredSword, [$00, $00, $00, $00])]
+        _TrumanGroupAIList ..= [(MansterThunderMage, [$00, $00, $00, $00])]
+
+        .for _Character, _AISetting in _TrumanGroupAIList
+
+          macroSetCharacterAI _Character, _AISetting
+
+        .endfor
+      END1
+
+      _KnightCrestHouse ; 99/A6B2
+
+        EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
+        JUMP_FALSE ++
+
+          PLAY_SOUND_WORD $00F7
+          EVENT_TEST_FLAG_SET FlagEmilySaved
+          JUMP_TRUE +
+
+            DIALOGUE dialogueChapter06KnightCrestHouseEmilyDead
+            YIELD
+
+            JUMP ++
+
+          +
+          DIALOGUE dialogueChapter06KnightCrestHouseEmilyAlive
+          YIELD
+
+          macroASMCActiveUnitSetUnitState UnitStateHidden
+
+          macroGiveActiveUnitItem KnightCrest
+
+          macroASMCActiveUnitUnsetUnitState UnitStateHidden
+
+          macroTileChangeByID 2
+        END2
+
+        +
+        macroTileChangeByID 2
+      END1
+
+      _HicksHouse ; 99/A762
+
+        EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
+        JUMP_FALSE ++
+
+          PLAY_SOUND_WORD $00F7
+
+          STORE_WORD wMapBattleFlag, $0001
+
+          EVENT_TEST_FLAG_SET FlagMuffySaved
+          JUMP_TRUE +
+
+            DIALOGUE dialogueChapter06HicksHouseMuffyDead
+            YIELD
+
+            JUMP ++
+
+          +
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $4A
+          YIELD
+
+          DIALOGUE dialogueChapter06HicksHouseMuffyAlive
+          YIELD
+
+          SET_FLAG $0A
+
+          macroTileChangeByID 0
+
+          STORE_WORD wMapBattleFlag, $0000
+        END2
+
+        +
+        macroTileChangeByID 0
+      END1
+
+      _HicksSpawn ; 99/A7E9
+        LOAD_GROUP eventChapter06Data._HicksGroup
+        WAIT_MOVE
+        YIELD
+      END2
+
+      _RapierHouse ; 99/A7F0
+
+        EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
+        JUMP_FALSE ++
+
+          PLAY_SOUND_WORD $00F7
+
+          EVENT_TEST_FLAG_SET FlagCliffSaved
+          JUMP_TRUE +
+
+            DIALOGUE dialogueChapter06RapierHouseCliffDead
+            YIELD
+
+            JUMP ++
+
+          +
+          DIALOGUE dialogueChapter06RapierHouseCliffAlive
+          YIELD
+
+          macroASMCActiveUnitSetUnitState UnitStateHidden
+
+          macroGiveActiveUnitItem Rapier
+
+          macroASMCActiveUnitUnsetUnitState UnitStateHidden
+
+          macroTileChangeByID 1
+        END2
+
+        +
+        macroTileChangeByID 1
+      END1
+
+      _ParagonManualHouse ; 99/A8A0
+
+        EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
+        JUMP_FALSE ++
+
+          PLAY_SOUND_WORD $00F7
+
+          EVENT_TEST_FLAG_SET FlagBowieSaved
+          JUMP_TRUE +
+
+            DIALOGUE dialogueChapter06ParagonManualHouseBowieDead
+            YIELD
+
+            JUMP ++
+
+          +
+          DIALOGUE dialogueChapter06ParagonManualHouseBowieAlive
+          YIELD
+
+          macroASMCActiveUnitSetUnitState UnitStateHidden
+
+          macroGiveActiveUnitItem ParagonManual
+
+          macroASMCActiveUnitUnsetUnitState UnitStateHidden
+
+          macroTileChangeByID 4
+        END2
+
+        +
+        macroTileChangeByID 4
+      END1
+
+      _PureWaterHouse ; 99/A950
+
+        EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
+        JUMP_FALSE ++
+
+          PLAY_SOUND_WORD $00F7
+
+          EVENT_TEST_FLAG_SET FlagVeraSaved
+          JUMP_TRUE +
+
+            DIALOGUE dialogueChapter06PureWaterHouseVeraDead
+            YIELD
+
+            JUMP ++
+
+          +
+          DIALOGUE dialogueChapter06PureWaterHouseVeraAlive
+          YIELD
+
+          macroASMCActiveUnitSetUnitState UnitStateHidden
+
+          macroGiveActiveUnitItem PureWater
+
+          macroASMCActiveUnitUnsetUnitState UnitStateHidden
+
+          macroTileChangeByID 3
+        END2
+
+        +
+        macroTileChangeByID 3
+      END1
+
+      _OdosScrollHouse ; 99/AA00
+
+        EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
+        JUMP_FALSE ++
+
+          PLAY_SOUND_WORD $00F7
+
+          EVENT_TEST_FLAG_SET FlagLinaSaved
+          JUMP_TRUE +
+
+            DIALOGUE dialogueChapter06OdosScrollHouseLinaDead
+            YIELD
+
+            JUMP ++
+
+          +
+          DIALOGUE dialogueChapter06OdosScrollHouseLinaAlive
+          YIELD
+
+          macroASMCActiveUnitSetUnitState UnitStateHidden
+
+          macroGiveActiveUnitItem OdosScroll
+
+          macroASMCActiveUnitUnsetUnitState UnitStateHidden
+
+          macroTileChangeByID 5
+        END2
+
+        +
+        macroTileChangeByID 5
+      END1
+
+      _Door1 ; 99/AAB0
+        macroOpenDoorByTileChangeID 6
+      END1
+
+      _Door2 ; 99/AADB
+        macroOpenDoorByTileChangeID 7
+      END1
+
+      _Door3 ; 99/AB06
+        macroOpenDoorByTileChangeID 8
+      END1
+
+      _Door4 ; 99/AB31
+        macroOpenDoorByTileChangeID 9
+      END1
+
+      _Door5 ; 99/AB5C
+        macroOpenDoorByTileChangeID 10
+      END1
+
+      _DoorOpenDialogue ; 99/AB87
+        PLAY_SOUND_WORD $00F7
+
+        DIALOGUE dialogueChapter06DoorOpenDialogue1
+
+        EVENT_CMP_WORD_LT wCurrentTurn, 6
+        JUMP_TRUE +
+
+        STORE_WORD wEventEngineParameter1, Chapter04x
+        CALL_ASM_LOOP rlASMCGetChapterTurncount
+        JUMP_TRUE +
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter06DoorOpenDialogue2
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+        +
+        YIELD
+      END2
+
+      _CedAppear ; 99/ABB5
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $4B
+        YIELD
+
+        SCROLL_CAMERA_ADDRESS eventChapter06Data._CedCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter06Data._CedGroup
+        WAIT_MOVE
+        YIELD
+
+        SCROLL_CAMERA_CHAR CedChp4x, 4
+
+        DIALOGUE dialogueChapter06CedArrive
+        YIELD
+      END2
+
+      _CedFlee ; 99/ABD5
+
+        PLAY_SOUND_WORD $00F7
+
+        SCROLL_CAMERA_CHAR CedChp4x, 4
+
+        DIALOGUE dialogueChapter06CedLeave
+        YIELD
+
+
+        _CedGroupAIList  := [(CedChp4x, [$0B, $00])]
+        _CedGroupAIList ..= [(MagiSquadMyrmidon2, [$0B, $00])]
+        _CedGroupAIList ..= [(MagiSquadMyrmidon1, [$0B, $00])]
+        _CedGroupAIList ..= [(MagiSquadFighter, [$0B, $00])]
+        _CedGroupAIList ..= [(MagiSquadArcher, [$0B, $00])]
+
+        .for _Character, _AISetting in _CedGroupAIList
+
+          macroASMCSetCharacterDataByte _Character, MovementAI, _AISetting[0]
+          macroASMCSetCharacterDataByte _Character, MovementAIOffset, _AISetting[1]
+
+        .endfor
+      END2
+
+      _SaiasGalzus ; 99/ACD3
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $3C
+        YIELD
+
+        LOAD_GROUP eventChapter06Data._GalzusMareetaSaiasGroup
+        WAIT_MOVE
+        YIELD
+
+        YIELD
+
+        SCROLL_CAMERA_CHAR Mareeta, 4
+
+        DIALOGUE dialogueChapter06SaiasGalzus1
+        YIELD
+
+        macroScriptedWarpStaff Saias, Mareeta, [-1, -1]
+
+        macroScriptedRewarpStaff Saias, [-1, -1]
+
+        macroASMCRemoveUnit Saias
+        macroASMCRemoveUnit Mareeta
+
+        DIALOGUE dialogueChapter06SaiasGalzus2
+        YIELD
+
+        MOVE_CHAR Galzus, [30, 1], 1
+
+        SCROLL_CAMERA_CHAR Raydrik, 4
+
+        macroASMCRemoveUnit Galzus
+      END2
+
+      _GalzusSpawn ; 99/ADE7
+
+        SCROLL_CAMERA_CHAR Raydrik, 4
+
+        LOAD_GROUP eventChapter06Data._GalzusGroup
+        WAIT_MOVE
+        YIELD
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $39
+        YIELD
+
+        DIALOGUE dialogueChapter06GalzusSpawn
+        YIELD
+
+        macroScriptedWarpStaff Raydrik, Galzus, [8, 3]
+      END2
+
+      _KnightReinforcements ; 99/AE6D
+
+        SCROLL_CAMERA_ADDRESS eventChapter06Data._KnightReinforcementsCameraCoordinates1
+        YIELD
+
+        LOAD_GROUP_BLOCKABLE eventChapter06Data._KnightReinforcementsGroup1
+        WAIT_MOVE
+        YIELD
+
+        YIELD_UNK
+
+        SCROLL_CAMERA_ADDRESS eventChapter06Data._KnightReinforcementsCameraCoordinates2
+        YIELD
+
+        LOAD_GROUP_BLOCKABLE eventChapter06Data._KnightReinforcementsGroup2
+        WAIT_MOVE
+        YIELD
+
+        YIELD_UNK
+      END2
+
+      _OpeningEvent ; 99/AE86
+
+        STORE_WORD wUnknown7E4F9A, $0000
+
+        macroASMCAddCharacterDataByte Leif, LeadershipStars, 1
+
+        macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+        macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+
+        macroLoadPlayerUnitsByStartingPositions
+
+        HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $33
+        YIELD
+
+        macroChapterTitlePopup dialogueChapter06Title
+
+        SCROLL_CAMERA_CHAR Leif, 4
+
+        LOAD_GROUP eventChapter06Data._BishopGroup
+        WAIT_MOVE
+        YIELD
+
+        DIALOGUE dialogueChapter06Opening1
+
+        macroASMCCountAllUnitsUncapturedAlive Karin
+        JUMP_FALSE +
+
+          STORE_LONG lEventEngineLongParameter, dialogueChapter06Opening2
+          CALL_ASM_LOOP rlASMCDialogueContinue
+
+        +
+        YIELD
+
+        MOVE_CHAR FriegeBishop2, [30, 10], 1, _AugustMovestring
+
+        WAIT_MOVE
+        YIELD
+
+        macroASMCRemoveUnit FriegeBishop2
+
+        SCROLL_CAMERA_ADDRESS eventChapter06Data._RaydrikCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter06Data._RaydrikGroup
+        WAIT_MOVE
+        YIELD
+
+        SCROLL_CAMERA_ADDRESS eventChapter06Data._TrumanCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter06Data._TrumanGroup
+        WAIT_MOVE
+        YIELD
+
+        SCROLL_CAMERA_ADDRESS eventChapter06Data._ArmorCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter06Data._ArmorGroup
+        WAIT_MOVE
+        YIELD
+
+        SCROLL_CAMERA_ADDRESS eventChapter06Data._SoldierCameraCoordinates
+        YIELD
+
+        LOAD_GROUP eventChapter06Data._SoldierGroup
+        WAIT_MOVE
+        YIELD
+      END2
+
+      _AugustMovestring ; 99/AF6B
+        MS_MOVE_LEFT
+      MS_END
+
+      _rlChapter04xCheck ; 99/AF6D
+
+        .al
+        .xl
+        .autsiz
+        .databank ?
+
+        lda #Chapter04x
+        sta wEventEngineParameter1,b
+        jsl rlASMCGetChapterTurncount
+        lda wEventEngineParameter1,b
+        beq +
+
+        clc
+        rtl
+
+        +
+        sec
+        rtl
+
+      _PlayerRetreat ; 99/AF80
+        macroHaveActiveUnitRetreat _RetreatMovestring
+      END2
+
+      _RetreatMovestring ; 99/AFBD
+        MS_MOVE_DOWN
+        MS_MOVE_DOWN
+      MS_END
+
+      _EndingEvent ; 99/AFC0
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 16
+        YIELD
+
+        CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+
+        PLAY_SOUND_WORD $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $3B
+        YIELD
+
+        CALL_ASM_LOOP rlASMCSaveChapterTurncount
+
+        EVENT_TEST_FLAG_SET FlagGalzusDead
+        JUMP_TRUE +
+
+          macroDialogueWithBG dialogueChapter06Ending, 3
+          YIELD
+
+          HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+          FADE_OUT $01
+          YIELD
+
+          CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
+          STORE_BYTE bBufferINIDISP, INIDISP_Setting(false, 0)
+
+        +
+        CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured
+
+        FADE_OUT 1
+        YIELD
+
+        CALL_ASM_LOOP rlASMCChapterEnd
+      END1
+
+    .endsection Chapter06EventsSection
+
+    .section Chapter06DataSection
+
+      eventChapter06Data ; B1/E22A
+
+        _RaydrikCameraCoordinates ; B1/E22A
+          .byte [9, 8]
+
+        _RaydrikGroup ; B1E22C
+          UNIT Raydrik, Enemy, [2, 3], [2, 3], Raydrik, [LoptyrsBlade, Warp], 20, false, [$01, $03, $00, $00]
+        UNIT
+
+        _UnusedCoordinates1 ; B1/E242
+          .byte [9, 8]
+
+        _GalzusGroup ; B1/E244
+          UNIT Galzus, Enemy, [2, 1], [2, 2], Truman, [MasterSword], 20, false, [$00, $00, $00, $02]
+        UNIT
+
+        _TrumanCameraCoordinates ; B1/E25A
+          .byte [9, 8]
+
+        _TrumanGroup ; B1/E25C
+          UNIT MansterArmoredSword, Enemy, [8, 9], [8, 9], Truman, [Longsword], 15, false, [$00, $03, $00, $00]
+          UNIT MansterArmoredBow, Enemy, [9, 9], [9, 9], Truman, [Longbow], 15, false, [$00, $03, $00, $00]
+          UNIT MansterArmoredAxe, Enemy, [7, 10], [7, 10], Truman, [BattleAxe], 15, false, [$00, $03, $00, $00]
+          UNIT MansterArmoredAxe, Enemy, [8, 10], [8, 10], Truman, [BattleAxe], 15, false, [$00, $03, $00, $20]
+          UNIT MansterArmoredAxe, Enemy, [9, 10], [9, 10], Truman, [BattleAxe], 15, false, [$00, $03, $00, $20]
+          UNIT Truman, Enemy, [7, 9], [7, 9], Truman, [Greatsword, Longbow, Vulnerary], 5, false, [$00, $03, $00, $00]
+          UNIT MansterArmoredAxe, Enemy, [6, 10], [6, 10], Truman, [BattleAxe], 15, false, [$00, $03, $00, $00]
+          UNIT MansterArmoredBow, Enemy, [6, 9], [6, 9], Truman, [Longbow], 15, false, [$00, $03, $00, $00]
+          UNIT MansterThunderMage, Enemy, [6, 8], [6, 8], Truman, [Elfire], 12, false, [$00, $03, $00, $00]
+          UNIT MansterThunderMage, Enemy, [7, 8], [7, 8], Truman, [Elfire], 12, false, [$00, $03, $00, $00]
+          UNIT MansterThunderMage, Enemy, [8, 8], [8, 8], Truman, [Elfire], 12, false, [$00, $03, $00, $00]
+          UNIT MansterThunderMage, Enemy, [9, 8], [9, 8], Truman, [Elfire], 12, false, [$00, $03, $00, $00]
+          UNIT MansterBishop1, Enemy, [7, 7], [7, 7], Truman, [Meteor, Physic], 5, false, [$01, $03, $00, $00]
+          UNIT MansterBishop1, Enemy, [8, 7], [8, 7], Truman, [Meteor, Physic], 5, false, [$01, $03, $00, $00]
+          UNIT MansterSoldier1, Enemy, [12, 16], [12, 16], Truman, [ShortLance], 3, false, [$02, $0A, $00, $00]
+          UNIT MansterSoldier1, Enemy, [12, 22], [12, 22], Truman, [ShortLance], 3, false, [$02, $0A, $00, $20]
+          UNIT MansterPriest1, Enemy, [2, 4], [2, 4], Truman, [Physic], 5, false, [$03, $03, $00, $00]
+        UNIT
+
+        _ArmorCameraCoordinates ; B1/E3B2
+          .byte [8, 7]
+
+        _ArmorGroup ; B1/E3B4
+          UNIT MansterArmoredLance, Enemy, [11, 16], [11, 16], Truman, [LongLance, Vulnerary], 5, false, [$00, $03, $00, $30]
+          UNIT MansterArmoredLance, Enemy, [4, 16], [4, 16], Truman, [LongLance, Vulnerary], 5, false, [$00, $03, $00, $30]
+          UNIT MansterArmoredLance, Enemy, [4, 19], [4, 19], Truman, [LongLance, Vulnerary], 5, false, [$00, $03, $00, $30]
+          UNIT MansterArmoredLance, Enemy, [11, 19], [11, 19], Truman, [LongLance, Vulnerary], 5, false, [$00, $03, $00, $30]
+          UNIT MansterArmoredLance, Enemy, [11, 22], [11, 22], Truman, [LongLance, Vulnerary], 5, false, [$00, $03, $00, $30]
+          UNIT MansterArmoredLance, Enemy, [4, 22], [4, 22], Truman, [LongLance, Vulnerary], 5, false, [$00, $03, $00, $30]
+        UNIT
+
+        _SoldierCameraCoordinates ; B1/E42E
+          .byte [8, 7]
+
+        _SoldierGroup ; B1/E430
+          UNIT MansterSoldier2, Enemy, [7, 25], [7, 25], Truman, [LongLance], 10, false, [$00, $03, $00, $20]
+          UNIT MansterSoldier2, Enemy, [8, 25], [8, 25], Truman, [LongLance], 10, false, [$00, $03, $00, $20]
+        UNIT
+
+        _KnightReinforcementsCameraCoordinates1 ; B1/E45A
+          .byte [22, 10]
+
+        _KnightReinforcementsGroup1 ; B1/E45C
+          UNIT MansterCavalier, Enemy, [31, 10], [30, 10], Truman, [LongLance], 10, false, [$00, $00, $00, $00]
+          UNIT MansterCavalier, Enemy, [31, 10], [27, 10], Truman, [LongLance], 10, false, [$00, $00, $00, $00]
+          UNIT MansterCavalier, Enemy, [31, 10], [28, 10], Truman, [LongLance], 10, false, [$00, $00, $00, $00]
+          UNIT MansterCavalier, Enemy, [31, 10], [29, 10], Truman, [LongLance], 10, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates2 ; B1/E4AE
+          .byte [8, 7]
+
+        _HicksGroup ; B1/E4B0
+          UNIT Hicks, Player, [14, 15], [14, 15], Leif, [Halberd, Vulnerary], 6, false, [$00, $00, $00, $00]
+        UNIT
+
+        _KnightReinforcementsCameraCoordinates2 ; B1/E4C6
+          .byte [8, 10]
+
+        _KnightReinforcementsGroup2 ; B1/E4C8
+          UNIT MansterCavalier, Enemy, [0, 9], [1, 9], Truman, [LongLance], 10, false, [$00, $00, $00, $00]
+          UNIT MansterCavalier, Enemy, [0, 9], [2, 9], Truman, [LongLance], 10, false, [$00, $00, $00, $00]
+          UNIT MansterCavalier, Enemy, [0, 9], [3, 9], Truman, [LongLance], 10, false, [$00, $00, $00, $00]
+          UNIT MansterCavalier, Enemy, [0, 9], [4, 9], Truman, [LongLance], 10, false, [$00, $00, $00, $00]
+        UNIT
+
+        _CedCameraCoordinates ; B1/E51A
+          .byte [19, 8]
+
+        _CedGroup ; B1/E51C
+          UNIT CedChp4x, NPC, [19, 1], [19, 1], CedChp4x, [ForsetiInfinite], 5, false, [$00, $00, $00, $00]
+          UNIT MagiSquadMyrmidon2, NPC, [18, 1], [18, 1], CedChp4x, [KillingEdge], 7, false, [$00, $00, $00, $00]
+          UNIT MagiSquadMyrmidon1, NPC, [20, 1], [20, 1], CedChp4x, [IronSword], 4, false, [$00, $00, $00, $00]
+          UNIT MagiSquadFighter, NPC, [17, 1], [17, 1], CedChp4x, [HandAxe], 5, false, [$00, $00, $00, $00]
+          UNIT MagiSquadFighter, NPC, [21, 1], [21, 1], CedChp4x, [HandAxe], 5, false, [$00, $00, $00, $00]
+          UNIT MagiSquadArcher, NPC, [16, 1], [16, 1], CedChp4x, [IronBow], 4, false, [$00, $00, $00, $00]
+          UNIT MagiSquadArcher, NPC, [22, 1], [22, 1], CedChp4x, [IronBow], 4, false, [$00, $00, $00, $00]
+          UNIT MagiSquadMyrmidon2, NPC, [18, 2], [18, 2], CedChp4x, [IronBlade], 5, false, [$00, $00, $00, $00]
+          UNIT MagiSquadMyrmidon2, NPC, [19, 2], [19, 2], CedChp4x, [IronBlade], 5, false, [$00, $00, $00, $00]
+          UNIT MagiSquadMyrmidon2, NPC, [20, 2], [20, 2], CedChp4x, [IronBlade], 5, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates3 ; B1/E5E6
+          .byte [23, 8]
+
+        _GalzusMareetaSaiasGroup ; B1/E5E8
+          UNIT Galzus, Enemy, [30, 3], [30, 3], Galzus, [], 1, false, [$00, $00, $00, $00]
+          UNIT Mareeta, NPC, [30, 2], [30, 2], Mareeta, [], 2, false, [$00, $00, $00, $00]
+          UNIT Saias, Enemy, [30, 1], [30, 1], Saias, [], 2, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates4 ; B1/E626
+          .byte [8, 7]
+
+        _BishopGroup ; B1/E628
+          UNIT FriegeBishop2, Player, [26, 11], [22, 6], Leif, [], 2, false, [$00, $00, $00, $00]
+        UNIT
+
+        _StartingPositions ; B1/E63E
+          .byte [21, 6]
+          .byte [21, 8]
+          .byte [18, 9]
+          .byte [19, 6]
+          .byte [18, 7]
+          .byte [20, 7]
+          .byte [19, 8]
+          .byte [21, 9]
+          .byte [17, 6]
+          .byte [17, 8]
+          .byte [23, 8]
+          .byte [22, 7]
+          .byte [18, 10]
+          .byte [20, 10]
+          .byte [22, 10]
+          .byte [20, 9]
+          .byte [23, 7]
+        .char -1
+
+        _Vendor ; B1/E661
+          SHOP [25, 20], [Vulnerary, DoorKey, Fire]
+
+        _Armory ; B1/E673
+          SHOP [27, 20], [IronSword, IronLance, IronAxe, IronBow]
+
+    .endsection Chapter06DataSection
+
+    .section Chapter06DialogueSection
+
+      dialogueChapter06Opening1 .include "../TEXT/DIALOGUE/CHAPTER06/Opening1.dialogue.txt" ; 92/8000
+      dialogueChapter06Opening2 .include "../TEXT/DIALOGUE/CHAPTER06/Opening2.dialogue.txt" ; 92/89F4
+      dialogueChapter06UnusedRemovedShivaSapphie .include "../TEXT/DIALOGUE/CHAPTER06/UnusedRemovedShivaSapphie.dialogue.txt" ; 92/8B8B
+      dialogueChapter06GalzusSpawn .include "../TEXT/DIALOGUE/CHAPTER06/GalzusSpawn.dialogue.txt" ; 92/8BB6
+      dialogueChapter06UnusedCodhaRaydrik .include "../TEXT/DIALOGUE/CHAPTER06/UnusedCodhaRaydrik.dialogue.txt" ; 92/8C3E
+      dialogueChapter06KnightCrestHouseEmilyAlive .include "../TEXT/DIALOGUE/CHAPTER06/KnightCrestHouseEmilyAlive.dialogue.txt" ; 92/8D4A
+      dialogueChapter06KnightCrestHouseEmilyDead .include "../TEXT/DIALOGUE/CHAPTER06/KnightCrestHouseEmilyDead.dialogue.txt" ; 92/8DC2
+      dialogueChapter06HicksHouseMuffyAlive .include "../TEXT/DIALOGUE/CHAPTER06/HicksHouseMuffyAlive.dialogue.txt" ; 92/8DEE
+      dialogueChapter06HicksHouseMuffyDead .include "../TEXT/DIALOGUE/CHAPTER06/HicksHouseMuffyDead.dialogue.txt" ; 92/8EC0
+      dialogueChapter06PureWaterHouseVeraAlive .include "../TEXT/DIALOGUE/CHAPTER06/PureWaterHouseVeraAlive.dialogue.txt" ; 92/8F23
+      dialogueChapter06PureWaterHouseVeraDead .include "../TEXT/DIALOGUE/CHAPTER06/PureWaterHouseVeraDead.dialogue.txt" ; 92/8F8C
+      dialogueChapter06RapierHouseCliffAlive .include "../TEXT/DIALOGUE/CHAPTER06/RapierHouseCliffAlive.dialogue.txt" ; 92/8FCA
+      dialogueChapter06RapierHouseCliffDead .include "../TEXT/DIALOGUE/CHAPTER06/RapierHouseCliffDead.dialogue.txt" ; 92/9060
+      dialogueChapter06ParagonManualHouseBowieAlive .include "../TEXT/DIALOGUE/CHAPTER06/ParagonManualHouseBowieAlive.dialogue.txt" ; 92/90BC
+      dialogueChapter06ParagonManualHouseBowieDead .include "../TEXT/DIALOGUE/CHAPTER06/ParagonManualHouseBowieDead.dialogue.txt" ; 92/918B
+      dialogueChapter06OdosScrollHouseLinaAlive .include "../TEXT/DIALOGUE/CHAPTER06/OdosScrollHouseLinaAlive.dialogue.txt" ; 92/91C8
+      dialogueChapter06OdosScrollHouseLinaDead .include "../TEXT/DIALOGUE/CHAPTER06/OdosScrollHouseLinaDead.dialogue.txt" ; 92/9293
+      dialogueChapter06Ending .include "../TEXT/DIALOGUE/CHAPTER06/Ending.dialogue.txt" ; 92/92E6
+
+      dialogueShiva2BattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Shiva2.dialogue.txt" ; 92/97BA
+      dialogueShiva2DeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Shiva2.dialogue.txt" ; 92/97D8
+      dialogueShiva2ReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Shiva2.dialogue.txt" ; 92/97EB
+      dialogueGalzusBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Galzus.dialogue.txt" ; 92/97F9
+
+      dialogueChapter06DoorOpenDialogue1 .include "../TEXT/DIALOGUE/CHAPTER06/DoorOpenDialogue1.dialogue.txt" ; 92/9816
+      dialogueChapter06DoorOpenDialogue2 .include "../TEXT/DIALOGUE/CHAPTER06/DoorOpenDialogue2.dialogue.txt" ; 92/984C
+      dialogueChapter06CedArrive .include "../TEXT/DIALOGUE/CHAPTER06/CedArrive.dialogue.txt" ; 92/9893
+      dialogueChapter06CedLeave .include "../TEXT/DIALOGUE/CHAPTER06/CedLeave.dialogue.txt" ; 92/9937
+
+    .endsection Chapter06DialogueSection
+
+.endif ; GUARD_FE5_CHAPTER06

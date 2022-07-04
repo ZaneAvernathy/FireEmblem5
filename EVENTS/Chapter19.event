@@ -1,0 +1,63 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER19 :?= false
+.if (!GUARD_FE5_CHAPTER19)
+  GUARD_FE5_CHAPTER19 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter19DialogueSection
+
+      dialogueChapter19Opening1 .include "../TEXT/DIALOGUE/CHAPTER19/Opening1.dialogue.txt" ; B0/AEBC
+      dialogueChapter19Opening2 .include "../TEXT/DIALOGUE/CHAPTER19/Opening2.dialogue.txt" ; B0/B10B
+      dialogueChapter19Opening3A .include "../TEXT/DIALOGUE/CHAPTER19/Opening3A.dialogue.txt" ; B0/B188
+      dialogueChapter19Opening3B .include "../TEXT/DIALOGUE/CHAPTER19/Opening3B.dialogue.txt" ; B0/B1C8
+      dialogueChapter19UnusedBarath .include "../TEXT/DIALOGUE/CHAPTER19/UnusedBarath.dialogue.txt" ; B0/B230
+      dialogueChapter19ConomoreRecruitment .include "../TEXT/DIALOGUE/CHAPTER19/ConomoreRecruitment.dialogue.txt" ; B0/B275
+      dialogueChapter19AmaldaRecruitment .include "../TEXT/DIALOGUE/CHAPTER19/AmaldaRecruitment.dialogue.txt" ; B0/B4CC
+      dialogueChapter19UnusedIshtarArrive .include "../TEXT/DIALOGUE/CHAPTER19/UnusedIshtarArrive.dialogue.txt" ; B0/B6E4
+      dialogueChapter19UnusedIshtarCommand .include "../TEXT/DIALOGUE/CHAPTER19/UnusedIshtarCommand.dialogue.txt" ; B0/B7B9
+      dialogueChapter19UnusedIshtarLeave .include "../TEXT/DIALOGUE/CHAPTER19/UnusedIshtarLeave.dialogue.txt" ; B0/B802
+      dialogueChapter19PureWater1House .include "../TEXT/DIALOGUE/CHAPTER19/PureWater1House.dialogue.txt" ; B0/B850
+      dialogueChapter19SilverSwordHouse .include "../TEXT/DIALOGUE/CHAPTER19/SilverSwordHouse.dialogue.txt" ; B0/B8D2
+      dialogueChapter19KillerLanceHouse .include "../TEXT/DIALOGUE/CHAPTER19/KillerLanceHouse.dialogue.txt" ; B0/B936
+      dialogueChapter19SpeedRingHouse .include "../TEXT/DIALOGUE/CHAPTER19/SpeedRingHouse.dialogue.txt" ; B0/B98F
+      dialogueChapter19PureWater2House .include "../TEXT/DIALOGUE/CHAPTER19/PureWater2House.dialogue.txt" ; B0/B9F5
+      dialogueChapter19Heal1House .include "../TEXT/DIALOGUE/CHAPTER19/Heal1House.dialogue.txt" ; B0/BA7A
+      dialogueChapter19WardHouse .include "../TEXT/DIALOGUE/CHAPTER19/WardHouse.dialogue.txt" ; B0/BAD8
+      dialogueChapter19Heal2House .include "../TEXT/DIALOGUE/CHAPTER19/Heal2House.dialogue.txt" ; B0/BB53
+      dialogueChapter19WindHouse .include "../TEXT/DIALOGUE/CHAPTER19/WindHouse.dialogue.txt" ; B0/BB98
+      dialogueChapter19Ending1 .include "../TEXT/DIALOGUE/CHAPTER19/Ending1.dialogue.txt" ; B0/BC0A
+      dialogueChapter19UnusedConomoreEnding .include "../TEXT/DIALOGUE/CHAPTER19/UnusedConomoreEnding.dialogue.txt" ; B0/C1E2
+      dialogueChapter19UnusedAmaldaEnding .include "../TEXT/DIALOGUE/CHAPTER19/UnusedAmaldaEnding.dialogue.txt" ; B0/C209
+      dialogueChapter19Ending2 .include "../TEXT/DIALOGUE/CHAPTER19/Ending2.dialogue.txt" ; B0/C22F
+
+      dialogueWolfeChapter19BattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/WolfeChapter19.dialogue.txt" ; B0/C32D
+      dialogueWolfeChapter19DeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/WolfeChapter19.dialogue.txt" ; B0/C347
+      dialogueWolfeChapter19ReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/WolfeChapter19.dialogue.txt" ; B0/C362
+      dialogueAmaldaBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Amalda.dialogue.txt" ; B0/C391
+      dialogueAmaldaReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Amalda.dialogue.txt" ; B0/C3BD
+      dialogueConomoreBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Conomore.dialogue.txt" ; B0/C3D9
+      dialogueConomoreReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Conomore.dialogue.txt" ; B0/C3EF
+      dialogueIshtarBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Ishtar.dialogue.txt" ; B0/C41F
+
+    .endsection Chapter19DialogueSection
+
+    .section Chapter19WMDialogueSection
+
+      dialogueChapter19WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER19/WorldMap1.dialogue.txt" ; 82/D69A
+      dialogueChapter19WorldMap2 .include "../TEXT/DIALOGUE/CHAPTER19/WorldMap2.dialogue.txt" ; 82/D6C7
+      dialogueChapter19WorldMap3 .include "../TEXT/DIALOGUE/CHAPTER19/WorldMap3.dialogue.txt" ; 82/D6F3
+
+    .endsection Chapter19WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER19

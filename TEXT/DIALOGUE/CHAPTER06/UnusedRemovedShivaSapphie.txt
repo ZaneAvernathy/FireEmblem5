@@ -1,0 +1,3 @@
+{DIALOGUE_RIGHT}{DIALOGUE_LOAD $0090}
+元メッセージ｢シヴァＮサフィ｣です\n
+このメッセージは移動しました{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

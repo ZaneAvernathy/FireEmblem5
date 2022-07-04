@@ -1,0 +1,3 @@
+{DIALOGUE_RIGHT}反乱軍かっ！\n
+{DIALOGUE_PAUSE $10}われらがマンスター軍の力\n
+{DIALOGUE_PAUSE $10}思い知らせてやる！{DIALOGUE_END_SCENE}

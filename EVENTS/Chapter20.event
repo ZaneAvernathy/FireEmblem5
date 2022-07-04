@@ -1,0 +1,51 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER20 :?= false
+.if (!GUARD_FE5_CHAPTER20)
+  GUARD_FE5_CHAPTER20 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter20DialogueSection
+
+      dialogueChapter20Opening1 .include "../TEXT/DIALOGUE/CHAPTER20/Opening1.dialogue.txt" ; 92/EB7D
+      dialogueChapter20Opening2 .include "../TEXT/DIALOGUE/CHAPTER20/Opening2.dialogue.txt" ; 92/EEDA
+      dialogueChapter20Opening3 .include "../TEXT/DIALOGUE/CHAPTER20/Opening3.dialogue.txt" ; 92/EF5D
+      dialogueChapter20UnusedDialogue .include "../TEXT/DIALOGUE/CHAPTER20/UnusedDialogue.dialogue.txt" ; 92/F18B
+      dialogueChapter20Ending1 .include "../TEXT/DIALOGUE/CHAPTER20/Ending1.dialogue.txt" ; 92/F2AF
+      dialogueChapter20Ending2A .include "../TEXT/DIALOGUE/CHAPTER20/Ending2A.dialogue.txt" ; 92/F44B
+      dialogueChapter20Ending2B .include "../TEXT/DIALOGUE/CHAPTER20/Ending2B.dialogue.txt" ; 92/F4EC
+      dialogueChapter20Ending3B .include "../TEXT/DIALOGUE/CHAPTER20/Ending3B.dialogue.txt" ; 92/F5C9
+      dialogueChapter20UnusedEnding .include "../TEXT/DIALOGUE/CHAPTER20/UnusedEnding.dialogue.txt" ; 92/F8D6
+      dialogueChapter20PlayerLoss .include "../TEXT/DIALOGUE/CHAPTER20/PlayerLoss.dialogue.txt" ; 92/FB2E
+
+      dialogueMannheimBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Mannheim.dialogue.txt" ; 92/FB98
+      dialogueMannheimDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Mannheim.dialogue.txt" ; 92/FBB8
+      dialogueMannheimReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Mannheim.dialogue.txt" ; 92/FBDF
+      dialogueGustavBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Gustav.dialogue.txt" ; 92/FBF5
+      dialogueGustavDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Gustav.dialogue.txt" ; 92/FC19
+      dialogueGustavReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Gustav.dialogue.txt" ; 92/FC39
+      dialogueBarathBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Barath.dialogue.txt" ; 92/FC59
+      dialogueBarathDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Barath.dialogue.txt" ; 92/FC71
+      dialogueBarathReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Barath.dialogue.txt" ; 92/FC89
+
+      dialogueChapter20SilenceHouse .include "../TEXT/DIALOGUE/CHAPTER20/SilenceHouse.dialogue.txt" ; 92/FCA5
+
+    .endsection Chapter20DialogueSection
+
+    .section Chapter20WMDialogueSection
+
+      dialogueChapter20WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER20/WorldMap1.dialogue.txt" ; 82/D754
+
+    .endsection Chapter20WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER20

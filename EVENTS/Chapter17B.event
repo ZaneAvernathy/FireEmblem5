@@ -1,0 +1,50 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER17B :?= false
+.if (!GUARD_FE5_CHAPTER17B)
+  GUARD_FE5_CHAPTER17B := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter17BDialogueSection
+
+      dialogueChapter17BOpening1 .include "../TEXT/DIALOGUE/CHAPTER17B/Opening1.dialogue.txt" ; E7/9F35
+      dialogueChapter17BOpening2 .include "../TEXT/DIALOGUE/CHAPTER17B/Opening2.dialogue.txt" ; E7/A0C7
+      dialogueChapter17BLowerGateOpen .include "../TEXT/DIALOGUE/CHAPTER17B/LowerGateOpen.dialogue.txt" ; E7/A2D4
+      dialogueChapter17BGateTurn2Placeholder .include "../TEXT/DIALOGUE/CHAPTER17B/GateTurn2Placeholder.dialogue.txt" ; E7/A309
+      dialogueChapter17BGateTurn3Placeholder .include "../TEXT/DIALOGUE/CHAPTER17B/GateTurn3Placeholder.dialogue.txt" ; E7/A340
+      dialogueChapter17BGateTurn4Placeholder .include "../TEXT/DIALOGUE/CHAPTER17B/GateTurn4Placeholder.dialogue.txt" ; E7/A377
+      dialogueChapter17BAmaldaCharge .include "../TEXT/DIALOGUE/CHAPTER17B/AmaldaCharge.dialogue.txt" ; E7/A3AF
+      dialogueChapter17BNPCHousesLeif .include "../TEXT/DIALOGUE/CHAPTER17B/NPCHousesLeif.dialogue.txt" ; E7/A3EF
+      dialogueChapter17BNPCHousesOther .include "../TEXT/DIALOGUE/CHAPTER17B/NPCHousesOther.dialogue.txt" ; E7/A90E
+      dialogueChapter17BNPCHousesPrompt .include "../TEXT/DIALOGUE/CHAPTER17B/NPCHousesPrompt.dialogue.txt" ; E7/A945
+      dialogueChapter17BGateHouse .include "../TEXT/DIALOGUE/CHAPTER17B/GateHouse.dialogue.txt" ; E7/A992
+      dialogueChapter17BGateHouseCannotAfford .include "../TEXT/DIALOGUE/CHAPTER17B/GateHouseCannotAfford.dialogue.txt" ; E7/AAB6
+      dialogueChapter17BGateHousePrompt .include "../TEXT/DIALOGUE/CHAPTER17B/GateHousePrompt.dialogue.txt" ; E7/AAE9
+      dialogueChapter17BEnding1 .include "../TEXT/DIALOGUE/CHAPTER17B/Ending1.dialogue.txt" ; E7/AB30
+      dialogueChapter17BEnding2 .include "../TEXT/DIALOGUE/CHAPTER17B/Ending2.dialogue.txt" ; E7/B088
+
+      dialogueParmannBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Parmann.dialogue.txt" ; E7/B1B1
+      dialogueParmannDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Parmann.dialogue.txt" ; E7/B1C4
+      dialogueParmannReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Parmann.dialogue.txt" ; E7/B1DD
+      dialogueAmaldaChapter17BBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/AmaldaChapter17B.dialogue.txt" ; E7/B205
+      dialogueAmaldaChapter17BReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/AmaldaChapter17B.dialogue.txt" ; E7/B223
+
+    .endsection Chapter17BDialogueSection
+
+    .section Chapter17BWMDialogueSection
+
+      dialogueChapter17BWorldMap1 .include "../TEXT/DIALOGUE/CHAPTER17B/WorldMap1.dialogue.txt" ; 82/D5AE
+
+    .endsection Chapter17BWMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER17B

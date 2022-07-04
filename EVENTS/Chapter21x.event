@@ -1,0 +1,32 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER21x :?= false
+.if (!GUARD_FE5_CHAPTER21x)
+  GUARD_FE5_CHAPTER21x := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter21xDialogueSection
+
+      dialogueChapter21xOpening1 .include "../TEXT/DIALOGUE/CHAPTER21x/Opening1.dialogue.txt" ; 95/F72E
+      dialogueChapter21xOpening2 .include "../TEXT/DIALOGUE/CHAPTER21x/Opening2.dialogue.txt" ; 95/F7D7
+      dialogueChapter21xUnused .include "../TEXT/DIALOGUE/CHAPTER21x/Unused.dialogue.txt" ; 95/F906
+      dialogueChapter21xEnding1 .include "../TEXT/DIALOGUE/CHAPTER21x/Ending1.dialogue.txt" ; 95/F959
+      dialogueChapter21xDarkMageReinforcements .include "../TEXT/DIALOGUE/CHAPTER21x/DarkMageReinforcements.dialogue.txt" ; 95/FCC5
+
+      dialogueZaummBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Zaumm.dialogue.txt" ; 95/FD03
+      dialogueZaummDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Zaumm.dialogue.txt" ; 95/FD19
+      dialogueZaummReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Zaumm.dialogue.txt" ; 95/FD2B
+
+    .endsection Chapter21xDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER21x

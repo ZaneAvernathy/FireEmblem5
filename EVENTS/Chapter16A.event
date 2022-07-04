@@ -1,0 +1,64 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER16A :?= false
+.if (!GUARD_FE5_CHAPTER16A)
+  GUARD_FE5_CHAPTER16A := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter16ADialogueSection
+
+      dialogueChapter16AOpening1 .include "../TEXT/DIALOGUE/CHAPTER16A/Opening1.dialogue.txt" ; 98/9E39
+      dialogueChapter16AOpening2 .include "../TEXT/DIALOGUE/CHAPTER16A/Opening2.dialogue.txt" ; 98/A12C
+      dialogueChapter16AOpening3 .include "../TEXT/DIALOGUE/CHAPTER16A/Opening3.dialogue.txt" ; 98/A293
+      dialogueChapter16AOlwenKempfTalk .include "../TEXT/DIALOGUE/CHAPTER16A/OlwenKempfTalk.dialogue.txt" ; 98/A340
+      dialogueChapter16AKempfCharge .include "../TEXT/DIALOGUE/CHAPTER16A/KempfCharge.dialogue.txt" ; 98/A4D8
+      dialogueChapter16AConomoreArrive .include "../TEXT/DIALOGUE/CHAPTER16A/ConomoreArrive.dialogue.txt" ; 98/A5DE
+      dialogueChapter16ASchroffDialogue .include "../TEXT/DIALOGUE/CHAPTER16A/SchroffDialogue.dialogue.txt" ; 98/A712
+      dialogueChapter16AConomoreFlee .include "../TEXT/DIALOGUE/CHAPTER16A/ConomoreFlee.dialogue.txt" ; 98/A77C
+      dialogueChapter16AIliosComplaint .include "../TEXT/DIALOGUE/CHAPTER16A/IliosComplaint.dialogue.txt" ; 98/A7CE
+      dialogueChapter16AIliosRecruitment .include "../TEXT/DIALOGUE/CHAPTER16A/IliosRecruitment.dialogue.txt" ; 98/A82D
+      dialogueChapter16ASchroffHouseLeif .include "../TEXT/DIALOGUE/CHAPTER16A/SchroffHouseLeif.dialogue.txt" ; 98/ABFC
+      dialogueChapter16ASchroffHouseOther .include "../TEXT/DIALOGUE/CHAPTER16A/SchroffHouseOther.dialogue.txt" ; 98/AD29
+      dialogueChapter16ABridgeKeyHouse .include "../TEXT/DIALOGUE/CHAPTER16A/BridgeKeyHouse.dialogue.txt" ; 98/AD5A
+      dialogueChapter16APureWaterHouse .include "../TEXT/DIALOGUE/CHAPTER16A/PureWaterHouse.dialogue.txt" ; 98/ADEC
+      dialogueChapter16AKnightCrestHouse .include "../TEXT/DIALOGUE/CHAPTER16A/KnightCrestHouse.dialogue.txt" ; 98/AE78
+      dialogueChapter16AEnding1 .include "../TEXT/DIALOGUE/CHAPTER16A/Ending1.dialogue.txt" ; 98/AEE8
+      dialogueChapter16AEnding2 .include "../TEXT/DIALOGUE/CHAPTER16A/Ending2.dialogue.txt" ; 98/AF6F
+      dialogueChapter16AEnding3 .include "../TEXT/DIALOGUE/CHAPTER16A/Ending3.dialogue.txt" ; 98/B1D1
+
+      dialogueKempfBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Kempf.dialogue.txt" ; 98/B368
+      dialogueChapter16AUnusedBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Chapter16AUnused.dialogue.txt" ; 98/B38E
+      dialogueKempfDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Kempf.dialogue.txt" ; 98/B3B8
+      dialogueKempfReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Kempf.dialogue.txt" ; 98/B3DE
+      dialogueBrooksBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Brooks.dialogue.txt" ; 98/B403
+      dialogueBrooksDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Brooks.dialogue.txt" ; 98/B42E
+      dialogueBrooksReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Brooks.dialogue.txt" ; 98/B452
+      dialogueIliosBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Ilios.dialogue.txt" ; 98/B468
+      dialogueIliosDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Ilios.dialogue.txt" ; 98/B4A1
+      dialogueIliosReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Ilios.dialogue.txt" ; 98/B4C1
+      dialogueConomoreChapter16ABattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/ConomoreChapter16A.dialogue.txt" ; 98/B4F5
+      dialogueConomoreChapter16AReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/ConomoreChapter16A.dialogue.txt" ; 98/B518
+      dialogueNicolovBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Nicolov.dialogue.txt" ; 98/B53A
+      dialogueNicolovDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Nicolov.dialogue.txt" ; 98/B561
+      dialogueNicolovReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Nicolov.dialogue.txt" ; 98/B586
+
+    .endsection Chapter16ADialogueSection
+
+    .section Chapter16AWMDialogueSection
+
+      dialogueChapter16AWorldMap1 .include "../TEXT/DIALOGUE/CHAPTER16A/WorldMap1.dialogue.txt" ; 82/D3C1
+      dialogueChapter16AWorldMap2 .include "../TEXT/DIALOGUE/CHAPTER16A/WorldMap2.dialogue.txt" ; 82/D416
+
+    .endsection Chapter16AWMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER16A

@@ -1,0 +1,44 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTERFINAL :?= false
+.if (!GUARD_FE5_CHAPTERFINAL)
+  GUARD_FE5_CHAPTERFINAL := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section ChapterFinalDialogueSection
+
+      dialogueChapterFinalOpening1 .include "../TEXT/DIALOGUE/CHAPTERFINAL/Opening1.dialogue.txt" ; E7/C623
+      dialogueChapterFinalOpening2 .include "../TEXT/DIALOGUE/CHAPTERFINAL/Opening2.dialogue.txt" ; E7/CA55
+      dialogueChapterFinalThroneOpen .include "../TEXT/DIALOGUE/CHAPTERFINAL/ThroneOpen.dialogue.txt" ; E7/CB6A
+      dialogueChapterFinalEnding1 .include "../TEXT/DIALOGUE/CHAPTERFINAL/Ending1.dialogue.txt" ; E7/CBED
+      dialogueChapterFinalEnding2 .include "../TEXT/DIALOGUE/CHAPTERFINAL/Ending2.dialogue.txt" ; E7/CEBD
+      dialogueChapterFinalEnding3 .include "../TEXT/DIALOGUE/CHAPTERFINAL/Ending3.dialogue.txt" ; E7/D30B
+      dialogueChapterFinalEnding4 .include "../TEXT/DIALOGUE/CHAPTERFINAL/Ending4.dialogue.txt" ; E7/D4A2
+      dialogueChapterFinalEnding5 .include "../TEXT/DIALOGUE/CHAPTERFINAL/Ending5.dialogue.txt" ; E7/D756
+      dialogueChapterFinalEnding6 .include "../TEXT/DIALOGUE/CHAPTERFINAL/Ending6.dialogue.txt" ; E7/D7E7
+      dialogueChapterFinalEnding7 .include "../TEXT/DIALOGUE/CHAPTERFINAL/Ending7.dialogue.txt" ; E7/D979
+      dialogueChapterFinalUnusedLeifLoad .include "../TEXT/DIALOGUE/CHAPTERFINAL/UnusedLeifLoad.dialogue.txt" ; E7/DA6D
+      dialogueChapterFinalNannaLoad .include "../TEXT/DIALOGUE/CHAPTERFINAL/NannaLoad.dialogue.txt" ; E7/DA73
+      dialogueChapterFinalEnding8 .include "../TEXT/DIALOGUE/CHAPTERFINAL/Ending8.dialogue.txt" ; E7/DA79
+      dialogueChapterFinalEnding9 .include "../TEXT/DIALOGUE/CHAPTERFINAL/Ending9.dialogue.txt" ; E7/DBFE
+
+      dialogueVeldBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Veld.dialogue.txt" ; E7/DEDD
+      dialogueVeldDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Veld.dialogue.txt" ; E7/DF16
+      dialogueVeldReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Veld.dialogue.txt" ; E7/DFC2
+      dialogueChapterFinalUnusedBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/ChapterFinalUnused.dialogue.txt" ; E7/DFE0
+      dialogueChapterFinalUnusedDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/ChapterFinalUnused.dialogue.txt" ; E7/DFFF
+      dialogueChapterFinalUnusedReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/ChapterFinalUnused.dialogue.txt" ; E7/E007
+
+    .endsection ChapterFinalDialogueSection
+
+.endif ; GUARD_FE5_CHAPTERFINAL

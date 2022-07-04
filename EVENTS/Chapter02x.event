@@ -1,0 +1,504 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER02x :?= false
+.if (!GUARD_FE5_CHAPTER02x)
+  GUARD_FE5_CHAPTER02x := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter02xEventsSection
+
+      eventChapter02xEvents ; 97/805A
+
+        ; Flag definitions
+
+          _FlagShivaBattleQuote  = enum.enum($05)
+          _FlagLithisBattleQuote = enum.enum()
+          _FlagTorch1            = enum.enum()
+          _FlagTorch2            = enum.enum()
+          _FlagLeifEyvelTalk     = enum.enum()
+
+        _OpeningEventDefinitions ; 97/805A
+          EVENT FlagAlwaysZero, _OpeningEvent
+            CMP_WORD wCurrentTurn, 0
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _TurnEventDefinitions ; 97/8067
+          EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+            CHECK_IF_BOSS_DEAD Lithis
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _ShivaAIChange
+            CMP_WORD wCurrentTurn, 25
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+            CMP_WORD wCurrentTurn, 22
+            CHECK_NUM_UNITS_GTE Shiva, 1
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _MyrmidonWarriorReinforcements
+            CMP_WORD wCurrentTurn, 2
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _TopIslandReinforcements
+            CMP_WORD_RANGE wCurrentTurn, 5, 9
+            CMP_WORD wCurrentPhase, Enemy
+            ROLL_RNG 30
+            TEST_FLAG_UNSET FlagBossDeath
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _LowerRightIslandReinforcements
+            CMP_WORD_RANGE wCurrentTurn, 10, 14
+            ROLL_RNG 80
+            CMP_WORD wCurrentPhase, Enemy
+            TEST_FLAG_UNSET FlagBossDeath
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _LowerLeftIslandReinforcements
+            CMP_WORD_RANGE wCurrentTurn, 15, 20
+            ROLL_RNG 20
+            CMP_WORD wCurrentPhase, Enemy
+            TEST_FLAG_UNSET FlagBossDeath
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _LocationEventDefinitions ; 97/80F3
+          EVENT FlagAlwaysZero, _EndingEvent
+            macroECCheckCoordinates [23, 2]
+            CMP_WORD wCurrentPhase, Player
+            CMP_WORD aSelectedCharacterBuffer.Character, Leif
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _TalkEventDefinitions ; 97/8110
+          EVENT _FlagLeifEyvelTalk, _LeifEyvelTalk
+            CHECK_CHARS2 Leif, Eyvel
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _BeforeActionEventDefinitions ; 97/811C
+        END_DEFINITION_ARRAY
+
+        _AfterActionEventDefinitions ; 97/811E
+          EVENT _FlagTorch1, _TorchPickup
+            macroECCheckCoordinates [5, 25]
+            CMP_WORD wCurrentPhase, Player
+          END_DEFINITION
+          EVENT _FlagTorch2, _TorchPickup
+            macroECCheckCoordinates [12, 19]
+            CMP_WORD wCurrentPhase, Player
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _BattleEventDefinitions ; 97/814A
+          macroECBossQuote _FlagLithisBattleQuote, Lithis
+          macroECBossQuote _FlagShivaBattleQuote, Shiva
+        END_DEFINITION_ARRAY
+
+        _ShopEventDefinitions ; 97/815C
+        END_DEFINITION_ARRAY
+
+        _LeifEyvelTalk ; 97/815E
+          macroDialogue dialogueChapter02xLeifEyvelTalk
+        END2
+
+        _MyrmidonWarriorReinforcements ; 97/8167
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $3A
+          YIELD
+
+          SCROLL_CAMERA_COORDS [25, 4], 3
+          YIELD
+
+          macroDialogueWithBG dialogueChapter02xReinforcementsDialogue, 1
+
+          CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+          YIELD
+
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
+
+          LOAD_GROUP eventChapter02xData._EnemyGroup2
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _ShivaAIChange ; 97/81A5
+          macroSetCharacterAI Shiva, [ActionAI_IgnoreNone, $00, MovementAI_Pursue, $00]
+        END2
+
+        _PrepGroups ; 97/8206
+        .word 0
+
+        _OpeningEvent ; 97/8208
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $3A
+          YIELD
+
+          macroChapterTitlePopup dialogueChapter02xTitle
+
+          macroASMCAddCharacterDataByte Leif, LeadershipStars, 1
+
+          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+
+          macroLoadPlayerUnitsByStartingPositions
+
+          macroDialogueWithBG dialogueChapter02xOpening1, 1
+
+          CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+          YIELD
+
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
+
+
+          LOAD_GROUP eventChapter02xData._LithisShivaGroup
+          WAIT_MOVE
+          YIELD
+
+          macroASMCLoadUnitGroup eventChapter02xData._EnemyGroup1
+          macroASMCLoadUnitGroup eventChapter02xData._EnemyGroup3
+          macroASMCLoadUnitGroup eventChapter02xData._EnemyGroup4
+          macroASMCLoadUnitGroup eventChapter02xData._EnemyGroup5
+          macroASMCLoadUnitGroup eventChapter02xData._EnemyGroup6
+
+          PLAY_SOUND_WORD $00E7
+
+          SCROLL_CAMERA_COORDS [9, 11], 3
+          YIELD
+
+          DIALOGUE dialogueChapter02xOpening2
+          YIELD
+        END2
+
+        _TopIslandReinforcements ; 97/82F6
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._TopIslandReinforcementsGroup1
+          WAIT_MOVE
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._TopIslandReinforcementsGroup2
+          WAIT_MOVE
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._TopIslandReinforcementsGroup3
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _UnusedReinforcements1 ; 97/8309
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._TopIslandReinforcementsGroup2
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _UnusedReinforcements2 ; 97/8310
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._TopIslandReinforcementsGroup3
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _LowerRightIslandReinforcements ; 97/8317
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._LowerRightIslandReinforcementsGroup1
+          WAIT_MOVE
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._LowerRightIslandReinforcementsGroup2
+          WAIT_MOVE
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._LowerRightIslandReinforcementsGroup3
+          WAIT_MOVE
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._LowerRightIslandReinforcementsGroup4
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _UnusedReinforcements3 ; 97/8330
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._LowerRightIslandReinforcementsGroup2
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _UnusedReinforcements4 ; 97/8337
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._LowerRightIslandReinforcementsGroup3
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _UnusedReinforcements5 ; 97/833E
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._LowerRightIslandReinforcementsGroup4
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _LowerLeftIslandReinforcements ; 97/8345
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._LowerLeftIslandReinforcementsGroup1
+          WAIT_MOVE
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._LowerLeftIslandReinforcementsGroup2
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _UnusedReinforcements6 ; 97/8352
+          LOAD_GROUP_BLOCKABLE eventChapter02xData._LowerLeftIslandReinforcementsGroup2
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _TorchPickup ; 97/8359
+          macroASMCActiveUnitCheckUnitState UnitStateDead
+          JUMP_TRUE +
+
+            macroGiveActiveUnitItem Torch
+            CALL_ASM_LOOP rlASMCSaveActiveUnit
+
+          +
+        END2
+
+        _EndingEvent ; 97/8398
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 16
+          YIELD
+
+          CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+
+          PLAY_SOUND_WORD $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $43
+          YIELD
+
+          CALL_ASM_LOOP rlASMCSaveChapterTurncount
+
+          macroASMCSubtractCharacterDataByte Leif, LeadershipStars, 1
+
+          FADE_OUT 1
+          YIELD
+
+          STORE_BYTE bBufferINIDISP, INIDISP_Setting(false, 0)
+
+          macroASMCChangeAllegianceToPlayerIfHeld Lithis
+
+          macroDialogueWithBG dialogueChapter02xEnding1, 1
+
+          JUMP_FALSE +
+
+            STORE_LONG lEventEngineLongParameter, dialogueChapter02xEnding2
+            CALL_ASM_LOOP rlASMCDialogueContinue
+
+          +
+
+          YIELD
+
+          HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+          FADE_OUT $01
+          YIELD
+
+          CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
+
+          STORE_BYTE bBufferINIDISP, INIDISP_Setting(false, 0)
+
+          macroASMCLoadUnitGroup eventChapter02xData._SapphieGroup
+
+          macroASMCPrepareCapturedUnitsForRescue None, Player
+
+          FADE_OUT 1
+          YIELD
+
+          CALL_ASM_LOOP rlASMCChapterEnd
+        END1
+
+    .endsection Chapter02xEventsSection
+
+    .section Chapter02xDataSection
+
+      eventChapter02xData ; B1/F66D
+
+        _UnusedCoordinates1 ; B1/F66D
+          .byte [24, 7]
+
+        _LithisShivaGroup ; B1/F66F
+          UNIT Lithis, Enemy, [23, 2], [23, 2], Lithis, [HezulsScroll, Lockpick], 4, true, [$01, $03, $00, $80]
+          UNIT Shiva, Enemy, [25, 4], [25, 4], Lithis, [KillingEdge, Vulnerary], 3, false, [$02, $03, $00, $00]
+        UNIT
+
+        _UnusedCoordinates2 ; B1/F699
+          .byte [9, 7]
+
+        _EnemyGroup1 ; B1/F69B
+          UNIT LithisCrewPirate, Enemy, [28, 15], [28, 15], Lithis, [HandAxe, Vulnerary], 1, false, [$00, $03, $00, $00]
+          UNIT LithisCrewHunter, Enemy, [24, 14], [24, 14], Lithis, [IronBow], 2, false, [$00, $03, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [25, 15], [25, 15], Lithis, [IronAxe], 1, false, [$00, $03, $00, $00]
+        UNIT
+
+        _UnusedCoordinates3 ; B1/F6D9
+          .byte [8, 22]
+
+        _EnemyGroup2 ; B1/F6DB
+          UNIT LithisCrewWarrior, Enemy, [21, 6], [21, 6], Lithis, [SteelAxe, IronBow, Vulnerary], 1, false, [$02, $08, $00, $00]
+          UNIT LithisCrewMyrmidon, Enemy, [23, 6], [23, 6], Lithis, [IronSword], 2, false, [$02, $08, $00, $00]
+          UNIT LithisCrewMyrmidon, Enemy, [24, 7], [24, 7], Lithis, [IronSword], 1, false, [$02, $08, $00, $00]
+          UNIT LithisCrewMyrmidon, Enemy, [25, 6], [25, 6], Lithis, [IronSword], 1, false, [$00, $08, $00, $00]
+        UNIT
+
+        _UnusedCoordinates4 ; B1/F72D
+          .byte [8, 7]
+
+        _EnemyGroup3 ; B1/F72F
+          UNIT LithisCrewHunter, Enemy, [22, 19], [22, 19], Lithis, [IronBow], 1, false, [$00, $03, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [20, 20], [20, 20], Lithis, [IronAxe], 1, false, [$00, $03, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [18, 20], [18, 20], Lithis, [SteelAxe, Vulnerary], 3, false, [$00, $03, $00, $00]
+        UNIT
+
+        _UnusedCoordinates5 ; B1/F76D
+          .byte [8, 7]
+
+        _EnemyGroup4 ; B1/F76F
+          UNIT LithisCrewHunter, Enemy, [7, 27], [7, 27], Lithis, [SteelBow, Vulnerary], 1, false, [$00, $03, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [1, 25], [1, 25], Lithis, [IronAxe, Vulnerary], 2, false, [$02, $08, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [2, 23], [2, 23], Lithis, [HandAxe], 1, false, [$00, $03, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [6, 26], [6, 26], Lithis, [IronAxe], 1, false, [$00, $03, $00, $00]
+        UNIT
+
+        _UnusedCoordinates6 ; B1/F7C1
+          .byte [8, 7]
+
+        _EnemyGroup5 ; B1/F7C3
+          UNIT LithisCrewPirate, Enemy, [2, 17], [2, 17], Lithis, [IronAxe], 1, false, [$00, $00, $00, $00]
+          UNIT LithisCrewPirate, Enemy, [1, 18], [1, 18], Lithis, [SteelAxe], 1, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates7 ; B1/F7ED
+          .byte [8, 7]
+
+        _EnemyGroup6 ; B1/F7EF
+          UNIT LithisCrewWarrior, Enemy, [22, 16], [22, 16], Lithis, [SteelAxe, SteelBow, Torch], 1, false, [$00, $00, $00, $00]
+          UNIT LithisCrewHunter, Enemy, [11, 15], [11, 15], Lithis, [IronBow], 1, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates8 ; B1/F819
+          .byte [8, 7]
+
+        _LowerRightIslandReinforcementsGroup1 ; B1/F81B
+          UNIT LithisCrewPirate, Enemy, [25, 23], [25, 23], Lithis, [IronAxe], 2, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates9 ; B1/F831
+          .byte [8, 7]
+
+        _LowerRightIslandReinforcementsGroup2 ; B1/F833
+          UNIT LithisCrewPirate, Enemy, [23, 25], [23, 25], Lithis, [HandAxe], 2, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates10 ; B1/F849
+          .byte [8, 7]
+
+        _LowerRightIslandReinforcementsGroup3 ; B1/F84B
+          UNIT LithisCrewPirate, Enemy, [18, 28], [18, 28], Lithis, [IronAxe], 2, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates11 ; B1/F861
+          .byte [8, 7]
+
+        _LowerRightIslandReinforcementsGroup4 ; B1/F863
+          UNIT LithisCrewPirate, Enemy, [28, 27], [28, 27], Lithis, [IronAxe], 3, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates12 ; B1/F879
+          .byte [8, 7]
+
+        _TopIslandReinforcementsGroup1 ; B1/F87B
+          UNIT LithisCrewPirate, Enemy, [7, 4], [7, 4], Lithis, [IronAxe], 1, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates13 ; B1/F891
+          .byte [8, 7]
+
+        _TopIslandReinforcementsGroup2 ; B1/F893
+          UNIT LithisCrewPirate, Enemy, [11, 4], [11, 4], Lithis, [HandAxe], 1, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates14 ; B1/F8A9
+          .byte [8, 7]
+
+        _TopIslandReinforcementsGroup3 ; B1/F8AB
+          UNIT LithisCrewPirate, Enemy, [12, 4], [12, 5], Lithis, [IronAxe], 1, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates15 ; B1/F8C1
+          .byte [8, 7]
+
+        _LowerLeftIslandReinforcementsGroup1 ; B1/F8C3
+          UNIT LithisCrewPirate, Enemy, [12, 19], [12, 19], Lithis, [HandAxe], 2, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates16 ; B1/F8D9
+          .byte [8, 7]
+
+        _LowerLeftIslandReinforcementsGroup2 ; B1/F8DB
+          UNIT LithisCrewPirate, Enemy, [13, 19], [13, 19], Lithis, [IronAxe], 1, false, [$00, $00, $00, $00]
+        UNIT
+
+        _UnusedCoordinates17 ; B1/F8F1
+          .byte [8, 7]
+
+        _SapphieGroup ; B1/F8F3
+          UNIT Sapphie, Player, [0, 0], [0, 0], Leif, [Heal, Hammerne], 3, false, [$00, $00, $00, $00]
+        UNIT
+
+        _StartingPositions ; B1/F909
+          .byte [5, 11]
+          .byte [3, 11]
+          .byte [8, 10]
+          .byte [8, 11]
+          .byte [6, 12]
+          .byte [4, 9]
+          .byte [7, 13]
+          .byte [6, 8]
+          .byte [2, 12]
+        .char -1
+
+    .endsection Chapter02xDataSection
+
+    .section Chapter02xDialogueSection
+
+      dialogueChapter02xOpening1 .include "../TEXT/DIALOGUE/CHAPTER02x/Opening1.dialogue.txt" ; 95/C2CB
+      dialogueChapter02xOpening2 .include "../TEXT/DIALOGUE/CHAPTER02x/Opening2.dialogue.txt" ; 95/C5CB
+      dialogueChapter02xReinforcementsDialogue .include "../TEXT/DIALOGUE/CHAPTER02x/ReinforcementsDialogue.dialogue.txt" ; 95/C6AF
+      dialogueChapter02xLeifEyvelTalk .include "../TEXT/DIALOGUE/CHAPTER02x/LeifEyvelTalk.dialogue.txt" ; 95/C7EE
+
+      dialogueShiva1BattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Shiva1.dialogue.txt" ; 95/C8DF
+      dialogueLithisBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Lithis.dialogue.txt" ; 95/C8F2
+      dialogueShiva1DeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Shiva1.dialogue.txt" ; 95/C917
+      dialogueShiva1ReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Shiva1.dialogue.txt" ; 95/C92D
+      dialogueLithis2DeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Lithis2.dialogue.txt" ; 95/C94B
+      dialogueLithisReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Lithis.dialogue.txt" ; 95/C964
+
+      dialogueChapter02xEnding1 .include "../TEXT/DIALOGUE/CHAPTER02x/Ending1.dialogue.txt" ; 95/C986
+      dialogueChapter02xEnding2 .include "../TEXT/DIALOGUE/CHAPTER02x/Ending2.dialogue.txt" ; 95/CE6F
+
+    .endsection Chapter02xDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER02x

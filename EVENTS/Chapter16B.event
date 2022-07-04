@@ -1,0 +1,55 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER16B :?= false
+.if (!GUARD_FE5_CHAPTER16B)
+  GUARD_FE5_CHAPTER16B := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter16BDialogueSection
+
+      dialogueChapter16BOpening1 .include "../TEXT/DIALOGUE/CHAPTER16B/Opening1.dialogue.txt" ; DA/D000
+      dialogueChapter16BOpening2 .include "../TEXT/DIALOGUE/CHAPTER16B/Opening2.dialogue.txt" ; DA/D0EE
+      dialogueChapter16BHomerShanamTalk .include "../TEXT/DIALOGUE/CHAPTER16B/HomerShanamTalk.dialogue.txt" ; DA/D3A5
+      dialogueChapter16BMirandaDialogue .include "../TEXT/DIALOGUE/CHAPTER16B/MirandaDialogue.dialogue.txt" ; DA/D4F6
+      dialogueChapter16BLeifSarahTalk .include "../TEXT/DIALOGUE/CHAPTER16B/LeifSarahTalk.dialogue.txt" ; DA/DB07
+      dialogueChapter16BSalemSarahTalk .include "../TEXT/DIALOGUE/CHAPTER16B/SalemSarahTalk.dialogue.txt" ; DA/DDC3
+      dialogueChapter16BSarahArrive .include "../TEXT/DIALOGUE/CHAPTER16B/SarahArrive.dialogue.txt" ; DA/DF29
+      dialogueChapter16BUnusedMemberCardPlaceholder .include "../TEXT/DIALOGUE/CHAPTER16B/UnusedMemberCardPlaceholder.dialogue.txt" ; DA/DFC2
+
+      ; Annoyingly, these are here instead of in Chapter 15.
+
+      dialogueChapter15MareetaAstra1 .include "../TEXT/DIALOGUE/CHAPTER15/MareetaAstra1.dialogue.txt" ; DA/DFED
+      dialogueChapter15MareetaAstra2 .include "../TEXT/DIALOGUE/CHAPTER15/MareetaAstra2.dialogue.txt" ; DA/E43C
+
+      dialogueChapter16BUnusedKnightCrestPlaceholder .include "../TEXT/DIALOGUE/CHAPTER16B/UnusedKnightCrestPlaceholder.dialogue.txt" ; DA/E5A1
+      dialogueChapter16BEnding1 .include "../TEXT/DIALOGUE/CHAPTER16B/Ending1.dialogue.txt" ; DA/E5CA
+
+      dialogueReinkochBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Reinkoch.dialogue.txt" ; DA/E677
+      dialogueReinkochDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Reinkoch.dialogue.txt" ; DA/E69D
+      dialogueReinkochReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Reinkoch.dialogue.txt" ; DA/E6BB
+      dialogueShanamBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Shanam.dialogue.txt" ; DA/E6CF
+      dialogueShanam1DeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Shanam1.dialogue.txt" ; DA/E6EC
+      dialogueShanamReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Shanam.dialogue.txt" ; DA/E6FC
+
+      dialogueChapter16BHouse .include "../TEXT/DIALOGUE/CHAPTER16B/House.dialogue.txt" ; DA/E715
+
+    .endsection Chapter16BDialogueSection
+
+    .section Chapter16BWMDialogueSection
+
+      dialogueChapter16BWorldMap1 .include "../TEXT/DIALOGUE/CHAPTER16B/WorldMap1.dialogue.txt" ; 82/D4DD
+      dialogueChapter16BWorldMap2 .include "../TEXT/DIALOGUE/CHAPTER16B/WorldMap2.dialogue.txt" ; 82/D52D
+
+    .endsection Chapter16BWMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER16B

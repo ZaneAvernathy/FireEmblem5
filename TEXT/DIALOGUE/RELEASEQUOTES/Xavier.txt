@@ -1,0 +1,2 @@
+{DIALOGUE_RIGHT}{DIALOGUE_PAGE0}これ以上の生き恥はたえられぬ･･･\n
+{DIALOGUE_PAUSE $10}もはやこれまでだな･･･{DIALOGUE_END_SCENE}

@@ -1,0 +1,61 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER12 :?= false
+.if (!GUARD_FE5_CHAPTER12)
+  GUARD_FE5_CHAPTER12 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter12DialogueSection
+
+      dialogueChapter12Opening1 .include "../TEXT/DIALOGUE/CHAPTER12/Opening1.dialogue.txt" ; 92/9985
+      dialogueChapter12KolkhoDialogue .include "../TEXT/DIALOGUE/CHAPTER12/KolkhoDialogue.dialogue.txt" ; 92/9D15
+      dialogueChapter12GaidenFailDialogue .include "../TEXT/DIALOGUE/CHAPTER12/GaidenFailDialogue.dialogue.txt" ; 92/9DAB
+      dialogueChapter12SalemDialogue .include "../TEXT/DIALOGUE/CHAPTER12/SalemDialogue.dialogue.txt" ; 92/9DD6
+      dialogueChapter12Ending1A .include "../TEXT/DIALOGUE/CHAPTER12/Ending1A.dialogue.txt" ; 92/9EE4
+      dialogueChapter12Ending1B .include "../TEXT/DIALOGUE/CHAPTER12/Ending1B.dialogue.txt" ; 92/9F9F
+      dialogueChapter12UnusedBlank .include "../TEXT/DIALOGUE/CHAPTER12/UnusedBlank.dialogue.txt" ; 92/A083
+      dialogueChapter12RosaHouseRosaAlive .include "../TEXT/DIALOGUE/CHAPTER12/RosaHouseRosaAlive.dialogue.txt" ; 92/A084
+      dialogueChapter12RosaHouseOlwen .include "../TEXT/DIALOGUE/CHAPTER12/RosaHouseOlwen.dialogue.txt" ; 92/A0E6
+      dialogueChapter12RosaHouseRosaDead .include "../TEXT/DIALOGUE/CHAPTER12/RosaHouseRosaDead.dialogue.txt" ; 92/A13B
+      dialogueChapter12HeimsScrollHouseSaylaAlive .include "../TEXT/DIALOGUE/CHAPTER12/HeimsScrollHouseSaylaAlive.dialogue.txt" ; 92/A163
+      dialogueChapter12HeimsScrollHouseSaylaDead .include "../TEXT/DIALOGUE/CHAPTER12/HeimsScrollHouseSaylaDead.dialogue.txt" ; 92/A1DF
+      dialogueChapter12SilenceHousePeterAlive .include "../TEXT/DIALOGUE/CHAPTER12/SilenceHousePeterAlive.dialogue.txt" ; 92/A221
+      dialogueChapter12SilenceHousePeterDead .include "../TEXT/DIALOGUE/CHAPTER12/SilenceHousePeterDead.dialogue.txt" ; 92/A288
+      dialogueChapter12UnusedHouseAlive .include "../TEXT/DIALOGUE/CHAPTER12/UnusedHouseAlive.dialogue.txt" ; 92/A2A8
+      dialogueChapter12UnusedHouseDead .include "../TEXT/DIALOGUE/CHAPTER12/UnusedHouseDead.dialogue.txt" ; 92/A325
+
+      dialogueSalemBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Salem.dialogue.txt" ; 92/A360
+
+      dialogueChapter12UnusedSalemAlternate .include "../TEXT/DIALOGUE/CHAPTER12/UnusedSalemAlternate.dialogue.txt" ; 92/A37F
+
+      dialogueSalemChapter12DeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/SalemChapter12.dialogue.txt" ; 92/A389
+      dialogueSalemReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Salem.dialogue.txt" ; 92/A3A1
+      dialogueKolkhoBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Kolkho.dialogue.txt" ; 92/A3B6
+      dialogueKolkhoDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Kolkho.dialogue.txt" ; 92/A3D4
+      dialogueKolkhoReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Kolkho.dialogue.txt" ; 92/A3EB
+
+      dialogueChapter12Opening2 .include "../TEXT/DIALOGUE/CHAPTER12/Opening2.dialogue.txt" ; 92/A401
+      dialogueChapter12MareetaDialogue .include "../TEXT/DIALOGUE/CHAPTER12/MareetaDialogue.dialogue.txt" ; 92/A78C
+      dialogueChapter12Ending2 .include "../TEXT/DIALOGUE/CHAPTER12/Ending2.dialogue.txt" ; 92/A910
+
+    .endsection Chapter12DialogueSection
+
+    .section Chapter12WMDialogueSection
+
+      dialogueChapter12WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER12/WorldMap1.dialogue.txt" ; 82/D045
+      dialogueChapter12WorldMap2 .include "../TEXT/DIALOGUE/CHAPTER12/WorldMap2.dialogue.txt" ; 82/D070
+      dialogueChapter12WorldMap3 .include "../TEXT/DIALOGUE/CHAPTER12/WorldMap3.dialogue.txt" ; 82/D0A4
+
+    .endsection Chapter12WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER12

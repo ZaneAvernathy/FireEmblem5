@@ -1,0 +1,4 @@
+{DIALOGUE_RIGHT}{DIALOGUE_LOAD $0090}
+元メッセージ｢扉開く～３ターン目｣です\n
+このめっせーじは\n
+こめんとあうとしています{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

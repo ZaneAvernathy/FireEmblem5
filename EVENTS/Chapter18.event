@@ -1,0 +1,51 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER18 :?= false
+.if (!GUARD_FE5_CHAPTER18)
+  GUARD_FE5_CHAPTER18 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter18DialogueSection
+
+      dialogueChapter18Opening1 .include "../TEXT/DIALOGUE/CHAPTER18/Opening1.dialogue.txt" ; DA/E7EC
+      dialogueChapter18Opening2 .include "../TEXT/DIALOGUE/CHAPTER18/Opening2.dialogue.txt" ; DA/EA1B
+      dialogueChapter18Ending1 .include "../TEXT/DIALOGUE/CHAPTER18/Ending1.dialogue.txt" ; DA/EB87
+      dialogueChapter18Ending2 .include "../TEXT/DIALOGUE/CHAPTER18/Ending2.dialogue.txt" ; DA/EC1E
+      dialogueChapter18Ending3A .include "../TEXT/DIALOGUE/CHAPTER18/Ending3A.dialogue.txt" ; DA/EC8B
+      dialogueChapter18Ending3B .include "../TEXT/DIALOGUE/CHAPTER18/Ending3B.dialogue.txt" ; DA/ED9C
+      dialogueChapter18Ending4 .include "../TEXT/DIALOGUE/CHAPTER18/Ending4.dialogue.txt" ; DA/F03B
+      dialogueChapter18Ending5 .include "../TEXT/DIALOGUE/CHAPTER18/Ending5.dialogue.txt" ; DA/F7AC
+
+      dialogueXavierBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Xavier.dialogue.txt" ; DA/F888
+      dialogueXavierDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Xavier.dialogue.txt" ; DA/F89C
+      dialogueXavierReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Xavier.dialogue.txt" ; DA/F8CA
+
+      dialogueChapter18XavierArmor1 .include "../TEXT/DIALOGUE/CHAPTER18/XavierArmor1.dialogue.txt" ; DA/F8F3
+      dialogueChapter18XavierArmor2 .include "../TEXT/DIALOGUE/CHAPTER18/XavierArmor2.dialogue.txt" ; DA/F953
+      dialogueChapter18XavierArmor3 .include "../TEXT/DIALOGUE/CHAPTER18/XavierArmor3.dialogue.txt" ; DA/F99A
+      dialogueChapter18XavierArmor4 .include "../TEXT/DIALOGUE/CHAPTER18/XavierArmor4.dialogue.txt" ; DA/FA0B
+      dialogueChapter18XavierArmor5 .include "../TEXT/DIALOGUE/CHAPTER18/XavierArmor5.dialogue.txt" ; DA/FA58
+      dialogueChapter18XavierArmor6 .include "../TEXT/DIALOGUE/CHAPTER18/XavierArmor6.dialogue.txt" ; DA/FAC0
+      dialogueChapter18XavierArmor7 .include "../TEXT/DIALOGUE/CHAPTER18/XavierArmor7.dialogue.txt" ; DA/FB13
+      dialogueChapter18XavierArmor8 .include "../TEXT/DIALOGUE/CHAPTER18/XavierArmor8.dialogue.txt" ; DA/FB59
+      dialogueChapter18XavierRecruitment .include "../TEXT/DIALOGUE/CHAPTER18/XavierRecruitment.dialogue.txt" ; DA/FBAB
+
+    .endsection Chapter18DialogueSection
+
+    .section Chapter18WMDialogueSection
+
+      dialogueChapter18WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER18/WorldMap1.dialogue.txt" ; 82/D625
+
+    .endsection Chapter18WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER18

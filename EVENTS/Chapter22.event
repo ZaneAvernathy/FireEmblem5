@@ -1,0 +1,55 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER22 :?= false
+.if (!GUARD_FE5_CHAPTER22)
+  GUARD_FE5_CHAPTER22 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter22DialogueSection
+
+      dialogueChapter22Opening4 .include "../TEXT/DIALOGUE/CHAPTER22/Opening4.dialogue.txt" ; B0/D01E
+      dialogueChapter22Opening1 .include "../TEXT/DIALOGUE/CHAPTER22/Opening1.dialogue.txt" ; B0/D27F
+      dialogueChapter22Opening2 .include "../TEXT/DIALOGUE/CHAPTER22/Opening2.dialogue.txt" ; B0/D4EC
+      dialogueChapter22Opening3 .include "../TEXT/DIALOGUE/CHAPTER22/Opening3.dialogue.txt" ; B0/D5E8
+      dialogueChapter22ReinhardtOlwenTalk1 .include "../TEXT/DIALOGUE/CHAPTER22/ReinhardtOlwenTalk1.dialogue.txt" ; B0/D75F
+      dialogueChapter22ReinhardtOlwenTalk2 .include "../TEXT/DIALOGUE/CHAPTER22/ReinhardtOlwenTalk2.dialogue.txt" ; B0/D9E5
+      dialogueChapter22SaiasLeaveCohenAlive .include "../TEXT/DIALOGUE/CHAPTER22/SaiasLeaveCohenAlive.dialogue.txt" ; B0/DAE5
+      dialogueChapter22SaiasLeaveCohenDead .include "../TEXT/DIALOGUE/CHAPTER22/SaiasLeaveCohenDead.dialogue.txt" ; B0/DB75
+      dialogueChapter22Approach1A .include "../TEXT/DIALOGUE/CHAPTER22/Approach1A.dialogue.txt" ; B0/DBA8
+      dialogueChapter22Approach1B .include "../TEXT/DIALOGUE/CHAPTER22/Approach1B.dialogue.txt" ; B0/DBE5
+      dialogueChapter22Approach2 .include "../TEXT/DIALOGUE/CHAPTER22/Approach2.dialogue.txt" ; B0/DBFD
+      dialogueChapter22Ending1 .include "../TEXT/DIALOGUE/CHAPTER22/Ending1.dialogue.txt" ; B0/DC3B
+      dialogueChapter22UnusedSalemPlaceholder .include "../TEXT/DIALOGUE/CHAPTER22/UnusedSalemPlaceholder.dialogue.txt" ; B0/DD12
+      dialogueChapter22PureWaterHouse .include "../TEXT/DIALOGUE/CHAPTER22/PureWaterHouse.dialogue.txt" ; B0/DD4D
+      dialogueChapter22WarpHouse .include "../TEXT/DIALOGUE/CHAPTER22/WarpHouse.dialogue.txt" ; B0/DDCA
+      dialogueChapter22RescueHouse .include "../TEXT/DIALOGUE/CHAPTER22/RescueHouse.dialogue.txt" ; B0/DE4A
+
+      dialogueCohenBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Cohen.dialogue.txt" ; B0/DECA
+      dialogueCohenDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Cohen.dialogue.txt" ; B0/DEDF
+      dialogueCohenReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Cohen.dialogue.txt" ; B0/DEFA
+      dialogueSaias2BattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Saias2.dialogue.txt" ; B0/DF11
+      dialogueSaias2ReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Saias2.dialogue.txt" ; B0/DF3A
+      dialogueReinhardtBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Reinhardt.dialogue.txt" ; B0/DF53
+      dialogueReinhardtDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Reinhardt.dialogue.txt" ; B0/DF6C
+      dialogueReinhardtReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Reinhardt.dialogue.txt" ; B0/DF7C
+
+    .endsection Chapter22DialogueSection
+
+    .section Chapter22WMDialogueSection
+
+      dialogueChapter22WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER22/WorldMap1.dialogue.txt" ; 82/D93E
+      dialogueChapter22WorldMap2 .include "../TEXT/DIALOGUE/CHAPTER22/WorldMap2.dialogue.txt" ; 82/D96E
+
+    .endsection Chapter22WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER22

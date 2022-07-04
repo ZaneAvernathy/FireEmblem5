@@ -1,0 +1,3 @@
+{DIALOGUE_PAGE0}ああっ･･･\n
+{DIALOGUE_PAUSE $10}次に生まれるときは･･･\n
+{DIALOGUE_PAUSE $10}もっと･･･{DIALOGUE_END_SCENE}

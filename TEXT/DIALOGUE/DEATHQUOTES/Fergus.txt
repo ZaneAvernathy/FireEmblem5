@@ -1,0 +1,3 @@
+{DIALOGUE_PAGE0}ぐっ･･･\n
+{DIALOGUE_PAUSE $10}そうそううまくは･･･\n
+{DIALOGUE_PAUSE $10}いかないものだな･･･{DIALOGUE_END_SCENE}

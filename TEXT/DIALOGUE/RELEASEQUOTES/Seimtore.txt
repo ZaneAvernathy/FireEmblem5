@@ -1,0 +1,2 @@
+{DIALOGUE_RIGHT}陛下になんと\n
+おわびすればよいのだ･･･{DIALOGUE_END_SCENE}

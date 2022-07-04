@@ -1,0 +1,5 @@
+城門を突破したリーフたち『解放軍』は\n
+{DIALOGUE_PAUSE $08}一気に城内へとなだれこむ{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
+めざすはレンスター城の玉座ただ一つ{DIALOGUE_WAIT_PRESS}{DIALOGUE_CLEAR_ALL}
+リーフたちの悲願であった王国再興が\n
+現実のものになりつつあった･･･{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

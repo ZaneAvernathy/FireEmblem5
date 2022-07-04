@@ -1,0 +1,2 @@
+{DIALOGUE_RIGHT}俺はけっきょく\n
+{DIALOGUE_PAUSE $08}平民のままで終わるのか･･･{DIALOGUE_END_SCENE}

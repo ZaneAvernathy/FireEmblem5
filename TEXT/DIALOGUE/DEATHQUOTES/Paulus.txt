@@ -1,0 +1,3 @@
+{DIALOGUE_RIGHT}{DIALOGUE_PAGE0}ブルーム公よ･･･\n
+{DIALOGUE_PAUSE $10}どうか･･･お気づきあれ･･･\n
+{DIALOGUE_PAUSE $10}今なら･･･まだ･･･ぐふっ{DIALOGUE_END_SCENE}

@@ -1,0 +1,49 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER21 :?= false
+.if (!GUARD_FE5_CHAPTER21)
+  GUARD_FE5_CHAPTER21 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter21DialogueSection
+
+      dialogueChapter21Opening1 .include "../TEXT/DIALOGUE/CHAPTER21/Opening1.dialogue.txt" ; B0/C436
+      dialogueChapter21Opening2 .include "../TEXT/DIALOGUE/CHAPTER21/Opening2.dialogue.txt" ; B0/C5AC
+      dialogueChapter21Opening3 .include "../TEXT/DIALOGUE/CHAPTER21/Opening3.dialogue.txt" ; B0/C8A3
+      dialogueChapter21Opening4 .include "../TEXT/DIALOGUE/CHAPTER21/Opening4.dialogue.txt" ; B0/C8E9
+      dialogueChapter21ChurchLinoan .include "../TEXT/DIALOGUE/CHAPTER21/ChurchLinoan.dialogue.txt" ; B0/C94F
+      dialogueChapter21ChurchOther .include "../TEXT/DIALOGUE/CHAPTER21/ChurchOther.dialogue.txt" ; B0/CB39
+      dialogueChapter21PureWaterHouse .include "../TEXT/DIALOGUE/CHAPTER21/PureWaterHouse.dialogue.txt" ; B0/CBAD
+      dialogueChapter21SilverSwordHouse .include "../TEXT/DIALOGUE/CHAPTER21/SilverSwordHouse.dialogue.txt" ; B0/CC62
+      dialogueChapter21Ending1B .include "../TEXT/DIALOGUE/CHAPTER21/Ending1B.dialogue.txt" ; B0/CCE5
+      dialogueChapter21Ending1A .include "../TEXT/DIALOGUE/CHAPTER21/Ending1A.dialogue.txt" ; B0/CE75
+
+      dialogueFlavusBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Flavus.dialogue.txt" ; B0/CF64
+      dialogueFlavusDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Flavus.dialogue.txt" ; B0/CF8B
+      dialogueFlavusReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Flavus.dialogue.txt" ; B0/CF9D
+      dialogueSeimtoreBattleQuote .include "../TEXT/DIALOGUE/BATTLEQUOTES/Seimtore.dialogue.txt" ; B0/CFC3
+      dialogueSeimtoreDeathQuote .include "../TEXT/DIALOGUE/DEATHQUOTES/Seimtore.dialogue.txt" ; B0/CFD9
+      dialogueSeimtoreReleaseQuote .include "../TEXT/DIALOGUE/RELEASEQUOTES/Seimtore.dialogue.txt" ; B0/D005
+
+    .endsection Chapter21DialogueSection
+
+    .section Chapter21WMDialogueSection
+
+      dialogueChapter21WorldMap1 .include "../TEXT/DIALOGUE/CHAPTER21/WorldMap1.dialogue.txt" ; 82/D810
+      dialogueChapter21WorldMap2 .include "../TEXT/DIALOGUE/CHAPTER21/WorldMap2.dialogue.txt" ; 82/D83F
+      dialogueChapter21WorldMap3 .include "../TEXT/DIALOGUE/CHAPTER21/WorldMap3.dialogue.txt" ; 82/D871
+      dialogueChapter21WorldMap4 .include "../TEXT/DIALOGUE/CHAPTER21/WorldMap4.dialogue.txt" ; 82/D89F
+
+    .endsection Chapter21WMDialogueSection
+
+.endif ; GUARD_FE5_CHAPTER21

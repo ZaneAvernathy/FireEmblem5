@@ -1,0 +1,3 @@
+父さん･･･{DIALOGUE_PAUSE $10}母さん･･･\n
+{DIALOGUE_PAUSE $10}すまない･･･\n
+{DIALOGUE_PAUSE $10}おれまで･･･{DIALOGUE_END_SCENE}
