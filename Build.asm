@@ -66,6 +66,7 @@
   .include "EVENTS/Chapter9.event"
   .include "SRC/BattleBackgrounds.asm"
   .include "SRC/Portraits.asm"
+  .include "SRC/Tilesets.asm"
 
 ; Sections
 
@@ -947,8 +948,17 @@
   .logical mapped($378000)
 
     .dsection PortraitGraphicsBlock6Section
+    .dsection ChapterTilesetFadePaletteBlock1Section
 
   .endlogical
+
+  * := $380000
+  .logical mapped($380000)
+
+    .dsection ChapterTilesetFadePaletteBlock2Section
+
+  .endlogical
+
   * := $3E8000
   .logical mapped($3E8000)
 
