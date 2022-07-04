@@ -51,10 +51,10 @@ $(BUILD_TARGETS): $(BUILD_SCRIPT) $(DEPS) $(MAKEFILE_LIST)
 	exit $$((e))
 
 checksum: $(ROM_TARGET)
-	@$(update_checksum) "$<" 1>>"$(LOG_TARGET)"
+	@$(update_checksum) "$<" | tee -a "$(LOG_TARGET)"
 
 compare: $(ROM_TARGET)
-	@$(compare) "$(BASEROM)" "$(ROM_TARGET)"
+	@$(compare) "$(BASEROM)" "$(ROM_TARGET)" | tee -a "$(ERROR_TARGET)"
 
 symbols: $(SYM_TARGET)
 	@$(fix_sym) "$<"
