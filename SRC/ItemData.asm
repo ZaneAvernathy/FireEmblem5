@@ -11,6 +11,15 @@ GUARD_FE5_ITEM_DATA :?= false
 
     .weak
 
+      ; Format: (PoisonedItem, CleanedItem)
+      TransformingItemList  := [(PoisonSword,    IronSword)]
+      TransformingItemList ..= [(PoisonSpear,    IronLance)]
+      TransformingItemList ..= [(PoisonAxe,      IronAxe)]
+      TransformingItemList ..= [(PoisonBow,      IronBow)]
+      TransformingItemList ..= [(PoisonBallista, IronBallista)]
+      TransformingItemList ..= [(Venin,          Fenrir)]
+      TransformingItemList ..= [(Stone,          Fenrir)]
+
     .endweak
 
   ; Freespace inclusions
@@ -61,5 +70,22 @@ GUARD_FE5_ITEM_DATA :?= false
       endData
 
     .endsection ScrollGrowthModifiersSection
+
+    .section TransformingItemSection
+
+      startData
+
+        aTransformingItems .for _Base, _Transformed in TransformingItemList ; 88/8223
+          .byte _Base
+        .endfor
+        .byte 0
+
+        aTransformedItems .for _Base, _Transformed in TransformingItemList ; 88/822B
+          .byte _Transformed
+        .endfor
+
+      endData
+
+    .endsection TransformingItemSection
 
 .endif ; GUARD_FE5_ITEM_DATA

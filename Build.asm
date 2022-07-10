@@ -60,6 +60,8 @@
   .include "SRC/Portraits.asm"
   .include "SRC/Tilesets.asm"
 
+  .include "SRC/Arena.asm"
+
 ; Sections
 
   * := $000000
@@ -330,6 +332,13 @@
 
   .endlogical
 
+  * := $02EF31
+  .logical mapped($02EF31)
+
+    .dsection ArenaClassPoolSection
+
+  .endlogical
+
   * := $02FFE1
   .logical mapped($02FFE1)
 
@@ -378,11 +387,15 @@
 
   .endlogical
 
-  * := $040054
-  .logical mapped($040054)
+  * := $040000
+  .logical mapped($040000)
 
+    .dsection MountDismountTableSection
+    .dsection Unknown888038Section
     .dsection ScrollGrowthModifiersSection
     .dsection SupportDataSection
+    .dsection TransformingItemSection
+    .dsection AutolevelDataSection
 
   .endlogical
 
