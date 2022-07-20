@@ -83,14 +83,8 @@
     .dsection HideSpritesSection
     .dsection ClearSpriteExtBufferSection
     .dsection UnknownDMASection
-
-    startData
-
-      .dsection OAMExtBitTableSection
-      .dsection OAMExtPointerAndExtBitsTableSection
-
-    endData
-
+    .dsection OAMExtBitTableSection
+    .dsection OAMExtPointerAndExtBitsTableSection
     .dsection PushToOAMBufferSection
     .dsection SpliceOAMBufferSection
     .dsection InitPPURegistersSection
