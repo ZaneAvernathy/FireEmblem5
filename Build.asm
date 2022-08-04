@@ -61,6 +61,7 @@
   .include "SRC/Tilesets.asm"
 
   .include "SRC/Arena.asm"
+  .include "SRC/PickPhaseMusic.asm"
 
 ; Sections
 
@@ -220,6 +221,13 @@
   .logical mapped($018E98)
 
     .dsection DeploymentSlotTableSection
+
+  .endlogical
+
+  * := $01A5B2
+  .logical mapped($01A5B2)
+
+    .dsection PickPhaseMusicSection
 
   .endlogical
 
