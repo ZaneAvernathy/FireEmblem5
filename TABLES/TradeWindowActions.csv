@@ -1,0 +1,4 @@
+.word 0,Handler,NextAction
+Default,<>rsTradeWindowActionDefault,ItemSelected
+ItemSelected,<>rsTradeWindowActionItemSelected,Default
+Close,<>rsTradeWindowActionClose,Default

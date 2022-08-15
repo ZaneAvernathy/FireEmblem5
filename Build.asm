@@ -29,6 +29,9 @@
 
 ; Sources
 
+  ; Temp
+  .include "TEXT/SJIS.h"
+
   .include "SRC/Dialogue.asm"
 
   .include "SRC/Break.asm"
@@ -62,6 +65,7 @@
 
   .include "SRC/Arena.asm"
   .include "SRC/PickPhaseMusic.asm"
+  .include "SRC/TradeWindow.asm"
 
 ; Sections
 
@@ -331,6 +335,13 @@
       .fill mapped($020000) + $8000 - *, $FF
 
     endFreespace
+
+  .endlogical
+
+  * := $02A7A3
+  .logical mapped($02A7A3)
+
+    .dsection TradeWindowSection
 
   .endlogical
 
