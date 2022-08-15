@@ -53,13 +53,21 @@ GUARD_FE5_EVENT_INSTALLER :?= false
 
     .section ChapterEndLinoanDeadDialogueSection
 
-      dialogueChapterEndLinoanDead .include "../TEXT/DIALOGUE/ChapterEndLinoanDead.dialogue.txt" ; 82/C7D9
+      startDialogue
+
+        dialogueChapterEndLinoanDead .include "../TEXT/DIALOGUE/ChapterEndLinoanDead.dialogue.txt" ; 82/C7D9
+
+      endDialogue
 
     .endsection ChapterEndLinoanDeadDialogueSection
 
     .section UnusedBlankWMDialogueSection
 
-      dialogueUnusedBlankWM .include "../TEXT/DIALOGUE/UnusedBlankWM.dialogue.txt" ; 82/C82E
+      startDialogue
+
+        dialogueUnusedBlankWM .include "../TEXT/DIALOGUE/UnusedBlankWM.dialogue.txt" ; 82/C82E
+
+      endDialogue
 
     .endsection UnusedBlankWMDialogueSection
 

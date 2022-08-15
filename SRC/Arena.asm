@@ -38,24 +38,28 @@ GUARD_FE5_ARENA :?= false
 
     .section ArenaClassPoolSection
 
-      aTierOneArenaOpponentTypes .block ; 85/EF31
-        _Normal    .structArenaOpponentPool aTierOneArenaOpponentNormalPool, ArenaNormalAutolevelScheme
-        _BowOnly   .structArenaOpponentPool aTierOneBowArenaOpponentPool,    ArenaNormalAutolevelScheme
-        _Thieflike .structArenaOpponentPool aThiefArenaOpponentPool,         ArenaThiefAutolevelScheme
-      .endblock
+      startData
 
-      aTierTwoArenaOpponentTypes .block ; 85/EF3D
-        _Normal    .structArenaOpponentPool aTierTwoArenaOpponentNormalPool, ArenaNormalAutolevelScheme
-        _BowOnly   .structArenaOpponentPool aTierTwoBowArenaOpponentPool,    ArenaNormalAutolevelScheme
-        _Thieflike .structArenaOpponentPool aThiefArenaOpponentPool,         ArenaNormalAutolevelScheme
-      .endblock
+        aTierOneArenaOpponentTypes .block ; 85/EF31
+          _Normal    .structArenaOpponentPool aTierOneArenaOpponentNormalPool, ArenaNormalAutolevelScheme
+          _BowOnly   .structArenaOpponentPool aTierOneBowArenaOpponentPool,    ArenaNormalAutolevelScheme
+          _Thieflike .structArenaOpponentPool aThiefArenaOpponentPool,         ArenaThiefAutolevelScheme
+        .endblock
 
-      aTierOneArenaOpponentNormalPool .byte ArenaTierOneNormalClasses, 0 ; 85/EF49
-      aTierOneBowArenaOpponentPool    .byte ArenaTierOneBowClasses, 0    ; 85/EF59
-      aThiefArenaOpponentPool         .byte ArenaThiefClasses, 0         ; 85/EF66
+        aTierTwoArenaOpponentTypes .block ; 85/EF3D
+          _Normal    .structArenaOpponentPool aTierTwoArenaOpponentNormalPool, ArenaNormalAutolevelScheme
+          _BowOnly   .structArenaOpponentPool aTierTwoBowArenaOpponentPool,    ArenaNormalAutolevelScheme
+          _Thieflike .structArenaOpponentPool aThiefArenaOpponentPool,         ArenaNormalAutolevelScheme
+        .endblock
 
-      aTierTwoArenaOpponentNormalPool .byte ArenaTierTwoNormalClasses, 0 ; 85/EF73
-      aTierTwoBowArenaOpponentPool    .byte ArenaTierTwoBowClasses, 0    ; 85/EF81
+        aTierOneArenaOpponentNormalPool .byte ArenaTierOneNormalClasses, 0 ; 85/EF49
+        aTierOneBowArenaOpponentPool    .byte ArenaTierOneBowClasses, 0    ; 85/EF59
+        aThiefArenaOpponentPool         .byte ArenaThiefClasses, 0         ; 85/EF66
+
+        aTierTwoArenaOpponentNormalPool .byte ArenaTierTwoNormalClasses, 0 ; 85/EF73
+        aTierTwoBowArenaOpponentPool    .byte ArenaTierTwoBowClasses, 0    ; 85/EF81
+
+      endData
 
     .endsection ArenaClassPoolSection
 
