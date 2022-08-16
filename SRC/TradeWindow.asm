@@ -1415,9 +1415,9 @@ GUARD_FE5_TRADE_WINDOW :?= false
           ; None
           
           ; Outputs:
-          ; lMenuAPressCallback: short poitner to
+          ; lMenuAPressCallback: short pointer to
           ;   rsTradeWindowTrySelectItemCallback
-          ; lMenuBPressCallback: short poitner to
+          ; lMenuBPressCallback: short pointer to
           ;   rsTradeWindowCloseMenuCallback
 
           ; If we've just stolen an item, immediately go to
@@ -1459,9 +1459,9 @@ GUARD_FE5_TRADE_WINDOW :?= false
           ; None
           
           ; Outputs:
-          ; lMenuAPressCallback: short poitner to
+          ; lMenuAPressCallback: short pointer to
           ;   rsTradeWindowTrySelectItemCallback
-          ; lMenuBPressCallback: short poitner to
+          ; lMenuBPressCallback: short pointer to
           ;   rsTradeWindowCloseMenuCallback
 
           ; I don't know what the significance of this $27
