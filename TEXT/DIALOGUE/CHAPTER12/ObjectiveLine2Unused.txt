@@ -1,0 +1,1 @@
+{DIALOGUE_PAGE0}（２０ターンまでに制圧）{DIALOGUE_EOF}

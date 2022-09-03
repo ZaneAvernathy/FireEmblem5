@@ -1,0 +1,1 @@
+{DIALOGUE_PAGE0}（城内民家の訪問）{DIALOGUE_EOF}

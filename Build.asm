@@ -67,6 +67,8 @@
   .include "SRC/PickPhaseMusic.asm"
   .include "SRC/TradeWindow.asm"
 
+  .include "SRC/StatusWindow.asm"
+
 ; Sections
 
   * := $000000
@@ -431,6 +433,13 @@
       .fill mapped($048000) + $8000 - *, $FF
 
     endFreespace
+
+  .endlogical
+
+  * := $053645
+  .logical mapped($053645)
+
+    .dsection StatusWindowSection
 
   .endlogical
 

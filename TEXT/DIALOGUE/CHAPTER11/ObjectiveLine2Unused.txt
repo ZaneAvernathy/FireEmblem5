@@ -1,0 +1,1 @@
+{DIALOGUE_PAGE0}（３０ターン以内制圧/フレッド生存）{DIALOGUE_EOF}

@@ -1,0 +1,1 @@
+城門の制圧{DIALOGUE_EOF}
