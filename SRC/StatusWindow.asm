@@ -1640,10 +1640,10 @@ GUARD_FE5_STATUS_WINDOW :?= false
 
         .enc "SJIS"
 
-        menutextUnknown8ABF4A .text "ＰＬＡＹＥＲ\n"
-        menutextUnknown8ABF58 .text "ＥＮＥＭＹ\n"
-        menutextUnknown8ABF64 .text "３ＲＤ\n"
-        menutextUnknown8ABF6C .text "４ＴＨ\n"
+        menutextUnknown8ABF4A .text "ＰＬＡＹＥＲ\n" ; 8A/BF4A
+        menutextUnknown8ABF58 .text "ＥＮＥＭＹ\n" ; 8A/BF58
+        menutextUnknown8ABF64 .text "３ＲＤ\n" ; 8A/BF64
+        menutextUnknown8ABF6C .text "４ＴＨ\n" ; 8A/BF6C
 
       endMenuText
       startCode
