@@ -27,7 +27,7 @@ ERROR_TARGET := Errors.txt
 
 BUILD_TARGETS := $(ROM_TARGET) $(SYM_TARGET) $(LOG_TARGET) $(ERROR_TARGET)
 
-ASFLAGS += -x -f -C
+ASFLAGS += -x -f -C -a
 ASFLAGS += -Wall
 ASFLAGS += -Wno-portable -Wno-shadow -Wno-deprecated
 ASFLAGS += -D BASEROM=\"$(BASEROM)\"

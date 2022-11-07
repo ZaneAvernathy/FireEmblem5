@@ -20,7 +20,8 @@ GUARD_FE5_RESET :?= false
       rlAntipiracyScreen     :?= address($8AAFCA)
       rlIrregularityCheck    :?= address($8AB000)
 
-      .enc "none"
+      .enc "ascii"
+        .cdef " ~", 32
         EngineName :?= "ELM0"
 
     .endweak
@@ -268,7 +269,7 @@ GUARD_FE5_RESET :?= false
           ; written, skip checking for
           ; irregularities.
 
-          .enc "none"
+          .enc "ascii"
 
           lda aEngineName,b
           cmp #EngineName[0:2]
