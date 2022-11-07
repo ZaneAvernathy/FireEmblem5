@@ -1,0 +1,7 @@
+.word 0,Handler,NextAction
+Default,<>rsOptionsWindowUpdateScrolling,ColorDefault
+Scroll,<>rsOptionsWindowDoScrollStep,Default
+ColorDefault,<>rsOptionsWindowDoColorUpdate,Default
+ColorScrollMain,<>rsOptionsWindowDoColorScrollStep,ColorScrollFinished
+ColorScrollFinished,<>rsOptionsWindowDoColorScrollStep._FinishedScrolling,ColorDefault
+Close,<>rsOptionsWindowActionClose,Default

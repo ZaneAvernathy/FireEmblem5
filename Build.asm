@@ -68,6 +68,7 @@
   .include "SRC/TradeWindow.asm"
 
   .include "SRC/StatusWindow.asm"
+  .include "SRC/OptionsWindow.asm"
 
 ; Sections
 
@@ -344,6 +345,13 @@
   .logical mapped($02A7A3)
 
     .dsection TradeWindowSection
+
+  .endlogical
+
+  * := $02CE84
+  .logical mapped($02CE84)
+
+    .dsection OptionsWindowSection
 
   .endlogical
 

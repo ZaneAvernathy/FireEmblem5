@@ -189,7 +189,7 @@ GUARD_FE5_CODE83TEMP :?= false
 
           .databank `aOptions
 
-          stz aOptions.wWindow
+          stz aOptions.wBackground
 
           jsl rlCopyDefaultOptions
           jsl rlSetCurrentMenuColor
