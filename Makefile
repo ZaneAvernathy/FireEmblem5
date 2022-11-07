@@ -47,7 +47,7 @@ all: $(BUILD_TARGETS) checksum compare symbols
 $(BUILD_TARGETS): $(BUILD_SCRIPT) $(DEPS) $(MAKEFILE_LIST)
 	@($(64tass) $(ASFLAGS) 1>"$(LOG_TARGET)" -E "$(ERROR_TARGET)" && $(regions) "$(LOG_TARGET)") ; \
 	declare -i e=$$? ; \
-	cat "$(ERROR_TARGET)" ; \
+	cat "$(ERROR_TARGET)" >&2 ; \
 	exit $$((e))
 
 checksum: $(ROM_TARGET)
