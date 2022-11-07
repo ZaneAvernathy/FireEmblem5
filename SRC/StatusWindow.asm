@@ -13,7 +13,7 @@ GUARD_FE5_STATUS_WINDOW :?= false
 
       rlPushToOAMBuffer                             :?= address($808881)
       rlPlaySoundEffect                             :?= address($808C87)
-      rsPostStatusWindowCallback                    :?= address($809E46)
+      rsPostBMenuWindowCallback                     :?= address($809E46)
       rlDMAByStruct                                 :?= address($80AE2E)
       rlDMAByPointer                                :?= address($80AEF9)
       rlAppendDecompList                            :?= address($80B00A)
@@ -1055,7 +1055,7 @@ GUARD_FE5_STATUS_WINDOW :?= false
           .autsiz
           .databank ?
 
-          ; Handles inptu on the status window.
+          ; Handles input on the status window.
 
           ; Inputs:
           ; X: offset of proc in aProcSystem
@@ -1177,7 +1177,7 @@ GUARD_FE5_STATUS_WINDOW :?= false
             lda #$0021 ; TODO: sound definitions
             jsl rlPlaySoundEffect
 
-            lda #<>rsPostStatusWindowCallback
+            lda #<>rsPostBMenuWindowCallback
             sta aProcSystem.wInput0,b
 
             lda #(`procFadeWithCallback)<<8

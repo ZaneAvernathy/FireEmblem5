@@ -12,7 +12,7 @@ GUARD_FE5_TRADE_WINDOW :?= false
     .weak
 
       rlPushToOAMBuffer                         :?= address($808881)
-      rlUnknown808C87                           :?= address($808C87)
+      rlPlaySoundEffect                         :?= address($808C87)
       rlUnknown809FE5                           :?= address($809FE5)
       rlDMAByStruct                             :?= address($80AE2E)
       rlAppendDecompList                        :?= address($80B00A)
@@ -1509,7 +1509,7 @@ GUARD_FE5_TRADE_WINDOW :?= false
           jsr rsTradeWindowTryUnmarkFreeSlot
 
           lda #$0021 ; TODO: sound definitions
-          jsl rlUnknown808C87
+          jsl rlPlaySoundEffect
 
           lda wTradeWindowSelectedItemOffset
           sta wTradeWindowCursorOffset
@@ -1593,7 +1593,7 @@ GUARD_FE5_TRADE_WINDOW :?= false
           sta wTradeWindowActionIndex
 
           lda #$0021 ; TODO: sound definitions
-          jsl rlUnknown808C87
+          jsl rlPlaySoundEffect
 
           ; Flag whether we've stolen or not.
 
@@ -2185,13 +2185,13 @@ GUARD_FE5_TRADE_WINDOW :?= false
           beq _Trade
 
             lda #$0022 ; TODO: sound definitions
-            jsl rlUnknown808C87
+            jsl rlPlaySoundEffect
 
             rts
 
           _Trade
           lda #$000D ; TODO: sound definitions
-          jsl rlUnknown808C87
+          jsl rlPlaySoundEffect
 
           lda wTradeWindowCursorOffset
           sta wTradeWindowSelectedItemOffset
@@ -2279,7 +2279,7 @@ GUARD_FE5_TRADE_WINDOW :?= false
           beq +
 
             lda #$0022 ; TODO: sound definitions
-            jsl rlUnknown808C87
+            jsl rlPlaySoundEffect
 
             rts
 
@@ -2287,7 +2287,7 @@ GUARD_FE5_TRADE_WINDOW :?= false
           jsr rsTradeWindowTryUnmarkFreeSlot
 
           lda #$000D ; TODO: sound definitions
-          jsl rlUnknown808C87
+          jsl rlPlaySoundEffect
 
           ; These are swapped but that doesn't really matter?
 
@@ -2556,7 +2556,7 @@ GUARD_FE5_TRADE_WINDOW :?= false
               stx wTradeWindowCursorOffset
 
               lda #$0009 ; TODO: sound definitions
-              jsl rlUnknown808C87
+              jsl rlPlaySoundEffect
 
               rts
 
@@ -2570,7 +2570,7 @@ GUARD_FE5_TRADE_WINDOW :?= false
               sta wTradeWindowCursorOffset
 
               lda #$0009 ; TODO: sound definitions
-              jsl rlUnknown808C87
+              jsl rlPlaySoundEffect
 
             +
             rts
@@ -2590,7 +2590,7 @@ GUARD_FE5_TRADE_WINDOW :?= false
               dec wTradeWindowCursorOffset
 
               lda #$0009 ; TODO: sound definitions
-              jsl rlUnknown808C87
+              jsl rlPlaySoundEffect
 
               -
               rts
@@ -2615,7 +2615,7 @@ GUARD_FE5_TRADE_WINDOW :?= false
             stx wTradeWindowCursorOffset
 
             lda #$0009 ; TODO: sound definitions
-            jsl rlUnknown808C87
+            jsl rlPlaySoundEffect
 
             rts
 
@@ -2638,7 +2638,7 @@ GUARD_FE5_TRADE_WINDOW :?= false
                 sta wTradeWindowCursorOffset
 
                 lda #$000A ; TODO: sound definitions
-                jsl rlUnknown808C87
+                jsl rlPlaySoundEffect
 
             +
             rts
@@ -2661,7 +2661,7 @@ GUARD_FE5_TRADE_WINDOW :?= false
                 sta wTradeWindowCursorOffset
 
                 lda #$000A ; TODO: sound definitions
-                jsl rlUnknown808C87
+                jsl rlPlaySoundEffect
 
             +
             rts
