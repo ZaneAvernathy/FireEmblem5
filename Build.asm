@@ -67,6 +67,8 @@
   .include "SRC/PickPhaseMusic.asm"
   .include "SRC/TradeWindow.asm"
 
+  .include "SRC/MenuUtilities.asm"
+
   .include "SRC/StatusWindow.asm"
   .include "SRC/OptionsWindow.asm"
 
@@ -338,6 +340,13 @@
       .fill mapped($020000) + $8000 - *, $FF
 
     endFreespace
+
+  .endlogical
+
+  * := $028000
+  .logical mapped($028000)
+
+    .dsection MenuUtilitiesSection
 
   .endlogical
 
