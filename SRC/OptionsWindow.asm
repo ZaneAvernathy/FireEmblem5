@@ -269,7 +269,7 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
               sta aOptionsWindowScrollPositionsHDMA + 4
               sta aOptionsWindowScrollPositionsHDMA + 7
 
-              ; Dispaly the appropriate scrolling arrows and
+              ; Display the appropriate scrolling arrows and
               ; make sure that the `Default` window color
               ; option has the right state.
 
@@ -796,7 +796,7 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
               jsr rsOptionsWindowCopyTempLine
 
               ; If the line has some kind of condition that needs
-              ; to be met to be usale, check it.
+              ; to be met to be usable, check it.
 
               lda aOptionsWindowTempMenuLine.Usability
               beq _Usable
@@ -1204,13 +1204,10 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
           asl a
 
           tay
-          lda aOptionsWindowTempMenuLine.Options[0].Width,y
+          lda aOptionsWindowTempMenuLine.Options[0].Position,y
           sta wR0
 
-          ; This uses the start of the next option - 1 to
-          ; determine where to start.
-
-          lda aOptionsWindowTempMenuLine.Options[1].Position,y
+          lda aOptionsWindowTempMenuLine.Options[0].Width,y
           sta wR1
 
           jsr _rsSetBlue
@@ -2190,7 +2187,7 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
             tax
             lda aOptionsWindowMenuLineSelections,x
             inc a
-            cmp aOptionsWindowTempMenuLine.Options[0]
+            cmp aOptionsWindowTempMenuLine.OptionCount
             bge +
 
               inc aOptionsWindowMenuLineSelections,x
@@ -2377,7 +2374,7 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
             asl a
 
             tax
-            lda aOptionsWindowTempMenuLine.Options[0].Width,x
+            lda aOptionsWindowTempMenuLine.Options[0].Position,x
 
             clc
             adc #MiddleRegion.OptionOffset[0] - 2
@@ -2464,7 +2461,7 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
           asl a
 
           tax
-          lda aOptionsWindowTempMenuLine.Options[0].Width,x
+          lda aOptionsWindowTempMenuLine.Options[0].Position,x
 
           clc
           adc #MiddleRegion.OptionOffset[0] - 2
