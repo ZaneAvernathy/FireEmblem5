@@ -25,43 +25,6 @@ GUARD_FE5_MENU_UTILITIES :?= false
 
     .endweak
 
-    ; TODO: add to Volt Edge
-
-      structActiveMenu .struct
-        EnabledFlag .byte ?
-        Position .block
-          X .byte ?
-          Y .byte ?
-        .endblock
-        ShadingDisabledFlag .byte ?
-        MenuStructPointer .long ?
-        BG1Info .dstruct structTilemapInfo
-        BG3Info .dstruct structTilemapInfo
-      .endstruct
-
-      .virtual $7E4E71
-
-        lActiveMenuTempBufferPointer .long ? ; $7E4E71 0.22
-
-        aActiveMenuSlots .fill (5 * size(addr)) ; $7E4E74 0.22
-
-        aActiveMenuData .block ; $7E4E7E 0.22
-          aSlots .brept 4
-            .dstruct structActiveMenu
-          .endrept
-        .endblock
-
-        aActiveMenuTemp .dstruct structActiveMenu ; $7E4EE2 0.22
-
-        wActiveMenuCurrentSlot .addr ? ; $7E4EFB 0.22
-
-      .endvirtual
-
-
-
-
-
-
   ; Freespace inclusions
 
     .section MenuUtilitiesSection
