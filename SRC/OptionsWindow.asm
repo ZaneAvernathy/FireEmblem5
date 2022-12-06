@@ -1273,8 +1273,8 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
 
             ; Inputs:
             ; X: offset of line pointer in aOptionsWindowMenuLineSelections
-            ; wR0: width in tiles
-            ; wR1: X offset of next option in tiles
+            ; wR0: Position in tiles
+            ; wR1: Width in tiles
 
             ; Outputs:
             ; None
