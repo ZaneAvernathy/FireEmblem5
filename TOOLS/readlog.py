@@ -1,23 +1,19 @@
 #!/usr/bin/python3
 
-"""
-Script to print 64tass sections in a pretty format.
-
-Groups contiguous regions together.
-"""
+"""Script to print 64tass memory map files."""
 
 import sys
 import re
-from typing import NamedTuple
+from typing import NamedTuple, Optional
 
 
 class Section(NamedTuple):
-  """A single memory section."""
+  """A single memory section, possily with a name."""
 
   start: int
-  end: int
   size: int
-  name: str
+  end: Optional[int]
+  name: Optional[str]
 
 
 class Region(NamedTuple):
@@ -28,15 +24,31 @@ class Region(NamedTuple):
   sections: list[Section]
 
 
-section_pattern = r"Section:\s*" \
+section_pattern = r"(?:[^\:]+\:)?\s*(?P<size>[0-9]+)\s*" \
                   r"\$(?P<start>[0-9a-fA-F]+)" \
                   r"(?:-\$(?P<end>[0-9a-fA-F]+))?\s*" \
-                  r"\$(?P<size>[0-9a-fA-F]+)\s*" \
-                  r"(?P<name>.*)"
+                  r"\$(?P<size_hex>[0-9a-fA-F]+)\s*" \
+                  r"(?:(?P<name>.*))?"
 
 
-def main() -> None:
-  """Organize and print log sections."""
+def section_sorter(item: Section) -> int:
+  """Key func to ensure zero-byte sections appear first."""
+  return (item.start * 10) + (1 if item.end else 0)
+
+
+def is_contiguous(prev: Section, this: Section) -> bool:
+  """Check if two sections are contiguous."""
+  return (prev.start + prev.size) == this.start
+
+
+def block_formatter(start: int, end: Optional[int]) -> str:
+  """Make a string for a region's span."""
+  end_str = f"-${end:06X}" if end else " " * 8
+  return f"${start:06X}{end_str}"
+
+
+def main() -> int:
+  """Organize and print map sections."""
   log = sys.argv[1]
 
   with open(log, "r") as i:
@@ -47,56 +59,46 @@ def main() -> None:
   for line in lines:
 
     if (match := re.match(section_pattern, line)):
-      p_start, p_size = [int(g, 16) for g in match.group("start", "size")]
-      p_end = int(p_end, 16) if (p_end := match.group("end")) else p_start
-      p_name = match.group("name")
+      p_start, p_size = [int(g, 16) for g in match.group("start", "size_hex")]
+      p_end = int(p_end, 16) if (p_end := match.group("end")) else None
+      p_name = p_name if (p_name := match.group("name")) else None
 
-      sections.append(Section(p_start, p_end, p_size, p_name))
+      # For now, we'll discard unnamed sections ecause 64tass is being weird.
+
+      if p_name:
+        sections.append(Section(p_start, p_size, p_end, p_name))
 
   if not sections:
-    sys.exit()
+    sys.exit(0)
 
-  sections = sorted(sections)
+  sections = sorted(sections, key=section_sorter)
   first = sections[0]
+  f_end = first.end if first.end else first.start
 
-  regions: list[Region] = [Region(first.start, first.end, [first])]
-
-  def is_contiguous(prev: Section, this: Section) -> bool:
-    if prev[0] != prev[1]:
-      return prev[1] + 1 == this[0]
-    else:
-      return prev[0] == this[0]
+  regions: list[Region] = [Region(first.start, f_end, [first])]
 
   for j, section in enumerate(sections[1:], 1):
     if is_contiguous(sections[j - 1], section):
       prev = regions[-1]
-      if section.end != section.start:
+      if section.end and (section.start != section.end):
         regions[-1] = Region(prev.start, section.end, prev.sections)
       prev.sections.append(section)
 
     else:
-      real_end = (
-        section.end if (section.end != section.start) else section.start
-      )
+      real_end = section.end if section.end else section.start
       regions.append(Region(section.start, real_end, [section]))
 
-  def block_str(start: int, end: int) -> str:
-    end_str = f"-${end:06X}" if (end != start) else " " * 8
-    return f"${start:06X}{end_str}"
+  for r in regions:
+    region_size = sum([s.size for s in r.sections])
+    print(f"Region: {block_formatter(r.start, r.end)} ${region_size:06X}")
 
-  for region in regions:
-
-    start, end, sections = region
-    size = sum([s.size for s in sections])
-
-    print(f"Region: {block_str(start, end)} ${size:06X}")
-
-    for section in sections:
-      start, end, size, name = section
-      print(f"  {block_str(start, end)} ${size:04X} {name}")
+    for s in r.sections:
+      print(f"  {block_formatter(s.start, s.end)} ${s.size:04X} {s.name}")
 
     print()
 
+  return 0
 
-if __name__ == '__main__':
-  main()
+
+if __name__ == "__main__":
+  sys.exit(main())

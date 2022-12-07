@@ -23,9 +23,10 @@ ROM_TARGET := $(BIN)/FireEmblem5.sfc
 SYM_TARGET := $(ROM_TARGET:.sfc=.cpu.sym)
 
 LOG_TARGET   := Log.txt
+MAP_TARGET   := Map.txt
 ERROR_TARGET := Errors.txt
 
-BUILD_TARGETS := $(ROM_TARGET) $(SYM_TARGET) $(LOG_TARGET) $(ERROR_TARGET)
+BUILD_TARGETS := $(ROM_TARGET) $(SYM_TARGET) $(LOG_TARGET) $(ERROR_TARGET) $(MAP_TARGET)
 
 ASFLAGS += -x -f -C -a
 ASFLAGS += -Wall
@@ -35,6 +36,7 @@ ASFLAGS += -D USE_FE5_DEFINITIONS=true
 ASFLAGS += -i "$(VOLTEDGE)/VoltEdge.h" -i "$(BUILD_SCRIPT)"
 ASFLAGS += -o "$(ROM_TARGET)"
 ASFLAGS += --vice-labels -l "$(SYM_TARGET)"
+ASFLAGS += --map "$(MAP_TARGET)"
 
 DEPS += $(shell $(scan_includes) "$(BUILD_SCRIPT)" "$(VOLTEDGE)/VoltEdge.h")
 
@@ -45,7 +47,7 @@ all: $(BUILD_TARGETS) checksum compare symbols
 # if the build was successful. This keeps track of the exit
 # status of the assembly step and saves that for the return value.
 $(BUILD_TARGETS): $(BUILD_SCRIPT) $(DEPS) $(MAKEFILE_LIST)
-	@($(64tass) $(ASFLAGS) 1>"$(LOG_TARGET)" -E "$(ERROR_TARGET)" && $(regions) "$(LOG_TARGET)") ; \
+	@($(64tass) $(ASFLAGS) 1>"$(LOG_TARGET)" -E "$(ERROR_TARGET)" && $(regions) "$(MAP_TARGET)") ; \
 	declare -i e=$$? ; \
 	cat "$(ERROR_TARGET)" >&2 ; \
 	exit $$((e))
@@ -69,4 +71,4 @@ clean:: | $(BIN)
 	@$(RM) $(BIN)/*.*
 
 veryclean:: clean
-	@$(RM) "$(LOG_TARGET)" "$(ERROR_TARGET)"
+	@$(RM) "$(LOG_TARGET)" "$(ERROR_TARGET)" "$(MAP_TARGET)"
