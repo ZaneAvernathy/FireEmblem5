@@ -1,5 +1,5 @@
 {DIALOGUE_RIGHT}{DIALOGUE_LOAD $008C}
-{DIALOGUE_PAGE0}まったく､{DIALOGUE_PAUSE $08}北トラキア王国に\n
+{DIALOGUE_FONT_0}まったく､{DIALOGUE_PAUSE $08}北トラキア王国に\n
 このあたりが編入されてから\n
 ろくなことはない{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
 レンスターの時代が\n

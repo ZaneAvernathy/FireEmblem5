@@ -1,2 +1,2 @@
-{DIALOGUE_PAGE0}･･･オルエン様･･･\n
+{DIALOGUE_FONT_0}･･･オルエン様･･･\n
 {DIALOGUE_PAUSE $10}･･･無念･･･{DIALOGUE_PAUSE $10}です･･･{DIALOGUE_END_SCENE}

@@ -1,2 +1,2 @@
-{DIALOGUE_PAGE0}･･･リーフさま･･･\n
+{DIALOGUE_FONT_0}･･･リーフさま･･･\n
 {DIALOGUE_PAUSE $10}負けない･･･{DIALOGUE_PAUSE $10}で･･･{DIALOGUE_END_SCENE}

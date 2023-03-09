@@ -1,3 +1,3 @@
-{DIALOGUE_RIGHT}{DIALOGUE_PAGE0}こんなところで\n
+{DIALOGUE_RIGHT}{DIALOGUE_FONT_0}こんなところで\n
 足止めを食うわけには\n
 いかぬのだ！{DIALOGUE_END_SCENE}

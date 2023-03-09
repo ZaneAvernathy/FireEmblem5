@@ -1,4 +1,4 @@
-{DIALOGUE_PAGE0}ケイト･･･\n
+{DIALOGUE_FONT_0}ケイト･･･\n
 {DIALOGUE_PAUSE $10}ずっと･･･\n
 {DIALOGUE_PAUSE $10}ありがとう･･･{DIALOGUE_PAUSE $40}{DIALOGUE_SCROLL}
 もういいよ･･･\n

@@ -1,4 +1,4 @@
-{DIALOGUE_PAGE0}しかし､{DIALOGUE_PAUSE $10}難攻不落を誇る帝国の要塞が\n
+{DIALOGUE_FONT_0}しかし､{DIALOGUE_PAUSE $10}難攻不落を誇る帝国の要塞が\n
 彼らの前に立ちはだかる{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
 この『ダンドラム要塞』をこえなければ\n
 {DIALOGUE_PAUSE $10}ターラヘの道はひらけない･･･{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

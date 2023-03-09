@@ -1,3 +1,3 @@
-{DIALOGUE_PAGE0}これでいい･･･\n
+{DIALOGUE_FONT_0}これでいい･･･\n
 {DIALOGUE_PAUSE $10}血まみれの･･･私には･･･\n
 {DIALOGUE_PAUSE $10}無様な最期こそふさわしい･･･{DIALOGUE_END_SCENE}

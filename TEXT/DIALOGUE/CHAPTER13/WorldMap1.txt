@@ -1,3 +1,3 @@
-{DIALOGUE_PAGE0}いわゆる『盗賊の森』をぬけた\n
+{DIALOGUE_FONT_0}いわゆる『盗賊の森』をぬけた\n
 リーフたち『解放軍』の目の前に{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
 {DIALOGUE_END_SCENE}

@@ -1,4 +1,4 @@
-{DIALOGUE_PAGE0}一方マンスターでは､{DIALOGUE_PAUSE $08}リーフたちの動きに\n
+{DIALOGUE_FONT_0}一方マンスターでは､{DIALOGUE_PAUSE $08}リーフたちの動きに\n
 呼応して､{DIALOGUE_PAUSE $08}市民たちが次々と脱出をはかり{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
 それを支援するセティ率いる『マギ団』と\n
 {DIALOGUE_PAUSE $10}阻止しようとするマンスター軍の間で{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}

@@ -111,7 +111,7 @@ def main():
             if in_string:
               text += "\"\n"
 
-            text += f"DIALOGUE_PAGE{newpage:d}\n"
+            text += f"DIALOGUE_FONT_{newpage:d}\n"
 
             page = newpage
             in_string = False

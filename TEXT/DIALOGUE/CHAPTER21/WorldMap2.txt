@@ -1,3 +1,3 @@
-{DIALOGUE_PAGE0}セリス公子ひきいるイザーク『解放軍』は\n
+{DIALOGUE_FONT_0}セリス公子ひきいるイザーク『解放軍』は\n
 {DIALOGUE_PAUSE $10}アルスター攻略に成功する{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
 {DIALOGUE_END_SCENE}

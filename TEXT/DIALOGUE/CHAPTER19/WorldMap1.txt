@@ -1,3 +1,3 @@
-{DIALOGUE_PAGE0}ドリアスたちにおくれること一日\n
+{DIALOGUE_FONT_0}ドリアスたちにおくれること一日\n
 {DIALOGUE_PAUSE $10}ようやく準備を終えたリーフたちは{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
 {DIALOGUE_END_SCENE}

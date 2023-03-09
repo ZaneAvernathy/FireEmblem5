@@ -1,3 +1,3 @@
-{DIALOGUE_PAGE0}もう一度･･･\n
+{DIALOGUE_FONT_0}もう一度･･･\n
 {DIALOGUE_PAUSE $10}あのころに帰れたら････\n
 {DIALOGUE_PAUSE $10}リーフ王子･･･{DIALOGUE_END_SCENE}

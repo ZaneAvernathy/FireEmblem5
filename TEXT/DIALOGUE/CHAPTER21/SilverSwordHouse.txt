@@ -1,5 +1,5 @@
 {DIALOGUE_RIGHT}{DIALOGUE_LOAD $0095}
-{DIALOGUE_PAGE0}わしももう２０年･･･\n
+{DIALOGUE_FONT_0}わしももう２０年･･･\n
 {DIALOGUE_PAUSE $10}いや１０年若ければ\n
 {DIALOGUE_PAUSE $08}おまえさんたちとともに戦うのじゃがの{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
 せめてこのわしの愛用した剣だけでも\n

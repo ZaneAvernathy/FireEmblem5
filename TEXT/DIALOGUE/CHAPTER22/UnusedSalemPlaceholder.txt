@@ -1,4 +1,4 @@
 {DIALOGUE_RIGHT}{DIALOGUE_LOAD $0090}
-{DIALOGUE_PAGE0}こちらは｢セーラム生存時､追加｣です\n
+{DIALOGUE_FONT_0}こちらは｢セーラム生存時､追加｣です\n
 このめっせーじは\n
 現在しようされておりません{DIALOGUE_WAIT_PRESS}{DIALOGUE_END_SCENE}

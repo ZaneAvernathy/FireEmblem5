@@ -1,2 +1,2 @@
-{DIALOGUE_PAGE0}･･･みんな･･･\n
+{DIALOGUE_FONT_0}･･･みんな･･･\n
 {DIALOGUE_PAUSE $10}すまない･･･{DIALOGUE_END_SCENE}

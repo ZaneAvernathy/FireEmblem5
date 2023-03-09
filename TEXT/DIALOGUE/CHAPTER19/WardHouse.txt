@@ -1,5 +1,5 @@
 {DIALOGUE_RIGHT}{DIALOGUE_LOAD $009C}
-{DIALOGUE_PAGE0}やはり帝国軍は強いらしいのう･･･\n
+{DIALOGUE_FONT_0}やはり帝国軍は強いらしいのう･･･\n
 {DIALOGUE_PAUSE $10}じゃが負けてくださるなよ\n
 {DIALOGUE_PAUSE $10}あなたがたはわしらの希望じゃての{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
 そうじゃ､{DIALOGUE_PAUSE $10}このＭアップの杖をやろう\n

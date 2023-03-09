@@ -1,3 +1,3 @@
-{DIALOGUE_PAGE0}アルスターが･･･\n
+{DIALOGUE_FONT_0}アルスターが･･･\n
 {DIALOGUE_PAUSE $10}ふたたび･･･\n
 {DIALOGUE_PAUSE $10}よみがえらんことを･･･{DIALOGUE_END_SCENE}

@@ -1,3 +1,3 @@
-{DIALOGUE_PAGE0}･･･フュリー様･･･\n
+{DIALOGUE_FONT_0}･･･フュリー様･･･\n
 {DIALOGUE_PAUSE $10}ごめんなさい･･･\n
 {DIALOGUE_PAUSE $10}王子様･･･{DIALOGUE_END_SCENE}

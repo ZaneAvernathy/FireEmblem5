@@ -1,5 +1,5 @@
 {DIALOGUE_RIGHT}{DIALOGUE_LOAD $008E}
-{DIALOGUE_PAGE0}アルスターで反乱軍が\n
+{DIALOGUE_FONT_0}アルスターで反乱軍が\n
 敗れたっていうじゃねえか\n
 {DIALOGUE_PAUSE $10}大丈夫なのか？{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
 このキラーランスを持っていきな\n

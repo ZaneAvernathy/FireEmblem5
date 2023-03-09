@@ -1,5 +1,5 @@
 {DIALOGUE_RIGHT}{DIALOGUE_LOAD $008A}
-{DIALOGUE_PAGE0}トラキア大河は広い･･･\n
+{DIALOGUE_FONT_0}トラキア大河は広い･･･\n
 {DIALOGUE_WAIT_PRESS}まともに進んじゃ川をこえる前に\n
 帝国の総攻撃をまともにうけちまう{DIALOGUE_WAIT_PRESS}{DIALOGUE_SCROLL}
 このワープの杖を使って\n
