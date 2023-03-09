@@ -1631,7 +1631,7 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
 
           .databank `aMovementMap
 
-          jmp rlFillMovementRangeArray
+          jml rlFillMovementRangeArray
 
           .databank 0
 
