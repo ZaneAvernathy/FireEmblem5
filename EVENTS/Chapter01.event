@@ -156,7 +156,7 @@ GUARD_FE5_CHAPTER01 :?= false
           SET_CURSOR_POSITION
           YIELD
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -203,7 +203,7 @@ GUARD_FE5_CHAPTER01 :?= false
           SET_CAMERA_POSITION [2, 2]
           HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -298,7 +298,7 @@ GUARD_FE5_CHAPTER01 :?= false
           WAIT_MOVE
           YIELD
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -387,13 +387,13 @@ GUARD_FE5_CHAPTER01 :?= false
         MS_END
 
         _EndingEvent ; FD/8536
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 16
           YIELD
 
           CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -421,7 +421,7 @@ GUARD_FE5_CHAPTER01 :?= false
 
           STORE_BYTE bBufferINIDISP, INIDISP_Setting(false, 0)
 
-          PLAY_SOUND_WORD $00E7
+          PLAY_SOUND_FORCED $00E7
           FADE_OUT $01
           YIELD
 
@@ -515,7 +515,7 @@ GUARD_FE5_CHAPTER01 :?= false
         SET_CURSOR_POSITION
         YIELD
 
-        PLAY_SOUND_WORD $00E0
+        PLAY_SOUND_FORCED $00E0
         PAUSE_SKIPPABLE 32
         YIELD
 

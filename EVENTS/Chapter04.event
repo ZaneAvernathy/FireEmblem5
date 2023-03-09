@@ -211,11 +211,11 @@ GUARD_FE5_CHAPTER04 :?= false
           EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, 0
           JUMP_FALSE +
 
-            PLAY_SOUND_WORD $00F7
+            PLAY_SOUND_FORCED $00F7
             DIALOGUE dialogueChapter04LeftCellUnlock
             YIELD
 
-            PLAY_SOUND_WORD $00E8
+            PLAY_SOUND_FORCED $00E8
           END2
 
           +
@@ -238,11 +238,11 @@ GUARD_FE5_CHAPTER04 :?= false
           EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, 0
           JUMP_FALSE +
 
-            PLAY_SOUND_WORD $00F7
+            PLAY_SOUND_FORCED $00F7
             DIALOGUE dialogueChapter04RightCellUnlock
             YIELD
 
-            PLAY_SOUND_WORD $00E8
+            PLAY_SOUND_FORCED $00E8
 
           +
         END1
@@ -279,7 +279,7 @@ GUARD_FE5_CHAPTER04 :?= false
           macroASMCCountAllUnitsRescuedByPlayerOrNPC Fergus
           JUMP_FALSE +
 
-            PLAY_SOUND_WORD $00E0
+            PLAY_SOUND_FORCED $00E0
             PAUSE_SKIPPABLE 32
             YIELD
 
@@ -302,11 +302,11 @@ GUARD_FE5_CHAPTER04 :?= false
           macroASMCCountAllUnitsRescuedByPlayerOrNPC Lithis
           JUMP_FALSE +
 
-            PLAY_SOUND_WORD $00F7
+            PLAY_SOUND_FORCED $00F7
             DIALOGUE dialogueChapter04LithisCellUnlock
             YIELD
 
-            PLAY_SOUND_WORD $00E8
+            PLAY_SOUND_FORCED $00E8
           END2
 
           +
@@ -331,7 +331,7 @@ GUARD_FE5_CHAPTER04 :?= false
           PAUSE_SKIPPABLE 64
           YIELD
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -351,7 +351,7 @@ GUARD_FE5_CHAPTER04 :?= false
           macroASMCCountAllUnitsRescuedByPlayerOrNPC Lithis
           JUMP_FALSE +
 
-            PLAY_SOUND_WORD $00E0
+            PLAY_SOUND_FORCED $00E0
             PAUSE_SKIPPABLE 32
             YIELD
 
@@ -367,7 +367,7 @@ GUARD_FE5_CHAPTER04 :?= false
         END2
 
         _LeifDialogue ; 99/8F2B
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -381,21 +381,21 @@ GUARD_FE5_CHAPTER04 :?= false
         END2
 
         _NPCDialogue ; 99/8F40
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
           SET_MUSIC $07
           YIELD
 
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           SCROLL_CAMERA_CHAR Civilian2, 4
 
           DIALOGUE dialogueChapter04NPCDialogue
           YIELD
 
-          PLAY_SOUND_WORD $00E8
+          PLAY_SOUND_FORCED $00E8
         END2
 
         _PlayerRetreat ; 99/8F5B
@@ -469,7 +469,7 @@ GUARD_FE5_CHAPTER04 :?= false
           FADE_IN 2
           HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -492,7 +492,7 @@ GUARD_FE5_CHAPTER04 :?= false
           WAIT_MOVE
           YIELD
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -547,13 +547,13 @@ GUARD_FE5_CHAPTER04 :?= false
           .byte [21, 22]
 
         _EndingEvent ; 99/9167
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 16
           YIELD
 
           CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -747,7 +747,7 @@ GUARD_FE5_CHAPTER04 :?= false
         SET_CURSOR_POSITION
         YIELD
 
-        PLAY_SOUND_WORD $00E0
+        PLAY_SOUND_FORCED $00E0
         PAUSE_SKIPPABLE 32
         YIELD
 

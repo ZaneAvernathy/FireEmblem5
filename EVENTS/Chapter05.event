@@ -192,7 +192,7 @@ GUARD_FE5_CHAPTER05 :?= false
 
         _RaydrikDialogue ; 99/94DC
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -207,7 +207,7 @@ GUARD_FE5_CHAPTER05 :?= false
 
         _MareetaAppears ; 99/94F1
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -248,7 +248,7 @@ GUARD_FE5_CHAPTER05 :?= false
 
         _MareetaDialogue ; 99/9557
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -267,7 +267,7 @@ GUARD_FE5_CHAPTER05 :?= false
 
         _MareetaCaptured ; 99/956F
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -279,7 +279,7 @@ GUARD_FE5_CHAPTER05 :?= false
 
         _MareetaKilled ; 99/9580
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -393,7 +393,7 @@ GUARD_FE5_CHAPTER05 :?= false
               macroASMCCountAllUnitsRescuedByPlayerOrNPC Nanna
               JUMP_FALSE _NannaNotHeld
 
-                PLAY_SOUND_WORD $00E0
+                PLAY_SOUND_FORCED $00E0
                 PAUSE_SKIPPABLE 32
                 YIELD
 
@@ -405,7 +405,7 @@ GUARD_FE5_CHAPTER05 :?= false
 
             _NannaDead
 
-            PLAY_SOUND_WORD $00E0
+            PLAY_SOUND_FORCED $00E0
             PAUSE_SKIPPABLE 32
             YIELD
 
@@ -416,7 +416,7 @@ GUARD_FE5_CHAPTER05 :?= false
             JUMP _NannaContinue
 
             _NannaNotHeld
-            PLAY_SOUND_WORD $00E0
+            PLAY_SOUND_FORCED $00E0
             PAUSE_SKIPPABLE 32
             YIELD
 
@@ -430,7 +430,7 @@ GUARD_FE5_CHAPTER05 :?= false
 
           _LeifContinue2
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -493,7 +493,7 @@ GUARD_FE5_CHAPTER05 :?= false
           macroASMCIsUnitHeldByEnemy Leif
           JUMP_TRUE _AlreadyLeft_End
 
-            PLAY_SOUND_WORD $00E0
+            PLAY_SOUND_FORCED $00E0
             PAUSE_SKIPPABLE 32
             YIELD
 
@@ -520,7 +520,7 @@ GUARD_FE5_CHAPTER05 :?= false
 
         _EyvelCaptured ; 99/9D50
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -722,7 +722,7 @@ GUARD_FE5_CHAPTER05 :?= false
 
           HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 

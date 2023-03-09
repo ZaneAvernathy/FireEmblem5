@@ -233,7 +233,7 @@ GUARD_FE5_CHAPTER03 :?= false
         END2
 
         _CairpreHouseCairpre ; 8C/E6F6
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           CALL_ASM_SKIPPABLE rlASMCClearActiveUnitRescue
 
@@ -256,7 +256,7 @@ GUARD_FE5_CHAPTER03 :?= false
         END2
 
         _LuciaHouseLucia ; 8C/E73C
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           CALL_ASM_LOOP rlASMCClearActiveUnitRescue
 
@@ -283,7 +283,7 @@ GUARD_FE5_CHAPTER03 :?= false
         END2
 
         _RomeoHouseRomeo ; 8C/E7C1
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           CALL_ASM_LOOP rlASMCClearActiveUnitRescue
 
@@ -310,7 +310,7 @@ GUARD_FE5_CHAPTER03 :?= false
         END2
 
         _HubertHouseHubert ; 8C/E846
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           CALL_ASM_LOOP rlASMCClearActiveUnitRescue
 
@@ -415,7 +415,7 @@ GUARD_FE5_CHAPTER03 :?= false
 
           HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -445,7 +445,7 @@ GUARD_FE5_CHAPTER03 :?= false
 
           macroASMCSingleTileChangeByCoords [12, 11], $03A5
 
-          PLAY_SOUND_BYTE $6C
+          PLAY_EXTENDED_SOUND $6C
           WAIT_MOVE
           YIELD
 
@@ -504,7 +504,7 @@ GUARD_FE5_CHAPTER03 :?= false
           WAIT_MOVE
           YIELD
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -583,7 +583,7 @@ GUARD_FE5_CHAPTER03 :?= false
 
           HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -610,7 +610,7 @@ GUARD_FE5_CHAPTER03 :?= false
             +
           .endfor
 
-          PLAY_SOUND_WORD $00E7
+          PLAY_SOUND_FORCED $00E7
 
           FADE_OUT 1
           YIELD
@@ -792,7 +792,7 @@ GUARD_FE5_CHAPTER03 :?= false
         SET_CURSOR_POSITION
         YIELD
 
-        PLAY_SOUND_WORD $00E0
+        PLAY_SOUND_FORCED $00E0
         PAUSE_SKIPPABLE 32
         YIELD
 

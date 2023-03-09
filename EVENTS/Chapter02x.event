@@ -112,7 +112,7 @@ GUARD_FE5_CHAPTER02x :?= false
         END2
 
         _MyrmidonWarriorReinforcements ; 97/8167
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -144,7 +144,7 @@ GUARD_FE5_CHAPTER02x :?= false
         _OpeningEvent ; 97/8208
           HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -178,7 +178,7 @@ GUARD_FE5_CHAPTER02x :?= false
           macroASMCLoadUnitGroup eventChapter02xData._EnemyGroup5
           macroASMCLoadUnitGroup eventChapter02xData._EnemyGroup6
 
-          PLAY_SOUND_WORD $00E7
+          PLAY_SOUND_FORCED $00E7
 
           SCROLL_CAMERA_COORDS [9, 11], 3
           YIELD
@@ -276,13 +276,13 @@ GUARD_FE5_CHAPTER02x :?= false
         END2
 
         _EndingEvent ; 97/8398
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 16
           YIELD
 
           CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 

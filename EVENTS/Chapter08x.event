@@ -114,7 +114,7 @@ GUARD_FE5_CHAPTER08x :?= false
         END2
 
         _OrsinTanyaTalk ; 97/86D6
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -126,7 +126,7 @@ GUARD_FE5_CHAPTER08x :?= false
         END2
 
         _LeifDagdarTalk ; 97/86E6
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -168,7 +168,7 @@ GUARD_FE5_CHAPTER08x :?= false
 
           HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -186,13 +186,13 @@ GUARD_FE5_CHAPTER08x :?= false
         END2
 
         _EndingEvent ; 97/8822
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 16
           YIELD
 
           CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -215,7 +215,7 @@ GUARD_FE5_CHAPTER08x :?= false
 
           STORE_BYTE bBufferINIDISP, INIDISP_Setting(false, 0)
 
-          PLAY_SOUND_WORD $00E7
+          PLAY_SOUND_FORCED $00E7
 
           FADE_OUT 1
           YIELD

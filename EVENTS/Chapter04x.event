@@ -269,7 +269,7 @@ GUARD_FE5_CHAPTER04x :?= false
           EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
           JUMP_FALSE +
 
-            PLAY_SOUND_WORD $00F7
+            PLAY_SOUND_FORCED $00F7
             DIALOGUE dialogueChapter04xUpperCellUnlock
             YIELD
           END2
@@ -287,7 +287,7 @@ GUARD_FE5_CHAPTER04x :?= false
           EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
           JUMP_FALSE +
 
-            PLAY_SOUND_WORD $00F7
+            PLAY_SOUND_FORCED $00F7
             DIALOGUE dialogueChapter04xLowerCellUnlock
             YIELD
           END2
@@ -316,7 +316,7 @@ GUARD_FE5_CHAPTER04x :?= false
         MS_END
 
         _AsvelLeifTalk ; FD/8DCE
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -330,7 +330,7 @@ GUARD_FE5_CHAPTER04x :?= false
         END2
 
         _LeifAsvelTalk ; FD/8DE4
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -345,7 +345,7 @@ GUARD_FE5_CHAPTER04x :?= false
         END2
 
         _KarinCedTalk ; FD/8E18
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -384,7 +384,7 @@ GUARD_FE5_CHAPTER04x :?= false
           FADE_IN 2
           HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -405,14 +405,14 @@ GUARD_FE5_CHAPTER04x :?= false
           DIALOGUE dialogueChapter04xOpening1
           YIELD
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
           SET_MUSIC $07
           YIELD
 
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           SCROLL_CAMERA_CHAR Vera, 4
 

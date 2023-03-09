@@ -145,14 +145,14 @@ GUARD_FE5_CHAPTER08 :?= false
 
         _RumaighAIChange ; 99/C000
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
           SET_MUSIC $0A
           YIELD
 
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           SCROLL_CAMERA_CHAR Rumaigh, 4
 
@@ -165,7 +165,7 @@ GUARD_FE5_CHAPTER08 :?= false
         END2
 
         _OrsinMartyTalk ; 99/C084
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -182,7 +182,7 @@ GUARD_FE5_CHAPTER08 :?= false
         END2
 
         _HalvanMartyTalk ; 99/C0BA
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -199,7 +199,7 @@ GUARD_FE5_CHAPTER08 :?= false
         END2
 
         _MartyCaptured ; 99/C0F0
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           DIALOGUE dialogueChapter08MartyCaptured
           YIELD
@@ -210,7 +210,7 @@ GUARD_FE5_CHAPTER08 :?= false
         END2
 
         _GomerAppear ; 99/C107
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -274,7 +274,7 @@ GUARD_FE5_CHAPTER08 :?= false
 
           HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -340,7 +340,7 @@ GUARD_FE5_CHAPTER08 :?= false
         macroASMCIsUnitHeld Rumaigh
         JUMP_FALSE _EndingEvent_Failed
 
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -356,7 +356,7 @@ GUARD_FE5_CHAPTER08 :?= false
 
 
         _EndingEvent_TanyaDead
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -376,7 +376,7 @@ GUARD_FE5_CHAPTER08 :?= false
           macroASMCCheckUnitStateSet Tanya, (UnitStateDead | UnitStateCaptured)
           JUMP_TRUE _EndingEvent_Failed
 
-            PLAY_SOUND_WORD $00E0
+            PLAY_SOUND_FORCED $00E0
             PAUSE_SKIPPABLE 32
             YIELD
 
@@ -393,7 +393,7 @@ GUARD_FE5_CHAPTER08 :?= false
             JUMP _EndingEvent_Continue
 
         _EndingEvent_Failed
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -412,7 +412,7 @@ GUARD_FE5_CHAPTER08 :?= false
         YIELD_UNK
 
         _EndingEvent_End
-        PLAY_SOUND_WORD $00E7
+        PLAY_SOUND_FORCED $00E7
 
         FADE_OUT 1
         YIELD
@@ -515,7 +515,7 @@ GUARD_FE5_CHAPTER08 :?= false
         SET_CURSOR_POSITION
         YIELD
 
-        PLAY_SOUND_WORD $00E0
+        PLAY_SOUND_FORCED $00E0
         PAUSE_SKIPPABLE 32
         YIELD
 

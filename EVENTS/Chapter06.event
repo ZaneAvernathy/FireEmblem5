@@ -148,7 +148,7 @@ GUARD_FE5_CHAPTER06 :?= false
         EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
         JUMP_FALSE ++
 
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
           EVENT_TEST_FLAG_SET FlagEmilySaved
           JUMP_TRUE +
 
@@ -179,7 +179,7 @@ GUARD_FE5_CHAPTER06 :?= false
         EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
         JUMP_FALSE ++
 
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           STORE_WORD wMapBattleFlag, $0001
 
@@ -192,7 +192,7 @@ GUARD_FE5_CHAPTER06 :?= false
             JUMP ++
 
           +
-          PLAY_SOUND_WORD $00E0
+          PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -224,7 +224,7 @@ GUARD_FE5_CHAPTER06 :?= false
         EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
         JUMP_FALSE ++
 
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           EVENT_TEST_FLAG_SET FlagCliffSaved
           JUMP_TRUE +
@@ -256,7 +256,7 @@ GUARD_FE5_CHAPTER06 :?= false
         EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
         JUMP_FALSE ++
 
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           EVENT_TEST_FLAG_SET FlagBowieSaved
           JUMP_TRUE +
@@ -288,7 +288,7 @@ GUARD_FE5_CHAPTER06 :?= false
         EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
         JUMP_FALSE ++
 
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           EVENT_TEST_FLAG_SET FlagVeraSaved
           JUMP_TRUE +
@@ -320,7 +320,7 @@ GUARD_FE5_CHAPTER06 :?= false
         EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $0000
         JUMP_FALSE ++
 
-          PLAY_SOUND_WORD $00F7
+          PLAY_SOUND_FORCED $00F7
 
           EVENT_TEST_FLAG_SET FlagLinaSaved
           JUMP_TRUE +
@@ -368,7 +368,7 @@ GUARD_FE5_CHAPTER06 :?= false
       END1
 
       _DoorOpenDialogue ; 99/AB87
-        PLAY_SOUND_WORD $00F7
+        PLAY_SOUND_FORCED $00F7
 
         DIALOGUE dialogueChapter06DoorOpenDialogue1
 
@@ -388,7 +388,7 @@ GUARD_FE5_CHAPTER06 :?= false
 
       _CedAppear ; 99/ABB5
 
-        PLAY_SOUND_WORD $00E0
+        PLAY_SOUND_FORCED $00E0
         PAUSE_SKIPPABLE 32
         YIELD
 
@@ -410,7 +410,7 @@ GUARD_FE5_CHAPTER06 :?= false
 
       _CedFlee ; 99/ABD5
 
-        PLAY_SOUND_WORD $00F7
+        PLAY_SOUND_FORCED $00F7
 
         SCROLL_CAMERA_CHAR CedChp4x, 4
 
@@ -434,7 +434,7 @@ GUARD_FE5_CHAPTER06 :?= false
 
       _SaiasGalzus ; 99/ACD3
 
-        PLAY_SOUND_WORD $00E0
+        PLAY_SOUND_FORCED $00E0
         PAUSE_SKIPPABLE 32
         YIELD
 
@@ -477,7 +477,7 @@ GUARD_FE5_CHAPTER06 :?= false
         WAIT_MOVE
         YIELD
 
-        PLAY_SOUND_WORD $00E0
+        PLAY_SOUND_FORCED $00E0
         PAUSE_SKIPPABLE 32
         YIELD
 
@@ -524,7 +524,7 @@ GUARD_FE5_CHAPTER06 :?= false
 
         HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
-        PLAY_SOUND_WORD $00E0
+        PLAY_SOUND_FORCED $00E0
         PAUSE_SKIPPABLE 32
         YIELD
 
@@ -621,13 +621,13 @@ GUARD_FE5_CHAPTER06 :?= false
 
       _EndingEvent ; 99/AFC0
 
-        PLAY_SOUND_WORD $00E0
+        PLAY_SOUND_FORCED $00E0
         PAUSE_SKIPPABLE 16
         YIELD
 
         CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
 
-        PLAY_SOUND_WORD $00E0
+        PLAY_SOUND_FORCED $00E0
         PAUSE_SKIPPABLE 32
         YIELD
 
