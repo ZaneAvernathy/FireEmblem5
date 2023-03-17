@@ -31,11 +31,11 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
       rlMenuTryScrollUp                          :?= address($83C8EE)
       rlSetUpScrollingArrowSpeed                 :?= address($83CCB1)
       rlSetDownScrollingArrowSpeed               :?= address($83CCC9)
-      rlToggleDownwardsSpinningArrow             :?= address($83CCE1)
-      rlToggleUpwardsSpinningArrow               :?= address($83CCF9)
+      rlToggleUpwardsSpinningArrow               :?= address($83CCE1)
+      rlToggleDownwardsSpinningArrow             :?= address($83CCF9)
       rlDrawTilemapPackedRect                    :?= address($84A3FF)
-      rlCreateDownwardsSpinningArrow             :?= address($83CB26)
-      rlCreateUpwardsSpinningArrow               :?= address($83CB53)
+      rlCreateUpwardsSpinningArrow               :?= address($83CB26)
+      rlCreateDownwardsSpinningArrow             :?= address($83CB53)
       rlDrawRightFacingCursor                    :?= address($859013)
       rlDrawRightFacingStaticCursorHighPrio      :?= address($8590CF)
       rlUnknown859132                            :?= address($859132)
@@ -657,13 +657,13 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
           sta wR0
           lda #(MiddleRegion.Position[1] * 8) - 1
           sta wR1
-          jsl rlCreateDownwardsSpinningArrow
+          jsl rlCreateUpwardsSpinningArrow
 
           lda #(256 / 2) - 8
           sta wR0
           lda #((MiddleRegion.Position[1] + MiddleRegion.Size[1] - 1) * 8) + 1
           sta wR1
-          jsl rlCreateUpwardsSpinningArrow
+          jsl rlCreateDownwardsSpinningArrow
 
           rts
 
@@ -3445,7 +3445,7 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
 
           +
           txa
-          jsl rlToggleUpwardsSpinningArrow
+          jsl rlToggleDownwardsSpinningArrow
 
           ; If we're at the bottom of the screen, we don't
           ; want the downward facing arrow.
@@ -3471,7 +3471,7 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
 
           +
           txa
-          jsl rlToggleDownwardsSpinningArrow
+          jsl rlToggleUpwardsSpinningArrow
           rts
 
           .databank 0
