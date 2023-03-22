@@ -71,6 +71,7 @@
 
   .include "SRC/StatusWindow.asm"
   .include "SRC/OptionsWindow.asm"
+  .include "SRC/UnitWindow.asm"
 
 ; Sections
 
@@ -112,6 +113,13 @@
       .fill mapped($001B00) - *, $FF
 
     endFreespace
+
+  .endlogical
+
+  * := $004623
+  .logical mapped($004623)
+
+    .dsection UnitWindow80Section
 
   .endlogical
 
@@ -642,6 +650,19 @@
 
   .endlogical
 
+  * := $08434E
+  .logical mapped($08434E)
+
+    .dsection UnitWindow90Section
+
+    startFreespace
+
+      .fill mapped($080000) + $8000 - *, $FF
+
+    endFreespace
+
+  .endlogical
+
   * := $0871F3
   .logical mapped($0871F3)
 
@@ -842,8 +863,10 @@
 
   .endlogical
 
-  * := $0D7E28
-  .logical mapped($0D7E28)
+  * := $0D6C8D
+  .logical mapped($0D6C8D)
+
+    .dsection UnitWindow9ASection
 
     startFreespace
 
