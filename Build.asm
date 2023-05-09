@@ -562,10 +562,18 @@
 
   .endlogical
 
-  * := $06D8A4
-  .logical mapped($06D8A4)
+  * := $06C7BD
+  .logical mapped($06C7BD)
+
+    .dsection AIStaffTargetingSection
+
+  .endlogical
+
+  * := $06D876
+  .logical mapped($06D876)
 
     .dsection AIItemUseSection
+    .dsection AIAdjacentInteractionsSection
 
   .endlogical
 

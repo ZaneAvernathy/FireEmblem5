@@ -7,6 +7,8 @@ GUARD_FE5_AI :?= false
 .if (!GUARD_FE5_AI)
   GUARD_FE5_AI := true
 
+  ; The majority of the legwork here was done by Ultimage.
+
   ; Definitions
 
   .weak
@@ -14,7 +16,7 @@ GUARD_FE5_AI :?= false
     rlGetRandomNumber100                          :?= address($80B0E6)
     rlBlockFillWord                               :?= address($80B36C)
     rlSetupMovementDirectionArray                 :?= address($80E451)
-    rlUnknown80E551                               :?= address($80E551)
+    rlCapMovementRangeMap                         :?= address($80E551)
     rlGetMapUnitsInRange                          :?= address($80E5CD)
     rlFillMapByWord                               :?= address($80E849)
     rlGetEffectiveMove                            :?= address($8387D5)
@@ -24,9 +26,12 @@ GUARD_FE5_AI :?= false
     rlCopyCharacterDataToBufferByDeploymentNumber :?= address($83901C)
     rlCopyCharacterDataFromBuffer                 :?= address($839041)
     rlCopyExpandedCharacterDataBufferToBuffer     :?= address($83905C)
+    rlCombineCharacterDataAndClassBases           :?= address($8390BE)
     rlCopyClassDataToBuffer                       :?= address($8393E0)
     rlCheckItemEquippable                         :?= address($83965E)
+    rlGetEquippableItemInventoryOffset            :?= address($839705)
     rlRunRoutineForAllUnitsInAllegiance           :?= address($839825)
+    rlRunRoutineForAllUnits                       :?= address($839861)
     rlRunRoutineForAllItemsInInventory            :?= address($83993C)
     rlRunRoutineForTilesIn1Range                  :?= address($839969)
     rlSetAllegianceToNPC                          :?= address($83A349)
@@ -35,6 +40,7 @@ GUARD_FE5_AI :?= false
     rlCheckIfAllegianceDoesNotMatchPhaseTarget    :?= address($83B34F)
     rlUnknown83CD3E                               :?= address($83CD3E)
     rlActionStructEnemyCombatSelection            :?= address($83CF4A)
+    rlActionStructGetItemBonusesItemPreset        :?= address($83E669)
     rlActionStructStaff                           :?= address($83E990)
     rlSetBerserkedUnitAIInfo                      :?= address($83F53B)
     rlUpdateItemDurability                        :?= address($83FA1E)
@@ -42,42 +48,46 @@ GUARD_FE5_AI :?= false
     rlTestEventFlagSet                            :?= address($8C9BCA)
     rlRunChapterLocationEvents                    :?= address($8C9CBD)
 
-    rsAIInteractionSetup                       :?= address($8D9F28)
-    rsAIGetTargetsIn3TileRange                 :?= address($8DA53D)
-    rsAIRunRoutineForAllTilesInMovementRange   :?= address($8DA7D5)
-    rsAIRunRoutineForAllTilesBeforeAttackRange :?= address($8DA7FB)
-    rsAIRunRoutineForAllTilesInAttackRange     :?= address($8DA821)
-    rsAICheckIfTerrainIsInList                 :?= address($8DA869)
-    rsAIRunRoutineForAllUnitsInAllegiance      :?= address($8DA8F9)
-    rsAITryGetUnitEquippedWeaponRange          :?= address($8DAA7A)
-    rsAIHandleNoncombatCycleActionAI           :?= address($8DAAC1)
-    rlAIFillMovementRangeMapByClass            :?= address($8DABD1)
-    rlAIGetTraversableTilesAndFillRangeMap     :?= address($8DAC21)
-    rlAIFillRangeMap                           :?= address($8DAC45)
-    rsAIFillMovementMapWithAttackRange         :?= address($8DACE1)
-    rsAIUnknown8DAD49                          :?= address($8DAD49)
-    rlAIAddToCharacterBufferField              :?= address($8DAEAE)
-    rsAIGetUnitHPPercentage                    :?= address($8DAEDC)
-    rsAIGetPathableTilesAtTile                 :?= address($8DAF65)
-    rsAIGetPathableTilesAtTileIgnoreOpponents  :?= address($8DAF8F)
-    rlAITryFillThreatenedTileMap               :?= address($8DB0B2)
-    rsAIFinishAllyInteraction                  :?= address($8DB312)
-    rsAITryMove                                :?= address($8DB33B)
-    rsAIGetSelectedUnitInfo                    :?= address($8DB409)
-    rsAIRollAISkipChance                       :?= address($8DB6BA)
-    rsAICheckStationaryAI                      :?= address($8DB81F)
-    rsAITryGetCantoDistance                    :?= address($8DB831)
-    rsAITryGetBetterPath                       :?= address($8DB84F)
-    rsAICanUnitOpenChests                      :?= address($8DB88C)
-    rsAIIsUnitAsleepOrPetrified                :?= address($8DB8F7)
-    rsAITryObtainNewWeapon                     :?= address($8DBDB3)
-    rsAIGetUnitItemProperties                  :?= address($8DBEBF)
-    rsAITryFlee                                :?= address($8DC07E)
-    rsAITryGetUsableStaff                      :?= address($8DC7BD)
-    rsAIRunRoutineForOpposingAllegiances       :?= address($8DD307)
-    rsAITryGetUsableItem                       :?= address($8DD876)
-    rsAIActionUseItem                          :?= address($8DDAEB)
-    rsAITryGetAdjacentInteractions             :?= address($8DDB1C)
+    rsAIInteractionSetup                        :?= address($8D9F28)
+    rsAIGetTargetsIn3TileRange                  :?= address($8DA53D)
+    rsAIRunRoutineForAllTilesInMovementRange    :?= address($8DA7D5)
+    rsAIRunRoutineForAllTilesBeforeAttackRange  :?= address($8DA7FB)
+    rsAIRunRoutineForAllTilesInAttackRange      :?= address($8DA821)
+    rsAICheckIfTerrainIsInList                  :?= address($8DA869)
+    rsAIRunRoutineForAllUnitsInAllegiance       :?= address($8DA8F9)
+    rsAITryGetUnitEquippedWeaponRange           :?= address($8DAA7A)
+    rsAIHandleNoncombatCycleActionAI            :?= address($8DAAC1)
+    rlAIFillMovementRangeMapByClass             :?= address($8DABD1)
+    rlAIGetTraversableTilesAndFillRangeMap      :?= address($8DAC21)
+    rlAIFillRangeMap                            :?= address($8DAC45)
+    rsAIFillMovementMapWithAttackRange          :?= address($8DACE1)
+    rsAIUnknown8DAD49                           :?= address($8DAD49)
+    rsAICheckIfUsableStaff                      :?= address($8DAE7F)
+    rlAIAddToCharacterBufferField               :?= address($8DAEAE)
+    rsAIGetUnitHPPercentage                     :?= address($8DAEDC)
+    rsAIGetPathableTilesAtTile                  :?= address($8DAF65)
+    rsAIGetPathableTilesAtTileIgnoreOpponents   :?= address($8DAF8F)
+    rlAITryFillThreatenedTileMap                :?= address($8DB0B2)
+    rsAIFinishAllyInteraction                   :?= address($8DB312)
+    rsAITryMove                                 :?= address($8DB33B)
+    rsAIGetSelectedUnitInfo                     :?= address($8DB409)
+    rsAIRollAISkipChance                        :?= address($8DB6BA)
+    rsAICheckStationaryAI                       :?= address($8DB81F)
+    rsAITryGetCantoDistance                     :?= address($8DB831)
+    rsAITryGetBetterPath                        :?= address($8DB84F)
+    rsAICanUnitOpenChests                       :?= address($8DB88C)
+    rsAIIsUnitAsleepOrPetrified                 :?= address($8DB8F7)
+    rsAITryObtainNewWeapon                      :?= address($8DBDB3)
+    rsAIGetUnitItemProperties                   :?= address($8DBEBF)
+    rsAITryFlee                                 :?= address($8DC07E)
+    rsAISelectStatusStaffTarget                 :?= address($8DD4DA)
+    rsAISelectRewarpStaffTarget                 :?= address($8DD51D)
+    rsAISelectThiefStaffTarget                  :?= address($8DD58A)
+    rsAISelectBestStaffTargetAdjacentTile       :?= address($8DD5DA)
+    rsAISelectTeleportDestination               :?= address($8DD633)
+    rsAISelectHammerneStaffTarget               :?= address($8DD75E)
+    rsAISelectUnlockStaffTarget                 :?= address($8DD792)
+    rsAISetStaffAction                          :?= address($8DD80E)
 
     MovementMax :?= $71 ; TODO: figure out why this is the max
 
@@ -121,10 +131,14 @@ GUARD_FE5_AI :?= false
 
     ; AI Action decisions
 
+      ; TODO: enum?
+
       AI_Action_Move      = $00
       AI_Action_Unknown02 = $02
-      AI_Action_Unknown03 = $03
+      AI_Action_Item      = $03
+      AI_Action_Flee      = $05
       AI_Action_Unknown06 = $06 ; Canto but path blocked, don't move camera?
+      AI_Action_Steal     = $08
       AI_Action_Dance     = $0D
 
     ; For coordinate tables used by
@@ -198,6 +212,178 @@ GUARD_FE5_AI :?= false
       RecoveryThresholdList := [(30, 80), (10, 60), (50, 100), (0, 100), (70, 100)]
 
       ChestTerrainList := [TerrainIndoorChest, TerrainOutdoorChest]
+      DoorTerrainList  := [TerrainDoor]
+
+      ; Misc. helper snippets
+
+        ; This is a helper for getting a unit's effective move.
+        macroAIEffectiveMove .macro Buffer=aSelectedCharacterBuffer
+          lda wAIStationaryFlag
+          beq +
+
+            lda #0
+            bra ++
+
+          +
+            lda #<>\Buffer
+            sta wR14
+            jsl rlGetEffectiveMove
+
+          +
+        .endmacro
+
+        ; This is a helper for filling out the movement range map. It
+        ; expects you to fill in wR2 before using it.
+        macroAIMovementRange .macro Flag=true, Buffer=aSelectedCharacterBuffer
+          lda \Buffer.X,b
+          and #$00FF
+          sta wR0
+
+          lda \Buffer.Y,b
+          and #$00FF
+          sta wR1
+
+          lda \Buffer.Class,b
+          and #$00FF
+          sta wR3
+
+          .if (\Flag)
+            lda #-1
+            sta wR4
+          .else
+            stz wR4
+          .endif
+
+          lda \Buffer.Skills1,b
+          sta wR5
+
+          jsl rlFillMovementRangeMapByClass
+        .endmacro
+
+        ; This is a helper for rsAIRunRoutineForAllTilesInMovementRange
+        macroAIForAllTilesInMovementRange .macro Filter, Reversed=false
+          .if !(\Reversed)
+            lda #(`\Filter)<<8
+            sta lR24+size(byte)
+            lda #<>\Filter
+            sta lR24
+          .else
+            lda #<>\Filter
+            sta lR24
+            lda #>`\Filter
+            sta lR24+size(byte)
+          .endif
+          jsr rsAIRunRoutineForAllTilesInMovementRange
+        .endmacro
+
+        ; This is a helper for running a routine for all
+        ; potential hostile targets
+        macroAIForAllHostileUnits .macro Filter
+          lda #(`\Filter)<<8
+          sta lR25+size(byte)
+          lda #<>\Filter
+          sta lR25
+
+          ldy wAIBerserkedActorFlag
+          bne +
+
+            jsr rsAIRunRoutineForOpposingAllegiances
+            bra ++
+
+          +
+            jsl rlRunRoutineForAllUnits
+
+          +
+        .endmacro
+
+        ; This is a helper for running a routine for all
+        ; potential friendly targets
+        macroAIForAllFriendlyUnits .macro Filter
+          lda #(`\Filter)<<8
+          sta lR25+size(byte)
+          lda #<>\Filter
+          sta lR25
+
+          ldy wAIBerserkedActorFlag
+          bne +
+
+            lda wCurrentPhase,b
+            inc a
+            jsl rlRunRoutineForAllUnitsInAllegiance
+            bra ++
+
+          +
+            jsl rlRunRoutineForAllUnits
+
+          +
+        .endmacro
+
+        ; This is a helper for getting a unit's stats with their
+        ; item bonuses.
+        macroAIGetStatsWithItemBonuses .macro Buffer=aTargetingCharacterBuffer
+          lda #<>\Buffer
+          sta wR1
+          jsl rlCombineCharacterDataAndClassBases
+
+          lda #<>\Buffer
+          sta wR1
+          jsl rlGetEquippableItemInventoryOffset
+
+          ldx #<>\Buffer
+          jsl rlActionStructGetItemBonusesItemPreset
+        .endmacro
+
+      ; Helpers for aAIMainVariables.aTargetArray
+
+        structAIGenericTarget .struct
+          Target    .word ?
+          Parameter .word ?
+        .endstruct
+
+        structAITargetByTileIndexCurrentHP .struct
+          TileIndex .word ?
+          CurrentHP .word ?
+        .endstruct
+
+        structAITargetByDeploymentNumberCurrentHP .struct
+          DeploymentNumber .word ?
+          CurrentHP        .word ?
+        .endstruct
+
+        structAITargetByTileIndexStatus .struct
+          TileIndex .word ?
+          Status    .word ?
+        .endstruct
+
+        structAITargetByDeploymentNumberMagic .struct
+          DeploymentNumber .word ?
+          Magic            .word ?
+        .endstruct
+
+        structAITargetByTileIndexDistance .struct
+          TileIndex .word ?
+          Distance  .word ?
+        .endstruct
+
+        structAITargetByTileIndexMagic .struct
+          TileIndex .word ?
+          Magic     .word ?
+        .endstruct
+
+        ; Helper for structAITargetByDeploymentNumberWeaponRankItem
+
+        structAIBestItem .struct
+          WeaponRank .byte ?
+          ItemOffset .byte ?
+        .endstruct
+
+        structAITargetByDeploymentNumberWeaponRankItem .struct
+          DeploymentNumber        .word ?
+          .union
+            WeaponRankAndItemOffset .word ?
+            .dstruct structAIBestItem
+          .endunion
+        .endstruct
 
   .virtual $8D8D50
 
@@ -399,7 +585,7 @@ GUARD_FE5_AI :?= false
                 jsr rsAIIsUnitAsleepOrPetrified
                 bcs _Next
 
-                  lda wAIAllegianceHasBerserkedUnitFlag
+                  lda wAIBerserkedActorFlag
                   bne _BerserkedUnits
 
                     jsr rsAIGetUnitItemProperties
@@ -416,7 +602,7 @@ GUARD_FE5_AI :?= false
             ; If any units are berserked, re-add them
             ; to the end of the list and try again.
 
-            lda wAIAllegianceHasBerserkedUnitFlag
+            lda wAIBerserkedActorFlag
             bne +
 
             jsl rlAddBerserkedUnitsToAIList
@@ -565,7 +751,7 @@ GUARD_FE5_AI :?= false
             and #UnitStateGrayed
             bne _SkipUnit
 
-            lda wAIAllegianceHasBerserkedUnitFlag
+            lda wAIBerserkedActorFlag
             bne _BerserkedOrAIOutOfBounds
 
             _Loop
@@ -615,7 +801,7 @@ GUARD_FE5_AI :?= false
 
             _BerserkedOrAIOutOfBounds
 
-            ; A either contains wAIAllegianceHasBerserkedUnitFlag
+            ; A either contains wAIBerserkedActorFlag
             ; or aSelectedCharacterBuffer.ActionAI if >= 26?
 
             ; Try to use items?
@@ -656,7 +842,7 @@ GUARD_FE5_AI :?= false
             and #UnitStateGrayed
             bne _SkipUnit
 
-            lda wAIAllegianceHasBerserkedUnitFlag
+            lda wAIBerserkedActorFlag
             bne _BerserkedOrAIOutOfBounds
 
             _Loop
@@ -1803,7 +1989,7 @@ GUARD_FE5_AI :?= false
             +
             sep #$20
 
-            lda #AI_Action_Unknown03
+            lda #AI_Action_Item
             sta aAISelectedUnitInfo.bActionDecision
 
             lda wAITemp7E4038
@@ -2427,7 +2613,7 @@ GUARD_FE5_AI :?= false
 
             .databank 0
 
-          rlAITryUpdateAllRecoveryModeInCurrentAllegianceEffect
+          rlAITryUpdateAllRecoveryModeInCurrentAllegianceEffect ; 8D/89B5
 
             .al
             .autsiz
@@ -3693,9 +3879,2779 @@ GUARD_FE5_AI :?= false
 
       .endsection AICheckIfTileIsLessThreatenedSection
 
+      .section AIStaffTargetingSection
+
+        startCode
+
+          rsAITryGetUsableStaff ; 8D/C7BD
+
+            .al
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Inputs:
+            ; wAIConsiderRecoveryModeFlag: -1 to ignore recovery settings
+
+            ; Outputs:
+            ; aAIMainVariables.wScriptContinueFlag: cleared
+            ; Carry clear if staff selected, else carry set.
+
+            stz wAITemp7E4038
+            stz wAICurrentBestTarget
+            stz wAITemp7E4018
+
+            _Loop
+
+              lda wAITemp7E4038
+
+              jsr rsAICheckIfUsableStaff
+              beq +
+              bcs _Next
+
+                sta wAITemp7E403A
+                lda aItemDataBuffer.WeaponRank,b
+                cmp wAICurrentBestTarget
+                blt _Next
+
+                  jsr rsAITryGetStaffTarget
+
+                  lda wAITemp7E400C
+                  bmi _Next
+
+                    lda aItemDataBuffer.WeaponRank,b
+                    sta wAICurrentBestTarget
+
+                    lda wAITemp7E400C
+                    sta wAITemp7E4018
+
+                    lda wAITemp7E4038
+                    sta wAITemp7E4023
+
+                    lda aAIMainVariables.wBestTarget
+                    sta wAITemp7E4025
+
+            _Next
+
+              lda wAITemp7E4038
+
+              .rept size(word)
+                inc a
+              .endrept
+
+              sta wAITemp7E4038
+
+              cmp #size(aSelectedCharacterBuffer.Items)
+              bne _Loop
+
+            +
+
+            lda wAITemp7E4018
+            beq _NoStaff
+
+              sta wAITemp7E400C
+
+              lda wAITemp7E4023
+              sta wAITemp7E4038
+
+              lda wAITemp7E4025
+              sta aAIMainVariables.wBestTarget
+
+              jsr rsAISetStaffAction
+
+              stz aAIMainVariables.wScriptContinueFlag
+
+              clc
+              rts
+
+            _NoStaff
+
+              stz aAIMainVariables.wScriptContinueFlag
+
+              sec
+              rts
+
+            .databank 0
+
+          rsAITryGetStaffTarget ; 8D/C829
+
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Inputs:
+            ; aItemDataBuffer: filled with staff
+
+            ; Outputs:
+            ; None
+
+            php
+
+            rep #$30
+
+            lda aItemDataBuffer.DisplayedWeapon,b
+            and #$00FF
+            sec
+            sbc #Heal
+
+            asl a
+            tax
+
+            lda #-1
+            sta wAITemp7E400C
+
+            jsr (_TargetingPointers,x)
+
+            plp
+            rts
+
+            endCode
+            startData
+
+              _TargetingPointers ; 8D/C843
+                .addr rsAITryGet1RangeHealStaffTarget   ; Heal
+                .addr rsAITryGet1RangeHealStaffTarget   ; Mend
+                .addr rsAITryGet1RangeHealStaffTarget   ; Recover
+                .addr rsAITryGetPhysicStaffTarget       ; Physic
+                .addr rsAITryGetFortifyStaffTarget      ; Fortify
+                .addr rsAITryGetRescueStaffTarget       ; Rescue
+                .addr rsAITryGetWarpStaffTarget         ; Warp
+                .addr rsAITryGetRestoreStaffTarget      ; Restore
+                .addr rsAITryGetSilenceStaffTarget      ; SilenceStaff
+                .addr rsAITryGetSleepBerserkStaffTarget ; Sleep
+                .addr rsAITryGetDummyStaffTarget        ; TorchStaff
+                .addr rsAITryGetReturnStaffTarget       ; ReturnStaff
+                .addr rsAITryGetHammerneStaffTarget     ; Hammerne
+                .addr rsAITryGetThiefStaffTarget        ; ThiefStaff
+                .addr rsAITryGetDummyStaffTarget        ; Watch
+                .addr rsAITryGetSleepBerserkStaffTarget ; Berserk
+                .addr rsAITryGetUnlockStaffTarget       ; Unlock
+                .addr rsAITryGetWardStaffTarget         ; Ward
+                .addr rsAITryGetRewarpStaffTarget       ; Rewarp
+                .addr rsAITryGetDummyStaffTarget        ; Kia
+                .addr rsAITryGetDummyStaffTarget        ; DrainedStaff
+
+            endData
+            startCode
+
+            .databank 0
+
+          rsAITryGetDummyStaffTarget ; 8D/C86D
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; This is the targeting check for staves
+            ; that don't have to make a target list?
+
+            rts
+
+            .databank 0
+
+          rsAITryGet1RangeHealStaffTarget ; 8D/C86E
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; This is the targeting check for melee
+            ; healing staves.
+
+            jsr rsAIBuild1RangeHealingStaffTargetList
+            bcs +
+
+              jsr rsAISelectLowestParam1RangeStaffTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAITryGetPhysicStaffTarget ; 8D/C877
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; This is the targeting check for Physic.
+
+            jsr rsAIBuildGlobalRangeHealingStaffTargetList
+            bcs +
+
+              jsr rsAISelectLowestParamGlobalRangeStaffTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAITryGetFortifyStaffTarget ; 8D/C880
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; This is the targeting check for Fortify.
+
+            jsr rsAIBuildGlobalRangeHealingStaffTargetList
+            bcs +
+
+              jsr rsAISelectFortifyTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAITryGetRescueStaffTarget ; 8D/C889
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            jsr rsAIBuildRescueStaffTargetList
+            bcs +
+
+              jsr rsAISelectLowestParamGlobalRangeStaffTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAITryGetWarpStaffTarget ; 8D/C892
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            jsr rsAIBuildWarpStaffTargetList
+            bcs _End
+
+              jsr rsAISelectWarpStaffTarget
+              lda wAIStationaryFlag
+              beq _GetMove
+
+                lda #0
+                bra +
+
+              _GetMove
+              lda #<>aSelectedCharacterBuffer
+              sta wR14
+              jsl rlGetEffectiveMove
+
+              +
+              sta wR2
+              lda aSelectedCharacterBuffer.X,b
+              and #$00FF
+              sta wR0
+              lda aSelectedCharacterBuffer.Y,b
+              and #$00FF
+              sta wR1
+              lda aSelectedCharacterBuffer.Class,b
+              and #$00FF
+              sta wR3
+              lda #-1
+              sta wR4
+              lda aSelectedCharacterBuffer.Skills1,b
+              sta wR5
+              jsl rlFillMovementRangeMapByClass
+
+            _End
+            rts
+
+            .databank 0
+
+          rsAITryGetRestoreStaffTarget ; 8D/C8D6
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            jsr rsAIBuildRestoreStaffTargetList
+            bcs +
+
+              jsr rsAISelectLowestParam1RangeStaffTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAITryGetSilenceStaffTarget ; 8D/C8DF
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            jsr rsAIBuildSilenceStaffTargetList
+            bcs +
+
+              jsr rsAISelectStatusStaffTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAITryGetSleepBerserkStaffTarget ; 8D/C8E8
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            jsr rsAIBuildSleepBerserkStaffTargetList
+            bcs +
+
+              jsr rsAISelectStatusStaffTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAITryGetReturnStaffTarget ; 8D/C8F1
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            jsr rsAIBuildReturnStaffTargetList
+            bcs +
+
+              jsr rsAISelectLowestParam1RangeStaffTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAITryGetHammerneStaffTarget ; 8D/C8FA
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            jsr rsAIBuildHammerneStaffTargetList
+            bcs +
+
+              jsr rsAISelectLowestParam1RangeStaffTarget
+              jsr rsAISelectHammerneStaffTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAITryGetThiefStaffTarget ; 8D/C906
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            jsr rsAIBuildThiefStaffTargetList
+            bcs +
+
+              jsr rsAISelectThiefStaffTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAITryGetWardStaffTarget ; 8D/C90F
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            jsr rsAIBuildWardStaffTargetList
+            bcs +
+
+              jsr rsAISelectLowestParam1RangeStaffTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAITryGetRewarpStaffTarget ; 8D/C918
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            jsr rsAICountRewarpNearbyEnemies
+            bcs _End
+
+              lda wAIStationaryFlag
+              beq _GetMove
+
+                lda #0
+                bra +
+
+              _GetMove
+              lda #<>aSelectedCharacterBuffer
+              sta wR14
+              jsl rlGetEffectiveMove
+
+              +
+              sta wR2
+              lda aSelectedCharacterBuffer.X,b
+              and #$00FF
+              sta wR0
+              lda aSelectedCharacterBuffer.Y,b
+              and #$00FF
+              sta wR1
+              lda aSelectedCharacterBuffer.Class,b
+              and #$00FF
+              sta wR3
+              lda #-1
+              sta wR4
+              lda aSelectedCharacterBuffer.Skills1,b
+              sta wR5
+              jsl rlFillMovementRangeMapByClass
+              jsl rlAICopyMovementMapToRangeMap
+
+              jsr rsAISelectRewarpStaffTarget
+
+            _End
+            rts
+
+            .databank 0
+
+          rsAITryGetUnlockStaffTarget ; 8D/C960
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            lda wAIActionCapabilityBitfield
+            bit #AI_ACUnlock
+            beq +
+
+            jsr rsAIBuildUnlockStaffTargetList
+            bcs +
+
+              jsr rsAISelectUnlockStaffTarget
+
+            +
+            rts
+
+            .databank 0
+
+          rsAIBuild1RangeHealingStaffTargetList ; 8D/C971
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for 1-range healing staves.
+
+            ; Valid targets are anyone in a non-hostile group that
+            ; have less than max health and are in recovery mode
+            ; (if recovery mode is being considered)
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: filled with structAITargetByTileIndexCurrentHP
+            ; Carry clear if at least one target, set otherwise
+
+            macroAIEffectiveMove
+            sta wR2
+
+            macroAIMovementRange
+            jsl rlCapMovementRangeMap
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllTilesInMovementRange rlAIBuild1RangeHealingStaffTargetListFilter
+
+            ; If we have any targets, cap the list. Return
+            ; whether we have any targets.
+
+            lda aAIMainVariables.wTargetArrayOffset
+            beq +
+
+              tax
+
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              clc
+              rts
+
+            +
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuild1RangeHealingStaffTargetListFilter ; 8D/C9D0
+
+            .as
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Valid targets are anyone in a non-hostile group that
+            ; have less than max health and are in recovery mode
+            ; (if recovery mode is being considered)
+
+            ; Inputs:
+            ; X: tile index of current target
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aTargetingCharacterBuffer: filled with target unit
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexCurrentHP
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexCurrentHP
+
+            php
+
+            lda aUnitMap,x
+            beq _End
+
+            cmp aSelectedCharacterBuffer.DeploymentNumber,b
+            beq _End
+
+            ldy wAIBerserkedActorFlag
+            bne +
+
+              jsl rlCheckIfAllegianceDoesNotMatchPhaseTarget
+              bcs _End
+
+            +
+            lda aUnitMap,x
+            sta wR0
+            ldy #<>aTargetingCharacterBuffer
+            sty wR1
+            jsl rlCopyCharacterDataToBufferByDeploymentNumber
+
+            lda aTargetingCharacterBuffer.MaxHP,b
+            cmp aTargetingCharacterBuffer.CurrentHP,b
+            beq _End
+
+              lda wAIConsiderRecoveryModeFlag
+              bne +
+
+                lda aTargetingCharacterBuffer.ActionMisc,b
+                bit #AI_RecoveryFlag
+                beq _End
+
+              +
+              rep #$20
+
+              txa
+              ldx aAIMainVariables.wTargetArrayOffset
+              sta aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.TileIndex,x
+
+              lda aTargetingCharacterBuffer.CurrentHP,b
+              and #$00FF
+              sta aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.CurrentHP,x
+
+              .rept size(structAITargetByTileIndexCurrentHP)
+                inc x
+              .endrept
+
+              stx aAIMainVariables.wTargetArrayOffset
+
+            _End
+            plp
+            rts
+
+            .databank 0
+
+          rsAIBuildGlobalRangeHealingStaffTargetList ; 8D/CA23
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for global healing staves.
+
+            ; Valid targets are living friendly units (except for the
+            ; caster themself) that have less than max health and are
+            ; in recovery mode (if recovery mode is being considered)
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberCurrentHP
+            ; Carry clear if at least one target, set otherwise
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllFriendlyUnits rlAIBuildGlobalRangeHealingStaffTargetListFilter
+
+            ; Filling out the caster's movement range isn't needed
+            ; to get the global target list, but is needed for further steps
+            ; if we have at least one possible target.
+
+            lda aAIMainVariables.wTargetArrayOffset
+            beq _NoTargets
+
+              tax
+
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              macroAIEffectiveMove
+              sta wR2
+
+              macroAIMovementRange
+
+              clc
+              rts
+
+            _NoTargets
+
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuildGlobalRangeHealingStaffTargetListFilter ; 8D/CA8E
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering function for rsAIBuildGlobalRangeHealingStaffTargetList
+
+            ; Valid targets are living friendly units (except for the
+            ; caster themself) that have less than max health and are
+            ; in recovery mode (if recovery mode is being considered)
+
+            ; Inputs:
+            ; X: tile index of current target
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aTargetingCharacterBuffer: filled with target unit
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberCurrentHP
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberCurrentHP
+
+            php
+
+            lda aTargetingCharacterBuffer.UnitState,b
+            bit #UnitStateDead | UnitStateHidden
+            bne _End
+
+            sep #$20
+
+            lda aTargetingCharacterBuffer.DeploymentNumber,b
+            cmp aSelectedCharacterBuffer.DeploymentNumber,b
+            beq _End
+
+            lda aTargetingCharacterBuffer.MaxHP,b
+            cmp aTargetingCharacterBuffer.CurrentHP,b
+            beq _End
+
+              rep #$30
+
+              lda wAIConsiderRecoveryModeFlag
+              bne +
+
+                lda aTargetingCharacterBuffer.ActionMisc,b
+                bit #AI_RecoveryFlag
+                beq _End
+
+              +
+              ldx aAIMainVariables.wTargetArrayOffset
+
+              lda aTargetingCharacterBuffer.DeploymentNumber,b
+              and #$00FF
+              sta aAIMainVariables.aTargetArray+structAITargetByDeploymentNumberCurrentHP.DeploymentNumber,x
+
+              lda aTargetingCharacterBuffer.CurrentHP,b
+              and #$00FF
+              sta aAIMainVariables.aTargetArray+structAITargetByDeploymentNumberCurrentHP.CurrentHP,x
+
+              .rept size(structAITargetByDeploymentNumberCurrentHP)
+                inc x
+              .endrept
+
+              stx aAIMainVariables.wTargetArrayOffset
+
+            _End
+            plp
+            rtl
+
+            .databank 0
+
+          rsAIBuildRescueStaffTargetList ; 8D/CAD6
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for the Rescue staff.
+
+            ; Valid targets are living, non-special friendly units
+            ; on valid tiles that are in recovery mode (if recovery
+            ; mode is being considered)
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberCurrentHP
+            ; Carry clear if at least one target, set otherwise
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            ; It seems like the Rescue staff doesn't respect
+            ; wAIStationaryFlag or wAIBerserkedActorFlag.
+
+            lda #<>aSelectedCharacterBuffer
+            sta wR14
+            jsl rlGetEffectiveMove
+            sta wR2
+
+            macroAIMovementRange false
+
+            lda #(`rlAIBuildRescueStaffTargetListFilter)<<8
+            sta lR25+size(byte)
+            lda #<>rlAIBuildRescueStaffTargetListFilter
+            sta lR25
+
+            lda wCurrentPhase,b
+            inc a
+            jsl rlRunRoutineForAllUnitsInAllegiance
+
+            ; If we have any targets, cap the list. Return
+            ; whether we have any targets.
+
+            lda aAIMainVariables.wTargetArrayOffset
+            beq +
+
+              tax
+
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              clc
+              rts
+
+            +
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuildRescueStaffTargetListFilter ; 8D/CB29
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering routine for rsAIBuildRescueStaffTargetList.
+
+            ; Valid targets are living, non-special friendly units
+            ; on valid tiles that are in recovery mode (if recovery
+            ; mode is being considered)
+
+            ; Inputs:
+            ; X: tile index of current target
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aTargetingCharacterBuffer: filled with target unit
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberCurrentHP
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberCurrentHP
+
+            lda aTargetingCharacterBuffer.UnitState,b
+            bit #UnitStateDead | UnitStateHidden
+            bne _End
+
+            lda aTargetingCharacterBuffer.AIProperties,b
+            bit #AI_SpecialUnitFlag
+            bne _End
+
+            lda aTargetingCharacterBuffer.X,b
+            and #$00FF
+            sta wR0
+            lda aTargetingCharacterBuffer.Y,b
+            and #$00FF
+            sta wR1
+            jsl rlGetMapTileIndexByCoords
+
+            tax
+            lda aMovementMap,x
+            and #$00FF
+
+            cmp #narrow(-1, 1)
+            bne _End
+
+            lda aTargetingCharacterBuffer.ActionMisc,b
+            bit #AI_RecoveryFlag
+            beq _End
+
+              ldx aAIMainVariables.wTargetArrayOffset
+
+              lda aTargetingCharacterBuffer.DeploymentNumber,b
+              and #$00FF
+              sta aAIMainVariables.aTargetArray+structAITargetByDeploymentNumberCurrentHP.DeploymentNumber,x
+
+              lda aTargetingCharacterBuffer.CurrentHP,b
+              and #$00FF
+              sta aAIMainVariables.aTargetArray+structAITargetByDeploymentNumberCurrentHP.CurrentHP,x
+
+              .rept size(structAITargetByDeploymentNumberCurrentHP)
+                inc x
+              .endrept
+
+              stx aAIMainVariables.wTargetArrayOffset
+
+            _End
+            rtl
+
+            .databank 0
+
+          rsAIBuildWarpStaffTargetList ; 8D/CB7E
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for the Warp staff.
+
+            ; Valid targets are friendly non-special, non-fleeing
+            ; units. Targeting is cancelled if there are any hostile
+            ; units in the caster's movement range.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: structAITargetByTileIndexCurrentHP
+            ; Carry clear if at least one target, set otherwise
+
+            ; Temp variables
+
+              _HostileUnitsInRange := aAIMainVariables.aTemp._Vars[1]
+
+            stz _HostileUnitsInRange
+
+            macroAIEffectiveMove
+            sta wR2
+
+            macroAIMovementRange
+            jsl rlCapMovementRangeMap
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllTilesInMovementRange rlAIBuildWarpStaffTargetListFilter
+
+            ; Cap list is we have at least one target and don't
+            ; have any hostile units in range.
+
+            ldx aAIMainVariables.wTargetArrayOffset
+            beq +
+
+            lda _HostileUnitsInRange
+            bne +
+
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              clc
+              rts
+
+            +
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuildWarpStaffTargetListFilter ; 8D/CBE4
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering routine for rsAIBuildWarpStaffTargetList
+
+            ; Valid targets are friendly non-special, non-fleeing
+            ; units. Targeting is cancelled if there are any hostile
+            ; units in the caster's movement range.
+
+            ; Inputs:
+            ; X: tile index of target
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aAIMainVariables.aTemp._Vars[1]: nonzero if hostile unit in range
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexCurrentHP
+
+            ; Outputs:
+            ; aAIMainVariables.aTemp._Vars[1] nonzero if hostile unit in range
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexCurrentHP
+
+            ; Temp variables
+
+              _HostileUnitsInRange := aAIMainVariables.aTemp._Vars[1]
+
+            php
+            phx
+
+            lda aUnitMap,x
+            beq _End
+
+            cmp aSelectedCharacterBuffer.DeploymentNumber,b
+            beq _End
+
+            ; Also use this filter to flag if we have a hostile unit
+            ; in range.
+
+            ldy wAIBerserkedActorFlag
+            bne +
+
+            jsl rlCheckIfAllegianceDoesNotMatchPhaseTarget
+            bcc +
+
+              inc _HostileUnitsInRange
+              bra _End
+
+            +
+            lda aUnitMap,x
+            sta wR0
+
+            rep #$20
+
+            lda #<>aTargetingCharacterBuffer
+            sta wR1
+            jsl rlCopyCharacterDataToBufferByDeploymentNumber
+
+            ; Avoid warping special or fleeing units.
+
+            lda aTargetingCharacterBuffer.AIProperties,b
+            bit #AI_SpecialUnitFlag
+            bne _End
+
+            bit #AI_Fleeing
+            bne _End
+
+              txa
+
+              ldx aAIMainVariables.wTargetArrayOffset
+              sta aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.TileIndex,x
+
+              lda aTargetingCharacterBuffer.CurrentHP,b
+              and #$00FF
+              sta aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.CurrentHP,x
+
+              .rept size(structAITargetByTileIndexCurrentHP)
+                inc x
+              .endrept
+
+              stx aAIMainVariables.wTargetArrayOffset
+
+            _End
+            plx
+            plp
+            rts
+
+            .databank 0
+
+          rsAIBuildRestoreStaffTargetList ; 8D/CC37
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for the Restore staff.
+
+            ; Valid targets are friendly units with a status that
+            ; is not Petrify.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexStatus
+            ; Carry clear if at least one target, set otherwise
+
+            macroAIEffectiveMove
+            sta wR2
+
+            macroAIMovementRange
+
+            jsl rlCapMovementRangeMap
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllTilesInMovementRange rlAIBuildRestoreStaffTargetListFilter
+
+            ldx aAIMainVariables.wTargetArrayOffset
+            beq +
+
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              clc
+              rts
+
+            +
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuildRestoreStaffTargetListFilter ; 8D/CC95
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering routine for rsAIBuildRestoreStaffTargetList
+
+            ; Valid targets are friendly units with a status that
+            ; is not Petrify.
+
+            ; Inputs:
+            ; X: tile index of current target
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aTargetingCharacterBuffer: filled with target unit
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexStatus
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexStatus
+
+            php
+
+            lda aUnitMap,x
+            beq _End
+
+            cmp aSelectedCharacterBuffer.DeploymentNumber,b
+            beq _End
+
+            ldy wAIBerserkedActorFlag
+            bne +
+
+              jsl rlCheckIfAllegianceDoesNotMatchPhaseTarget
+              bcs _End
+
+            +
+            rep #$30
+
+            lda aUnitMap,x
+            sta wR0
+            ldy #<>aTargetingCharacterBuffer
+            sty wR1
+            jsl rlCopyCharacterDataToBufferByDeploymentNumber
+
+            lda aTargetingCharacterBuffer.Status,b
+            and #$00FF
+            beq _End
+
+            ; Can't Restore Petrify
+
+            cmp #StatusPetrify
+            beq _End
+
+              ldy aAIMainVariables.wTargetArrayOffset
+              sta aAIMainVariables.aTargetArray+structAITargetByTileIndexStatus.Status,y
+
+              txa
+              sta aAIMainVariables.aTargetArray+structAITargetByTileIndexStatus.TileIndex,y
+
+              .rept size(structAITargetByTileIndexStatus)
+                inc y
+              .endrept
+
+              sty aAIMainVariables.wTargetArrayOffset
+
+            _End
+            plp
+            rts
+
+            .databank 0
+
+          rsAIBuildSleepBerserkStaffTargetList ; 8D/CCDB
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for the Sleep and Berserk staves.
+
+            ; Valid targets are hostile living units that are not immortal,
+            ; have no status, and have less magic than the caster.
+
+            ; Leif is treated as if he has 1 HP for the purposes of picking
+            ; a target.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberCurrentHP
+            ; Carry clear if at least one target, set otherwise
+
+            ; Get magic of caster after bonuses.
+
+            lda #<>aSelectedCharacterBuffer
+            sta wR0
+            lda #<>aTemporaryActionStruct
+            sta wR1
+            jsl rlCopyExpandedCharacterDataBufferToBuffer
+            jsl rlCombineCharacterDataAndClassBases
+
+            lda #<>aTemporaryActionStruct
+            sta wR1
+            jsl rlGetEquippableItemInventoryOffset
+
+            ldx #<>aTemporaryActionStruct
+            jsl rlActionStructGetItemBonusesItemPreset
+
+            lda aTemporaryActionStruct.Magic,b
+            and #$00FF
+            sta wR17
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllHostileUnits rlAIBuildSleepBerserkStaffTargetListFilter
+
+            lda aAIMainVariables.wTargetArrayOffset
+            beq _NoTargets
+
+              tax
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              macroAIEffectiveMove
+              sta wR2
+
+              macroAIMovementRange
+
+              clc
+              rts
+
+            _NoTargets
+
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuildSleepBerserkStaffTargetListFilter ; 8D/CD6B
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering routine for rsAIBuildSleepBerserkStaffTargetList
+
+            ; Valid targets are hostile living units that are not immortal,
+            ; have no status, and have less magic than the caster.
+
+            ; Leif is treated as if he has 1 HP for the purposes of picking
+            ; a target.
+
+            ; Inputs:
+            ; X: tile index of target
+            ; wR17: staff user magic stat
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aTargetingCharacterBuffer: filled with target unit
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberCurrentHP
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberCurrentHP
+
+            lda aTargetingCharacterBuffer.UnitState,b
+            bit #UnitStateDead | UnitStateHidden
+            bne _End
+
+            lda aTargetingCharacterBuffer.Skills2,b
+            bit #pack([None, Skill3Immortal], 2)
+            bne _End
+
+            lda aTargetingCharacterBuffer.Status,b
+            and #$00FF
+            bne _End
+
+              lda #<>aTargetingCharacterBuffer
+              sta wR1
+              jsl rlCombineCharacterDataAndClassBases
+
+              lda #<>aTargetingCharacterBuffer
+              sta wR1
+              jsl rlGetEquippableItemInventoryOffset
+
+              ldx #<>aTargetingCharacterBuffer
+              jsl rlActionStructGetItemBonusesItemPreset
+
+              lda aTargetingCharacterBuffer.Magic,b
+              and #$00FF
+              cmp wR17
+              bpl _End
+
+                ; Treat Leif as if he has 1 HP.
+
+                lda aTargetingCharacterBuffer.Character,b
+                cmp #Leif
+                bne +
+
+                  lda #1
+                  bra ++
+
+                +
+                  lda aTargetingCharacterBuffer.CurrentHP,b
+                  and #$00FF
+
+                +
+                ldx aAIMainVariables.wTargetArrayOffset
+                sta aAIMainVariables.aTargetArray+structAITargetByDeploymentNumberCurrentHP.CurrentHP,x
+
+                lda aTargetingCharacterBuffer.DeploymentNumber,b
+                and #$00FF
+                sta aAIMainVariables.aTargetArray+structAITargetByDeploymentNumberCurrentHP.DeploymentNumber,x
+
+                .rept size(structAITargetByDeploymentNumberCurrentHP)
+                  inc x
+                .endrept
+
+                stx aAIMainVariables.wTargetArrayOffset
+
+            _End
+            rtl
+
+            .databank 0
+
+          rsAIBuildSilenceStaffTargetList ; 8D/CDD0
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for the Silence staff.
+
+            ; Valid targets are living hostile units that are not immortal,
+            ; do not have a status, have some magic but not more than
+            ; the caster, and be able to use staves or magic.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberMagic
+            ; Carry clear if at least one target, set otherwise
+
+            ; Get the caster's magic after bonuses.
+
+            lda #<>aSelectedCharacterBuffer
+            sta wR0
+            lda #<>aTemporaryActionStruct
+            sta wR1
+            jsl rlCopyExpandedCharacterDataBufferToBuffer
+            jsl rlCombineCharacterDataAndClassBases
+
+            lda #<>aTemporaryActionStruct
+            sta wR1
+            jsl rlGetEquippableItemInventoryOffset
+
+            ldx #<>aTemporaryActionStruct
+            jsl rlActionStructGetItemBonusesItemPreset
+
+            lda aTemporaryActionStruct.Magic,b
+            and #$00FF
+            sta wR17
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllHostileUnits rlAIBuildSilenceStaffTargetListFilter
+
+            lda aAIMainVariables.wTargetArrayOffset
+            beq _NoTargets
+
+              tax
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              macroAIEffectiveMove
+              sta wR2
+
+              macroAIMovementRange
+
+              clc
+              rts
+
+            _NoTargets
+
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuildSilenceStaffTargetListFilter ; 8D/CE60
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering function for rsAIBuildSilenceStaffTargetList.
+
+            ; Valid targets are living hostile units that are not immortal,
+            ; do not have a status, have some magic but not more than
+            ; the caster, and be able to use staves or magic.
+
+            ; Inputs:
+            ; X: tile index of target
+            ; wR17: staff user magic stat
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aTargetingCharacterBuffer: filled with target unit
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberMagic
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberMagic
+
+            lda aTargetingCharacterBuffer.UnitState,b
+            bit #UnitStateDead | UnitStateHidden
+            bne _End
+
+            lda aTargetingCharacterBuffer.Skills2,b
+            bit #pack([None, Skill3Immortal], 2)
+            bne _End
+
+            lda aTargetingCharacterBuffer.Status,b
+            and #$00FF
+            bne _End
+
+              lda #<>aTargetingCharacterBuffer
+              sta wR1
+              jsl rlCombineCharacterDataAndClassBases
+
+              lda #<>aTargetingCharacterBuffer
+              sta wR1
+              jsl rlGetEquippableItemInventoryOffset
+
+              ldx #<>aTargetingCharacterBuffer
+              jsl rlActionStructGetItemBonusesItemPreset
+
+              ; The target must have some magic but not more than
+              ; the caster.
+
+              lda aTargetingCharacterBuffer.Magic,b
+              and #$00FF
+              beq _End
+
+              cmp wR17
+              bpl _End
+
+                lda aTargetingCharacterBuffer.Magic,b
+                and #$00FF
+                sta wR2
+
+                lda aTargetingCharacterBuffer.PlayerProperties,b
+                bit #AI_Unknown0001 | AI_Unknown0002
+                beq _End
+
+                  lda wR2
+                  clc
+                  adc #StatCap
+                  sta wR2
+
+                  ldx aAIMainVariables.wTargetArrayOffset
+                  lda wR2
+                  sta aAIMainVariables.aTargetArray+structAITargetByDeploymentNumberMagic.Magic,x
+
+                  lda aTargetingCharacterBuffer.DeploymentNumber,b
+                  and #$00FF
+                  sta aAIMainVariables.aTargetArray+structAITargetByDeploymentNumberMagic.DeploymentNumber,x
+
+                  .rept size(structAITargetByDeploymentNumberMagic)
+                    inc x
+                  .endrept
+
+                  stx aAIMainVariables.wTargetArrayOffset
+
+              _End
+              rtl
+
+              .databank 0
+
+          rsAICountRewarpNearbyEnemies ; 8D/CECE
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Counts the number of hostile units near the Rewarp caster.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.wTargetArrayOffset: number of enemy units in range
+            ; Carry clear if no hostile units or berserked, set otherwise
+
+            ldy wAIBerserkedActorFlag
+            bne _NoHostileUnits
+
+            macroAIEffectiveMove
+
+            sta wR2
+
+            macroAIMovementRange
+
+            jsl rlCapMovementRangeMap
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllTilesInMovementRange rlAICountRewarpNearbyEnemiesFilter
+
+            lda aAIMainVariables.wTargetArrayOffset
+            bne +
+
+            _NoHostileUnits
+            clc
+            rts
+
+            +
+            sec
+            rts
+
+            .databank 0
+
+          rlAICountRewarpNearbyEnemiesFilter ; 8D/CF2B
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering function for rsAICountRewarpNearbyEnemies
+
+            ; Increments a counter if a unit is hostile to the caster.
+
+            ; Inputs:
+            ; X: tile index of target
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aTargetingCharacterBuffer: filled with target unit
+            ; aAIMainVariables.wTargetArrayOffset: number of enemy units in range
+
+            ; Outputs:
+            ; aAIMainVariables.wTargetArrayOffset: number of enemy units in range
+
+            lda aUnitMap,x
+            beq +
+
+            cmp aSelectedCharacterBuffer.DeploymentNumber,b
+            beq +
+
+            jsl rlCheckIfAllegianceDoesNotMatchPhaseTarget
+            bcc +
+
+              inc aAIMainVariables.wTargetArrayOffset
+
+            +
+            rts
+
+            .databank 0
+
+          rsAIBuildHammerneStaffTargetList ; 8D/CF3F
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for the Hammerne staff.
+
+            ; Valid targets are friendly units who have broken
+            ; an item.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexDistance
+            ; Carry clear if at least one target, set otherwise
+
+            macroAIEffectiveMove
+
+            sta wR2
+
+            macroAIMovementRange
+
+            jsl rlCapMovementRangeMap
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllTilesInMovementRange rlAIBuildHammerneStaffTargetListFilter, true
+
+            ldx aAIMainVariables.wTargetArrayOffset
+            beq +
+
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              clc
+              rts
+
+            +
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuildHammerneStaffTargetListFilter ; 8D/CF9D
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering function for rsAIBuildHammerneStaffTargetList.
+
+            ; Valid targets are friendly units who have broken
+            ; an item.
+
+            ; Inputs:
+            ; X: tile index of target
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aTargetingCharacterBuffer: filled with target unit
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexDistance
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexDistance
+
+            php
+
+            lda aUnitMap,x
+            beq +
+
+            cmp aSelectedCharacterBuffer.DeploymentNumber,b
+            beq +
+
+            jsl rlCheckIfAllegianceDoesNotMatchPhaseTarget
+            bcs +
+
+              lda aUnitMap,x
+              sta wR0
+
+              rep #$20
+
+              lda #<>aTargetingCharacterBuffer
+              sta wR1
+              jsl rlCopyCharacterDataToBufferByDeploymentNumber
+
+              lda aTargetingCharacterBuffer.AIProperties,b
+              bit #AI_HasBrokenEquipment
+              beq +
+
+                txa
+                ldy aAIMainVariables.wTargetArrayOffset
+                sta aAIMainVariables.aTargetArray+structAITargetByTileIndexDistance.TileIndex,y
+
+                lda aMovementMap,x
+                and #$00FF
+                sta aAIMainVariables.aTargetArray+structAITargetByTileIndexDistance.Distance,y
+
+                .rept size(structAITargetByTileIndexDistance)
+                  inc y
+                .endrept
+
+                sty aAIMainVariables.wTargetArrayOffset
+
+            +
+            plp
+            rts
+
+            .databank 0
+
+          rsAIBuildWardStaffTargetList ; 8D/CFDF
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for the Ward staff.
+
+            ; Valid targets are friendly units with 3 or less bonus
+            ; magic and a tome or staff.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexMagic
+            ; Carry clear if at least one target, set otherwise
+
+            macroAIEffectiveMove
+            sta wR2
+
+            macroAIMovementRange
+            jsl rlCapMovementRangeMap
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllTilesInMovementRange rlAIBuildWardStaffTargetListFilter
+
+            lda aAIMainVariables.wTargetArrayOffset
+            beq +
+
+              tax
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              clc
+              rts
+
+            +
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuildWardStaffTargetListFilter ; 8D/D03E
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering function for rsAIBuildWardStaffTargetList.
+
+            ; Valid targets are friendly units with 3 or less bonus
+            ; magic and a tome or staff.
+
+            ; Inputs:
+            ; X: tile index of target
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aTargetingCharacterBuffer: filled with target unit
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexMagic
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexMagic
+
+            php
+            phx
+
+            lda aUnitMap,x
+            beq _End
+
+            cmp aSelectedCharacterBuffer.DeploymentNumber,b
+            beq _End
+
+            ldy wAIBerserkedActorFlag
+            bne +
+
+              jsl rlCheckIfAllegianceDoesNotMatchPhaseTarget
+              bcs _End
+
+            +
+            rep #$20
+
+            lda aUnitMap,x
+            and #$00FF
+            sta wR0
+            lda #<>aTargetingCharacterBuffer
+            sta wR1
+            jsl rlCopyCharacterDataToBufferByDeploymentNumber
+
+            lda aTargetingCharacterBuffer.MagicBonus,b
+            and #$00FF
+
+            ; TODO: definition for this?
+
+            cmp #3
+            beq +
+            bge _End
+
+            +
+            jsr rsAICheckIfTargetHasTomeOrStaff
+            bcs _End
+
+              phx
+
+              lda #<>aTargetingCharacterBuffer
+              sta wR1
+              jsl rlCombineCharacterDataAndClassBases
+
+              lda #<>aTargetingCharacterBuffer
+              sta wR1
+              jsl rlGetEquippableItemInventoryOffset
+
+              ldx #<>aTargetingCharacterBuffer
+              jsl rlActionStructGetItemBonusesItemPreset
+
+              plx
+
+              txa
+              ldx aAIMainVariables.wTargetArrayOffset
+              sta aAIMainVariables.aTargetArray+structAITargetByTileIndexMagic.TileIndex,x
+
+              lda aTargetingCharacterBuffer.Magic,b
+              and #$00FF
+              sta aAIMainVariables.aTargetArray+structAITargetByTileIndexMagic.Magic,x
+
+              .rept size(structAITargetByTileIndexMagic)
+                inc x
+              .endrept
+
+              stx aAIMainVariables.wTargetArrayOffset
+
+            _End
+
+            plx
+            plp
+            rts
+
+            .databank 0
+
+          rsAICheckIfTargetHasTomeOrStaff ; 8D/D0AF
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Returns carry clear if unit has at least one
+            ; staff or tome.
+
+            ; Inputs:
+            ; aTargetingCharacterBuffer: filled with unit
+
+            ; Outputs:
+            ; Carry clear if unit has a tome or staff, otherwise set.
+
+            phx
+
+            ldx #0
+
+            -
+            lda aTargetingCharacterBuffer.Items,b,x
+            beq _NotFound
+
+              jsl rlCopyItemDataToBuffer
+              ; lda aItemDataBuffer.Traits,b
+              bit #TraitTome | TraitStaff
+              bne _Found
+
+                .rept size(word)
+                  inc x
+                .endrept
+
+                cpx #size(aTargetingCharacterBuffer.Items)
+                bne -
+
+            _NotFound
+            plx
+            sec
+            rts
+
+            _Found
+            plx
+            clc
+            rts
+
+            .databank 0
+
+          rsAIBuildThiefStaffTargetList ; 8D/D0CE
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for the Thief staff.
+
+            ; Valid targets are living hostile units that are
+            ; not immortal and has at least one item.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberWeaponRankItem
+            ; Carry clear if at least one target, set otherwise
+
+            ; Can't steal anything if the caster's inventory
+            ; is full.
+
+            lda aSelectedCharacterBuffer.Item7ID,b
+            beq +
+
+              jmp _NoTargets
+
+            +
+            lda #<>aSelectedCharacterBuffer
+            sta wR0
+            lda #<>aTemporaryActionStruct
+            sta wR1
+            jsl rlCopyExpandedCharacterDataBufferToBuffer
+            jsl rlCombineCharacterDataAndClassBases
+
+            lda #<>aTemporaryActionStruct
+            sta wR1
+            jsl rlGetEquippableItemInventoryOffset
+
+            ldx #<>aTemporaryActionStruct
+            jsl rlActionStructGetItemBonusesItemPreset
+
+            lda aTemporaryActionStruct.Magic,b
+            and #$00FF
+            sta wR17
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllHostileUnits rlAIBuildThiefStaffTargetListFilter
+
+            lda aAIMainVariables.wTargetArrayOffset
+            beq _NoTargets
+
+              tax
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              macroAIEffectiveMove
+              sta wR2
+
+              macroAIMovementRange
+
+              clc
+              rts
+
+            _NoTargets
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuildThiefStaffTargetListFilter ; 8D/D166
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering function for rsAIBuildThiefStaffTargetList.
+
+            ; Valid targets are living hostile units that are
+            ; not immortal and has at least one item.
+
+            ; Inputs:
+            ; X: tile index of target
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aTargetingCharacterBuffer: filled with target unit
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberWeaponRankItem
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of structAITargetByDeploymentNumberWeaponRankItem
+
+            ; Temp variables
+
+              _BestItem := wAITemp7E4018
+
+            lda aTargetingCharacterBuffer.UnitState,b
+            bit #UnitStateDead | UnitStateHidden
+            bne _End
+
+            lda aTargetingCharacterBuffer.Skills2,b
+            bit #pack([None, Skill3Immortal], 2)
+            bne _End
+
+              macroAIGetStatsWithItemBonuses
+
+              lda aTargetingCharacterBuffer.Magic,b
+              and #$00FF
+              cmp wR17
+              bpl _End
+
+              jsr rsAISelectThiefStaffItemTarget
+              bcs _End
+
+                ldx aAIMainVariables.wTargetArrayOffset
+                lda aTargetingCharacterBuffer.DeploymentNumber,b
+                sta aAIMainVariables.aTargetArray+structAITargetByDeploymentNumberWeaponRankItem.DeploymentNumber,x
+
+                lda _BestItem
+                sta aAIMainVariables.aTargetArray+structAITargetByDeploymentNumberWeaponRankItem.WeaponRankAndItemOffset,x
+
+                .rept size(structAITargetByDeploymentNumberWeaponRankItem)
+                  inc x
+                .endrept
+
+                stx aAIMainVariables.wTargetArrayOffset
+
+            _End
+            rtl
+
+            .databank 0
+
+          rsAIBuildReturnStaffTargetList ; 8D/D1B5
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for the Return staff.
+
+            ; Valid targets are friendly units that are fleeing.
+            ; If the caster is berserked, valid targets are anyone, but
+            ; their HP is treated as a random number 1-99.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexCurrentHP
+            ; Carry clear if at least one target, set otherwise
+
+            macroAIEffectiveMove
+            sta wR2
+
+            macroAIMovementRange
+            jsl rlCapMovementRangeMap
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllTilesInMovementRange rlAIBuildReturnStaffTargetListFilter, true
+
+            ldx aAIMainVariables.wTargetArrayOffset
+            beq +
+
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              clc
+              rts
+
+            +
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuildReturnStaffTargetListFilter ; 8D/D213
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering function for rsAIBuildReturnStaffTargetList.
+
+            ; Valid targets are friendly units that are fleeing.
+            ; If the caster is berserked, valid targets are anyone, but
+            ; their HP is treated as a random number 1-99.
+
+            ; Inputs:
+            ; X: tile index of target
+            ; aSelectedCharacterBuffer: filled with staff unit
+            ; aTargetingCharacterBuffer: filled with target unit
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexCurrentHP
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexCurrentHP
+
+            php
+            phx
+
+            lda aUnitMap,x
+            beq _End
+
+            cmp aSelectedCharacterBuffer.DeploymentNumber,b
+            beq _End
+
+            ldy wAIBerserkedActorFlag
+            bne _Berserked
+
+            jsl rlCheckIfAllegianceDoesNotMatchPhaseTarget
+            bcs _End
+
+              rep #$20
+
+              and #$00FF
+              sta wR0
+              lda #<>aTargetingCharacterBuffer
+              sta wR1
+              jsl rlCopyCharacterDataToBufferByDeploymentNumber
+
+              lda aTargetingCharacterBuffer.AIProperties,b
+              bit #AI_Fleeing
+              beq _End
+
+                ldy aAIMainVariables.wTargetArrayOffset
+                txa
+                sta aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.TileIndex,y
+
+                lda aTargetingCharacterBuffer.CurrentHP,b
+                and #$00FF
+                sta aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.CurrentHP,y
+
+                _Next
+
+                .rept size(structAITargetByTileIndexCurrentHP)
+                  inc y
+                .endrept
+
+                sty aAIMainVariables.wTargetArrayOffset
+
+            _End
+            plx
+            plp
+            rts
+
+            _Berserked
+
+              rep #$20
+
+              ldy aAIMainVariables.wTargetArrayOffset
+              txa
+              sta aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.TileIndex,y
+
+              lda #100
+              jsl rlGetRandomNumber100
+
+              sta aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.CurrentHP,y
+              bra _Next
+
+            .databank 0
+
+          rsAISelectThiefStaffItemTarget ; 8D/D271
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Gets the inventory offset and weapon rank
+            ; of the highest weapon rank item in a unit's inventory.
+            ; PRF weapons are treated as if they have -1 (or 255?)
+
+            ; Inputs:
+            ; aTargetingCharacterBuffer: filled with unit
+
+            ; Outputs:
+            ; wAITemp7E4018: structAIBestItem
+
+            ; Temp variables
+
+              _BestItem := wAITemp7E4018
+
+            rep #$30
+
+            stz wAICurrentBestTarget
+            stz _BestItem
+
+            ldx #0
+
+            -
+              lda aTargetingCharacterBuffer.Items,b,x
+              beq _End
+
+              jsl rlCopyItemDataToBuffer
+              lda aItemDataBuffer.WeaponRank,b
+
+              ; If the weapon rank is actually a pointer to a weapon
+              ; lock.
+
+              cmp #$8000
+              bmi +
+
+                lda #narrow(-1, 1)
+
+              +
+              and #$00FF
+              cmp wAICurrentBestTarget
+              bmi +
+
+                sep #$20
+
+                sta wAICurrentBestTarget
+                sta _BestItem+structAIBestItem.WeaponRank
+
+                txa
+                sta _BestItem+structAIBestItem.ItemOffset
+
+                rep #$20
+
+              +
+
+              .rept size(word)
+                inc x
+              .endrept
+
+              cpx #size(aTargetingCharacterBuffer.Items)
+              bne -
+
+            _End
+
+            lda _BestItem
+            beq +
+
+              clc
+              rts
+
+            +
+            sec
+            rts
+
+            .databank 0
+
+          rsAIBuildUnlockStaffTargetList ; 8D/D2B6
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Builds a target list for the Unlock staff.
+
+            ; Valid tiles are doors and chests.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with staff unit
+
+            ; Outputs:
+            ; aMovementMap: filled with caster move
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexDistance
+            ; Carry clear if at least one target, set otherwise
+
+            jsl rlAIGetTraversableTilesAndFillRangeMap
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            macroAIForAllTilesInMovementRange rlAIBuildUnlockStaffTargetListFilter, true
+
+            ldx aAIMainVariables.wTargetArrayOffset
+            beq +
+
+              lda #-1
+              sta aAIMainVariables.aTargetArray,x
+
+              clc
+              rts
+
+            +
+            sec
+            rts
+
+            .databank 0
+
+          rlAIBuildUnlockStaffTargetListFilter ; 8D/D2D9
+
+            .as
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering function for rsAIBuildUnlockStaffTargetList.
+
+            ; Valid tiles are doors and chests.
+
+            ; Inputs:
+            ; X: tile index of target
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexDistance
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of structAITargetByTileIndexDistance
+
+            php
+
+            lda aTerrainMap,x
+
+            _UnlockableTerrains := DoorTerrainList .. ChestTerrainList
+
+            .for _Terrain in _UnlockableTerrains[:-1]
+
+              cmp #_Terrain
+              beq +
+
+            .endfor
+
+            cmp #_UnlockableTerrains[-1]
+            bne _End
+
+            +
+
+            rep #$30
+
+            txa
+            ldy aAIMainVariables.wTargetArrayOffset
+            sta aAIMainVariables.aTargetArray+structAITargetByTileIndexDistance.TileIndex,y
+
+            lda aMovementMap,x
+            and #$00FF
+            sta aAIMainVariables.aTargetArray+structAITargetByTileIndexDistance.Distance,y
+
+            ldy aAIMainVariables.wTargetArrayOffset
+
+            .rept size(structAITargetByTileIndexDistance)
+              inc y
+            .endrept
+
+            sty aAIMainVariables.wTargetArrayOffset
+
+            _End
+            plp
+            rts
+
+            .databank 0
+
+          rsAIRunRoutineForOpposingAllegiances ; 8D/D307
+
+            .al
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Calls rlRunRoutineForAllUnitsInAllegiance
+            ; for each allegiance that units of the current
+            ; phase can target.
+
+            ; Inputs:
+            ; lR25: long pointer to routine to run
+
+            ; Outputs:
+            ; Result of routine calls
+
+            .for _Allegiance in [Player, Enemy, NPC]
+
+              lda #_Allegiance + 1
+              jsl rlCheckIfAllegianceDoesNotMatchPhaseTarget
+              bcc +
+
+                jsl rlRunRoutineForAllUnitsInAllegiance
+
+              +
+
+            .endfor
+
+            rts
+
+            .databank 0
+
+          rsAISelectLowestParam1RangeStaffTarget ; 8D/D32F
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Used for:
+            ; Heal
+            ; Mend
+            ; Recover
+            ; Restore
+            ; Return
+            ; Hammerne
+            ; Ward
+
+            ; Picks a target with the lowest second word
+            ; in their aAIMainVariables.aTargetArray entry.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with caster
+            ; aAIMainVariables.aTargetArray: filled with a list of any of:
+            ;   structAITargetByTileIndexCurrentHP
+            ;   structAITargetByTileIndexStatus
+            ;   structAITargetByTileIndexMagic
+
+            ; Outputs:
+            ; aAIMainVariables.wBestTarget: deployment number of best target
+            ; wAITemp7E400C: tile index of best target
+            ; wAITemp7E400E: lowest value
+
+            ; Temp variables
+
+              ; From rsAISelectBestStaffTargetAdjacentTile
+
+                _BestTile      := wAITemp7E400A
+
+              _CurrentBestTile := wAITemp7E400C
+              _CurrentLowest   := wAITemp7E400E
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            lda #-1
+            sta _CurrentLowest
+
+            _Loop
+
+              ldx aAIMainVariables.wTargetArrayOffset
+
+              ; Check if we've hit the end of the list.
+
+              lda aAIMainVariables.aTargetArray,x
+              bmi _End
+
+              lda aAIMainVariables.aTargetArray+structAIGenericTarget.Parameter,x
+              cmp _CurrentLowest
+              bge _Next
+
+                lda aAIMainVariables.aTargetArray+structAIGenericTarget.Target,x
+                tax
+
+                ; Check if we've got a good tile adjacent to the target.
+
+                jsr rsAISelectBestStaffTargetAdjacentTile
+
+                lda _BestTile
+                bmi _Next
+
+                  sta _CurrentBestTile
+
+                  ldx aAIMainVariables.wTargetArrayOffset
+
+                  lda aAIMainVariables.aTargetArray+structAIGenericTarget.Target,x
+                  tay
+
+                  lda aUnitMap,y
+                  and #$00FF
+                  sta aAIMainVariables.wBestTarget
+
+                  lda aAIMainVariables.aTargetArray+structAIGenericTarget.Parameter,x
+                  sta _CurrentLowest
+
+              _Next
+
+                ldx aAIMainVariables.wTargetArrayOffset
+
+                .rept size(structAIGenericTarget)
+                  inc x
+                .endrept
+
+                stx aAIMainVariables.wTargetArrayOffset
+
+                bra _Loop
+
+            _End
+            rts
+
+            .databank 0
+
+          rsAISelectLowestParamGlobalRangeStaffTarget ; 8D/D37A
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Used for:
+            ; Physic
+            ; Rescue
+
+            ; Picks a target with the lowest second word
+            ; in their aAIMainVariables.aTargetArray entry.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with caster
+            ; aAIMainVariables.aTargetArray: filled with a list of any of:
+            ;   structAITargetByTileIndexCurrentHP
+
+            ; Outputs:
+            ; aAIMainVariables.wBestTarget: deployment number of best target
+            ; wAITemp7E400C: tile index of caster if target found
+            ; wAITemp7E400E: lowest value
+
+            ; Temp variables
+
+              _CurrentBestTile := wAITemp7E400C
+              _CurrentLowest   := wAITemp7E400E
+
+            stz aAIMainVariables.wTargetArrayOffset
+
+            lda #-1
+            sta _CurrentLowest
+
+            _Loop
+
+              ldx aAIMainVariables.wTargetArrayOffset
+
+              ; Check if we've hit the end of the list.
+
+              lda aAIMainVariables.aTargetArray,x
+              bmi _EndOfList
+
+                lda aAIMainVariables.aTargetArray+structAIGenericTarget.Parameter,x
+                cmp _CurrentLowest
+                bge _Next
+
+                  lda aAIMainVariables.aTargetArray+structAIGenericTarget.Target,x
+                  sta aAIMainVariables.wBestTarget
+
+                  lda aAIMainVariables.aTargetArray+structAIGenericTarget.Parameter,x
+                  sta _CurrentLowest
+
+              _Next
+
+                .rept size(structAIGenericTarget)
+                  inc x
+                .endrept
+
+                stx aAIMainVariables.wTargetArrayOffset
+
+                bra _Loop
+
+            _EndOfList
+
+              ; Get the caster's tile index.
+
+              lda aSelectedCharacterBuffer.X,b
+              and #$00FF
+              sta wR0
+              lda aSelectedCharacterBuffer.Y,b
+              and #$00FF
+              sta wR1
+              jsl rlGetMapTileIndexByCoords
+              sta _CurrentBestTile
+
+              lda _CurrentLowest
+              bpl _End
+
+                lda #-1
+                sta _CurrentBestTile
+
+            _End
+            rts
+
+            .databank 0
+
+          rsAISelectFortifyTarget ; 8D/D3CB
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Sets the target of a Fortify staff cast to
+            ; the caster.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with caster
+
+            ; Outputs:
+            ; aAIMainVariables.wBestTarget: zero
+            ; wAITemp7E400C: tile index of caster
+
+            ; Temp variables
+
+              _CurrentBestTile := wAITemp7E400C
+
+            lda aSelectedCharacterBuffer.X,b
+            and #$00FF
+            sta wR0
+            lda aSelectedCharacterBuffer.Y,b
+            and #$00FF
+            sta wR1
+            jsl rlGetMapTileIndexByCoords
+            sta _CurrentBestTile
+
+            stz aAIMainVariables.wBestTarget
+
+            rts
+
+            .databank 0
+
+          rsAISelectWarpStaffTarget ; 8D/D3E6
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Picks where a Warp staff will warp to.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with caster
+            ; aAIMainVariables.aTargetArray: filled with a list
+            ;   of structAITargetByTileIndexCurrentHP
+
+            ; Outputs:
+            ; aAIMainVariables.wBestTarget: deployment number of best target
+            ; wAITemp7E400C: tile index of best place to put warped unit
+            ; wAITemp7E400E: lowest HP
+            ; aAISelectedUnitInfo.aDecisionParameters[2]: X coordinate of destination
+            ; aAISelectedUnitInfo.aDecisionParameters[3]: Y coordinate of destination
+
+            ; Temp variables
+
+              ; From rsAISelectBestStaffTargetAdjacentTile
+
+                _BestTile      := wAITemp7E400A
+
+              _CurrentBestTile := wAITemp7E400C
+              _CurrentLowest   := wAITemp7E400E
+
+              _DestinationX    := aAISelectedUnitInfo.aDecisionParameters[2]
+              _DestinationY    := aAISelectedUnitInfo.aDecisionParameters[3]
+
+              stz aAIMainVariables.wTargetArrayOffset
+
+              lda #-1
+              sta _CurrentLowest
+
+              _Loop
+
+                ldx aAIMainVariables.wTargetArrayOffset
+
+                ; Check if we've hit the end of the list.
+
+                lda aAIMainVariables.aTargetArray,x
+                bmi _EndOfList
+
+                  lda aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.CurrentHP,x
+                  cmp _CurrentLowest
+                  bmi _Next
+
+                    lda aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.TileIndex,x
+                    tax
+
+                    jsr rsAISelectBestStaffTargetAdjacentTile
+                    lda _BestTile
+                    bmi _Next
+
+                      sta _CurrentBestTile
+
+                      ldx aAIMainVariables.wTargetArrayOffset
+
+                      lda aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.TileIndex,x
+                      tay
+
+                      lda aUnitMap,y
+                      and #$00FF
+                      sta aAIMainVariables.wBestTarget
+
+                      lda aAIMainVariables.aTargetArray+structAITargetByTileIndexCurrentHP.CurrentHP,x
+                      sta _CurrentLowest
+
+                _Next
+
+                  ldx aAIMainVariables.wTargetArrayOffset
+
+                  .rept size(structAITargetByTileIndexCurrentHP)
+                    inc x
+                  .endrept
+
+                  stx aAIMainVariables.wTargetArrayOffset
+
+                  bra _Loop
+
+              _EndOfList
+
+                ; If we have a unit to warp, find them a place.
+
+                lda _CurrentBestTile
+                bmi _End
+
+                  lda aAIMainVariables.wBestTarget
+                  sta wR0
+                  lda #<>aTargetingCharacterBuffer
+                  sta wR1
+                  jsl rlCopyCharacterDataToBufferByDeploymentNumber
+
+                  macroAIEffectiveMove aTargetingCharacterBuffer
+                  sta wR2
+
+                  macroAIMovementRange true, aTargetingCharacterBuffer
+                  jsl rlAICopyMovementMapToRangeMap
+
+                  jsr rsAISelectTeleportDestination
+
+                  ; Check if we've got a valid target
+
+                  lda _DestinationX
+                  and #$00FF
+                  bne _End
+
+                    lda #-1
+                    sta _CurrentBestTile
+
+              _End
+              rts
+
+              .databank 0
+
+          rsAISelectUnknownTarget ; 8D/D494
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Picks a target for some unknown staff.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with caster
+            ; aAIMainVariables.aTargetArray: filled with a list
+            ;   of structAIGenericTarget
+
+            ; Outputs:
+            ; aAIMainVariables.wBestTarget: deployment number of best target
+            ; wAITemp7E400C: tile index of best target
+            ; wAITemp7E400E: lowest parameter
+
+            ; Temp variables
+
+              _CurrentBestTile := wAITemp7E400C
+              _CurrentLowest   := wAITemp7E400E
+
+            stz aAIMainVariables.wTargetArrayOffset
+            stz _CurrentLowest
+
+            _Loop
+
+              ldx aAIMainVariables.wTargetArrayOffset
+
+              lda aAIMainVariables.aTargetArray,x
+              bmi _EndOfList
+
+                lda aAIMainVariables.aTargetArray+structAIGenericTarget.Parameter,x
+                cmp _CurrentLowest
+                bmi _Next
+
+                  lda aAIMainVariables.aTargetArray+structAIGenericTarget.Target,x
+                  and #$00FF
+                  sta aAIMainVariables.wBestTarget
+
+                  lda aAIMainVariables.aTargetArray+structAIGenericTarget.Parameter,x
+                  sta _CurrentLowest
+
+              _Next
+
+                .rept size(structAIGenericTarget)
+                  inc x
+                .endrept
+
+                stx aAIMainVariables.wTargetArrayOffset
+                bra _Loop
+
+            _EndOfList
+
+              lda aSelectedCharacterBuffer.X,b
+              and #$00FF
+              sta wR0
+              lda aSelectedCharacterBuffer.Y,b
+              and #$00FF
+              sta wR1
+              jsl rlGetMapTileIndexByCoords
+
+              sta _CurrentBestTile
+
+              rts
+
+            .databank 0
+
+        endCode
+
+      .endsection AIStaffTargetingSection
+
       .section AIItemUseSection
 
         startCode
+
+          rsAITryGetUsableItem ; 8D/D876
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Given a unit in aSelectedCharacterBuffer,
+            ; try using an item if they have one.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with unit
+            
+            ; Outputs:
+            ; wAITemp7E4038: offset of item in inventory, if any
+            ; Carry clear if item used(?), set otherwise
+
+            php
+
+            ldx #size(aSelectedCharacterBuffer.Items) - size(word)
+
+            _Loop
+
+              stx wAITemp7E4038
+
+              lda aSelectedCharacterBuffer.Items,b,x
+              and #$00FF
+              beq +
+
+                jsr rsAICheckIfUsableItem
+                bcc _Found
+
+              +
+
+              .rept size(word)
+                dec x
+              .endrept
+
+              bpl _Loop
+
+                bra _NotFound
+
+            _Found
+
+              lda aAISelectedUnitInfo.bActionDecision
+              and #$00FF
+
+              cmp #AI_Action_Unknown06
+              beq +
+
+                jsr rsAIActionUseItem
+
+              +
+              plp
+
+              clc
+              rts
+
+            _NotFound
+
+              plp
+              sec
+              rts
+
+            .databank 0
 
           rsAICheckIfUsableItem ; 8D/D8A4
 
@@ -3796,7 +6752,7 @@ GUARD_FE5_AI :?= false
 
             ; Berserked units have a 50% chance to use an item.
 
-            ldy wAIAllegianceHasBerserkedUnitFlag
+            ldy wAIBerserkedActorFlag
             beq +
 
             lda #100
@@ -3846,7 +6802,7 @@ GUARD_FE5_AI :?= false
 
             ; See rsAIChestKeyUsability
 
-            ldy wAIAllegianceHasBerserkedUnitFlag
+            ldy wAIBerserkedActorFlag
             beq +
 
             lda #100
@@ -3899,7 +6855,7 @@ GUARD_FE5_AI :?= false
 
             ; See rsAIChestKeyUsability
 
-            ldy wAIAllegianceHasBerserkedUnitFlag
+            ldy wAIBerserkedActorFlag
             beq +
 
             lda #100
@@ -3958,7 +6914,7 @@ GUARD_FE5_AI :?= false
             ; See rsAIChestKeyUsability
             ; This overwrites wAITemp7E400A with the unit's current tile.
 
-            ldy wAIAllegianceHasBerserkedUnitFlag
+            ldy wAIBerserkedActorFlag
             beq +
 
             lda #100
@@ -4016,7 +6972,7 @@ GUARD_FE5_AI :?= false
             ; See rsAIChestKeyUsability
             ; This overwrites wAITemp7E400A with the unit's current tile.
 
-            ldy wAIAllegianceHasBerserkedUnitFlag
+            ldy wAIBerserkedActorFlag
             beq +
 
             lda #100
@@ -4203,11 +7159,581 @@ GUARD_FE5_AI :?= false
 
           rsAIGetDoorCoordsInMovementRange ; 8D/DABE
 
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
 
+            lda #-1
+            sta wAITemp7E4008
+            sta wAITemp7E400A
+
+            lda aSelectedCharacterBuffer.DeploymentNumber,b
+            and #$00FF
+            sta wR4
+
+            stz wR5
+
+            lda #(`_DoorTerrains)<<8
+            sta lR25+size(byte)
+            lda #<>_DoorTerrains
+            sta lR25
+
+            lda #(`rsAICheckIfTerrainIsInList)<<8
+            sta lR24+size(byte)
+            lda #<>rsAICheckIfTerrainIsInList
+            sta lR24
+
+            jsr rsAIRunRoutineForAllTilesInMovementRange
+
+            rts
+
+            endCode
+            startData
+
+              _DoorTerrains .byte DoorTerrainList, 0
+
+            endData
+            startCode
+
+            .databank 0
+
+          rsAIActionUseItem ; 8D/DAEB
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Inputs:
+            ; wAITemp7E400A: Unit tile index, if applicable
+            ; wAITemp7E4038: offset of item in inventory
+            ; aAISelectedUnitInfo: filled with action info
+
+            ; Outputs:
+            ; aAISelectedUnitInfo: filled with action info
+            ; aAISelectedUnitInfo.aDecisionParameters[1]: set to 0 if at
+            ;   destination?
+
+            php
+
+            rep #$20
+
+            lda wAITemp7E400A
+            jsl rlGetMapCoordsByTileIndex
+
+            sep #$20
+
+            lda #AI_Action_Item
+            sta aAISelectedUnitInfo.bActionDecision
+
+            lda wAITemp7E4038
+            sta aAISelectedUnitInfo.aDecisionParameters[0]
+
+            ; Check if the unit is at their destination.
+
+            lda wR0
+            cmp aAISelectedUnitInfo.bDestinationXCoordinate
+            bne +
+
+            lda wR1
+            cmp aAISelectedUnitInfo.bDestinationYCoordinate
+            bne +
+
+              stz aAISelectedUnitInfo.aDecisionParameters[1]
+              bra ++
+
+            +
+              lda #AI_Action_Move
+              sta aAISelectedUnitInfo.bActionDecision
+
+            +
+            plp
+            rts
+
+            .databank 0
 
         endCode
 
       .endsection AIItemUseSection
+
+      .section AIAdjacentInteractionsSection
+
+        startCode
+
+          rsAITryGetAdjacentInteractions ; 8D/DB1C
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Tries to dance for a unit, else tries to
+            ; steal from a unit.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with acting unit
+            ; aAISelectedUnitInfo: filled with action info
+
+            php
+
+            lda aAISelectedUnitInfo.bActionDecision
+            and #$00FF
+
+            cmp #AI_Action_Flee
+            bne _End
+
+              lda aSelectedCharacterBuffer.Skills1,b
+
+              bit #Skill1Dance | Skill1Steal
+              beq _End
+
+              ; Prioritize dancing over stealing if the unit has both skills.
+
+              bit #Skill1Dance
+              beq +
+
+                jsr rsAITryDanceAdjacentUnits
+                bcs _End
+
+              +
+              lda aSelectedCharacterBuffer.Skills1,b
+              bit #Skill1Steal
+              beq _End
+
+                jsr rsTryStealAdjacentUnits
+
+            _End
+
+            plp
+            rts
+
+            .databank 0
+
+          rsAITryDanceAdjacentUnits ; 8D/DB47
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Flags a unit's decision as dancing if there's
+            ; a valid target adjacent to their destination.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with acting unit
+            ; aAISelectedUnitInfo: filled with action info
+
+            ; Outputs:
+            ; wAITemp7E401D: number of valid adjacent targets
+            ; Carry set if at least one target, unset otherwise
+            ; aAISelectedUnitInfo: filled with action info
+            ;   .aDecisionParameters[0]: last valid dance target, if one
+
+            stz wAITemp7E401D
+
+            lda aAISelectedUnitInfo.bDestinationXCoordinate
+            and #$00FF
+            sta wR0
+            lda aAISelectedUnitInfo.bDestinationYCoordinate
+            and #$00FF
+            sta wR1
+            jsl rlGetMapTileIndexByCoords
+
+            tax
+
+            lda #<>rlAITryDanceAdjacentUnitsFilter
+            sta lR25
+            lda #>`rlAITryDanceAdjacentUnitsFilter
+            sta lR25+size(byte)
+            jsl rlRunRoutineForTilesIn1Range
+
+            ; Return carry set if we found a valid target.
+
+            lda wAITemp7E401D
+            beq +
+
+              sec
+              rts
+
+            +
+
+            clc
+            rts
+
+            .databank 0
+
+          rlAITryDanceAdjacentUnitsFilter ; 8D/DB76
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering routine for rsAITryDanceAdjacentUnits.
+
+            ; Inputs:
+            ; X: tile index
+            ; wAITemp7E401D: counter for valid targets
+            ; aAISelectedUnitInfo: filled with action info
+            ;   .aDecisionParameters[0]: last valid dance target
+
+            ; Outputs:
+            ; wAITemp7E401D: counter for valid targets
+            ; aAISelectedUnitInfo: filled with action info
+            ;   .aDecisionParameters[0]: last valid dance target
+
+            php
+
+            ; Valid targets must be:
+            ;  units
+            ;  of the same allegiance as the dancer
+            ;  who have already moved
+            ;  and don't have the dance skill
+
+            lda aUnitMap,x
+            beq _End
+
+            bit wCurrentPhase,b
+            beq _End
+
+            rep #$30
+
+            and #$00FF
+            sta wR0
+            lda #<>aTemporaryActionStruct
+            sta wR1
+            jsl rlCopyCharacterDataToBufferByDeploymentNumber
+
+            lda aTemporaryActionStruct.UnitState,b
+            bit #UnitStateGrayed
+            beq _End
+
+            lda aTemporaryActionStruct.Skills1,b
+            bit #Skill1Dance
+            bne _End
+
+              ; Valid target, inc counter and flag the
+              ; dancer's action
+
+              inc wAITemp7E401D
+
+              sep #$20
+
+              lda #AI_Action_Dance
+              sta aAISelectedUnitInfo.bActionDecision
+
+              lda wR0
+              sta aAISelectedUnitInfo.aDecisionParameters[0]
+
+              rep #$30
+
+            _End
+
+            plp
+            rtl
+
+            .databank 0
+
+          rsTryStealAdjacentUnits ; 8D/DBB4
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Flag a unit as trying to steal the highest weapon rank
+            ; item from any adjacent units.
+
+            ; Inputs:
+            ; aSelectedCharacterBuffer: filled with acting unit
+            ; aAISelectedUnitInfo: filled with action info
+
+            ; Outputs:
+            ; wAITemp7E401D: number of valid adjacent targets
+            ; Carry set if at least one target, unset otherwise
+            ; aAISelectedUnitInfo: filled with action info
+            ;   .aDecisionParameters[0]: last valid steal target, if one
+            ;   .aDecisionParameters[1]: last valid steal inventory offset, if one
+
+            stz wR3
+            stz wAITemp7E4038
+
+            stz wAICurrentBestTarget
+            stz aAIMainVariables.wTargetArrayOffset
+
+            ; Can't steal if inventory is full.
+
+            lda aSelectedCharacterBuffer.Item7ID,b
+            and #$00FF
+            beq +
+
+              jmp _End
+
+            +
+
+            lda aAISelectedUnitInfo.bDestinationXCoordinate
+            and #$00FF
+            sta wR0
+            lda aAISelectedUnitInfo.bDestinationYCoordinate
+            and #$00FF
+            sta wR1
+            jsl rlGetMapTileIndexByCoords
+
+            tax
+
+            lda #<>rlAITryStealAdjacentUnitsFilter
+            sta lR25
+            lda #>`rlAITryStealAdjacentUnitsFilter
+            sta lR25+size(byte)
+            jsl rlRunRoutineForTilesIn1Range
+
+            ldx aAIMainVariables.wTargetArrayOffset
+            beq _End
+
+            _Loop
+
+              .rept size(word)
+                dec x
+              .endrept
+
+              bmi _End
+
+                phx
+
+                jsr rsAIGetStealParticipantsStats
+
+                sep #$20
+
+                ; AI unit must outspeed target to steal.
+
+                lda aBurstWindowCharacterBuffer.Speed,b
+                cmp aTargetingCharacterBuffer.Speed,b
+                blt _Next
+
+                  rep #$20
+
+                  ; Inventory offset of stealable
+
+                  lda #-1
+                  sta wAITemp7E4038
+
+                  ; Build a list of potential steal targets.
+
+                  lda #<>rlAITryStealAdjacentUnitsItemFilter
+                  sta lR25
+                  lda #>`rlAITryStealAdjacentUnitsItemFilter
+                  sta lR25+size(byte)
+                  lda #<>aTargetingCharacterBuffer.Items
+                  jsl rlRunRoutineForAllItemsInInventory
+
+                  lda wAITemp7E4038
+                  bmi _Next
+
+                  ; Check if better than current best.
+
+                  lda wR3
+                  cmp wAICurrentBestTarget
+                  blt _Next
+
+                    ; New best target/item, update info.
+
+                    sta wAICurrentBestTarget
+
+                    ; Refetch target array offset to get target
+                    ; tile index
+
+                    plx
+                    phx
+
+                    lda aAIMainVariables.aTargetArray,x
+                    tax
+
+                    sep #$20
+
+                    lda #AI_Action_Steal
+                    sta aAISelectedUnitInfo.bActionDecision
+
+                    lda aUnitMap,x
+                    sta aAISelectedUnitInfo.aDecisionParameters[0]
+
+                    lda wAITemp7E4038
+                    sta aAISelectedUnitInfo.aDecisionParameters[1]
+
+                    rep #$30
+
+                    plx
+                    bra _Loop
+
+            _Next
+
+              plx
+              bra _Loop
+
+            _End
+            rts
+
+            .databank 0
+
+          rlAITryStealAdjacentUnitsFilter ; 8D/DC4E
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering routine for rsTryStealAdjacentUnits.
+            ; Only checks that the unit is a valid enemy. Builds
+            ; a list of targets.
+
+            ; Inputs:
+            ; X: target tile index
+
+            ; Outputs:
+            ; aAIMainVariables.aTargetArray: list of target deployment
+            ;   number words
+
+            lda aUnitMap,x
+            and #$00FF
+            beq _End
+
+            jsl rlCheckIfAllegianceDoesNotMatchPhaseTarget
+            bcc _End
+
+              ; Add target to list.
+
+              txa
+              ldy aAIMainVariables.wTargetArrayOffset
+              sta aAIMainVariables.aTargetArray,y
+
+              .rept size(word)
+                inc y
+              .endrept
+
+              sty aAIMainVariables.wTargetArrayOffset
+
+            _End
+
+            rtl
+
+            .databank 0
+
+          rlAITryStealAdjacentUnitsItemFilter ; 8D/DC69
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Filtering routine for rsTryStealAdjacentUnits.
+            ; Gets the highest weapon rank stealable item in a unit's
+            ; inventory.
+
+            ; Inputs:
+            ; A: item ID
+            ; Y: item index in inventory
+            ; wR3: current best item rank
+            ; aSelectedCharacterBuffer: filled with steal target
+            ; aBurstWindowCharacterBuffer: filled with thief
+
+            ; Outputs:
+            ; wR3: current best item rank
+            ; wAITemp7E4038: inventory offset of best item, if any
+
+            php
+
+            rep #$30
+
+            ; To be stealable, an item must be sellable and
+            ; must have a weight lower than the thief's constitution.
+
+            and #$00FF
+            jsl rlCopyItemDataToBuffer
+
+            sep #$20
+
+            lda aItemDataBuffer.Traits,b
+            bit #TraitUnsellable
+            bne _End
+
+            lda aBurstWindowCharacterBuffer.Constitution,b
+            cmp aItemDataBuffer.Weight,b
+            blt _End
+
+              rep #$20
+
+              ; Check if weapon is more valuable than our current best.
+
+              lda aItemDataBuffer.WeaponRank,b
+              cmp wR3
+              blt _End
+
+                ; More valuable, update info.
+
+                sta wR3
+
+                tya
+                asl a
+                sta wAITemp7E4038
+
+            _End
+
+            plp
+            rtl
+
+            .databank 0
+
+          rsAIGetStealParticipantsStats ; 8D/DC96
+
+            .al
+            .xl
+            .autsiz
+            .databank `aAIMainVariables
+
+            ; Fills out buffers for the thief and the mark.
+
+            ; Inputs:
+            ; X: offset into aAIMainVariables.aTargetArray of target
+
+            ; Outputs:
+            ; aTargetingCharacterBuffer: filled with mark
+            ; aBurstWindowCharacterBuffer: filled with thief
+
+            php
+
+            rep #$30
+
+            ; Mark first.
+
+            lda aAIMainVariables.aTargetArray,x
+            tax
+
+            lda aUnitMap,x
+            and #$00FF
+            sta wR0
+            lda #<>aTargetingCharacterBuffer
+            sta wR1
+            jsl rlCopyCharacterDataToBufferByDeploymentNumber
+            jsl rlCombineCharacterDataAndClassBases
+
+            ; Thief.
+
+            lda #<>aSelectedCharacterBuffer
+            sta wR0
+            lda #<>aBurstWindowCharacterBuffer
+            sta wR1
+            jsl rlCopyExpandedCharacterDataBufferToBuffer
+            jsl rlCombineCharacterDataAndClassBases
+
+            plp
+
+            rts
+
+            .databank 0
+
+        endCode
+
+      .endsection AIAdjacentInteractionsSection
 
       .section AICountTargetsInRangeSection
 
@@ -5104,7 +8630,7 @@ GUARD_FE5_AI :?= false
 
             php
 
-            lda wAIAllegianceHasBerserkedUnitFlag
+            lda wAIBerserkedActorFlag
             bne _End
 
             sep #$20
@@ -5526,7 +9052,7 @@ GUARD_FE5_AI :?= false
             sta wR5
 
             jsl rlFillMovementRangeMapByClass
-            jsl rlUnknown80E551
+            jsl rlCapMovementRangeMap
 
             lda #<>rsAISelectDanceTargetFilter
             sta lR24
@@ -6000,7 +9526,7 @@ GUARD_FE5_AI :?= false
             sta wR5
 
             jsl rlFillMovementRangeMapByClass
-            jsl rlUnknown80E551
+            jsl rlCapMovementRangeMap
 
             lda #<>rlAIASMCCountCharacterInMovementRangeEffect
             sta lR24
