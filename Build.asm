@@ -324,7 +324,7 @@
   * := $01FB4D
   .logical mapped($01FB4D)
 
-    .dsection ResetCapturedPlayerUnitsSection
+    .dsection ResetUncapturedPlayerUnitsSection
     .dsection FreeNonplayerDeploymentSlotsSection
     .dsection SetNewGameOptionsSection
     .dsection UnknownResetPlayerUnitVisibilitySection

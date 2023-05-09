@@ -26,19 +26,19 @@ GUARD_FE5_CODE83TEMP :?= false
 
   ; Freespace inclusions
 
-    .section ResetCapturedPlayerUnitsSection
+    .section ResetUncapturedPlayerUnitsSection
 
       startCode
 
-        rlResetCapturedPlayerUnits ; 83/FB4D
+        rlResetUncapturedPlayerUnits ; 83/FB4D
 
           .al
           .autsiz
           .databank ?
 
-          lda #<>rlResetCapturedPlayerUnitsEffect
+          lda #<>rlResetUncapturedPlayerUnitsEffect
           sta lR25
-          lda #>`rlResetCapturedPlayerUnitsEffect
+          lda #>`rlResetUncapturedPlayerUnitsEffect
           sta lR25+size(byte)
 
           lda #Player + 1
@@ -48,7 +48,7 @@ GUARD_FE5_CODE83TEMP :?= false
 
           .databank 0
 
-        rlResetCapturedPlayerUnitsEffect ; 83/FB5F
+        rlResetUncapturedPlayerUnitsEffect ; 83/FB5F
 
           .al
           .autsiz
@@ -106,7 +106,7 @@ GUARD_FE5_CODE83TEMP :?= false
 
       endCode
 
-    .endsection ResetCapturedPlayerUnitsSection
+    .endsection ResetUncapturedPlayerUnitsSection
 
     .section FreeNonplayerDeploymentSlotsSection
 
