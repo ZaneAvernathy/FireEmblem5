@@ -101,7 +101,7 @@ GUARD_FE5_CHAPTER06 :?= false
           END_DEFINITION
         END_DEFINITION_ARRAY
 
-       _BeforeActionEventDefinitions ; 99/A497
+      _BeforeActionEventDefinitions ; 99/A497
         macroECPlayerRetreat $08, $99AF80, Leif
       END_DEFINITION_ARRAY
 
