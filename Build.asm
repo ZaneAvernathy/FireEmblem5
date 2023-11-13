@@ -223,17 +223,6 @@
 
   .endlogical
 
-  * := $016556
-  .logical mapped($016556)
-
-    startFreespace
-
-      .fill mapped($010000) + $8000 - *, $FF
-
-    endFreespace
-
-  .endlogical
-
   * := $018E98
   .logical mapped($018E98)
 
