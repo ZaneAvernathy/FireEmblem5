@@ -3266,8 +3266,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
           ; Tomes always lose durability on a miss
           ; 1-2 range weapons only lose durability at 2
-          ; range on a miss, staves always lose durability
-          ; on a miss.
+          ; range on a miss. Ballistae lose durability on a miss.
 
           lda structActionStructEntry.WeaponTraits,b,x
           bit #TraitTome
@@ -5267,8 +5266,8 @@ GUARD_FE5_ACTIONSTRUCT :?= false
             ply
             plx
 
-            jsr rlActionStructGetCharmBonus
-            jsr rlActionStructGetBonusFromLeader
+            jsr rsActionStructGetCharmBonus
+            jsr rsActionStructGetBonusFromLeader
 
             lda wHitAvoidBonus
             clc
@@ -5314,7 +5313,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
           .databank 0
 
-        rlActionStructGetCharmBonus ; 83/E342
+        rsActionStructGetCharmBonus ; 83/E342
 
           .al
           .xl
@@ -5475,7 +5474,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
           .databank 0
 
-        rlActionStructGetBonusFromLeader ; 83/E3F3
+        rsActionStructGetBonusFromLeader ; 83/E3F3
 
           .al
           .autsiz
