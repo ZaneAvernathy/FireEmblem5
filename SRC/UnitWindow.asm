@@ -155,6 +155,8 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
         BG3TilemapPosition = BG3Allocate(64 * 32 * size(word))
 
+        MenuTilesBaseTile = VRAMToTile(MenuTextTilesPosition, BG3Base, size(Tile2bpp))
+
       ; Unit window types
 
         ; FE5 uses `wUnitWindowType` to keep track of how it
@@ -180,6 +182,14 @@ GUARD_FE5_UNIT_WINDOW :?= false
       ; Pixel coordinates
       UpwardsArrow   = (7,  54)
       DownwardsArrow = (7, 213)
+
+      WeaponRankSortIcon = (147, 16)
+      FE4SortLabelCursor = (128, 7)
+      SortDirectionArrow = (160, 11)
+
+      WeaponRankIcons = (164, 41)
+
+      SortSelectorCursorBase = (8, 39)
 
     .endnamespace ; UnitWindowConfig
 
@@ -589,15 +599,15 @@ GUARD_FE5_UNIT_WINDOW :?= false
           tax
 
           -
-            sta aUnitWindowMapSpriteIndexes,x
+            sta aUnitWindowFE4SpriteSlots,x
 
             inc a
 
-            .rept size(aUnitWindowMapSpriteIndexes._Slots[0])
+            .rept size(aUnitWindowFE4SpriteSlots._Slots[0])
               inc x
             .endrept
 
-            cmp #len(aUnitWindowMapSpriteIndexes._Slots) - 1
+            cmp #len(aUnitWindowFE4SpriteSlots._Slots) - 1
             bne -
 
           lda #0
@@ -651,8 +661,8 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda #0
           sta wUnitWindowFE4HightlightStep
 
-          lda #$00E8
-          sta aUnitWindowFE4HighlightColors._Colors[0]
+          lda #CGADSUB_Setting(CGADSUB_Subtract, true, false, false, false, true, false, true)
+          sta aUnitWindowFE4HighlightColors._Colors[0].Control
 
           rts
 
@@ -670,6 +680,8 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           ; Outputs:
           ; None
+
+          ; TODO: sizes of graphics
 
           jsl rlDMAByStruct
 
@@ -702,6 +714,8 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           ; Outputs:
           ; None
+
+          ; TODO: size of graphics
 
           jsl rlDMAByStruct
 
@@ -972,7 +986,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           phx
 
-          sta $1AD1,b
+          sta wTemporaryDeploymentInfo,b
           jsl rlUnitWindowGetEquippedWeapon
           ora #0
           bne _EquippedWeapon
@@ -1070,7 +1084,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq _End
 
-              sta $1AD1,b
+              sta wTemporaryDeploymentInfo,b
               jsl rlUnitWindowGetEquippedWeapon
 
               pha
@@ -1087,7 +1101,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
                 lda #-1
 
               +
-              jsl rlUnitWindowStub90CE6B_CopyFE4ItemIcon
+              jsl rlUnitWindowFE4CopyItemIcon
 
               lda wUnitWindowFE4CurrentItemIconSlot
               inc a
@@ -1700,16 +1714,16 @@ GUARD_FE5_UNIT_WINDOW :?= false
           sta wR0
 
           lda #1
-          sta $1AD6,b
+          sta wTemporaryUnitWindowCounter,b
 
           _Loop
 
             lda #0
             jsl rlUnitWindowFE4GetUnitSlot ; stub, fe4 get pointer to unit
-            lda $1AD1,b
+            lda wTemporaryDeploymentInfo,b
             beq _Next
 
-            jsl rlUnitWindowFE4GetUnitType ; stub returns 0, fe4 get unit type
+            jsl rlUnitWindowFE4GetUnitStatus ; stub returns 0, fe4 get unit type
             cmp #3
             beq _Skip
 
@@ -1725,15 +1739,15 @@ GUARD_FE5_UNIT_WINDOW :?= false
               lda wR0
               asl a
               tax
-              lda $1AD1,b
+              lda wTemporaryDeploymentInfo,b
               sta aUnitWindowDeploymentSlots,x
               inc wR0
 
             _Next
 
-              lda $1AD6,b
+              lda wTemporaryUnitWindowCounter,b
               inc a
-              sta $1AD6,b
+              sta wTemporaryUnitWindowCounter,b
               cmp #25
               bne _Loop
 
@@ -1771,6 +1785,13 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .databank ?
 
           ; Unused.
+          ; This is very similar to rlUnitWindowRememberLastSortOrder.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
 
           jsl rlDMAByStruct
 
@@ -1813,6 +1834,12 @@ GUARD_FE5_UNIT_WINDOW :?= false
           ; Unused.
           ; In FE4, this draws the unit names for the unit list.
 
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
           phk
           plb
 
@@ -1832,7 +1859,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq _End
 
-              sta $1AD1,b
+              sta wTemporaryDeploymentInfo,b
               jsl rlUnitWindowGetUnitName
 
               lda #TilemapEntry(0, 0, true, false, false)
@@ -1844,7 +1871,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
               bit #$4000
               bne +
 
-                jsl rlUnitWindowFE4GetUnitType
+                jsl rlUnitWindowFE4GetUnitStatus
                 cmp #$0005
                 bne ++
 
@@ -1857,9 +1884,9 @@ GUARD_FE5_UNIT_WINDOW :?= false
               tay
               ldx _LinePositions,y
 
-              lda $1AD3,b
+              lda lTemporaryNamePointer,b
               sta lR18
-              lda $1AD3+size(byte),b
+              lda lTemporaryNamePointer+size(byte),b
               sta lR18+size(byte)
 
               jsl rlDrawMenuText
@@ -1900,6 +1927,12 @@ GUARD_FE5_UNIT_WINDOW :?= false
           ; Unused.
           ; In FE4, this draws units' skill icons.
 
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
           phy
 
           _BaseTile := VRAMToTile(BorderTilesPosition, BG1Base, size(Tile4bpp))
@@ -1930,10 +1963,10 @@ GUARD_FE5_UNIT_WINDOW :?= false
               jmp _End
 
             +
-            sta $1AD1,b
+            sta wTemporaryDeploymentInfo,b
             jsl rlUnitWindowGetUnitSkillCount
 
-            lda $1ADE,b
+            lda wTemporaryUnitWindowSkillCounter,b
             beq _NextOuter
 
               asl a
@@ -1956,7 +1989,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
                 sta wR14
 
                 tax
-                lda $1AE0,b,x
+                lda aTemporaryUnitWindowSkillList,b,x
                 and #$00FF
                 sta wR13
                 beq _NextInner
@@ -2228,7 +2261,142 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
     .endsection UnitWindow80Section
 
+    .section UnitWindowTempSection
+
+      .with UnitWindowConfig
+
+      startCode
+
+        rlUnitWindowUnknown90B6F3 ; 90/B6F3
+
+          .al
+          .xl
+          .autsiz
+          .databank ?
+
+          inc wUnknown000302,b
+
+          lda #$0001
+          sta wUnitWindowFE4Action
+
+          jsr rsUnitWindowFE4CopyLineHighlightColors
+
+          lda wUnknown000304,b
+          cmp #$0004
+          bne +
+
+            jsr rsUnitWindowRenderWeaponRankIcons
+            bra _Continue
+
+          +
+          cmp #$0005
+          bne _Continue
+
+          lda #T_Setting(true, true, true, false, true)
+          sta bBufferTM
+
+          _Continue
+          sep #$20
+
+          lda #INIDISP_Setting(false, 15)
+          sta bBufferINIDISP
+
+          rep #$20
+
+          rtl
+
+          .databank 0
+
+        rlUnitWindowUnknown90B720 ; 90/B720
+
+          .al
+          .xl
+          .autsiz
+          .databank ?
+
+          phb
+          php
+
+          phk
+          plb
+
+          .databank `*
+
+          jsl rlUnitWindowToggleScrollArrows
+          lda wUnitWindowFE4Action
+          bne _End
+
+          lda wUnitWindowFE4SortTypeFlag
+          ora wUnitWindowFE4UnitSwapStep
+          bne _End
+
+          ; FE4 doesn't have this proc check
+
+          jsl rlUnitWindowCheckForUnknownProcs
+          bcs _End
+
+            ; The actual functionality of this routine has
+            ; been gutted. In FE4, it's:
+
+            ; lda wUnknown000304
+            ; cmp #$0006
+            ; bmi +
+
+            ;   - bra -
+
+            ; +
+
+            ; asl a
+            ; tax
+            ; jsr (_StepPointers,x)
+
+          _End
+          plp
+          plb
+          rtl
+
+          .databank 0
+
+          endCode
+          startData
+
+          _StepPointers .block ; 90/B741
+
+            .addr $90bb74
+            .addr $90bba2
+            .addr $90bbe2
+            .addr $90bc25
+            .addr $90bc68
+            .addr $90bcb3
+
+          .endblock
+
+          endData
+          startCode
+
+        rlUnitWindowUnknown90B74D ; 90/B74D
+
+          .al
+          .xl
+          .autsiz
+          .databank ?
+
+          rtl
+
+          .databank 0
+
+
+
+
+      endCode
+
+      .endwith ; UnitWindowConfig
+
+    .endsection UnitWindowTempSection
+
     .section UnitWindow90Section
+
+      .with UnitWindowConfig
 
       startCode
 
@@ -2262,7 +2430,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnitWindowUnknown90C35A ; 90/C35A
+        rlUnitWindowFE4RenderWeaponRankWeaponRankSortIconWrapper ; 90/C35A
 
           .al
           .xl
@@ -2272,7 +2440,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           ; This wrapper function is bugged, it
           ; calls a long return function with a jsr.
 
-          jsr rlUnitWindowRenderWeaponRankSortIcon
+          jsr rlUnitWindowRenderWeaponRankWeaponRankSortIcon
           rtl
 
           .databank 0
@@ -2310,32 +2478,40 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endData
       startCode
 
-        rlUnitWindowRenderWeaponRankSortIcon ; 90/C3A4
+        rlUnitWindowRenderWeaponRankWeaponRankSortIcon ; 90/C3A4
 
           .al
           .xl
           .autsiz
           .databank ?
 
-          lda wUnitWindowSortColumn
+          ; This renders the selected weapon type sort icon.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
+          lda wUnitWindowSortType
           sec
-          sbc #25 ; TODO: sort columns
+          sbc #UnitWindowSortTypes.SwordRank
           bmi _End
 
-          cmp #10
+          cmp #UnitWindowSortTypes.DarkRank - UnitWindowSortTypes.SwordRank + 1
           bpl _End
 
             asl a
             tax
             lda aUnitWindowWeaponRankSortSpriteBases,x
             clc
-            adc #OAMTileAndAttr($140, 0, 0, false, false)
+            adc #OAMTileAndAttr($140, 0, 0, false, false) ; TODO: system icons
             sta wR4
 
-            lda #147
+            lda #WeaponRankSortIcon[0]
             sta wR0
 
-            lda #16
+            lda #WeaponRankSortIcon[1]
             sta wR1
 
             stz wR5
@@ -2364,7 +2540,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           ; using a jsr
 
           jsr rlUnitWindowRenderSortDirectionArrow
-          jsr rsUnitWindowUnknown90C406
+          jsr rsUnitWindowFE4RenderSortSwitchCursor
           rtl
 
           .databank 0
@@ -2392,19 +2568,29 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endData
       startCode
 
-        rsUnitWindowUnknown90C406 ; 90/C406
+        rsUnitWindowFE4RenderSortSwitchCursor ; 90/C406
 
           .al
           .xl
           .autsiz
           .databank ?
 
+          ; Unused
+          ; In FE4, when selecting a sort type, the game
+          ; draws a cursor next to the sort label.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
           lda wUnitWindowFE4SortTypeFlag
           beq _End
 
-            lda #128
+            lda #FE4SortLabelCursor[0]
             sta wR0
-            lda #7
+            lda #FE4SortLabelCursor[1]
             sta wR1
             jsl rlDrawRightFacingCursor
 
@@ -2420,6 +2606,14 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .autsiz
           .databank ?
 
+          ; This draws the sprite for the sort direction arrow.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
           lda wVBlankEnabledFramecount
           and #$001F
           tax
@@ -2431,7 +2625,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda aUnitWindowSortDirectionArrowFrameYPositions,x
           sta wR1
 
-          lda #160
+          lda #SortDirectionArrow[0]
           sta wR0
 
           stz wR4
@@ -2472,7 +2666,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
         .endblock
 
         aUnitWindowSortDirectionArrowFrameYPositions .block ; 90/C47C
-          .word range(11, 15)
+          .word range(SortDirectionArrow[1], SortDirectionArrow[1] + 4)
         .endblock
 
         aUnitWindowSortDirectionArrowFrameUpSprite   .structSpriteArray [[(   8,    0), $00, SpriteSmall, $11D, 3, 4, false, true]] ; 90/C484
@@ -2481,12 +2675,22 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endData
       startCode
 
-        rlUnitWindowUnknown90C492 ; 90/C492
+        rlUnitWindowFE4RenderUnitSwapCursors ; 90/C492
 
           .al
           .xl
           .autsiz
           .databank ?
+
+          ; Unused.
+          ; In FE4, this is used to draw the cursors used
+          ; when swapping two units' positions on the unit window.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
 
           lda wUnitWindowFE4UnitListCursorYCoordinate
           dec a
@@ -2494,7 +2698,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           sta wR1
 
-          lda #$0000
+          lda #0
           sta wR0
 
           lda wUnitWindowFE4SortTypeFlag
@@ -2514,10 +2718,10 @@ GUARD_FE5_UNIT_WINDOW :?= false
             sbc wUnitWindowFE4ScrollPixels
             sta wR1
 
-            lda #$0000
+            lda #0
             sta wR0
 
-            jsl rlUnitWindowUnknownRenderCursor90E283
+            jsl rlUnitWindowFE4RenderFlashingUnitSwapCursor
 
           +
           rtl
@@ -2532,12 +2736,21 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endData
       startCode
 
-        rsUnitWindowUnknown90C4D3 ; 90/C4D3
+        rlUnitWindowFE4MoveToLastUnit ; 90/C4D3
 
           .al
           .xl
           .autsiz
           .databank ?
+
+          ; In FE4, this changes the currently-selected line to
+          ; be the last unit in the list.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
 
           phk
           plb
@@ -2550,53 +2763,56 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda wUnitWindowMaxRows
           sta wUnitWindowFE4CurrentLine
 
+          ; If we have more than one screen of units,
+          ; we need to scroll.
+
           cmp #10
-          bpl _C51E
+          bpl _Scrolled
 
-          lda #$0000
-          sta wUnitWindowFE4ScrolledLines
+            lda #0
+            sta wUnitWindowFE4ScrolledLines
 
-          lda wUnitWindowMaxRows
-          dec a
-          sta wUnitWindowFE4CurrentHighlightLine
+            lda wUnitWindowMaxRows
+            dec a
+            sta wUnitWindowFE4CurrentHighlightLine
 
-          asl a
-          tax
-          lda aUnitWindowUnknown90C640,x
-          sta wUnitWindowFE4UnitListCursorYCoordinate
+            asl a
+            tax
+            lda aUnitWindowFE4LineCursorYPositions,x
+            sta wUnitWindowFE4UnitListCursorYCoordinate
 
-          lda wUnitWindowFE4ScrolledLines
-          asl a
-          tax
-          lda aUnitWindowUnknown90C555,x
-          sta wUnitWindowFE4ScrollPixels
+            lda wUnitWindowFE4ScrolledLines
+            asl a
+            tax
+            lda aUnitWindowFE4LineScrollYPositions,x
+            sta wUnitWindowFE4ScrollPixels
 
-          lda wR0
-          cmp wUnitWindowMaxRows
-          beq +
+            lda wR0
+            cmp wUnitWindowMaxRows
+            beq +
 
-            lda #$0009 ; TODO: sound definitions
-            jsl rlPlaySoundEffect
+              lda #$0009 ; TODO: sound definitions
+              jsl rlPlaySoundEffect
 
-          +
-          rts
+            +
+            rts
 
-          _C51E
+          _Scrolled
           lda wUnitWindowMaxRows
           sec
           sbc #10
           sta wUnitWindowFE4ScrolledLines
 
-          lda #$0009
+          lda #9
           sta wUnitWindowFE4CurrentHighlightLine
 
-          lda #$00CA
+          lda #202
           sta wUnitWindowFE4UnitListCursorYCoordinate
 
           lda wUnitWindowFE4ScrolledLines
           asl a
           tax
-          lda aUnitWindowUnknown90C555,x
+          lda aUnitWindowFE4LineScrollYPositions,x
           sta wUnitWindowFE4ScrollPixels
 
           lda wR0
@@ -2614,7 +2830,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endCode
       startData
 
-        aUnitWindowUnknown90C555 .block ; 90/C555
+        aUnitWindowFE4LineScrollYPositions .block ; 90/C555
 
           .word range(0, 256, 16)
 
@@ -2623,15 +2839,30 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endData
       startCode
 
-        rsUnitWindowUnknown90C575 ; 90/C575
+        rsUnitWindowFE4MoveToNextPage ; 90/C575
 
           .al
           .xl
           .autsiz
           .databank `*
 
+          ; In FE4, this changes the currently-selected line to
+          ; be the first unit on the next page. If there's less
+          ; than a full page remaining, try to fill the page
+          ; with as many units as possible. If on the last
+          ; page already, select the last unit.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
           lda wUnitWindowFE4CurrentLine
           sta wR0
+
+          ; If we can display a full page, move the full 10 rows.
+          ; If not, figure out how many to move down.
 
           lda wUnitWindowFE4ScrolledLines
           clc
@@ -2640,48 +2871,55 @@ GUARD_FE5_UNIT_WINDOW :?= false
           beq +
           blt +
 
-          jmp _C591
+          jmp _PartialPage
 
           +
-          jmp _C617
+          jmp _FullPage
 
-          _C591
+          _PartialPage
+
+          ; If we're already at the last page, select
+          ; the last unit.
+
           lda wUnitWindowFE4ScrolledLines
           cmp wUnitWindowCanScrollDownFlag
-          beq +
+          beq _LastUnit
 
-          lda wUnitWindowCanScrollDownFlag
-          sta wUnitWindowFE4ScrolledLines
+            lda wUnitWindowCanScrollDownFlag
+            sta wUnitWindowFE4ScrolledLines
 
-          lda wUnitWindowFE4ScrolledLines
-          clc
-          adc wUnitWindowFE4CurrentHighlightLine
-          inc a
-          sta wUnitWindowFE4CurrentLine
+            lda wUnitWindowFE4ScrolledLines
+            clc
+            adc wUnitWindowFE4CurrentHighlightLine
+            inc a
+            sta wUnitWindowFE4CurrentLine
 
-          lda wUnitWindowFE4ScrolledLines
-          asl a
-          tax
-          lda aUnitWindowUnknown90C555,x
-          sta wUnitWindowFE4ScrollPixels
+            lda wUnitWindowFE4ScrolledLines
+            asl a
+            tax
+            lda aUnitWindowFE4LineScrollYPositions,x
+            sta wUnitWindowFE4ScrollPixels
 
-          lda #$0009 ; TODO: sound definitions
-          jsl rlPlaySoundEffect
+            lda #$0009 ; TODO: sound definitions
+            jsl rlPlaySoundEffect
 
-          rts
+            rts
 
-          +
+          _LastUnit
           lda wUnitWindowMaxRows
           sta wUnitWindowFE4CurrentLine
+
+          ; If we don't need to scroll because there's
+          ; only one page, do that.
 
           lda wUnitWindowMaxRows
           cmp #11
-          bmi _C5F5
+          bmi _SinglePage
 
-          lda #$0009
+          lda #9
           sta wUnitWindowFE4CurrentHighlightLine
 
-          lda #$00CA
+          lda #202
           sta wUnitWindowFE4UnitListCursorYCoordinate
 
           lda wR0
@@ -2694,27 +2932,28 @@ GUARD_FE5_UNIT_WINDOW :?= false
           +
           rts
 
-          _C5F5
+          _SinglePage
+
           lda wUnitWindowMaxRows
           dec a
           sta wUnitWindowFE4CurrentHighlightLine
 
           asl a
           tax
-          lda aUnitWindowUnknown90C640,x
+          lda aUnitWindowFE4LineCursorYPositions,x
           sta wUnitWindowFE4UnitListCursorYCoordinate
 
           lda wR0
           cmp wUnitWindowMaxRows
           beq +
 
-          lda #$0009 ; TODO: sound definitions
-          jsl rlPlaySoundEffect
+            lda #$0009 ; TODO: sound definitions
+            jsl rlPlaySoundEffect
 
           +
           rts
 
-          _C617
+          _FullPage
           lda wUnitWindowFE4CurrentLine
           clc
           adc #10
@@ -2727,7 +2966,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           asl a
           tax
-          lda aUnitWindowUnknown90C555,x
+          lda aUnitWindowFE4LineScrollYPositions,x
           sta wUnitWindowFE4ScrollPixels
 
           lda #$0009 ; TODO: sound definitions
@@ -2740,7 +2979,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endCode
       startData
 
-        aUnitWindowUnknown90C640 .block ; 90/C640
+        aUnitWindowFE4LineCursorYPositions .block ; 90/C640
 
           .word 58 + range(0, 160, 16)
 
@@ -2749,29 +2988,38 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endData
       startCode
 
-        rsUnitWindowUnknown90C654 ; 90/C654
+        rsUnitWindowFE4MoveToFirstUnit ; 90/C654
 
           .al
           .xl
           .autsiz
           .databank ?
 
+          ; In FE4, this changes the currently-selected line to
+          ; be the first unit in the list.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
           lda wUnitWindowFE4CurrentLine
           sta wR0
 
-          lda #$0000
+          lda #0
           sta wUnitWindowFE4ScrolledLines
           sta wUnitWindowFE4CurrentHighlightLine
           sta wUnitWindowFE4ScrollPixels
 
-          lda #$003A
+          lda #58
           sta wUnitWindowFE4UnitListCursorYCoordinate
 
-          lda #$0001
+          lda #1
           sta wUnitWindowFE4CurrentLine
 
           lda wR0
-          cmp #$0001
+          cmp #1
           beq +
 
             lda #$0009 ; TODO: sound definitions
@@ -2782,50 +3030,60 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rsUnitWindowUnknown90C686 ; 90/C686
+        rsUnitWindowFE4MoveToPreviousPage ; 90/C686
 
           .al
           .xl
           .autsiz
           .databank `*
 
+          ; In FE4, this changes the currently-selected line to
+          ; be the last unit on the previous page. If on the first
+          ; page already, select the first unit.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
           lda wUnitWindowFE4ScrolledLines
           sec
-          sbc #$000A
-          beq _C6DE
-          bpl _C6DE
+          sbc #10
+          beq _FullPage
+          bpl _FullPage
 
           lda wUnitWindowFE4ScrolledLines
-          beq _C6B4
+          beq _FirstPage
 
-          lda #$0000
-          sta wUnitWindowFE4ScrolledLines
-          sta wUnitWindowFE4ScrollPixels
+            lda #0
+            sta wUnitWindowFE4ScrolledLines
+            sta wUnitWindowFE4ScrollPixels
 
-          lda wUnitWindowFE4CurrentHighlightLine
-          inc a
-          sta wUnitWindowFE4CurrentLine
+            lda wUnitWindowFE4CurrentHighlightLine
+            inc a
+            sta wUnitWindowFE4CurrentLine
 
-          lda #$0009 ; TODO: sound definitions
-          jsl rlPlaySoundEffect
+            lda #$0009 ; TODO: sound definitions
+            jsl rlPlaySoundEffect
 
-          rts
+            rts
 
-          _C6B4
+          _FirstPage
           lda wUnitWindowFE4CurrentLine
           sta wR0
 
-          lda #$0001
+          lda #1
           sta wUnitWindowFE4CurrentLine
 
-          lda #$0000
+          lda #0
           sta wUnitWindowFE4CurrentHighlightLine
 
-          lda #$003A
+          lda #58
           sta wUnitWindowFE4UnitListCursorYCoordinate
 
           lda wR0
-          cmp #$0001
+          cmp #1
           beq +
 
             lda #$0009 ; TODO: sound definitions
@@ -2834,20 +3092,20 @@ GUARD_FE5_UNIT_WINDOW :?= false
           +
           rts
 
-          _C6DE
+          _FullPage
           lda wUnitWindowFE4CurrentLine
           sec
-          sbc #$000A
+          sbc #10
           sta wUnitWindowFE4CurrentLine
 
           lda wUnitWindowFE4ScrolledLines
           sec
-          sbc #$000A
+          sbc #10
           sta wUnitWindowFE4ScrolledLines
 
           asl a
           tax
-          lda aUnitWindowUnknown90C555,x
+          lda aUnitWindowFE4LineScrollYPositions,x
           sta wUnitWindowFE4ScrollPixels
 
           lda #$0009 ; TODO: sound definitions
@@ -2857,12 +3115,21 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rsUnitWindowUnknown90C707 ; 90/C707
+        rsUnitWindowFE4RenderItemIcons ; 90/C707
 
           .al
           .xl
           .autsiz
           .databank ?
+
+          ; Unused.
+          ; In FE4, this renders units' equipped weapon icons.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
 
           phk
           plb
@@ -2881,12 +3148,12 @@ GUARD_FE5_UNIT_WINDOW :?= false
               lda wR15
               asl a
               tax
-              lda @l $90C775,x
+              lda @l aUnitWindowFE4ItemIconYCoordinates,x
               sec
               sbc wUnitWindowFE4ScrollPixels
               sta wR1
 
-              lda $7FB1D9,x
+              lda aUnitWindowFE4SpriteSlots,x
               asl a
               tax
               lda @l aUnitWindowFE4ItemIconBases,x
@@ -2925,7 +3192,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
         .endblock
 
-        aUnitWindowUnknown90C775 .block ; 90/C775
+        aUnitWindowFE4ItemIconYCoordinates .block ; 90/C775
 
           .word 55 + range(0, 368+16, 16)
 
@@ -2941,12 +3208,20 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .autsiz
           .databank ?
 
+          ; If on the 4th page, render the weapon type icons.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
           phb
           php
           phk
           plb
           lda wUnitWindowCurrentPage
-          cmp #$0004
+          cmp #4 ; TODO: pages?
           bne +
 
             jsr rsUnitWindowRenderWeaponRankIcons
@@ -2963,14 +3238,22 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .al
           .xl
           .autsiz
-          .databank ?
+          .databank `*
 
-          jsl $90F1AF
+          ; Actually renders the icons, see rlUnitWindowTryRenderWeaponRankIcons
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
+          jsl rlUnitWindowCheckForUnknownProcs
           bcs +
 
-            lda #164
+            lda #WeaponRankIcons[0]
             sta wR0
-            lda #41
+            lda #WeaponRankIcons[1]
             sta wR1
             lda #OAMTileAndAttr($140, 0, 0, false, false)
             sta wR4
@@ -3054,18 +3337,39 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endData
       startCode
 
-        rsUnitWindowUnknown90C8D6 ; 90/C8D6
+        rsUnitWindowFE4CopyLineHighlightColors ; 90/C8D6
 
           .al
           .xl
           .autsiz
           .databank ?
 
+          ; In FE5, this is called once.
+          ; In FE4, it is called every frame.
+
+          ; This copies color data for the currently-selected
+          ; line highlighter.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; aUnitWindowFE4HighlightHeights: filled with heights
+          ; aUnitWindowFE4HighlightPackedColors: filled with colors
+
+          ; Temporary variables
+
+            _CurrentLine   := wR3
+            _CurrentOffset := wR4
+
+          ; If we're selecting a sort type or swapping units, don't
+          ; draw the normal line highlight.
+
           lda wUnitWindowFE4SortTypeFlag
           ora wUnitWindowFE4UnitSwapStep
           beq +
 
-            jmp _C9E1
+            jmp _NoHighlight
 
           +
           phk
@@ -3075,8 +3379,10 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           sep #$20
 
-          ldx #size(aUnitWindowFE4HighlightHeights) - size(byte)
-          lda #$10
+          ; Reset all of the row heights to a full line.
+
+          ldx #len(aUnitWindowFE4HighlightHeights._Rows[:-1]) * size(aUnitWindowFE4HighlightHeights._Rows[0])
+          lda #16
 
           -
             sta aUnitWindowFE4HighlightHeights,x
@@ -3093,8 +3399,10 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           sep #$20
 
+          ; Shrink all of the lines leading up to the highlighted one.
+
           ldy #16
-          lda #$01
+          lda #1
 
           -
             sta aUnitWindowFE4HighlightHeights,x
@@ -3104,15 +3412,17 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           rep #$20
 
-          stz wR3
-          stz wR4
+          ; Until we get to the highlighted line, replace the disabled lines' colors.
 
-          _C912
+          stz _CurrentLine
+          stz _CurrentOffset
+
+          _Loop
             lda wUnitWindowFE4CurrentHighlightLine
-            cmp wR3
-            beq _C944
+            cmp _CurrentLine
+            beq _HighlightedLine
 
-            lda wR3
+            lda _CurrentLine
             sta wR0
 
             asl a
@@ -3120,12 +3430,12 @@ GUARD_FE5_UNIT_WINDOW :?= false
             adc wR0
             tax
 
-            lda aUnitWindowUnknown90CA9A+size(byte),x
+            lda aUnitWindowFE4HighlightDisabledColors._Colors[0].ColorData0,x
 
             phx
             pha
 
-            lda wR4
+            lda _CurrentOffset
             tax
 
             pla
@@ -3134,37 +3444,39 @@ GUARD_FE5_UNIT_WINDOW :?= false
             txy
 
             plx
-            lda aUnitWindowUnknown90CA9A,x
+            lda aUnitWindowFE4HighlightDisabledColors._Colors[0].Control,x
             tyx
             sta aUnitWindowFE4HighlightPackedColors._Main._Colors[0].Control,x
 
-            lda wR4
+            lda _CurrentOffset
             clc
             adc #size(structUnitWindowFE4HighlightColor)
-            sta wR4
+            sta _CurrentOffset
 
-            bra _C977
+            bra _Next
 
-          _C944
+          ; Fill the highlighted line's colors.
+
+          _HighlightedLine
             ldx #0
 
             -
-              lda $7FB141+size(byte),x
+              lda aUnitWindowFE4HighlightColors._Colors[0].ColorData0,x
               phx
               pha
-              lda wR4
+              lda _CurrentOffset
               tax
               pla
               sta aUnitWindowFE4HighlightPackedColors._Main._Colors[0].ColorData0,x
 
               plx
 
-              lda $7FB141,x
+              lda aUnitWindowFE4HighlightColors._Colors[0].Control,x
 
               phx
               pha
 
-              lda wR4
+              lda _CurrentOffset
               tax
 
               pla
@@ -3173,32 +3485,35 @@ GUARD_FE5_UNIT_WINDOW :?= false
               txa
               clc
               adc #size(structUnitWindowFE4HighlightColor)
-              sta wR4
+              sta _CurrentOffset
 
               plx
-
 
               .rept size(structUnitWindowFE4HighlightColor)
                 inc x
               .endrept
 
               cpx #size(aUnitWindowFE4HighlightPackedColors._Main)
-              beq _C977
+              beq _Next
 
               jmp -
 
-          _C977
-            lda wR3
+          _Next
+            lda _CurrentLine
             inc a
-            sta wR3
+            sta _CurrentLine
             cmp #11
             beq +
 
-              jmp _C912
+              jmp _Loop
 
             +
+
+            ; After drawing the disabled lines and the highlight, get
+            ; the next step and fetch its colors for next time.
+
             lda wUnitWindowFE4HightlightCounter
-            bne _C9CF
+            bne _End
 
               lda wUnitWindowFE4HightlightStep
               sta wR0
@@ -3211,63 +3526,66 @@ GUARD_FE5_UNIT_WINDOW :?= false
               lda #0
               sta wR0
 
-              ldy #$0010
+              ldy #16
 
-          _C99D
+          _GetNextHighlightColors
             phx
 
-            lda aUnitWindowUnknown90CA16+size(byte),x
+            lda aUnitWindowFE4HighlightEnabledColors+structUnitWindowFE4HighlightColor.ColorData0,x
             ldx wR0
-            sta $7FB141+size(byte),x
+            sta aUnitWindowFE4HighlightColors._Colors[0].ColorData0,x
 
             plx
 
-            lda aUnitWindowUnknown90CA16,x
+            lda aUnitWindowFE4HighlightEnabledColors+structUnitWindowFE4HighlightColor.Control,x
 
             phx
 
             ldx wR0
-            sta $7FB141,x
+            sta aUnitWindowFE4HighlightColors._Colors[0].Control,x
 
-            inc x
-            inc x
-            inc x
+            .rept size(structUnitWindowFE4HighlightColor)
+              inc x
+            .endrept
+
             stx wR0
 
             plx
-            inc x
-            inc x
-            inc x
+
+            .rept size(structUnitWindowFE4HighlightColor)
+              inc x
+            .endrept
+
             dec y
-            bne _C99D
+            bne _GetNextHighlightColors
 
               lda wUnitWindowFE4HightlightStep
               inc a
-              cmp #$0016
+              cmp #22
               bne +
 
-                lda #$0000
+                lda #0
 
               +
               sta wUnitWindowFE4HightlightStep
 
-          _C9CF
+          _End
             lda wUnitWindowFE4HightlightCounter
             inc a
-            cmp #$0006
+            cmp #6
             bne +
 
-              lda #$0000
+              lda #0
 
             +
             sta wUnitWindowFE4HightlightCounter
             rts
 
-          _C9E1
+          _NoHighlight
             sep #$20
 
             ldx #size(aUnitWindowFE4HighlightHeights) - size(byte)
-            lda #$10
+            lda #16
 
             -
             sta aUnitWindowFE4HighlightHeights,x
@@ -3279,17 +3597,17 @@ GUARD_FE5_UNIT_WINDOW :?= false
             ldx #0
 
             -
-              lda aUnitWindowUnknown90CA9A+size(byte),x
+              lda aUnitWindowFE4HighlightDisabledColors._Colors[0].ColorData0,x
               sta aUnitWindowFE4HighlightPackedColors._Main._Colors[0].ColorData0,x
 
-              lda aUnitWindowUnknown90CA9A,x
+              lda aUnitWindowFE4HighlightDisabledColors._Colors[0].Control,x
               sta aUnitWindowFE4HighlightPackedColors._Main._Colors[0].Control,x
 
               .rept size(structUnitWindowFE4HighlightColor)
                 inc x
               .endrept
 
-              cpx #$0024
+              cpx #size(aUnitWindowFE4HighlightDisabledColors)
               bne -
 
             lda #0
@@ -3303,7 +3621,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endCode
       startData
 
-        aUnitWindowUnknown90CA16 .block ; 90/CA16
+        aUnitWindowFE4HighlightEnabledColors .block ; 90/CA16
 
           BlueIntensities     = [0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 4, 4, 3, 3, 2, 1, 0, 0, 0, 0, 0]
           RedGreenIntensities = [3, 2, 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2]
@@ -3330,74 +3648,89 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
         .endblock
 
-        aUnitWindowUnknown90CA9A .block ; 90/CA9A
+        aUnitWindowFE4HighlightDisabledColors .block ; 90/CA9A
 
-          .for Intensity in range(1, 12)
+          ; 64tass doesn't seem to get the struct fields right
+          ; when trying this with a .bfor, so:
 
-            .structUnitWindowFE4HighlightColor None, COLDATA_Setting(Intensity, true, true, true), CGADSUB_Setting(CGADSUB_Subtract, false, true, false, false, false, false, false)
+          Intensity := 1
 
-          .endfor
+          _Colors .brept 11
+
+            .dstruct structUnitWindowFE4HighlightColor, None, COLDATA_Setting(Intensity, true, true, true), CGADSUB_Setting(CGADSUB_Subtract, false, true, false, false, false, false, false)
+
+            Intensity += 1
+
+          .endrept
+
+          .structUnitWindowFE4HighlightColor None, COLDATA_Setting(15, true, true, true), CGADSUB_Setting(CGADSUB_Add, false, true, false, false, false, false, false)
 
         .endblock
-
-        aUnitWindowUnknown90CABB ; 90/CABB
-          .word 1
-          .long $8EA2EF
-          .byte 0
 
       endData
       startCode
 
-        rlUnitWindowUnknown90CAC1 ; 90/CAC1
+        rlUnitWindowFE4GetUnitSpriteInfos ; 90/CABE
 
           .al
           .xl
           .autsiz
           .databank ?
 
+          ; Unused.
+          ; In FE4, this gets all units' map sprite info.
+
+          ; Inputs:
+          ; aUnitWindowDeploymentSlots: filled with deployment slots
+
+          ; Outputs:
+          ; aUnitWindowFE4MapSpriteSlots: filled with sprite info
+
+          ldx #size(aUnitWindowFE4MapSpriteSlots) - size(sint)
+
           -
             lda #-1
-            sta $7E4547,x
+            sta aUnitWindowFE4MapSpriteSlots,x
 
-            .rept size(word)
+            .rept size(sint)
               dec x
             .endrept
 
             bpl -
 
-          lda #$0017
-          sta $1AD6,b
+          lda #23
+          sta wTemporaryUnitWindowCounter,b
 
-          ldx #$002E
+          ldx #size(aUnitWindowFE4MapSpriteSlots.aTallMapSpriteSlots) - size(sint)
 
           -
             phx
 
-            lda $1AD6,b
+            lda wTemporaryUnitWindowCounter,b
             asl a
             tax
-            lda $7E44A0,x
-            sta $1AD1,b
+            lda aUnitWindowDeploymentSlots,x
+            sta wTemporaryDeploymentInfo,b
 
             plx
 
-            lda $1AD1,b
-            beq ++
+            lda wTemporaryDeploymentInfo,b
+            beq +
 
-            jsl $90E908
+            jsl rlUnitWindowFE4GetUnitSpriteInfo
             bit #$8000
-            bne +
+            bne _Tall
 
-            sta $7E4547,x
-            bra ++
+              sta aUnitWindowFE4MapSpriteSlots.aNormalMapSpriteSlots,x
+              bra +
+
+            _Tall
+              sta aUnitWindowFE4MapSpriteSlots.aTallMapSpriteSlots,x
 
             +
-              sta $7E45A7,x
+              dec wTemporaryUnitWindowCounter,b
 
-            +
-              dec $1AD6,b
-
-              .rept size(word)
+              .rept size(sint)
                 dec x
               .endrept
 
@@ -3407,392 +3740,495 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnknown90CB03 ; 90/CB03
+        rsUnitWindowFE4UnknownMapSpriteRenderer ; 90/CB03
 
           .al
           .xl
           .autsiz
           .databank ?
 
-          jsl $90EE28
+          ; Unused.
+          ; This is a short return wrapper for
+          ; rlUnitWindowFE4RenderAllMapSprites
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
+
+          jsl rlUnitWindowFE4RenderAllMapSprites
           rts
 
           .databank 0
 
-        rsUnitWindowUnknown90CB08 ; 90/CB08
+        rsUnitWindowFE4RenderSprites ; 90/CB08
 
           .al
           .xl
           .autsiz
           .databank ?
 
-          stz wR0
-          stz wR1
-          stz wR4
-          stz wR5
+          ; Unused.
+          ; In FE4, this renders the sort direction
+          ; cursor, `ready to promote` sprites, and
+          ; map sprites.
 
-          lda wUnitWindowSortDirection
-          bne +
+          ; Inputs:
+          ; None
 
-            ldy #<>_CDB3
-            bra ++
+          ; Outputs:
+          ; wTemporaryDeploymentInfo: selected line unit's
+          ;   deployment slot
 
-          +
-            ldy #<>_CDA7
+          ; Temporary variables
 
-          +
-          jsl rlPushToOAMBuffer
+            _XBase         := wR0
+            _YBase         := wR1
+            _SpriteBase    := wR4
+            _AttributeBase := wR5
 
-          lda wVBlankEnabledFramecount
-          and #$0018
-          beq ++
+          stz _XBase
+          stz _YBase
+          stz _SpriteBase
+          stz _AttributeBase
 
-          lda #$0000
+          ; Start by rendering the sort order sprite.
 
-          -
-            sta wR15
-            asl a
-            tax
-            lda aUnitWindowFE4ReadyToPromoteFlags,x
-            beq +
+            lda wUnitWindowSortDirection
+            bne _Up
 
-            lda _CD58,x
-            sec
-            sbc wUnitWindowFE4ScrollPixels
-            sta wR1
+              ldy #<>_SortArrowDown
+              bra +
 
-            stz wR0
-            stz wR4
-            stz wR5
-
-            ldy #<>_CD9B
-            jsl rlPushToOAMBuffer
+            _Up
+              ldy #<>_SortArrowUp
 
             +
-              lda wR15
-              inc a
-              cmp wUnitWindowMaxRows
-              bne -
+            jsl rlPushToOAMBuffer
 
-          +
-          jsr $90CDBF
+          ; Try to render units' `ready to promote` sprites.
 
-          phk
-          plb
+            lda wVBlankEnabledFramecount
+            and #$0018
+            beq _PostPromoteFlag
 
-          ldx #$002E
-          lda wUnitWindowFE4CurrentLine
-          dec a
-          asl a
-          sta wR0
+            lda #0
 
-          -
+            -
+              sta wR15
+              asl a
+              tax
+              lda aUnitWindowFE4ReadyToPromoteFlags,x
+              beq +
+
+                lda @l _RowYBases,x
+                sec
+                sbc wUnitWindowFE4ScrollPixels
+                sta _YBase
+
+                stz _XBase
+                stz _SpriteBase
+                stz _AttributeBase
+
+                ldy #<>_PromoteSprite
+                jsl rlPushToOAMBuffer
+
+              +
+                lda wR15
+                inc a
+                cmp wUnitWindowMaxRows
+                bne -
+
+          _PostPromoteFlag
+
+          ; Next, render the selected unit's map sprite.
+
+            jsr rsUnitWindowFE4GetCurrentLineUnit
+
+            phk
+            plb
+
+            .databank `*
+
+            ldx #size(aUnitWindowFE4MapSpriteSlots.aTallMapSpriteSlots) - size(sint)
+            lda wUnitWindowFE4CurrentLine
+            dec a
+            asl a
+            sta wR0
+
+            -
+              cpx wR0
+              beq +
+
+                .rept size(word)
+                  dec x
+                .endrept
+
+                bra -
+
+            +
+            lda wUnitWindowFE4UnitSwapStartSlot
+            dec a
+            asl a
+            sta wR0
+
+            ; If over the first unit when swapping units,
+            ; don't render the map sprite every other frame.
+
             cpx wR0
+            bne +
+
+            lda wVBlankEnabledFramecount
+            and #$0001
             beq +
+
+              jmp _PostSelectedLineMapSprite
+
+            +
+            phx
+            lda aUnitWindowFE4SpriteSlots,x
+            asl a
+            tax
+            lda aUnitWindowFE4MapSpriteSlots.aTallMapSpriteSlots,x
+            cmp #-1
+            beq _Normal
+
+              lda @l aUnitWindowFE4TallMapSpriteTileIndices,x
+              sta _SpriteBase
+              lda #<>_TallMapSprite
+              tay
+              bra +
+
+            _Normal
+              lda @l aUnitWindowFE4NormalMapSpriteTileIndices,x
+              sta _SpriteBase
+              lda #<>_NormalMapSprite
+              tay
+
+            +
+
+            plx
+            phx
+            phy
+
+            ; The topmost mapsprite is rendered with a
+            ; higher priority to avoid being cut off by the
+            ; sort headers.
+
+            ldy #OAMTileAndAttr(0, 6, 2, false, false)
+            cpx #$0000 ; line offset
+            bne +
+
+              lda wUnitWindowFE4ScrollPixels
+              bne +
+
+                ldy #OAMTileAndAttr(0, 6, 3, false, false)
+
+            +
+            tya
+            sta _AttributeBase
+
+            lda wUnitWindowFE4CurrentLine
+            dec a
+            asl a
+            tax
+            lda aUnitWindowDeploymentSlots,x
+            sta wTemporaryDeploymentInfo,b
+
+            ; Gray palette
+
+            jsl rlUnitWindowFE4GetUnitState
+            bit #$4000
+            bne _SelectedGray
+
+            jsl rlUnitWindowFE4GetUnitStatus
+            cmp #$0005 ; FE4 Sleep
+            bne +
+
+            _SelectedGray
+              lda _AttributeBase
+              and #+~OAMTileAndAttr(0, 7, 0, false, false)
+              ora #OAMTileAndAttr(0, 7, 0, false, false)
+              sta _AttributeBase
+
+            +
+
+            ply
+            plx
+
+            stz _XBase
+            lda @l _RowYBases,x
+            sec
+            sbc wUnitWindowFE4ScrollPixels
+            sta _YBase
+            jsl rlPushToOAMBuffer
+
+          _PostSelectedLineMapSprite
+
+          ; Render tall map sprites
+
+            lda wUnitWindowMaxRows
+            dec a
+            asl a
+            tax
+
+            _TallMapSpriteLoop
+
+              phx
+
+              ; Don't render the selected line's map sprite
+
+              lda wUnitWindowFE4CurrentLine
+              dec a
+              asl a
+              sta wR0
+
+              cpx wR0
+              bne +
+
+                jmp _TallMapSpriteNext
+
+              +
+
+              ; Don't render the first selected unit
+              ; when swapping units ever other frame.
+
+              lda wUnitWindowFE4UnitSwapStartSlot
+              dec a
+              asl a
+              sta wR0
+
+              cpx wR0
+              bne +
+
+              lda wVBlankEnabledFramecount
+              and #$0001
+              beq +
+
+                jmp _TallMapSpriteNext
+
+              +
+
+              phx
+
+              lda aUnitWindowFE4SpriteSlots,x
+              asl a
+              tax
+              lda aUnitWindowFE4MapSpriteSlots.aTallMapSpriteSlots,x
+
+              plx
+              cmp #-1
+              beq _TallMapSpriteNext
+
+              ; The topmost mapsprite is rendered with a
+              ; higher priority to avoid being cut off by the
+              ; sort headers.
+
+              ldy #OAMTileAndAttr(0, 6, 2, false, false)
+              cpx #0 ; line offset
+              bne +
+
+              lda wUnitWindowFE4ScrollPixels
+              bne +
+
+              ldy #OAMTileAndAttr(0, 6, 3, false, false)
+
+              +
+              tya
+              sta _AttributeBase
+
+              lda aUnitWindowDeploymentSlots,x
+              sta wTemporaryDeploymentInfo,b
+
+              jsl rlUnitWindowFE4GetUnitState
+              bit #$4000
+              bne _TallGrayed
+
+              jsl rlUnitWindowFE4GetUnitStatus
+              cmp #$0005
+              bne +
+
+              _TallGrayed
+                lda _AttributeBase
+                and #+~OAMTileAndAttr(0, 7, 0, false, false)
+                ora #OAMTileAndAttr(0, 7, 0, false, false)
+                sta _AttributeBase
+
+              +
+
+              plx
+              phx
+
+              lda aUnitWindowFE4SpriteSlots,x
+              asl a
+              tax
+              lda @l aUnitWindowFE4TallMapSpriteTileIndices,x
+              plx
+
+              sta _SpriteBase
+              lda #<>_TallMapSprite
+              tay
+
+              stz _XBase
+              lda @l _RowYBases,x
+              sec
+              sbc wUnitWindowFE4ScrollPixels
+              sta _YBase
+              phx
+              jsl rlPushToOAMBuffer
+
+            _TallMapSpriteNext
+              plx
 
               .rept size(word)
                 dec x
               .endrept
 
-              bra -
+              bmi +
 
-          +
-          lda wUnitWindowFE4UnitSwapStartSlot
-          dec a
-          asl a
-          sta wR0
+                jmp _TallMapSpriteLoop
 
-          cpx wR0
-          bne +
+              +
+              lda wUnitWindowMaxRows
+              dec a
+              asl a
+              tax
 
-          lda wVBlankEnabledFramecount
-          and #$0001
-          beq +
+          ; Next, render normal map sprites
 
-            jmp _CBFF
+            _NormalMapSpriteLoop
 
-          +
-          phx
-          lda $7FB1D9,x
-          asl a
-          tax
-          lda $7E45A7,x
-          cmp #-1
-          beq _CBA1
+              ; Don't render the selected line's map sprite
 
-          lda $90EB3C,x
-          sta wR4
-          lda #<>_CD8F
-          tay
-          bra _CBAB
+              lda wUnitWindowFE4CurrentLine
+              dec a
+              asl a
+              sta wR0
+              cpx wR0
+              bne +
 
-          _CBA1
-          lda $90EA4C,x
-          sta wR4
-          lda #<>_CD88
-          tay
+                jmp _NormalMapSpriteNext
 
-          _CBAB
-          plx
-          phx
-          phy
-          ldy #OAMTileAndAttr(0, 6, 2, false, false)
-          cpx #$0000
-          bne +
+              +
 
-            lda wUnitWindowFE4ScrollPixels
-            bne +
+              ; Don't render the first selected unit
+              ; when swapping units ever other frame.
 
-              ldy #OAMTileAndAttr(0, 6, 3, false, false)
+              lda wUnitWindowFE4UnitSwapStartSlot
+              dec a
+              asl a
+              sta wR0
+              cpx wR0
+              bne +
 
-          +
-          tya
-          sta wR5
+              lda wVBlankEnabledFramecount
+              and #$0001
+              beq +
+
+                jmp _NormalMapSpriteNext
+
+              +
+
+              phx
+
+              lda aUnitWindowFE4SpriteSlots,x
+              asl a
+              tax
+              lda aUnitWindowFE4MapSpriteSlots.aNormalMapSpriteSlots,x
+
+              plx
+              cmp #-1
+              beq _NormalMapSpriteNext
+
+              phy
+              phx
+
+              ; The topmost mapsprite is rendered with a
+              ; higher priority to avoid being cut off by the
+              ; sort headers.
+
+              ldy #OAMTileAndAttr(0, 6, 2, false, false)
+              cpx #$0000
+              bne +
+
+              lda wUnitWindowFE4ScrollPixels
+              bne +
+
+                ldy #OAMTileAndAttr(0, 6, 3, false, false)
+
+              +
+              tya
+              sta _AttributeBase
+              plx
+              lda aUnitWindowDeploymentSlots,x
+              sta wTemporaryDeploymentInfo,b
+              phx
+              jsl rlUnitWindowFE4GetUnitState
+
+              bit #$4000
+              bne +
+
+              jsl rlUnitWindowFE4GetUnitStatus
+              cmp #$0005
+              bne ++
+
+              +
+              lda _AttributeBase
+              and #+~OAMTileAndAttr(0, 7, 0, false, false)
+              ora #OAMTileAndAttr(0, 7, 0, false, false)
+              sta _AttributeBase
+
+              +
+
+              plx
+              ply
+
+              phx
+
+              lda aUnitWindowFE4SpriteSlots,x
+              asl a
+              tax
+              lda @l aUnitWindowFE4NormalMapSpriteTileIndices,x
+
+              plx
+
+              sta _SpriteBase
+              lda #<>_NormalMapSprite
+              tay
+              stz _XBase
+              lda @l _RowYBases,x
+              sec
+              sbc wUnitWindowFE4ScrollPixels
+              sta _YBase
+
+              phy
+              phx
+              jsl rlPushToOAMBuffer
+              plx
+              ply
+
+            _NormalMapSpriteNext
+
+              .rept size(word)
+                dec x
+              .endrept
+
+              bmi +
+
+              jmp _NormalMapSpriteLoop
+
+              +
+
+          ; Fetch the currently-selected line's
+          ; unit' deployment info?
 
           lda wUnitWindowFE4CurrentLine
           dec a
           asl a
           tax
           lda aUnitWindowDeploymentSlots,x
-          sta $1AD1,b
-
-          jsl $90E868
-          bit #$4000
-          bne +
-
-          jsl $90E86C
-          cmp #$0005
-          bne ++
-
-          +
-          lda wR5
-          and #+~OAMTileAndAttr(0, 7, 0, false, false)
-          ora #OAMTileAndAttr(0, 7, 0, false, false)
-          sta wR5
-
-          +
-          ply
-          plx
-          stz wR0
-          lda _CD58,x
-          sec
-          sbc wUnitWindowFE4ScrollPixels
-          sta wR1
-          jsl rlPushToOAMBuffer
-
-          _CBFF
-          lda wUnitWindowMaxRows
-          dec a
-          asl a
-          tax
-
-          _CC06
-          phx
-
-          lda wUnitWindowFE4CurrentLine
-          dec a
-          asl a
-          sta wR0
-
-          cpx wR0
-          bne _CC16
-
-          jmp _CC99
-
-          _CC16
-          lda wUnitWindowFE4UnitSwapStartSlot
-          dec a
-          asl a
-          sta wR0
-
-          cpx wR0
-          bne +
-
-          lda wVBlankEnabledFramecount
-          and #$0001
-          beq +
-
-          jmp _CC99
-
-          +
-          phx
-
-          lda $7FB1D9,x
-          asl a
-          tax
-          lda $7E45A7,x
-          plx
-
-          cmp #-1
-          beq _CC99
-
-          ldy #OAMTileAndAttr(0, 6, 2, false, false)
-          cpx #$0000
-          bne +
-
-          lda wUnitWindowFE4ScrollPixels
-          bne +
-
-          ldy #OAMTileAndAttr(0, 6, 3, false, false)
-
-          +
-          tya
-          sta wR5
-
-          lda aUnitWindowDeploymentSlots,x
-          sta $1AD1,b
-
-          jsl $90E868
-          bit #$4000
-          bne +
-
-          jsl $90E86C
-          cmp #$0005
-          bne ++
-
-          +
-          lda wR5
-          and #+~OAMTileAndAttr(0, 7, 0, false, false)
-          ora #OAMTileAndAttr(0, 7, 0, false, false)
-          sta wR5
-
-          +
-          plx
-          phx
-          lda $7FB1D9,x
-          asl a
-          tax
-          lda $90EB3C,x
-          plx
-          sta wR4
-          lda #<>_CD8F
-          tay
-          stz wR0
-          lda _CD58,x
-          sec
-          sbc wUnitWindowFE4ScrollPixels
-          sta wR1
-          phx
-          jsl rlPushToOAMBuffer
-
-          _CC99
-          plx
-          dec x
-          dec x
-          bmi +
-
-          jmp _CC06
-
-          +
-          lda wUnitWindowMaxRows
-          dec a
-          asl a
-          tax
-
-          _CCA8
-          lda wUnitWindowFE4CurrentLine
-          dec a
-          asl a
-          sta wR0
-          cpx wR0
-          bne +
-
-          jmp _CD42
-
-          +
-          lda wUnitWindowFE4UnitSwapStartSlot
-          dec a
-          asl a
-          sta wR0
-          cpx wR0
-          bne _CCCD
-
-          lda wVBlankEnabledFramecount
-          and #$0001
-          beq _CCCD
-
-          jmp _CD42
-
-          _CCCD
-          phx
-          lda $7FB1D9,x
-          asl a
-          tax
-          lda $7E4547,x
-          plx
-          cmp #-1
-          beq _CD42
-
-          phy
-          phx
-          ldy #OAMTileAndAttr(0, 6, 2, false, false)
-          cpx #$0000
-          bne +
-
-          lda wUnitWindowFE4ScrollPixels
-          bne +
-
-          ldy #OAMTileAndAttr(0, 6, 3, false, false)
-
-          +
-          tya
-          sta wR5
-          plx
-          lda aUnitWindowDeploymentSlots,x
-          sta $1AD1,b
-          phx
-          jsl $90E868
-
-          bit #$4000
-          bne +
-
-          jsl $90E86C
-          cmp #$0005
-          bne ++
-
-          +
-          lda wR5
-          and #+~OAMTileAndAttr(0, 7, 0, false, false)
-          ora #OAMTileAndAttr(0, 7, 0, false, false)
-          sta wR5
-
-          +
-          plx
-          ply
-          phx
-          lda $7FB1D9,x
-          asl a
-          tax
-          lda $90EA4C,x
-          plx
-          sta wR4
-          lda #<>_CD88
-          tay
-          stz wR0
-          lda _CD58,x
-          sec
-          sbc wUnitWindowFE4ScrollPixels
-          sta wR1
-          phy
-          phx
-          jsl rlPushToOAMBuffer
-          plx
-          ply
-
-          _CD42
-          dec x
-          dec x
-          bmi +
-
-          jmp _CCA8
-
-          +
-          lda wUnitWindowFE4CurrentLine
-          dec a
-          asl a
-          tax
-          lda aUnitWindowDeploymentSlots,x
-          sta $1AD1,b
+          sta wTemporaryDeploymentInfo,b
           rts
 
           .databank 0
@@ -3800,98 +4236,133 @@ GUARD_FE5_UNIT_WINDOW :?= false
           endCode
           startData
 
-            _CD58 .word range(56, 440, 16)
+            _RowYBases .word range(56, 440, 16)
 
-            _CD88 .structSpriteArray [[(  16,    0), $21, SpriteLarge, $080, 0, 0, false, false]]
-            _CD8F .structSpriteArray [[(  16,    0), $21, SpriteLarge, $140, 0, 0, false, false], [(  16,  -16), $21, SpriteLarge, $142, 0, 0, false, false]]
-            _CD9B .structSpriteArray [[(  12,    6), $21, SpriteLarge, $004, 2, 4, false, false], [(  28,    6), $00, SpriteSmall, $006, 2, 4, false, false]]
-            _CDA7 .structSpriteArray [[(  58,    9), $00, SpriteSmall, $009, 3, 4, false, false], [(  58,   17), $00, SpriteSmall, $019, 3, 4, false, false]]
-            _CDB3 .structSpriteArray [[(  58,   17), $00, SpriteSmall, $009, 3, 4, false, true], [(  58,    9), $00, SpriteSmall, $019, 3, 4, false, true]]
+            _NormalMapSprite .structSpriteArray [[(  16,    0), $21, SpriteLarge, $080, 0, 0, false, false]]
+            _TallMapSprite   .structSpriteArray [[(  16,    0), $21, SpriteLarge, $140, 0, 0, false, false], [(  16,  -16), $21, SpriteLarge, $142, 0, 0, false, false]]
+            _PromoteSprite   .structSpriteArray [[(  12,    6), $21, SpriteLarge, $004, 2, 4, false, false], [(  28,    6), $00, SpriteSmall, $006, 2, 4, false, false]]
+            _SortArrowUp     .structSpriteArray [[(  58,    9), $00, SpriteSmall, $009, 3, 4, false, false], [(  58,   17), $00, SpriteSmall, $019, 3, 4, false, false]]
+            _SortArrowDown   .structSpriteArray [[(  58,   17), $00, SpriteSmall, $009, 3, 4, false, true],  [(  58,    9), $00, SpriteSmall, $019, 3, 4, false, true]]
 
           endData
           startCode
 
-        rsUnitWindowUnknown90CDBF ; 90/CDBF
+        rsUnitWindowFE4GetCurrentLineUnit ; 90/CDBF
 
           .al
           .xl
           .autsiz
           .databank ?
 
+          ; Unused.
+          ; In FE4, this gets the selected line's unit's
+          ; slot?
+
+          ; Inputs:
+          ; wUnitWindowFE4CurrentLine: current line
+
+          ; Outputs:
+          ; This is supposed to be the unit slot
+
           lda wUnitWindowFE4PageScrollFlag
-          bne +
+          bne _End
 
           lda wUnitWindowFE4SortTypeFlag
-          bne +
+          bne _End
 
           ora wUnitWindowFE4UnitSwapStep
-          bne +
+          bne _End
 
-          lda wUnitWindowFE4CurrentLine
-          dec a
-          asl a
-          sta wUnitWindowFE4CurrentLineSlotOffset
-          tax
-          lda aUnitWindowDeploymentSlots,x
-          sta $1AD1,b
+            lda wUnitWindowFE4CurrentLine
+            dec a
+            asl a
+            sta wUnitWindowFE4CurrentLineSlotOffset
+            tax
+            lda aUnitWindowDeploymentSlots,x
+            sta wTemporaryDeploymentInfo,b
 
-          jsl $90E868
-          bit #$4000
-          bne +
+            jsl rlUnitWindowFE4GetUnitState
+            bit #$4000
+            bne _End
 
-          jsl $90E86C
-          cmp #$0005
-          beq +
+            jsl rlUnitWindowFE4GetUnitStatus
+            cmp #$0005
+            beq _End
 
-          lda wUnitWindowFE4CurrentLineSlotOffset
-          lda $7FB1D9,x
-          asl a
-          sta wUnitWindowFE4CurrentLineSlotOffset
-          tax
-          jsl $90EA37
+              lda wUnitWindowFE4CurrentLineSlotOffset
+              lda aUnitWindowFE4SpriteSlots,x
+              asl a
+              sta wUnitWindowFE4CurrentLineSlotOffset
+              tax
+              jsl rlUnitWindowFE4GetUnitSlot
 
-          +
+          _End
           rts
 
           .databank 0
 
-        rsUnitWindowUnknown90CE08 ; 90/CE08
+        rsUnitWindowUnknownDrawRankString ; 90/CE08
 
           .al
           .xl
           .autsiz
           .databank ?
 
+          ; Unused.
+          ; Draws a weapon rank string.
+
+          ; Inputs:
+          ; A: rank
+          ; X: packed coordinates
+
+          ; Outputs:
+          ; None
+
+          _PushedRegisters = [wR14, wR13]
+
           sta wR17
+
           phx
           phy
-          lda wR14
-          pha
-          lda wR13
-          pha
-          lda #$3400
+
+          .for _Register in _PushedRegisters
+
+            lda _Register
+            pha
+
+          .endfor
+
+          lda #TilemapEntry(0, 5, true, false, false)
           bcs +
 
-          lda #$3800
+            lda #TilemapEntry(0, 6, true, false, false)
 
           +
           sta aCurrentTilemapInfo.wBaseTile,b
+
           lda wR17
+
           phx
           phy
           jsl rlGetRankString
           ply
           plx
+
           stx wR17
+
           tya
           xba
           ora wR17
           tax
           jsl rlDrawMenuText
-          pla
-          sta wR13
-          pla
-          sta wR14
+
+          .for _Register in iter.reversed(_PushedRegisters)
+
+            pla
+            sta _Register
+
+          .endfor
+
           ply
           plx
           rts
@@ -3901,39 +4372,55 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endCode
       startData
 
-        aUnitWindowUnknown90CE3B
-          .word $385f
-          .word $38de
-          .word $3944
-          .word $3954
-          .word $3943
-          .word $3953
-          .word $3942
-          .word $3952
-          .word $3941
-          .word $3951
-          .word $3940
-          .word $3950
-          .word $385f
-          .word $38de
-          .word $3944
-          .word $3954
-          .word $3943
-          .word $3953
-          .word $3942
-          .word $3952
-          .word $3941
-          .word $3951
-          .word $3940
-          .word $3950
+        aUnitWindowUnknown90CE3B .block ; 90/CE3B
+
+          ; Unused
+
+          DashTiles = [((15,  5), (14, 13))]
+          ETiles    = [(( 4, 20), ( 4, 21))]
+          DTiles    = [(( 3, 20), ( 3, 21))] ; This is wrong
+          CTiles    = [(( 2, 20), ( 2, 21))]
+          BTiles    = [(( 1, 20), ( 1, 21))]
+          ATiles    = [(( 0, 20), ( 0, 21))]
+
+          AllTiles = DashTiles .. ETiles .. DTiles .. CTiles .. BTiles .. ATiles
+
+          ; In FE4, these two sets are for the blue and
+          ; green palettes. FE5 just has them both as
+          ; the same color.
+
+          _Green .for _Upper, _Lower in AllTiles
+
+            .word TilemapEntry(MenuTilesBaseTile+C2I(_Upper), 6, true, false, false)
+            .word TilemapEntry(MenuTilesBaseTile+C2I(_Lower), 6, true, false, false)
+
+          .endfor
+
+          _Blue .for _Upper, _Lower in AllTiles
+
+            .word TilemapEntry(MenuTilesBaseTile+C2I(_Upper), 6, true, false, false)
+            .word TilemapEntry(MenuTilesBaseTile+C2I(_Lower), 6, true, false, false)
+
+          .endfor
+
+        .endblock
 
       endData
       startCode
 
-        rlUnitWindowStub90CE6B_CopyFE4ItemIcon ; 90/CE6B
+        rlUnitWindowFE4CopyItemIcon ; 90/CE6B
 
           .autsiz
           .databank ?
+
+          ; Unused.
+          ; In FE4, this copies an item icon into VRAM.
+
+          ; Inputs:
+          ; A: item icon
+
+          ; Outputs:
+          ; None
 
           rtl
 
@@ -3942,7 +4429,13 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endCode
       startData
 
-        aUnitWindowUnknown90CE6B ; 90/CE6B
+        aUnitWindowFE4ItemIconSheetOffsets .block ; 90/CE6B
+
+          ; Unused.
+          ; In FE4, this is a table, indexed by
+          ; item ID, for the item's offset into
+          ; the item icon sheet.
+
           .word $0000
           .word $0040
           .word $0080
@@ -4081,50 +4574,77 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .word $2440
           .word $2c00
           .word $3580
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $2000
-          .word $4000
-          .word $6000
-          .word $0000
-          .word $2000
-          .word $4000
-          .word $6000
-          .word $0800
-          .word $2800
-          .word $4800
-          .word $6800
-          .word $0800
-          .word $2800
-          .word $4800
-          .word $6800
-          .word $1000
-          .word $3000
-          .word $5000
-          .word $7000
-          .word $1000
-          .word $3000
-          .word $5000
-          .word $7000
-          .word $1800
-          .word $3800
-          .word $5800
-          .word $7800
-          .word $1800
-          .word $3800
-          .word $5800
-          .word $7800
+
+        .endblock
+
+        aUnitWindowFE4ItemIconVRAMBases .block ; 90/CF80
+
+          ; Unused.
+          ; In FE4, these are offsets into the
+          ; object VRAM tile space that item
+          ; icons begin at, indexed into by
+          ; OBSEL & (OBSEL_Base | OBSEL_Gap)
+
+          .word $0000 >> 1
+          .word $0000 >> 1
+          .word $0000 >> 1
+          .word $4000 >> 1
+          .word $8000 >> 1
+          .word $C000 >> 1
+          .word $0000 >> 1
+          .word $4000 >> 1
+          .word $8000 >> 1
+          .word $C000 >> 1
+          .word $1000 >> 1
+          .word $5000 >> 1
+          .word $9000 >> 1
+          .word $D000 >> 1
+          .word $1000 >> 1
+          .word $5000 >> 1
+          .word $9000 >> 1
+          .word $D000 >> 1
+          .word $2000 >> 1
+          .word $6000 >> 1
+          .word $A000 >> 1
+          .word $E000 >> 1
+          .word $2000 >> 1
+          .word $6000 >> 1
+          .word $A000 >> 1
+          .word $E000 >> 1
+          .word $3000 >> 1
+          .word $7000 >> 1
+          .word $B000 >> 1
+          .word $F000 >> 1
+          .word $3000 >> 1
+          .word $7000 >> 1
+          .word $B000 >> 1
+          .word $F000 >> 1
+
+        .endblock
 
       endData
       startCode
 
-        rlUnitWindowUnknown90CFC4 ; 90/CFC4
+        rlUnitWindowFE4CopyWeaponRankIcon ; 90/CFC4
 
           .al
           .xl
           .autsiz
           .databank `*
+
+          ; Unused.
+          ; In FE4, this copies a weapon rank icon
+          ; to VRAM.
+
+          ; This is also bugged in FE5: the table of
+          ; pointers to the icon graphics is missing, and
+          ; its reference refers to the VRAM offset table.
+
+          ; Inputs:
+          ; A: rank index
+
+          ; Outputs:
+          ; None
 
           phx
           phy
@@ -4133,7 +4653,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           cmp #-1
           bne +
 
-          lda #$000A
+            lda #10
 
           +
           tay
@@ -4148,7 +4668,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           and #(OBSEL_Base | OBSEL_Gap)
           asl a
           tax
-          lda _D020,x
+          lda _IconVRAMBases,x ; Missing actual table
           clc
           adc wR0
           pha
@@ -4159,13 +4679,14 @@ GUARD_FE5_UNIT_WINDOW :?= false
           clc
           adc wR0
           tax
-          lda _D020+size(byte),x
+          lda _IconVRAMBases+size(byte),x
           sta lR18+size(byte)
-          lda _D020,x
-
+          lda _IconVRAMBases,x
           sta lR18
-          lda #$0040
+
+          lda #(2 * size(Tile4bpp))
           sta wR0
+
           pla
           sta wR1
           pha
@@ -4173,13 +4694,15 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           lda lR18
           clc
-          adc #$0200
+          adc #(16 * size(Tile4bpp))
           sta lR18
-          lda #$0040
+
+          lda #(2 * size(Tile4bpp))
           sta wR0
+
           pla
           clc
-          adc #$0100
+          adc #(16 * size(Tile4bpp)) >> 1
           sta wR1
           jsl rlDMAByPointer
 
@@ -4190,46 +4713,48 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-      endCode
-      startData
+          endCode
+          startData
 
-        _D020 ; 90/D020
+            _IconVRAMBases ; 90/D020
 
-          .word $0000
-          .word $2000
-          .word $4000
-          .word $6000
-          .word $0000
-          .word $2000
-          .word $4000
-          .word $6000
-          .word $0800
-          .word $2800
-          .word $4800
-          .word $6800
-          .word $0800
-          .word $2800
-          .word $4800
-          .word $6800
-          .word $1000
-          .word $3000
-          .word $5000
-          .word $7000
-          .word $1000
-          .word $3000
-          .word $5000
-          .word $7000
-          .word $1800
-          .word $3800
-          .word $5800
-          .word $7800
-          .word $1800
-          .word $3800
-          .word $5800
-          .word $7800
+              ; See aUnitWindowFE4ItemIconVRAMBases
 
-      endData
-      startCode
+              .word $0000 >> 1
+              .word $4000 >> 1
+              .word $8000 >> 1
+              .word $C000 >> 1
+              .word $0000 >> 1
+              .word $4000 >> 1
+              .word $8000 >> 1
+              .word $C000 >> 1
+              .word $1000 >> 1
+              .word $5000 >> 1
+              .word $9000 >> 1
+              .word $D000 >> 1
+              .word $1000 >> 1
+              .word $5000 >> 1
+              .word $9000 >> 1
+              .word $D000 >> 1
+              .word $2000 >> 1
+              .word $6000 >> 1
+              .word $A000 >> 1
+              .word $E000 >> 1
+              .word $2000 >> 1
+              .word $6000 >> 1
+              .word $A000 >> 1
+              .word $E000 >> 1
+              .word $3000 >> 1
+              .word $7000 >> 1
+              .word $B000 >> 1
+              .word $F000 >> 1
+              .word $3000 >> 1
+              .word $7000 >> 1
+              .word $B000 >> 1
+              .word $F000 >> 1
+
+          endData
+          startCode
 
         rlUnitWindowRenderSortSelectorCursor ; 90/D060
 
@@ -4237,6 +4762,14 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .xl
           .autsiz
           .databank ?
+
+          ; Renders the cursor used when picking a sort type.
+
+          ; Inputs:
+          ; None
+
+          ; Outputs:
+          ; None
 
           phb
           php
@@ -4250,39 +4783,41 @@ GUARD_FE5_UNIT_WINDOW :?= false
           cmp #-1
           bne _End
 
-          lda wUnitWindowCurrentColumn
-          asl a
-          tax
-          lda aUnitWindowSortSelectorCursorColumns,x
-          clc
-          adc #8
-          sta wR0
+            lda wUnitWindowCurrentColumn
+            asl a
+            tax
+            lda aUnitWindowSortSelectorCursorColumns,x
+            clc
+            adc #SortSelectorCursorBase[0]
+            sta wR0
 
-          lda #39
-          sta wR1
+            lda #SortSelectorCursorBase[1]
+            sta wR1
 
-          lda #$0100
-          sta wR4
+            _BaseTile := VRAMToTile(SystemIconTilesPosition, OAMBase, size(Tile4bpp))
 
-          stz wR5
+            lda #TilemapEntry(_BaseTile, 0, false, false, false)
+            sta wR4
 
-          lda wVBlankEnabledFramecount
-          sta wR13
+            stz wR5
 
-          lda #48
-          sta wR14
+            lda wVBlankEnabledFramecount
+            sta wR13
 
-          jsl rlUnsignedDivide16By16
+            lda #48
+            sta wR14
 
-          lda wR10
-          lsr a
-          lsr a
-          lsr a
-          asl a
-          tax
-          lda $90E12F,x
-          tay
-          jsl rlPushToOAMBuffer
+            jsl rlUnsignedDivide16By16
+
+            lda wR10
+            lsr a
+            lsr a
+            lsr a
+            asl a
+            tax
+            lda aUnitWindowSortSelectorCursorSprites,x
+            tay
+            jsl rlPushToOAMBuffer
 
           _End
           plp
@@ -4294,155 +4829,162 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endCode
       startData
 
-        aUnitWindowUnknown90D0A7 ; 90/D0A7
+        ; These sprites and their table are unused in FE5.
 
-          .addr aUnitWindowUnknown90D0AF
-          .addr aUnitWindowUnknown90D0BB
-          .addr aUnitWindowUnknown90D0C7
-          .addr aUnitWindowUnknown90D0D3
-
-        aUnitWindowUnknown90D0AF .structSpriteArray [[(   0,    5), $21, SpriteLarge, $00C, 3, 1, false, false], [(   0,   27), $21, SpriteLarge, $00C, 3, 1, false, true]] ; 90/D0AF
-        aUnitWindowUnknown90D0BB .structSpriteArray [[(   0,    4), $21, SpriteLarge, $00C, 3, 1, false, false], [(   0,   28), $21, SpriteLarge, $00C, 3, 1, false, true]] ; 90/D0BB
-        aUnitWindowUnknown90D0C7 .structSpriteArray [[(   0,    5), $21, SpriteLarge, $00C, 3, 1, false, false], [(   0,   27), $21, SpriteLarge, $00C, 3, 1, false, true]] ; 90/D0C7
-        aUnitWindowUnknown90D0D3 .structSpriteArray [[(   0,    6), $21, SpriteLarge, $00C, 3, 1, false, false], [(   0,   26), $21, SpriteLarge, $00C, 3, 1, false, true]] ; 90/D0D3
-
-        aUnitWindowSortSelectorCursorColumns .block ; 90/D0DF
-          .word $0020
-          .word $0064
-          .word $0098
-          .word $00b0
-          .word $00c8
-          .word $00e4
-          .word $0020
-          .word $0068
-          .word $00a0
-          .word $00bc
-          .word $00dc
-          .word $0020
-          .word $0054
-          .word $0068
-          .word $0084
-          .word $0098
-          .word $00b0
-          .word $00c8
-          .word $00e0
-          .word $0020
-          .word $0058
-          .word $0070
-          .word $0098
-          .word $00cc
-          .word $0020
-          .word $0055
-          .word $0065
-          .word $0075
-          .word $0085
-          .word $0095
-          .word $00a5
-          .word $00b5
-          .word $00c5
-          .word $00d5
-          .word $00e5
-          .word $0020
-          .word $0094
+        aUnitWindowFE4SortSelectorCursorSprites .block ; 90/D0A7
+          .addr aUnitWindowFE4SortSelectorCursorFrame0
+          .addr aUnitWindowFE4SortSelectorCursorFrame1
+          .addr aUnitWindowFE4SortSelectorCursorFrame2
+          .addr aUnitWindowFE4SortSelectorCursorFrame3
         .endblock
 
-        aUnitWindowUnknown90D129 ; 90/D129
-          .word $0020
-          .word $0064
-          .word $0098
-          .word $00b0
-          .word $00c8
-          .word $00e4
-          .word $0000
-          .word $0000
-          .word $00a0
-          .word $00b0
-          .word $00c0
-          .word $00d0
-          .word $00e0
-          .word $00f0
-          .word $0100
-          .word $0110
-          .word $0020
-          .word $0068
-          .word $00a0
-          .word $00bc
-          .word $00dc
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0020
-          .word $0054
-          .word $0068
-          .word $0084
-          .word $0098
-          .word $00b0
-          .word $00c8
-          .word $00e0
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0020
-          .word $0058
-          .word $0070
-          .word $0098
-          .word $00cc
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0020
-          .word $0055
-          .word $0065
-          .word $0075
-          .word $0085
-          .word $0095
-          .word $00a5
-          .word $00b5
-          .word $00c5
-          .word $00d5
-          .word $00e5
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0020
-          .word $0094
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
-          .word $0000
+        aUnitWindowFE4SortSelectorCursorFrame0 .structSpriteArray [[(   0,    5), $21, SpriteLarge, $00C, 3, 1, false, false], [(   0,   27), $21, SpriteLarge, $00C, 3, 1, false, true]] ; 90/D0AF
+        aUnitWindowFE4SortSelectorCursorFrame1 .structSpriteArray [[(   0,    4), $21, SpriteLarge, $00C, 3, 1, false, false], [(   0,   28), $21, SpriteLarge, $00C, 3, 1, false, true]] ; 90/D0BB
+        aUnitWindowFE4SortSelectorCursorFrame2 .structSpriteArray [[(   0,    5), $21, SpriteLarge, $00C, 3, 1, false, false], [(   0,   27), $21, SpriteLarge, $00C, 3, 1, false, true]] ; 90/D0C7
+        aUnitWindowFE4SortSelectorCursorFrame3 .structSpriteArray [[(   0,    6), $21, SpriteLarge, $00C, 3, 1, false, false], [(   0,   26), $21, SpriteLarge, $00C, 3, 1, false, true]] ; 90/D0D3
+
+        aUnitWindowSortSelectorCursorColumns .block ; 90/D0DF
+          .word 32
+          .word 100
+          .word 152
+          .word 176
+          .word 200
+          .word 228
+          .word 32
+          .word 104
+          .word 160
+          .word 188
+          .word 220
+          .word 32
+          .word 84
+          .word 104
+          .word 132
+          .word 152
+          .word 176
+          .word 200
+          .word 224
+          .word 32
+          .word 88
+          .word 112
+          .word 152
+          .word 204
+          .word 32
+          .word 85
+          .word 101
+          .word 117
+          .word 133
+          .word 149
+          .word 165
+          .word 181
+          .word 197
+          .word 213
+          .word 229
+          .word 32
+          .word 148
+        .endblock
+
+        aUnitWindowFE4SortSelectorCursorColumns .block ; 90/D129
+
+          ; Unused.
+          ; In FE4, this is used for the sort selector cursor.
+
+          .word 32
+          .word 100
+          .word 152
+          .word 176
+          .word 200
+          .word 228
+          .word 0
+          .word 0
+          .word 160
+          .word 176
+          .word 192
+          .word 208
+          .word 224
+          .word 240
+          .word 256
+          .word 272
+          .word 32
+          .word 104
+          .word 160
+          .word 188
+          .word 220
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 32
+          .word 84
+          .word 104
+          .word 132
+          .word 152
+          .word 176
+          .word 200
+          .word 224
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 32
+          .word 88
+          .word 112
+          .word 152
+          .word 204
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 32
+          .word 85
+          .word 101
+          .word 117
+          .word 133
+          .word 149
+          .word 165
+          .word 181
+          .word 197
+          .word 213
+          .word 229
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 32
+          .word 148
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+          .word 0
+        .endblock
 
       endData
       startCode
@@ -4454,7 +4996,8 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .autsiz
           .databank `*
 
-          jsl $90C35A
+          jsl rlUnitWindowFE4RenderWeaponRankWeaponRankSortIconWrapper
+
           lda wUnitWindowFE4SortTypeFlag
           cmp #$0002
           beq _D202
@@ -4465,7 +5008,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           cmp #$0004
           beq _D208
 
-          bra _D214
+          bra _HandleInputs
 
           _D202
           jmp _D325
@@ -4485,31 +5028,35 @@ GUARD_FE5_UNIT_WINDOW :?= false
           _DoAOrX
           jmp _AOrX
 
-          _D214
-          jsl $90F1AF
+          _HandleInputs
+          jsl rlUnitWindowCheckForUnknownProcs
           bcc +
 
           jmp _Continue
 
           +
-          lda wJoy1New
-          bit #JOY_Down
-          bne _DoDown
 
-          bit #JOY_B
-          bne _DoB
+          _NewInputs  := [(JOY_Down, _DoDown)]
+          _NewInputs ..= [(JOY_B, _DoB)]
+          _NewInputs ..= [((JOY_A | JOY_X), _DoAOrX)]
 
-          bit #(JOY_A | JOY_X)
-          bne _DoAOrX
+          _HeldInputs  := [(JOY_Right, _Right)]
+          _HeldInputs ..= [(JOY_Left, _Left)]
 
-          lda wJoy1Repeated
-          bit #JOY_Right
-          bne _Right
+          .for _Inputs, _Actions in [(wJoy1New, _NewInputs), (wJoy1Repeated, _HeldInputs)]
 
-          bit #JOY_Left
-          bne _Left
+            lda _Inputs
 
-            jmp _Continue
+            .for _Pressed, _Handler in _Actions
+
+              bit #_Pressed
+              bne _Handler
+
+            .endfor
+
+          .endfor
+
+          jmp _Continue
 
           _Right
           lda wUnitWindowFE4CurrentColumn
@@ -4519,9 +5066,10 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda wUnknown000304,b
           asl a
           tax
-          lda $90D35C,x
+          lda aUnitWindowUnknown90D35C,x
           cmp wUnitWindowFE4CurrentColumn
-          bcs _LeftRightSound
+          bge _LeftRightSound
+
           sta wUnitWindowFE4CurrentColumn
 
           lda wUnknown000304,b
@@ -4530,6 +5078,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           beq _Continue
 
           sta wUnknown000304,b
+
           lda #$0000
           sta wUnitWindowFE4CurrentColumn
           jsl $90BCF5
@@ -4571,12 +5120,12 @@ GUARD_FE5_UNIT_WINDOW :?= false
           cmp #$0004
           bne +
 
-          lda #(`$90EFFE)<<8
-          sta lR44+size(byte)
-          lda #<>$90EFFE
-          sta lR44
-          jsl rlProcEngineCreateProc
-          bra _LeftRightSound
+            lda #(`procUnitWindowUnknown90EFFE)<<8
+            sta lR44+size(byte)
+            lda #<>procUnitWindowUnknown90EFFE
+            sta lR44
+            jsl rlProcEngineCreateProc
+            bra _LeftRightSound
 
           +
           jsl $90BCF5
@@ -4591,7 +5140,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda #$000A
           sta wR1
           lda #$0000
-          jsl $90EA37
+          jsl rlUnitWindowFE4GetUnitSlot
 
           jsr rlUnitWindowRenderSortSelectorCursor
 
@@ -4601,72 +5150,72 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           bne +
 
-          jsr rsUnitWindowUnknown90C707
+            jsr rsUnitWindowFE4RenderItemIcons
 
           +
           lda wUnknown000304,b
           cmp #$0004
           bne +
 
-          jsr rsUnitWindowRenderWeaponRankIcons
+            jsr rsUnitWindowRenderWeaponRankIcons
 
           +
           rts
 
           _Down
 
-          lda #$0009 ; TODO: sound definitions
-          jsl rlPlaySoundEffect
+            lda #$0009 ; TODO: sound definitions
+            jsl rlPlaySoundEffect
 
-          lda #$0000
-          sta wUnitWindowFE4SortTypeFlag
-          sta wUnitWindowFE4CurrentColumn
-          bra _DirectionWrapUp
+            lda #$0000
+            sta wUnitWindowFE4SortTypeFlag
+            sta wUnitWindowFE4CurrentColumn
+            bra _DirectionWrapUp
 
           _B
 
-          lda #$0021 ; TODO: sound definitions
-          jsl rlPlaySoundEffect
+            lda #$0021 ; TODO: sound definitions
+            jsl rlPlaySoundEffect
 
-          lda #$0000
-          sta wUnitWindowFE4SortTypeFlag
-          sta wUnitWindowFE4CurrentColumn
-          bra _DirectionWrapUp
+            lda #$0000
+            sta wUnitWindowFE4SortTypeFlag
+            sta wUnitWindowFE4CurrentColumn
+            bra _DirectionWrapUp
 
           _AOrX
 
-          lda #$000D ; TODO: sound definitions
-          jsl rlPlaySoundEffect
-          jsr $90D48E
-          bra _Continue
+            lda #$000D ; TODO: sound definitions
+            jsl rlPlaySoundEffect
+            jsr rlUnitWindowUpdateSort
+            bra _Continue
 
           _D325
 
-          ldx #$01C8
-          lda #$0030
-          ldy #$0006
-          jsl $90E35E
+            ldx #$01C8
+            lda #$0030
+            ldy #$0006
+            jsl rlUnitWindowUnknown90E35E
 
-          jsl $80CF8D
-          jsl $90BCF5
+            jsl rlUnitWindowFE4DrawUnitNames
+            jsl $90BCF5
 
-          lda #$0003
-          sta wUnitWindowFE4SortTypeFlag
+            lda #$0003
+            sta wUnitWindowFE4SortTypeFlag
 
-          jmp _Continue
+            jmp _Continue
 
           _D344
 
-          jsl $80D020
-          lda #$0001
-          sta wUnitWindowFE4SortTypeFlag
-          jmp _Continue
+            jsl rlUnitWindowFE4DrawUnitSkills
+            lda #$0001
+            sta wUnitWindowFE4SortTypeFlag
+            jmp _Continue
 
           _D352
 
-          lda #$0001
-          sta wUnitWindowFE4SortTypeFlag
-          jmp _Continue
+            lda #$0001
+            sta wUnitWindowFE4SortTypeFlag
+            jmp _Continue
 
       endCode
       startData
@@ -4756,7 +5305,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda #$0030
           ldy #$0006
           jsl $90E35E
-          jsl $80CF8D
+          jsl rlUnitWindowFE4DrawUnitNames
           jsl $90BCF5
 
           lda #$0003
@@ -4765,7 +5314,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           jmp _End
 
           _D3FC
-          jsl $80D020
+          jsl rlUnitWindowFE4DrawUnitSkills
 
           lda #$0000
           sta wUnitWindowFE4UnitSwapStep
@@ -4883,7 +5432,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           phx
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -4910,7 +5459,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           phx
           jsl $90E911
           tax
-          lda $1AF6,b
+          lda wTemporaryUnitWindowItem,b
           beq +
 
           txa
@@ -4946,9 +5495,9 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           lda wUnitWindowCurrentColumn
           tax
-          lda aUnitWindowSortColumns,x
+          lda aUnitWindowSortColumnTypes,x
           and #$00FF
-          sta wUnitWindowSortColumn
+          sta wUnitWindowSortType
 
           ldx #0
 
@@ -4961,7 +5510,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           +
           txa
           sta wUnitWindowSortDirection
-          jsl $90DB56
+          jsl rlUnitWindowGetSortScores
 
           lda wUnitWindowSortDirection
           bne +
@@ -4984,7 +5533,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endCode
       startData
 
-        aUnitWindowSortColumns .block ; 90/D4CC
+        aUnitWindowSortColumnTypes .block ; 90/D4CC
           _Page1 .block ; 90/D4CC
             .byte $00
             .byte $01
@@ -5037,12 +5586,12 @@ GUARD_FE5_UNIT_WINDOW :?= false
         .endblock
 
         aUnitWindowUnknown90D4CC .block
-          .long aUnitWindowSortColumns._Page1
-          .long aUnitWindowSortColumns._Page2
-          .long aUnitWindowSortColumns._Page3
-          .long aUnitWindowSortColumns._Page4
-          .long aUnitWindowSortColumns._Page5
-          .long aUnitWindowSortColumns._Page6
+          .long aUnitWindowSortColumnTypes._Page1
+          .long aUnitWindowSortColumnTypes._Page2
+          .long aUnitWindowSortColumnTypes._Page3
+          .long aUnitWindowSortColumnTypes._Page4
+          .long aUnitWindowSortColumnTypes._Page5
+          .long aUnitWindowSortColumnTypes._Page6
         .endblock
 
       endData
@@ -5269,7 +5818,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           +
 
-          lda wUnitWindowSortColumn
+          lda wUnitWindowSortType
           asl a
           tax
           lda _SortTextPointers,x
@@ -5370,7 +5919,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           endMenuText
           startCode
 
-        rlUnitWindowUnknown90D6E8 ; 90/D6E8
+        rlUnitWindowFE4DrawSortLabels ; 90/D6E8
 
           .al
           .xl
@@ -5385,7 +5934,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .endfor
 
-          lda wUnitWindowSortColumn
+          lda wUnitWindowSortType
           cmp #$0026
           bmi +
 
@@ -5394,7 +5943,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           +
           asl a
           tax
-          jsr (_ColumnHandlers,x)
+          jsr (_TypeHandlers,x)
           jsl rlDMAByStruct
 
             .structDMAToVRAM aBG3TilemapBuffer + (C2I((0, 0), 32) * size(word)), $000A, VMAIN_Setting(true), $F044
@@ -5410,7 +5959,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           endCode
           startData
 
-          _ColumnHandlers
+          _TypeHandlers
 
             .addr rsUnitWindowFE4DrawNameSortLabel
             .addr rsUnitWindowFE4DrawClassSortLabel
@@ -5462,8 +6011,11 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda #\Width
           sta wR0
           ldx #\Offset * size(word)
-          jsl $90EC39
+          jsl rlUnitWindowUnknown90EC39
         .endsegment
+
+        ; All of these follow the same pattern, and have no
+        ; inputs or outputs, except for skills.
 
         rsUnitWindowFE4DrawNameSortLabel ; 90/D78A
 
@@ -5859,7 +6411,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda aUnitWindowDeploymentSlots,x
           beq +
 
-          sta $1AD1,b
+          sta wTemporaryDeploymentInfo,b
 
           jsl rlUnitWindowUnknown90E90C
           dec a
@@ -5888,10 +6440,10 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .autsiz
           .databank `*
 
-          lda wUnitWindowSortColumn
+          lda wUnitWindowSortType
           bmi _End
 
-          lda wUnitWindowSortColumn
+          lda wUnitWindowSortType
           cmp #$0027
           bmi +
 
@@ -5910,46 +6462,11 @@ GUARD_FE5_UNIT_WINDOW :?= false
           endCode
           startData
 
-            _ScoreFunctions ; 90/DB6D
-              .addr rsUnitWindowGetNameSortScores
-              .addr rsUnitWindowGetClassSortScores
-              .addr rsUnitWindowGetLevelSortScores
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetWeaponSortScores
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetSortScoresByColumn
-              .word None
-              .word None
-              .word None
-              .word None
-              .word None
-              .addr rsUnitWindowGetSortScoresByColumn
-              .word None
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetWeaponRankSortScores
-              .addr rsUnitWindowGetWeaponRankSortScores
-              .addr rsUnitWindowGetWeaponRankSortScores
-              .addr rsUnitWindowGetWeaponRankSortScores
-              .addr rsUnitWindowGetWeaponRankSortScores
-              .addr rsUnitWindowGetWeaponRankSortScores
-              .addr rsUnitWindowGetWeaponRankSortScores
-              .addr rsUnitWindowGetWeaponRankSortScores
-              .addr rsUnitWindowGetWeaponRankSortScores
-              .addr rsUnitWindowGetWeaponRankSortScores
-              .addr rsUnitWindowGetSkillSortScores
-              .addr rsUnitWindowGetSortScoresByColumn
-              .addr rsUnitWindowGetTravelerSortScores
-              .addr rsUnitWindowUnknownGetSortScores90DBE7
+            _ScoreFunctions .binclude "../TABLES/UnitWindowSortScorePointers.csv.asm" ; 90/DB6D
+
+            ; This is a hacky way to do this.
+
+            UnitWindowSortTypes = rlUnitWindowGetSortScores._ScoreFunctions
 
           endData
           startCode
@@ -5973,7 +6490,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq +
 
-              sta $1AD1,b
+              sta wTemporaryDeploymentInfo,b
               jsl rlUnitWindowGetUnitName
 
               eor #-1
@@ -6014,7 +6531,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq +
 
-              sta $1AD1,b
+              sta wTemporaryDeploymentInfo,b
               jsl rlUnitWindowUnknown90E90C
 
               dec a
@@ -6046,9 +6563,9 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .databank `*
 
           lda #$0003
-          sta wUnitWindowSortColumn
+          sta wUnitWindowSortType
 
-          jsr rsUnitWindowGetSortScoresByColumn
+          jsr rsUnitWindowGetSortScoresByType
 
           lda wUnitWindowSortDirection
           bne +
@@ -6061,15 +6578,15 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           +
           lda #$0002
-          sta wUnitWindowSortColumn
+          sta wUnitWindowSortType
 
-          jsr rsUnitWindowGetSortScoresByColumn
+          jsr rsUnitWindowGetSortScoresByType
 
           rts
 
           .databank 0
 
-        rsUnitWindowGetSortScoresByColumn ; 90/DC3D
+        rsUnitWindowGetSortScoresByType ; 90/DC3D
 
           .al
           .xl
@@ -6086,11 +6603,11 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda aUnitWindowDeploymentSlots,x
           beq +
 
-          sta $1AD1,b
+          sta wTemporaryDeploymentInfo,b
           lda wR15
           pha
           phx
-          jsl rlUnitWindowGetSortScoreByColumn
+          jsl rlUnitWindowGetSortScoreByType
           plx
           sta $7FB2BB,x
           pla
@@ -6108,14 +6625,14 @@ GUARD_FE5_UNIT_WINDOW :?= false
           
           .databank 0
 
-        rlUnitWindowGetSortScoreByColumn ; 90/DC67
+        rlUnitWindowGetSortScoreByType ; 90/DC67
 
           .al
           .xl
           .autsiz
           .databank `*
 
-          lda wUnitWindowSortColumn
+          lda wUnitWindowSortType
           sta wR0
 
           asl a
@@ -6139,31 +6656,29 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
             .long $000000
             .long $000000
-            .long $90e757
-            .long $90e425
-            .long $90e44a
-            .long $90e46f
+            .long rlUnitWindowGetUnitLevel
+            .long rlUnitWindowGetUnitExperience
+            .long rlUnitWindowGetUnitCurrentHP
+            .long rlUnitWindowGetUnitMaxHP
             .long $000000
-            .long $90e837
-            .long $90e7d5
-            .long $90e806
-            .long $90e494
-            .long $90e4c6
-            .long $90e4f8
-            .long $90e52a
-            .long $90e55c
-            .long $90e58e
-            .long $90e5c0
-            .long $000000
-            .long $000000
+            .long rlUnitWindowGetUnitMight
+            .long rlUnitWindowGetUnitHit
+            .long rlUnitWindowGetUnitAvoid
+            .long rlUnitWindowGetUnitStrength
+            .long rlUnitWindowGetUnitMagic
+            .long rlUnitWindowGetUnitSkill
+            .long rlUnitWindowGetUnitSpeed
+            .long rlUnitWindowGetUnitLuck
+            .long rlUnitWindowGetUnitDefense
+            .long rlUnitWindowGetUnitConstitution
             .long $000000
             .long $000000
             .long $000000
-            .long $90e6c4
-            .long $90e86c
-            .long $90e617
             .long $000000
             .long $000000
+            .long rlUnitWindowGetUnitStatus
+            .long rlUnitWindowFE4GetUnitStatus
+            .long rlUnitWindowGetUnitMove
             .long $000000
             .long $000000
             .long $000000
@@ -6173,7 +6688,9 @@ GUARD_FE5_UNIT_WINDOW :?= false
             .long $000000
             .long $000000
             .long $000000
-            .long $90e5f2
+            .long $000000
+            .long $000000
+            .long rlUnitWindowGetUnitFatigue
             .long $000000
 
           endData
@@ -6215,7 +6732,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq _End
 
-            sta $1AD1,b
+            sta wTemporaryDeploymentInfo,b
             jsl $90E32B
             bcc +
 
@@ -6279,7 +6796,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           asl a
           sta wR15
 
-          lda wUnitWindowSortColumn
+          lda wUnitWindowSortType
           sec
           sbc #$0019
           sta wR14
@@ -6290,7 +6807,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq +
 
-              sta $1AD1,b
+              sta wTemporaryDeploymentInfo,b
               lda wR14
               jsl $90E870
               sta $7FB2BB,x
@@ -6324,7 +6841,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq +
 
-              sta $1AD1,b
+              sta wTemporaryDeploymentInfo,b
               jsl $90E77C
               phx
               tax
@@ -6367,10 +6884,10 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq _End
 
-              sta $1AD1,b
+              sta wTemporaryDeploymentInfo,b
               jsl $90E92E
 
-              lda $1ADE,b
+              lda wTemporaryUnitWindowSkillCounter,b
               beq _SetScore
 
               phx
@@ -6381,7 +6898,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
               -
                 tax
-                lda $1AE0,b,x
+                lda aTemporaryUnitWindowSkillList,b,x
                 and #$00FF
                 beq +
 
@@ -6434,10 +6951,10 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq +
 
-              sta $1AD1,b
+              sta wTemporaryDeploymentInfo,b
 
               lda #$0000
-              sta $1AD6,b
+              sta wTemporaryUnitWindowCounter,b
 
               jsl $90E837
               sta $7FB2BB,x
@@ -6471,9 +6988,9 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq +
 
-              sta $1AD1,b
+              sta wTemporaryDeploymentInfo,b
               lda #-1
-              jsl $90E806
+              jsl rlUnitWindowGetUnitAvoid
               clc
               adc #$0080
               sta $7FB2BB,x
@@ -6507,7 +7024,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq +
 
-              sta $1AD1,b
+              sta wTemporaryDeploymentInfo,b
               phx
               jsl $90E668
               plx
@@ -6554,7 +7071,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           asl a
           sta wR2
 
-          .for _SortPiece in [aUnitWindowDeploymentSlots, $7FB1D9, $7FB2BB, $7FB171]
+          .for _SortPiece in [aUnitWindowDeploymentSlots, $7FB1D9, aUnitWindowCurrentSortScores, aUnitWindowItemIconTileIndexes]
 
             ldx wR2
             lda _SortPiece,x
@@ -6602,7 +7119,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda aUnitWindowDeploymentSlots,x
             beq _End
 
-            sta $1AD1,b
+            sta wTemporaryDeploymentInfo,b
             ldy #0
             jsl $90EA27
 
@@ -6703,7 +7220,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .autsiz
           .databank ?
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR1
 
           sep #$20
@@ -6729,7 +7246,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda $7E44A0,x
           beq +
 
-          sta $1AD1,b
+          sta wTemporaryDeploymentInfo,b
 
           jsl rlUnitWindowUnknown90E90C
           dec a
@@ -6754,7 +7271,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           +
           lda wR1
-          sta $1AD1,b
+          sta wTemporaryDeploymentInfo,b
 
           rtl
 
@@ -6777,7 +7294,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           lda #0
           sta wUnitWindowCurrentPage
-          sta wUnitWindowSortColumn
+          sta wUnitWindowSortType
           sta wUnitWindowSortDirection
           sta wUnitWindowUnknown7E4543
 
@@ -6887,11 +7404,11 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           +
           sta $7FAACE,x
-          sta $1AD1,b
+          sta wTemporaryDeploymentInfo,b
 
           phx
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -7170,7 +7687,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnitWindowUnknownRenderCursor90E283 ; 90/E283
+        rlUnitWindowFE4RenderFlashingUnitSwapCursor ; 90/E283
 
           .al
           .xl
@@ -7321,7 +7838,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnitWindowDoesUnitHaveEquippedWeapon ; 90/E32B
+        rlUnitWindowGetUnitEquippedWeapon ; 90/E32B
 
           .al
           .xl
@@ -7345,7 +7862,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           phy
           phx
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -7357,7 +7874,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           lda aItemDataBuffer.DisplayedWeapon,b
           and #$00FF
-          sta $1AF6,b
+          sta wTemporaryUnitWindowItem,b
           beq +
 
           plp
@@ -7433,7 +7950,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -7444,9 +7961,9 @@ GUARD_FE5_UNIT_WINDOW :?= false
           jsl rlGetClassNamePointer
 
           lda lR18+size(byte)
-          sta $1AD3+size(byte),b
+          sta lTemporaryNamePointer+size(byte),b
           lda lR18
-          sta $1AD3,b
+          sta lTemporaryNamePointer,b
 
           plp
           plb
@@ -7485,7 +8002,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -7497,9 +8014,9 @@ GUARD_FE5_UNIT_WINDOW :?= false
           jsl rlGetItemNamePointer
 
           lda lR18+size(byte)
-          sta $1AD3+size(byte),b
+          sta lTemporaryNamePointer+size(byte),b
           lda lR18
-          sta $1AD3,b
+          sta lTemporaryNamePointer,b
 
           plp
           plb
@@ -7528,7 +8045,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -7539,9 +8056,9 @@ GUARD_FE5_UNIT_WINDOW :?= false
           jsl rlGetCharacterNamePointer
 
           lda lR18+size(byte)
-          sta $1AD3+size(byte),b
+          sta lTemporaryNamePointer+size(byte),b
           lda lR18
-          sta $1AD3,b
+          sta lTemporaryNamePointer,b
 
           pla
 
@@ -7572,7 +8089,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -7610,7 +8127,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -7648,7 +8165,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -7690,7 +8207,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -7746,7 +8263,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -7777,7 +8294,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnitWindowGetUnitSkill ; 90/E4F7
+        rlUnitWindowGetUnitSkill ; 90/E4F8
 
           .al
           .xl
@@ -7802,7 +8319,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -7858,7 +8375,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -7914,7 +8431,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -7970,7 +8487,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -8026,7 +8543,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -8078,7 +8595,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -8116,7 +8633,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -8157,7 +8674,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -8246,7 +8763,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -8301,7 +8818,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -8401,7 +8918,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -8439,7 +8956,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank $7E
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
           sta wR0
           lda #<>aSelectedCharacterBuffer
           sta wR1
@@ -8523,7 +9040,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -8575,7 +9092,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -8627,7 +9144,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -8666,7 +9183,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnitWindowFE4GetUnitType ; 90/E86C
+        rlUnitWindowFE4GetUnitStatus ; 90/E86C
 
           .al
           .xl
@@ -8678,7 +9195,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnitWindowGetUnitWeaponRank ; 90/E870
+        rlUnitWindowGetUnitWeaponRankByType ; 90/E870
 
           .al
           .xl
@@ -8711,7 +9228,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -8785,10 +9302,10 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .autsiz
           .databank ?
 
-          stz $1AD2,b
+          stz wTemporaryDeploymentInfo+size(byte),b
 
-          lda #$0001
-          sta $1AD1,b
+          lda #1
+          sta wTemporaryDeploymentInfo,b
 
           rtl
 
@@ -8853,7 +9370,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .endblock
 
-        rlUnitWindowUnknown90E908 ; 90/E908
+        rlUnitWindowFE4GetUnitSpriteInfo ; 90/E908
 
           .al
           .xl
@@ -8886,7 +9403,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .databank ?
 
           lda #$0001
-          sta $1AF6,b
+          sta wTemporaryUnitWindowItem,b
 
           lda #$0001
           sta $7E4545
@@ -8949,7 +9466,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           dec a
           asl a
           tax
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -8979,7 +9496,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           rep #$20
 
-          jsr rsUnitWindowGetUnitSkillCount
+          jsr rsUnitWindowGetUnitSkillList
 
           ply
           plx
@@ -9011,7 +9528,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .endif
         .endstruct
 
-        rsUnitWindowGetUnitSkillCount ; 90/E98F
+        rsUnitWindowGetUnitSkillList ; 90/E98F
 
           .al
           .xl
@@ -9026,14 +9543,14 @@ GUARD_FE5_UNIT_WINDOW :?= false
           ldx #$0014
 
           -
-          stz $1AE0,b,x
+          stz aTemporaryUnitWindowSkillList,b,x
 
           dec x
           bpl -
 
           rep #$20
 
-          stz $1ADE,b
+          stz wTemporaryUnitWindowSkillCounter,b
 
           ldx #0
 
@@ -9057,18 +9574,18 @@ GUARD_FE5_UNIT_WINDOW :?= false
           sep #$20
 
           lda #$01
-          sta $1AE0,b,y
+          sta aTemporaryUnitWindowSkillList,b,y
 
           rep #$20
 
-          inc $1ADE,b
+          inc wTemporaryUnitWindowSkillCounter,b
           bra _Next
 
           _NoSkill
           sep #$20
 
           lda #$00
-          sta $1AE0,b,y
+          sta aTemporaryUnitWindowSkillList,b,y
 
           rep #$20
 
@@ -9089,7 +9606,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           endCode
           startData
 
-            _SkillTargets .block ; 90E9E1
+            _SkillTargets .block ; 90/E9E1
               .structUnitWindowSkillCountTarget $07, [], [Skill2Adept], []
               .structUnitWindowSkillCountTarget $0A, [], [Skill2Miracle], []
               .structUnitWindowSkillCountTarget $0B, [], [Skill2Vantage], []
@@ -9211,21 +9728,21 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .autsiz
           .databank ?
 
-          ; Helper definitions
+          ; Temporary variables
 
-            _Number = wR0
+            _Number := wR0
 
-            _OnesPlace         = wR0
-            _TensPlace         = wR1
-            _HundredsPlace     = wR2
-            _ThousandsPlace    = wR3
-            _TenThousandsPlace = wR4
+            _OnesPlace         := wR0
+            _TensPlace         := wR1
+            _HundredsPlace     := wR2
+            _ThousandsPlace    := wR3
+            _TenThousandsPlace := wR4
 
-            _BaseTile        = wR5
-            _Width           = wR6
-            _WidthOffset     = wR7
-            _UsedWidth       = wR8
-            _UsedWidthOffset = wR9
+            _BaseTile        := wR5
+            _Width           := wR6
+            _WidthOffset     := wR7
+            _UsedWidth       := wR8
+            _UsedWidthOffset := wR9
 
           phb
           php
@@ -9453,7 +9970,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endData
       startCode
 
-        rlUnitWindowUnknown90EE28 ; 90/EE28
+        rlUnitWindowFE4RenderAllMapSprites ; 90/EE28
 
           .al
           .xl
@@ -9467,7 +9984,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           asl a
           tax
           lda aUnitWindowDeploymentSlots,x
-          jsr $90EE8A
+          jsr rsUnitWindowRenderMapSprite
 
           ldx #size(aUnitWindowDeploymentSlots) - (2 * size(word))
 
@@ -9475,7 +9992,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda aUnitWindowDeploymentSlots,x
           beq +
 
-          jsr $90EE8A
+            jsr rsUnitWindowRenderMapSprite
 
           +
 
@@ -9490,7 +10007,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnitWindowUnknown90EE49 ; 90/EE49
+        rlUnitWindowRenderAllMapSprites ; 90/EE49
 
           .al
           .xl
@@ -9525,7 +10042,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           tax
 
           -
-          jsr $90EE7C
+          jsr rsUnitWindowRenderMapSpriteBySlot
 
           dec x
           dec x
@@ -9544,7 +10061,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rsUnitWindowUnknown90EE7C ; 90/EE7C
+        rsUnitWindowRenderMapSpriteBySlot ; 90/EE7C
 
           .al
           .xl
@@ -9556,12 +10073,12 @@ GUARD_FE5_UNIT_WINDOW :?= false
           txa
           lsr a
           sta wR15
-          jsr $90EE8A
+          jsr rsUnitWindowRenderMapSprite
           rts
 
           .databank 0
 
-        rsUnitWindowUnknown90EE8A ; 90/EE8A
+        rsUnitWindowRenderMapSprite ; 90/EE8A
 
           .al
           .xl
@@ -9587,7 +10104,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           bra _Continue
 
           _Tall
-          ldy #<>_ScrollingSprite
+          ldy #<>_TallSprite
           lda wUnitWindowScrollPixels
           bit #$000F
           bne _Continue
@@ -9596,7 +10113,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           cmp wR15
           bne _Continue
 
-          ldy #<>_TallSprite
+          ldy #<>_OffscreenTallSprite
 
           _Continue
           lda wR15
@@ -9616,7 +10133,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda #$0010
           sta wR0
 
-          jsr $90EF08
+          jsr rsUnitWindowGetMapSpritePalette
 
           phb
 
@@ -9642,14 +10159,14 @@ GUARD_FE5_UNIT_WINDOW :?= false
           endCode
           startData
 
-            _NormalSprite    .structSpriteArray [[(   0,    0), $21, SpriteLarge, $000, 2, 0, false, false]] ; 90/EEE9
-            _ScrollingSprite .structSpriteArray [[(   0,    0), $21, SpriteLarge, $000, 2, 0, false, false], [(   0,  -16), $21, SpriteLarge, $002, 2, 0, false, false]] ; 90/EEF0
-            _TallSprite      .structSpriteArray [[(   0,    0), $21, SpriteLarge, $000, 2, 0, false, false], [(   0,  -16), $21, SpriteLarge, $002, 3, 0, false, false]] ; 90/EEFC
+            _NormalSprite        .structSpriteArray [[(   0,    0), $21, SpriteLarge, $000, 2, 0, false, false]] ; 90/EEE9
+            _TallSprite          .structSpriteArray [[(   0,    0), $21, SpriteLarge, $000, 2, 0, false, false], [(   0,  -16), $21, SpriteLarge, $002, 2, 0, false, false]] ; 90/EEF0
+            _OffscreenTallSprite .structSpriteArray [[(   0,    0), $21, SpriteLarge, $000, 2, 0, false, false], [(   0,  -16), $21, SpriteLarge, $002, 3, 0, false, false]] ; 90/EEFC
 
           endData
           startCode
 
-        rsUnitWindowUnknown90EF08 ; 90/EF08
+        rsUnitWindowGetMapSpritePalette ; 90/EF08
 
           .al
           .xl
@@ -9678,7 +10195,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             asl a
 
           +
-          sta $15
+          sta wR5
 
           rts
 
@@ -10055,12 +10572,12 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda aSelectedCharacterBuffer.DeploymentNumber,b
           and #$00FF
           jsl $80BC41
-          jsr rlUnitWindowSetMainLoopUpdaterCallback
+          jsr rsUnitWindowSetMainLoopUpdaterCallback
           rtl
 
           .databank 0
 
-        rlUnitWindowSetMainLoopUpdaterCallback ; 90/F15B
+        rsUnitWindowSetMainLoopUpdaterCallback ; 90/F15B
 
           .al
           .xl
@@ -10174,11 +10691,15 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
       endCode
 
+      .endwith ; UnitWindowConfig
+
     .endsection UnitWindow90Section
 
     .section UnitWindow9ASection
 
-      endCode
+      .with UnitWindowConfig
+
+      startCode
 
         rlUnitWindowSetDefaults ; 9A/EC8D
 
@@ -10225,7 +10746,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-      startCode
+      endCode
       startProcs
 
         procUnitWindow .block ; 9A/ECCF
@@ -10287,19 +10808,19 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           jsl rlDMAByStruct
 
-            .structDMAToVRAM $9F93C0, (32 * 32 * size(word)), VMAIN_Setting(true), $9000
+            .structDMAToVRAM $9F93C0, (32 * 32 * size(word)), VMAIN_Setting(true), BG1TilemapPosition
 
           jsl rlUnitWindowCopyItemIconTiles
           jsl rlUnitWindowCopySkillIconTiles
 
           lda #$00CE
-          jsl $90C34E
+          jsl rlUnitWindowFillBG3Buffer
           jsl rlDMAByStruct
 
             .structDMAToVRAM aBG3TilemapBuffer, (32 * 32 * size(word)), VMAIN_Setting(true), $F000
 
           jsl rlUnitWindowSetDefaults
-          jsl rlUnitWindowUnknown9AF21B
+          jsl rlUnitWindowRenderPageRows
           jsl rlUnitWindowDMABG3TilemapBufferPage1
           jsl rlUnitWindowDMABG1TilemapBufferPage1
           jsl rlUnitWindowCreateCursor
@@ -10321,36 +10842,36 @@ GUARD_FE5_UNIT_WINDOW :?= false
           bmi _Upper
 
           lda $7EA939
-          bne _Scrolling
+          bne _AfterInputs
 
           jsl rlUnitWindowHandleLowerInputs
           lda bUnitWindowActive
           and #$00FF
-          cmp #$00FF
-          beq _ED9D
+          cmp #narrow(-1, size(byte))
+          beq _AfterInputsAndScrolling
 
-          jsl rlUnitWindowHandlePossibleLowerPageSwitch
-          jsl rlUnitWindowHandleLowerOnScreenInputs
-          bra _ED92
+          jsl rlUnitWindowHandlePossibleLowerPageTurn
+          jsl rlUnitWindowHandleLowerScrollInputs
+          bra +
 
           _Upper
           jsl rlUnitWindowHandleUpperInputs
 
-          _ED92
+          +
           jsl rlUnitWindowSetCursorPosition
 
-          _Scrolling
+          _AfterInputs
           jsl rlUnitWindowHandlePossibleScroll
 
           jsr rsUnitWindowTryYSpeedUp
 
-          _ED9D
-          jsl $90EE49
-          jsl $90C7A5
-          jsl $90E23D
-          jsl $90D060
-          jsl $90C3A4
-          jsl $90C41B
+          _AfterInputsAndScrolling
+          jsl rlUnitWindowRenderAllMapSprites
+          jsl rlUnitWindowTryRenderWeaponRankIcons
+          jsl rlUnitWindowToggleScrollArrows
+          jsl rlUnitWindowRenderSortSelectorCursor
+          jsl rlUnitWindowRenderWeaponRankWeaponRankSortIcon
+          jsl rlUnitWindowRenderSortDirectionArrow
 
           rtl
 
@@ -10455,7 +10976,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             .autsiz
             .databank `aBG3TilemapBuffer
 
-            jsl $90D48E
+            jsl rlUnitWindowUpdateSort
             jsl rlUnitWindowUpdatePage
 
             lda #$000D ; TODO: sound effects
@@ -10472,7 +10993,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
             lda wUnitWindowCurrentColumn
             inc a
-            cmp #$0025
+            cmp #$0025 ; TODO: sort types
             beq _End
 
               sta wUnitWindowCurrentColumn
@@ -10791,7 +11312,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank `$7EA937
 
-          jsl $9AF0B0
+          jsl rlUnitWindowGetLowerCursorPosition
 
           lda #(`procRightFacingCursor)<<8
           sta lR44+size(byte)
@@ -10830,7 +11351,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda @l $7EA939
           bne +
 
-          jsl $9AF0B0
+          jsl rlUnitWindowGetLowerCursorPosition
 
           ldx $7EA937
 
@@ -10847,7 +11368,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnitWindowHandleLowerOnScreenInputs ; 9A/EFC0
+        rlUnitWindowHandleLowerScrollInputs ; 9A/EFC0
 
           .al
           .xl
@@ -10949,7 +11470,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             inc a
 
             cmp #$0009
-            beq _Scrolldown
+            beq _ScrollDown
 
             bra _End
 
@@ -10970,14 +11491,14 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda #$0001
             sta $7EA939
 
-            jsr $9AF076
-            jsl $83CCB1
+            jsr rsUnitWindowGetScrollSpeed
+            jsl rlSetUpScrollingArrowSpeed
 
             bra _End
 
             .databank 0
 
-          _Scrolldown
+          _ScrollDown
 
             .al
             .xl
@@ -10993,7 +11514,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             lda #$0002
             sta $7EA939
 
-            jsr $9AF076
+            jsr rsUnitWindowGetScrollSpeed
             jsl rlSetDownScrollingArrowSpeed
 
             jmp _End
@@ -11015,7 +11536,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
               jmp _End
 
             +
-            jsl $9AF0A0
+            jsl rlUnitWindowSetStateUpper
 
             lda #$0009 ; TODO: sound definitions
             jsl rlPlaySoundEffect
@@ -11057,11 +11578,11 @@ GUARD_FE5_UNIT_WINDOW :?= false
           asl a
           tax
           lda aUnitWindowDeploymentSlots,x
-          sta $1AD1,b
+          sta wTemporaryDeploymentInfo,b
 
-          jsl $9AF268
-          jsl $9AFB43
-          jsl $9AFB70
+          jsl rlUnitWindowRenderPageRow
+          jsl rlUnitWindowCopyLineBG3Page1Tilemap
+          jsl rlUnitWindowCopyLineBG1Page1Tilemap
 
           rtl
 
@@ -11125,7 +11646,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
         aUnknown9AF0F8 .word $80, $07
 
-        rlUnitWindowHandlePossibleLowerPageSwitch ; 9A/F0FC
+        rlUnitWindowHandlePossibleLowerPageTurn ; 9A/F0FC
 
           .al
           .xl
@@ -11151,7 +11672,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             beq _End
 
             sta wUnitWindowCurrentPage
-            jsl $9AF148
+            jsl rlUnitWindowSetLowerPageSwitchDefaultColumn
             jsl rlUnitWindowUpdatePage
 
             lda #$000A ; TODO: sound definitions
@@ -11165,7 +11686,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
             bmi _End
 
             sta wUnitWindowCurrentPage
-            jsl $9AF148
+            jsl rlUnitWindowSetLowerPageSwitchDefaultColumn
             jsl rlUnitWindowUpdatePage
 
             lda #$000A ; TODO: sound definitions
@@ -11208,9 +11729,9 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .autsiz
           .databank ?
 
-          jsl $9AF21B
-          jsl $9AFB27
-          jsl $9AF17B
+          jsl rlUnitWindowRenderPageRows
+          jsl rlUnitWindowDMABG3TilemapBufferPage1
+          jsl rlUnitWindowCreateUpdater
           rtl
 
           .databank 0
@@ -11375,7 +11896,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnitWindowBG1HOFSHDMAOnCycle ; 9A/ F1FE
+        rlUnitWindowBG1HOFSHDMAOnCycle ; 9A/F1FE
 
           .al
           .xl
@@ -11455,7 +11976,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endData
       startCode
 
-        rlUnitWindowUnknown9AF21B ; 9A/F21B
+        rlUnitWindowRenderPageRows ; 9A/F21B
 
           .al
           .xl
@@ -11476,34 +11997,34 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank `wUnitWindowScrollRows
 
-          jsl $9AFB9D
-          jsl $9AFBAA
-          jsl $9AF90C
+          jsl rlUnitWindowClearBG3Page1
+          jsl rlUnitWindowClearBG1Page1
+          jsl rlUnitWindowCopyPageLabelTilemap
 
           lda @l wUnitWindowScrollRows
           sta @l $7EA93B
 
-          lda #$000A
+          lda #10
           sta @l $7EA93F
 
           -
-          lda @l $7EA93B
-          asl a
-          tax
-          lda @l aUnitWindowDeploymentSlots,x
-          beq _End
+            lda @l $7EA93B
+            asl a
+            tax
+            lda @l aUnitWindowDeploymentSlots,x
+            beq _End
 
-          sta $1AD1,b
+              sta wTemporaryDeploymentInfo,b
 
-          jsl $9AF268
-          dec $7EA93F
-          beq _End
+              jsl rlUnitWindowRenderPageRow
+              dec $7EA93F
+              beq _End
 
-          inc $7EA93B
+                inc $7EA93B
 
-          lda @l $7EA93B
-          cmp @l wUnitWindowMaxRows
-          bcc -
+                lda @l $7EA93B
+                cmp @l wUnitWindowMaxRows
+                bcc -
 
           _End
           plp
@@ -11512,7 +12033,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnitWindowUnknown9AF268 ; 9A/F268
+        rlUnitWindowRenderPageRow ; 9A/F268
 
           .al
           .xl
@@ -11538,11 +12059,11 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda #<>$9AEC84
           sta aCurrentTilemapInfo.lInfoPointer,b
 
-          jsr $9AF2EA
+          jsr rlUnitWindowClearPageRow
 
           lda @l $7EA93B
           tax
-          lda $9AFC1F,x
+          lda aUnitWindowLineRowOffsets,x
           and #$00FF
           xba
           sta @l $7EA93D
@@ -11550,18 +12071,18 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda @l wUnitWindowCurrentPage
           asl a
           tax
-          lda $9AF492,x
+          lda aUnitWindowPages,x
           tax
 
           -
-          lda $9A0000,x
+          lda ((`aUnitWindowPages)<<16)+structUnitWindowPageElement.XOffset,x
           beq _End
 
           phx
 
-          lda $9A0001,x
+          lda ((`aUnitWindowPages)<<16)+structUnitWindowPageElement.TextGetter,x
           sta lR25
-          lda $9A0002,x
+          lda ((`aUnitWindowPages)<<16)+structUnitWindowPageElement.TextGetter+size(byte),x
           sta lR25+size(byte)
 
           phx
@@ -11572,15 +12093,15 @@ GUARD_FE5_UNIT_WINDOW :?= false
           +
           plx
 
-          lda $9A0004,x
+          lda ((`aUnitWindowPages)<<16)+structUnitWindowPageElement.Renderer,x
           sta lR25
-          lda $9A0005,x
+          lda ((`aUnitWindowPages)<<16)+structUnitWindowPageElement.Renderer+size(byte),x
           sta lR25+size(byte)
 
-          lda $9A0007,x
+          lda ((`aUnitWindowPages)<<16)+structUnitWindowPageElement.BaseTile,x
           sta aCurrentTilemapInfo.wBaseTile,b
 
-          lda $9A0000,x
+          lda ((`aUnitWindowPages)<<16)+structUnitWindowPageElement.XOffset,x
           and #$00FF
           ora @l $7EA93D
           tax
@@ -11593,7 +12114,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           +
           pla
           clc
-          adc #$0009
+          adc #size(structUnitWindowPageElement)
           tax
           bra -
 
@@ -11604,7 +12125,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rsUnitWindowUnknown9AF2EA ; 9A/F2EA
+        rlUnitWindowClearPageRow ; 9A/F2EA
 
           .al
           .xl
@@ -11627,7 +12148,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           lda @l $7EA93B
           tax
-          lda $9AFC1F,x
+          lda aUnitWindowLineRowOffsets,x
           and #$00FF
           asl a
           asl a
@@ -11636,7 +12157,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           asl a
           asl a
           clc
-          adc #$EF7C
+          adc #<>(aBG3TilemapBuffer+(32 * 32 * size(word)))
           tax
 
           lda #$00CE
@@ -11649,10 +12170,10 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           txa
           sec
-          sbc #$EF7C
+          sbc #<>(aBG3TilemapBuffer+(32 * 32 * size(word)))
 
           clc
-          adc #$CF7C
+          adc #<>(aBG1TilemapBuffer+(32 * 32 * size(word)))
           tax
 
           lda #$002F
@@ -11685,64 +12206,64 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
         aUnitWindowPage1 .block ; 9A/F49E
 
-          macroUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
-          macroUnitWindowPageElement 10, $90E385, rlDrawMenuText, $2000
-          macroUnitWindowPageElement 20, $90E757, rlDrawNumberMenuText, $3520
-          macroUnitWindowPageElement 23, $90E425, $9AF5C6, $3800
-          macroUnitWindowPageElement 26, $90E44A, rlUnitWindowDrawNumberWithSlash, $3520
-          macroUnitWindowPageElement 29, $90E46F, rlDrawNumberMenuText, $3920
+          .structUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
+          .structUnitWindowPageElement 10, rlUnitWindowGetUnitClassName, rlDrawMenuText, $2000
+          .structUnitWindowPageElement 20, rlUnitWindowGetUnitLevel, rlDrawNumberMenuText, $3520
+          .structUnitWindowPageElement 23, rlUnitWindowGetUnitExperience, rlUnitWindowDrawNumberOrDoubleDash, $3800
+          .structUnitWindowPageElement 26, rlUnitWindowGetUnitCurrentHP, rlUnitWindowDrawNumberWithSlash, $3520
+          .structUnitWindowPageElement 29, rlUnitWindowGetUnitMaxHP, rlDrawNumberMenuText, $3920
           .word None
 
         .endblock
 
         aUnitWindowPage2 .block ; 9A/F4D6
 
-          macroUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
-          macroUnitWindowPageElement 21, $90E837, rlDrawNumberMenuText, $3520
-          macroUnitWindowPageElement 25, $90E7D5, rlDrawNumberMenuText, $3920
-          macroUnitWindowPageElement 12, $90E3C4, $9AF64D, $2000
-          macroUnitWindowPageElement 29, $90E806, rlDrawNumberMenuText, $3520
+          .structUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
+          .structUnitWindowPageElement 21, rlUnitWindowGetUnitMight, rlDrawNumberMenuText, $3520
+          .structUnitWindowPageElement 25, rlUnitWindowGetUnitHit, rlDrawNumberMenuText, $3920
+          .structUnitWindowPageElement 12, rlUnitWindowGetUnitEquippedWeaponName, $9AF64D, $2000
+          .structUnitWindowPageElement 29, rlUnitWindowGetUnitAvoid, rlDrawNumberMenuText, $3520
           .word None
 
         .endblock
 
         aUnitWindowPage3 .block ; 9A/F505
 
-          macroUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
-          macroUnitWindowPageElement 11, rlUnitWindowGetUnitStrength, rlDrawNumberMenuText, $3520
-          macroUnitWindowPageElement 14, $90E4C6, rlDrawNumberMenuText, $3920
-          macroUnitWindowPageElement 17, $90E4F8, rlDrawNumberMenuText, $3520
-          macroUnitWindowPageElement 20, $90E52A, rlDrawNumberMenuText, $3920
-          macroUnitWindowPageElement 23, $90E55C, rlDrawNumberMenuText, $3520
-          macroUnitWindowPageElement 26, $90E58E, rlDrawNumberMenuText, $3920
-          macroUnitWindowPageElement 29, $90E5C0, rlDrawNumberMenuText, $3520
+          .structUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
+          .structUnitWindowPageElement 11, rlUnitWindowGetUnitStrength, rlDrawNumberMenuText, $3520
+          .structUnitWindowPageElement 14, rlUnitWindowGetUnitMagic, rlDrawNumberMenuText, $3920
+          .structUnitWindowPageElement 17, rlUnitWindowGetUnitSkill, rlDrawNumberMenuText, $3520
+          .structUnitWindowPageElement 20, rlUnitWindowGetUnitSpeed, rlDrawNumberMenuText, $3920
+          .structUnitWindowPageElement 23, rlUnitWindowGetUnitLuck, rlDrawNumberMenuText, $3520
+          .structUnitWindowPageElement 26, rlUnitWindowGetUnitDefense, rlDrawNumberMenuText, $3920
+          .structUnitWindowPageElement 29, rlUnitWindowGetUnitConstitution, rlDrawNumberMenuText, $3520
           .word None
 
         .endblock
 
         aUnitWindowPage4 .block ; 9A/F54F
 
-          macroUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
-          macroUnitWindowPageElement 12, rlUnitWindowGetUnitMove, rlDrawNumberMenuText, $3520
-          macroUnitWindowPageElement 15, rlUnitWindowGetUnitFatigue, rlUnitWindowDrawNumberOrDoubleDash, $3800
-          macroUnitWindowPageElement 18, rlUnitWindowGetUnitStatusString, rlDrawMenuText, $3400
-          macroUnitWindowPageElement 24, rlUnitWindowGetUnitRescueeName, rlDrawMenuText, $3800
+          .structUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
+          .structUnitWindowPageElement 12, rlUnitWindowGetUnitMove, rlDrawNumberMenuText, $3520
+          .structUnitWindowPageElement 15, rlUnitWindowGetUnitFatigue, rlUnitWindowDrawNumberOrDoubleDash, $3800
+          .structUnitWindowPageElement 18, rlUnitWindowGetUnitStatusString, rlDrawMenuText, $3400
+          .structUnitWindowPageElement 24, rlUnitWindowGetUnitRescueeName, rlDrawMenuText, $3800
           .word None
 
         .endblock
 
         aUnitWindowPage5 .block ; 9A/F57E
 
-          macroUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
-          macroUnitWindowPageElement 11, $84B46A, rlUnitWindowDrawWeaponRanks, $3400
+          .structUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
+          .structUnitWindowPageElement 11, $84B46A, rlUnitWindowDrawWeaponRanks, $3400
           .word None
 
         .endblock
 
         aUnitWindowPage6 .block ; 9A/F592
 
-          macroUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
-          macroUnitWindowPageElement 10, rlUnitWindowGetUnitSkillCount, rlUnitWindowDrawSkillIcons, $0000
+          .structUnitWindowPageElement  4, rlUnitWindowGetUnitName, rlDrawMenuText, $2000
+          .structUnitWindowPageElement 10, rlUnitWindowGetUnitSkillCount, rlUnitWindowDrawSkillIcons, $0000
           .word None
 
         .endblock
@@ -11841,14 +12362,14 @@ GUARD_FE5_UNIT_WINDOW :?= false
           asl a
           tax
           lda aUnitWindowDeploymentSlots,x
-          sta $1AD1,b
+          sta wTemporaryDeploymentInfo,b
           plx
           lda aItemDataBuffer.DisplayedWeapon,b
           and #$00FF
           beq +
 
           jsl rlDrawMenuText
-          jsl rlUnitWindowDrawIconTilemap
+          jsl rlUnitWindowDrawItemIconTilemap
           rtl
 
           +
@@ -11863,7 +12384,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           txa
           clc
-          adc #$0007
+          adc #7
           tax
 
           lda #$3400
@@ -11893,7 +12414,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           .databank 0
 
-        rlUnitWindowDrawIconTilemap ; 9A/F6B4
+        rlUnitWindowDrawItemIconTilemap ; 9A/F6B4
 
           .al
           .xl
@@ -11923,7 +12444,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           sta wR0
           lda @l $7EA93B
           tax
-          lda $9AFC1F,x
+          lda aUnitWindowLineRowOffsets,x
           and #$00FF
           asl a
           asl a
@@ -11975,11 +12496,11 @@ GUARD_FE5_UNIT_WINDOW :?= false
           asl a
           tax
           lda @l aUnitWindowDeploymentSlots,x
-          sta $1AD1,b
+          sta wTemporaryDeploymentInfo,b
 
           jsl rlUnitWindowGetUnitSkillCount
 
-          lda $1ADE,b
+          lda wTemporaryUnitWindowSkillCounter,b
           beq _End
 
           asl a
@@ -11990,7 +12511,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           ldx #$0014
 
           -
-          lda $001AE0,x
+          lda aTemporaryUnitWindowSkillList,x
           and #$00FF
           beq +
 
@@ -12037,7 +12558,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           lda $7EA93B
           tax
 
-          lda @l $9AFC1F,x
+          lda @l aUnitWindowLineRowOffsets,x
           and #$00FF
           asl a
           asl a
@@ -12378,7 +12899,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           jsl rlUnitWindowDrawSortText
           jsl rlDMAByStruct
 
-            .structDMAToVRAM (aBG3TilemapBuffer+(32 * 1 * size(word))), $01C0, VMAIN_Setting(true), (UnitWindowConfig.BG3TilemapPosition+(32 * 1 * size(word)))
+            .structDMAToVRAM (aBG3TilemapBuffer+(32 * 1 * size(word))), $01C0, VMAIN_Setting(true), BG3TilemapPosition+(32 * 1 * size(word))
 
           plp
           plb
@@ -12534,7 +13055,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           .autsiz
           .databank ?
 
-          jsl rlUnitWindowGetUnitWeaponRank
+          jsl rlUnitWindowGetUnitWeaponRankByType
           jsl rlGetRankString
           rtl
 
@@ -12568,7 +13089,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           asl a
           tax
 
-          lda $1AD1,b
+          lda wTemporaryDeploymentInfo,b
 
           -
           cmp $7FAACE,x
@@ -12633,7 +13154,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           jsl rlDMAByStruct
 
-            .structDMAToVRAM aBG3TilemapBuffer, (32 * 32 * size(word)), VMAIN_Setting(true), UnitWindowConfig.BG3TilemapPosition
+            .structDMAToVRAM aBG3TilemapBuffer, (32 * 32 * size(word)), VMAIN_Setting(true), BG3TilemapPosition
 
           rtl
 
@@ -12648,7 +13169,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           jsl rlDMAByStruct
 
-            .structDMAToVRAM aBG1TilemapBuffer, (32 * 32 * size(word)), VMAIN_Setting(true), UnitWindowConfig.BG1TilemapPosition
+            .structDMAToVRAM aBG1TilemapBuffer, (32 * 32 * size(word)), VMAIN_Setting(true), BG1TilemapPosition
 
           rtl
 
@@ -12663,7 +13184,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           jsl rlDMAByStruct
 
-            .structDMAToVRAM aBG3TilemapBuffer+(32 * 32 * size(word)), (32 * 32 * size(word)), VMAIN_Setting(true), (UnitWindowConfig.BG3TilemapPosition + (32 * 32 * size(word)))
+            .structDMAToVRAM aBG3TilemapBuffer+(32 * 32 * size(word)), (32 * 32 * size(word)), VMAIN_Setting(true), (BG3TilemapPosition + (32 * 32 * size(word)))
 
           rtl
 
@@ -12678,7 +13199,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           jsl rlDMAByStruct
 
-            .structDMAToVRAM aBG1TilemapBuffer+(32 * 32 * size(word)), (32 * 32 * size(word)), VMAIN_Setting(true), (UnitWindowConfig.BG1TilemapPosition + (32 * 32 * size(word)))
+            .structDMAToVRAM aBG1TilemapBuffer+(32 * 32 * size(word)), (32 * 32 * size(word)), VMAIN_Setting(true), (BG1TilemapPosition + (32 * 32 * size(word)))
 
           rtl
 
@@ -12696,7 +13217,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           ldx $7EA93B
 
-          lda $9AFC1F,x
+          lda aUnitWindowLineRowOffsets,x
           and #$00FF
           asl a
           asl a
@@ -12712,7 +13233,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           pla
           clc
-          adc #(UnitWindowConfig.BG3TilemapPosition + (32 * 32 * size(word))) >> 1
+          adc #(BG3TilemapPosition + (32 * 32 * size(word))) >> 1
           sta wR1
 
           lda #32 * 2 * size(word)
@@ -12736,7 +13257,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           ldx $7EA93B
 
-          lda $9AFC1F,x
+          lda aUnitWindowLineRowOffsets,x
           and #$00FF
           asl a
           asl a
@@ -12752,7 +13273,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           pla
           clc
-          adc #(UnitWindowConfig.BG1TilemapPosition + (32 * 32 * size(word))) >> 1
+          adc #(BG1TilemapPosition + (32 * 32 * size(word))) >> 1
           sta wR1
 
           lda #32 * 2 * size(word)
@@ -12826,7 +13347,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
       endCode
       startData
 
-        aUnitWindowLineRowOffsets .byte (range(64) * 2) % 32
+        aUnitWindowLineRowOffsets .byte (range(64) * 2) % 32 ; 9A/FC1F
 
       endData
       startCode
@@ -12840,7 +13361,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           jsl rlDMAByStruct
 
-            .structDMAToVRAM $F2D880, $0980, VMAIN_Setting(true), UnitWindowConfig.SkillIconTilesPosition
+            .structDMAToVRAM $F2D880, $0980, VMAIN_Setting(true), SkillIconTilesPosition
 
           rtl
 
@@ -12871,11 +13392,11 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           -
           lda aUnitWindowDeploymentSlots,x
-          sta $1AD1,b
+          sta wTemporaryDeploymentInfo,b
           beq +
 
           jsl rlUnitWindowCopyItemIcon
-          sta $7FB171,x
+          sta aUnitWindowItemIconTileIndexes,x
           inc x
           inc x
           bra -
@@ -12921,7 +13442,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
 
           phx
 
-          jsl rlUnitWindowDoesUnitHaveEquippedWeapon
+          jsl rlUnitWindowGetUnitEquippedWeapon
           bcc +
 
           lda #$0000
@@ -12941,12 +13462,12 @@ GUARD_FE5_UNIT_WINDOW :?= false
           asl a
           asl a
           clc
-          adc #<>$F28000
+          adc #<>IconSheet
           sta lR18
 
           sep #$20
 
-          lda #`$F28000
+          lda #`IconSheet
           sta lR18+size(word)
 
           rep #$20
@@ -12957,7 +13478,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           asl a
           asl a
           clc
-          adc #UnitWindowConfig.ItemIconTilesPosition >> 1
+          adc #ItemIconTilesPosition >> 1
           sta wR1
 
           lda #4 * size(Tile4bpp)
@@ -12995,7 +13516,7 @@ GUARD_FE5_UNIT_WINDOW :?= false
           beq +
 
           lda wUnitWindowType
-          bit #UnitWindowConfig.WindowTypes.FromUnitDuringPrep
+          bit #WindowTypes.FromUnitDuringPrep
           bne _End
 
           +
@@ -13265,6 +13786,8 @@ GUARD_FE5_UNIT_WINDOW :?= false
         .endblock
 
       endData
+
+      .endwith ; UnitWindowConfig
 
     .endsection UnitWindow9ASection
 

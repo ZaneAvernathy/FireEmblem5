@@ -658,6 +658,13 @@
 
   .endlogical
 
+  * := $0836F3
+  .logical mapped($0836F3)
+
+    .dsection UnitWindowTempSection
+
+  .endlogical
+
   * := $08434E
   .logical mapped($08434E)
 
