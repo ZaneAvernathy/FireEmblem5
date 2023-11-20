@@ -394,8 +394,8 @@ GUARD_FE5_OPTIONS_WINDOW :?= false
         menutextOptionsWindowUnitSpeedSubtitle     .text "ユニットの移動するスピード\n" ; 85/D1D0
         menutextOptionsWindowAudioSubtitle         .text "サウンドの設定\n" ; 85/D1EC
         menutextOptionsWindowBGMSubtitle           .text "ＢＧＭの設定\n" ; 85/D1FC
-        menutextOptionsWindowVolumeSubtitle        .text "こうかおんのおんりょう\n" ; 82/D20A
-        menutextOptionsWindowAutocursorSubtitle    .text "ターンのはじめにしゅじんこうにカーソルをあわせる\n" ; 82/D222
+        menutextOptionsWindowVolumeSubtitle        .text "こうかおんのおんりょう\n" ; 85/D20A
+        menutextOptionsWindowAutocursorSubtitle    .text "ターンのはじめにしゅじんこうにカーソルをあわせる\n" ; 85/D222
         menutextOptionsWindowAISubtitle            .text "てきのあたまのよさ\n" ; 85/D254
         menutextOptionsWindowBackgroundSubtitle    .text "ウィンドウタイルの設定\n" ; 85/D258
 
