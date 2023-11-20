@@ -1,0 +1,20 @@
+.word 0,Pointer,NextAction
+Default,<>rsShopWindowActionDefault,BuySellUpdate
+BuySellUpdate,<>rsShopWindowActionBuySellUpdate,Leave
+BuyIntro,<>rsShopWindowActionBuyIntro,BuySelection
+BuySelection,<>rsShopWindowActionItemSelection,Buy
+SellIntro,<>rsShopWindowActionSellIntro,SellSelection
+SellSelection,<>rsShopWindowActionItemSelection,SellConfirm
+Buy,<>rsShopWindowActionBuy,BuyConfirmSelection
+BuyConfirmSelection,<>rsShopWindowActionBuyConfirmSelection,BuyEffect
+BuyEffect,<>rsShopWindowActionBuyEffect,PostBuy
+SellConfirm,<>rsShopWindowActionSellConfirm,SellConfirmSelection
+SellConfirmSelection,<>rsShopWindowActionSellConfirmSelection,SellEffect
+SellEffect,<>rsShopWindowActionSellEffect,PostSell
+Continue,<>rsShopWindowActionContinue,BuySellUpdate
+PostSell,<>rsShopWindowActionPostSell,SellSelection
+PostBuy,<>rsShopWindowActionPostBuy,BuySelection
+Leave,<>rsShopWindowActionLeave,Default
+LeaveWrapUp,<>rsShopWindowActionLeaveWrapUp,Unknown11
+Unknown11,<>rsShopWindowActionUnknown11,Default
+PopAction,<>rsShopWindowActionPop,Default
