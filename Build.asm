@@ -73,6 +73,7 @@
   .include "SRC/OptionsWindow.asm"
   .include "SRC/UnitWindow.asm"
   .include "SRC/ShopWindow.asm"
+  .include "SRC/ConvoyWindow.asm"
 
 ; Sections
 
@@ -353,6 +354,7 @@
 
     .dsection ShopWindowSection
     .dsection TradeWindowSection
+    .dsection ConvoyWindowSection
 
   .endlogical
 
