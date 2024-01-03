@@ -28,8 +28,8 @@ GUARD_FE5_SHOP_WINDOW :?= false
       rlCopyCharacterDataFromBuffer             :?= address($839041)
       rlGetItemNamePointer                      :?= address($83931A)
       rlCheckItemEquippable                     :?= address($83965E)
-      rlPushActionToQueue                       :?= address($8397E8)
-      rlPopActionFromQueue                      :?= address($839808)
+      rlPushToQueue                             :?= address($8397E8)
+      rlPopFromQueue                            :?= address($839808)
       rlTryGiveCharacterItemFromBuffer          :?= address($83A443)
       rlSellCharacterItemFromBuffer             :?= address($83A4FD)
       rlSubtractFromGold                        :?= address($83A568)
@@ -2523,7 +2523,7 @@ GUARD_FE5_SHOP_WINDOW :?= false
             ; Outputs:
             ; wShopWindowActionIndex: unqueue action
 
-            jsl rlPushActionToQueue
+            jsl rlPushToQueue
 
             lda #aShopWindowActions.PopAction
             sta wShopWindowActionIndex
@@ -2548,7 +2548,7 @@ GUARD_FE5_SHOP_WINDOW :?= false
             jsr rsShopWindowCheckAcknowledge
             bcc +
 
-            jsl rlPopActionFromQueue
+            jsl rlPopFromQueue
             sta wShopWindowActionIndex
 
             +
